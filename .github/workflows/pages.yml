@@ -1,0 +1,39 @@
+name: Deploya till GitHub Pages
+
+# Publicerar de statiska filerna (inkl. senaste data.json) till GitHub Pages.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Tillåt en pågående deploy i taget; avbryt inte pågående (låt den bli klar).
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checka ut repot
+        uses: actions/checkout@v4
+
+      - name: Konfigurera Pages
+        uses: actions/configure-pages@v5
+
+      - name: Ladda upp artefakt
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "." # hela repo-roten är den statiska sajten
+
+      - name: Deploya
+        id: deployment
+        uses: actions/deploy-pages@v4
