@@ -4,6 +4,12 @@ name: Deploya till GitHub Pages
 on:
   push:
     branches: [main]
+  # Deploya om efter varje hotanalys så att den nya data.json publiceras.
+  # workflow_run triggas även av commits gjorda med GITHUB_TOKEN – till skillnad
+  # från "push" – vilket krävs eftersom cron-jobbet committar med den token.
+  workflow_run:
+    workflows: ["Uppdatera hotnivå"]
+    types: [completed]
   workflow_dispatch: {}
 
 permissions:
@@ -18,6 +24,9 @@ concurrency:
 
 jobs:
   deploy:
+    # Vid workflow_run: deploya bara om hotanalysen lyckades. Övriga triggers
+    # (push/manuell) deployar alltid.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
