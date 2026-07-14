@@ -1,11 +1,18 @@
 {
-  "updated": "2026-07-14T21:15:34.153Z",
-  "next_update": "2026-07-14T21:45:34.153Z",
+  "updated": "2026-07-14T21:27:41.274Z",
+  "next_update": "2026-07-14T21:57:41.274Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjd risknivå på grund av pågående attacker och sårbarheter som utnyttjas globalt.",
-  "reasoning": "Det finns flera tecken på förhöjd hotaktivitet, inklusive en koordinerad leveranskedjeattack mot AsyncAPI GitHub-repon (CERT-SE) och en rad kritiska sårbarheter i Microsoft och SAP-programvara som aktivt utnyttjas. Även om det inte finns någon direkt indikation på attacker mot svensk kritisk infrastruktur, är risken för påverkan på svenska mål ökad på grund av dessa pågående kampanjer och sårbarheter.",
+  "summary": "Förhöjd risknivå på grund av pågående cyberattackkampanjer och sårbarheter som utnyttjas aktivt.",
+  "reasoning": "Det finns flera tecken på förhöjd hotnivå, inklusive en koordinerad leveranskedjeattack mot separata AsyncAPI GitHub-repon (CERT-SE) och rapporter om aktiva attacker mot kritiska sårbarheter i SonicWall och Microsoft-produkter. Även om det inte finns direkt bevis för en storskalig attack mot svensk infrastruktur, är det viktigt att vara uppmärksam på dessa hot och vidta försiktighetsåtgärder.",
   "events": [
+    {
+      "title": "SonicWall warns of SMA1000 flaws exploited in zero-day attacks, patch now",
+      "source": "BleepingComputer",
+      "date": "2026-07-14T21:23:24.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-sma1000-flaws-exploited-in-zero-day-attacks-patch-now/",
+      "summary": "SonicWall warns that threat actors have been exploiting two SMA1000 vulnerabilities, tracked as CVE-2026-15409 and CVE-2026-15410, in zero-day attacks and urges customers to install the newly released security updates. [...]"
+    },
     {
       "title": "Microsoft Patches Record 622 Flaws, Including Two Zero-Days Under Active Attack",
       "source": "The Hacker News",
@@ -103,18 +110,11 @@
       "date": "2026-07-14T13:25:00.000Z",
       "link": "https://www.cert.se/2026/07/skadliga-npm-paket.html",
       "summary": "<p>Ett koordinerat leveranskedjeangrepp har drabbat separata AsyncAPI GitHub-repon. Angripare har utnyttjat en sårbarhet i GitHub Actions. [1]</p>"
-    },
-    {
-      "title": "Microsoft Entra ID gets passkeys default authentication starting September",
-      "source": "BleepingComputer",
-      "date": "2026-07-14T12:49:56.000Z",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-entra-id-gets-passkeys-default-authentication-starting-september/",
-      "summary": "Microsoft has announced that passkeys will become the default authentication method for the Entra ID enterprise identity service starting September 2026. [...]"
     }
   ],
   "sources": [
-    "The Hacker News",
     "BleepingComputer",
+    "The Hacker News",
     "CERT-SE"
   ],
   "model": "MiniMax-Text-01",
