@@ -15,5 +15,6 @@
     }
   ],
   "sources": ["CERT-SE", "MCF", "The Hacker News", "BleepingComputer"],
-  "model": null
+  "model": null,
+  "notified_level": "grön"
 }

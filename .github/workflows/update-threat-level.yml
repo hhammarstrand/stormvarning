@@ -32,6 +32,9 @@ jobs:
           MINIMAX_MODEL: ${{ secrets.MINIMAX_MODEL }}
           MINIMAX_BASE_URL: ${{ secrets.MINIMAX_BASE_URL }}
           MINIMAX_GROUP_ID: ${{ secrets.MINIMAX_GROUP_ID }}
+          # E-postnotiser (valfritt). Utan BUTTONDOWN_API_KEY skickas inga mejl.
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          SITE_URL: ${{ secrets.SITE_URL }}
         run: node scripts/analyze.mjs
 
       - name: Committa uppdaterad data.json

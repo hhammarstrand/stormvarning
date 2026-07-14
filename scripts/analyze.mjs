@@ -32,6 +32,10 @@ const CONFIG = {
   groupId: process.env.MINIMAX_GROUP_ID || "",
   maxEvents: 15,
   intervalMinutes: 30,
+  // E-postnotiser (Buttondown). Utan nyckel skickas inga mejl.
+  buttondownKey: process.env.BUTTONDOWN_API_KEY || "",
+  buttondownUrl: process.env.BUTTONDOWN_URL || "https://api.buttondown.com/v1/emails",
+  siteUrl: process.env.SITE_URL || "https://hhammarstrand.github.io/stormvarning/",
 };
 
 /**
@@ -302,6 +306,63 @@ function normalizeLevel(raw) {
   return "okänd";
 }
 
+const LEVEL_RANK = { "grön": 0, "gul": 1, "röd": 2 };
+
+// Rang för jämförelse. Okänd/saknad behandlas som grön (0) så vi inte råkar
+// larma bara för att en tidigare körning saknade AI-bedömning.
+function levelRank(level) {
+  const r = LEVEL_RANK[normalizeLevel(level)];
+  return typeof r === "number" ? r : 0;
+}
+
+/* ---------------------------------------------------------- e-postnotiser */
+
+/**
+ * Skickar ett mejl till alla Buttondown-prenumeranter. Avsiktligt tunt:
+ * status "about_to_send" gör att Buttondown skickar direkt (default är annars
+ * ett utkast). Fel loggas men får aldrig krascha jobbet.
+ */
+async function sendNotification(data) {
+  const subjectPrefix = data.level === "röd" ? "🔴 RÖD" : "🟡 GUL";
+  const subject = `Stormvarning: ${subjectPrefix} hotnivå`;
+  const body = [
+    `**${data.level_label}**`,
+    "",
+    data.summary,
+    "",
+    data.reasoning,
+    "",
+    `Aktuell lägesbild: ${CONFIG.siteUrl}`,
+    "",
+    "---",
+    "Stormvarning är ett automatiserat stödverktyg och ingen officiell källa. " +
+      "Följ alltid CERT-SE och MSB vid en pågående incident.",
+  ].join("\n");
+
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 30000);
+  try {
+    const res = await fetch(CONFIG.buttondownUrl, {
+      method: "POST",
+      signal: ctrl.signal,
+      headers: {
+        "Authorization": `Token ${CONFIG.buttondownKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ subject, body, status: "about_to_send" }),
+    });
+    const text = await res.text();
+    if (!res.ok) throw new Error(`HTTP ${res.status}: ${truncate(text, 200)}`);
+    log(`Notis skickad via Buttondown (nivå: ${data.level}).`);
+    return true;
+  } catch (err) {
+    log(`VARNING: kunde inte skicka e-postnotis: ${err.message}`);
+    return false;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 /* ------------------------------------------------------------------ main */
 
 async function readPrevious() {
@@ -340,6 +401,20 @@ async function main() {
     }
   }
 
+  // Avgör om vi ska larma. `notified_level` minns nivån vi senast mejlade om,
+  // så vi bara skickar vid en faktisk HÖJNING till gul/röd – inte var 30:e minut
+  // och inte när en tidigare körning tillfälligt saknade AI-bedömning.
+  const baseline = prev && prev.notified_level ? normalizeLevel(prev.notified_level) : "grön";
+  let notifiedLevel = baseline;
+  let shouldNotify = false;
+  if (level !== "okänd") {
+    // Följ aktuell nivå (även vid nedgång) men larma bara vid uppgång till gul/röd.
+    notifiedLevel = level;
+    if (levelRank(level) > levelRank(baseline) && levelRank(level) >= LEVEL_RANK["gul"]) {
+      shouldNotify = true;
+    }
+  }
+
   const data = {
     updated: now.toISOString(),
     next_update: next.toISOString(),
@@ -352,7 +427,17 @@ async function main() {
       ? [...new Set(events.map((e) => e.source))]
       : FEEDS.map((f) => f.name),
     model: analysis ? CONFIG.model : null,
+    notified_level: notifiedLevel,
   };
+
+  if (shouldNotify) {
+    if (CONFIG.buttondownKey) {
+      log(`Nivåhöjning ${baseline} → ${level}: skickar e-postnotis.`);
+      await sendNotification(data);
+    } else {
+      log(`Nivåhöjning ${baseline} → ${level}, men BUTTONDOWN_API_KEY saknas – hoppar över notis.`);
+    }
+  }
 
   await writeFile(OUT, JSON.stringify(data, null, 2) + "\n", "utf8");
   log(`Skrev ${OUT} (nivå: ${level}, händelser: ${data.events.length}).`);

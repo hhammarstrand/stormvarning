@@ -73,6 +73,29 @@ Två alternativ:
 Gå till **Actions → Uppdatera hotnivå → Run workflow** för att generera den första
 riktiga lägesbilden direkt (annars sker det vid nästa schemalagda körning).
 
+## E-postprenumeration (valfritt)
+
+Besökare kan prenumerera och få ett mejl **endast när hotnivån höjs** till gul eller röd
+– aldrig vid normalläge eller var 30:e minut. Eftersom sidan saknar backend sköts
+adresser och utskick av [Buttondown](https://buttondown.com) (gratisnivå finns), som även
+hanterar bekräftelse (dubbel opt-in) och avregistrering – GDPR-vänligt.
+
+Så här aktiverar du det:
+
+1. Skapa ett konto på Buttondown och notera ditt **användarnamn**.
+2. I `index.html`, ersätt platshållaren `DITT-ANVANDARNAMN` (förekommer i
+   `<form action=...>` och `onsubmit=...`) med ditt användarnamn.
+3. Skapa en API-nyckel i Buttondown (**Settings → Programming → API**) och lägg den som
+   secret `BUTTONDOWN_API_KEY` i repot (**Settings → Secrets and variables → Actions**).
+4. Valfritt: sätt secret `SITE_URL` till sajtens publika adress så länken i mejlet blir rätt
+   (default `https://<användare>.github.io/stormvarning/`).
+
+Anmälningsformuläret postar direkt till Buttondown – **ingen API-nyckel finns i
+klientkoden**. Utskicket sker från GitHub Actions-jobbet: när `scripts/analyze.mjs`
+upptäcker en höjning (t.ex. grön→gul eller gul→röd) anropas Buttondowns API
+(`POST /v1/emails` med `status: about_to_send`). Nivån vi senast larmade om sparas i
+`data.json` (`notified_level`) så samma höjning inte mejlas ut flera gånger.
+
 ## Lokal körning
 
 ```bash

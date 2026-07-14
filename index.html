@@ -68,6 +68,41 @@
         </ul>
       </section>
     </div>
+    <!-- Prenumerera -->
+    <section class="panel subscribe" id="subscribe">
+      <h3>Prenumerera på varningar</h3>
+      <p class="subscribe-lead">
+        Få ett mejl <strong>endast när hotnivån höjs</strong> till gul eller röd –
+        aldrig vid normalläge. Ingen spam var 30:e minut.
+      </p>
+      <!--
+        Buttondown-embed. Ersätt DITT-ANVANDARNAMN med ditt Buttondown-användarnamn.
+        Ingen API-nyckel behövs här; Buttondown sköter bekräftelse och avregistrering.
+      -->
+      <form
+        class="subscribe-form"
+        action="https://buttondown.com/api/emails/embed-subscribe/DITT-ANVANDARNAMN"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.com/DITT-ANVANDARNAMN', 'popupwindow')"
+      >
+        <label class="visually-hidden" for="bd-email">Din e-postadress</label>
+        <input
+          id="bd-email"
+          type="email"
+          name="email"
+          inputmode="email"
+          autocomplete="email"
+          placeholder="din@epost.se"
+          required
+        />
+        <button type="submit">Prenumerera</button>
+      </form>
+      <p class="subscribe-fine">
+        Genom att prenumerera godkänner du att din e-postadress hanteras av Buttondown för
+        utskicken. Du bekräftar via mejl och kan avregistrera dig när som helst.
+      </p>
+    </section>
   </main>
 
   <footer class="site-footer">
