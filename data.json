@@ -1,20 +1,122 @@
 {
-  "updated": "2026-07-14T18:00:00.000Z",
-  "next_update": "2026-07-14T18:30:00.000Z",
-  "level": "grön",
-  "level_label": "Grön – låg hotnivå",
-  "summary": "Normalläge. Inga tecken på förhöjt hot om storskalig cyberattack mot Sverige.",
-  "reasoning": "Detta är ett initialt exempeldokument som visas innan det schemalagda jobbet har kört första gången. Så snart GitHub Actions kört analysen (var 30:e minut) ersätts innehållet med en färsk lägesbild baserad på öppna hotsignaler från CERT-SE, MCF och säkerhetsnyheter.",
+  "updated": "2026-07-14T21:15:34.153Z",
+  "next_update": "2026-07-14T21:45:34.153Z",
+  "level": "gul",
+  "level_label": "Gul – förhöjd hotnivå",
+  "summary": "Förhöjd risknivå på grund av pågående attacker och sårbarheter som utnyttjas globalt.",
+  "reasoning": "Det finns flera tecken på förhöjd hotaktivitet, inklusive en koordinerad leveranskedjeattack mot AsyncAPI GitHub-repon (CERT-SE) och en rad kritiska sårbarheter i Microsoft och SAP-programvara som aktivt utnyttjas. Även om det inte finns någon direkt indikation på attacker mot svensk kritisk infrastruktur, är risken för påverkan på svenska mål ökad på grund av dessa pågående kampanjer och sårbarheter.",
   "events": [
     {
-      "title": "Väntar på första automatiska analysen",
-      "source": "Stormvarning",
-      "date": "2026-07-14T18:00:00.000Z",
-      "link": "",
-      "summary": "Kör workflowet 'Uppdatera hotnivå' manuellt eller vänta på nästa schemalagda körning för att fylla listan med verkliga hotsignaler från CERT-SE, MCF och säkerhetsnyheter."
+      "title": "Microsoft Patches Record 622 Flaws, Including Two Zero-Days Under Active Attack",
+      "source": "The Hacker News",
+      "date": "2026-07-14T20:25:47.000Z",
+      "link": "https://thehackernews.com/2026/07/microsoft-patches-record-622-flaws.html",
+      "summary": "Microsoft shipped its largest Patch Tuesday on record today, and two of the fixes close holes that attackers are already exploiting. The release covers 622 of Microsoft's own CVEs by its Security Update Guide count, more than triple June's previous high of around 200. Those two…"
+    },
+    {
+      "title": "Spanish Police take down €140 million cyber fraud ring, arrest four",
+      "source": "BleepingComputer",
+      "date": "2026-07-14T20:23:09.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/spanish-police-take-down-140-million-cyber-fraud-ring-arrest-four/",
+      "summary": "The Spanish Police dismantled a cybercrime and money-laundering organization that made €140 million ($160 million) from investment fraud and business email compromise (BEC) attacks. [...]"
+    },
+    {
+      "title": "Nearly 300 GitHub repos pose as legit software to push malware",
+      "source": "BleepingComputer",
+      "date": "2026-07-14T19:15:17.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/nearly-300-github-repos-pose-as-legit-software-to-push-malware/",
+      "summary": "A threat actor has published hundreds of fake GitHub repositories impersonating legitimate software and security projects to distribute infostealer malware. [...]"
+    },
+    {
+      "title": "Microsoft releases Windows 10 KB5099539 extended security update",
+      "source": "BleepingComputer",
+      "date": "2026-07-14T18:49:28.000Z",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-windows-10-kb5099539-extended-security-update/",
+      "summary": "Microsoft has released the Windows 10 KB5099539 extended security update, which includes the July 2026 Patch Tuesday security updates for 570 vulnerabilities, along with additional security fixes. [...]"
+    },
+    {
+      "title": "SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data",
+      "source": "The Hacker News",
+      "date": "2026-07-14T18:17:57.000Z",
+      "link": "https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html",
+      "summary": "SAP has rolled out updates to address multiple vulnerabilities as part of its July 2026 security updates, including a critical flaw in SAP NetWeaver Application Server ABAP. The vulnerability in question is CVE-2026-44747 (CVSS score: 9.9), an out-of-bounds write flaw that allow…"
+    },
+    {
+      "title": "Microsoft July 2026 Patch Tuesday fixes massive 570 flaws, 3 zero-days",
+      "source": "BleepingComputer",
+      "date": "2026-07-14T18:01:36.000Z",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-july-2026-patch-tuesday-fixes-massive-570-flaws-3-zero-days/",
+      "summary": "Today is Microsoft's July 2026 Patch Tuesday, and with it comes security updates for a record-breaking 570 flaws, including two zero-day vulnerabilities exploited in attacks and one publicly disclosed. [...]"
+    },
+    {
+      "title": "Windows 11 KB5101650 & KB5099414 cumulative updates released",
+      "source": "BleepingComputer",
+      "date": "2026-07-14T17:41:16.000Z",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5101650-and-kb5099414-cumulative-updates-released/",
+      "summary": "Microsoft has released Windows 11 KB5101650 and KB5099414 cumulative updates for versions 25H2/24H2 and 23H2 to fix security vulnerabilities, bugs, and add new features. [...]"
+    },
+    {
+      "title": "Researchers Say Claude for Chrome Flaw Lets Rogue Extensions Trigger Gmail Reads",
+      "source": "The Hacker News",
+      "date": "2026-07-14T17:27:23.000Z",
+      "link": "https://thehackernews.com/2026/07/claude-for-chrome-flaw-lets-other.html",
+      "summary": "Any other browser extension that can run a script on claude.ai can still trigger Claude for Chrome tasks aimed at your Gmail, your latest Google Doc and its comments, and your Calendar. Both this and ClaudeBleed need a rogue extension that can already run a script on claude.ai;…"
+    },
+    {
+      "title": "LabubaRAT Masquerades as NVIDIA Software to Control Windows Hosts",
+      "source": "The Hacker News",
+      "date": "2026-07-14T16:52:37.000Z",
+      "link": "https://thehackernews.com/2026/07/labubarat-masquerades-as-nvidia.html",
+      "summary": "Cybersecurity researchers have flagged a previously undocumented Rust-based remote access trojan (RAT) codenamed LabubaRAT that masquerades as NVIDIA software to blend into target environments. \"LabubaRAT creates a reusable foothold for hands-on activity,\" Blackpoint Cyber resea…"
+    },
+    {
+      "title": "Progress confirms ShareFile zero-day flaw behind Storage Zone shutdown",
+      "source": "BleepingComputer",
+      "date": "2026-07-14T16:08:47.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/progress-confirms-sharefile-zero-day-flaw-behind-storage-zone-shutdown/",
+      "summary": "Progress Software has confirmed that a high-severity zero-day vulnerability is behind the emergency shutdown of ShareFile Storage Zone Controllers last week and has released security updates to patch the flaw. [...]"
+    },
+    {
+      "title": "LastPass, Bitwarden users targeted with fake security alerts",
+      "source": "BleepingComputer",
+      "date": "2026-07-14T15:31:52.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/lastpass-bitwarden-users-targeted-with-fake-security-alerts/",
+      "summary": "LastPass is warning users about an ongoing phishing campaign that is using fake security notices to direct them to fraudulent websites. [...]"
+    },
+    {
+      "title": "You Don't Have to Run an Exploit to Know If You're Vulnerable",
+      "source": "BleepingComputer",
+      "date": "2026-07-14T14:00:10.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/you-dont-have-to-run-an-exploit-to-know-if-youre-vulnerable/",
+      "summary": "Many vulnerabilities cannot be safely validated with live exploits, either because no exploit exists or the affected systems are too critical to test. Picus explains how TTP chaining helps organizations determine exploitability by validating the attack techniques an exploit depe…"
+    },
+    {
+      "title": "RabbitMQ Flaws Could Leak OAuth Secrets and Expose Cross-Tenant Queue Metadata",
+      "source": "The Hacker News",
+      "date": "2026-07-14T13:48:07.000Z",
+      "link": "https://thehackernews.com/2026/07/rabbitmq-flaws-could-leak-oauth-secrets.html",
+      "summary": "Cybersecurity researchers have disclosed details of two access control-related flaws impacting the RabbitMQ message broker service that could allow attackers to leak OAuth client secrets, expose enterprise messaging infrastructure to takeover risks, and bypass tenant boundaries.…"
+    },
+    {
+      "title": "Skadliga npm-paket",
+      "source": "CERT-SE",
+      "date": "2026-07-14T13:25:00.000Z",
+      "link": "https://www.cert.se/2026/07/skadliga-npm-paket.html",
+      "summary": "<p>Ett koordinerat leveranskedjeangrepp har drabbat separata AsyncAPI GitHub-repon. Angripare har utnyttjat en sårbarhet i GitHub Actions. [1]</p>"
+    },
+    {
+      "title": "Microsoft Entra ID gets passkeys default authentication starting September",
+      "source": "BleepingComputer",
+      "date": "2026-07-14T12:49:56.000Z",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-entra-id-gets-passkeys-default-authentication-starting-september/",
+      "summary": "Microsoft has announced that passkeys will become the default authentication method for the Entra ID enterprise identity service starting September 2026. [...]"
     }
   ],
-  "sources": ["CERT-SE", "MCF", "The Hacker News", "BleepingComputer"],
-  "model": null,
-  "notified_level": "grön"
+  "sources": [
+    "The Hacker News",
+    "BleepingComputer",
+    "CERT-SE"
+  ],
+  "model": "MiniMax-Text-01",
+  "notified_level": "gul"
 }
