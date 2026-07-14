@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stormvarning – tidigt varningssystem för storskaliga cyberattacker mot Sverige. Automatiserad lägesbild baserad på öppna hotsignaler." />
+  <meta name="color-scheme" content="dark" />
+  <title>Stormvarning – cyberhotnivå för Sverige</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230a0c0f'/%3E%3Crect x='3' y='2' width='2' height='9' fill='%23ffb020'/%3E%3Crect x='3' y='12' width='2' height='2' fill='%23ffb020'/%3E%3Crect x='7' y='5' width='2' height='6' fill='%236b7280'/%3E%3Crect x='11' y='3' width='2' height='8' fill='%236b7280'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-level="okand">
+  <div class="topband" aria-hidden="true"></div>
+
+  <div class="console">
+    <!-- Kommandorad -->
+    <header class="cmdbar">
+      <div class="cmdbar-id">
+        <span class="logo">STORMVARNING</span>
+        <span class="logo-sub">// cyberhotläge · sverige</span>
+      </div>
+      <div class="cmdbar-status">
+        <span class="live" id="connection"><span class="live-dot"></span><span id="connection-text">ANSLUTER</span></span>
+        <span class="clock" id="clock">--:--:--</span>
+      </div>
+    </header>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <!-- Nivåmodul -->
+    <section class="readout" id="alert-card" aria-live="polite">
+      <div class="readout-main">
+        <div class="readout-label">NIVÅ</div>
+        <div class="readout-value">
+          <span id="level-word">····</span>
+          <span class="readout-desc" id="level-desc">läser lägesbild</span>
+        </div>
+      </div>
+      <div class="meter" role="img" aria-label="Hotnivåskala">
+        <div class="seg" data-step="gron"><b>GRÖN</b><span>låg</span></div>
+        <div class="seg" data-step="gul"><b>GUL</b><span>förhöjd</span></div>
+        <div class="seg" data-step="rod"><b>RÖD</b><span>allvarlig</span></div>
+      </div>
+    </section>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <div class="cols">
+      <!-- Situationsrapport -->
+      <section class="block" id="report">
+        <h2 class="block-h">// SITUATIONSRAPPORT</h2>
+        <p class="summary" id="summary">Läser in senaste analysen…</p>
+        <p class="reasoning" id="reasoning">—</p>
+      </section>
+
+      <!-- Systemstatus -->
+      <section class="block" id="sysstatus">
+        <h2 class="block-h">// SYSTEMSTATUS</h2>
+        <dl class="kv">
+          <div><dt>UPPDATERAD</dt><dd id="updated">—</dd></div>
+          <div><dt>NÄSTA</dt><dd id="next-update">—</dd></div>
+          <div><dt>ANALYS</dt><dd id="model">—</dd></div>
+          <div><dt>KÄLLOR</dt><dd id="sources">—</dd></div>
+        </dl>
+      </section>
+    </div>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <!-- Signallogg -->
+    <section class="block" id="events-block">
+      <h2 class="block-h">// SENASTE SIGNALER <span class="count" id="event-count"></span></h2>
+      <div class="log-wrap">
+        <table class="log">
+          <thead>
+            <tr><th class="c-time">TID</th><th class="c-src">KÄLLA</th><th class="c-title">RUBRIK</th></tr>
+          </thead>
+          <tbody id="events">
+            <tr class="log-empty"><td colspan="3">laddar signaler…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <!-- Prenumerera -->
+    <section class="block" id="subscribe">
+      <h2 class="block-h">// PRENUMERERA</h2>
+      <p class="sub-lead">Larm via e-post <strong>endast vid höjd hotnivå</strong> (gul/röd). Ingen utskick vid normalläge.</p>
+      <!--
+        Buttondown-embed. Ersätt DITT-ANVANDARNAMN med ditt Buttondown-användarnamn.
+        Ingen API-nyckel behövs här; Buttondown sköter bekräftelse och avregistrering.
+      -->
+      <form
+        class="sub-form"
+        action="https://buttondown.com/api/emails/embed-subscribe/DITT-ANVANDARNAMN"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.com/DITT-ANVANDARNAMN', 'popupwindow')"
+      >
+        <span class="prompt" aria-hidden="true">&gt;</span>
+        <label class="visually-hidden" for="bd-email">Din e-postadress</label>
+        <input id="bd-email" type="email" name="email" inputmode="email" autocomplete="email" placeholder="din@epost.se" required />
+        <button type="submit">PRENUMERERA</button>
+      </form>
+      <p class="sub-fine">E-postadressen hanteras av Buttondown. Du bekräftar via mejl och kan avregistrera dig när som helst.</p>
+    </section>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <!-- Systemnotis -->
+    <footer class="notice">
+      <p>
+        <span class="notice-tag">NOTIS</span>
+        Stormvarning är ett automatiserat stödverktyg som sammanställer <em>öppna</em>
+        hotsignaler (CERT-SE, MSB, säkerhetsnyheter) och låter en språkmodell göra en
+        preliminär lägesbedömning. Det är <strong>inte</strong> en officiell källa och
+        ersätter inte myndigheters information. Vid en pågående incident – följ alltid
+        <a href="https://www.cert.se" rel="noopener" target="_blank">CERT-SE</a> och
+        <a href="https://www.msb.se" rel="noopener" target="_blank">MSB</a>.
+      </p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

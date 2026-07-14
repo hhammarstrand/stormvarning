@@ -1,0 +1,20 @@
+{
+  "updated": "2026-07-14T18:00:00.000Z",
+  "next_update": "2026-07-14T18:30:00.000Z",
+  "level": "grön",
+  "level_label": "Grön – låg hotnivå",
+  "summary": "Normalläge. Inga tecken på förhöjt hot om storskalig cyberattack mot Sverige.",
+  "reasoning": "Detta är ett initialt exempeldokument som visas innan det schemalagda jobbet har kört första gången. Så snart GitHub Actions kört analysen (var 30:e minut) ersätts innehållet med en färsk lägesbild baserad på öppna hotsignaler från CERT-SE, MCF och säkerhetsnyheter.",
+  "events": [
+    {
+      "title": "Väntar på första automatiska analysen",
+      "source": "Stormvarning",
+      "date": "2026-07-14T18:00:00.000Z",
+      "link": "",
+      "summary": "Kör workflowet 'Uppdatera hotnivå' manuellt eller vänta på nästa schemalagda körning för att fylla listan med verkliga hotsignaler från CERT-SE, MCF och säkerhetsnyheter."
+    }
+  ],
+  "sources": ["CERT-SE", "MCF", "The Hacker News", "BleepingComputer"],
+  "model": null,
+  "notified_level": "grön"
+}

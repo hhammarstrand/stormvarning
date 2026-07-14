@@ -1,0 +1,50 @@
+name: Uppdatera hotnivå
+
+# Hämtar öppna hotsignaler, kör MiniMax-analys och committar data.json.
+on:
+  schedule:
+    - cron: "*/30 * * * *" # var 30:e minut (UTC)
+  workflow_dispatch: {} # tillåt manuell körning
+
+# Undvik överlappande körningar
+concurrency:
+  group: update-threat-level
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checka ut repot
+        uses: actions/checkout@v4
+
+      - name: Sätt upp Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Kör hotanalys
+        env:
+          MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+          MINIMAX_MODEL: ${{ secrets.MINIMAX_MODEL }}
+          MINIMAX_BASE_URL: ${{ secrets.MINIMAX_BASE_URL }}
+          MINIMAX_GROUP_ID: ${{ secrets.MINIMAX_GROUP_ID }}
+          # E-postnotiser (valfritt). Utan BUTTONDOWN_API_KEY skickas inga mejl.
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+        run: node scripts/analyze.mjs
+
+      - name: Committa uppdaterad data.json
+        run: |
+          git config user.name "stormvarning-bot"
+          git config user.email "actions@github.com"
+          if git diff --quiet -- data.json; then
+            echo "Ingen ändring i data.json – hoppar över commit."
+          else
+            git add data.json
+            git commit -m "Uppdatera hotnivå ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+            git push
+          fi

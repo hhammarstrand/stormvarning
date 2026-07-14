@@ -1,0 +1,232 @@
+:root {
+  --bg: #0a0c0f;
+  --panel: #0e1116;
+  --panel-2: #11151b;
+  --line: #1c2128;
+  --line-2: #262d36;
+
+  --fg: #d3d7dd;
+  --fg-dim: #8892a0;
+  --fg-faint: #565f6b;
+
+  --gron: #35d07f;
+  --gul: #ffb020;
+  --rod: #ff4747;
+  --okand: #6b7280;
+
+  /* Signalfärg drivs av data-level på <body> */
+  --sig: var(--okand);
+
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", Menlo, Consolas, "Roboto Mono", "DejaVu Sans Mono", monospace;
+  --maxw: 1040px;
+}
+
+body[data-level="gron"]  { --sig: var(--gron); }
+body[data-level="gul"]   { --sig: var(--gul); }
+body[data-level="rod"]   { --sig: var(--rod); }
+body[data-level="okand"] { --sig: var(--okand); }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--line-2); }
+a:hover { color: var(--sig); border-color: var(--sig); }
+
+/* Signalfärgad toppremsa */
+.topband {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--sig);
+  z-index: 10;
+  transition: background 0.4s;
+}
+
+.console {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 28px 22px 60px;
+}
+
+.rule { height: 1px; background: var(--line); margin: 22px 0; }
+
+/* ---------- Kommandorad ---------- */
+.cmdbar {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+}
+.cmdbar-id { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.logo {
+  font-size: 1.25rem; font-weight: 700; letter-spacing: 0.16em;
+  color: var(--fg);
+}
+.logo::before { content: "▚ "; color: var(--sig); }
+.logo-sub { color: var(--fg-faint); font-size: 0.78rem; letter-spacing: 0.06em; }
+
+.cmdbar-status { display: flex; align-items: center; gap: 18px; font-size: 0.8rem; }
+.live { display: inline-flex; align-items: center; gap: 7px; color: var(--fg-dim); letter-spacing: 0.1em; }
+.live-dot {
+  width: 8px; height: 8px; background: var(--fg-faint);
+  display: inline-block;
+}
+.live.ok  .live-dot { background: var(--gron); animation: blink 1.4s steps(1) infinite; }
+.live.err .live-dot { background: var(--rod); animation: blink 0.7s steps(1) infinite; }
+.clock { color: var(--fg-dim); letter-spacing: 0.08em; font-variant-numeric: tabular-nums; }
+
+@keyframes blink { 0%, 60% { opacity: 1; } 61%, 100% { opacity: 0.2; } }
+@media (prefers-reduced-motion: reduce) {
+  .live-dot { animation: none !important; }
+}
+
+/* ---------- Nivåmodul ---------- */
+.readout {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 28px; flex-wrap: wrap;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--sig);
+  padding: 22px 24px;
+}
+.readout-main { display: flex; align-items: baseline; gap: 18px; }
+.readout-label {
+  color: var(--fg-faint); font-size: 0.8rem; letter-spacing: 0.2em;
+  padding-top: 6px;
+}
+.readout-value { display: flex; flex-direction: column; gap: 2px; }
+#level-word {
+  font-size: 3.2rem; line-height: 1; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--sig);
+}
+.readout-desc { color: var(--fg-dim); font-size: 0.9rem; letter-spacing: 0.04em; }
+
+/* Segmenterad mätare */
+.meter { display: flex; gap: 6px; }
+.seg {
+  min-width: 88px;
+  border: 1px solid var(--line-2);
+  padding: 8px 12px;
+  display: flex; flex-direction: column; gap: 2px;
+  opacity: 0.4;
+  transition: opacity 0.25s, background 0.25s, border-color 0.25s;
+}
+.seg b { font-size: 0.82rem; letter-spacing: 0.08em; }
+.seg span { font-size: 0.68rem; color: var(--fg-faint); letter-spacing: 0.05em; }
+.seg[data-step="gron"] b { color: var(--gron); }
+.seg[data-step="gul"]  b { color: var(--gul); }
+.seg[data-step="rod"]  b { color: var(--rod); }
+
+body[data-level="gron"] .seg[data-step="gron"],
+body[data-level="gul"]  .seg[data-step="gul"],
+body[data-level="rod"]  .seg[data-step="rod"] {
+  opacity: 1;
+  border-color: var(--sig);
+  background: color-mix(in srgb, var(--sig) 14%, transparent);
+}
+/* Fyll även lägre segment upp till aktiv nivå (skala-känsla) */
+body[data-level="gul"] .seg[data-step="gron"],
+body[data-level="rod"] .seg[data-step="gron"],
+body[data-level="rod"] .seg[data-step="gul"] { opacity: 0.7; }
+
+/* ---------- Block ---------- */
+.cols {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.cols .block { background: var(--bg); padding: 20px 22px; }
+@media (max-width: 760px) {
+  .cols { grid-template-columns: 1fr; }
+}
+
+.block-h {
+  margin: 0 0 14px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em;
+  color: var(--fg-dim);
+}
+.count { color: var(--fg-faint); font-weight: 400; }
+
+.summary { margin: 0 0 12px; color: var(--fg); font-size: 0.98rem; }
+.reasoning { margin: 0; color: var(--fg-dim); white-space: pre-line; }
+.reasoning::before { content: "> "; color: var(--sig); }
+
+/* Nyckel/värde-status */
+.kv { margin: 0; display: grid; gap: 9px; }
+.kv > div { display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: baseline; }
+.kv dt { color: var(--fg-faint); font-size: 0.74rem; letter-spacing: 0.08em; margin: 0; }
+.kv dd { margin: 0; color: var(--fg-dim); font-size: 0.82rem; word-break: break-word; }
+
+/* ---------- Signallogg ---------- */
+.log-wrap { overflow-x: auto; }
+.log { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+.log th {
+  text-align: left; font-weight: 500; color: var(--fg-faint);
+  font-size: 0.7rem; letter-spacing: 0.1em;
+  padding: 0 12px 8px 0; border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+.log td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.log tbody tr:hover td { background: var(--panel-2); }
+.log .c-time { width: 74px; }
+.log .c-src { width: 128px; }
+.log td.c-time { color: var(--fg-faint); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.log td.c-src .src { color: var(--sig); font-size: 0.76rem; letter-spacing: 0.03em; }
+.log td.c-title a { border: 0; color: var(--fg); }
+.log td.c-title a:hover { color: var(--sig); }
+.log .ev-sum { display: block; color: var(--fg-faint); font-size: 0.78rem; margin-top: 3px; }
+.log-empty td { color: var(--fg-faint); font-style: italic; }
+
+/* ---------- Prenumerera ---------- */
+.sub-lead { margin: 0 0 14px; color: var(--fg-dim); }
+.sub-lead strong { color: var(--fg); }
+.sub-form { display: flex; align-items: stretch; gap: 8px; max-width: 480px; }
+.sub-form .prompt { display: flex; align-items: center; color: var(--sig); padding-right: 2px; }
+.sub-form input {
+  flex: 1 1 auto; min-width: 0;
+  background: var(--panel); border: 1px solid var(--line-2); color: var(--fg);
+  font-family: inherit; font-size: 0.9rem; padding: 10px 12px;
+}
+.sub-form input::placeholder { color: var(--fg-faint); }
+.sub-form input:focus { outline: none; border-color: var(--sig); }
+.sub-form button {
+  background: transparent; border: 1px solid var(--sig); color: var(--sig);
+  font-family: inherit; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em;
+  padding: 10px 18px; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.sub-form button:hover { background: var(--sig); color: var(--bg); }
+.sub-fine { margin: 12px 0 0; color: var(--fg-faint); font-size: 0.74rem; max-width: 62ch; }
+
+/* ---------- Systemnotis ---------- */
+.notice p { margin: 0; color: var(--fg-faint); font-size: 0.78rem; max-width: 84ch; line-height: 1.7; }
+.notice em { color: var(--fg-dim); font-style: normal; text-decoration: underline dotted var(--line-2); }
+.notice strong { color: var(--fg-dim); }
+.notice-tag {
+  color: var(--sig); border: 1px solid var(--line-2);
+  padding: 0 6px; margin-right: 8px; font-size: 0.7rem; letter-spacing: 0.1em;
+}
+
+/* Uppdateringsblink */
+.flash { animation: flash 0.9s ease; }
+@keyframes flash {
+  0% { border-left-color: var(--fg); background: var(--panel-2); }
+  100% { border-left-color: var(--sig); background: var(--panel); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flash { animation: none; }
+}
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
