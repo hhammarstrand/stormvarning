@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-14T21:27:41.274Z",
-  "next_update": "2026-07-14T21:57:41.274Z",
+  "updated": "2026-07-14T22:28:48.582Z",
+  "next_update": "2026-07-14T22:58:48.582Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjd risknivå på grund av pågående cyberattackkampanjer och sårbarheter som utnyttjas aktivt.",
-  "reasoning": "Det finns flera tecken på förhöjd hotnivå, inklusive en koordinerad leveranskedjeattack mot separata AsyncAPI GitHub-repon (CERT-SE) och rapporter om aktiva attacker mot kritiska sårbarheter i SonicWall och Microsoft-produkter. Även om det inte finns direkt bevis för en storskalig attack mot svensk infrastruktur, är det viktigt att vara uppmärksam på dessa hot och vidta försiktighetsåtgärder.",
+  "summary": "Förhöjd risknivå på grund av pågående cyberattackkampanjer och sårbarheter som aktivt utnyttjas.",
+  "reasoning": "Det finns tecken på pågående cyberattackkampanjer, såsom det koordinerade leveranskedjeangreppet mot separata AsyncAPI GitHub-repon och exploateringen av sårbarheter i populära programvaror som SonicWall och ShareFile. Dessa attacker kan potentiellt påverka svenska mål, särskilt med tanke på att sårbarheter i kritiska system aktivt utnyttjas. Även om det inte finns direkt bevis för en storskalig attack mot svensk infrastruktur, är det viktigt att vara försiktig med tanke på de ökade aktiviteterna i regionen.",
   "events": [
     {
       "title": "SonicWall warns of SMA1000 flaws exploited in zero-day attacks, patch now",
