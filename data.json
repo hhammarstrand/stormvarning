@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-15T10:39:52.152Z",
-  "next_update": "2026-07-15T11:09:52.152Z",
+  "updated": "2026-07-15T12:08:31.387Z",
+  "next_update": "2026-07-15T12:38:31.387Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjd risknivå på grund av aktivt utnyttjade sårbarheter och svenska myndighetsvarningar om pågående attacker.",
-  "reasoning": "Flera kritiska och aktivt utnyttjade sårbarheter har identifierats, inklusive sådana som påverkar Microsoft SharePoint och SonicWall SMA1000, vilket kan utgöra en risk för svenska mål. CERT-SE har också rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar aktivitet riktad mot svenska intressen. Även om det inte finns direkta tecken på en storskalig attack mot svensk kritisk infrastruktur, är detta tillräckligt för att motivera en förhöjd beredskap.",
-  "score": 69,
+  "summary": "Förhöjd risk för cyberattacker mot svenska mål på grund av aktivt utnyttjade sårbarheter och varningar från CERT-SE.",
+  "reasoning": "Flera kritiska sårbarheter, särskilt i SonicWall SMA1000 och Microsoft SharePoint, rapporteras vara aktivt utnyttjade och har taggats som SVERIGE-relaterade av CERT-SE. Dessa utgör en konkret risk för svenska organisationer, särskilt inom kritisk infrastruktur. Även om det inte finns direkta tecken på en pågående storskalig attack, är det nödvändigt att vidta omedelbara åtgärder för att minska risken.",
+  "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
-    "sweden_acute": 0,
+    "sweden_acute": 1,
     "actively_exploited": 14,
-    "critical": 3,
+    "critical": 4,
     "authority_alerts": 16,
     "kev_recent": 7
   },
@@ -22,6 +22,20 @@
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "events": [
+    {
+      "title": "Kritiska sårbarheter i SonicWall SMA1000",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-07-15T10:40:00.000Z",
+      "link": "https://www.cert.se/2026/07/kritiska-sarbarheter-i-sonicwall.html",
+      "summary": "<p>SonicWall har publicerat säkerhetsuppdateringar gällande två sårbarheter (CVE-2026-15409 och CVE-2026-15410) i SMA1000-serien. [1] CISA har lagt till dessa sårbarheter i KEV-katalogen (Known Exploited Vulnerabilities catalog). [2]</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-15409"
+      }
+    },
     {
       "title": "CVE-2026-56291: Balbooa Forms Unrestricted Upload of File with Dangerous Type Vulnerability",
       "source": "CISA KEV",
@@ -233,6 +247,20 @@
       }
     },
     {
+      "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-07-15T11:30:00.000Z",
+      "link": "https://www.cert.se/2026/07/patchtisdag-juli-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juli. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
       "title": "SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data",
       "source": "The Hacker News",
       "region": "INT",
@@ -323,34 +351,6 @@
       "date": "2026-06-18T13:00:00.000Z",
       "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
       "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.24",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-12T11:15:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v24.html",
-      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Fortsätt att få våra utskick",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-12T10:30:00.000Z",
-      "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
-      "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
