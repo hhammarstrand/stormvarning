@@ -1,24 +1,24 @@
 {
-  "updated": "2026-07-15T19:59:03.411Z",
-  "next_update": "2026-07-15T20:29:03.411Z",
+  "updated": "2026-07-15T20:57:57.598Z",
+  "next_update": "2026-07-15T21:27:57.598Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjd risknivå på grund av aktivt utnyttjade kritiska sårbarheter i Sverige och regionen.",
-  "reasoning": "Det finns flera kritiska sårbarheter som aktivt utnyttjas, inklusive två som specifikt berör SonicWall SMA1000, vilket är relevant för svenska mål. Dessa sårbarheter har hög allvarlighetsgrad och har uppmärksammats av både CERT-SE och CISA. Även om det inte finns direkta tecken på pågående storskaliga attacker mot Sverige, är risken för utnyttjande av dessa sårbarheter förhöjd.",
+  "summary": "Förhöjd risknivå på grund av aktivt utnyttjade kritiska sårbarheter som kan påverka svenska mål.",
+  "reasoning": "Det finns flera kritiska sårbarheter som aktivt utnyttjas globalt, inklusive två i SonicWall SMA1000 som kan påverka svenska mål. Dessa sårbarheter har hög allvarlighetsgrad och CERT-SE har utfärdat en varning om dem. Även om det inte finns specifika indikationer på pågående attacker mot svenska mål, är risken för att dessa sårbarheter används mot svenska organisationer förhöjd.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 3,
     "sweden_acute": 1,
     "actively_exploited": 18,
-    "critical": 4,
-    "authority_alerts": 14,
+    "critical": 5,
+    "authority_alerts": 13,
     "kev_recent": 9
   },
   "anomaly": {
     "active": false,
-    "baseline": 87,
-    "delta": 13
+    "baseline": 88,
+    "delta": 12
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "events": [
@@ -303,6 +303,20 @@
       }
     },
     {
+      "title": "Zoom warns of critical account takeover vulnerability",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-15T20:16:02.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/zoom-warns-of-critical-account-takeover-vulnerability/",
+      "summary": "Zoom is warning of a critical vulnerability in its desktop client and software development kit for Windows that could be exploited by an unauthenticated party to hijack accounts. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
       "source": "CERT-SE",
       "region": "SE",
@@ -337,20 +351,6 @@
       "date": "2026-07-14T13:25:00.000Z",
       "link": "https://www.cert.se/2026/07/skadliga-npm-paket.html",
       "summary": "<p>Ett koordinerat leveranskedjeangrepp har drabbat separata AsyncAPI GitHub-repon. Angripare har utnyttjat en sårbarhet i GitHub Actions. [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.26",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-26T12:55:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
-      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
