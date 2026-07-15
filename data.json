@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-15T14:16:55.393Z",
-  "next_update": "2026-07-15T14:46:55.393Z",
+  "updated": "2026-07-15T15:57:06.122Z",
+  "next_update": "2026-07-15T16:27:06.122Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjd risk för cyberattacker mot svenska mål på grund av aktivt utnyttjade sårbarheter i kritiska system.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive två i SonicWall SMA1000, har identifierats och är aktivt utnyttjade. Dessa sårbarheter är särskilt relevanta för Sverige eftersom de kan påverka kritiska system och har uppmärksammats av CERT-SE. Även om det inte finns direkta tecken på pågående storskaliga attacker mot svensk infrastruktur, är risken för lokala incidenter förhöjd.",
+  "summary": "Förhöjd risk för cyberattacker mot Sverige på grund av aktivt utnyttjade sårbarheter i kritiska system.",
+  "reasoning": "Flera kritiska sårbarheter, särskilt i SonicWall SMA1000 och Microsoft SharePoint, rapporteras vara aktivt utnyttjade och har potential att påverka svenska mål. Dessa sårbarheter har hög CVSS-poäng och CERT-SE har utfärdat varningar om dem. Även om det inte finns direkta tecken på en pågående storskalig attack mot svensk infrastruktur, är risken för lokala attacker förhöjd.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
