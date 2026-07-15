@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-15T08:39:45.453Z",
-  "next_update": "2026-07-15T09:09:45.453Z",
+  "updated": "2026-07-15T10:39:52.152Z",
+  "next_update": "2026-07-15T11:09:52.152Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjd risk för cyberattacker mot Sverige på grund av aktivt utnyttjade sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska och aktivt utnyttjade sårbarheter har identifierats, inklusive CVE-2026-56291, CVE-2026-56155, och CVE-2026-56164, vilket ökar risken för attacker mot svenska mål. CERT-SE har också rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar aktivitet riktad mot svenska intressen. Även om det inte finns direkta tecken på en storskalig attack, är det viktigt att vara försiktig med tanke på de pågående hoten.",
-  "score": 66,
+  "summary": "Förhöjd risknivå på grund av aktivt utnyttjade sårbarheter och svenska myndighetsvarningar om pågående attacker.",
+  "reasoning": "Flera kritiska och aktivt utnyttjade sårbarheter har identifierats, inklusive sådana som påverkar Microsoft SharePoint och SonicWall SMA1000, vilket kan utgöra en risk för svenska mål. CERT-SE har också rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar aktivitet riktad mot svenska intressen. Även om det inte finns direkta tecken på en storskalig attack mot svensk kritisk infrastruktur, är detta tillräckligt för att motivera en förhöjd beredskap.",
+  "score": 69,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 9,
+    "sweden_relevant": 8,
     "sweden_acute": 0,
-    "actively_exploited": 13,
+    "actively_exploited": 14,
     "critical": 3,
-    "authority_alerts": 17,
+    "authority_alerts": 16,
     "kev_recent": 7
   },
   "anomaly": {
@@ -118,6 +118,20 @@
         "critical": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-48939"
+      }
+    },
+    {
+      "title": "CISA warns admins to patch actively exploited SharePoint flaws",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-15T09:44:52.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-patch-actively-exploited-sharepoint-flaws/",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned Tuesday that attackers are actively exploiting three vulnerabilities to hack Internet-exposed on-premises SharePoint Server instances. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -337,20 +351,6 @@
       "date": "2026-06-12T10:30:00.000Z",
       "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
       "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Cyberverksamheten samlas hos FRA – övergång till Nationellt cybersäkerhetscenter den 1 juli 2026",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-12T10:00:20.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
-      "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
