@@ -194,6 +194,11 @@ body[data-level="rod"] .seg[data-step="gul"] { opacity: 0.7; }
   color: var(--fg-dim);
 }
 .count { color: var(--fg-faint); font-weight: 400; }
+.log-filter {
+  float: right; font-size: 0.72rem; color: var(--fg-dim); letter-spacing: 0;
+  text-transform: none; font-weight: 400; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+}
+.log-filter input { accent-color: var(--sig); cursor: pointer; }
 
 .summary { margin: 0 0 12px; color: var(--fg); font-size: 0.98rem; }
 .reasoning { margin: 0; color: var(--fg-dim); white-space: pre-line; }

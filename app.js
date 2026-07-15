@@ -139,15 +139,21 @@
     }).join("");
   }
 
+  var allEvents = [];
+
   function renderEvents(events) {
+    if (Array.isArray(events)) allEvents = events;
     var tb = $("events");
-    if (!Array.isArray(events) || events.length === 0) {
-      tb.innerHTML = '<tr class="log-empty"><td colspan="3">Inga signaler att visa just nu.</td></tr>';
-      $("event-count").textContent = "";
+    var seOnly = $("se-only") && $("se-only").checked;
+    var list = seOnly ? allEvents.filter(function (e) { return e.flags && e.flags.swedenRelevant; }) : allEvents;
+    if (!Array.isArray(list) || list.length === 0) {
+      tb.innerHTML = '<tr class="log-empty"><td colspan="3">' +
+        (seOnly ? "Inga svenska signaler just nu." : "Inga signaler att visa just nu.") + "</td></tr>";
+      $("event-count").textContent = seOnly ? "[0/" + allEvents.length + "]" : "";
       return;
     }
-    $("event-count").textContent = "[" + events.length + "]";
-    tb.innerHTML = events.map(function (ev) {
+    $("event-count").textContent = "[" + list.length + (seOnly ? "/" + allEvents.length : "") + "]";
+    tb.innerHTML = list.map(function (ev) {
       var f = ev.flags || {};
       var badges = "";
       if (f.swedenRelevant) badges += '<span class="badge se">SE</span>';
@@ -258,6 +264,10 @@
   document.addEventListener("visibilitychange", function () {
     if (document.visibilityState === "visible") load();
   });
+
+  // Filter: endast svenska signaler
+  var seOnlyBox = $("se-only");
+  if (seOnlyBox) seOnlyBox.addEventListener("change", function () { renderEvents(); });
 
   // PWA: registrera service worker (offline/installbar). Tyst om det inte stöds.
   if ("serviceWorker" in navigator) {
