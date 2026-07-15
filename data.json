@@ -1,122 +1,424 @@
 {
-  "updated": "2026-07-15T06:04:22.779Z",
-  "next_update": "2026-07-15T06:34:22.779Z",
-  "level": "gul",
-  "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjd risknivå på grund av pågående sårbarheter och attacker i regionen.",
-  "reasoning": "Det finns flera tecken på pågående attacker och utnyttjande av sårbarheter, särskilt med rapporter om koordinerade leveranskedjeangrepp mot AsyncAPI GitHub-repon och utnyttjande av noll-dagars sårbarheter i populära programvaror som SonicWall och ShareFile. Även om dessa inte direkt riktar sig mot svensk kritisk infrastruktur, är det en indikation på en ökad aktivitet i regionen som kan påverka svenska mål.",
+  "updated": "2026-07-15T06:28:51.835Z",
+  "next_update": "2026-07-15T06:58:51.835Z",
+  "level": "grön",
+  "level_label": "Grön – låg hotnivå",
+  "summary": "Inga tydliga tecken på förhöjt hot mot Sverige i signalerna. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 13 aktivt utnyttjade sårbarheter, 9 Sverige-relaterade signaler, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 66,
+  "indicators": {
+    "total_signals": 24,
+    "sweden_relevant": 9,
+    "sweden_acute": 0,
+    "actively_exploited": 13,
+    "critical": 3,
+    "authority_alerts": 17,
+    "kev_recent": 7
+  },
+  "anomaly": {
+    "active": false,
+    "baseline": null,
+    "delta": 0
+  },
+  "level_since": "2026-07-15T06:28:51.835Z",
   "events": [
+    {
+      "title": "CVE-2026-56291: Balbooa Forms Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-10T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-56291",
+      "summary": "Balbooa Forms – Balbooa Forms contains an unrestricted upload of file with dangerous type vulnerability that allows an unauthenticated arbitrary file upload which could allow uploading of executable files leading to full RCE.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-56291"
+      }
+    },
+    {
+      "title": "CVE-2026-56155: Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability ",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-14T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-56155",
+      "summary": "Microsoft Active Directory Federation Services – Microsoft Active Directory Federation Services contains an insufficient granularity of access control vulnerability that allows an authorized attacker to elevate privileges locally.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-56155"
+      }
+    },
+    {
+      "title": "CVE-2026-56164: Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-14T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-56164",
+      "summary": "Microsoft SharePoint Server – Microsoft SharePoint contains a missing authentication for critical function vulnerability that allows an unauthorized attacker to elevate privileges over a network.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-56164"
+      }
+    },
+    {
+      "title": "CVE-2026-15409: SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-14T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-15409",
+      "summary": "SonicWall SMA1000 Appliances – SonicWall SMA1000 Appliances contain a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to potentially cause the appliance to make requests to unintended location.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-15409"
+      }
+    },
+    {
+      "title": "CVE-2026-15410: SonicWall SMA1000 Appliances Code Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-14T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-15410",
+      "summary": "SonicWall SMA1000 Appliances – SonicWall SMA1000 Appliances contain a code injection vulnerability which in specific conditions could potentially enable a remote authenticated attacker as administrator to execute arbitrary OS commands.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-15410"
+      }
+    },
+    {
+      "title": "CVE-2008-4128: Cisco IOS Cross-Site Request Forgery Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-13T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2008-4128",
+      "summary": "Cisco IOS – Cisco IOS 12.4 contains multiple cross-site forgery vulnerabilities that allows remote attackers to execute arbitrary commands via (1) a certain \"show privilege\" command to the /level/15/exec/- URI, and (2) a certain \"alias exec\" command to the /level/15/exec/-/confi…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2008-4128"
+      }
+    },
+    {
+      "title": "CVE-2026-48939: iCagenda Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-10T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-48939",
+      "summary": "iCagenda iCagenda – iCagenda contains an unrestricted upload of file with dangerous type vulnerability that allows the upload of arbitrary files in the file attachment feature, ultimately resulting in PHP code upload and execution.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-48939"
+      }
+    },
+    {
+      "title": "Two SonicWall SMA 1000 Zero-Days Exploited, One Could Enable Admin Commands",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-15T05:30:21.000Z",
+      "link": "https://thehackernews.com/2026/07/two-sonicwall-sma-1000-zero-days.html",
+      "summary": "SonicWall has warned of active exploitation of two zero-day vulnerabilities impacting Secure Mobile Access (SMA) 1000 series appliances, one of which could be exploited to achieve arbitrary command execution. The vulnerabilities are listed below - CVE-2026-15409 (CVSS score: 10.…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-15409"
+      }
+    },
     {
       "title": "SonicWall warns of SMA1000 flaws exploited in zero-day attacks, patch now",
       "source": "BleepingComputer",
+      "region": "INT",
       "date": "2026-07-14T21:23:24.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-sma1000-flaws-exploited-in-zero-day-attacks-patch-now/",
-      "summary": "SonicWall warns that threat actors have been exploiting two SMA1000 vulnerabilities, tracked as CVE-2026-15409 and CVE-2026-15410, in zero-day attacks and urges customers to install the newly released security updates. [...]"
+      "summary": "SonicWall warns that threat actors have been exploiting two SMA1000 vulnerabilities, tracked as CVE-2026-15409 and CVE-2026-15410, in zero-day attacks and urges customers to install the newly released security updates. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-15409"
+      }
     },
     {
       "title": "Microsoft Patches Record 622 Flaws, Including Two Zero-Days Under Active Attack",
       "source": "The Hacker News",
+      "region": "INT",
       "date": "2026-07-14T20:25:47.000Z",
       "link": "https://thehackernews.com/2026/07/microsoft-patches-record-622-flaws.html",
-      "summary": "Microsoft shipped its largest Patch Tuesday on record today, and two of the fixes close holes that attackers are already exploiting. The release covers 622 of Microsoft's own CVEs by its Security Update Guide count, more than triple June's previous high of around 200. Those two…"
-    },
-    {
-      "title": "Spanish Police take down €140 million cyber fraud ring, arrest four",
-      "source": "BleepingComputer",
-      "date": "2026-07-14T20:23:09.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/spanish-police-take-down-140-million-cyber-fraud-ring-arrest-four/",
-      "summary": "The Spanish Police dismantled a cybercrime and money-laundering organization that made €140 million ($160 million) from investment fraud and business email compromise (BEC) attacks. [...]"
-    },
-    {
-      "title": "Nearly 300 GitHub repos pose as legit software to push malware",
-      "source": "BleepingComputer",
-      "date": "2026-07-14T19:15:17.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/nearly-300-github-repos-pose-as-legit-software-to-push-malware/",
-      "summary": "A threat actor has published hundreds of fake GitHub repositories impersonating legitimate software and security projects to distribute infostealer malware. [...]"
-    },
-    {
-      "title": "Microsoft releases Windows 10 KB5099539 extended security update",
-      "source": "BleepingComputer",
-      "date": "2026-07-14T18:49:28.000Z",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-windows-10-kb5099539-extended-security-update/",
-      "summary": "Microsoft has released the Windows 10 KB5099539 extended security update, which includes the July 2026 Patch Tuesday security updates for 570 vulnerabilities, along with additional security fixes. [...]"
-    },
-    {
-      "title": "SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data",
-      "source": "The Hacker News",
-      "date": "2026-07-14T18:17:57.000Z",
-      "link": "https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html",
-      "summary": "SAP has rolled out updates to address multiple vulnerabilities as part of its July 2026 security updates, including a critical flaw in SAP NetWeaver Application Server ABAP. The vulnerability in question is CVE-2026-44747 (CVSS score: 9.9), an out-of-bounds write flaw that allow…"
+      "summary": "Microsoft shipped its largest Patch Tuesday on record today, and two of the fixes close holes that attackers are already exploiting. The release covers 622 of Microsoft's own CVEs by its Security Update Guide count, more than triple June's previous high of around 200. Those two…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     },
     {
       "title": "Microsoft July 2026 Patch Tuesday fixes massive 570 flaws, 3 zero-days",
       "source": "BleepingComputer",
+      "region": "INT",
       "date": "2026-07-14T18:01:36.000Z",
       "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-july-2026-patch-tuesday-fixes-massive-570-flaws-3-zero-days/",
-      "summary": "Today is Microsoft's July 2026 Patch Tuesday, and with it comes security updates for a record-breaking 570 flaws, including two zero-day vulnerabilities exploited in attacks and one publicly disclosed. [...]"
-    },
-    {
-      "title": "Windows 11 KB5101650 & KB5099414 cumulative updates released",
-      "source": "BleepingComputer",
-      "date": "2026-07-14T17:41:16.000Z",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5101650-and-kb5099414-cumulative-updates-released/",
-      "summary": "Microsoft has released Windows 11's June 2026 Update for version 25H2, 24H2, and 23H2, bringing fixes for over 570 security issues. [...]"
-    },
-    {
-      "title": "Researchers Say Claude for Chrome Flaw Lets Rogue Extensions Trigger Gmail Reads",
-      "source": "The Hacker News",
-      "date": "2026-07-14T17:27:23.000Z",
-      "link": "https://thehackernews.com/2026/07/claude-for-chrome-flaw-lets-other.html",
-      "summary": "Any other browser extension that can run a script on claude.ai can still trigger Claude for Chrome tasks aimed at your Gmail, your latest Google Doc and its comments, and your Calendar. Both this and ClaudeBleed need a rogue extension that can already run a script on claude.ai;…"
-    },
-    {
-      "title": "LabubaRAT Masquerades as NVIDIA Software to Control Windows Hosts",
-      "source": "The Hacker News",
-      "date": "2026-07-14T16:52:37.000Z",
-      "link": "https://thehackernews.com/2026/07/labubarat-masquerades-as-nvidia.html",
-      "summary": "Cybersecurity researchers have flagged a previously undocumented Rust-based remote access trojan (RAT) codenamed LabubaRAT that masquerades as NVIDIA software to blend into target environments. \"LabubaRAT creates a reusable foothold for hands-on activity,\" Blackpoint Cyber resea…"
+      "summary": "Today is Microsoft's July 2026 Patch Tuesday, and with it comes security updates for a record-breaking 570 flaws, including two zero-day vulnerabilities exploited in attacks and one publicly disclosed. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     },
     {
       "title": "Progress confirms ShareFile zero-day flaw behind Storage Zone shutdown",
       "source": "BleepingComputer",
+      "region": "INT",
       "date": "2026-07-14T16:08:47.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/progress-confirms-sharefile-zero-day-flaw-behind-storage-zone-shutdown/",
-      "summary": "Progress Software has confirmed that a high-severity zero-day vulnerability is behind the emergency shutdown of ShareFile Storage Zone Controllers last week and has released security updates to patch the flaw. [...]"
+      "summary": "Progress Software has confirmed that a high-severity zero-day vulnerability is behind the emergency shutdown of ShareFile Storage Zone Controllers last week and has released security updates to patch the flaw. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     },
     {
-      "title": "LastPass, Bitwarden users targeted with fake security alerts",
-      "source": "BleepingComputer",
-      "date": "2026-07-14T15:31:52.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/lastpass-bitwarden-users-targeted-with-fake-security-alerts/",
-      "summary": "LastPass is warning users about an ongoing phishing campaign that is using fake security notices to direct them to fraudulent websites. [...]"
-    },
-    {
-      "title": "You Don't Have to Run an Exploit to Know If You're Vulnerable",
-      "source": "BleepingComputer",
-      "date": "2026-07-14T14:00:10.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/you-dont-have-to-run-an-exploit-to-know-if-youre-vulnerable/",
-      "summary": "Many vulnerabilities cannot be safely validated with live exploits, either because no exploit exists or the affected systems are too critical to test. Picus explains how TTP chaining helps organizations determine exploitability by validating the attack techniques an exploit depe…"
-    },
-    {
-      "title": "RabbitMQ Flaws Could Leak OAuth Secrets and Expose Cross-Tenant Queue Metadata",
+      "title": "iCagenda and Balbooa Forms Joomla Flaws Reportedly Exploited as Zero-Days",
       "source": "The Hacker News",
-      "date": "2026-07-14T13:48:07.000Z",
-      "link": "https://thehackernews.com/2026/07/rabbitmq-flaws-could-leak-oauth-secrets.html",
-      "summary": "Cybersecurity researchers have disclosed details of two access control-related flaws impacting the RabbitMQ message broker service that could allow attackers to leak OAuth client secrets, expose enterprise messaging infrastructure to takeover risks, and bypass tenant boundaries.…"
+      "region": "INT",
+      "date": "2026-07-13T05:36:02.000Z",
+      "link": "https://thehackernews.com/2026/07/icagenda-and-balbooa-forms-joomla-flaws.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added two maximum-severity security flaws impacting iCagenda and Balbooa extensions for Joomla to its Known Exploited Vulnerabilities (KEV) catalog, following reports of zero-day exploitation in the wild. The v…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Vulnerability affecting F5 BIG-IP APM",
+      "source": "NCSC-UK",
+      "region": "INT",
+      "date": "2026-03-30T12:00:00.000Z",
+      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
+      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-14T18:17:57.000Z",
+      "link": "https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html",
+      "summary": "SAP has rolled out updates to address multiple vulnerabilities as part of its July 2026 security updates, including a critical flaw in SAP NetWeaver Application Server ABAP. The vulnerability in question is CVE-2026-44747 (CVSS score: 9.9), an out-of-bounds write flaw that allow…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-44747"
+      }
     },
     {
       "title": "Skadliga npm-paket",
       "source": "CERT-SE",
+      "region": "SE",
       "date": "2026-07-14T13:25:00.000Z",
       "link": "https://www.cert.se/2026/07/skadliga-npm-paket.html",
-      "summary": "<p>Ett koordinerat leveranskedjeangrepp har drabbat separata AsyncAPI GitHub-repon. Angripare har utnyttjat en sårbarhet i GitHub Actions. [1]</p>"
+      "summary": "<p>Ett koordinerat leveranskedjeangrepp har drabbat separata AsyncAPI GitHub-repon. Angripare har utnyttjat en sårbarhet i GitHub Actions. [1]</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.26",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-26T12:55:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
+      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-26T08:34:35.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
+      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Klimatriskerna för Sverige ökar",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-25T09:30:10.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
+      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Information och rekommendationer gällande säkerhet kring brandväggar",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-22T14:20:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-information-gallande-sakerhet-i-brandvaggar.html",
+      "summary": "<p>Brandväggar är en återkommande utmaning gällande angrepp från hotaktörer. Nu senast den uppmärksammade FortiBleed-läckan, där hotaktörer utnyttjar läckta inloggningsuppgifter i stor skala. [1] Med anledning av angrepp mot brandväggar publicerar CERT-SE information och rekomme…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.25",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-18T13:00:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
+      "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.24",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-12T11:15:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v24.html",
+      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Fortsätt att få våra utskick",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-12T10:30:00.000Z",
+      "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
+      "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Cyberverksamheten samlas hos FRA – övergång till Nationellt cybersäkerhetscenter den 1 juli 2026",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-12T10:00:20.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
+      "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    }
+  ],
+  "sources_health": [
+    {
+      "name": "CERT-SE",
+      "region": "SE",
+      "ok": true,
+      "count": 10
+    },
+    {
+      "name": "MCF",
+      "region": "SE",
+      "ok": true,
+      "count": 12
+    },
+    {
+      "name": "Krisinformation",
+      "region": "SE",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "CISA KEV",
+      "region": "INT",
+      "ok": true,
+      "count": 7
+    },
+    {
+      "name": "CISA",
+      "region": "INT",
+      "ok": true,
+      "count": 30
+    },
+    {
+      "name": "NCSC-UK",
+      "region": "INT",
+      "ok": true,
+      "count": 20
+    },
+    {
+      "name": "The Hacker News",
+      "region": "INT",
+      "ok": true,
+      "count": 50
+    },
+    {
+      "name": "BleepingComputer",
+      "region": "INT",
+      "ok": true,
+      "count": 15
     }
   ],
   "sources": [
-    "BleepingComputer",
+    "CERT-SE",
+    "MCF",
+    "Krisinformation",
+    "CISA KEV",
+    "CISA",
+    "NCSC-UK",
     "The Hacker News",
-    "CERT-SE"
+    "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }

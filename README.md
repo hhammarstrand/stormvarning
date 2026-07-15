@@ -3,7 +3,9 @@
 **Tidigt varningssystem för storskaliga cyberattacker mot Sverige.**
 
 Stormvarning är en helt statisk webbapp (ren HTML/CSS/JS, ingen backend) som
-sammanställer **öppna** hotsignaler och låter en språkmodell göra en preliminär
+sammanställer **öppna** hotsignaler från svenska myndigheter, CISA:s katalog över
+aktivt utnyttjade sårbarheter (KEV), internationella CERT:er och säkerhetsnyheter,
+beräknar deterministiska indikatorer och låter en språkmodell göra en preliminär
 lägesbedömning på en trestegsskala:
 
 | Nivå | Betydelse |
@@ -33,12 +35,33 @@ lägesbedömning på en trestegsskala:
 
 1. Ett schemalagt GitHub Actions-jobb (`.github/workflows/update-threat-level.yml`)
    kör var 30:e minut.
-2. `scripts/analyze.mjs` hämtar öppna RSS/Atom-flöden (CERT-SE, MSB, säkerhetsnyheter),
-   normaliserar dem och skickar dem till **MiniMax** för bedömning.
-3. Resultatet (nivå + svensk lägesbild + senaste händelser) skrivs till `data.json`,
-   som committas till repot.
-4. Frontenden (`index.html` + `app.js`) läser `data.json` och uppdaterar sig själv
-   automatiskt var 3:e minut.
+2. `scripts/analyze.mjs` hämtar och normaliserar öppna signaler från flera källor
+   (se nedan), flaggar dem deterministiskt (Sverige-relevans, aktivt utnyttjade,
+   kritiska) och beräknar **indikatorer** + ett **riskindex (0–100)**. Underlaget
+   skickas till **MiniMax** för bedömning.
+3. Resultatet (nivå, lägesbild, indikatorer, riskindex, signaler, källhälsa) skrivs
+   till `data.json`, och en historikpunkt läggs till `history.json` – båda committas.
+4. En **avvikelsedetektor** jämför aktuellt riskindex mot baslinjen (medel av
+   historiken) och flaggar en ovanlig ökning *innan* nivån formellt höjs.
+5. Frontenden (`index.html` + `app.js`) läser filerna och uppdaterar sig själv var
+   3:e minut. Den visar hotnivå, riskindex, tripwires, avvikelselarm, tid på nivån,
+   en trendtidslinje, signallogg och källhälsa. Sidan är även en installbar PWA
+   (offline-skal via `sw.js`).
+
+Om MiniMax inte är tillgänglig används en **konservativ deterministisk heuristik** som
+fallback (larmar bara vid en akut signal med svensk koppling) – systemet är aldrig tyst.
+
+### Källor
+
+| Källa | Region | Typ |
+| --- | --- | --- |
+| CERT-SE | 🇸🇪 | RSS |
+| MCF (Myndigheten för civilt försvar) | 🇸🇪 | RSS (cyberfiltrerad) |
+| Krisinformation.se | 🇸🇪 | JSON (cyberfiltrerad) |
+| CISA KEV (aktivt utnyttjade sårbarheter) | 🌐 | JSON |
+| CISA advisories | 🌐 | RSS |
+| NCSC-UK | 🌐 | RSS |
+| The Hacker News, BleepingComputer | 🌐 | RSS |
 
 **MiniMax-nyckeln ligger i GitHub Secrets och exponeras aldrig i klientkoden.**
 
@@ -55,8 +78,8 @@ I repot: **Settings → Secrets and variables → Actions → New repository sec
 | `MINIMAX_BASE_URL` | Nej | Bas-URL (default `https://api.minimaxi.chat`). |
 | `MINIMAX_GROUP_ID` | Nej | GroupId om ditt MiniMax-konto kräver det. |
 
-Utan `MINIMAX_API_KEY` körs jobbet ändå, men skriver nivå `okänd` (händelselistan
-fylls fortfarande på).
+Utan `MINIMAX_API_KEY` körs jobbet ändå och använder den deterministiska heuristiken
+som fallback (indikatorer, riskindex och signallogg fylls i som vanligt).
 
 ### 2. Aktivera GitHub Pages
 
@@ -109,18 +132,29 @@ python3 -m http.server 8000
 
 Kräver **Node 20+** (för inbyggda `fetch`). Inga npm-beroenden.
 
+Kör enhetstesterna för den deterministiska kärnan (nivåer, indikatorer, riskindex,
+heuristik, avvikelse):
+
+```bash
+node --test scripts/analyze.test.mjs
+```
+
 ## Anpassa källor
 
-Redigera listan `FEEDS` överst i [`scripts/analyze.mjs`](scripts/analyze.mjs).
-Varje post har `name`, `url` och `weight` (`hög` för myndighetskällor, `medel` för
-nyheter) – vikten skickas med till modellen så att officiella källor väger tyngst.
+Redigera listan `SOURCES` överst i [`scripts/analyze.mjs`](scripts/analyze.mjs).
+Varje post har `name`, `url`, `region` (`SE`/`INT`), `weight` (`hög`/`medel`) och
+`type` (`rss`, `kev` eller `krisinfo`). Sätt `cyberFilter: true` för källor med
+blandat innehåll (bara cyberrelevanta poster behålls). Vikt och taggar skickas med
+till modellen så att myndighetskällor och akuta signaler väger tyngst.
 
 ## Filöversikt
 
 | Fil | Roll |
 | --- | --- |
-| `index.html`, `styles.css`, `app.js` | Statisk frontend. |
+| `index.html`, `styles.css`, `app.js` | Statisk frontend (operatörskonsol). |
+| `manifest.webmanifest`, `sw.js`, `icon.svg` | PWA – installbar/offline. |
 | `data.json` | Genererad lägesbild (committas av jobbet). |
-| `scripts/analyze.mjs` | Hämtar signaler, kör MiniMax-analys, skriver `data.json`. |
+| `history.json` | Trendhistorik (nivå + riskindex per körning). |
+| `scripts/analyze.mjs` | Hämtar signaler, beräknar indikatorer, kör MiniMax, skriver filerna. |
 | `.github/workflows/update-threat-level.yml` | Cron var 30:e min. |
-| `.github/workflows/pages.yml` | Deploy till GitHub Pages. |
+| `.github/workflows/pages.yml` | Deploy till GitHub Pages (även efter varje analys). |
