@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-15T06:28:51.835Z",
-  "next_update": "2026-07-15T06:58:51.835Z",
-  "level": "grön",
-  "level_label": "Grön – låg hotnivå",
-  "summary": "Inga tydliga tecken på förhöjt hot mot Sverige i signalerna. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 13 aktivt utnyttjade sårbarheter, 9 Sverige-relaterade signaler, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "updated": "2026-07-15T08:39:45.453Z",
+  "next_update": "2026-07-15T09:09:45.453Z",
+  "level": "gul",
+  "level_label": "Gul – förhöjd hotnivå",
+  "summary": "Förhöjd risk för cyberattacker mot Sverige på grund av aktivt utnyttjade sårbarheter och myndighetsvarningar.",
+  "reasoning": "Flera kritiska och aktivt utnyttjade sårbarheter har identifierats, inklusive CVE-2026-56291, CVE-2026-56155, och CVE-2026-56164, vilket ökar risken för attacker mot svenska mål. CERT-SE har också rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar aktivitet riktad mot svenska intressen. Även om det inte finns direkta tecken på en storskalig attack, är det viktigt att vara försiktig med tanke på de pågående hoten.",
   "score": 66,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": null,
     "delta": 0
   },
-  "level_since": "2026-07-15T06:28:51.835Z",
+  "level_since": "2026-07-15T08:39:45.453Z",
   "events": [
     {
       "title": "CVE-2026-56291: Balbooa Forms Unrestricted Upload of File with Dangerous Type Vulnerability",
@@ -419,6 +419,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
