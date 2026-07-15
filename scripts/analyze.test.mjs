@@ -7,6 +7,7 @@ import assert from "node:assert/strict";
 import {
   normalizeLevel, levelRank, riskScore, heuristicLevel,
   computeIndicators, annotate, detectAnomaly, computeLevelSince,
+  applyLevelPolicy, applyHysteresis,
 } from "./analyze.mjs";
 
 test("normalizeLevel mappar varianter", () => {
@@ -70,6 +71,52 @@ test("detectAnomaly kräver underlag och fångar spikar", () => {
   const stable = [10, 12, 11, 9, 10, 13, 11, 10, 12, 11];
   assert.equal(detectAnomaly(stable, 12).active, false); // normalt
   assert.equal(detectAnomaly(stable, 80).active, true);  // spik
+});
+
+test("applyLevelPolicy: gul kräver svensk-akut, röd kräver flera", () => {
+  // Utan svensk-akut: allt klampas till grön
+  assert.equal(applyLevelPolicy("gul", { sweden_acute: 0 }).level, "grön");
+  assert.equal(applyLevelPolicy("röd", { sweden_acute: 0 }).level, "grön");
+  assert.ok(applyLevelPolicy("gul", { sweden_acute: 0 }).note);
+  // En svensk-akut: gul ok, röd klampas till gul
+  assert.equal(applyLevelPolicy("gul", { sweden_acute: 1 }).level, "gul");
+  assert.equal(applyLevelPolicy("röd", { sweden_acute: 1 }).level, "gul");
+  // Flera svensk-akuta: röd ok
+  assert.equal(applyLevelPolicy("röd", { sweden_acute: 2 }).level, "röd");
+  // Grön passerar alltid utan not
+  const g = applyLevelPolicy("grön", { sweden_acute: 5 });
+  assert.equal(g.level, "grön");
+  assert.equal(g.note, null);
+});
+
+test("applyHysteresis: snabbt upp, långsamt ner", () => {
+  // Höjning slår igenom direkt
+  assert.equal(applyHysteresis("röd", "grön", 0).level, "röd");
+  // Oförändrat: ingen pending, streak nollställs
+  const same = applyHysteresis("gul", "gul", 2);
+  assert.equal(same.level, "gul");
+  assert.equal(same.streak, 0);
+  // Sänkning: hålls kvar tills 3 bekräftelser
+  const d1 = applyHysteresis("grön", "gul", 0);
+  assert.equal(d1.level, "gul");
+  assert.equal(d1.streak, 1);
+  assert.deepEqual(d1.pending, { to: "grön", confirmations: 1, required: 3 });
+  const d2 = applyHysteresis("grön", "gul", d1.streak);
+  assert.equal(d2.level, "gul");
+  const d3 = applyHysteresis("grön", "gul", d2.streak);
+  assert.equal(d3.level, "grön"); // tredje körningen: sänkningen slår igenom
+  assert.equal(d3.streak, 0);
+  assert.equal(d3.pending, null);
+  // Okänd hanteras utan hysteres
+  assert.equal(applyHysteresis("okänd", "gul", 0).level, "okänd");
+});
+
+test("annotate flaggar incident (bekräftat angrepp)", () => {
+  const ev = annotate({ title: "Skadliga npm-paket", summary: "Ett koordinerat leveranskedjeangrepp har drabbat separata repon.", region: "SE", flags: {} });
+  assert.equal(ev.flags.incident, true);
+  assert.equal(ev.flags.swedenRelevant, true);
+  const ind = computeIndicators([{ ...ev, source: "CERT-SE" }]);
+  assert.equal(ind.sweden_acute, 1); // incident räknas som akut
 });
 
 test("computeLevelSince hittar början på nuvarande nivåstreak", () => {

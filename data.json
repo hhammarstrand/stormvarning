@@ -1,15 +1,15 @@
 {
-  "updated": "2026-07-15T14:16:55.393Z",
-  "next_update": "2026-07-15T14:46:55.393Z",
+  "updated": "2026-07-15T15:23:45.087Z",
+  "next_update": "2026-07-15T15:53:45.087Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjd risk för cyberattacker mot svenska mål på grund av aktivt utnyttjade sårbarheter i kritiska system.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive två i SonicWall SMA1000, har identifierats och är aktivt utnyttjade. Dessa sårbarheter är särskilt relevanta för Sverige eftersom de kan påverka kritiska system och har uppmärksammats av CERT-SE. Även om det inte finns direkta tecken på pågående storskaliga attacker mot svensk infrastruktur, är risken för lokala incidenter förhöjd.",
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
-    "sweden_acute": 1,
+    "sweden_acute": 3,
     "actively_exploited": 16,
     "critical": 4,
     "authority_alerts": 14,
@@ -21,6 +21,8 @@
     "delta": 0
   },
   "level_since": "2026-07-15T08:39:45.453Z",
+  "de_escalation": null,
+  "down_streak": 0,
   "events": [
     {
       "title": "Kritiska sårbarheter i SonicWall SMA1000",
@@ -32,8 +34,39 @@
       "flags": {
         "activelyExploited": false,
         "critical": true,
+        "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-15409"
+      }
+    },
+    {
+      "title": "Skadliga npm-paket",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-07-14T13:25:00.000Z",
+      "link": "https://www.cert.se/2026/07/skadliga-npm-paket.html",
+      "summary": "<p>Ett koordinerat leveranskedjeangrepp har drabbat separata AsyncAPI GitHub-repon. Angripare har utnyttjat en sårbarhet i GitHub Actions. [1]</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Information och rekommendationer gällande säkerhet kring brandväggar",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-22T14:20:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-information-gallande-sakerhet-i-brandvaggar.html",
+      "summary": "<p>Brandväggar är en återkommande utmaning gällande angrepp från hotaktörer. Nu senast den uppmärksammade FortiBleed-läckan, där hotaktörer utnyttjar läckta inloggningsuppgifter i stor skala. [1] Med anledning av angrepp mot brandväggar publicerar CERT-SE information och rekomme…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": true,
+        "cve": null
       }
     },
     {
@@ -46,6 +79,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": true,
+        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-56291"
       }
@@ -60,6 +94,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-56155"
       }
@@ -74,6 +109,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-56164"
       }
@@ -88,6 +124,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-15409"
       }
@@ -102,6 +139,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-15410"
       }
@@ -116,6 +154,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2008-4128"
       }
@@ -130,6 +169,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-48939"
       }
@@ -144,6 +184,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -158,6 +199,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -172,6 +214,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -186,6 +229,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-15409"
       }
@@ -200,6 +244,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-15409"
       }
@@ -214,6 +259,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -228,6 +274,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -242,6 +289,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -256,6 +304,7 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -270,6 +319,7 @@
       "flags": {
         "activelyExploited": false,
         "critical": true,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -284,6 +334,7 @@
       "flags": {
         "activelyExploited": false,
         "critical": false,
+        "incident": false,
         "swedenRelevant": true,
         "cve": null
       }
@@ -298,22 +349,9 @@
       "flags": {
         "activelyExploited": false,
         "critical": true,
+        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-44747"
-      }
-    },
-    {
-      "title": "Skadliga npm-paket",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-07-14T13:25:00.000Z",
-      "link": "https://www.cert.se/2026/07/skadliga-npm-paket.html",
-      "summary": "<p>Ett koordinerat leveranskedjeangrepp har drabbat separata AsyncAPI GitHub-repon. Angripare har utnyttjat en sårbarhet i GitHub Actions. [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "swedenRelevant": true,
-        "cve": null
       }
     },
     {
@@ -326,6 +364,7 @@
       "flags": {
         "activelyExploited": false,
         "critical": false,
+        "incident": false,
         "swedenRelevant": true,
         "cve": null
       }
@@ -340,20 +379,7 @@
       "flags": {
         "activelyExploited": false,
         "critical": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Klimatriskerna för Sverige ökar",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-25T09:30:10.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
-      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
+        "incident": false,
         "swedenRelevant": true,
         "cve": null
       }
@@ -419,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }

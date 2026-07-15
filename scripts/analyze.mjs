@@ -70,9 +70,12 @@ const LEVEL_LABELS = {
 };
 
 // Nyckelord för att flagga signaler deterministiskt (oberoende av AI).
-const RE_SWEDEN = /\b(sverige|svensk\w*|swedish|sweden)\b/i;
+const RE_SWEDEN = /\b(sverige|svensk\w*|swedish|sweden|stockholm|göteborg|gothenburg|malmö)\b/i;
 const RE_EXPLOITED = /(aktivt utnyttja\w*|utnyttjas aktivt|actively exploited|exploited in the wild|in-the-wild|zero[- ]day|nolldag|0-day|under active attack)/i;
 const RE_CRITICAL = /(kritisk\w* sårbarhet|critical vulnerabilit|cvss[: ]*(9|10)|\brce\b|remote code execution|wormable|maskmask|pre-auth)/i;
+// Bekräftad angreppsaktivitet (inte bara en sårbarhet) – t.ex. CERT-SE:s
+// varningar om pågående kampanjer räknas som akuta.
+const RE_INCIDENT = /(leveranskedjeangrepp|supply chain attack|har drabbat\w*|drabbats av|pågående angrepp|angrepp mot|attack mot|attacker mot|ransomware-attack|överbelastningsattack|ddos-attack|utpressningsattack|dataintrång hos|intrång hos|breach at|hacked|kompromettera\w*)/i;
 const RE_CYBER = /(cyber|it-attack|it-angrepp|dataintrång|hackare|hackad|ransomware|utpressning|överbelastning|ddos|driftstörning|sårbarhet|skadlig kod|malware|phishing|nätfiske|informationssäkerhet|angrepp|intrång)/i;
 
 /* ---------------------------------------------------------------- utils */
@@ -203,13 +206,14 @@ function makeEvent({ title, source, date, link, summary, flags }) {
   return { title, source: source.name, region: source.region, weight: source.weight, date: date || "", link: link || "", summary: summary || "", flags: flags || {} };
 }
 
-// Flagga varje händelse deterministiskt (Sverige-relevans, exploit, kritisk).
+// Flagga varje händelse deterministiskt (Sverige-relevans, exploit, kritisk, incident).
 function annotate(ev) {
   const text = `${ev.title} ${ev.summary}`;
   const f = ev.flags || {};
   ev.flags = {
     activelyExploited: !!f.activelyExploited || RE_EXPLOITED.test(text),
     critical: RE_CRITICAL.test(text),
+    incident: RE_INCIDENT.test(text),
     swedenRelevant: ev.region === "SE" || RE_SWEDEN.test(text),
     cve: f.cve || (text.match(/CVE-\d{4}-\d{4,7}/i) || [null])[0],
   };
@@ -257,9 +261,10 @@ async function collectSignals() {
   // Prioritera akuta signaler så de aldrig trängs undan av rutinnyheter:
   // svensk + akut överst, sedan aktivt utnyttjade/kritiska, sedan svensk, sedan färskhet.
   const prio = (ev) =>
-    (ev.flags.swedenRelevant && (ev.flags.activelyExploited || ev.flags.critical) ? 10 : 0) +
+    (ev.flags.swedenRelevant && (ev.flags.activelyExploited || ev.flags.critical || ev.flags.incident) ? 10 : 0) +
     (ev.flags.activelyExploited ? 4 : 0) +
     (ev.flags.critical ? 3 : 0) +
+    (ev.flags.incident ? 3 : 0) +
     (ev.flags.swedenRelevant ? 2 : 0) +
     (AUTHORITY_SOURCES.has(ev.source) ? 1 : 0);
   deduped.sort((a, b) => (prio(b) - prio(a)) || ((Date.parse(b.date) || 0) - (Date.parse(a.date) || 0)));
@@ -280,7 +285,7 @@ function computeIndicators(events) {
     kev_recent: 0,
   };
   for (const ev of events) {
-    const acute = ev.flags.activelyExploited || ev.flags.critical;
+    const acute = ev.flags.activelyExploited || ev.flags.critical || ev.flags.incident;
     if (ev.flags.swedenRelevant) ind.sweden_relevant++;
     if (ev.flags.swedenRelevant && acute) ind.sweden_acute++;
     if (ev.flags.activelyExploited) ind.actively_exploited++;
@@ -312,6 +317,47 @@ function riskScore(ind) {
 function heuristicLevel(ind) {
   if (ind.sweden_acute > 0) return "gul";
   return "grön";
+}
+
+/**
+ * Evidensgrind: nivån mäter hot mot SVERIGE, inte globalt bakgrundsbrus.
+ * AI:n får bedöma fritt nedåt men aldrig larma högre än evidensen stödjer:
+ *   - GUL kräver minst 1 svensk-akut signal (svensk koppling + aktivt
+ *     utnyttjad/kritisk/bekräftat angrepp).
+ *   - RÖD kräver minst 2 oberoende svensk-akuta signaler.
+ * Returnerar ev. justerad nivå + en transparent not för motiveringen.
+ */
+function applyLevelPolicy(level, ind) {
+  const l = normalizeLevel(level);
+  if (l === "röd" && ind.sweden_acute < 2) {
+    const to = ind.sweden_acute >= 1 ? "gul" : "grön";
+    return { level: to, note: `Nivån begränsad till ${to}: röd kräver flera oberoende akuta signaler med svensk koppling (nu: ${ind.sweden_acute}).` };
+  }
+  if (l === "gul" && ind.sweden_acute < 1) {
+    return { level: "grön", note: "Nivån begränsad till grön: gul kräver minst en akut signal med tydlig svensk koppling. Förhöjd internationell aktivitet syns i riskindexet." };
+  }
+  return { level: l, note: null };
+}
+
+/**
+ * Hysteres – "snabbt upp, långsamt ner": en höjning slår igenom direkt, men en
+ * sänkning måste bekräftas av DOWN_CONFIRMATIONS körningar i rad (~90 min) så
+ * att nivån inte flappar. `streak` är antalet på varandra följande körningar
+ * som velat sänka.
+ */
+const DOWN_CONFIRMATIONS = 3;
+function applyHysteresis(computed, prevLevel, prevStreak) {
+  const cur = normalizeLevel(prevLevel);
+  const next = normalizeLevel(computed);
+  if (cur === "okänd" || next === "okänd") return { level: next, streak: 0, pending: null };
+  if (levelRank(next) >= levelRank(cur)) return { level: next, streak: 0, pending: null };
+  const streak = (Number(prevStreak) || 0) + 1;
+  if (streak >= DOWN_CONFIRMATIONS) return { level: next, streak: 0, pending: null };
+  return {
+    level: cur,
+    streak,
+    pending: { to: next, confirmations: streak, required: DOWN_CONFIRMATIONS },
+  };
 }
 
 // Avvikelsedetektering: fångar en ovanlig ökning av aktivitet innan nivån
@@ -352,6 +398,7 @@ function buildPrompt(events, ind) {
         e.flags.swedenRelevant ? "SVERIGE" : null,
         e.flags.activelyExploited ? "AKTIVT-UTNYTTJAD" : null,
         e.flags.critical ? "KRITISK" : null,
+        e.flags.incident ? "INCIDENT" : null,
       ].filter(Boolean).join(",");
       return `${i + 1}. [${e.source} · ${e.region} · vikt:${e.weight}${tags ? " · " + tags : ""}] (${when})\n   ${e.title}\n   ${e.summary || ""}`;
     })
@@ -376,18 +423,20 @@ Uppgift: Gör en preliminär, ansvarsfull lägesbedömning av risken för en sto
 
 const SYSTEM_PROMPT = `Du är en säkerhetsanalytiker för "Stormvarning", ett tidigt varningssystem för storskaliga cyberattacker mot Sverige. Du får en lista av öppna hotsignaler samt deterministiska indikatorer.
 
-Bedöm hotnivån enligt en trestegsskala:
-- "grön": normalläge, inga tecken på förhöjt hot mot Sverige.
-- "gul": förhöjt läge – konkreta indikatorer, pågående kampanjer i regionen eller sårbarheter som aktivt utnyttjas och kan påverka svenska mål.
-- "röd": allvarligt läge – tecken på pågående eller nära förestående storskalig attack som påverkar svensk kritisk infrastruktur eller samhällsviktig verksamhet.
+VIKTIG PRINCIP: Nivån mäter hot mot SVERIGE, inte globalt bakgrundsbrus. Internationell exploit-aktivitet är alltid hög (varje patch-vecka innehåller aktivt utnyttjade sårbarheter) – det är i sig NORMALLÄGE. Nivån höjs bara av konkret svensk koppling.
 
-Var måttfull och undvik att larma i onödan. Officiella myndighetskällor (CERT-SE, MCF, CISA, NCSC) väger tyngst. Enskilda internationella nyheter utan tydlig svensk koppling motiverar sällan mer än grön nivå. Sårbarheter som aktivt utnyttjas och samtidigt berör svenska mål motiverar minst gul.
+Bedöm hotnivån enligt en trestegsskala med dessa operativa kriterier:
+- "grön": normalläge. Även vid hög internationell aktivitet, om konkret svensk koppling saknas.
+- "gul": förhöjt läge. Kräver minst EN akut signal med tydlig svensk koppling, t.ex. en svensk myndighet (CERT-SE/MCF) som varnar för pågående angrepp eller aktivt utnyttjad sårbarhet, ett bekräftat angrepp mot svensk organisation, eller aktivt utnyttjande med uttalad svensk målbild.
+- "röd": allvarligt läge. Kräver FLERA oberoende signaler om pågående eller nära förestående storskalig attack som påverkar svensk kritisk infrastruktur eller samhällsviktig verksamhet (t.ex. bekräftade incidenter hos flera svenska aktörer, VMA/krisinformation).
+
+Signaler taggade SVERIGE + AKTIVT-UTNYTTJAD/KRITISK/INCIDENT väger tyngst. Officiella myndighetskällor väger tyngre än nyhetsmedia. Var måttfull: en försiktig och stabil nivå är mer värd än en larmig. (En deterministisk grind begränsar dessutom nivån till vad indikatorerna stödjer.)
 
 Svara ENDAST med giltig JSON, inga kodblock eller extra text, på formen:
 {
   "level": "grön" | "gul" | "röd",
   "summary": "En kort mening (max ~200 tecken) på svenska som sammanfattar läget.",
-  "reasoning": "2–4 meningar på svenska som motiverar nivån och hänvisar till de viktigaste signalerna."
+  "reasoning": "2–4 meningar på svenska som motiverar nivån, hänvisar till de viktigaste signalerna och nämner den svenska kopplingen explicit (eller att sådan saknas)."
 }`;
 
 function extractJson(text) {
@@ -533,14 +582,40 @@ async function main() {
     level = heuristicLevel(indicators);
     model = "heuristik (utan AI)";
     summary = level === "gul"
-      ? "Förhöjda indikatorer: aktivt utnyttjade sårbarheter med möjlig svensk koppling. Automatisk heuristik (ingen AI-bedömning)."
+      ? "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning)."
       : "Inga tydliga tecken på förhöjt hot mot Sverige i signalerna. Automatisk heuristik (ingen AI-bedömning).";
-    reasoning = `Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: ${indicators.actively_exploited} aktivt utnyttjade sårbarheter, ${indicators.sweden_relevant} Sverige-relaterade signaler, ${indicators.authority_alerts} myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.`;
+    reasoning = `Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: ${indicators.sweden_acute} svensk-akuta signaler, ${indicators.actively_exploited} aktivt utnyttjade sårbarheter, ${indicators.authority_alerts} myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.`;
   } else {
     level = "okänd";
     model = null;
     summary = "Inga hotsignaler kunde hämtas och ingen bedömning kunde göras denna körning.";
     reasoning = "Samtliga källor svarade inte. Kontrollera källhälsan nedan och följ officiella källor (CERT-SE, MCF).";
+  }
+
+  // 1) Evidensgrind: nivån får aldrig överstiga vad de svensk-akuta
+  //    indikatorerna stödjer (skydd mot att AI:n driver upp på globalt brus).
+  if (level !== "okänd") {
+    const gated = applyLevelPolicy(level, indicators);
+    if (gated.level !== level) {
+      log(`GRIND: ${level} → ${gated.level} (sweden_acute=${indicators.sweden_acute}).`);
+      level = gated.level;
+      reasoning = `${reasoning} — ${gated.note}`;
+    }
+  }
+
+  // 2) Hysteres: snabbt upp, långsamt ner. En sänkning kräver flera körningar
+  //    i rad innan den slår igenom, så nivån inte flappar var 30:e minut.
+  let deEscalation = null;
+  let downStreak = 0;
+  if (level !== "okänd" && prev && prev.level) {
+    const hys = applyHysteresis(level, prev.level, prev.down_streak);
+    if (hys.level !== level) {
+      log(`HYSTERES: håller kvar ${hys.level} (sänkning till ${level} bekräftad ${hys.pending.confirmations}/${hys.pending.required}).`);
+      reasoning = `${reasoning} — Nedtrappning till ${level} inväntar bekräftelse (${hys.pending.confirmations} av ${hys.pending.required} körningar).`;
+    }
+    level = hys.level;
+    deEscalation = hys.pending;
+    downStreak = hys.streak;
   }
 
   // Notiser: bara vid AI-bedömd höjning till gul/röd (heuristik larmar inte, för
@@ -577,6 +652,8 @@ async function main() {
     indicators,
     anomaly,
     level_since: levelSince,
+    de_escalation: deEscalation,
+    down_streak: downStreak,
     events: events.map(({ weight, ...rest }) => rest),
     sources_health: health,
     sources: SOURCES.map((s) => s.name),
@@ -607,5 +684,5 @@ if (isMain) {
   });
 }
 
-export { normalizeLevel, levelRank, riskScore, heuristicLevel, computeIndicators, annotate, detectAnomaly, computeLevelSince };
+export { normalizeLevel, levelRank, riskScore, heuristicLevel, computeIndicators, annotate, detectAnomaly, computeLevelSince, applyLevelPolicy, applyHysteresis };
 

@@ -207,6 +207,18 @@
       ? fmtDateTime(data.level_since) + " (" + fmtDuration(data.level_since) + ")"
       : "—";
 
+    // Pågående nedtrappning (hysteres): visas bara när en sänkning inväntar bekräftelse.
+    var deescRow = $("deesc-row");
+    if (deescRow) {
+      var de = data.de_escalation;
+      if (de && de.to) {
+        $("deesc").textContent = "mot " + String(de.to).toUpperCase() + " (" + num(de.confirmations) + "/" + num(de.required) + " bekräftade)";
+        deescRow.hidden = false;
+      } else {
+        deescRow.hidden = true;
+      }
+    }
+
     renderScore(data.score);
     renderIndicators(data.indicators);
     renderAnomaly(data);
