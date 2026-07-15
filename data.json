@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-15T12:08:31.387Z",
-  "next_update": "2026-07-15T12:38:31.387Z",
+  "updated": "2026-07-15T14:16:55.393Z",
+  "next_update": "2026-07-15T14:46:55.393Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjd risk för cyberattacker mot svenska mål på grund av aktivt utnyttjade sårbarheter och varningar från CERT-SE.",
-  "reasoning": "Flera kritiska sårbarheter, särskilt i SonicWall SMA1000 och Microsoft SharePoint, rapporteras vara aktivt utnyttjade och har taggats som SVERIGE-relaterade av CERT-SE. Dessa utgör en konkret risk för svenska organisationer, särskilt inom kritisk infrastruktur. Även om det inte finns direkta tecken på en pågående storskalig attack, är det nödvändigt att vidta omedelbara åtgärder för att minska risken.",
-  "score": 94,
+  "summary": "Förhöjd risk för cyberattacker mot svenska mål på grund av aktivt utnyttjade sårbarheter i kritiska system.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive två i SonicWall SMA1000, har identifierats och är aktivt utnyttjade. Dessa sårbarheter är särskilt relevanta för Sverige eftersom de kan påverka kritiska system och har uppmärksammats av CERT-SE. Även om det inte finns direkta tecken på pågående storskaliga attacker mot svensk infrastruktur, är risken för lokala incidenter förhöjd.",
+  "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 8,
+    "sweden_relevant": 6,
     "sweden_acute": 1,
-    "actively_exploited": 14,
+    "actively_exploited": 16,
     "critical": 4,
-    "authority_alerts": 16,
+    "authority_alerts": 14,
     "kev_recent": 7
   },
   "anomaly": {
@@ -132,6 +132,34 @@
         "critical": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-48939"
+      }
+    },
+    {
+      "title": "We built a vulnerability vending machine: AI tokens in, zero-days out",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-15T14:01:11.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/we-built-a-vulnerability-vending-machine-ai-tokens-in-zero-days-out/",
+      "summary": "Intruder built an AI-powered \"vulnerability vending machine\" that combines code slicing with LLMs to automatically discover complex software vulnerabilities. The company explains how the system found and exploited a previously unknown WordPress plugin zero-day, with additional d…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-15T11:07:07.000Z",
+      "link": "https://thehackernews.com/2026/07/researcher-drops-new-windows-zero-day.html",
+      "summary": "Security researcher Chaotic Eclipse (aka Nightmare-Eclipse) has released a new proof-of-concept (PoC) exploit called LegacyHive. It has been described as a Windows User Profile Service arbitrary hive load elevation of privileges vulnerability. The Windows User Profile Service, a…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -323,34 +351,6 @@
       "date": "2026-06-25T09:30:10.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
       "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Information och rekommendationer gällande säkerhet kring brandväggar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-22T14:20:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-information-gallande-sakerhet-i-brandvaggar.html",
-      "summary": "<p>Brandväggar är en återkommande utmaning gällande angrepp från hotaktörer. Nu senast den uppmärksammade FortiBleed-läckan, där hotaktörer utnyttjar läckta inloggningsuppgifter i stor skala. [1] Med anledning av angrepp mot brandväggar publicerar CERT-SE information och rekomme…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.25",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-18T13:00:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
-      "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
