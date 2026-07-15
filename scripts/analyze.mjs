@@ -21,7 +21,7 @@
  */
 
 import { writeFile, readFile } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -314,6 +314,34 @@ function heuristicLevel(ind) {
   return "grön";
 }
 
+// Avvikelsedetektering: fångar en ovanlig ökning av aktivitet innan nivån
+// formellt höjs. Jämför aktuellt riskindex mot baslinjen (medel) av den
+// föregående historiken. Kräver tillräckligt underlag för att undvika brus.
+function detectAnomaly(priorScores, current) {
+  const scores = (priorScores || []).filter((n) => typeof n === "number");
+  if (scores.length < 8) return { active: false, baseline: null, delta: 0 };
+  const mean = scores.reduce((a, b) => a + b, 0) / scores.length;
+  const sd = Math.sqrt(scores.reduce((a, b) => a + (b - mean) ** 2, 0) / scores.length);
+  const threshold = Math.max(mean + 2 * sd, mean + 18);
+  return {
+    active: current >= threshold && current >= mean + 15,
+    baseline: Math.round(mean),
+    delta: Math.round(current - mean),
+  };
+}
+
+// Hur länge nuvarande nivå har hållit i sig (tidsstämpel för när den senast
+// ändrades), härlett ur historiken.
+function computeLevelSince(history, level) {
+  const target = normalizeLevel(level);
+  let since = null;
+  for (let i = history.length - 1; i >= 0; i--) {
+    if (normalizeLevel(history[i].level) === target) since = history[i].t;
+    else break;
+  }
+  return since;
+}
+
 /* --------------------------------------------------------------- MiniMax */
 
 function buildPrompt(events, ind) {
@@ -525,13 +553,18 @@ async function main() {
     if (levelRank(level) > levelRank(baseline) && levelRank(level) >= LEVEL_RANK["gul"]) shouldNotify = true;
   }
 
-  // Historik / trend.
+  // Historik / trend. Beräkna avvikelse mot baslinjen INNAN vi lägger till
+  // den aktuella punkten.
   const history = await readJson(HISTORY, []);
   const historyArr = Array.isArray(history) ? history : [];
+  const priorScores = historyArr.slice(-48).map((h) => h.score);
+  const anomaly = detectAnomaly(priorScores, score);
+  if (anomaly.active) log(`AVVIKELSE: index ${score} mot baslinje ${anomaly.baseline} (+${anomaly.delta}).`);
   if (level !== "okänd") {
     historyArr.push({ t: now.toISOString(), level, score });
   }
   const trimmedHistory = historyArr.slice(-CONFIG.historyLength);
+  const levelSince = computeLevelSince(trimmedHistory, level);
 
   const data = {
     updated: now.toISOString(),
@@ -542,6 +575,8 @@ async function main() {
     reasoning,
     score,
     indicators,
+    anomaly,
+    level_since: levelSince,
     events: events.map(({ weight, ...rest }) => rest),
     sources_health: health,
     sources: SOURCES.map((s) => s.name),
@@ -563,7 +598,14 @@ async function main() {
   log(`Skrev data.json (nivå: ${level}, score: ${score}, signaler: ${data.events.length}, historik: ${trimmedHistory.length}).`);
 }
 
-main().catch((err) => {
-  console.error("[stormvarning] FATAL:", err);
-  process.exit(1);
-});
+// Kör bara main() när scriptet startas direkt (inte vid import från tester).
+const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+if (isMain) {
+  main().catch((err) => {
+    console.error("[stormvarning] FATAL:", err);
+    process.exit(1);
+  });
+}
+
+export { normalizeLevel, levelRank, riskScore, heuristicLevel, computeIndicators, annotate, detectAnomaly, computeLevelSince };
+

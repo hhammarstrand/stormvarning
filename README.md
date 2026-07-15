@@ -41,9 +41,12 @@ lägesbedömning på en trestegsskala:
    skickas till **MiniMax** för bedömning.
 3. Resultatet (nivå, lägesbild, indikatorer, riskindex, signaler, källhälsa) skrivs
    till `data.json`, och en historikpunkt läggs till `history.json` – båda committas.
-4. Frontenden (`index.html` + `app.js`) läser filerna och uppdaterar sig själv var
-   3:e minut. Den visar hotnivå, riskindex, tripwires, en trendtidslinje, signallogg
-   och källhälsa. Sidan är även en installbar PWA (offline-skal via `sw.js`).
+4. En **avvikelsedetektor** jämför aktuellt riskindex mot baslinjen (medel av
+   historiken) och flaggar en ovanlig ökning *innan* nivån formellt höjs.
+5. Frontenden (`index.html` + `app.js`) läser filerna och uppdaterar sig själv var
+   3:e minut. Den visar hotnivå, riskindex, tripwires, avvikelselarm, tid på nivån,
+   en trendtidslinje, signallogg och källhälsa. Sidan är även en installbar PWA
+   (offline-skal via `sw.js`).
 
 Om MiniMax inte är tillgänglig används en **konservativ deterministisk heuristik** som
 fallback (larmar bara vid en akut signal med svensk koppling) – systemet är aldrig tyst.
@@ -128,6 +131,13 @@ python3 -m http.server 8000
 ```
 
 Kräver **Node 20+** (för inbyggda `fetch`). Inga npm-beroenden.
+
+Kör enhetstesterna för den deterministiska kärnan (nivåer, indikatorer, riskindex,
+heuristik, avvikelse):
+
+```bash
+node --test scripts/analyze.test.mjs
+```
 
 ## Anpassa källor
 

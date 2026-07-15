@@ -77,6 +77,30 @@
 
   function num(n) { return typeof n === "number" ? n : 0; }
 
+  function fmtDuration(iso) {
+    if (!iso) return "";
+    var mins = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
+    if (isNaN(mins) || mins < 1) return "nyss";
+    if (mins < 60) return mins + " min";
+    var h = Math.floor(mins / 60);
+    if (h < 48) return h + " tim";
+    return Math.floor(h / 24) + " dygn";
+  }
+
+  function renderAnomaly(data) {
+    var el = $("anomaly");
+    if (!el) return;
+    var a = data.anomaly;
+    if (a && a.active) {
+      $("anomaly-text").textContent =
+        "Ovanligt hög aktivitet — riskindex " + num(data.score) +
+        " mot baslinje " + num(a.baseline) + " (+" + num(a.delta) + "). Läget kan vara på väg att förändras.";
+      el.hidden = false;
+    } else {
+      el.hidden = true;
+    }
+  }
+
   function renderIndicators(ind) {
     ind = ind || {};
     var keys = ["sweden_acute", "actively_exploited", "critical", "kev_recent", "sweden_relevant", "authority_alerts"];
@@ -173,9 +197,13 @@
       (fmtRelative(data.updated) ? "  (" + fmtRelative(data.updated) + ")" : "");
     $("next-update").textContent = data.next_update ? fmtDateTime(data.next_update) : "—";
     $("model").textContent = data.model || "ingen (fallback)";
+    $("level-since").textContent = data.level_since
+      ? fmtDateTime(data.level_since) + " (" + fmtDuration(data.level_since) + ")"
+      : "—";
 
     renderScore(data.score);
     renderIndicators(data.indicators);
+    renderAnomaly(data);
     renderHealth(data.sources_health);
     renderEvents(data.events);
 

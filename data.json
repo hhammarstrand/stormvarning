@@ -1,20 +1,26 @@
 {
-  "updated": "2026-07-15T06:21:59.106Z",
-  "next_update": "2026-07-15T06:51:59.106Z",
+  "updated": "2026-07-15T06:28:51.835Z",
+  "next_update": "2026-07-15T06:58:51.835Z",
   "level": "grön",
   "level_label": "Grön – låg hotnivå",
   "summary": "Inga tydliga tecken på förhöjt hot mot Sverige i signalerna. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 12 aktivt utnyttjade sårbarheter, 10 Sverige-relaterade signaler, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 63,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 13 aktivt utnyttjade sårbarheter, 9 Sverige-relaterade signaler, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 66,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 10,
+    "sweden_relevant": 9,
     "sweden_acute": 0,
-    "actively_exploited": 12,
+    "actively_exploited": 13,
     "critical": 3,
-    "authority_alerts": 18,
+    "authority_alerts": 17,
     "kev_recent": 7
   },
+  "anomaly": {
+    "active": false,
+    "baseline": null,
+    "delta": 0
+  },
+  "level_since": "2026-07-15T06:28:51.835Z",
   "events": [
     {
       "title": "CVE-2026-56291: Balbooa Forms Unrestricted Upload of File with Dangerous Type Vulnerability",
@@ -112,6 +118,20 @@
         "critical": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-48939"
+      }
+    },
+    {
+      "title": "Two SonicWall SMA 1000 Zero-Days Exploited, One Could Enable Admin Commands",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-15T05:30:21.000Z",
+      "link": "https://thehackernews.com/2026/07/two-sonicwall-sma-1000-zero-days.html",
+      "summary": "SonicWall has warned of active exploitation of two zero-day vulnerabilities impacting Secure Mobile Access (SMA) 1000 series appliances, one of which could be exploited to achieve arbitrary command execution. The vulnerabilities are listed below - CVE-2026-15409 (CVSS score: 10.…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-15409"
       }
     },
     {
@@ -331,20 +351,6 @@
       "date": "2026-06-12T10:00:20.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
       "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Nu samlas cyberverksamheten hos Nationellt cybersäkerhetscenter – ska ge stärkt motståndskraft",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-12T10:00:00.000Z",
-      "link": "https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cybersakerhetscenter.html",
-      "summary": "<p>Den 1 juli övergår cyberverksamheten från Myndigheten för civilt försvar (MCF) till Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt (FRA), enligt regeringens beslut den 20 november 2025. Syftet är att stärka Sveriges cybersäkerhet.</p>",
       "flags": {
         "activelyExploited": false,
         "critical": false,

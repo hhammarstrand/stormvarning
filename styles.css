@@ -162,6 +162,19 @@ body[data-level="rod"] .seg[data-step="gul"] { opacity: 0.7; }
 @media (max-width: 760px) { .tripwires { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 400px) { .tripwires { grid-template-columns: repeat(2, 1fr); } }
 
+/* Avvikelselarm */
+.anomaly {
+  margin-top: 12px; display: flex; align-items: center; gap: 10px;
+  border: 1px solid var(--gul);
+  background: color-mix(in srgb, var(--gul) 12%, var(--bg));
+  padding: 10px 14px; font-size: 0.86rem; color: var(--fg);
+}
+.anomaly[hidden] { display: none; }
+.anomaly-tag {
+  color: var(--gul); border: 1px solid var(--gul); padding: 0 6px;
+  letter-spacing: 0.1em; font-size: 0.7rem; font-weight: 600; white-space: nowrap;
+}
+
 /* ---------- Block ---------- */
 .cols {
   display: grid;

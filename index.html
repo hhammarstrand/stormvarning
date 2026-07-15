@@ -61,6 +61,12 @@
       <div class="tw" data-key="authority_alerts"><span class="tw-n" id="tw-authority_alerts">–</span><span class="tw-l">Myndighetssignaler</span></div>
     </section>
 
+    <!-- Avvikelselarm (visas bara vid spik i aktiviteten) -->
+    <section class="anomaly" id="anomaly" hidden aria-live="polite">
+      <span class="anomaly-tag">AVVIKELSE</span>
+      <span id="anomaly-text"></span>
+    </section>
+
     <div class="rule" aria-hidden="true"></div>
 
     <div class="cols">
@@ -76,6 +82,7 @@
         <h2 class="block-h">// SYSTEMSTATUS</h2>
         <dl class="kv">
           <div><dt>UPPDATERAD</dt><dd id="updated">—</dd></div>
+          <div><dt>NIVÅ SEDAN</dt><dd id="level-since">—</dd></div>
           <div><dt>NÄSTA</dt><dd id="next-update">—</dd></div>
           <div><dt>ANALYS</dt><dd id="model">—</dd></div>
           <div><dt>RISKINDEX</dt><dd id="score-kv">—</dd></div>
