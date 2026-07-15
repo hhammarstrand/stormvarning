@@ -1,19 +1,19 @@
 {
-  "updated": "2026-07-15T15:57:06.122Z",
-  "next_update": "2026-07-15T16:27:06.122Z",
+  "updated": "2026-07-15T17:08:20.629Z",
+  "next_update": "2026-07-15T17:38:20.629Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjd risk för cyberattacker mot Sverige på grund av aktivt utnyttjade sårbarheter i kritiska system.",
-  "reasoning": "Flera kritiska sårbarheter, särskilt i SonicWall SMA1000 och Microsoft SharePoint, rapporteras vara aktivt utnyttjade och har potential att påverka svenska mål. Dessa sårbarheter har hög CVSS-poäng och CERT-SE har utfärdat varningar om dem. Även om det inte finns direkta tecken på en pågående storskalig attack mot svensk infrastruktur, är risken för lokala attacker förhöjd.",
+  "summary": "Förhöjd risknivå på grund av aktivt utnyttjade kritiska sårbarheter som kan påverka svenska mål.",
+  "reasoning": "Det finns flera kritiska sårbarheter som aktivt utnyttjas globalt, inklusive två i SonicWall SMA1000 som är särskilt relevanta för Sverige. Dessa sårbarheter har hög allvarlighetsgrad och kan potentiellt påverka svenska organisationer som använder berörda system. Även om det inte finns specifika indikationer på attacker mot svenska mål, är risken för påverkan förhöjd på grund av den aktiva exploateringen.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 4,
     "sweden_acute": 1,
-    "actively_exploited": 16,
+    "actively_exploited": 18,
     "critical": 4,
     "authority_alerts": 14,
-    "kev_recent": 7
+    "kev_recent": 9
   },
   "anomaly": {
     "active": false,
@@ -48,6 +48,34 @@
         "critical": true,
         "swedenRelevant": false,
         "cve": "CVE-2026-56291"
+      }
+    },
+    {
+      "title": "CVE-2026-46817: Oracle E-Business Suite Improper Privilege Management Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-15T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-46817",
+      "summary": "Oracle E-Business Suite – Oracle E-Business Suite contains an improper privilege management vulnerability that allows an unauthenticated attacker with network access via HTTP to compromise Oracle Payments. Successful attacks of this vulnerability can result in takeover of Oracle…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-46817"
+      }
+    },
+    {
+      "title": "CVE-2023-4346: KNX Association KNX Protocol Connection Authorization Option 1 Overly Restrictive Account Lockout Mechanism Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-15T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2023-4346",
+      "summary": "KNX Association KNX Protocol Connection Authorization Option 1 – KNX Association KNX Protocol Connection Authorization Option 1 contains an overly restrictive account lockout mechanism vulnerability that could allow an attacker to purge all devices without additional security op…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2023-4346"
       }
     },
     {
@@ -329,34 +357,6 @@
         "swedenRelevant": true,
         "cve": null
       }
-    },
-    {
-      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-26T08:34:35.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
-      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Klimatriskerna för Sverige ökar",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-25T09:30:10.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
-      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -382,7 +382,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 7
+      "count": 9
     },
     {
       "name": "CISA",
