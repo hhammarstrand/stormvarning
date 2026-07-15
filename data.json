@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-15T17:08:20.629Z",
-  "next_update": "2026-07-15T17:38:20.629Z",
+  "updated": "2026-07-15T18:35:21.797Z",
+  "next_update": "2026-07-15T19:05:21.797Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjd risknivå på grund av aktivt utnyttjade kritiska sårbarheter som kan påverka svenska mål.",
-  "reasoning": "Det finns flera kritiska sårbarheter som aktivt utnyttjas globalt, inklusive två i SonicWall SMA1000 som är särskilt relevanta för Sverige. Dessa sårbarheter har hög allvarlighetsgrad och kan potentiellt påverka svenska organisationer som använder berörda system. Även om det inte finns specifika indikationer på attacker mot svenska mål, är risken för påverkan förhöjd på grund av den aktiva exploateringen.",
+  "summary": "Förhöjd risk för cyberattacker mot Sverige på grund av aktivt utnyttjade sårbarheter i kritiska system.",
+  "reasoning": "Det finns flera tecken på förhöjd risk, inklusive kritiska sårbarheter i SonicWall SMA1000 som är aktivt utnyttjade och har specifik koppling till Sverige. Dessa sårbarheter har hög allvarlighetsgrad och kan påverka kritiska system. Dessutom har CISA och andra myndigheter utfärdat varningar om aktivt utnyttjade sårbarheter i andra system som också kan utgöra en risk för svenska mål. Även om det inte finns direkta bevis för en pågående storskalig attack mot Sverige, är det viktigt att vara förberedd på ökad aktivitet.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
