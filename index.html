@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Stormvarning – tidigt varningssystem för storskaliga cyberattacker mot Sverige. Automatiserad lägesbild baserad på öppna hotsignaler." />
   <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0a0c0f" />
   <title>Stormvarning – cyberhotnivå för Sverige</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230a0c0f'/%3E%3Crect x='3' y='2' width='2' height='9' fill='%23ffb020'/%3E%3Crect x='3' y='12' width='2' height='2' fill='%23ffb020'/%3E%3Crect x='7' y='5' width='2' height='6' fill='%236b7280'/%3E%3Crect x='11' y='3' width='2' height='8' fill='%236b7280'/%3E%3C/svg%3E" />
+  <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-level="okand">
@@ -27,7 +29,7 @@
 
     <div class="rule" aria-hidden="true"></div>
 
-    <!-- Nivåmodul -->
+    <!-- Nivåmodul + riskscore -->
     <section class="readout" id="alert-card" aria-live="polite">
       <div class="readout-main">
         <div class="readout-label">NIVÅ</div>
@@ -36,11 +38,27 @@
           <span class="readout-desc" id="level-desc">läser lägesbild</span>
         </div>
       </div>
-      <div class="meter" role="img" aria-label="Hotnivåskala">
-        <div class="seg" data-step="gron"><b>GRÖN</b><span>låg</span></div>
-        <div class="seg" data-step="gul"><b>GUL</b><span>förhöjd</span></div>
-        <div class="seg" data-step="rod"><b>RÖD</b><span>allvarlig</span></div>
+      <div class="readout-right">
+        <div class="meter" role="img" aria-label="Hotnivåskala">
+          <div class="seg" data-step="gron"><b>GRÖN</b><span>låg</span></div>
+          <div class="seg" data-step="gul"><b>GUL</b><span>förhöjd</span></div>
+          <div class="seg" data-step="rod"><b>RÖD</b><span>allvarlig</span></div>
+        </div>
+        <div class="score" title="Riskindex 0–100 (deterministiskt beräknat ur signalerna)">
+          <div class="score-head"><span>RISKINDEX</span><span id="score-num">–</span></div>
+          <div class="score-bar"><div class="score-fill" id="score-fill"></div></div>
+        </div>
       </div>
+    </section>
+
+    <!-- Tripwires / indikatorer -->
+    <section class="tripwires" id="tripwires" aria-label="Indikatorer">
+      <div class="tw" data-key="sweden_acute"><span class="tw-n" id="tw-sweden_acute">–</span><span class="tw-l">Svensk akut</span></div>
+      <div class="tw" data-key="actively_exploited"><span class="tw-n" id="tw-actively_exploited">–</span><span class="tw-l">Aktivt utnyttjade</span></div>
+      <div class="tw" data-key="critical"><span class="tw-n" id="tw-critical">–</span><span class="tw-l">Kritiska</span></div>
+      <div class="tw" data-key="kev_recent"><span class="tw-n" id="tw-kev_recent">–</span><span class="tw-l">Nya CISA KEV</span></div>
+      <div class="tw" data-key="sweden_relevant"><span class="tw-n" id="tw-sweden_relevant">–</span><span class="tw-l">Sverige-relaterade</span></div>
+      <div class="tw" data-key="authority_alerts"><span class="tw-n" id="tw-authority_alerts">–</span><span class="tw-l">Myndighetssignaler</span></div>
     </section>
 
     <div class="rule" aria-hidden="true"></div>
@@ -60,10 +78,19 @@
           <div><dt>UPPDATERAD</dt><dd id="updated">—</dd></div>
           <div><dt>NÄSTA</dt><dd id="next-update">—</dd></div>
           <div><dt>ANALYS</dt><dd id="model">—</dd></div>
-          <div><dt>KÄLLOR</dt><dd id="sources">—</dd></div>
+          <div><dt>RISKINDEX</dt><dd id="score-kv">—</dd></div>
         </dl>
       </section>
     </div>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <!-- Trendhistorik -->
+    <section class="block" id="trend-block">
+      <h2 class="block-h">// TRENDHISTORIK <span class="count" id="trend-span"></span></h2>
+      <div class="trend" id="trend"><div class="trend-empty">samlar historik…</div></div>
+      <div class="trend-axis"><span>äldre</span><span>nu</span></div>
+    </section>
 
     <div class="rule" aria-hidden="true"></div>
 
@@ -84,28 +111,36 @@
 
     <div class="rule" aria-hidden="true"></div>
 
-    <!-- Prenumerera -->
-    <section class="block" id="subscribe">
-      <h2 class="block-h">// PRENUMERERA</h2>
-      <p class="sub-lead">Larm via e-post <strong>endast vid höjd hotnivå</strong> (gul/röd). Ingen utskick vid normalläge.</p>
-      <!--
-        Buttondown-embed. Ersätt DITT-ANVANDARNAMN med ditt Buttondown-användarnamn.
-        Ingen API-nyckel behövs här; Buttondown sköter bekräftelse och avregistrering.
-      -->
-      <form
-        class="sub-form"
-        action="https://buttondown.com/api/emails/embed-subscribe/DITT-ANVANDARNAMN"
-        method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://buttondown.com/DITT-ANVANDARNAMN', 'popupwindow')"
-      >
-        <span class="prompt" aria-hidden="true">&gt;</span>
-        <label class="visually-hidden" for="bd-email">Din e-postadress</label>
-        <input id="bd-email" type="email" name="email" inputmode="email" autocomplete="email" placeholder="din@epost.se" required />
-        <button type="submit">PRENUMERERA</button>
-      </form>
-      <p class="sub-fine">E-postadressen hanteras av Buttondown. Du bekräftar via mejl och kan avregistrera dig när som helst.</p>
-    </section>
+    <div class="cols cols-2">
+      <!-- Källhälsa -->
+      <section class="block" id="health-block">
+        <h2 class="block-h">// KÄLLHÄLSA <span class="count" id="health-count"></span></h2>
+        <ul class="health" id="health"><li class="health-empty">—</li></ul>
+      </section>
+
+      <!-- Prenumerera -->
+      <section class="block" id="subscribe">
+        <h2 class="block-h">// PRENUMERERA</h2>
+        <p class="sub-lead">Larm via e-post <strong>endast vid höjd hotnivå</strong> (gul/röd).</p>
+        <!--
+          Buttondown-embed. Ersätt DITT-ANVANDARNAMN med ditt Buttondown-användarnamn.
+          Ingen API-nyckel behövs här; Buttondown sköter bekräftelse och avregistrering.
+        -->
+        <form
+          class="sub-form"
+          action="https://buttondown.com/api/emails/embed-subscribe/DITT-ANVANDARNAMN"
+          method="post"
+          target="popupwindow"
+          onsubmit="window.open('https://buttondown.com/DITT-ANVANDARNAMN', 'popupwindow')"
+        >
+          <span class="prompt" aria-hidden="true">&gt;</span>
+          <label class="visually-hidden" for="bd-email">Din e-postadress</label>
+          <input id="bd-email" type="email" name="email" inputmode="email" autocomplete="email" placeholder="din@epost.se" required />
+          <button type="submit">PRENUMERERA</button>
+        </form>
+        <p class="sub-fine">E-postadressen hanteras av Buttondown. Du bekräftar via mejl och kan avregistrera dig när som helst.</p>
+      </section>
+    </div>
 
     <div class="rule" aria-hidden="true"></div>
 
@@ -114,9 +149,10 @@
       <p>
         <span class="notice-tag">NOTIS</span>
         Stormvarning är ett automatiserat stödverktyg som sammanställer <em>öppna</em>
-        hotsignaler (CERT-SE, MSB, säkerhetsnyheter) och låter en språkmodell göra en
-        preliminär lägesbedömning. Det är <strong>inte</strong> en officiell källa och
-        ersätter inte myndigheters information. Vid en pågående incident – följ alltid
+        hotsignaler (CERT-SE, MCF, CISA KEV, NCSC-UK, säkerhetsnyheter) och låter en
+        språkmodell göra en preliminär lägesbedömning. Det är <strong>inte</strong> en
+        officiell källa och ersätter inte myndigheters information. Vid en pågående incident
+        – följ alltid
         <a href="https://www.cert.se" rel="noopener" target="_blank">CERT-SE</a> och
         <a href="https://www.msb.se" rel="noopener" target="_blank">MSB</a>.
       </p>

@@ -54,6 +54,7 @@ a:hover { color: var(--sig); border-color: var(--sig); }
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 28px 22px 60px;
+  overflow-x: clip; /* säkerhetsnät: inga horisontella sidoöverflöden */
 }
 
 .rule { height: 1px; background: var(--line); margin: 22px 0; }
@@ -135,6 +136,32 @@ body[data-level="gul"] .seg[data-step="gron"],
 body[data-level="rod"] .seg[data-step="gron"],
 body[data-level="rod"] .seg[data-step="gul"] { opacity: 0.7; }
 
+.readout-right { display: flex; flex-direction: column; gap: 14px; align-items: stretch; min-width: 300px; }
+
+/* Riskindex-mätare */
+.score { display: flex; flex-direction: column; gap: 6px; }
+.score-head { display: flex; justify-content: space-between; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--fg-faint); }
+.score-head #score-num { color: var(--sig); font-weight: 700; }
+.score-bar { height: 6px; background: var(--panel-2); border: 1px solid var(--line); overflow: hidden; }
+.score-fill { height: 100%; width: 0; background: var(--sig); transition: width 0.5s ease, background 0.4s; }
+
+/* Tripwires / indikatorer */
+.tripwires {
+  margin-top: 20px;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px;
+  background: var(--line); border: 1px solid var(--line);
+}
+.tw { background: var(--bg); padding: 14px 12px; display: flex; flex-direction: column; gap: 3px; }
+.tw-n { font-size: 1.7rem; font-weight: 700; line-height: 1; color: var(--fg); font-variant-numeric: tabular-nums; }
+.tw-l { font-size: 0.68rem; letter-spacing: 0.06em; color: var(--fg-faint); text-transform: uppercase; }
+/* Larmande tripwires färgas när de slår till */
+.tw.hot .tw-n { color: var(--rod); }
+.tw.warm .tw-n { color: var(--gul); }
+.tw[data-key="sweden_acute"] { outline: 1px solid transparent; }
+.tw[data-key="sweden_acute"].hot { background: color-mix(in srgb, var(--rod) 12%, var(--bg)); }
+@media (max-width: 760px) { .tripwires { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 400px) { .tripwires { grid-template-columns: repeat(2, 1fr); } }
+
 /* ---------- Block ---------- */
 .cols {
   display: grid;
@@ -143,7 +170,7 @@ body[data-level="rod"] .seg[data-step="gul"] { opacity: 0.7; }
   background: var(--line);
   border: 1px solid var(--line);
 }
-.cols .block { background: var(--bg); padding: 20px 22px; }
+.cols .block { background: var(--bg); padding: 20px 22px; min-width: 0; }
 @media (max-width: 760px) {
   .cols { grid-template-columns: 1fr; }
 }
@@ -166,8 +193,9 @@ body[data-level="rod"] .seg[data-step="gul"] { opacity: 0.7; }
 .kv dd { margin: 0; color: var(--fg-dim); font-size: 0.82rem; word-break: break-word; }
 
 /* ---------- Signallogg ---------- */
-.log-wrap { overflow-x: auto; }
-.log { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+.log-wrap { overflow-x: auto; max-width: 100%; }
+.log { width: 100%; border-collapse: collapse; font-size: 0.84rem; table-layout: fixed; }
+.log td.c-title { overflow-wrap: anywhere; }
 .log th {
   text-align: left; font-weight: 500; color: var(--fg-faint);
   font-size: 0.7rem; letter-spacing: 0.1em;
@@ -184,11 +212,49 @@ body[data-level="rod"] .seg[data-step="gul"] { opacity: 0.7; }
 .log td.c-title a:hover { color: var(--sig); }
 .log .ev-sum { display: block; color: var(--fg-faint); font-size: 0.78rem; margin-top: 3px; }
 .log-empty td { color: var(--fg-faint); font-style: italic; }
+@media (max-width: 520px) {
+  .log .c-time { width: 52px; }
+  .log .c-src { width: 84px; }
+  .log td.c-src .src { font-size: 0.66rem; }
+  .log .ev-sum { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}
+
+/* Badges i loggen */
+.badge {
+  display: inline-block; font-size: 0.6rem; letter-spacing: 0.06em;
+  padding: 0 5px; margin-right: 5px; border: 1px solid var(--line-2);
+  vertical-align: middle; white-space: nowrap;
+}
+.badge.se { color: var(--fg); border-color: var(--fg-faint); }
+.badge.exploit { color: var(--rod); border-color: var(--rod); }
+.badge.crit { color: var(--gul); border-color: var(--gul); }
+.badge.cve { color: var(--fg-dim); }
+
+/* ---------- Trendhistorik ---------- */
+.trend { display: flex; align-items: flex-end; gap: 2px; height: 90px; padding-top: 4px; }
+.trend-bar { flex: 1 1 0; min-width: 2px; background: var(--okand); opacity: 0.9; transition: height 0.2s; }
+.trend-bar[data-lvl="gron"] { background: var(--gron); }
+.trend-bar[data-lvl="gul"]  { background: var(--gul); }
+.trend-bar[data-lvl="rod"]  { background: var(--rod); }
+.trend-bar:hover { opacity: 1; outline: 1px solid var(--fg-dim); }
+.trend-empty { color: var(--fg-faint); font-style: italic; align-self: center; }
+.trend-axis { display: flex; justify-content: space-between; margin-top: 6px; font-size: 0.68rem; color: var(--fg-faint); letter-spacing: 0.06em; }
+
+/* ---------- Källhälsa ---------- */
+.cols-2 { margin-top: 0; }
+.health { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; }
+.health li { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--fg-dim); }
+.health .h-dot { width: 8px; height: 8px; flex: none; background: var(--fg-faint); }
+.health li.ok .h-dot { background: var(--gron); }
+.health li.down .h-dot { background: var(--rod); }
+.health .h-count { margin-left: auto; color: var(--fg-faint); font-variant-numeric: tabular-nums; }
+.health-empty { color: var(--fg-faint); font-style: italic; }
+@media (max-width: 520px) { .health { grid-template-columns: 1fr; } }
 
 /* ---------- Prenumerera ---------- */
 .sub-lead { margin: 0 0 14px; color: var(--fg-dim); }
 .sub-lead strong { color: var(--fg); }
-.sub-form { display: flex; align-items: stretch; gap: 8px; max-width: 480px; }
+.sub-form { display: flex; align-items: stretch; gap: 8px; max-width: 480px; flex-wrap: wrap; }
 .sub-form .prompt { display: flex; align-items: center; color: var(--sig); padding-right: 2px; }
 .sub-form input {
   flex: 1 1 auto; min-width: 0;

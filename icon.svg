@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#0a0c0f"/>
+  <!-- signalstaplar, "storm/varning" -->
+  <rect x="96" y="80" width="52" height="280" fill="#ffb020"/>
+  <rect x="96" y="392" width="52" height="52" fill="#ffb020"/>
+  <rect x="230" y="180" width="52" height="180" fill="#8892a0"/>
+  <rect x="364" y="120" width="52" height="240" fill="#8892a0"/>
+</svg>

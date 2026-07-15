@@ -2,19 +2,22 @@
 /**
  * Stormvarning – hotanalys
  * ------------------------------------------------------------
- * Hämtar öppna hotsignaler (CERT-SE, MSB, säkerhetsnyheter via RSS/Atom),
- * skickar dem till MiniMax för bedömning och skriver hotnivå + svensk
- * lägesbild till data.json.
+ * Hämtar öppna hotsignaler från flera källor (svenska myndigheter, CISA KEV
+ * (aktivt utnyttjade sårbarheter), internationella CERT:er och säkerhetsnyheter),
+ * beräknar deterministiska indikatorer, låter MiniMax göra en lägesbedömning och
+ * skriver hotnivå + lägesbild till data.json. Historiken sparas i history.json.
  *
  * Körs av GitHub Actions var 30:e minut. Kräver Node 20+ (global fetch).
  * Inga npm-beroenden.
  *
  * Miljövariabler:
- *   MINIMAX_API_KEY   – API-nyckel (från GitHub Secrets). Utan den görs ingen
- *                       AI-analys men data.json skrivs ändå med händelserna.
+ *   MINIMAX_API_KEY   – API-nyckel (från GitHub Secrets). Utan den används en
+ *                       deterministisk heuristik som fallback.
  *   MINIMAX_MODEL     – modellnamn (default: MiniMax-Text-01)
  *   MINIMAX_BASE_URL  – bas-URL (default: https://api.minimaxi.chat)
  *   MINIMAX_GROUP_ID  – valfritt GroupId (läggs på som query-param om satt)
+ *   BUTTONDOWN_API_KEY – valfritt, för e-postnotiser vid höjd nivå
+ *   SITE_URL          – publik URL (används i notismejl)
  */
 
 import { writeFile, readFile } from "node:fs/promises";
@@ -24,30 +27,40 @@ import { dirname, join } from "node:path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const OUT = join(ROOT, "data.json");
+const HISTORY = join(ROOT, "history.json");
 
 const CONFIG = {
   apiKey: process.env.MINIMAX_API_KEY || "",
   model: process.env.MINIMAX_MODEL || "MiniMax-Text-01",
   baseUrl: (process.env.MINIMAX_BASE_URL || "https://api.minimaxi.chat").replace(/\/+$/, ""),
   groupId: process.env.MINIMAX_GROUP_ID || "",
-  maxEvents: 15,
+  maxEvents: 24,
+  maxPromptEvents: 20,
+  historyLength: 480, // ~10 dygn @ 30 min
+  kevWindowDays: 7,
   intervalMinutes: 30,
-  // E-postnotiser (Buttondown). Utan nyckel skickas inga mejl.
   buttondownKey: process.env.BUTTONDOWN_API_KEY || "",
   buttondownUrl: process.env.BUTTONDOWN_URL || "https://api.buttondown.com/v1/emails",
   siteUrl: process.env.SITE_URL || "https://hhammarstrand.github.io/stormvarning/",
 };
 
 /**
- * Öppna feeds. `weight` markerar hur tungt en källa väger i bedömningen
- * (officiella myndighetskällor väger tyngst). Feeds som fallerar hoppas över.
+ * Öppna källor. `weight` = hur tungt källan väger (myndigheter tyngst),
+ * `region` SE/INT, `type` avgör parser. Källor som fallerar hoppas över och
+ * markeras som nere i källhälsan.
  */
-const FEEDS = [
-  { name: "CERT-SE", url: "https://www.cert.se/feed.rss", weight: "hög" },
-  { name: "MCF", url: "https://www.mcf.se/sv/rss-floden/rss-alla-nyheter-fran-startsidan-pa-mcf.se/", weight: "hög" },
-  { name: "The Hacker News", url: "https://feeds.feedburner.com/TheHackersNews", weight: "medel" },
-  { name: "BleepingComputer", url: "https://www.bleepingcomputer.com/feed/", weight: "medel" },
+const SOURCES = [
+  { name: "CERT-SE", type: "rss", region: "SE", weight: "hög", url: "https://www.cert.se/feed.rss" },
+  { name: "MCF", type: "rss", region: "SE", weight: "hög", cyberFilter: true, url: "https://www.mcf.se/sv/rss-floden/rss-alla-nyheter-fran-startsidan-pa-mcf.se/" },
+  { name: "Krisinformation", type: "krisinfo", region: "SE", weight: "hög", cyberFilter: true, url: "https://api.krisinformation.se/v3/news?format=json" },
+  { name: "CISA KEV", type: "kev", region: "INT", weight: "hög", url: "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json" },
+  { name: "CISA", type: "rss", region: "INT", weight: "medel", url: "https://www.cisa.gov/cybersecurity-advisories/all.xml" },
+  { name: "NCSC-UK", type: "rss", region: "INT", weight: "medel", url: "https://www.ncsc.gov.uk/api/1/services/v1/news-rss-feed.xml" },
+  { name: "The Hacker News", type: "rss", region: "INT", weight: "medel", url: "https://feeds.feedburner.com/TheHackersNews" },
+  { name: "BleepingComputer", type: "rss", region: "INT", weight: "medel", url: "https://www.bleepingcomputer.com/feed/" },
 ];
+
+const AUTHORITY_SOURCES = new Set(["CERT-SE", "MCF", "Krisinformation", "CISA", "CISA KEV", "NCSC-UK"]);
 
 const LEVEL_LABELS = {
   "grön": "Grön – låg hotnivå",
@@ -55,6 +68,12 @@ const LEVEL_LABELS = {
   "röd": "Röd – allvarlig hotnivå",
   "okänd": "Okänd – ingen aktuell analys",
 };
+
+// Nyckelord för att flagga signaler deterministiskt (oberoende av AI).
+const RE_SWEDEN = /\b(sverige|svensk\w*|swedish|sweden)\b/i;
+const RE_EXPLOITED = /(aktivt utnyttja\w*|utnyttjas aktivt|actively exploited|exploited in the wild|in-the-wild|zero[- ]day|nolldag|0-day|under active attack)/i;
+const RE_CRITICAL = /(kritisk\w* sårbarhet|critical vulnerabilit|cvss[: ]*(9|10)|\brce\b|remote code execution|wormable|maskmask|pre-auth)/i;
+const RE_CYBER = /(cyber|it-attack|it-angrepp|dataintrång|hackare|hackad|ransomware|utpressning|överbelastning|ddos|driftstörning|sårbarhet|skadlig kod|malware|phishing|nätfiske|informationssäkerhet|angrepp|intrång)/i;
 
 /* ---------------------------------------------------------------- utils */
 
@@ -79,7 +98,6 @@ function stripTags(s) {
 
 function firstMatch(block, tags) {
   for (const tag of tags) {
-    // <tag ...>value</tag>
     const re = new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, "i");
     const m = block.match(re);
     if (m) return m[1];
@@ -88,10 +106,8 @@ function firstMatch(block, tags) {
 }
 
 function extractLink(block) {
-  // RSS: <link>url</link>
   const rss = block.match(/<link(?:\s[^>]*)?>([\s\S]*?)<\/link>/i);
   if (rss && stripTags(rss[1])) return stripTags(rss[1]);
-  // Atom: <link href="url" .../>
   const atom = block.match(/<link\b[^>]*href=["']([^"']+)["']/i);
   if (atom) return atom[1];
   return "";
@@ -102,107 +118,242 @@ function truncate(s, n) {
   return s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s;
 }
 
-/* -------------------------------------------------------------- fetching */
-
-async function fetchFeed(feed) {
-  try {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 15000);
-    const res = await fetch(feed.url, {
-      signal: ctrl.signal,
-      headers: {
-        "User-Agent": "Stormvarning/1.0 (+https://github.com/hhammarstrand/stormvarning)",
-        "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
-      },
-    });
-    clearTimeout(timer);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const xml = await res.text();
-    const items = parseFeed(xml, feed);
-    log(`${feed.name}: ${items.length} poster`);
-    return items;
-  } catch (err) {
-    log(`VARNING: kunde inte hämta ${feed.name} (${feed.url}): ${err.message}`);
-    return [];
-  }
-}
-
-function parseFeed(xml, feed) {
-  const events = [];
-  // Matcha både RSS <item> och Atom <entry>
-  const blocks = xml.match(/<(item|entry)\b[\s\S]*?<\/\1>/gi) || [];
-  for (const block of blocks) {
-    const title = stripTags(firstMatch(block, ["title"]));
-    if (!title) continue;
-    const link = extractLink(block);
-    const rawDate = stripTags(
-      firstMatch(block, ["pubDate", "published", "updated", "dc:date"])
-    );
-    const date = normalizeDate(rawDate);
-    const summary = truncate(
-      stripTags(firstMatch(block, ["description", "summary", "content"])),
-      280
-    );
-    events.push({ title, source: feed.name, weight: feed.weight, date, link, summary });
-  }
-  return events;
-}
-
 function normalizeDate(raw) {
   if (!raw) return "";
   const d = new Date(raw);
   return isNaN(d) ? "" : d.toISOString();
 }
 
-async function collectEvents() {
-  const results = await Promise.all(FEEDS.map(fetchFeed));
-  const all = results.flat();
+async function fetchText(url, timeoutMs = 15000, accept) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, {
+      signal: ctrl.signal,
+      headers: {
+        "User-Agent": "Stormvarning/2.0 (+https://github.com/hhammarstrand/stormvarning)",
+        "Accept": accept || "application/rss+xml, application/atom+xml, application/xml, text/xml, application/json, */*",
+      },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.text();
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
-  // Dedupe på titel+källa
+/* -------------------------------------------------------------- parsers */
+
+function parseRss(xml, source) {
+  const events = [];
+  const blocks = xml.match(/<(item|entry)\b[\s\S]*?<\/\1>/gi) || [];
+  for (const block of blocks) {
+    const title = stripTags(firstMatch(block, ["title"]));
+    if (!title) continue;
+    const link = extractLink(block);
+    const date = normalizeDate(stripTags(firstMatch(block, ["pubDate", "published", "updated", "dc:date"])));
+    const summary = truncate(stripTags(firstMatch(block, ["description", "summary", "content"])), 280);
+    events.push(makeEvent({ title, source, date, link, summary }));
+  }
+  return events;
+}
+
+// CISA Known Exploited Vulnerabilities – guldstandard för "aktivt utnyttjas".
+function parseKev(jsonText, source) {
+  const data = JSON.parse(jsonText);
+  const vulns = Array.isArray(data.vulnerabilities) ? data.vulnerabilities : [];
+  const cutoff = Date.now() - CONFIG.kevWindowDays * 86400000;
+  const events = [];
+  for (const v of vulns) {
+    const added = v.dateAdded ? Date.parse(v.dateAdded) : NaN;
+    if (isNaN(added) || added < cutoff) continue;
+    const cve = v.cveID || "";
+    const title = `${cve}: ${v.vulnerabilityName || v.product || "Aktivt utnyttjad sårbarhet"}`;
+    events.push(makeEvent({
+      title,
+      source,
+      date: new Date(added).toISOString(),
+      link: cve ? `https://nvd.nist.gov/vuln/detail/${cve}` : "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      summary: truncate(`${v.vendorProject || ""} ${v.product || ""} – ${v.shortDescription || ""}`.trim(), 280),
+      flags: { activelyExploited: true, cve },
+    }));
+  }
+  return events;
+}
+
+// krisinformation.se – officiella svenska krishändelser (filtreras till cyberrelevanta).
+function parseKrisinfo(jsonText, source) {
+  let data;
+  try { data = JSON.parse(jsonText); } catch { return []; }
+  const items = Array.isArray(data) ? data : (Array.isArray(data.news) ? data.news : []);
+  const events = [];
+  for (const it of items) {
+    const title = stripTags(it.Headline || it.headline || "");
+    if (!title) continue;
+    const summary = truncate(stripTags(it.Preamble || it.preamble || it.BodyText || ""), 280);
+    if (!RE_CYBER.test(title + " " + summary)) continue; // bara cyberrelevant
+    const date = normalizeDate(it.Published || it.Updated || it.PublishedDate || "");
+    const link = it.Web || it.web || (it.Links && it.Links[0] && it.Links[0].Url) || "https://www.krisinformation.se";
+    events.push(makeEvent({ title, source, date, link, summary }));
+  }
+  return events;
+}
+
+function makeEvent({ title, source, date, link, summary, flags }) {
+  return { title, source: source.name, region: source.region, weight: source.weight, date: date || "", link: link || "", summary: summary || "", flags: flags || {} };
+}
+
+// Flagga varje händelse deterministiskt (Sverige-relevans, exploit, kritisk).
+function annotate(ev) {
+  const text = `${ev.title} ${ev.summary}`;
+  const f = ev.flags || {};
+  ev.flags = {
+    activelyExploited: !!f.activelyExploited || RE_EXPLOITED.test(text),
+    critical: RE_CRITICAL.test(text),
+    swedenRelevant: ev.region === "SE" || RE_SWEDEN.test(text),
+    cve: f.cve || (text.match(/CVE-\d{4}-\d{4,7}/i) || [null])[0],
+  };
+  return ev;
+}
+
+/* -------------------------------------------------------------- fetching */
+
+async function fetchSource(source) {
+  const health = { name: source.name, region: source.region, ok: false, count: 0 };
+  try {
+    const timeout = source.type === "kev" ? 25000 : 15000;
+    const body = await fetchText(source.url, timeout);
+    let events;
+    if (source.type === "kev") events = parseKev(body, source);
+    else if (source.type === "krisinfo") events = parseKrisinfo(body, source);
+    else events = parseRss(body, source);
+    // Källor med blandat innehåll (MCF, krisinformation) filtreras till cyber.
+    if (source.cyberFilter) events = events.filter((e) => RE_CYBER.test(`${e.title} ${e.summary}`));
+    health.ok = true;
+    health.count = events.length;
+    log(`${source.name}: ${events.length} poster`);
+    return { events, health };
+  } catch (err) {
+    log(`VARNING: kunde inte hämta ${source.name} (${source.url}): ${err.message}`);
+    return { events: [], health };
+  }
+}
+
+async function collectSignals() {
+  const results = await Promise.all(SOURCES.map(fetchSource));
+  const health = results.map((r) => r.health);
+  let all = results.flatMap((r) => r.events).map(annotate);
+
+  // Dedupe på titel (normaliserad) – samma story kan finnas i flera källor.
   const seen = new Set();
   const deduped = [];
   for (const ev of all) {
-    const key = (ev.source + "|" + ev.title).toLowerCase();
+    const key = ev.title.toLowerCase().replace(/[^a-zà-ÿ0-9]+/g, " ").trim().slice(0, 80);
     if (seen.has(key)) continue;
     seen.add(key);
     deduped.push(ev);
   }
 
-  // Sortera nyast först (poster utan datum sist)
-  deduped.sort((a, b) => {
-    const ta = a.date ? Date.parse(a.date) : 0;
-    const tb = b.date ? Date.parse(b.date) : 0;
-    return tb - ta;
-  });
+  // Prioritera akuta signaler så de aldrig trängs undan av rutinnyheter:
+  // svensk + akut överst, sedan aktivt utnyttjade/kritiska, sedan svensk, sedan färskhet.
+  const prio = (ev) =>
+    (ev.flags.swedenRelevant && (ev.flags.activelyExploited || ev.flags.critical) ? 10 : 0) +
+    (ev.flags.activelyExploited ? 4 : 0) +
+    (ev.flags.critical ? 3 : 0) +
+    (ev.flags.swedenRelevant ? 2 : 0) +
+    (AUTHORITY_SOURCES.has(ev.source) ? 1 : 0);
+  deduped.sort((a, b) => (prio(b) - prio(a)) || ((Date.parse(b.date) || 0) - (Date.parse(a.date) || 0)));
 
-  return deduped.slice(0, CONFIG.maxEvents);
+  return { events: deduped.slice(0, CONFIG.maxEvents), health };
+}
+
+/* ------------------------------------------------------- indikatorer */
+
+function computeIndicators(events) {
+  const ind = {
+    total_signals: events.length,
+    sweden_relevant: 0,
+    sweden_acute: 0, // Sverige-relevant OCH aktivt utnyttjad/kritisk – den viktigaste tidiga signalen
+    actively_exploited: 0,
+    critical: 0,
+    authority_alerts: 0,
+    kev_recent: 0,
+  };
+  for (const ev of events) {
+    const acute = ev.flags.activelyExploited || ev.flags.critical;
+    if (ev.flags.swedenRelevant) ind.sweden_relevant++;
+    if (ev.flags.swedenRelevant && acute) ind.sweden_acute++;
+    if (ev.flags.activelyExploited) ind.actively_exploited++;
+    if (ev.flags.critical) ind.critical++;
+    if (AUTHORITY_SOURCES.has(ev.source)) ind.authority_alerts++;
+    if (ev.source === "CISA KEV") ind.kev_recent++;
+  }
+  return ind;
+}
+
+// Transparent 0–100-poäng som tripwire och för historik/trend. Vikten ligger på
+// AKUTA signaler (aktivt utnyttjade/kritiska sårbarheter, särskilt med svensk
+// koppling) – inte på volymen rutinnyheter från myndigheter.
+function riskScore(ind) {
+  // Svensk akut exponering är den dominerande drivkraften; internationell
+  // exploit-volym (rutinmässig varje patch-vecka) bidrar mer måttfullt.
+  const s =
+    ind.sweden_acute * 22 +
+    ind.actively_exploited * 3 +
+    ind.critical * 3 +
+    ind.kev_recent * 2 +
+    Math.min(ind.authority_alerts, 4) * 1;
+  return Math.max(0, Math.min(100, Math.round(s)));
+}
+
+// Deterministisk fallback-nivå när AI inte är tillgänglig. Konservativ – larmar
+// bara vid en akut signal med svensk koppling, och går aldrig till röd (det
+// kräver mänsklig/AI-bedömning). AI:n gör den egentliga nyanserade bedömningen.
+function heuristicLevel(ind) {
+  if (ind.sweden_acute > 0) return "gul";
+  return "grön";
 }
 
 /* --------------------------------------------------------------- MiniMax */
 
-function buildPrompt(events) {
-  const list = events
+function buildPrompt(events, ind) {
+  const list = events.slice(0, CONFIG.maxPromptEvents)
     .map((e, i) => {
       const when = e.date ? new Date(e.date).toISOString().slice(0, 16).replace("T", " ") : "okänt datum";
-      return `${i + 1}. [${e.source} · vikt: ${e.weight}] (${when})\n   ${e.title}\n   ${e.summary || ""}`;
+      const tags = [
+        e.flags.swedenRelevant ? "SVERIGE" : null,
+        e.flags.activelyExploited ? "AKTIVT-UTNYTTJAD" : null,
+        e.flags.critical ? "KRITISK" : null,
+      ].filter(Boolean).join(",");
+      return `${i + 1}. [${e.source} · ${e.region} · vikt:${e.weight}${tags ? " · " + tags : ""}] (${when})\n   ${e.title}\n   ${e.summary || ""}`;
     })
     .join("\n\n");
 
-  return `Här är de senaste öppna hotsignalerna (RSS från CERT-SE, MSB och säkerhetsnyheter):
+  const indText = `Deterministiska indikatorer (automatiskt beräknade ur signalerna):
+- Totalt antal signaler: ${ind.total_signals}
+- Sverige-relaterade: ${ind.sweden_relevant}
+- Aktivt utnyttjade sårbarheter: ${ind.actively_exploited}
+- Kritiska sårbarheter: ${ind.critical}
+- Myndighetsvarningar: ${ind.authority_alerts}
+- Nya CISA KEV (aktivt utnyttjade): ${ind.kev_recent}`;
+
+  return `Här är de senaste öppna hotsignalerna (svenska myndigheter, CISA KEV, internationella CERT:er och säkerhetsnyheter):
 
 ${list || "(inga signaler kunde hämtas)"}
 
-Uppgift: Gör en preliminär, ansvarsfull lägesbedömning av risken för en storskalig, samhällspåverkande cyberattack mot Sverige just nu.`;
+${indText}
+
+Uppgift: Gör en preliminär, ansvarsfull lägesbedömning av risken för en storskalig, samhällspåverkande cyberattack mot Sverige just nu. Väg särskilt signaler taggade SVERIGE och AKTIVT-UTNYTTJAD tyngst.`;
 }
 
-const SYSTEM_PROMPT = `Du är en säkerhetsanalytiker för "Stormvarning", ett tidigt varningssystem för storskaliga cyberattacker mot Sverige. Du får en lista av öppna hotsignaler.
+const SYSTEM_PROMPT = `Du är en säkerhetsanalytiker för "Stormvarning", ett tidigt varningssystem för storskaliga cyberattacker mot Sverige. Du får en lista av öppna hotsignaler samt deterministiska indikatorer.
 
 Bedöm hotnivån enligt en trestegsskala:
 - "grön": normalläge, inga tecken på förhöjt hot mot Sverige.
 - "gul": förhöjt läge – konkreta indikatorer, pågående kampanjer i regionen eller sårbarheter som aktivt utnyttjas och kan påverka svenska mål.
 - "röd": allvarligt läge – tecken på pågående eller nära förestående storskalig attack som påverkar svensk kritisk infrastruktur eller samhällsviktig verksamhet.
 
-Var måttfull och undvik att larma i onödan. Officiella myndighetskällor (CERT-SE, MSB) väger tyngst. Enskilda internationella nyheter utan tydlig svensk koppling motiverar sällan mer än grön nivå.
+Var måttfull och undvik att larma i onödan. Officiella myndighetskällor (CERT-SE, MCF, CISA, NCSC) väger tyngst. Enskilda internationella nyheter utan tydlig svensk koppling motiverar sällan mer än grön nivå. Sårbarheter som aktivt utnyttjas och samtidigt berör svenska mål motiverar minst gul.
 
 Svara ENDAST med giltig JSON, inga kodblock eller extra text, på formen:
 {
@@ -213,21 +364,19 @@ Svara ENDAST med giltig JSON, inga kodblock eller extra text, på formen:
 
 function extractJson(text) {
   if (!text) return null;
-  // Plocka ut första balanserade { ... }
   const start = text.indexOf("{");
   const end = text.lastIndexOf("}");
   if (start === -1 || end === -1 || end < start) return null;
-  const candidate = text.slice(start, end + 1);
   try {
-    return JSON.parse(candidate);
+    return JSON.parse(text.slice(start, end + 1));
   } catch {
     return null;
   }
 }
 
-async function analyzeWithMiniMax(events) {
+async function analyzeWithMiniMax(events, ind) {
   if (!CONFIG.apiKey) {
-    log("Ingen MINIMAX_API_KEY satt – hoppar över AI-analys.");
+    log("Ingen MINIMAX_API_KEY satt – använder heuristik.");
     return null;
   }
 
@@ -239,62 +388,39 @@ async function analyzeWithMiniMax(events) {
     temperature: 0.2,
     messages: [
       { role: "system", content: SYSTEM_PROMPT },
-      { role: "user", content: buildPrompt(events) },
+      { role: "user", content: buildPrompt(events, ind) },
     ],
   };
 
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 45000);
   try {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 45000);
     const res = await fetch(url, {
       method: "POST",
       signal: ctrl.signal,
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${CONFIG.apiKey}`,
-      },
+      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${CONFIG.apiKey}` },
       body: JSON.stringify(body),
     });
-    clearTimeout(timer);
-
     const text = await res.text();
     if (!res.ok) throw new Error(`HTTP ${res.status}: ${truncate(text, 200)}`);
 
     let payload;
-    try {
-      payload = JSON.parse(text);
-    } catch {
-      throw new Error("Kunde inte tolka MiniMax-svar som JSON");
-    }
-
-    // MiniMax kan signalera fel i base_resp
+    try { payload = JSON.parse(text); } catch { throw new Error("Kunde inte tolka MiniMax-svar som JSON"); }
     if (payload.base_resp && payload.base_resp.status_code) {
-      throw new Error(
-        `MiniMax base_resp ${payload.base_resp.status_code}: ${payload.base_resp.status_msg || ""}`
-      );
+      throw new Error(`MiniMax base_resp ${payload.base_resp.status_code}: ${payload.base_resp.status_msg || ""}`);
     }
-
-    const content =
-      payload.choices &&
-      payload.choices[0] &&
-      payload.choices[0].message &&
-      payload.choices[0].message.content;
-
+    const content = payload.choices?.[0]?.message?.content;
     const parsed = extractJson(typeof content === "string" ? content : "");
-    if (!parsed || !parsed.level) {
-      throw new Error("MiniMax-svaret innehöll ingen giltig bedömnings-JSON");
-    }
+    if (!parsed || !parsed.level) throw new Error("MiniMax-svaret innehöll ingen giltig bedömnings-JSON");
 
     const level = normalizeLevel(parsed.level);
     log(`MiniMax-bedömning: ${level}`);
-    return {
-      level,
-      summary: truncate(parsed.summary || "", 400),
-      reasoning: truncate(parsed.reasoning || "", 1000),
-    };
+    return { level, summary: truncate(parsed.summary || "", 400), reasoning: truncate(parsed.reasoning || "", 1000) };
   } catch (err) {
     log(`VARNING: MiniMax-analys misslyckades: ${err.message}`);
     return null;
+  } finally {
+    clearTimeout(timer);
   }
 }
 
@@ -307,9 +433,6 @@ function normalizeLevel(raw) {
 }
 
 const LEVEL_RANK = { "grön": 0, "gul": 1, "röd": 2 };
-
-// Rang för jämförelse. Okänd/saknad behandlas som grön (0) så vi inte råkar
-// larma bara för att en tidigare körning saknade AI-bedömning.
 function levelRank(level) {
   const r = LEVEL_RANK[normalizeLevel(level)];
   return typeof r === "number" ? r : 0;
@@ -317,11 +440,6 @@ function levelRank(level) {
 
 /* ---------------------------------------------------------- e-postnotiser */
 
-/**
- * Skickar ett mejl till alla Buttondown-prenumeranter. Avsiktligt tunt:
- * status "about_to_send" gör att Buttondown skickar direkt (default är annars
- * ett utkast). Fel loggas men får aldrig krascha jobbet.
- */
 async function sendNotification(data) {
   const subjectPrefix = data.level === "röd" ? "🔴 RÖD" : "🟡 GUL";
   const subject = `Stormvarning: ${subjectPrefix} hotnivå`;
@@ -345,10 +463,7 @@ async function sendNotification(data) {
     const res = await fetch(CONFIG.buttondownUrl, {
       method: "POST",
       signal: ctrl.signal,
-      headers: {
-        "Authorization": `Token ${CONFIG.buttondownKey}`,
-        "Content-Type": "application/json",
-      },
+      headers: { "Authorization": `Token ${CONFIG.buttondownKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({ subject, body, status: "about_to_send" }),
     });
     const text = await res.text();
@@ -365,55 +480,58 @@ async function sendNotification(data) {
 
 /* ------------------------------------------------------------------ main */
 
-async function readPrevious() {
-  try {
-    return JSON.parse(await readFile(OUT, "utf8"));
-  } catch {
-    return null;
-  }
+async function readJson(path, fallback) {
+  try { return JSON.parse(await readFile(path, "utf8")); } catch { return fallback; }
 }
 
 async function main() {
   const now = new Date();
   const next = new Date(now.getTime() + CONFIG.intervalMinutes * 60 * 1000);
 
-  const events = await collectEvents();
-  log(`Totalt ${events.length} unika händelser efter dedupe.`);
+  const { events, health } = await collectSignals();
+  const indicators = computeIndicators(events);
+  const score = riskScore(indicators);
+  log(`${events.length} signaler · indikatorer: ${JSON.stringify(indicators)} · score ${score}`);
 
-  const analysis = await analyzeWithMiniMax(events);
-  const prev = await readPrevious();
+  const analysis = await analyzeWithMiniMax(events, indicators);
+  const prev = await readJson(OUT, null);
 
-  let level, summary, reasoning;
+  let level, summary, reasoning, model;
   if (analysis) {
     ({ level, summary, reasoning } = analysis);
+    model = CONFIG.model;
+  } else if (events.length) {
+    // Deterministisk heuristik som backstop – systemet är aldrig tyst.
+    level = heuristicLevel(indicators);
+    model = "heuristik (utan AI)";
+    summary = level === "gul"
+      ? "Förhöjda indikatorer: aktivt utnyttjade sårbarheter med möjlig svensk koppling. Automatisk heuristik (ingen AI-bedömning)."
+      : "Inga tydliga tecken på förhöjt hot mot Sverige i signalerna. Automatisk heuristik (ingen AI-bedömning).";
+    reasoning = `Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: ${indicators.actively_exploited} aktivt utnyttjade sårbarheter, ${indicators.sweden_relevant} Sverige-relaterade signaler, ${indicators.authority_alerts} myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.`;
   } else {
-    // Fallback: ingen färsk AI-bedömning. Behåll händelserna men var tydlig
-    // med att nivån inte kunde beräknas den här körningen.
     level = "okänd";
-    summary = events.length
-      ? "Nya hotsignaler hämtades, men ingen automatisk hotbedömning kunde göras denna körning."
-      : "Inga hotsignaler kunde hämtas och ingen bedömning kunde göras denna körning.";
-    reasoning = CONFIG.apiKey
-      ? "AI-analysen (MiniMax) svarade inte som väntat. Se senaste händelser nedan och följ officiella källor (CERT-SE, MSB) för bekräftad information."
-      : "Ingen MINIMAX_API_KEY är konfigurerad, så någon automatisk bedömning görs inte. Händelselistan nedan visar de senaste öppna signalerna.";
-    if (prev && prev.updated) {
-      reasoning += ` Föregående bedömning (${prev.level || "okänd"}) gjordes ${new Date(prev.updated).toLocaleString("sv-SE")}.`;
-    }
+    model = null;
+    summary = "Inga hotsignaler kunde hämtas och ingen bedömning kunde göras denna körning.";
+    reasoning = "Samtliga källor svarade inte. Kontrollera källhälsan nedan och följ officiella källor (CERT-SE, MCF).";
   }
 
-  // Avgör om vi ska larma. `notified_level` minns nivån vi senast mejlade om,
-  // så vi bara skickar vid en faktisk HÖJNING till gul/röd – inte var 30:e minut
-  // och inte när en tidigare körning tillfälligt saknade AI-bedömning.
+  // Notiser: bara vid AI-bedömd höjning till gul/röd (heuristik larmar inte, för
+  // att undvika falsklarm). `notified_level` minns senast larmade nivå.
   const baseline = prev && prev.notified_level ? normalizeLevel(prev.notified_level) : "grön";
   let notifiedLevel = baseline;
   let shouldNotify = false;
-  if (level !== "okänd") {
-    // Följ aktuell nivå (även vid nedgång) men larma bara vid uppgång till gul/röd.
+  if (analysis && level !== "okänd") {
     notifiedLevel = level;
-    if (levelRank(level) > levelRank(baseline) && levelRank(level) >= LEVEL_RANK["gul"]) {
-      shouldNotify = true;
-    }
+    if (levelRank(level) > levelRank(baseline) && levelRank(level) >= LEVEL_RANK["gul"]) shouldNotify = true;
   }
+
+  // Historik / trend.
+  const history = await readJson(HISTORY, []);
+  const historyArr = Array.isArray(history) ? history : [];
+  if (level !== "okänd") {
+    historyArr.push({ t: now.toISOString(), level, score });
+  }
+  const trimmedHistory = historyArr.slice(-CONFIG.historyLength);
 
   const data = {
     updated: now.toISOString(),
@@ -422,11 +540,12 @@ async function main() {
     level_label: LEVEL_LABELS[level] || LEVEL_LABELS["okänd"],
     summary,
     reasoning,
+    score,
+    indicators,
     events: events.map(({ weight, ...rest }) => rest),
-    sources: [...new Set(events.map((e) => e.source))].length
-      ? [...new Set(events.map((e) => e.source))]
-      : FEEDS.map((f) => f.name),
-    model: analysis ? CONFIG.model : null,
+    sources_health: health,
+    sources: SOURCES.map((s) => s.name),
+    model,
     notified_level: notifiedLevel,
   };
 
@@ -440,7 +559,8 @@ async function main() {
   }
 
   await writeFile(OUT, JSON.stringify(data, null, 2) + "\n", "utf8");
-  log(`Skrev ${OUT} (nivå: ${level}, händelser: ${data.events.length}).`);
+  await writeFile(HISTORY, JSON.stringify(trimmedHistory) + "\n", "utf8");
+  log(`Skrev data.json (nivå: ${level}, score: ${score}, signaler: ${data.events.length}, historik: ${trimmedHistory.length}).`);
 }
 
 main().catch((err) => {
