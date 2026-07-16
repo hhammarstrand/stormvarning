@@ -140,19 +140,46 @@
   }
 
   var allEvents = [];
+  var activeFilter = null; // tripwire-nyckel eller null = visa allt
+
+  // Källor som räknas som myndigheter (samma lista som analysmotorn).
+  var AUTHORITY = { "CERT-SE": 1, "MCF": 1, "Krisinformation": 1, "CISA": 1, "CISA KEV": 1, "NCSC-UK": 1 };
+
+  var FILTERS = {
+    sweden_acute: {
+      label: "SVENSK AKUT",
+      test: function (e) { var f = e.flags || {}; return f.swedenRelevant && (f.activelyExploited || f.critical || f.incident); }
+    },
+    actively_exploited: { label: "AKTIVT UTNYTTJADE", test: function (e) { return (e.flags || {}).activelyExploited; } },
+    critical: { label: "KRITISKA", test: function (e) { return (e.flags || {}).critical; } },
+    kev_recent: { label: "NYA CISA KEV", test: function (e) { return e.source === "CISA KEV"; } },
+    sweden_relevant: { label: "SVERIGE-RELATERADE", test: function (e) { return (e.flags || {}).swedenRelevant; } },
+    authority_alerts: { label: "MYNDIGHETSSIGNALER", test: function (e) { return AUTHORITY[e.source] === 1; } }
+  };
 
   function renderEvents(events) {
     if (Array.isArray(events)) allEvents = events;
     var tb = $("events");
-    var seOnly = $("se-only") && $("se-only").checked;
-    var list = seOnly ? allEvents.filter(function (e) { return e.flags && e.flags.swedenRelevant; }) : allEvents;
+    var f = activeFilter && FILTERS[activeFilter];
+    var list = f ? allEvents.filter(f.test) : allEvents;
+
+    // Filter-chip i loggrubriken + markerad tripwire
+    var chip = $("filter-chip");
+    if (chip) {
+      if (f) { chip.textContent = "FILTER: " + f.label + " ✕"; chip.hidden = false; }
+      else chip.hidden = true;
+    }
+    document.querySelectorAll(".tw").forEach(function (t) {
+      t.classList.toggle("active", t.getAttribute("data-key") === activeFilter);
+    });
+
     if (!Array.isArray(list) || list.length === 0) {
       tb.innerHTML = '<tr class="log-empty"><td colspan="3">' +
-        (seOnly ? "Inga svenska signaler just nu." : "Inga signaler att visa just nu.") + "</td></tr>";
-      $("event-count").textContent = seOnly ? "[0/" + allEvents.length + "]" : "";
+        (f ? "Inga signaler matchar filtret." : "Inga signaler att visa just nu.") + "</td></tr>";
+      $("event-count").textContent = f ? "[0/" + allEvents.length + "]" : "";
       return;
     }
-    $("event-count").textContent = "[" + list.length + (seOnly ? "/" + allEvents.length : "") + "]";
+    $("event-count").textContent = "[" + list.length + (f ? "/" + allEvents.length : "") + "]";
     tb.innerHTML = list.map(function (ev) {
       var f = ev.flags || {};
       var badges = "";
@@ -166,7 +193,7 @@
       var sum = ev.summary ? '<span class="ev-sum">' + escapeHtml(ev.summary) + "</span>" : "";
       return "<tr>" +
         '<td class="c-time">' + escapeHtml(fmtLogTime(ev.date)) + "</td>" +
-        '<td class="c-src"><span class="src">' + escapeHtml(ev.source || "—") + "</span></td>" +
+        '<td class="c-src"><span class="src" title="' + escapeHtml(ev.source || "") + '">' + escapeHtml(ev.source || "—") + "</span></td>" +
         '<td class="c-title">' + badges + titleHtml + sum + "</td></tr>";
     }).join("");
   }
@@ -277,9 +304,20 @@
     if (document.visibilityState === "visible") load();
   });
 
-  // Filter: endast svenska signaler
-  var seOnlyBox = $("se-only");
-  if (seOnlyBox) seOnlyBox.addEventListener("change", function () { renderEvents(); });
+  // Klickbara tripwires: filtrera signalloggen (klicka igen för att rensa)
+  document.querySelectorAll(".tw").forEach(function (tile) {
+    tile.addEventListener("click", function () {
+      var key = tile.getAttribute("data-key");
+      activeFilter = activeFilter === key ? null : key;
+      renderEvents();
+      if (activeFilter) {
+        var block = $("events-block");
+        if (block && block.scrollIntoView) block.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+  var chipEl = $("filter-chip");
+  if (chipEl) chipEl.addEventListener("click", function () { activeFilter = null; renderEvents(); });
 
   // PWA: registrera service worker (offline/installbar). Tyst om det inte stöds.
   if ("serviceWorker" in navigator) {
