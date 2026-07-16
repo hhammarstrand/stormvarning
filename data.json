@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-16T09:06:57.774Z",
-  "next_update": "2026-07-16T09:36:57.774Z",
+  "updated": "2026-07-16T11:14:50.915Z",
+  "next_update": "2026-07-16T11:44:50.915Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två nyligen upptäckta noll-dagars i SonicWall SMA1000 som har svensk koppling. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, så har CERT-SE utfärdat varningar om dessa hot och deras potential att påverka svenska organisationer. Detta, tillsammans med rapporter om koordinerade leveranskedjeangrepp och aktivt utnyttjande av andra kritiska sårbarheter, motiverar en förhöjd beredskap.",
+  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två specifikt riktade mot SonicWall SMA1000, vilket har en tydlig svensk koppling. CERT-SE har utfärdat varningar om dessa och andra incidenter, vilket tyder på en förhöjd risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 3,
-    "actively_exploited": 18,
-    "critical": 4,
+    "actively_exploited": 17,
+    "critical": 6,
     "authority_alerts": 14,
     "kev_recent": 9
   },
@@ -82,6 +82,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-56291"
+      }
+    },
+    {
+      "title": "CISA orders feds to patch actively exploited Oracle flaw by Saturday",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-16T10:56:03.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-oracle-flaw-by-saturday/",
+      "summary": "CISA has ordered federal agencies to secure their systems by Saturday against ongoing attacks exploiting a critical vulnerability in the Oracle E-Business Suite financial application. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -295,36 +310,6 @@
       }
     },
     {
-      "title": "Microsoft July 2026 Patch Tuesday fixes massive 570 flaws, 3 zero-days",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-14T18:01:36.000Z",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-july-2026-patch-tuesday-fixes-massive-570-flaws-3-zero-days/",
-      "summary": "Today is Microsoft's July 2026 Patch Tuesday, and with it comes security updates for a record-breaking 570 flaws, including two zero-day vulnerabilities exploited in attacks and one publicly disclosed. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Progress confirms ShareFile zero-day flaw behind Storage Zone shutdown",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-14T16:08:47.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/progress-confirms-sharefile-zero-day-flaw-behind-storage-zone-shutdown/",
-      "summary": "Progress Software has confirmed that a high-severity zero-day vulnerability is behind the emergency shutdown of ShareFile Storage Zone Controllers last week and has released security updates to patch the flaw. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "iCagenda and Balbooa Forms Joomla Flaws Reportedly Exploited as Zero-Days",
       "source": "The Hacker News",
       "region": "INT",
@@ -382,6 +367,21 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-14T18:17:57.000Z",
+      "link": "https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html",
+      "summary": "SAP has rolled out updates to address multiple vulnerabilities as part of its July 2026 security updates, including a critical flaw in SAP NetWeaver Application Server ABAP. The vulnerability in question is CVE-2026-44747 (CVSS score: 9.9), an out-of-bounds write flaw that allow…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-44747"
       }
     }
   ],
