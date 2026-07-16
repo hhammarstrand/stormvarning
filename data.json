@@ -1,19 +1,19 @@
 {
-  "updated": "2026-07-16T17:43:50.691Z",
-  "next_update": "2026-07-16T18:13:50.691Z",
+  "updated": "2026-07-16T18:51:33.104Z",
+  "next_update": "2026-07-16T19:21:33.104Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk IT-infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive två i SonicWall SMA1000, har identifierats och är aktivt utnyttjade, vilket påverkar svensk IT-infrastruktur. CERT-SE har utfärdat varningar om dessa sårbarheter och om pågående leveranskedjeangrepp mot svenska GitHub-repon. Även om det inte finns bekräftade incidenter i stor skala, är risken för attacker mot svenska organisationer förhöjd på grund av dessa faktorer.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Det finns flera kritiska sårbarheter som är aktivt utnyttjade globalt, och två av dessa (CVE-2026-15409 och CVE-2026-15410) är specifikt kopplade till svenska organisationer via CERT-SE:s varningar. Dessa sårbarheter i SonicWall SMA1000 har hög allvarlighetsgrad och kan potentiellt påverka svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige för närvarande, är risken för attacker mot svenska mål förhöjd på grund av dessa signaler.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 16,
-    "critical": 6,
-    "authority_alerts": 15,
-    "kev_recent": 9
+    "actively_exploited": 19,
+    "critical": 5,
+    "authority_alerts": 16,
+    "kev_recent": 12
   },
   "anomaly": {
     "active": false,
@@ -97,6 +97,51 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-58644: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-16T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-58644",
+      "summary": "Microsoft SharePoint – Microsoft SharePoint contains a deserialization of untrusted data vulnerability that allows an unauthorized attacker to execute code over a network.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-58644"
+      }
+    },
+    {
+      "title": "CVE-2026-25089: Fortinet FortiSandbox OS Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-16T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-25089",
+      "summary": "Fortinet FortiSandbox – Fortinet FortiSandbox, FortiSandbox Cloud, and FortiSandbox PaaS contain an OS command injection vulnerability that allows an unauthenticated attacker to execute unauthorized commands via specifically crafted HTTP requests.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-25089"
+      }
+    },
+    {
+      "title": "CVE-2026-39808: Fortinet FortiSandbox OS Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-16T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-39808",
+      "summary": "Fortinet FortiSandbox – Fortinet FortiSandbox contains an OS command injection vulnerability that could allow an unauthenticated attacker to execute unauthorized code or commands via crafted HTTP requests.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-39808"
       }
     },
     {
@@ -338,51 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-07-15T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/07/patchtisdag-juli-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juli. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-14T18:17:57.000Z",
-      "link": "https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html",
-      "summary": "SAP has rolled out updates to address multiple vulnerabilities as part of its July 2026 security updates, including a critical flaw in SAP NetWeaver Application Server ABAP. The vulnerability in question is CVE-2026-44747 (CVSS score: 9.9), an out-of-bounds write flaw that allow…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-44747"
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.26",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-26T12:55:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
-      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 12
     },
     {
       "name": "CISA",
