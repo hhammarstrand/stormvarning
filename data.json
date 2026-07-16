@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-16T19:53:29.958Z",
-  "next_update": "2026-07-16T20:23:29.958Z",
+  "updated": "2026-07-16T20:41:31.184Z",
+  "next_update": "2026-07-16T21:11:31.184Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av upptäckta kritiska sårbarheter och aktivt utnyttjande av svenska system.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 som CERT-SE har rapporterat som aktivt utnyttjade (CVE-2026-15409 och CVE-2026-15410). Dessa har en tydlig svensk koppling och kan påverka svenska organisationer. Dessutom har CERT-SE rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket ytterligare förstärker behovet av försiktighet. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara på högsta beredskap på grund av de aktiva hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa incidenter och sårbarheter är aktivt utnyttjade och har potential att påverka svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktiva hot och myndighetsvarningar tillräckligt för att motivera en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
