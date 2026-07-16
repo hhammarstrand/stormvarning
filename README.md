@@ -8,11 +8,25 @@ aktivt utnyttjade sårbarheter (KEV), internationella CERT:er och säkerhetsnyhe
 beräknar deterministiska indikatorer och låter en språkmodell göra en preliminär
 lägesbedömning på en trestegsskala:
 
-| Nivå | Betydelse |
-| --- | --- |
-| 🟢 **Grön** | Normalläge – inga tecken på förhöjt hot. |
-| 🟡 **Gul** | Förhöjt läge – konkreta indikatorer som kan påverka svenska mål. |
-| 🔴 **Röd** | Allvarligt läge – pågående eller nära förestående storskalig attack. |
+| Nivå | Betydelse | Krav (evidensgrind) |
+| --- | --- | --- |
+| 🟢 **Grön** | Normalläge. Även vid hög internationell aktivitet, om konkret svensk koppling saknas. | – |
+| 🟡 **Gul** | Förhöjt läge – akut hot med tydlig svensk koppling. | ≥ 1 svensk-akut signal |
+| 🔴 **Röd** | Allvarligt läge – pågående/nära förestående storskalig attack mot svensk samhällsviktig verksamhet. | ≥ 2 oberoende svensk-akuta signaler |
+
+**Nivålogiken** bygger på principen att nivån mäter hot mot *Sverige*, inte globalt
+bakgrundsbrus (varje patch-vecka innehåller aktivt utnyttjade sårbarheter – det är
+normalläge). En *svensk-akut* signal är en händelse med svensk koppling som samtidigt
+är akut: aktivt utnyttjad eller kritisk sårbarhet, eller ett bekräftat angrepp (t.ex.
+en CERT-SE-varning om pågående kampanj).
+
+- **AI:n bedömer fritt nedåt men aldrig över evidensen:** en deterministisk grind
+  klampar ner nivån om indikatorerna inte stödjer den, och noterar det öppet i
+  motiveringen. Det förhöjda internationella läget syns i stället i **riskindexet**
+  och **avvikelselarmet**.
+- **Hysteres ("snabbt upp, långsamt ner"):** en höjning slår igenom direkt, men en
+  sänkning måste bekräftas av 3 körningar i rad (~90 min) innan den träder i kraft –
+  nivån flappar aldrig.
 
 > ⚠️ **Ansvarsfriskrivning:** Stormvarning är ett automatiserat stödverktyg och
 > **ingen officiell källa**. Bedömningen görs av en språkmodell utifrån öppna
