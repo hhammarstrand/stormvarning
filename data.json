@@ -1,28 +1,26 @@
 {
-  "updated": "2026-07-15T15:23:45.087Z",
-  "next_update": "2026-07-15T15:53:45.087Z",
+  "updated": "2026-07-16T04:29:54.935Z",
+  "next_update": "2026-07-16T04:59:54.935Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjd risk för cyberattacker mot svenska mål på grund av aktivt utnyttjade sårbarheter i kritiska system.",
+  "reasoning": "Det finns flera indikatorer på förhöjd risk, inklusive kritiska sårbarheter i SonicWall SMA1000 som är aktivt utnyttjade och har specifik koppling till Sverige. Dessa sårbarheter har tagits upp av CERT-SE och CISA, vilket indikerar en hög sannolikhet för attacker. Även om det inte finns direkta bevis för pågående attacker mot svensk kritisk infrastruktur, är risken för samhällspåverkande attacker förhöjd på grund av de aktiva kampanjerna i regionen.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
-    "sweden_acute": 3,
-    "actively_exploited": 16,
-    "critical": 4,
-    "authority_alerts": 14,
-    "kev_recent": 7
+    "sweden_relevant": 3,
+    "sweden_acute": 1,
+    "actively_exploited": 18,
+    "critical": 5,
+    "authority_alerts": 13,
+    "kev_recent": 9
   },
   "anomaly": {
     "active": false,
-    "baseline": null,
-    "delta": 0
+    "baseline": 93,
+    "delta": 8
   },
   "level_since": "2026-07-15T08:39:45.453Z",
-  "de_escalation": null,
-  "down_streak": 0,
   "events": [
     {
       "title": "Kritiska sårbarheter i SonicWall SMA1000",
@@ -34,39 +32,8 @@
       "flags": {
         "activelyExploited": false,
         "critical": true,
-        "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-15409"
-      }
-    },
-    {
-      "title": "Skadliga npm-paket",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-07-14T13:25:00.000Z",
-      "link": "https://www.cert.se/2026/07/skadliga-npm-paket.html",
-      "summary": "<p>Ett koordinerat leveranskedjeangrepp har drabbat separata AsyncAPI GitHub-repon. Angripare har utnyttjat en sårbarhet i GitHub Actions. [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Information och rekommendationer gällande säkerhet kring brandväggar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-22T14:20:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-information-gallande-sakerhet-i-brandvaggar.html",
-      "summary": "<p>Brandväggar är en återkommande utmaning gällande angrepp från hotaktörer. Nu senast den uppmärksammade FortiBleed-läckan, där hotaktörer utnyttjar läckta inloggningsuppgifter i stor skala. [1] Med anledning av angrepp mot brandväggar publicerar CERT-SE information och rekomme…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": true,
-        "cve": null
       }
     },
     {
@@ -79,9 +46,36 @@
       "flags": {
         "activelyExploited": true,
         "critical": true,
-        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-56291"
+      }
+    },
+    {
+      "title": "CVE-2026-46817: Oracle E-Business Suite Improper Privilege Management Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-15T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-46817",
+      "summary": "Oracle E-Business Suite – Oracle E-Business Suite contains an improper privilege management vulnerability that allows an unauthenticated attacker with network access via HTTP to compromise Oracle Payments. Successful attacks of this vulnerability can result in takeover of Oracle…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-46817"
+      }
+    },
+    {
+      "title": "CVE-2023-4346: KNX Association KNX Protocol Connection Authorization Option 1 Overly Restrictive Account Lockout Mechanism Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-15T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2023-4346",
+      "summary": "KNX Association KNX Protocol Connection Authorization Option 1 – KNX Association KNX Protocol Connection Authorization Option 1 contains an overly restrictive account lockout mechanism vulnerability that could allow an attacker to purge all devices without additional security op…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2023-4346"
       }
     },
     {
@@ -94,7 +88,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-56155"
       }
@@ -109,7 +102,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-56164"
       }
@@ -124,7 +116,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-15409"
       }
@@ -139,7 +130,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-15410"
       }
@@ -154,7 +144,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2008-4128"
       }
@@ -169,7 +158,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-48939"
       }
@@ -184,7 +172,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -199,7 +186,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -214,7 +200,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -229,7 +214,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-15409"
       }
@@ -244,7 +228,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-15409"
       }
@@ -259,7 +242,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -274,7 +256,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -289,7 +270,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -304,7 +284,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -319,7 +298,20 @@
       "flags": {
         "activelyExploited": false,
         "critical": true,
-        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Zoom warns of critical account takeover vulnerability",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-15T20:16:02.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/zoom-warns-of-critical-account-takeover-vulnerability/",
+      "summary": "Zoom is warning of a critical vulnerability in its desktop client and software development kit for Windows that could be exploited by an unauthenticated party to hijack accounts. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
         "swedenRelevant": false,
         "cve": null
       }
@@ -334,7 +326,6 @@
       "flags": {
         "activelyExploited": false,
         "critical": false,
-        "incident": false,
         "swedenRelevant": true,
         "cve": null
       }
@@ -349,37 +340,20 @@
       "flags": {
         "activelyExploited": false,
         "critical": true,
-        "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-44747"
       }
     },
     {
-      "title": "CERT-SE:s veckobrev v.26",
+      "title": "Skadliga npm-paket",
       "source": "CERT-SE",
       "region": "SE",
-      "date": "2026-06-26T12:55:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
-      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
+      "date": "2026-07-14T13:25:00.000Z",
+      "link": "https://www.cert.se/2026/07/skadliga-npm-paket.html",
+      "summary": "<p>Ett koordinerat leveranskedjeangrepp har drabbat separata AsyncAPI GitHub-repon. Angripare har utnyttjat en sårbarhet i GitHub Actions. [1]</p>",
       "flags": {
         "activelyExploited": false,
         "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-26T08:34:35.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
-      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
         "swedenRelevant": true,
         "cve": null
       }
@@ -408,7 +382,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 7
+      "count": 9
     },
     {
       "name": "CISA",
@@ -445,6 +419,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
