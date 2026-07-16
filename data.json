@@ -1,24 +1,24 @@
 {
-  "updated": "2026-07-16T12:56:46.890Z",
-  "next_update": "2026-07-16T13:26:46.890Z",
+  "updated": "2026-07-16T14:53:05.220Z",
+  "next_update": "2026-07-16T15:23:05.220Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två som är specifikt kopplade till Sverige (SonicWall SMA1000-sårbarheter och skadliga npm-paket). Dessa utgör en tydlig svensk koppling och kräver förhöjd beredskap. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är risken för sådana attacker förhöjd på grund av de aktiva hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Det finns flera kritiska sårbarheter som är aktivt utnyttjade globalt, och två av dessa (CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000) har en direkt svensk koppling genom CERT-SE. Dessa sårbarheter är av hög allvarlighetsgrad och har potential att påverka svenska organisationer. Dessutom har CERT-SE rapporterat om ett pågående leveranskedjeangrepp mot svenska GitHub-repon, vilket ytterligare stärker behovet av försiktighet. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet hot signaler och deras svenska koppling tillräckligt för att motivera en gul nivå.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 5,
     "sweden_acute": 3,
-    "actively_exploited": 17,
+    "actively_exploited": 16,
     "critical": 6,
-    "authority_alerts": 14,
+    "authority_alerts": 15,
     "kev_recent": 9
   },
   "anomaly": {
     "active": false,
-    "baseline": 94,
-    "delta": 6
+    "baseline": 95,
+    "delta": 5
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -280,21 +280,6 @@
       }
     },
     {
-      "title": "SonicWall warns of SMA1000 flaws exploited in zero-day attacks, patch now",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-14T21:23:24.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-sma1000-flaws-exploited-in-zero-day-attacks-patch-now/",
-      "summary": "SonicWall warns that threat actors have been exploiting two SMA1000 vulnerabilities, tracked as CVE-2026-15409 and CVE-2026-15410, in zero-day attacks and urges customers to install the newly released security updates. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-15409"
-      }
-    },
-    {
       "title": "Microsoft Patches Record 622 Flaws, Including Two Zero-Days Under Active Attack",
       "source": "The Hacker News",
       "region": "INT",
@@ -382,6 +367,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-44747"
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.26",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-26T12:55:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
+      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
       }
     }
   ],
