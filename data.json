@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-16T21:52:27.068Z",
-  "next_update": "2026-07-16T22:22:27.068Z",
+  "updated": "2026-07-16T22:44:24.305Z",
+  "next_update": "2026-07-16T23:14:24.305Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter som är aktivt utnyttjade globalt, och två av dessa (CVE-2026-15409 och CVE-2026-15410) är specifikt kopplade till SonicWall SMA1000, vilket har rapporterats av CERT-SE med tydlig svensk koppling. Dessutom har CERT-SE rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar pågående aktivitet riktad mot svenska mål. Dessa faktorer tillsammans med den höga aktiviteten av aktivt utnyttjade sårbarheter internationellt motiverar en förhöjd beredskap.",
+  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter globalt, och två av dessa har en direkt svensk koppling. CERT-SE har rapporterat om kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa incidenter och sårbarheter kan påverka svenska organisationer och kräver därför förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 3,
-    "actively_exploited": 18,
-    "critical": 5,
+    "actively_exploited": 17,
+    "critical": 6,
     "authority_alerts": 17,
     "kev_recent": 12
   },
@@ -265,21 +265,6 @@
       }
     },
     {
-      "title": "We built a vulnerability vending machine: AI tokens in, zero-days out",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-15T14:01:11.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/we-built-a-vulnerability-vending-machine-ai-tokens-in-zero-days-out/",
-      "summary": "Intruder built an AI-powered \"vulnerability vending machine\" that combines code slicing with LLMs to automatically discover complex software vulnerabilities. The company explains how the system found and exploited a previously unknown WordPress plugin zero-day, with additional d…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday",
       "source": "The Hacker News",
       "region": "INT",
@@ -382,6 +367,21 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-14T18:17:57.000Z",
+      "link": "https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html",
+      "summary": "SAP has rolled out updates to address multiple vulnerabilities as part of its July 2026 security updates, including a critical flaw in SAP NetWeaver Application Server ABAP. The vulnerability in question is CVE-2026-44747 (CVSS score: 9.9), an out-of-bounds write flaw that allow…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-44747"
       }
     }
   ],
