@@ -51,14 +51,14 @@
       </div>
     </section>
 
-    <!-- Tripwires / indikatorer -->
-    <section class="tripwires" id="tripwires" aria-label="Indikatorer">
-      <div class="tw" data-key="sweden_acute"><span class="tw-n" id="tw-sweden_acute">–</span><span class="tw-l">Svensk akut</span></div>
-      <div class="tw" data-key="actively_exploited"><span class="tw-n" id="tw-actively_exploited">–</span><span class="tw-l">Aktivt utnyttjade</span></div>
-      <div class="tw" data-key="critical"><span class="tw-n" id="tw-critical">–</span><span class="tw-l">Kritiska</span></div>
-      <div class="tw" data-key="kev_recent"><span class="tw-n" id="tw-kev_recent">–</span><span class="tw-l">Nya CISA KEV</span></div>
-      <div class="tw" data-key="sweden_relevant"><span class="tw-n" id="tw-sweden_relevant">–</span><span class="tw-l">Sverige-relaterade</span></div>
-      <div class="tw" data-key="authority_alerts"><span class="tw-n" id="tw-authority_alerts">–</span><span class="tw-l">Myndighetssignaler</span></div>
+    <!-- Tripwires / indikatorer (klickbara: filtrerar signalloggen) -->
+    <section class="tripwires" id="tripwires" aria-label="Indikatorer – klicka för att filtrera signallistan">
+      <button type="button" class="tw" data-key="sweden_acute"><span class="tw-n" id="tw-sweden_acute">–</span><span class="tw-l">Svensk akut</span></button>
+      <button type="button" class="tw" data-key="actively_exploited"><span class="tw-n" id="tw-actively_exploited">–</span><span class="tw-l">Aktivt utnyttjade</span></button>
+      <button type="button" class="tw" data-key="critical"><span class="tw-n" id="tw-critical">–</span><span class="tw-l">Kritiska</span></button>
+      <button type="button" class="tw" data-key="kev_recent"><span class="tw-n" id="tw-kev_recent">–</span><span class="tw-l">Nya CISA KEV</span></button>
+      <button type="button" class="tw" data-key="sweden_relevant"><span class="tw-n" id="tw-sweden_relevant">–</span><span class="tw-l">Sverige-relaterade</span></button>
+      <button type="button" class="tw" data-key="authority_alerts"><span class="tw-n" id="tw-authority_alerts">–</span><span class="tw-l">Myndighets&shy;signaler</span></button>
     </section>
 
     <!-- Avvikelselarm (visas bara vid spik i aktiviteten) -->
@@ -105,7 +105,7 @@
     <!-- Signallogg -->
     <section class="block" id="events-block">
       <h2 class="block-h">// SENASTE SIGNALER <span class="count" id="event-count"></span>
-        <label class="log-filter"><input type="checkbox" id="se-only" /> endast svenska</label>
+        <button type="button" class="filter-chip" id="filter-chip" hidden></button>
       </h2>
       <div class="log-wrap">
         <table class="log">
