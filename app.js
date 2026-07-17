@@ -228,7 +228,14 @@
     $("reasoning").textContent = data.reasoning || "—";
     $("updated").textContent = fmtDateTime(data.updated) +
       (fmtRelative(data.updated) ? "  (" + fmtRelative(data.updated) + ")" : "");
-    $("next-update").textContent = data.next_update ? fmtDateTime(data.next_update) : "—";
+    // "Nästa" är en förhoppning – GitHubs schemaläggare kan skjuta upp körningar.
+    // Har tiden passerats markerar vi det ärligt i stället för att se trasiga ut.
+    var overdueMin = data.next_update
+      ? Math.round((Date.now() - new Date(data.next_update).getTime()) / 60000)
+      : 0;
+    $("next-update").textContent = data.next_update
+      ? fmtDateTime(data.next_update) + (overdueMin > 10 ? "  (försenad " + (overdueMin < 120 ? overdueMin + " min" : Math.round(overdueMin / 60) + " tim") + ")" : "")
+      : "—";
     $("model").textContent = data.model || "ingen (fallback)";
     $("level-since").textContent = data.level_since
       ? fmtDateTime(data.level_since) + " (" + fmtDuration(data.level_since) + ")"
@@ -265,7 +272,17 @@
   function load() {
     var p1 = fetch("data.json?t=" + Date.now(), { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
-      .then(function (data) { render(data); setConnection("ok", "ONLINE"); })
+      .then(function (data) {
+        render(data);
+        // Gammal data (>90 min) => visa FÖRDRÖJD i stället för ONLINE, så att
+        // en hängande schemaläggare aldrig ser ut som ett friskt system.
+        var ageMin = data.updated ? Math.round((Date.now() - new Date(data.updated).getTime()) / 60000) : null;
+        if (ageMin !== null && ageMin > 90) {
+          setConnection("warn", "FÖRDRÖJD " + (ageMin < 120 ? ageMin + " min" : Math.round(ageMin / 60) + " tim"));
+        } else {
+          setConnection("ok", "ONLINE");
+        }
+      })
       .catch(function (err) {
         console.error("Kunde inte läsa data.json:", err);
         setConnection("err", "OFFLINE");

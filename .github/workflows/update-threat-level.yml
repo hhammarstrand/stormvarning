@@ -3,7 +3,9 @@ name: Uppdatera hotnivå
 # Hämtar öppna hotsignaler, kör MiniMax-analys och committar data.json.
 on:
   schedule:
-    - cron: "*/30 * * * *" # var 30:e minut (UTC)
+    # Var 30:e minut, men på minut 7/37 i stället för 0/30: GitHub skjuter ofta
+    # upp eller hoppar över cron-jobb på jämna klockslag p.g.a. hög last.
+    - cron: "7,37 * * * *"
   workflow_dispatch: {} # tillåt manuell körning
 
 # Undvik överlappande körningar
