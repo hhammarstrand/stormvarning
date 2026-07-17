@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-17T17:42:56.077Z",
-  "next_update": "2026-07-17T18:12:56.077Z",
+  "updated": "2026-07-17T19:23:53.950Z",
+  "next_update": "2026-07-17T19:53:53.950Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två specifikt riktade mot SonicWall SMA1000, vilket har en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är CERT-SE:s varningar och CISA:s KEV-kataloguppdateringar tecken på en förhöjd risk. Detta, tillsammans med rapporter om koordinerade leveranskedjeangrepp, motiverar en gul nivå.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 som är aktivt utnyttjade och har en svensk koppling (CERT-SE-varningar). Dessutom har en koordinerad attack mot svenska GitHub-repon rapporterats. Även om det inte finns bekräftade incidenter i stor skala, är det tillräckligt med signaler för att motivera en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 3,
-    "actively_exploited": 17,
-    "critical": 5,
+    "actively_exploited": 16,
+    "critical": 4,
     "authority_alerts": 16,
     "kev_recent": 10
   },
@@ -82,21 +82,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-58644"
-      }
-    },
-    {
-      "title": "CISA orders feds to patch actively exploited Oracle flaw by Saturday",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-16T10:56:03.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-oracle-flaw-by-saturday/",
-      "summary": "CISA has ordered federal agencies to secure their systems by Saturday against ongoing attacks exploiting a critical vulnerability in the Oracle E-Business Suite financial application. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
@@ -335,6 +320,21 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-17T18:54:51.000Z",
+      "link": "https://thehackernews.com/2026/07/seven-malicious-vite-npm-packages-use.html",
+      "summary": "Cybersecurity researchers have discovered a cluster of seven malicious npm packages targeting the Vite frontend tooling ecosystem as part of a software supply chain attack. The malicious package campaign, codenamed ViteVenom by Checkmarx, marks an expansion of ChainVeil, which w…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
