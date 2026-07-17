@@ -1,19 +1,19 @@
 {
-  "updated": "2026-07-16T23:44:52.336Z",
-  "next_update": "2026-07-17T00:14:52.336Z",
+  "updated": "2026-07-17T01:19:57.249Z",
+  "next_update": "2026-07-17T01:49:57.249Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och andra, rapporteras aktivt utnyttjade globalt, och CERT-SE har utfärdat varningar om dessa hot. Det finns också bekräftade incidenter, såsom det koordinerade leveranskedjeangreppet mot AsyncAPI GitHub-repon, vilket indikerar en aktiv hotbild. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det förhöjda antalet svenska myndighetsvarningar och aktivt utnyttjade sårbarheter med svensk koppling tillräckligt för att motivera en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktiva sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive de i SonicWall SMA1000 och skadliga npm-paket, har identifierats med tydlig svensk koppling och aktivt utnyttjande. Dessa utgör en direkt risk för svenska organisationer och kritisk infrastruktur. Även om det inte finns bekräftade storskaliga attacker mot Sverige, är det förhöjda antalet aktiva sårbarheter och incidenter orsak till oro.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 6,
     "sweden_acute": 3,
-    "actively_exploited": 17,
-    "critical": 6,
+    "actively_exploited": 15,
+    "critical": 5,
     "authority_alerts": 17,
-    "kev_recent": 12
+    "kev_recent": 10
   },
   "anomaly": {
     "active": false,
@@ -67,21 +67,6 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
-      }
-    },
-    {
-      "title": "CVE-2026-56291: Balbooa Forms Unrestricted Upload of File with Dangerous Type Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-10T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-56291",
-      "summary": "Balbooa Forms – Balbooa Forms contains an unrestricted upload of file with dangerous type vulnerability that allows an unauthenticated arbitrary file upload which could allow uploading of executable files leading to full RCE.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-56291"
       }
     },
     {
@@ -250,21 +235,6 @@
       }
     },
     {
-      "title": "CVE-2026-48939: iCagenda Unrestricted Upload of File with Dangerous Type Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-10T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-48939",
-      "summary": "iCagenda iCagenda – iCagenda contains an unrestricted upload of file with dangerous type vulnerability that allows the upload of arbitrary files in the file attachment feature, ultimately resulting in PHP code upload and execution.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-48939"
-      }
-    },
-    {
       "title": "Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday",
       "source": "The Hacker News",
       "region": "INT",
@@ -383,6 +353,36 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-44747"
       }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.26",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-26T12:55:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
+      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-26T08:34:35.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
+      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 12
+      "count": 10
     },
     {
       "name": "CISA",
