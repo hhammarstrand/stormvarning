@@ -81,6 +81,7 @@ a:hover { color: var(--sig); border-color: var(--sig); }
   display: inline-block;
 }
 .live.ok  .live-dot { background: var(--gron); animation: blink 1.4s steps(1) infinite; }
+.live.warn .live-dot { background: var(--gul); animation: blink 1s steps(1) infinite; }
 .live.err .live-dot { background: var(--rod); animation: blink 0.7s steps(1) infinite; }
 .clock { color: var(--fg-dim); letter-spacing: 0.08em; font-variant-numeric: tabular-nums; }
 
