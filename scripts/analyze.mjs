@@ -570,6 +570,10 @@ async function main() {
   const score = riskScore(indicators);
   log(`${events.length} signaler · indikatorer: ${JSON.stringify(indicators)} · score ${score}`);
 
+  // Loggar konfigurationsstatus (aldrig själva nyckelvärdena) så att man kan
+  // verifiera i workflow-loggen att secrets plockas upp.
+  log(`Konfiguration: MiniMax ${CONFIG.apiKey ? "aktiv" : "saknas"} · e-postnotiser ${CONFIG.buttondownKey ? "aktiva" : "ej konfigurerade"}.`);
+
   const analysis = await analyzeWithMiniMax(events, indicators);
   const prev = await readJson(OUT, null);
 
