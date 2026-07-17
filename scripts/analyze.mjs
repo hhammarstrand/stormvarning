@@ -517,22 +517,87 @@ function levelRank(level) {
 
 /* ---------------------------------------------------------- e-postnotiser */
 
+// Bygger notismejlet som formgivet HTML (tabellayout + inline-CSS för brett
+// e-postklientstöd; Buttondown auto-detekterar HTML i body). Exporteras för
+// tester och förhandsvisning.
+function buildNotificationEmail(data, siteUrl) {
+  const esc = (s) => String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+
+  const isRed = normalizeLevel(data.level) === "röd";
+  const subject = `Stormvarning: ${isRed ? "🔴 RÖD" : "🟡 GUL"} hotnivå`;
+  const bandBg = isRed ? "#d92b2b" : "#ffb020";
+  const bandFg = isRed ? "#ffffff" : "#1a1a1a";
+  const word = isRed ? "RÖD" : "GUL";
+  const desc = isRed ? "Allvarlig hotnivå" : "Förhöjd hotnivå";
+  const mono = "ui-monospace,'SF Mono',Menlo,Consolas,'Roboto Mono',monospace";
+  const sans = "-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
+
+  // Viktigaste signalerna: svensk-akuta först, max 4.
+  const evs = Array.isArray(data.events) ? data.events.slice() : [];
+  evs.sort((a, b) => {
+    const w = (e) => ((e.flags?.swedenRelevant && (e.flags?.activelyExploited || e.flags?.critical || e.flags?.incident)) ? 2 : 0) + (e.flags?.swedenRelevant ? 1 : 0);
+    return w(b) - w(a);
+  });
+  const top = evs.slice(0, 4);
+  const fmtT = (iso) => {
+    try { return new Intl.DateTimeFormat("sv-SE", { dateStyle: "short", timeStyle: "short", timeZone: "Europe/Stockholm" }).format(new Date(iso)); }
+    catch { return ""; }
+  };
+  const signalRows = top.map((e) => `
+        <tr><td style="padding:10px 0;border-bottom:1px solid #e8eaee;">
+          <a href="${esc(e.link || siteUrl)}" style="color:#12151a;font-family:${sans};font-size:14px;font-weight:600;text-decoration:underline;">${esc(e.title)}</a>
+          <div style="font-family:${mono};font-size:11px;color:#8a929e;padding-top:3px;">${esc(e.source || "")}${e.date ? " · " + esc(fmtT(e.date)) : ""}</div>
+        </td></tr>`).join("");
+
+  const html = `<!DOCTYPE html>
+<html lang="sv"><body style="margin:0;padding:0;background:#eef0f3;">
+<div style="display:none;max-height:0;overflow:hidden;">${esc(data.summary || "")}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#eef0f3;padding:28px 12px;"><tr><td align="center">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;border-collapse:collapse;">
+    <!-- Header -->
+    <tr><td style="background:#0b0d10;padding:18px 28px;">
+      <span style="font-family:${mono};font-size:17px;font-weight:700;letter-spacing:3px;color:#ffffff;"><span style="color:${bandBg};">▚</span> STORMVARNING</span>
+      <span style="font-family:${mono};font-size:11px;color:#8a929e;display:block;padding-top:2px;">// cyberhotläge · sverige</span>
+    </td></tr>
+    <!-- Nivåband -->
+    <tr><td style="background:${bandBg};padding:22px 28px;">
+      <span style="font-family:${mono};font-size:34px;font-weight:700;letter-spacing:2px;color:${bandFg};">${word}</span>
+      <span style="font-family:${sans};font-size:14px;color:${bandFg};display:block;padding-top:2px;">${desc} · hotnivån har höjts</span>
+    </td></tr>
+    <!-- Innehåll -->
+    <tr><td style="background:#ffffff;padding:26px 28px 8px;">
+      <p style="margin:0 0 12px;font-family:${sans};font-size:16px;line-height:1.5;color:#12151a;font-weight:600;">${esc(data.summary || "")}</p>
+      <p style="margin:0 0 8px;font-family:${sans};font-size:14px;line-height:1.65;color:#3d4552;">${esc(data.reasoning || "")}</p>
+    </td></tr>
+    <!-- Signaler -->
+    <tr><td style="background:#ffffff;padding:10px 28px 6px;">
+      <div style="font-family:${mono};font-size:11px;letter-spacing:2px;color:#8a929e;border-bottom:2px solid #12151a;padding-bottom:6px;">// VIKTIGASTE SIGNALERNA</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${signalRows}</table>
+    </td></tr>
+    <!-- CTA -->
+    <tr><td style="background:#ffffff;padding:24px 28px 30px;" align="center">
+      <a href="${esc(siteUrl)}" style="display:inline-block;background:#0b0d10;color:#ffffff;font-family:${mono};font-size:13px;font-weight:700;letter-spacing:1.5px;text-decoration:none;padding:13px 30px;">SE AKTUELL LÄGESBILD →</a>
+    </td></tr>
+    <!-- Notis -->
+    <tr><td style="background:#ffffff;border-top:1px solid #e8eaee;padding:16px 28px 22px;">
+      <p style="margin:0;font-family:${sans};font-size:12px;line-height:1.6;color:#8a929e;">
+        Stormvarning är ett automatiserat stödverktyg och ingen officiell källa. Vid en pågående
+        incident – följ alltid <a href="https://www.cert.se" style="color:#3d4552;">CERT-SE</a> och
+        <a href="https://www.msb.se" style="color:#3d4552;">MSB</a>. Du får detta mejl endast när
+        hotnivån höjs. Avregistrera dig när som helst via länken i sidfoten.
+      </p>
+    </td></tr>
+  </table>
+</td></tr></table>
+</body></html>`;
+
+  return { subject, html };
+}
+
 async function sendNotification(data) {
-  const subjectPrefix = data.level === "röd" ? "🔴 RÖD" : "🟡 GUL";
-  const subject = `Stormvarning: ${subjectPrefix} hotnivå`;
-  const body = [
-    `**${data.level_label}**`,
-    "",
-    data.summary,
-    "",
-    data.reasoning,
-    "",
-    `Aktuell lägesbild: ${CONFIG.siteUrl}`,
-    "",
-    "---",
-    "Stormvarning är ett automatiserat stödverktyg och ingen officiell källa. " +
-      "Följ alltid CERT-SE och MSB vid en pågående incident.",
-  ].join("\n");
+  const { subject, html: body } = buildNotificationEmail(data, CONFIG.siteUrl);
 
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 30000);
@@ -688,5 +753,5 @@ if (isMain) {
   });
 }
 
-export { normalizeLevel, levelRank, riskScore, heuristicLevel, computeIndicators, annotate, detectAnomaly, computeLevelSince, applyLevelPolicy, applyHysteresis };
+export { normalizeLevel, levelRank, riskScore, heuristicLevel, computeIndicators, annotate, detectAnomaly, computeLevelSince, applyLevelPolicy, applyHysteresis, buildNotificationEmail };
 
