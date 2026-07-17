@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-17T16:23:38.936Z",
-  "next_update": "2026-07-17T16:53:38.936Z",
+  "updated": "2026-07-17T17:42:56.077Z",
+  "next_update": "2026-07-17T18:12:56.077Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 som är aktivt utnyttjade och har en direkt svensk koppling. Dessa utgör en akut risk för svenska organisationer. Dessutom har CERT-SE utfärdat varningar om pågående leveranskedjeangrepp och attacker mot brandväggar, vilket ytterligare förstärker behovet av försiktighet. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbara tecken på aktivitet som kan påverka Sverige.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två specifikt riktade mot SonicWall SMA1000, vilket har en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är CERT-SE:s varningar och CISA:s KEV-kataloguppdateringar tecken på en förhöjd risk. Detta, tillsammans med rapporter om koordinerade leveranskedjeangrepp, motiverar en gul nivå.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
