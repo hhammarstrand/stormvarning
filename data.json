@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-17T14:51:51.948Z",
-  "next_update": "2026-07-17T15:21:51.948Z",
+  "updated": "2026-07-17T16:23:38.936Z",
+  "next_update": "2026-07-17T16:53:38.936Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två specifikt riktade mot SonicWall SMA1000, vilket har en tydlig svensk koppling. CERT-SE har utfärdat varningar om dessa sårbarheter och om pågående leveranskedjeangrepp, vilket ökar risken för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktiva hot och myndighetsvarningar tillräckligt för att motivera en gul nivå.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 som är aktivt utnyttjade och har en direkt svensk koppling. Dessa utgör en akut risk för svenska organisationer. Dessutom har CERT-SE utfärdat varningar om pågående leveranskedjeangrepp och attacker mot brandväggar, vilket ytterligare förstärker behovet av försiktighet. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbara tecken på aktivitet som kan påverka Sverige.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
@@ -426,7 +426,7 @@
       "name": "The Hacker News",
       "region": "INT",
       "ok": true,
-      "count": 34
+      "count": 50
     },
     {
       "name": "BleepingComputer",
