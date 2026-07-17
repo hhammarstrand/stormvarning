@@ -7,7 +7,7 @@ import assert from "node:assert/strict";
 import {
   normalizeLevel, levelRank, riskScore, heuristicLevel,
   computeIndicators, annotate, detectAnomaly, computeLevelSince,
-  applyLevelPolicy, applyHysteresis,
+  applyLevelPolicy, applyHysteresis, buildNotificationEmail,
 } from "./analyze.mjs";
 
 test("normalizeLevel mappar varianter", () => {
@@ -117,6 +117,34 @@ test("annotate flaggar incident (bekräftat angrepp)", () => {
   assert.equal(ev.flags.swedenRelevant, true);
   const ind = computeIndicators([{ ...ev, source: "CERT-SE" }]);
   assert.equal(ind.sweden_acute, 1); // incident räknas som akut
+});
+
+test("buildNotificationEmail bygger korrekt HTML-brev", () => {
+  const data = {
+    level: "röd",
+    level_label: "Röd – allvarlig hotnivå",
+    summary: "Testsammanfattning.",
+    reasoning: "Testmotivering med <script>alert(1)</script> som ska escapas.",
+    events: [
+      { title: "Svensk-akut & \"viktig\" signal", link: "https://ex.se/a", source: "CERT-SE", date: "2026-07-17T06:00:00Z", flags: { swedenRelevant: true, activelyExploited: true } },
+      { title: "Internationell signal", link: "https://ex.se/b", source: "CISA KEV", date: "2026-07-17T05:00:00Z", flags: {} },
+    ],
+  };
+  const { subject, html } = buildNotificationEmail(data, "https://site.example/");
+  assert.match(subject, /RÖD/);
+  assert.match(html, /Allvarlig hotnivå/);
+  assert.match(html, /https:\/\/site\.example\//);
+  assert.match(html, /Testsammanfattning\./);
+  // Escaping: inget rått script-innehåll, & och citattecken escapas
+  assert.ok(!html.includes("<script>"));
+  assert.ok(html.includes("&lt;script&gt;"));
+  assert.ok(html.includes("Svensk-akut &amp; &quot;viktig&quot; signal"));
+  // Svensk-akut signal listas före internationell
+  assert.ok(html.indexOf("Svensk-akut") < html.indexOf("Internationell signal"));
+  // Gul variant
+  const gul = buildNotificationEmail({ ...data, level: "gul" }, "https://site.example/");
+  assert.match(gul.subject, /GUL/);
+  assert.match(gul.html, /Förhöjd hotnivå/);
 });
 
 test("computeLevelSince hittar början på nuvarande nivåstreak", () => {
