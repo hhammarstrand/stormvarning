@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-17T12:46:08.142Z",
-  "next_update": "2026-07-17T13:16:08.142Z",
+  "updated": "2026-07-17T14:51:51.948Z",
+  "next_update": "2026-07-17T15:21:51.948Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två specifikt riktade mot SonicWall SMA1000, vilket har en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, så har CERT-SE utfärdat varningar om dessa sårbarheter, vilket ökar risken för pågående eller kommande attacker mot svenska organisationer. Det finns också rapporter om skadliga npm-paket och attacker mot brandväggar, vilket ytterligare förstärker behovet av försiktighet.",
+  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två specifikt riktade mot SonicWall SMA1000, vilket har en tydlig svensk koppling. CERT-SE har utfärdat varningar om dessa sårbarheter och om pågående leveranskedjeangrepp, vilket ökar risken för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktiva hot och myndighetsvarningar tillräckligt för att motivera en gul nivå.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 5,
     "sweden_acute": 3,
-    "actively_exploited": 18,
+    "actively_exploited": 17,
     "critical": 5,
-    "authority_alerts": 15,
+    "authority_alerts": 16,
     "kev_recent": 10
   },
   "anomaly": {
@@ -325,21 +325,6 @@
       }
     },
     {
-      "title": "iCagenda and Balbooa Forms Joomla Flaws Reportedly Exploited as Zero-Days",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-13T05:36:02.000Z",
-      "link": "https://thehackernews.com/2026/07/icagenda-and-balbooa-forms-joomla-flaws.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added two maximum-severity security flaws impacting iCagenda and Balbooa extensions for Joomla to its Known Exploited Vulnerabilities (KEV) catalog, following reports of zero-day exploitation in the wild. The v…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -382,6 +367,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-44747"
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.26",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-26T12:55:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
+      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
       }
     }
   ],
@@ -426,7 +426,7 @@
       "name": "The Hacker News",
       "region": "INT",
       "ok": true,
-      "count": 50
+      "count": 34
     },
     {
       "name": "BleepingComputer",
