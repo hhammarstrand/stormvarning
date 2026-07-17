@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-17T06:57:19.631Z",
-  "next_update": "2026-07-17T07:27:19.631Z",
+  "updated": "2026-07-17T09:29:36.635Z",
+  "next_update": "2026-07-17T09:59:36.635Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive två i SonicWall SMA1000, har identifierats och är aktivt utnyttjade, vilket innebär en direkt risk för svenska organisationer. Dessutom har CERT-SE rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar aktivitet riktad mot svenska mål. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet incidenter och sårbarheter med svensk koppling tillräckligt för att motivera en gul nivå.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktiva attacker och kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två nyligen rapporterade attacker mot SonicWall SMA1000 (CVE-2026-15409 och CVE-2026-15410) som CERT-SE har uppmärksammat. Dessa har en tydlig svensk koppling och kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige för närvarande, är risken för pågående attacker hög. Det finns också en varning från CERT-SE om skadliga npm-paket och attacker mot brandväggar, vilket ytterligare förstärker behovet av försiktighet.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 5,
     "sweden_acute": 3,
-    "actively_exploited": 15,
+    "actively_exploited": 17,
     "critical": 5,
-    "authority_alerts": 17,
+    "authority_alerts": 16,
     "kev_recent": 10
   },
   "anomaly": {
@@ -67,6 +67,21 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "CISA Adds Exploited SharePoint RCE Zero-Day CVE-2026-58644 to KEV",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-17T06:42:23.000Z",
+      "link": "https://thehackernews.com/2026/07/cisa-adds-exploited-sharepoint-rce-zero.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added a newly patched security flaw impacting Microsoft SharePoint Server to its Known Exploited Vulnerabilities (KEV) catalog, requiring Federal Civilian Executive Branch (FCEB) agencies to apply the f…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-58644"
       }
     },
     {
@@ -235,6 +250,21 @@
       }
     },
     {
+      "title": "CISA urges immediate action on actively exploited Fortinet flaws",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-17T07:03:33.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-feds-to-patch-exploited-fortinet-fortisandbox-flaws-by-sunday/",
+      "summary": "CISA on Thursday ordered government agencies to prioritize patching two actively exploited vulnerabilities in the Fortinet FortiSandbox threat detection platform. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday",
       "source": "The Hacker News",
       "region": "INT",
@@ -310,21 +340,6 @@
       }
     },
     {
-      "title": "Zoom warns of critical account takeover vulnerability",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-15T20:16:02.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/zoom-warns-of-critical-account-takeover-vulnerability/",
-      "summary": "Zoom is warning of a critical vulnerability in its desktop client and software development kit for Windows that could be exploited by an unauthenticated party to hijack accounts. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
       "source": "CERT-SE",
       "region": "SE",
@@ -361,21 +376,6 @@
       "date": "2026-06-26T12:55:00.000Z",
       "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
       "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-26T08:34:35.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
-      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
