@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-18T19:20:26.901Z",
-  "next_update": "2026-07-18T19:50:26.901Z",
+  "updated": "2026-07-18T20:25:00.339Z",
+  "next_update": "2026-07-18T20:55:00.339Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler med tydlig svensk koppling, inklusive kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa incidenter, tillsammans med aktivt utnyttjade sårbarheter som CISA har markerat, indikerar en förhöjd risk för cyberattacker mot svenska mål. Även om det inte finns tillräckligt med signaler för en 'röd' nivå, är det nödvändigt att vara försiktig med tanke på de pågående hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svenska myndigheters områden.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om aktivt utnyttjande av sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att flera aktivt utnyttjade sårbarheter kan påverka svenska aktörer. Det finns också en internationell trend av aktivt utnyttjande av kritiska sårbarheter, vilket ökar den övergripande risken.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
@@ -325,6 +325,21 @@
       }
     },
     {
+      "title": "Update now: 7-Zip fixes RCE flaw exploitable with malicious archives",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-18T19:32:02.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/update-now-7-zip-fixes-rce-flaw-exploitable-with-malicious-archives/",
+      "summary": "7-Zip version 26.02 was released to fix a remote code execution vulnerability that could allow attackers to execute malicious code by convincing users to open specially crafted compressed files. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "WordPress Core \"wp2shell\" RCE flaws get public exploits, patch now",
       "source": "BleepingComputer",
       "region": "INT",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": null
-      }
-    },
-    {
-      "title": "SAP Patches CVSS 9.9 NetWeaver ABAP Flaw That Could Expose or Modify Data",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-14T18:17:57.000Z",
-      "link": "https://thehackernews.com/2026/07/sap-patches-cvss-99-netweaver-abap-flaw.html",
-      "summary": "SAP has rolled out updates to address multiple vulnerabilities as part of its July 2026 security updates, including a critical flaw in SAP NetWeaver Application Server ABAP. The vulnerability in question is CVE-2026-44747 (CVSS score: 9.9), an out-of-bounds write flaw that allow…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-44747"
       }
     }
   ],
