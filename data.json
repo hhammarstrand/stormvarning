@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-18T16:33:03.105Z",
-  "next_update": "2026-07-18T17:03:03.105Z",
+  "updated": "2026-07-18T17:38:10.019Z",
+  "next_update": "2026-07-18T18:08:10.019Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två SonicWall-sårbarheter (CVE-2026-15409 och CVE-2026-15410) som CERT-SE har rapporterat med svensk koppling. Dessutom finns en incident med skadliga npm-paket som också har en svensk koppling. Även om det inte finns bekräftade incidenter i svensk kritisk infrastruktur, är det förhöjda antalet aktivt utnyttjade sårbarheter och CERT-SE:s varningar tillräckligt för att motivera en förhöjd beredskap.",
+  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två nyligen rapporterade incidenter med svensk koppling (SonicWall SMA1000 och skadliga npm-paket). Dessa utgör en tydlig risk för svenska organisationer och kräver förhöjd beredskap. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att agera på de identifierade hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 4,
     "sweden_acute": 3,
     "actively_exploited": 16,
-    "critical": 4,
-    "authority_alerts": 16,
+    "critical": 5,
+    "authority_alerts": 15,
     "kev_recent": 10
   },
   "anomaly": {
@@ -325,6 +325,21 @@
       }
     },
     {
+      "title": "WordPress Core \"wp2shell\" RCE flaws get public exploits, patch now",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-18T17:22:47.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/wordpress-core-wp2shell-rce-flaws-get-public-exploits-patch-now/",
+      "summary": "Public exploits have been released for the critical \"wp2shell\" remote code execution vulnerabilities affecting WordPress Core, making it imperative that administrators patch their sites immediately. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT",
       "source": "The Hacker News",
       "region": "INT",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-44747"
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.26",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-26T12:55:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
-      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
       }
     }
   ],
