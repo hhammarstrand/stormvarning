@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-19T13:51:31.103Z",
-  "next_update": "2026-07-19T14:21:31.103Z",
+  "updated": "2026-07-19T15:10:30.929Z",
+  "next_update": "2026-07-19T15:40:30.929Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om aktivt utnyttjande av sårbarheter i SonicWall SMA1000 och ett pågående leveranskedjeangrepp mot svenska GitHub-repon. Dessa utgör en tydlig risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot kritisk infrastruktur, är det förhöjda antalet aktivt utnyttjade sårbarheter och myndighetsvarningar anledning till försiktighet.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive två i SonicWall SMA1000, har identifierats och är aktivt utnyttjade, vilket innebär en direkt risk för svenska organisationer. Dessutom har CERT-SE rapporterat om ett koordinerat leveranskedjeangrepp riktat mot svenska GitHub-repon, vilket indikerar en aktiv hotbild mot Sverige. Även om det inte finns bevis för en storskalig attack mot kritisk infrastruktur, är det förhöjda antalet aktiva hot och svenska incidenter tillräckligt för att motivera en gul nivå.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 16,
+    "actively_exploited": 17,
     "critical": 5,
-    "authority_alerts": 15,
+    "authority_alerts": 14,
     "kev_recent": 10
   },
   "anomaly": {
@@ -235,6 +235,21 @@
       }
     },
     {
+      "title": "SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-19T13:18:56.000Z",
+      "link": "https://thehackernews.com/2026/07/sonicwall-sma-zero-days-exploited.html",
+      "summary": "A previously undocumented threat actor has been attributed to the exploitation of recently disclosed SonicWall Secure Mobile Access (SMA) 1000 series VPN appliances as zero-days prior their public disclosure since June 22, 2026. Cybersecurity company Volexity is tracking the act…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "New Windows LegacyHive zero-day gives hackers admin privileges",
       "source": "BleepingComputer",
       "region": "INT",
@@ -366,21 +381,6 @@
         "critical": false,
         "incident": true,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-07-15T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/07/patchtisdag-juli-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juli. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
