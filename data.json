@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-19T17:38:10.007Z",
-  "next_update": "2026-07-19T18:08:10.007Z",
+  "updated": "2026-07-19T19:21:42.083Z",
+  "next_update": "2026-07-19T19:51:42.083Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige p.g.a. flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk IT-infrastruktur.",
-  "reasoning": "Det finns flera kritiska indikatorer som pekar på förhöjd risk, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket som utnyttjar GitHub Actions. Dessa signaler har en tydlig svensk koppling och indikerar aktivt utnyttjande. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska organisationer. Internationella signaler om aktivt utnyttjande av sårbarheter i Fortinet och Microsoft-produkter bidrar också till den övergripande hotbilden.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska sårbarheter som är aktivt utnyttjade globalt, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, vilket har en direkt svensk koppling genom CERT-SE:s varningar. Dessutom har CERT-SE rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar pågående aktivitet riktad mot svenska mål. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktiva hot och incidenter med svensk koppling tillräckligt för att motivera en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
@@ -345,7 +345,7 @@
       "region": "INT",
       "date": "2026-07-18T19:32:02.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/update-now-7-zip-fixes-rce-flaw-exploitable-with-malicious-archives/",
-      "summary": "7-Zip version 26.02 was released to fix a remote code execution vulnerability that could allow attackers to execute malicious code by convincing users to open specially crafted compressed files. [...]",
+      "summary": "7-Zip version 26.02 was released on June 25 to fix a remote code execution vulnerability that could allow attackers to execute malicious code by convincing users to open specially crafted compressed files. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
