@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-19T20:27:00.873Z",
-  "next_update": "2026-07-19T20:57:00.873Z",
+  "updated": "2026-07-19T21:31:47.748Z",
+  "next_update": "2026-07-19T22:01:47.748Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige p.g.a. flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svenska myndigheters områden.",
-  "reasoning": "Det finns flera kritiska och aktivt utnyttjade sårbarheter som påverkar svenska myndigheter och organisationer, såsom de kritiska sårbarheterna i SonicWall SMA1000 och den pågående attacken mot separata AsyncAPI GitHub-repon. Dessa signaler har en tydlig svensk koppling och indikerar en förhöjd risk för cyberattacker mot svenska aktörer. Även om det inte finns bevis för en storskalig samhällspåverkande attack, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två som är specifikt kopplade till Sverige (SonicWall SMA1000 och AsyncAPI GitHub-repon). Dessa utgör en tydlig svensk koppling och kräver förhöjd uppmärksamhet. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är risken för sådana attacker förhöjd på grund av de aktiva hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
     "actively_exploited": 17,
-    "critical": 5,
+    "critical": 6,
     "authority_alerts": 14,
     "kev_recent": 10
   },
@@ -340,6 +340,21 @@
       }
     },
     {
+      "title": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-19T20:42:49.000Z",
+      "link": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
+      "summary": "F5 has shipped fixes for a critical nginx flaw that lets a remote, unauthenticated attacker trigger a heap buffer overflow in the worker process with crafted HTTP requests. CVE-2026-42533 was patched on July 15 in nginx 1.30.4 (stable) and 1.31.3 (mainline), and in NGINX Plus 37…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-42533"
+      }
+    },
+    {
       "title": "Update now: 7-Zip fixes RCE flaw exploitable with malicious archives",
       "source": "BleepingComputer",
       "region": "INT",
@@ -365,21 +380,6 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-17T18:54:51.000Z",
-      "link": "https://thehackernews.com/2026/07/seven-malicious-vite-npm-packages-use.html",
-      "summary": "Cybersecurity researchers have discovered a cluster of seven malicious npm packages targeting the Vite frontend tooling ecosystem as part of a software supply chain attack. The malicious package campaign, codenamed ViteVenom by Checkmarx, marks an expansion of ChainVeil, which w…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
