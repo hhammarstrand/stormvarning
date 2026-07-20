@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-20T17:06:34.794Z",
-  "next_update": "2026-07-20T17:36:34.794Z",
+  "updated": "2026-07-20T19:06:07.132Z",
+  "next_update": "2026-07-20T19:36:07.132Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två specifikt riktade mot SonicWall SMA1000, vilket har en tydlig svensk koppling. CERT-SE har utfärdat varningar om dessa sårbarheter och deras användning i attacker, vilket ökar risken för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktiva hot och myndighetsvarningar tillräckligt för att motivera en gul nivå.",
+  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två SonicWall-sårbarheter (CVE-2026-15409 och CVE-2026-15410) som CERT-SE har rapporterat. Dessa har en tydlig svensk koppling och är noterade i CISA:s KEV-katalog, vilket indikerar hög risk. Dessutom har CERT-SE rapporterat om skadliga npm-paket och attacker mot brandväggar, vilket ytterligare förstärker behovet av försiktighet. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet incidenter och aktivt utnyttjade sårbarheter med svensk koppling tillräckligt för att motivera en gul nivå.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 17,
-    "critical": 5,
+    "actively_exploited": 16,
+    "critical": 6,
     "authority_alerts": 13,
     "kev_recent": 9
   },
@@ -265,21 +265,6 @@
       }
     },
     {
-      "title": "New Windows LegacyHive zero-day gives hackers admin privileges",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-17T11:05:30.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/new-windows-legacyhive-zero-day-exploit-grants-hackers-admin-access/",
-      "summary": "A security researcher using the \"Nightmare Eclipse\" handle has released a Windows zero-day exploit dubbed LegacyHive that allows attackers to escalate privileges on up-to-date Windows systems. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday",
       "source": "The Hacker News",
       "region": "INT",
@@ -382,6 +367,21 @@
         "incident": true,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-19T20:42:49.000Z",
+      "link": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
+      "summary": "F5 has shipped fixes for a critical nginx flaw that lets a remote, unauthenticated attacker trigger a heap buffer overflow in the worker process with crafted HTTP requests. CVE-2026-42533 was patched on July 15 in nginx 1.30.4 (stable) and 1.31.3 (mainline), and in NGINX Plus 37…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-42533"
       }
     }
   ],
