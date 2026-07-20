@@ -1,19 +1,19 @@
 {
-  "updated": "2026-07-19T23:35:35.489Z",
-  "next_update": "2026-07-20T00:05:35.489Z",
+  "updated": "2026-07-20T01:12:43.838Z",
+  "next_update": "2026-07-20T01:42:43.838Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 som CERT-SE har rapporterat som aktivt utnyttjade med svensk koppling. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om aktivt utnyttjande av SonicWall SMA1000-sårbarheter och ett pågående leveranskedjeangrepp mot svenska GitHub-repon. Dessa utgör en tydlig risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktivt utnyttjade sårbarheter och incidenter med svensk koppling tillräckligt för att motivera en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 17,
+    "actively_exploited": 16,
     "critical": 6,
-    "authority_alerts": 14,
-    "kev_recent": 10
+    "authority_alerts": 13,
+    "kev_recent": 9
   },
   "anomaly": {
     "active": false,
@@ -220,21 +220,6 @@
       }
     },
     {
-      "title": "CVE-2008-4128: Cisco IOS Cross-Site Request Forgery Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-13T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2008-4128",
-      "summary": "Cisco IOS – Cisco IOS 12.4 contains multiple cross-site forgery vulnerabilities that allows remote attackers to execute arbitrary commands via (1) a certain \"show privilege\" command to the /level/15/exec/- URI, and (2) a certain \"alias exec\" command to the /level/15/exec/-/confi…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2008-4128"
-      }
-    },
-    {
       "title": "SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access",
       "source": "The Hacker News",
       "region": "INT",
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-17T18:54:51.000Z",
+      "link": "https://thehackernews.com/2026/07/seven-malicious-vite-npm-packages-use.html",
+      "summary": "Cybersecurity researchers have discovered a cluster of seven malicious npm packages targeting the Vite frontend tooling ecosystem as part of a software supply chain attack. The malicious package campaign, codenamed ViteVenom by Checkmarx, marks an expansion of ChainVeil, which w…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 10
+      "count": 9
     },
     {
       "name": "CISA",
