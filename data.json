@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-20T11:25:59.205Z",
-  "next_update": "2026-07-20T11:55:59.205Z",
+  "updated": "2026-07-20T13:29:05.081Z",
+  "next_update": "2026-07-20T13:59:05.081Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter som är aktivt utnyttjade globalt, och två av dessa (CVE-2026-15409 och CVE-2026-15410) är specifikt kopplade till SonicWall SMA1000, vilket har rapporterats av CERT-SE med tydlig svensk koppling. Dessutom har CERT-SE rapporterat om pågående leveranskedjeangrepp mot svenska GitHub-repon, vilket ytterligare förstärker den svenska kopplingen. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet kritiska och aktivt utnyttjade sårbarheter med svensk koppling tillräckligt för att motivera en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om aktivt utnyttjande av sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en tydlig risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktivt utnyttjade sårbarheter och myndighetsvarningar anledning till förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
     "actively_exploited": 16,
-    "critical": 6,
+    "critical": 5,
     "authority_alerts": 13,
     "kev_recent": 9
   },
@@ -325,6 +325,21 @@
       }
     },
     {
+      "title": "Hugging Face warns an autonomous AI agent hacked its network",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-20T11:56:28.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hugging-face-breach-autonomous-ai-agent-system-internal-datasets-credentials/",
+      "summary": "The Hugging Face artificial intelligence repository disclosed that attackers gained access to internal datasets and credentials after breaching its production infrastructure using an autonomous AI agent system. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical ServiceNow code execution flaw now exploited in attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-42533"
-      }
-    },
-    {
-      "title": "Update now: 7-Zip fixes RCE flaw exploitable with malicious archives",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-18T19:32:02.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/update-now-7-zip-fixes-rce-flaw-exploitable-with-malicious-archives/",
-      "summary": "7-Zip version 26.02 was released on June 25 to fix a remote code execution vulnerability that could allow attackers to execute malicious code by convincing users to open specially crafted compressed files. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     }
   ],
