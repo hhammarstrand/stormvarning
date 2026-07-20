@@ -1,16 +1,16 @@
 {
-  "updated": "2026-07-20T13:29:05.081Z",
-  "next_update": "2026-07-20T13:59:05.081Z",
+  "updated": "2026-07-20T15:31:33.912Z",
+  "next_update": "2026-07-20T16:01:33.912Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om aktivt utnyttjande av sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en tydlig risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktivt utnyttjade sårbarheter och myndighetsvarningar anledning till förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två som är specifikt kopplade till Sverige (SonicWall SMA1000 och AsyncAPI GitHub-repon). Dessa inkluderar CERT-SE:s varningar om pågående angrepp och sårbarheter som CISA har lagt till i sin KEV-katalog. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka Sverige.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 16,
+    "actively_exploited": 17,
     "critical": 5,
     "authority_alerts": 13,
     "kev_recent": 9
@@ -66,6 +66,21 @@
         "critical": false,
         "incident": true,
         "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "⚡ Weekly Recap: WordPress RCE, SonicWall 0-Days, AI Service Attacks, SharePoint 0-Day and More",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-20T13:32:26.000Z",
+      "link": "https://thehackernews.com/2026/07/weekly-recap-wordpress-rce-sonicwall-0.html",
+      "summary": "A single request should not be able to do this much. But this week, small inputs led to code execution, memory loss, stolen keys, and disabled security tools. The paths were often simple: exposed systems, weak checks, old drivers, fake prompts, and public code used for malware d…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
         "cve": null
       }
     },
@@ -367,21 +382,6 @@
         "incident": true,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-19T20:42:49.000Z",
-      "link": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
-      "summary": "F5 has shipped fixes for a critical nginx flaw that lets a remote, unauthenticated attacker trigger a heap buffer overflow in the worker process with crafted HTTP requests. CVE-2026-42533 was patched on July 15 in nginx 1.30.4 (stable) and 1.31.3 (mainline), and in NGINX Plus 37…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-42533"
       }
     }
   ],
