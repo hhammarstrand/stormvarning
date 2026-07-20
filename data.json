@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-20T08:27:23.507Z",
-  "next_update": "2026-07-20T08:57:23.507Z",
+  "updated": "2026-07-20T11:25:59.205Z",
+  "next_update": "2026-07-20T11:55:59.205Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om aktivt utnyttjande av sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa incidenter och sårbarheter utgör en direkt risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktivt utnyttjade sårbarheter och myndighetsvarningar anledning till oro.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Det finns flera kritiska sårbarheter som är aktivt utnyttjade globalt, och två av dessa (CVE-2026-15409 och CVE-2026-15410) är specifikt kopplade till SonicWall SMA1000, vilket har rapporterats av CERT-SE med tydlig svensk koppling. Dessutom har CERT-SE rapporterat om pågående leveranskedjeangrepp mot svenska GitHub-repon, vilket ytterligare förstärker den svenska kopplingen. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet kritiska och aktivt utnyttjade sårbarheter med svensk koppling tillräckligt för att motivera en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
@@ -220,6 +220,21 @@
       }
     },
     {
+      "title": "New 7-Zip Vulnerability Could Let Crafted XZ Archives Run Code During Extraction",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-20T09:10:56.000Z",
+      "link": "https://thehackernews.com/2026/07/new-7-zip-vulnerability-could-let.html",
+      "summary": "Opening a crafted XZ archive in 7-Zip could let an attacker run code on the machine. The flaw, CVE-2026-14266, is a heap-based buffer overflow in how the archiver processes XZ chunked data, and Trend Micro's Zero Day Initiative (ZDI) detailed it on July 15. A fix shipped on June…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-14266"
+      }
+    },
+    {
       "title": "SonicWall SMA Zero-Days Exploited Before Disclosure to Gain Root Access",
       "source": "The Hacker News",
       "region": "INT",
@@ -241,21 +256,6 @@
       "date": "2026-07-17T11:05:30.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/new-windows-legacyhive-zero-day-exploit-grants-hackers-admin-access/",
       "summary": "A security researcher using the \"Nightmare Eclipse\" handle has released a Windows zero-day exploit dubbed LegacyHive that allows attackers to escalate privileges on up-to-date Windows systems. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CISA urges immediate action on actively exploited Fortinet flaws",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-17T07:03:33.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-feds-to-patch-exploited-fortinet-fortisandbox-flaws-by-sunday/",
-      "summary": "CISA on Thursday ordered government agencies to prioritize patching two actively exploited vulnerabilities in the Fortinet FortiSandbox threat detection platform. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -325,6 +325,21 @@
       }
     },
     {
+      "title": "Critical ServiceNow code execution flaw now exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-20T09:29:20.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-servicenow-code-execution-flaw-now-exploited-in-attacks/",
+      "summary": "Attackers have begun exploiting a critical vulnerability (CVE-2026-6875) in the ServiceNow AI Platform, according to threat intelligence company Defused. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-6875"
+      }
+    },
+    {
       "title": "SleeperGem Uses Three Malicious RubyGems Packages to Target Developer Machines",
       "source": "The Hacker News",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-07-18T19:32:02.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/update-now-7-zip-fixes-rce-flaw-exploitable-with-malicious-archives/",
       "summary": "7-Zip version 26.02 was released on June 25 to fix a remote code execution vulnerability that could allow attackers to execute malicious code by convincing users to open specially crafted compressed files. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "WordPress Core \"wp2shell\" RCE flaws get public exploits, patch now",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-18T17:22:47.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/wordpress-core-wp2shell-rce-flaws-get-public-exploits-patch-now/",
-      "summary": "Public exploits have been released for the critical \"wp2shell\" remote code execution vulnerabilities affecting WordPress Core, making it imperative that administrators patch their sites immediately. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
