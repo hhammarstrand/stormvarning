@@ -1,19 +1,19 @@
 {
-  "updated": "2026-07-21T14:17:47.260Z",
-  "next_update": "2026-07-21T14:47:47.260Z",
+  "updated": "2026-07-21T16:05:10.914Z",
+  "next_update": "2026-07-21T16:35:10.914Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter och incidenter med tydlig svensk koppling, såsom de kritiska sårbarheterna i SonicWall SMA1000 och det koordinerade leveranskedjeangreppet mot separata AsyncAPI GitHub-repon. Dessa signaler indikerar en aktiv hotbild mot svenska system och infrastruktur. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, väger de svenska myndighetsvarningarna och de aktivt utnyttjade sårbarheterna tungt. Det finns dock inte tillräckligt med signaler för att klassificera läget som rött.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 13,
-    "critical": 7,
-    "authority_alerts": 10,
-    "kev_recent": 5
+    "actively_exploited": 16,
+    "critical": 9,
+    "authority_alerts": 13,
+    "kev_recent": 9
   },
   "anomaly": {
     "active": false,
@@ -70,6 +70,36 @@
       }
     },
     {
+      "title": "CVE-2026-60137: WordPress Core SQL Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-21T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-60137",
+      "summary": "WordPress Core – WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress in…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-60137"
+      }
+    },
+    {
+      "title": "CVE-2026-63030: WordPress Core Interpretation Conflict Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-21T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-63030",
+      "summary": "WordPress Core – WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-63030"
+      }
+    },
+    {
       "title": "⚡ Weekly Recap: WordPress RCE, SonicWall 0-Days, AI Service Attacks, SharePoint 0-Day and More",
       "source": "The Hacker News",
       "region": "INT",
@@ -97,6 +127,36 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-58644"
+      }
+    },
+    {
+      "title": "CVE-2026-0770: Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-21T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-0770",
+      "summary": "Langflow Langflow – Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-0770"
+      }
+    },
+    {
+      "title": "CVE-2021-27137: DD-WRT Stack-Based Buffer Overflow Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-07-21T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2021-27137",
+      "summary": "DD-WRT DD-WRT – DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2021-27137"
       }
     },
     {
@@ -250,21 +310,6 @@
       }
     },
     {
-      "title": "Researcher Drops New Windows Zero-Day PoC Hours After Microsoft Patch Tuesday",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-15T11:07:07.000Z",
-      "link": "https://thehackernews.com/2026/07/researcher-drops-new-windows-zero-day.html",
-      "summary": "Security researcher Chaotic Eclipse (aka Nightmare-Eclipse) has released a new proof-of-concept (PoC) exploit called LegacyHive. It has been described as a Windows User Profile Service arbitrary hive load elevation of privileges vulnerability. The Windows User Profile Service, a…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -277,6 +322,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "Critical SharePoint RCE CVE-2026-50522 Under Active Exploitation After Public PoC",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-21T14:57:51.000Z",
+      "link": "https://thehackernews.com/2026/07/critical-sharepoint-rce-cve-2026-50522.html",
+      "summary": "A third SharePoint Server flaw patched by Microsoft as part of its Patch Tuesday update for July 2026 has come under active exploitation, per watchTowr. The vulnerability in question is CVE-2026-50522 (CVSS score: 9.8), a critical deserialization of untrusted data in Microsoft O…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-50522"
       }
     },
     {
@@ -323,66 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "SleeperGem Uses Three Malicious RubyGems Packages to Target Developer Machines",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-20T05:15:39.000Z",
-      "link": "https://thehackernews.com/2026/07/sleepergem-uses-three-malicious.html",
-      "summary": "Cybersecurity researchers have flagged a new software supply chain attack codenamed SleeperGem targeting the Ruby ecosystem after three malicious gems were published to RubyGems with the end goal of serving additional payloads. The rogue gems are listed below - git_credential_ma…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-19T20:42:49.000Z",
-      "link": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
-      "summary": "F5 has shipped fixes for a critical nginx flaw that lets a remote, unauthenticated attacker trigger a heap buffer overflow in the worker process with crafted HTTP requests. CVE-2026-42533 was patched on July 15 in nginx 1.30.4 (stable) and 1.31.3 (mainline), and in NGINX Plus 37…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-42533"
-      }
-    },
-    {
-      "title": "Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-17T18:54:51.000Z",
-      "link": "https://thehackernews.com/2026/07/seven-malicious-vite-npm-packages-use.html",
-      "summary": "Cybersecurity researchers have discovered a cluster of seven malicious npm packages targeting the Vite frontend tooling ecosystem as part of a software supply chain attack. The malicious package campaign, codenamed ViteVenom by Checkmarx, marks an expansion of ChainVeil, which w…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-07-15T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/07/patchtisdag-juli-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juli. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 5
+      "count": 9
     },
     {
       "name": "CISA",
