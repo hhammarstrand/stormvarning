@@ -1,19 +1,19 @@
 {
-  "updated": "2026-07-20T23:35:58.993Z",
-  "next_update": "2026-07-21T00:05:58.993Z",
+  "updated": "2026-07-21T01:07:13.067Z",
+  "next_update": "2026-07-21T01:37:13.067Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två som är specifikt kopplade till Sverige (SonicWall SMA1000 och skadliga npm-paket). Dessa utgör en tydlig svensk koppling och kräver förhöjd beredskap. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är risken för sådana incidenter förhöjd.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om aktivt utnyttjande av sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de pågående hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 17,
-    "critical": 5,
-    "authority_alerts": 13,
-    "kev_recent": 9
+    "actively_exploited": 13,
+    "critical": 8,
+    "authority_alerts": 9,
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
@@ -175,66 +175,6 @@
       }
     },
     {
-      "title": "CVE-2026-56155: Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability ",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-14T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-56155",
-      "summary": "Microsoft Active Directory Federation Services – Microsoft Active Directory Federation Services contains an insufficient granularity of access control vulnerability that allows an authorized attacker to elevate privileges locally.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-56155"
-      }
-    },
-    {
-      "title": "CVE-2026-56164: Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-14T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-56164",
-      "summary": "Microsoft SharePoint Server – Microsoft SharePoint contains a missing authentication for critical function vulnerability that allows an unauthorized attacker to elevate privileges over a network.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-56164"
-      }
-    },
-    {
-      "title": "CVE-2026-15409: SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-14T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-15409",
-      "summary": "SonicWall SMA1000 Appliances – SonicWall SMA1000 Appliances contain a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to potentially cause the appliance to make requests to unintended location.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-15409"
-      }
-    },
-    {
-      "title": "CVE-2026-15410: SonicWall SMA1000 Appliances Code Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-14T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-15410",
-      "summary": "SonicWall SMA1000 Appliances – SonicWall SMA1000 Appliances contain a code injection vulnerability which in specific conditions could potentially enable a remote authenticated attacker as administrator to execute arbitrary OS commands.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-15410"
-      }
-    },
-    {
       "title": "SonicWall SMA1000 flaws exploited as zero-days to push custom malware",
       "source": "BleepingComputer",
       "region": "INT",
@@ -383,6 +323,66 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-19T20:42:49.000Z",
+      "link": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
+      "summary": "F5 has shipped fixes for a critical nginx flaw that lets a remote, unauthenticated attacker trigger a heap buffer overflow in the worker process with crafted HTTP requests. CVE-2026-42533 was patched on July 15 in nginx 1.30.4 (stable) and 1.31.3 (mainline), and in NGINX Plus 37…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-42533"
+      }
+    },
+    {
+      "title": "Update now: 7-Zip fixes RCE flaw exploitable with malicious archives",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-18T19:32:02.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/update-now-7-zip-fixes-rce-flaw-exploitable-with-malicious-archives/",
+      "summary": "7-Zip version 26.02 was released on June 25 to fix a remote code execution vulnerability that could allow attackers to execute malicious code by convincing users to open specially crafted compressed files. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "WordPress Core \"wp2shell\" RCE flaws get public exploits, patch now",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-18T17:22:47.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/wordpress-core-wp2shell-rce-flaws-get-public-exploits-patch-now/",
+      "summary": "Public exploits have been released for the critical \"wp2shell\" remote code execution vulnerabilities affecting WordPress Core, making it imperative that administrators patch their sites immediately. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-17T18:54:51.000Z",
+      "link": "https://thehackernews.com/2026/07/seven-malicious-vite-npm-packages-use.html",
+      "summary": "Cybersecurity researchers have discovered a cluster of seven malicious npm packages targeting the Vite frontend tooling ecosystem as part of a software supply chain attack. The malicious package campaign, codenamed ViteVenom by Checkmarx, marks an expansion of ChainVeil, which w…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 5
     },
     {
       "name": "CISA",
