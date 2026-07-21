@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-21T16:05:10.914Z",
-  "next_update": "2026-07-21T16:35:10.914Z",
+  "updated": "2026-07-21T17:42:57.201Z",
+  "next_update": "2026-07-21T18:12:57.201Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, väger de svenska myndighetsvarningarna och de aktivt utnyttjade sårbarheterna tungt. Det finns dock inte tillräckligt med signaler för att klassificera läget som rött.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och ett pågående leveranskedjeangrepp mot svenska GitHub-repon. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktivt utnyttjade sårbarheter och myndighetsvarningar en anledning till oro.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
     "actively_exploited": 16,
-    "critical": 9,
+    "critical": 10,
     "authority_alerts": 13,
     "kev_recent": 9
   },
@@ -325,6 +325,21 @@
       }
     },
     {
+      "title": "Critical wp2shell WordPress flaws exploited to install webshells",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-21T16:41:50.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-wp2shell-wordpress-flaws-exploited-to-install-webshells/",
+      "summary": "Hackers are exploiting the \"wp2shell\" critical vulnerability suite (CVE-2026-63030 and CVE-2026-60137) affecting WordPress Core to deploy persistent webshells and install malicious plugins on affected servers. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-63030"
+      }
+    },
+    {
       "title": "Critical SharePoint RCE CVE-2026-50522 Under Active Exploitation After Public PoC",
       "source": "The Hacker News",
       "region": "INT",
@@ -365,21 +380,6 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Hugging Face warns an autonomous AI agent hacked its network",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-20T11:56:28.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hugging-face-breach-autonomous-ai-agent-system-internal-datasets-credentials/",
-      "summary": "The Hugging Face artificial intelligence repository disclosed that attackers gained access to internal datasets and credentials after breaching its production infrastructure using an autonomous AI agent system. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
