@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-21T07:16:18.436Z",
-  "next_update": "2026-07-21T07:46:18.436Z",
+  "updated": "2026-07-21T10:06:58.175Z",
+  "next_update": "2026-07-21T10:36:58.175Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om aktivt utnyttjande av sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Det finns förhöjd risk för cyberattacker mot Sverige med flera aktiva hot och svenska myndighetsvarningar.",
+  "reasoning": "Flera signaler visar på aktivt utnyttjande av kritiska sårbarheter globalt, och tre svenska myndighetsvarningar (CERT-SE) indikerar specifika hot mot Sverige. Dessa inkluderar kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivitet som kan påverka svenska organisationer.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 13,
-    "critical": 8,
+    "actively_exploited": 15,
+    "critical": 7,
     "authority_alerts": 9,
     "kev_recent": 5
   },
@@ -175,6 +175,36 @@
       }
     },
     {
+      "title": "Windows LegacyHive zero-day flaw gets free, unofficial patches",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-21T08:06:26.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/windows-legacyhive-zero-day-flaw-gets-free-unofficial-patches/",
+      "summary": "Free unofficial patches are available for a recently disclosed Windows zero-day flaw that allows attackers to escalate privileges on up-to-date Windows systems. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Critical ServiceNow AI Platform Flaw Exploited for Unauthenticated Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-21T06:29:26.000Z",
+      "link": "https://thehackernews.com/2026/07/critical-servicenow-ai-platform-flaw.html",
+      "summary": "Threat actors are now exploiting a recently disclosed critical security flaw impacting ServiceNow AI Platform, according to Defused Cyber. In a post shared on X, the threat intelligence firm said it's observing in-the-wild exploitation of CVE-2026-6875 (CVSS score: 9.5), a sandb…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-6875"
+      }
+    },
+    {
       "title": "SonicWall SMA1000 flaws exploited as zero-days to push custom malware",
       "source": "BleepingComputer",
       "region": "INT",
@@ -280,6 +310,36 @@
       }
     },
     {
+      "title": "WordPress wp2shell Exploitation Grows as Public Exploit Fuels Mass Scanning",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-21T08:59:30.000Z",
+      "link": "https://thehackernews.com/2026/07/wordpress-wp2shell-exploitation-grows.html",
+      "summary": "Attackers have begun to exploit two critical vulnerabilities in WordPress that, when combined together, enable unauthenticated remote code execution (RCE) and complete compromise of vulnerable websites. The two security flaws, tracked as CVE-2026-63030 and CVE-2026-60137, have b…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-63030"
+      }
+    },
+    {
+      "title": "New ENCFORGE Ransomware Targets AI Model Files in Langflow RCE Attack",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-21T07:34:32.000Z",
+      "link": "https://thehackernews.com/2026/07/new-encforge-ransomware-targets-ai.html",
+      "summary": "Researchers at Sysdig have linked a second attack on the same Langflow server to JADEPUFFER, the AI-agent-driven operator it first documented earlier this month. The same operator has now been spotted deploying ENCFORGE, a new compiled Go ransomware designed to encrypt model wei…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Hugging Face warns an autonomous AI agent hacked its network",
       "source": "BleepingComputer",
       "region": "INT",
@@ -316,66 +376,6 @@
       "date": "2026-07-20T05:15:39.000Z",
       "link": "https://thehackernews.com/2026/07/sleepergem-uses-three-malicious.html",
       "summary": "Cybersecurity researchers have flagged a new software supply chain attack codenamed SleeperGem targeting the Ruby ecosystem after three malicious gems were published to RubyGems with the end goal of serving additional payloads. The rogue gems are listed below - git_credential_ma…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-19T20:42:49.000Z",
-      "link": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
-      "summary": "F5 has shipped fixes for a critical nginx flaw that lets a remote, unauthenticated attacker trigger a heap buffer overflow in the worker process with crafted HTTP requests. CVE-2026-42533 was patched on July 15 in nginx 1.30.4 (stable) and 1.31.3 (mainline), and in NGINX Plus 37…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-42533"
-      }
-    },
-    {
-      "title": "Update now: 7-Zip fixes RCE flaw exploitable with malicious archives",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-18T19:32:02.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/update-now-7-zip-fixes-rce-flaw-exploitable-with-malicious-archives/",
-      "summary": "7-Zip version 26.02 was released on June 25 to fix a remote code execution vulnerability that could allow attackers to execute malicious code by convincing users to open specially crafted compressed files. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "WordPress Core \"wp2shell\" RCE flaws get public exploits, patch now",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-18T17:22:47.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/wordpress-core-wp2shell-rce-flaws-get-public-exploits-patch-now/",
-      "summary": "Public exploits have been released for the critical \"wp2shell\" remote code execution vulnerabilities affecting WordPress Core, making it imperative that administrators patch their sites immediately. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-17T18:54:51.000Z",
-      "link": "https://thehackernews.com/2026/07/seven-malicious-vite-npm-packages-use.html",
-      "summary": "Cybersecurity researchers have discovered a cluster of seven malicious npm packages targeting the Vite frontend tooling ecosystem as part of a software supply chain attack. The malicious package campaign, codenamed ViteVenom by Checkmarx, marks an expansion of ChainVeil, which w…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
