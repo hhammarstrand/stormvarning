@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-22T12:01:52.432Z",
-  "next_update": "2026-07-22T12:31:52.432Z",
+  "updated": "2026-07-22T14:18:51.449Z",
+  "next_update": "2026-07-22T14:48:51.449Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka Sverige. Det internationella hotbilden förstärker detta, men den svenska kopplingen är avgörande för att höja nivån till 'gul'.",
+  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjade hot som påverkar Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa signaler har en tydlig svensk koppling och CERT-SE har utfärdat varningar, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de kritiska sårbarheterna.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 14,
-    "critical": 11,
+    "actively_exploited": 13,
+    "critical": 12,
     "authority_alerts": 11,
     "kev_recent": 7
   },
@@ -220,21 +220,6 @@
       }
     },
     {
-      "title": "Windows LegacyHive zero-day flaw gets free, unofficial patches",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-21T08:06:26.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/windows-legacyhive-zero-day-flaw-gets-free-unofficial-patches/",
-      "summary": "Free unofficial patches are available for a recently disclosed Windows zero-day flaw that allows attackers to escalate privileges on up-to-date Windows systems. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Critical ServiceNow AI Platform Flaw Exploited for Unauthenticated Code Execution",
       "source": "The Hacker News",
       "region": "INT",
@@ -382,6 +367,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-63030"
+      }
+    },
+    {
+      "title": "New ENCFORGE Ransomware Targets AI Model Files in Langflow RCE Attack",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-21T07:34:32.000Z",
+      "link": "https://thehackernews.com/2026/07/new-encforge-ransomware-targets-ai.html",
+      "summary": "Researchers at Sysdig have linked a second attack on the same Langflow server to JADEPUFFER, the AI-agent-driven operator it first documented earlier this month. The same operator has now been spotted deploying ENCFORGE, a new compiled Go ransomware designed to encrypt model wei…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     }
   ],
