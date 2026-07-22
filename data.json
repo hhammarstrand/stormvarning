@@ -1,19 +1,19 @@
 {
-  "updated": "2026-07-21T23:36:51.314Z",
-  "next_update": "2026-07-22T00:06:51.314Z",
+  "updated": "2026-07-22T01:06:41.096Z",
+  "next_update": "2026-07-22T01:36:41.096Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och ett pågående leveranskedjeangrepp mot svenska GitHub-repon. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktivt utnyttjade sårbarheter och myndighetsvarningar en anledning till oro.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av upptäckta kritiska sårbarheter och aktivt utnyttjande av SonicWall och WordPress i svenska sammanhang.",
+  "reasoning": "Det finns flera kritiska sårbarheter som är aktivt utnyttjade globalt, inklusive SonicWall SMA1000 och WordPress Core, vilket har en tydlig svensk koppling. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige för närvarande, är risken för attacker mot kritiska system uppenbar. Detta motiverar en gul nivå.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 16,
-    "critical": 10,
-    "authority_alerts": 13,
-    "kev_recent": 9
+    "actively_exploited": 14,
+    "critical": 11,
+    "authority_alerts": 11,
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
@@ -205,36 +205,6 @@
       }
     },
     {
-      "title": "CVE-2026-46817: Oracle E-Business Suite Improper Privilege Management Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-15T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-46817",
-      "summary": "Oracle E-Business Suite – Oracle E-Business Suite contains an improper privilege management vulnerability that allows an unauthenticated attacker with network access via HTTP to compromise Oracle Payments. Successful attacks of this vulnerability can result in takeover of Oracle…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-46817"
-      }
-    },
-    {
-      "title": "CVE-2023-4346: KNX Association KNX Protocol Connection Authorization Option 1 Overly Restrictive Account Lockout Mechanism Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-15T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2023-4346",
-      "summary": "KNX Association KNX Protocol Connection Authorization Option 1 – KNX Association KNX Protocol Connection Authorization Option 1 contains an overly restrictive account lockout mechanism vulnerability that could allow an attacker to purge all devices without additional security op…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2023-4346"
-      }
-    },
-    {
       "title": "Windows LegacyHive zero-day flaw gets free, unofficial patches",
       "source": "BleepingComputer",
       "region": "INT",
@@ -383,6 +353,36 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-63030"
       }
+    },
+    {
+      "title": "New ENCFORGE Ransomware Targets AI Model Files in Langflow RCE Attack",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-21T07:34:32.000Z",
+      "link": "https://thehackernews.com/2026/07/new-encforge-ransomware-targets-ai.html",
+      "summary": "Researchers at Sysdig have linked a second attack on the same Langflow server to JADEPUFFER, the AI-agent-driven operator it first documented earlier this month. The same operator has now been spotted deploying ENCFORGE, a new compiled Go ransomware designed to encrypt model wei…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "SleeperGem Uses Three Malicious RubyGems Packages to Target Developer Machines",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-20T05:15:39.000Z",
+      "link": "https://thehackernews.com/2026/07/sleepergem-uses-three-malicious.html",
+      "summary": "Cybersecurity researchers have flagged a new software supply chain attack codenamed SleeperGem targeting the Ruby ecosystem after three malicious gems were published to RubyGems with the end goal of serving additional payloads. The rogue gems are listed below - git_credential_ma…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 7
     },
     {
       "name": "CISA",
