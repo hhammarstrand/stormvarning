@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-22T21:24:12.654Z",
-  "next_update": "2026-07-22T21:54:12.654Z",
+  "updated": "2026-07-22T22:38:37.309Z",
+  "next_update": "2026-07-22T23:08:37.309Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en pågående attack mot svenska GitHub-repon. Dessa utgör en tydlig risk för svenska organisationer. Även om det inte finns bevis för en storskalig samhällspåverkande attack, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
+  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjade hot som påverkar Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa signaler har en tydlig svensk koppling och CERT-SE har utfärdat varningar, vilket indikerar en förhöjd risknivå. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
@@ -355,21 +355,6 @@
       }
     },
     {
-      "title": "Critical wp2shell WordPress flaws exploited to install webshells",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-21T16:41:50.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-wp2shell-wordpress-flaws-exploited-to-install-webshells/",
-      "summary": "Hackers are exploiting the \"wp2shell\" critical vulnerability suite (CVE-2026-63030 and CVE-2026-60137) affecting WordPress Core to deploy persistent webshells and install malicious plugins on affected servers. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-63030"
-      }
-    },
-    {
       "title": "Critical SharePoint RCE CVE-2026-50522 Under Active Exploitation After Public PoC",
       "source": "The Hacker News",
       "region": "INT",
@@ -382,6 +367,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-50522"
+      }
+    },
+    {
+      "title": "WordPress wp2shell Exploitation Grows as Public Exploit Fuels Mass Scanning",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-21T08:59:30.000Z",
+      "link": "https://thehackernews.com/2026/07/wordpress-wp2shell-exploitation-grows.html",
+      "summary": "Attackers have begun to exploit two critical vulnerabilities in WordPress that, when combined together, enable unauthenticated remote code execution (RCE) and complete compromise of vulnerable websites. The two security flaws, tracked as CVE-2026-63030 and CVE-2026-60137, have b…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-63030"
       }
     }
   ],
