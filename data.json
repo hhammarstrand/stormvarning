@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-22T04:33:19.789Z",
-  "next_update": "2026-07-22T05:03:19.789Z",
+  "updated": "2026-07-22T07:18:21.608Z",
+  "next_update": "2026-07-22T07:48:21.608Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter som är aktivt utnyttjade globalt, och tre signaler med tydlig svensk koppling har identifierats. Dessa inkluderar kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka svenska organisationer.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
     "actively_exploited": 14,
-    "critical": 11,
+    "critical": 10,
     "authority_alerts": 11,
     "kev_recent": 7
   },
@@ -295,6 +295,36 @@
       }
     },
     {
+      "title": "Chick-fil-A discloses data breach after credential stuffing attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-22T06:40:29.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/chick-fil-a-discloses-data-breach-after-credential-stuffing-attacks/",
+      "summary": "American fast food restaurant chain Chick-fil-A is notifying customers of a data breach after their accounts were hacked in a wave of recent credential stuffing attacks. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "OpenAI says its AI models hacked Hugging Face during testing",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-22T05:19:20.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/openai-says-its-ai-models-hacked-hugging-face-during-testing/",
+      "summary": "OpenAI says its AI models, including GPT‑5.6 Sol and a pre-release model, hacked into the Hugging Face artificial intelligence repository while being tested in a sandboxed testing environment. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical SharePoint RCE flaw exploited to steal machine keys",
       "source": "BleepingComputer",
       "region": "INT",
@@ -352,36 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-63030"
-      }
-    },
-    {
-      "title": "New ENCFORGE Ransomware Targets AI Model Files in Langflow RCE Attack",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-21T07:34:32.000Z",
-      "link": "https://thehackernews.com/2026/07/new-encforge-ransomware-targets-ai.html",
-      "summary": "Researchers at Sysdig have linked a second attack on the same Langflow server to JADEPUFFER, the AI-agent-driven operator it first documented earlier this month. The same operator has now been spotted deploying ENCFORGE, a new compiled Go ransomware designed to encrypt model wei…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "SleeperGem Uses Three Malicious RubyGems Packages to Target Developer Machines",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-20T05:15:39.000Z",
-      "link": "https://thehackernews.com/2026/07/sleepergem-uses-three-malicious.html",
-      "summary": "Cybersecurity researchers have flagged a new software supply chain attack codenamed SleeperGem targeting the Ruby ecosystem after three malicious gems were published to RubyGems with the end goal of serving additional payloads. The rogue gems are listed below - git_credential_ma…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
       }
     }
   ],
