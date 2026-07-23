@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-23T13:10:57.255Z",
-  "next_update": "2026-07-23T13:40:57.255Z",
+  "updated": "2026-07-23T15:34:49.888Z",
+  "next_update": "2026-07-23T16:04:49.888Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk, särskilt CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket med svensk koppling. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av upptäckta kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera signaler visar på aktivt utnyttjande av kritiska sårbarheter globalt, och två specifika incidenter (SonicWall SMA1000-sårbarheter och skadliga npm-paket) har en tydlig svensk koppling. Dessa incidenter och sårbarheter kan potentiellt påverka svenska organisationer, särskilt med tanke på CERT-SE:s varningar. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda hotläget motiverat.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 5,
     "sweden_acute": 3,
     "actively_exploited": 12,
     "critical": 10,
-    "authority_alerts": 11,
+    "authority_alerts": 12,
     "kev_recent": 6
   },
   "anomaly": {
@@ -265,21 +265,6 @@
       }
     },
     {
-      "title": "Chick-fil-A discloses data breach after credential stuffing attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-22T06:40:29.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/chick-fil-a-discloses-data-breach-after-credential-stuffing-attacks/",
-      "summary": "American fast food restaurant chain Chick-fil-A is notifying customers of a data breach after their accounts were hacked in a wave of recent credential stuffing attacks. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Critical SharePoint RCE CVE-2026-50522 Under Active Exploitation After Public PoC",
       "source": "The Hacker News",
       "region": "INT",
@@ -376,6 +361,21 @@
       "date": "2026-07-15T11:30:00.000Z",
       "link": "https://www.cert.se/2026/07/patchtisdag-juli-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
       "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juli. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.26",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-26T12:55:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
+      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
