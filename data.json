@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-23T18:22:07.206Z",
-  "next_update": "2026-07-23T18:52:07.206Z",
+  "updated": "2026-07-23T19:58:22.733Z",
+  "next_update": "2026-07-23T20:28:22.733Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i WordPress, som är aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i stor skala, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns även rapporter om leveranskedjeangrepp mot svenska GitHub-repon, vilket ytterligare stärker behovet av försiktighet.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i GitHub Actions, med tydlig svensk koppling. Dessa har rapporterats av CERT-SE och har klassificerats som kritiska och aktivt utnyttjade. Även om det inte finns bekräftade incidenter i stor skala mot svensk kritisk infrastruktur, är risken för pågående attacker mot svenska mål förhöjd på grund av dessa signaler.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 5,
     "sweden_acute": 3,
-    "actively_exploited": 11,
+    "actively_exploited": 12,
     "critical": 9,
-    "authority_alerts": 13,
+    "authority_alerts": 12,
     "kev_recent": 6
   },
   "anomaly": {
@@ -172,6 +172,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2021-27137"
+      }
+    },
+    {
+      "title": "Russian Espionage Group Exploited Zimbra Zero-Day to Steal Mail and 2FA Codes",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-23T18:36:08.000Z",
+      "link": "https://thehackernews.com/2026/07/russian-espionage-group-exploited.html",
+      "summary": "A Russian state-supported espionage group spent months reading Western mailboxes through a then-unknown flaw in Zimbra's webmail client. The payload goes after the last 90 days of email, the organization's entire email directory, the password saved in the browser and the codes k…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -361,21 +376,6 @@
       "date": "2026-06-26T12:55:00.000Z",
       "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
       "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-26T08:34:35.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
-      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
