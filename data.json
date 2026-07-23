@@ -1,19 +1,19 @@
 {
-  "updated": "2026-07-22T22:38:37.309Z",
-  "next_update": "2026-07-22T23:08:37.309Z",
+  "updated": "2026-07-23T00:11:21.987Z",
+  "next_update": "2026-07-23T00:41:21.987Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjade hot som påverkar Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa signaler har en tydlig svensk koppling och CERT-SE har utfärdat varningar, vilket indikerar en förhöjd risknivå. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det uppenbart att svenska aktörer är i fokus för attackerare. Internationella rapporter om aktivt utnyttjade sårbarheter och incidenter, såsom CVE-2026-50522 i Microsoft SharePoint, förstärker det förhöjda hotet.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 15,
-    "critical": 10,
-    "authority_alerts": 13,
-    "kev_recent": 9
+    "actively_exploited": 12,
+    "critical": 12,
+    "authority_alerts": 10,
+    "kev_recent": 6
   },
   "anomaly": {
     "active": false,
@@ -205,51 +205,6 @@
       }
     },
     {
-      "title": "CVE-2026-58644: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-16T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-58644",
-      "summary": "Microsoft SharePoint – Microsoft SharePoint contains a deserialization of untrusted data vulnerability that allows an unauthorized attacker to execute code over a network.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-58644"
-      }
-    },
-    {
-      "title": "CVE-2026-25089: Fortinet FortiSandbox OS Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-16T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-25089",
-      "summary": "Fortinet FortiSandbox – Fortinet FortiSandbox, FortiSandbox Cloud, and FortiSandbox PaaS contain an OS command injection vulnerability that allows an unauthenticated attacker to execute unauthorized commands via specifically crafted HTTP requests.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-25089"
-      }
-    },
-    {
-      "title": "CVE-2026-39808: Fortinet FortiSandbox OS Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-16T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-39808",
-      "summary": "Fortinet FortiSandbox – Fortinet FortiSandbox contains an OS command injection vulnerability that could allow an unauthenticated attacker to execute unauthorized code or commands via crafted HTTP requests.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-39808"
-      }
-    },
-    {
       "title": "Critical ServiceNow AI Platform Flaw Exploited for Unauthenticated Code Execution",
       "source": "The Hacker News",
       "region": "INT",
@@ -383,6 +338,51 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-63030"
       }
+    },
+    {
+      "title": "New ENCFORGE Ransomware Targets AI Model Files in Langflow RCE Attack",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-21T07:34:32.000Z",
+      "link": "https://thehackernews.com/2026/07/new-encforge-ransomware-targets-ai.html",
+      "summary": "Researchers at Sysdig have linked a second attack on the same Langflow server to JADEPUFFER, the AI-agent-driven operator it first documented earlier this month. The same operator has now been spotted deploying ENCFORGE, a new compiled Go ransomware designed to encrypt model wei…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "SleeperGem Uses Three Malicious RubyGems Packages to Target Developer Machines",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-20T05:15:39.000Z",
+      "link": "https://thehackernews.com/2026/07/sleepergem-uses-three-malicious.html",
+      "summary": "Cybersecurity researchers have flagged a new software supply chain attack codenamed SleeperGem targeting the Ruby ecosystem after three malicious gems were published to RubyGems with the end goal of serving additional payloads. The rogue gems are listed below - git_credential_ma…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Critical NGINX Vulnerability Can Crash Workers and May Allow Remote Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-19T20:42:49.000Z",
+      "link": "https://thehackernews.com/2026/07/critical-nginx-vulnerability-can-crash.html",
+      "summary": "F5 has shipped fixes for a critical nginx flaw that lets a remote, unauthenticated attacker trigger a heap buffer overflow in the worker process with crafted HTTP requests. CVE-2026-42533 was patched on July 15 in nginx 1.30.4 (stable) and 1.31.3 (mainline), and in NGINX Plus 37…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-42533"
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 6
     },
     {
       "name": "CISA",
