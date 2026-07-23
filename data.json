@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-23T06:37:32.904Z",
-  "next_update": "2026-07-23T07:07:32.904Z",
+  "updated": "2026-07-23T09:32:11.112Z",
+  "next_update": "2026-07-23T10:02:11.112Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjade hot som påverkar Sverige, inklusive SonicWall SMA1000-sårbarheter och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa signaler, särskilt de som är taggade med SVERIGE och AKTIVT-UTNYTTJAD, indikerar en förhöjd risknivå. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de pågående incidenterna och de kritiska sårbarheterna.",
+  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjade hot som påverkar Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa signaler har en tydlig svensk koppling och CERT-SE har utfärdat varningar, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de identifierade hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 12,
-    "critical": 12,
+    "actively_exploited": 13,
+    "critical": 11,
     "authority_alerts": 10,
     "kev_recent": 6
   },
@@ -205,6 +205,21 @@
       }
     },
     {
+      "title": "Check Point warns of SmartConsole zero-day exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-23T08:13:07.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/check-point-patches-smartconsole-zero-day-exploited-in-attacks/",
+      "summary": "Israeli cybersecurity firm Check Point Software has addressed an actively exploited zero-day flaw in the company's SmartConsole graphical user interface (GUI) admin panel. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical ServiceNow AI Platform Flaw Exploited for Unauthenticated Code Execution",
       "source": "The Hacker News",
       "region": "INT",
@@ -292,21 +307,6 @@
         "incident": true,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Critical SharePoint RCE flaw exploited to steal machine keys",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-21T20:06:55.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-sharepoint-rce-flaw-exploited-to-steal-machine-keys/",
-      "summary": "Hackers are actively exploiting the critical CVE-2026-50522 vulnerability in Microsoft SharePoint to steal machine keys and maintain access even after affected servers are patched. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-50522"
       }
     },
     {
