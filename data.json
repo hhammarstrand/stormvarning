@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-23T15:34:49.888Z",
-  "next_update": "2026-07-23T16:04:49.888Z",
+  "updated": "2026-07-23T17:04:03.291Z",
+  "next_update": "2026-07-23T17:34:03.291Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av upptäckta kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler visar på aktivt utnyttjande av kritiska sårbarheter globalt, och två specifika incidenter (SonicWall SMA1000-sårbarheter och skadliga npm-paket) har en tydlig svensk koppling. Dessa incidenter och sårbarheter kan potentiellt påverka svenska organisationer, särskilt med tanke på CERT-SE:s varningar. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda hotläget motiverat.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och WordPress, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Det finns även en incident med skadliga npm-paket som drabbat svenska GitHub-repon. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att Sverige är i fokus för aktiva hotaktörer.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 6,
     "sweden_acute": 3,
-    "actively_exploited": 12,
-    "critical": 10,
-    "authority_alerts": 12,
+    "actively_exploited": 11,
+    "critical": 9,
+    "authority_alerts": 13,
     "kev_recent": 6
   },
   "anomaly": {
@@ -97,21 +97,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-63030"
-      }
-    },
-    {
-      "title": "CISA orders urgent action on actively exploited Langflow RCE flaw",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-22T11:43:28.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-langflow-rce-flaw/",
-      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday ordered U.S. government agencies to prioritize patching an actively exploited vulnerability in the Langflow visual framework for building AI agents. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
@@ -376,6 +361,21 @@
       "date": "2026-06-26T12:55:00.000Z",
       "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
       "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-26T08:34:35.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
+      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
