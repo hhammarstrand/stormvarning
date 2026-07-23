@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-23T00:11:21.987Z",
-  "next_update": "2026-07-23T00:41:21.987Z",
+  "updated": "2026-07-23T03:57:48.160Z",
+  "next_update": "2026-07-23T04:27:48.160Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det uppenbart att svenska aktörer är i fokus för attackerare. Internationella rapporter om aktivt utnyttjade sårbarheter och incidenter, såsom CVE-2026-50522 i Microsoft SharePoint, förstärker det förhöjda hotet.",
+  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjade hot som påverkar Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en koordinerad attack mot svenska GitHub-repon. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, indikerar CERT-SE:s varningar och CISA KEV-katalogens inkludering av relaterade sårbarheter ett förhöjt hotläge.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
