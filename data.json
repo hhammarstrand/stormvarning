@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-24T07:40:37.077Z",
-  "next_update": "2026-07-24T08:10:37.077Z",
+  "updated": "2026-07-24T10:27:26.860Z",
+  "next_update": "2026-07-24T10:57:26.860Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och WordPress, har identifierats och är aktivt utnyttjade globalt. CERT-SE har utfärdat varningar om dessa sårbarheter och incidenter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är risken för påverkan förhöjd på grund av de aktiva hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och WordPress, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Det finns även rapporter om skadliga npm-paket och angrepp mot brandväggar som påverkar Sverige direkt. Även om det inte finns bekräftade incidenter i stor skala, är det en tydlig risk för svenska organisationer.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 3,
-    "actively_exploited": 12,
-    "critical": 9,
+    "actively_exploited": 13,
+    "critical": 10,
     "authority_alerts": 12,
     "kev_recent": 6
   },
@@ -97,6 +97,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-63030"
+      }
+    },
+    {
+      "title": "Kimi K3 Agents Found Redis Zero-Days and Built RCE Exploit, Researchers Say",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-24T06:58:27.000Z",
+      "link": "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
+      "summary": "Redis shipped seven security releases on July 23 after researchers published authenticated RCE PoCs for stock Redis 6.2.22, 7.4.9, 8.6.4, and 8.8.0. All four chains require RESTORE. The Streams chains also need EVAL and XGROUP; the 8.8.0 chain needs EVAL and the bundled RedisBlo…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -337,21 +352,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-42533"
-      }
-    },
-    {
-      "title": "Seven Malicious Vite npm Packages Use Blockchain C2 to Deliver a RAT",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-17T18:54:51.000Z",
-      "link": "https://thehackernews.com/2026/07/seven-malicious-vite-npm-packages-use.html",
-      "summary": "Cybersecurity researchers have discovered a cluster of seven malicious npm packages targeting the Vite frontend tooling ecosystem as part of a software supply chain attack. The malicious package campaign, codenamed ViteVenom by Checkmarx, marks an expansion of ChainVeil, which w…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
