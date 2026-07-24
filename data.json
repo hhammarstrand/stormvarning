@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-24T14:09:35.330Z",
-  "next_update": "2026-07-24T14:39:35.330Z",
+  "updated": "2026-07-24T17:49:04.177Z",
+  "next_update": "2026-07-24T18:19:04.177Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i GitHub Actions, med tydlig svensk koppling. Dessa har rapporterats av CERT-SE och har klassificerats som kritiska och aktivt utnyttjade. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är risken för pågående eller nära förestående attacker mot svenska mål förhöjd på grund av dessa signaler.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och WordPress, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Dessutom har det rapporterats om koordinerade leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en specifik svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet kritiska och aktivt utnyttjade sårbarheter med svensk koppling anledning till oro.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 8,
     "sweden_acute": 3,
     "actively_exploited": 11,
     "critical": 10,
-    "authority_alerts": 14,
+    "authority_alerts": 15,
     "kev_recent": 6
   },
   "anomaly": {
@@ -310,21 +310,6 @@
       }
     },
     {
-      "title": "SleeperGem Uses Three Malicious RubyGems Packages to Target Developer Machines",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-20T05:15:39.000Z",
-      "link": "https://thehackernews.com/2026/07/sleepergem-uses-three-malicious.html",
-      "summary": "Cybersecurity researchers have flagged a new software supply chain attack codenamed SleeperGem targeting the Ruby ecosystem after three malicious gems were published to RubyGems with the end goal of serving additional payloads. The rogue gems are listed below - git_credential_ma…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
       "source": "CERT-SE",
       "region": "SE",
@@ -376,6 +361,21 @@
       "date": "2026-06-25T09:30:10.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
       "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.25",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-18T13:00:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
+      "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
