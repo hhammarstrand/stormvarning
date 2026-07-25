@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-25T08:34:52.628Z",
-  "next_update": "2026-07-25T09:04:52.628Z",
+  "updated": "2026-07-25T10:15:08.103Z",
+  "next_update": "2026-07-25T10:45:08.103Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling. Dessutom har CERT-SE utfärdat varningar om pågående angrepp mot svenska system, såsom skadliga npm-paket och angrepp mot brandväggar. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet kritiska och aktivt utnyttjade sårbarheter med svensk koppling anledning till förhöjd uppmärksamhet.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter och aktivt utnyttjade hot har identifierats globalt, och det finns specifika incidenter med tydlig svensk koppling. CERT-SE har rapporterat om kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 8,
+    "sweden_relevant": 7,
     "sweden_acute": 3,
     "actively_exploited": 11,
-    "critical": 10,
-    "authority_alerts": 15,
+    "critical": 11,
+    "authority_alerts": 14,
     "kev_recent": 6
   },
   "anomaly": {
@@ -250,6 +250,21 @@
       }
     },
     {
+      "title": "Researcher Publishes GitLab RCE PoC Letting Authenticated Users Run Commands as Git",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-25T08:34:15.000Z",
+      "link": "https://thehackernews.com/2026/07/researcher-publishes-gitlab-rce-poc.html",
+      "summary": "Security researcher Yuhang Wu at depthfirst has published a working proof-of-concept (PoC) exploit that executes commands as git on an unpatched self-managed GitLab 18.11.3 server. An ordinary authenticated user triggers it by committing two crafted Jupyter notebooks and request…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "ChatGPT AgentForger Flaw Could Deploy Rogue Workspace Agents via a Phishing Link",
       "source": "The Hacker News",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-06-25T09:30:10.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
       "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.25",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-18T13:00:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
-      "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
