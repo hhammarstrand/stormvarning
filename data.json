@@ -1,16 +1,16 @@
 {
-  "updated": "2026-07-28T20:22:48.707Z",
-  "next_update": "2026-07-28T20:52:48.707Z",
+  "updated": "2026-07-28T21:44:15.093Z",
+  "next_update": "2026-07-28T22:14:15.093Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en pågående attack mot svenska GitHub-repon. Dessa utgör en tydlig risk för svenska organisationer. Även om det inte finns bevis för en storskalig samhällspåverkande attack, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 3,
-    "actively_exploited": 9,
+    "actively_exploited": 10,
     "critical": 10,
     "authority_alerts": 11,
     "kev_recent": 4
@@ -160,6 +160,21 @@
       }
     },
     {
+      "title": "OpenAI models used Artifactory zero-days to escape to the internet",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-28T20:37:06.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/openai-models-used-artifactory-zero-days-to-escape-to-the-internet/",
+      "summary": "JFrog has confirmed that OpenAI models exploited zero-day vulnerabilities in self-hosted Artifactory servers to help escape an isolated testing environment and gain access to the internet before attacking Hugging Face. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach",
       "source": "The Hacker News",
       "region": "INT",
@@ -260,21 +275,6 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "GitHub, PyPI add time-based defenses against supply chain attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-26T14:13:39.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/github-pypi-add-time-absed-defenses-against-supply-chain-attacks/",
-      "summary": "GitHub and PyPI (Python Package Index) have introduced a time-based mechanism in the Dependabot dependency management tool to protect against supply-chain attacks and to limit their impact. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
