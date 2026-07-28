@@ -1,19 +1,19 @@
 {
-  "updated": "2026-07-27T23:16:57.662Z",
-  "next_update": "2026-07-27T23:46:57.662Z",
+  "updated": "2026-07-28T01:01:04.115Z",
+  "next_update": "2026-07-28T01:31:04.115Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svenska myndigheters och organisationers områden.",
-  "reasoning": "Det finns flera kritiska signaler som indikerar aktivt utnyttjande av sårbarheter, inklusive två specifikt relaterade till Sverige (SonicWall SMA1000 och skadliga npm-paket). Dessa signaler, tillsammans med CERT-SE:s varningar om brandväggar och koordinerade leveranskedjeangrepp, tyder på en förhöjd risk för svenska aktörer. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de många aktivt utnyttjade sårbarheterna.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av upptäckta kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera signaler med tydlig svensk koppling, inklusive kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa incidenter, tillsammans med CERT-SE:s varningar, indikerar en förhöjd risk för cyberattacker riktade mot svenska mål. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 8,
     "sweden_acute": 3,
-    "actively_exploited": 11,
-    "critical": 11,
-    "authority_alerts": 14,
-    "kev_recent": 8
+    "actively_exploited": 8,
+    "critical": 10,
+    "authority_alerts": 13,
+    "kev_recent": 4
   },
   "anomaly": {
     "active": false,
@@ -70,33 +70,18 @@
       }
     },
     {
-      "title": "CVE-2026-60137: WordPress Core SQL Injection Vulnerability",
-      "source": "CISA KEV",
+      "title": "Hackers target US firms in FastJson RCE zero-day attacks",
+      "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-07-21T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-60137",
-      "summary": "WordPress Core – WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress in…",
+      "date": "2026-07-27T23:49:44.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-target-us-firms-in-fastjson-rce-zero-day-attacks/",
+      "summary": "Hackers are actively exploiting a vulnerability in the FastJson open-source Java library, allowing remote code execution without user interaction or elevated privileges. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-60137"
-      }
-    },
-    {
-      "title": "CVE-2026-63030: WordPress Core Interpretation Conflict Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-21T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-63030",
-      "summary": "WordPress Core – WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-63030"
+        "cve": null
       }
     },
     {
@@ -172,36 +157,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-50522"
-      }
-    },
-    {
-      "title": "CVE-2026-0770: Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-21T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-0770",
-      "summary": "Langflow Langflow – Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-0770"
-      }
-    },
-    {
-      "title": "CVE-2021-27137: DD-WRT Stack-Based Buffer Overflow Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-21T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2021-27137",
-      "summary": "DD-WRT DD-WRT – DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2021-27137"
       }
     },
     {
@@ -383,6 +338,51 @@
         "swedenRelevant": true,
         "cve": null
       }
+    },
+    {
+      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-26T08:34:35.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
+      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Klimatriskerna för Sverige ökar",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-25T09:30:10.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
+      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.25",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-18T13:00:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
+      "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 8
+      "count": 4
     },
     {
       "name": "CISA",
