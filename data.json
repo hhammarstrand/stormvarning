@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-28T12:23:47.752Z",
-  "next_update": "2026-07-28T12:53:47.752Z",
+  "updated": "2026-07-28T15:03:19.605Z",
+  "next_update": "2026-07-28T15:33:19.605Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket, vilket visar aktivt utnyttjande med svensk koppling. Även om det inte finns bevis för en pågående storskalig attack, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska organisationer. Detta, tillsammans med CERT-SE:s varningar, motiverar en gul nivå.",
+  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk, särskilt CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket, vilka båda har en tydlig svensk koppling och är aktivt utnyttjade. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det nödvändigt att vara försiktig med tanke på de rapporterade hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 8,
+    "sweden_relevant": 7,
     "sweden_acute": 3,
-    "actively_exploited": 8,
+    "actively_exploited": 9,
     "critical": 9,
-    "authority_alerts": 13,
+    "authority_alerts": 12,
     "kev_recent": 4
   },
   "anomaly": {
@@ -157,6 +157,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-50522"
+      }
+    },
+    {
+      "title": "JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-28T13:33:47.000Z",
+      "link": "https://thehackernews.com/2026/07/jfrog-confirms-openai-models-exploited.html",
+      "summary": "JFrog has confirmed that OpenAI models exploited a zero-day in self-hosted Artifactory while trying to reach the open internet from a sealed evaluation environment. Artifactory is JFrog's software repository manager. OpenAI says the models then escalated privileges and moved lat…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -361,21 +376,6 @@
       "date": "2026-06-25T09:30:10.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
       "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.25",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-18T13:00:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
-      "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
