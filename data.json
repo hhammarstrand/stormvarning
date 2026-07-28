@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-28T16:48:21.965Z",
-  "next_update": "2026-07-28T17:18:21.965Z",
+  "updated": "2026-07-28T18:40:04.407Z",
+  "next_update": "2026-07-28T19:10:04.407Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en koordinerad attack mot svenska GitHub-repon. Dessa incidenter, tillsammans med aktivt utnyttjade sårbarheter som kan påverka svenska organisationer, indikerar ett förhöjt hotläge. Även om det inte finns tillräckligt med signaler för att klassificera det som en röd nivå, är det nödvändigt att vara försiktig med tanke på de pågående hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en tydlig risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de aktiva hoten och de utnyttjade sårbarheterna.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 3,
     "actively_exploited": 9,
-    "critical": 9,
-    "authority_alerts": 12,
+    "critical": 10,
+    "authority_alerts": 11,
     "kev_recent": 4
   },
   "anomaly": {
@@ -220,6 +220,21 @@
       }
     },
     {
+      "title": "vBulletin fixes critical pre-auth RCE flaw with public exploit",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-28T18:08:50.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/vbulletin-fixes-critical-pre-auth-rce-flaw-with-public-exploit/",
+      "summary": "A critical vulnerability in the vBulletin forum software allows unauthenticated attackers to execute arbitrary PHP code through template rendering. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Data breach at medical billing firm MCBS affects 1.26 million people",
       "source": "BleepingComputer",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-06-26T08:34:35.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
       "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Klimatriskerna för Sverige ökar",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-25T09:30:10.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
-      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
