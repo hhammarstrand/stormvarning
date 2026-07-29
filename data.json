@@ -1,19 +1,19 @@
 {
-  "updated": "2026-07-28T23:13:14.823Z",
-  "next_update": "2026-07-28T23:43:14.823Z",
+  "updated": "2026-07-29T01:04:44.823Z",
+  "next_update": "2026-07-29T01:34:44.823Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk, särskilt CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och ett pågående leveranskedjeangrepp mot svenska mål. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, väger de svenska myndighetsvarningarna och de aktivt utnyttjade sårbarheterna tungt. Detta motiverar en förhöjd beredskap och nivån gul.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive i SonicWall SMA1000 och Fortinet FortiOS, vilket har lett till myndighetsvarningar från CERT-SE. Dessutom har det rapporterats om aktivt utnyttjande av sårbarheter i npm-paket och andra plattformar, vilket kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter för närvarande, är det hög aktivitet med tydlig svensk koppling som motiverar en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 8,
     "sweden_acute": 3,
-    "actively_exploited": 10,
+    "actively_exploited": 8,
     "critical": 10,
     "authority_alerts": 11,
-    "kev_recent": 4
+    "kev_recent": 2
   },
   "anomaly": {
     "active": false,
@@ -127,36 +127,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-16812"
-      }
-    },
-    {
-      "title": "CVE-2026-16232: Check Point SmartConsole Improper Authentication Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-22T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-16232",
-      "summary": "Check Point SmartConsole – Check Point SmartConsole contains an improper authentication vulnerability which could allow an unauthenticated remote attacker to obtain an application login token and use it to authenticate with full administrative privileges.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-16232"
-      }
-    },
-    {
-      "title": "CVE-2026-50522: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability ",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-22T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-50522",
-      "summary": "Microsoft SharePoint – Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-50522"
       }
     },
     {
@@ -383,6 +353,36 @@
         "swedenRelevant": true,
         "cve": null
       }
+    },
+    {
+      "title": "Klimatriskerna för Sverige ökar",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-25T09:30:10.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
+      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.25",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-18T13:00:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
+      "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 4
+      "count": 2
     },
     {
       "name": "CISA",
