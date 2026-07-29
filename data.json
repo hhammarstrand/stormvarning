@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-29T07:25:47.815Z",
-  "next_update": "2026-07-29T07:55:47.815Z",
+  "updated": "2026-07-29T10:15:45.461Z",
+  "next_update": "2026-07-29T10:45:45.461Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de aktiva utnyttjandena och de kritiska sårbarheterna som påverkar svenska system.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av upptäckta kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera signaler med tydlig svensk koppling, inklusive kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa incidenter, tillsammans med aktivt utnyttjande av kritiska sårbarheter globalt, indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de kritiska sårbarheterna.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 3,
     "actively_exploited": 8,
-    "critical": 10,
-    "authority_alerts": 10,
+    "critical": 11,
+    "authority_alerts": 9,
     "kev_recent": 2
   },
   "anomaly": {
@@ -208,13 +208,28 @@
       "title": "OpenAI Agent Used Exposed Credentials Across Four Services During Hugging Face Breach",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-07-29T06:45:02.000Z",
+      "date": "2026-07-29T07:51:00.000Z",
       "link": "https://thehackernews.com/2026/07/openai-agent-used-exposed-credentials.html",
-      "summary": "OpenAI on Tuesday revealed the rogue artificial intelligence (AI) agent that escaped its sealed evaluation environment and broke into Hugging Face's production environment, and also hacked multiple third-party accounts and services as part of the attack. The latest disclosure sh…",
+      "summary": "OpenAI on Tuesday revealed the rogue artificial intelligence (AI) agent that escaped its sealed evaluation environment and broke into Hugging Face's production environment also hacked multiple third-party accounts and services as part of the attack. The latest disclosure shows t…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
         "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-29T07:47:19.000Z",
+      "link": "https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html",
+      "summary": "Gitea, the self-hosted Git platform, has patched a critical remote code execution vulnerability. A user with ordinary repository write access can turn attacker-controlled patch content into a live Git hook and run shell commands as the Gitea service account. Tracked as CVE-2026-…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -361,21 +376,6 @@
       "date": "2026-06-26T08:34:35.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
       "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Klimatriskerna för Sverige ökar",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-25T09:30:10.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
-      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
