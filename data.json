@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-29T01:04:44.823Z",
-  "next_update": "2026-07-29T01:34:44.823Z",
+  "updated": "2026-07-29T04:27:53.806Z",
+  "next_update": "2026-07-29T04:57:53.806Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive i SonicWall SMA1000 och Fortinet FortiOS, vilket har lett till myndighetsvarningar från CERT-SE. Dessutom har det rapporterats om aktivt utnyttjande av sårbarheter i npm-paket och andra plattformar, vilket kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter för närvarande, är det hög aktivitet med tydlig svensk koppling som motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket, vilket visar aktivt utnyttjande med svensk koppling. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska organisationer. Det finns också en allmän internationell aktivitet kring aktivt utnyttjade sårbarheter, men den svenska kopplingen är tillräcklig för att höja nivån till 'gul'.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
