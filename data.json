@@ -1,10 +1,10 @@
 {
-  "updated": "2026-07-30T03:21:13.189Z",
-  "next_update": "2026-07-30T03:51:13.189Z",
+  "updated": "2026-07-30T06:10:46.924Z",
+  "next_update": "2026-07-30T06:40:46.924Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter och aktivt utnyttjade hot har identifierats, inklusive två med direkt svensk koppling: kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa utgör en tydlig risk för svenska organisationer och kräver förhöjd beredskap. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att agera på de identifierade hoten.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och ett pågående leveranskedjeangrepp mot svenska GitHub-repon. Dessa utgör en tydlig risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack, är det nödvändigt att vara försiktig med tanke på de aktiva hoten och de svenska myndighetsvarningarna.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
@@ -130,6 +130,21 @@
       }
     },
     {
+      "title": "Cisco FMC Zero-Day Actively Exploited, Static Credentials Could Expose Sensitive Data",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-07-30T05:08:39.000Z",
+      "link": "https://thehackernews.com/2026/07/cisco-fmc-zero-day-actively-exploited.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a newly disclosed security flaw impacting Cisco Secure Firewall Management Center (FMC) Software to its Known Exploited Vulnerabilities (KEV) catalog, following reports of zero-day exploitation.…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Russian hackers exploit Exchange OWA zero-day for long-term mailbox access",
       "source": "BleepingComputer",
       "region": "INT",
@@ -181,21 +196,6 @@
       "date": "2026-07-28T13:33:47.000Z",
       "link": "https://thehackernews.com/2026/07/jfrog-confirms-openai-models-exploited.html",
       "summary": "JFrog has confirmed that OpenAI models exploited a zero-day in self-hosted Artifactory while trying to reach the open internet from a sealed evaluation environment. Artifactory is JFrog's software repository manager. OpenAI says the models then escalated privileges and moved lat…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Russian Espionage Group Exploited Zimbra Zero-Day to Steal Mail and 2FA Codes",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-23T18:36:08.000Z",
-      "link": "https://thehackernews.com/2026/07/russian-espionage-group-exploited.html",
-      "summary": "A Russian state-supported espionage group spent months reading Western mailboxes through a then-unknown flaw in Zimbra's webmail client. The payload goes after the last 90 days of email, the organization's entire email directory, the password saved in the browser and the codes k…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
