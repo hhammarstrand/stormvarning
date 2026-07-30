@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-30T15:34:30.132Z",
-  "next_update": "2026-07-30T16:04:30.132Z",
+  "updated": "2026-07-30T17:07:34.536Z",
+  "next_update": "2026-07-30T17:37:34.536Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter och aktivt utnyttjade hot har identifierats, inklusive två med direkt svensk koppling: kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa utgör en tydlig risk för svenska organisationer och kräver förhöjd beredskap. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att agera på de identifierade hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling genom CERT-SE:s varningar. Dessutom har det rapporterats om koordinerade leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet kritiska och aktivt utnyttjade sårbarheter med svensk koppling anledning till oro.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 8,
     "sweden_acute": 3,
-    "actively_exploited": 8,
-    "critical": 9,
-    "authority_alerts": 10,
+    "actively_exploited": 7,
+    "critical": 8,
+    "authority_alerts": 12,
     "kev_recent": 3
   },
   "anomaly": {
@@ -160,21 +160,6 @@
       }
     },
     {
-      "title": "OpenAI models used Artifactory zero-days to escape to the internet",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-28T20:37:06.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/openai-models-used-artifactory-zero-days-to-escape-to-the-internet/",
-      "summary": "JFrog has confirmed that OpenAI models exploited zero-day vulnerabilities in self-hosted Artifactory servers to help escape an isolated testing environment and gain access to the internet before attacking Hugging Face. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach",
       "source": "The Hacker News",
       "region": "INT",
@@ -256,21 +241,6 @@
       "date": "2026-07-29T07:47:19.000Z",
       "link": "https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html",
       "summary": "Gitea, the self-hosted Git platform, has patched a critical remote code execution vulnerability. A user with ordinary repository write access can turn attacker-controlled patch content into a live Git hook and run shell commands as the Gitea service account. Tracked as CVE-2026-…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "vBulletin fixes critical pre-auth RCE flaw with public exploit",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-28T18:08:50.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/vbulletin-fixes-critical-pre-auth-rce-flaw-with-public-exploit/",
-      "summary": "A critical vulnerability in the vBulletin forum software allows unauthenticated attackers to execute arbitrary PHP code through template rendering. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -376,6 +346,36 @@
       "date": "2026-06-26T08:34:35.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
       "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Klimatriskerna för Sverige ökar",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-25T09:30:10.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
+      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.25",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-18T13:00:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
+      "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
