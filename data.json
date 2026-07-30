@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-30T21:47:01.231Z",
-  "next_update": "2026-07-30T22:17:01.231Z",
+  "updated": "2026-07-30T23:16:36.225Z",
+  "next_update": "2026-07-30T23:46:36.225Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket, vilket visar aktivt utnyttjande med svensk koppling. Dessutom har CISA KEV katalogen uppdaterats med sårbarheter som är aktivt utnyttjade, vilket ökar risken för attacker mot svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
+  "reasoning": "Det finns flera kritiska sårbarheter och incidenter som har en tydlig svensk koppling, inklusive en aktivt utnyttjad sårbarhet i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa signaler, tillsammans med CERT-SE:s varningar, indikerar en förhöjd risk för cyberattacker mot svenska mål. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 3,
     "actively_exploited": 7,
-    "critical": 8,
-    "authority_alerts": 11,
+    "critical": 9,
+    "authority_alerts": 10,
     "kev_recent": 3
   },
   "anomaly": {
@@ -181,6 +181,21 @@
       "date": "2026-03-30T12:00:00.000Z",
       "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
       "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "JetBrains warns of critical TeamCity remote code execution flaw",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-07-30T22:01:31.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/jetbrains-warns-of-critical-teamcity-remote-code-execution-flaw/",
+      "summary": "JetBrains is warning of a critical authentication bypass vulnerability affecting TeamCity On-Premises that could be exploited to achieve remote code execution. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -361,21 +376,6 @@
       "date": "2026-06-26T08:34:35.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
       "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Klimatriskerna för Sverige ökar",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-25T09:30:10.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
-      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
