@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-30T13:11:48.471Z",
-  "next_update": "2026-07-30T13:41:48.471Z",
+  "updated": "2026-07-30T15:34:30.132Z",
+  "next_update": "2026-07-30T16:04:30.132Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det förhöjda antalet aktiva sårbarheter och myndighetsvarningar anledning till förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter och aktivt utnyttjade hot har identifierats, inklusive två med direkt svensk koppling: kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa utgör en tydlig risk för svenska organisationer och kräver förhöjd beredskap. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att agera på de identifierade hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 6,
     "sweden_acute": 3,
     "actively_exploited": 8,
-    "critical": 10,
-    "authority_alerts": 9,
+    "critical": 9,
+    "authority_alerts": 10,
     "kev_recent": 3
   },
   "anomaly": {
@@ -340,21 +340,6 @@
       }
     },
     {
-      "title": "ChatGPT AgentForger Flaw Could Deploy Rogue Workspace Agents via a Phishing Link",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-24T11:53:55.000Z",
-      "link": "https://thehackernews.com/2026/07/chatgpt-agentforger-flaw-could-deploy.html",
-      "summary": "Cybersecurity researchers have disclosed a critical vulnerability in OpenAI's ChatGPT Workspace Agents that could have allowed a single phishing link to stealthily build, authorize, and deploy an autonomous artificial intelligence (AI) agent inside a victim's organization. The v…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
       "source": "CERT-SE",
       "region": "SE",
@@ -376,6 +361,21 @@
       "date": "2026-06-26T12:55:00.000Z",
       "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
       "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-26T08:34:35.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
+      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
