@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-31T11:09:55.845Z",
-  "next_update": "2026-07-31T11:39:55.845Z",
+  "updated": "2026-07-31T13:17:13.951Z",
+  "next_update": "2026-07-31T13:47:13.951Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det uppenbara tecken på aktivt utnyttjande och potentiella hot som kräver förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter och incidenter har identifierats med direkt koppling till Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa signaler, tillsammans med CERT-SE:s varningar, indikerar en förhöjd risk för cyberattacker riktade mot svenska mål. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 3,
     "actively_exploited": 7,
-    "critical": 9,
-    "authority_alerts": 10,
+    "critical": 8,
+    "authority_alerts": 11,
     "kev_recent": 3
   },
   "anomaly": {
@@ -325,21 +325,6 @@
       }
     },
     {
-      "title": "Cl0p Affiliates Target Internet-Exposed PTC Windchill and FlexPLM with Unauthenticated RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-25T10:14:03.000Z",
-      "link": "https://thehackernews.com/2026/07/cl0p-affiliates-target-internet-exposed.html",
-      "summary": "Threat actors linked to the Cl0p (aka Chubby Scorpius, FIN11, Graceful Spider, and Lace Tempest) ransomware campaign are exploiting flaws in internet-exposed PTC Windmill and FlexPLM deployments as part of a new data extortion campaign. \"Attackers chain a pre-authentication info…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
       "source": "CERT-SE",
       "region": "SE",
@@ -376,6 +361,21 @@
       "date": "2026-06-26T08:34:35.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
       "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Klimatriskerna för Sverige ökar",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-25T09:30:10.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
+      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
