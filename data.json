@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-31T19:48:14.673Z",
-  "next_update": "2026-07-31T20:18:14.673Z",
+  "updated": "2026-07-31T21:17:33.246Z",
+  "next_update": "2026-07-31T21:47:33.246Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket, vilket visar aktivt utnyttjande med svensk koppling. Dessutom har CISA KEV katalogen uppdaterats med sårbarheter som är aktivt utnyttjade, vilket ökar risken för attacker mot svenska mål. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
+  "reasoning": "Flera signaler med tydlig svensk koppling har identifierats, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka Sverige. Detta, tillsammans med CERT-SE:s varningar, motiverar en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 10,
+    "sweden_relevant": 11,
     "sweden_acute": 3,
-    "actively_exploited": 6,
+    "actively_exploited": 5,
     "critical": 6,
-    "authority_alerts": 14,
+    "authority_alerts": 15,
     "kev_recent": 3
   },
   "anomaly": {
@@ -121,21 +121,6 @@
       "date": "2026-07-30T05:08:39.000Z",
       "link": "https://thehackernews.com/2026/07/cisco-fmc-zero-day-actively-exploited.html",
       "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a newly disclosed security flaw impacting Cisco Secure Firewall Management Center (FMC) Software to its Known Exploited Vulnerabilities (KEV) catalog, following reports of zero-day exploitation.…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Russian hackers exploit Exchange OWA zero-day for long-term mailbox access",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-29T23:44:07.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/russian-hackers-exploit-exchange-owa-zero-day-for-long-term-mailbox-access/",
-      "summary": "The Russian state-sponsored hacking group Laundry Bear, also known as Void Blizzard, is exploiting an Exchange Outlook Web Access vulnerability in email campaigns to deliver a sophisticated backdoor called OWAReaper. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -376,6 +361,21 @@
       "date": "2026-06-12T10:30:00.000Z",
       "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
       "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Cyberverksamheten samlas hos FRA – övergång till Nationellt cybersäkerhetscenter den 1 juli 2026",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-12T10:00:20.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
+      "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
