@@ -1,18 +1,18 @@
 {
-  "updated": "2026-07-31T15:47:37.115Z",
-  "next_update": "2026-07-31T16:17:37.115Z",
+  "updated": "2026-07-31T17:49:27.860Z",
+  "next_update": "2026-07-31T18:19:27.860Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling. Dessutom har CERT-SE rapporterat om skadliga npm-paket och en koordinerad attack mot svenska GitHub-repon, vilket indikerar pågående aktivitet riktad mot svenska mål. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att höja nivån till 'gul'.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket, vilket visar på aktivt utnyttjande och svensk koppling. Dessutom har CISA KEV katalogen uppdaterats med sårbarheter som är aktivt utnyttjade, vilket ökar risken för attacker mot svenska mål. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 9,
+    "sweden_relevant": 10,
     "sweden_acute": 3,
-    "actively_exploited": 7,
+    "actively_exploited": 6,
     "critical": 6,
-    "authority_alerts": 13,
+    "authority_alerts": 14,
     "kev_recent": 3
   },
   "anomaly": {
@@ -142,21 +142,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Cisco warns of FMC static credential flaw exploited in zero-day attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-29T21:35:40.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-fmc-static-credential-flaw-exploited-in-zero-day-attacks/",
-      "summary": "Cisco is warning that a high-severity Secure Firewall Management Center (FMC) static credential vulnerability, tracked as CVE-2026-20316, was actively exploited in zero-day attacks to gain unauthorized access to vulnerable devices. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-20316"
       }
     },
     {
@@ -376,6 +361,21 @@
       "date": "2026-06-12T11:15:00.000Z",
       "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v24.html",
       "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Fortsätt att få våra utskick",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-12T10:30:00.000Z",
+      "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
+      "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
