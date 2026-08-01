@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-01T06:38:48.429Z",
-  "next_update": "2026-08-01T07:08:48.429Z",
+  "updated": "2026-08-01T09:16:51.994Z",
+  "next_update": "2026-08-01T09:46:51.994Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket, vilket visar aktivt utnyttjande med svensk koppling. Dessutom har CISA KEV katalogen uppdaterats med flera aktivt utnyttjade sårbarheter, vilket ökar risken för attacker även i Sverige. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och sårbarheterna.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, särskilt CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa har en tydlig svensk koppling och är aktivt utnyttjade, vilket ökar risken för pågående attacker. Även om det inte finns bekräftade incidenter i stor skala, är det nödvändigt att vara försiktig med tanke på de rapporterade hoten mot kritisk infrastruktur och den ökade aktiviteten kring brandväggar och säkerhetslösningar.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 11,
+    "sweden_relevant": 10,
     "sweden_acute": 3,
     "actively_exploited": 5,
-    "critical": 6,
-    "authority_alerts": 15,
+    "critical": 7,
+    "authority_alerts": 14,
     "kev_recent": 3
   },
   "anomaly": {
@@ -157,6 +157,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-01T07:12:42.000Z",
+      "link": "https://thehackernews.com/2026/08/adobe-campaign-classic-cvss-100-flaw.html",
+      "summary": "Adobe has released security updates to address a maximum-severity security flaw in Campaign Classic (ACC), its enterprise-focused marketing automation platform, that could result in arbitrary code execution. The vulnerability, tracked as CVE-2026-48449, carries a severity score…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-48449"
       }
     },
     {
@@ -361,21 +376,6 @@
       "date": "2026-06-12T10:30:00.000Z",
       "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
       "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Cyberverksamheten samlas hos FRA – övergång till Nationellt cybersäkerhetscenter den 1 juli 2026",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-12T10:00:20.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
-      "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
