@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-03T17:27:22.858Z",
-  "next_update": "2026-08-03T17:57:22.858Z",
+  "updated": "2026-08-03T19:09:14.413Z",
+  "next_update": "2026-08-03T19:39:14.413Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket, vilket tyder på aktivt utnyttjande. Dessutom har CISA lagt till en sårbarhet i Cisco FMC i deras KEV-katalog, vilket indikerar aktivt utnyttjande globalt. Även om det inte finns bekräftade incidenter i Sverige för alla dessa, är risken för påverkan på svensk infrastruktur uppenbar. Det finns också en generell ökning av säkerhetsmeddelanden från CERT-SE och MCF, vilket stärker bilden av ett förhöjt hotläge.",
-  "score": 99,
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en aktivt utnyttjad sårbarhet i Cisco Secure Firewall Management Center. CERT-SE har också rapporterat om skadliga npm-paket och information om angrepp mot brandväggar, vilket tyder på en aktiv hotbild. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivitet som kan påverka svenska organisationer.",
+  "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 14,
+    "sweden_relevant": 13,
     "sweden_acute": 3,
     "actively_exploited": 3,
     "critical": 6,
     "authority_alerts": 16,
-    "kev_recent": 1
+    "kev_recent": 2
   },
   "anomaly": {
     "active": false,
     "baseline": 100,
-    "delta": -1
+    "delta": 0
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -70,6 +70,21 @@
       }
     },
     {
+      "title": "CVE-2026-18577: N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-03T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-18577",
+      "summary": "N-able N-central – N-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-18577"
+      }
+    },
+    {
       "title": "CVE-2026-20316: Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -100,21 +115,6 @@
       }
     },
     {
-      "title": "JFrog Confirms OpenAI Models Exploited Artifactory Zero-Day Before Hugging Face Breach",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-28T13:33:47.000Z",
-      "link": "https://thehackernews.com/2026/07/jfrog-confirms-openai-models-exploited.html",
-      "summary": "JFrog has confirmed that OpenAI models exploited a zero-day in self-hosted Artifactory while trying to reach the open internet from a sealed evaluation environment. Artifactory is JFrog's software repository manager. OpenAI says the models then escalated privileges and moved lat…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -125,6 +125,21 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "18 Malicious npm Packages Deliver Cross-Platform RAT to Alibaba Tool Users",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-03T18:43:53.000Z",
+      "link": "https://thehackernews.com/2026/08/18-malicious-npm-packages-deliver-cross.html",
+      "summary": "Cybersecurity researchers have discovered a new set of malicious npm packages that target users of Alibaba developer tools with a cross-platform remote access trojan (RAT) as part of a sophisticated, targeted software supply chain attack targeting Chinese-speaking environments.…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
@@ -368,21 +383,6 @@
         "swedenRelevant": true,
         "cve": null
       }
-    },
-    {
-      "title": "RSA‑föreskrifterna upphävs – förändringar för kommuner och regioner",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-05T10:24:12.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/rsaforeskrifterna-upphavs--forandringar-for-kommuner-och-regioner/",
-      "summary": "Myndigheten för civilt försvar har beslutat att upphäva de föreskrifter som i dag styr kommuners och regioners redovisning av risk- och sårbarhetsanalyser (RSA).",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 1
+      "count": 2
     },
     {
       "name": "CISA",
