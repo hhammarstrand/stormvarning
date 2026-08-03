@@ -1,19 +1,19 @@
 {
-  "updated": "2026-08-02T23:38:42.688Z",
-  "next_update": "2026-08-03T00:08:42.688Z",
+  "updated": "2026-08-03T03:49:20.191Z",
+  "next_update": "2026-08-03T04:19:20.191Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risknivå för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket, vilket visar aktivt utnyttjande med svensk koppling. Dessutom har CISA KEV katalogen uppdaterats med sårbarheter som är aktivt utnyttjade, vilket ökar risken för attacker mot svenska mål. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska signaler med tydlig svensk koppling har identifierats, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det förhöjda antalet incidenter och aktivt utnyttjade sårbarheter anledning till oro. Därför bedöms läget som förhöjt (gul) men inte allvarligt (rött).",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 9,
+    "sweden_relevant": 11,
     "sweden_acute": 3,
-    "actively_exploited": 5,
+    "actively_exploited": 3,
     "critical": 8,
     "authority_alerts": 13,
-    "kev_recent": 3
+    "kev_recent": 1
   },
   "anomaly": {
     "active": false,
@@ -82,36 +82,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-20316"
-      }
-    },
-    {
-      "title": "CVE-2025-68686: Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-27T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-68686",
-      "summary": "Fortinet FortiOS – Fortinet FortiOS contains an exposure of sensitive information to an unauthorized actor vulnerability. This may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit case…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2025-68686"
-      }
-    },
-    {
-      "title": "CVE-2026-16812: Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-27T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-16812",
-      "summary": "Arista VeloCloud Orchestrator – Arista VeloCloud Orchestrator On-Prem contains an OS command injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality,…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-16812"
       }
     },
     {
@@ -383,6 +353,36 @@
         "swedenRelevant": true,
         "cve": null
       }
+    },
+    {
+      "title": "Fortsätt att få våra utskick",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-12T10:30:00.000Z",
+      "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
+      "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Cyberverksamheten samlas hos FRA – övergång till Nationellt cybersäkerhetscenter den 1 juli 2026",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-12T10:00:20.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
+      "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 3
+      "count": 1
     },
     {
       "name": "CISA",
