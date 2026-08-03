@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-03T11:39:47.716Z",
-  "next_update": "2026-08-03T12:09:47.716Z",
+  "updated": "2026-08-03T15:11:43.553Z",
+  "next_update": "2026-08-03T15:41:43.553Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats och är aktivt utnyttjade. Dessa har en direkt koppling till Sverige genom CERT-SE:s varningar. Dessutom har det rapporterats om koordinerade leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bevis för en pågående storskalig attack, är det förhöjda antalet kritiska och aktivt utnyttjade sårbarheter med svensk koppling anledning till oro.",
-  "score": 100,
+  "reasoning": "Flera signaler visar på aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, samt en koordinerad attack mot svenska AsyncAPI GitHub-repon. Dessa incidenter, tillsammans med CERT-SE:s varningar om pågående angrepp mot brandväggar, indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de många svenska myndighetsvarningarna och de aktivt utnyttjade sårbarheterna.",
+  "score": 99,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 12,
+    "sweden_relevant": 14,
     "sweden_acute": 3,
     "actively_exploited": 3,
-    "critical": 7,
-    "authority_alerts": 14,
+    "critical": 6,
+    "authority_alerts": 16,
     "kev_recent": 1
   },
   "anomaly": {
     "active": false,
     "baseline": 100,
-    "delta": 0
+    "delta": -1
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -157,36 +157,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-48449"
-      }
-    },
-    {
-      "title": "JetBrains warns of critical TeamCity remote code execution flaw",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-30T22:01:31.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/jetbrains-warns-of-critical-teamcity-remote-code-execution-flaw/",
-      "summary": "JetBrains is warning of a critical authentication bypass vulnerability affecting TeamCity On-Premises that could be exploited to achieve remote code execution. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Amazon links Debug, Chalk NPM supply-chain attacks to North Korean hackers",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-07-30T18:13:24.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/amazon-links-debug-chalk-npm-supply-chain-attacks-to-north-korean-hackers/",
-      "summary": "Amazon linked multiple high-profile open-source software supply chain attacks targeting the Node Package Manager (npm) ecosystem to North Korean hackers. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
@@ -376,6 +346,36 @@
       "date": "2026-06-12T10:00:00.000Z",
       "link": "https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cybersakerhetscenter.html",
       "summary": "<p>Den 1 juli övergår cyberverksamheten från Myndigheten för civilt försvar (MCF) till Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt (FRA), enligt regeringens beslut den 20 november 2025. Syftet är att stärka Sveriges cybersäkerhet.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Patchtisdag juni 2026 – samlad information om månadens säkerhetsuppdateringar",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-10T12:00:00.000Z",
+      "link": "https://www.cert.se/2026/06/patchtisdag-juni-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juni. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "RSA‑föreskrifterna upphävs – förändringar för kommuner och regioner",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-05T10:24:12.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/rsaforeskrifterna-upphavs--forandringar-for-kommuner-och-regioner/",
+      "summary": "Myndigheten för civilt försvar har beslutat att upphäva de föreskrifter som i dag styr kommuners och regioners redovisning av risk- och sårbarhetsanalyser (RSA).",
       "flags": {
         "activelyExploited": false,
         "critical": false,
