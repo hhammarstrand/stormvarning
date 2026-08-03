@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-03T03:49:20.191Z",
-  "next_update": "2026-08-03T04:19:20.191Z",
+  "updated": "2026-08-03T07:39:29.067Z",
+  "next_update": "2026-08-03T08:09:29.067Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska signaler med tydlig svensk koppling har identifierats, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det förhöjda antalet incidenter och aktivt utnyttjade sårbarheter anledning till oro. Därför bedöms läget som förhöjt (gul) men inte allvarligt (rött).",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en aktivt utnyttjad sårbarhet i Cisco Secure Firewall Management Center. CERT-SE har också rapporterat om skadliga npm-paket och information om attacker mot brandväggar, vilket tyder på en aktiv hotbild. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivitet som kan påverka svensk kritisk infrastruktur.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 11,
+    "sweden_relevant": 12,
     "sweden_acute": 3,
     "actively_exploited": 3,
-    "critical": 8,
-    "authority_alerts": 13,
+    "critical": 7,
+    "authority_alerts": 14,
     "kev_recent": 1
   },
   "anomaly": {
@@ -250,21 +250,6 @@
       }
     },
     {
-      "title": "Public Exploit Released for Patched vBulletin Pre-Auth Code Execution Flaw",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-27T14:40:00.000Z",
-      "link": "https://thehackernews.com/2026/07/public-exploit-released-for-patched.html",
-      "summary": "Public exploit details released on July 27 show how an unauthenticated request can reach PHP's eval() function inside vBulletin and execute code on an unpatched forum server. The attack requires no account, administrative access, or interaction from another user. SSD Secure Disc…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
       "source": "CERT-SE",
       "region": "SE",
@@ -376,6 +361,21 @@
       "date": "2026-06-12T10:00:20.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
       "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Nu samlas cyberverksamheten hos Nationellt cybersäkerhetscenter – ska ge stärkt motståndskraft",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-12T10:00:00.000Z",
+      "link": "https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cybersakerhetscenter.html",
+      "summary": "<p>Den 1 juli övergår cyberverksamheten från Myndigheten för civilt försvar (MCF) till Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt (FRA), enligt regeringens beslut den 20 november 2025. Syftet är att stärka Sveriges cybersäkerhet.</p>",
       "flags": {
         "activelyExploited": false,
         "critical": false,
