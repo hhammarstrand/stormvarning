@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-04T20:11:30.709Z",
-  "next_update": "2026-08-04T20:41:30.709Z",
+  "updated": "2026-08-04T21:51:55.948Z",
+  "next_update": "2026-08-04T22:21:55.948Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och IBM Langflow, har identifierats och är aktivt utnyttjade, vilket utgör en risk för svenska organisationer. Dessutom har CERT-SE rapporterat om pågående leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar aktivitet riktad mot svenska mål. Även om det inte finns bevis för en storskalig attack mot kritisk infrastruktur, är det förhöjda antalet incidenter och svenska myndighetsvarningar tillräckligt för att motivera en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats och är aktivt utnyttjade. Dessutom har CERT-SE rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon och information om attacker mot brandväggar, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att Sverige är i fokus för aktiva attacker.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 12,
+    "sweden_relevant": 13,
     "sweden_acute": 3,
     "actively_exploited": 6,
-    "critical": 6,
-    "authority_alerts": 18,
+    "critical": 5,
+    "authority_alerts": 19,
     "kev_recent": 5
   },
   "anomaly": {
@@ -190,21 +190,6 @@
       }
     },
     {
-      "title": "Rails patches critical Active Storage flaw with RCE potential",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-01T14:20:30.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/rails-patches-critical-active-storage-flaw-with-rce-potential/",
-      "summary": "A critical vulnerability in the Active Storage framework can allow an unauthenticated attacker to read arbitrary files from a Rails application, and potentially escalate to remote code execution (RCE). [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Adobe Campaign Classic CVSS 10.0 Flaw Could Run Code Without User Interaction",
       "source": "The Hacker News",
       "region": "INT",
@@ -376,6 +361,21 @@
       "date": "2026-06-12T10:00:00.000Z",
       "link": "https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cybersakerhetscenter.html",
       "summary": "<p>Den 1 juli övergår cyberverksamheten från Myndigheten för civilt försvar (MCF) till Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt (FRA), enligt regeringens beslut den 20 november 2025. Syftet är att stärka Sveriges cybersäkerhet.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Patchtisdag juni 2026 – samlad information om månadens säkerhetsuppdateringar",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-10T12:00:00.000Z",
+      "link": "https://www.cert.se/2026/06/patchtisdag-juni-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juni. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
