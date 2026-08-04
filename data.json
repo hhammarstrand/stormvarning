@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-04T16:30:03.307Z",
-  "next_update": "2026-08-04T17:00:03.307Z",
+  "updated": "2026-08-04T18:15:51.846Z",
+  "next_update": "2026-08-04T18:45:51.846Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler visar på förhöjd aktivitet och risker för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en koordinerad attack mot svenska GitHub-repon, vilket indikerar aktivt utnyttjande med svensk koppling. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är detta tillräckligt för att höja nivån till 'gul'.",
-  "score": 98,
+  "reasoning": "Flera kritiska signaler med tydlig svensk koppling har identifierats, inklusive CERT-SE:s varningar om pågående angrepp mot svenska system och aktivt utnyttjade sårbarheter i kritiska teknologier som SonicWall och GitHub Actions. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka Sverige. Detta motiverar en förhöjd beredskap och klassificering på gul nivå.",
+  "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 15,
+    "sweden_relevant": 12,
     "sweden_acute": 3,
-    "actively_exploited": 3,
-    "critical": 5,
+    "actively_exploited": 6,
+    "critical": 6,
     "authority_alerts": 18,
-    "kev_recent": 2
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
     "baseline": 100,
-    "delta": -2
+    "delta": 0
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -67,6 +67,51 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-9198: IBM Langflow Code Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-04T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-9198",
+      "summary": "IBM Langflow – Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-9198"
+      }
+    },
+    {
+      "title": "CVE-2026-18556: N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-04T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-18556",
+      "summary": "N-able N-central – N-able N-central contains an authentication bypass using an alternate path or channel that allows for authentication bypass.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-18556"
+      }
+    },
+    {
+      "title": "CVE-2026-34486: Apache Tomcat Missing Encryption of Sensitive Data Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-04T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-34486",
+      "summary": "Apache Tomcat – Apache Tomcat contains a missing encryption of sensitive data vulnerability that allows the bypass of the EncryptInterceptor.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-34486"
       }
     },
     {
@@ -338,51 +383,6 @@
         "swedenRelevant": true,
         "cve": null
       }
-    },
-    {
-      "title": "Patchtisdag juni 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-10T12:00:00.000Z",
-      "link": "https://www.cert.se/2026/06/patchtisdag-juni-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juni. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "RSA‑föreskrifterna upphävs – förändringar för kommuner och regioner",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-05T10:24:12.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/rsaforeskrifterna-upphavs--forandringar-for-kommuner-och-regioner/",
-      "summary": "Myndigheten för civilt försvar har beslutat att upphäva de föreskrifter som i dag styr kommuners och regioners redovisning av risk- och sårbarhetsanalyser (RSA).",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Ny lag om skyddsrum träder i kraft – nya krav på kommuner och fastighetsägare",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-05-25T09:18:18.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/maj/ny-lag-om-skyddsrum-trader-i-kraft--nya-krav-pa-kommuner-och-fastighetsagare2/",
-      "summary": "Den 1 juni 2026 träder en ny lag om skyddsrum och skyddade utrymmen i kraft. Lagen ska stärka skyddet av civilbefolkningen vid krig och väpnat angrepp och innebär förändringar för främst kommuner och fastighetsägare samt att ett system för skyddade utrymmen införs.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 2
+      "count": 5
     },
     {
       "name": "CISA",
