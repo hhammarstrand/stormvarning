@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-04T11:48:01.937Z",
-  "next_update": "2026-08-04T12:18:01.937Z",
+  "updated": "2026-08-04T14:36:09.696Z",
+  "next_update": "2026-08-04T15:06:09.696Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige med flera kritiska sårbarheter och incidenter.",
-  "reasoning": "Flera signaler visar på aktivt utnyttjande av kritiska sårbarheter, inklusive två nya CISA KEV-poster och en incident med skadliga npm-paket. CERT-SE har utfärdat varningar om pågående attacker, särskilt riktade mot svenska organisationer, vilket indikerar en tydlig svensk koppling. Även om det inte finns bevis för en storskalig attack, är det förhöjda antalet incidenter och sårbarheter orsak till oro.",
-  "score": 100,
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera signaler med hög vikt och svensk koppling har identifierats, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Även om dessa signaler inte indikerar en direkt storskalig attack, visar de på aktivitet som kan påverka svensk kritisk infrastruktur eller samhällsviktig verksamhet. Det finns också två nya CISA KEV-poster för aktivt utnyttjade sårbarheter, vilket ökar den övergripande risken.",
+  "score": 98,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 13,
+    "sweden_relevant": 15,
     "sweden_acute": 3,
     "actively_exploited": 3,
-    "critical": 6,
-    "authority_alerts": 16,
+    "critical": 5,
+    "authority_alerts": 18,
     "kev_recent": 2
   },
   "anomaly": {
     "active": false,
     "baseline": 100,
-    "delta": 0
+    "delta": -2
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -205,36 +205,6 @@
       }
     },
     {
-      "title": "OpenAI Agent Used Exposed Credentials Across Four Services During Hugging Face Breach",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-29T07:51:00.000Z",
-      "link": "https://thehackernews.com/2026/07/openai-agent-used-exposed-credentials.html",
-      "summary": "OpenAI on Tuesday revealed the rogue artificial intelligence (AI) agent that escaped its sealed evaluation environment and broke into Hugging Face's production environment also hacked multiple third-party accounts and services as part of the attack. The latest disclosure shows t…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "New Gitea RCE Lets Repository Writers Plant a Git Hook to Run Shell Commands",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-29T07:47:19.000Z",
-      "link": "https://thehackernews.com/2026/07/new-gitea-rce-lets-repository-writers.html",
-      "summary": "Gitea, the self-hosted Git platform, has patched a critical remote code execution vulnerability. A user with ordinary repository write access can turn attacker-controlled patch content into a live Git hook and run shell commands as the Gitea service account. Tracked as CVE-2026-…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
       "source": "CERT-SE",
       "region": "SE",
@@ -376,6 +346,36 @@
       "date": "2026-06-10T12:00:00.000Z",
       "link": "https://www.cert.se/2026/06/patchtisdag-juni-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
       "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juni. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "RSA‑föreskrifterna upphävs – förändringar för kommuner och regioner",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-05T10:24:12.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/rsaforeskrifterna-upphavs--forandringar-for-kommuner-och-regioner/",
+      "summary": "Myndigheten för civilt försvar har beslutat att upphäva de föreskrifter som i dag styr kommuners och regioners redovisning av risk- och sårbarhetsanalyser (RSA).",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Ny lag om skyddsrum träder i kraft – nya krav på kommuner och fastighetsägare",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-05-25T09:18:18.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/maj/ny-lag-om-skyddsrum-trader-i-kraft--nya-krav-pa-kommuner-och-fastighetsagare2/",
+      "summary": "Den 1 juni 2026 träder en ny lag om skyddsrum och skyddade utrymmen i kraft. Lagen ska stärka skyddet av civilbefolkningen vid krig och väpnat angrepp och innebär förändringar för främst kommuner och fastighetsägare samt att ett system för skyddade utrymmen införs.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
