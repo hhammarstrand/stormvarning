@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-05T10:13:46.819Z",
-  "next_update": "2026-08-05T10:43:46.819Z",
+  "updated": "2026-08-05T12:25:49.569Z",
+  "next_update": "2026-08-05T12:55:49.569Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige p.g.a. flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och IBM Langflow, har identifierats och är aktivt utnyttjade, vilket innebär en förhöjd risk. Dessutom har CERT-SE rapporterat om skadliga npm-paket och en ny skadlig kod, Chaindrop, som påverkar JavaScript-ekosystemet, vilket indikerar pågående attacker mot svenska mål. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att höja nivån till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter (t.ex. SonicWall SMA1000 och Chaindrop) har identifierats med aktivt utnyttjande och tydlig svensk koppling. CERT-SE har utfärdat varningar om pågående attacker, särskilt riktade mot svenska aktörer, vilket indikerar en förhöjd risknivå. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att Sverige är i fokus för aktiva hotaktörer.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
