@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-05T12:25:49.569Z",
-  "next_update": "2026-08-05T12:55:49.569Z",
+  "updated": "2026-08-05T14:59:13.211Z",
+  "next_update": "2026-08-05T15:29:13.211Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter (t.ex. SonicWall SMA1000 och Chaindrop) har identifierats med aktivt utnyttjande och tydlig svensk koppling. CERT-SE har utfärdat varningar om pågående attacker, särskilt riktade mot svenska aktörer, vilket indikerar en förhöjd risknivå. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att Sverige är i fokus för aktiva hotaktörer.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera signaler visar på en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en ny skadlig kod, Chaindrop, som påverkar JavaScript-ekosystemet. Dessutom har det förekommit koordinerade leveranskedjeangrepp mot GitHub-repon och en pågående skadlig aktivitet riktad mot brandväggar. Även om dessa signaler inte indikerar en direkt storskalig attack, visar de på en aktiv och målinriktad hotbild mot svenska system och infrastruktur.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 11,
+    "sweden_relevant": 12,
     "sweden_acute": 3,
-    "actively_exploited": 6,
+    "actively_exploited": 5,
     "critical": 7,
-    "authority_alerts": 16,
+    "authority_alerts": 17,
     "kev_recent": 4
   },
   "anomaly": {
@@ -145,27 +145,27 @@
       }
     },
     {
-      "title": "Cisco FMC Zero-Day Actively Exploited, Static Credentials Could Expose Sensitive Data",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-30T05:08:39.000Z",
-      "link": "https://thehackernews.com/2026/07/cisco-fmc-zero-day-actively-exploited.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a newly disclosed security flaw impacting Cisco Secure Firewall Management Center (FMC) Software to its Known Exploited Vulnerabilities (KEV) catalog, following reports of zero-day exploitation.…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
       "date": "2026-03-30T12:00:00.000Z",
       "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
       "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Veeam, Terraform MCP, Django Patch Critical Flaws, Led by CVSS 10.0 Cross-Tenant Bug",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-05T14:27:30.000Z",
+      "link": "https://thehackernews.com/2026/08/veeam-terraform-mcp-django-patch.html",
+      "summary": "HashiCorp, Veeam, and the Django Software Foundation have patched 11 vulnerabilities across Terraform MCP Server, Veeam Service Provider Console, and Django. The three most serious: An unauthenticated flaw in Veeam's console that hands over a managed agent's credentials, rated 9…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -265,21 +265,6 @@
       }
     },
     {
-      "title": "Ruflo MCP Flaw Lets Unauthenticated Attackers Run Commands and Poison AI Memory",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-07-29T15:39:30.000Z",
-      "link": "https://thehackernews.com/2026/07/ruflo-mcp-flaw-lets-unauthenticated.html",
-      "summary": "Cybersecurity researchers have flagged a maximum-severity security flaw in Ruflo, an open-source agent meta-harness for Anthropic Claude Code and OpenAI Codex, that could result in unauthenticated remote code execution. The vulnerability, tracked as CVE-2026-59726 (CVSS score: 1…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-59726"
-      }
-    },
-    {
       "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
       "source": "CERT-SE",
       "region": "SE",
@@ -376,6 +361,21 @@
       "date": "2026-06-12T10:30:00.000Z",
       "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
       "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Cyberverksamheten samlas hos FRA – övergång till Nationellt cybersäkerhetscenter den 1 juli 2026",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-12T10:00:20.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
+      "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
