@@ -1,19 +1,19 @@
 {
-  "updated": "2026-08-04T23:16:08.102Z",
-  "next_update": "2026-08-04T23:46:08.102Z",
+  "updated": "2026-08-05T00:59:52.993Z",
+  "next_update": "2026-08-05T01:29:52.993Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats och är aktivt utnyttjade. Dessa har en direkt koppling till Sverige genom CERT-SE:s varningar. Dessutom har det rapporterats om koordinerade leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bevis för en storskalig attack, är det förhöjda antalet incidenter och sårbarheter med svensk koppling tillräckligt för att motivera en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktiva och kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera signaler visar på aktivt utnyttjade kritiska sårbarheter med direkt koppling till Sverige, såsom de kritiska sårbarheterna i SonicWall SMA1000 och skadliga npm-paket som drabbat svenska GitHub-repon. Dessa utgör en tydlig risk för svenska organisationer och kräver förhöjd uppmärksamhet. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 12,
+    "sweden_relevant": 13,
     "sweden_acute": 3,
-    "actively_exploited": 6,
+    "actively_exploited": 5,
     "critical": 6,
     "authority_alerts": 18,
-    "kev_recent": 5
+    "kev_recent": 4
   },
   "anomaly": {
     "active": false,
@@ -127,21 +127,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-18577"
-      }
-    },
-    {
-      "title": "CVE-2026-20316: Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-07-29T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-20316",
-      "summary": "Cisco Secure Firewall Management Center (FMC) – Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device us…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-20316"
       }
     },
     {
@@ -383,6 +368,21 @@
         "swedenRelevant": true,
         "cve": null
       }
+    },
+    {
+      "title": "Patchtisdag juni 2026 – samlad information om månadens säkerhetsuppdateringar",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-10T12:00:00.000Z",
+      "link": "https://www.cert.se/2026/06/patchtisdag-juni-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juni. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 5
+      "count": 4
     },
     {
       "name": "CISA",
