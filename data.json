@@ -1,19 +1,19 @@
 {
-  "updated": "2026-08-05T16:49:40.788Z",
-  "next_update": "2026-08-05T17:19:40.788Z",
+  "updated": "2026-08-05T18:45:04.759Z",
+  "next_update": "2026-08-05T19:15:04.759Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en ny skadlig kod, Chaindrop, som påverkar JavaScript-ekosystemet. Dessutom har en koordinerad attack mot AsyncAPI GitHub-repon rapporterats, vilket tyder på aktivt utnyttjande av sårbarheter. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är detta tillräckligt för att höja nivån till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktiva sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en skadlig kod som påverkar JavaScript-ekosystemet (Chaindrop). Dessa har en tydlig svensk koppling och är aktivt utnyttjade. Även om det inte finns bekräftade incidenter i stor skala, är CERT-SE:s varningar och CISA:s KEV-katalog nog så allvarliga för att motivera en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 11,
+    "sweden_relevant": 10,
     "sweden_acute": 3,
-    "actively_exploited": 6,
-    "critical": 7,
+    "actively_exploited": 7,
+    "critical": 8,
     "authority_alerts": 16,
-    "kev_recent": 4
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
@@ -67,6 +67,21 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-63077: JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-05T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-63077",
+      "summary": "JetBrains TeamCity – JetBrains TeamCity contains a deserialization of untrusted data vulnerability that could allow unauthenticated remote code execution via the agent polling protocol.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-63077"
       }
     },
     {
@@ -368,21 +383,6 @@
         "swedenRelevant": true,
         "cve": null
       }
-    },
-    {
-      "title": "Fortsätt att få våra utskick",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-12T10:30:00.000Z",
-      "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
-      "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 4
+      "count": 5
     },
     {
       "name": "CISA",
