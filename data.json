@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-05T04:24:06.947Z",
-  "next_update": "2026-08-05T04:54:06.947Z",
+  "updated": "2026-08-05T07:21:01.224Z",
+  "next_update": "2026-08-05T07:51:01.224Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket, vilket visar aktivt utnyttjande med svensk koppling. Även om det inte finns bevis för en pågående storskalig attack, är detta tillräckligt för att höja nivån till 'gul' på grund av den potentiella risken för svensk kritisk infrastruktur och samhällsviktig verksamhet.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk, särskilt CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket som drabbat svenska GitHub-repon. Dessa incidenter har en tydlig svensk koppling och visar på aktivt utnyttjande av sårbarheter. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de kritiska sårbarheterna som finns i svensk infrastruktur.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 13,
+    "sweden_relevant": 12,
     "sweden_acute": 3,
     "actively_exploited": 5,
     "critical": 6,
-    "authority_alerts": 18,
+    "authority_alerts": 17,
     "kev_recent": 4
   },
   "anomaly": {
@@ -155,6 +155,21 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "QuickFox Supply Chain Attack Delivers FDMTP Backdoor via Trojanized Windows Installer",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-05T05:47:19.000Z",
+      "link": "https://thehackernews.com/2026/08/quickfox-supply-chain-attack-delivers.html",
+      "summary": "Cybersecurity researchers have disclosed what has been described as a \"long-standing supply chain attack\" on QuickFox, a virtual private network (VPN) and network acceleration tool designed for overseas Chinese users. According to Fortinet FortiGuard Labs, the supply chain attac…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
@@ -361,21 +376,6 @@
       "date": "2026-06-12T10:00:00.000Z",
       "link": "https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cybersakerhetscenter.html",
       "summary": "<p>Den 1 juli övergår cyberverksamheten från Myndigheten för civilt försvar (MCF) till Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt (FRA), enligt regeringens beslut den 20 november 2025. Syftet är att stärka Sveriges cybersäkerhet.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Patchtisdag juni 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-10T12:00:00.000Z",
-      "link": "https://www.cert.se/2026/06/patchtisdag-juni-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juni. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
