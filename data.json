@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-05T14:59:13.211Z",
-  "next_update": "2026-08-05T15:29:13.211Z",
+  "updated": "2026-08-05T16:49:40.788Z",
+  "next_update": "2026-08-05T17:19:40.788Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler visar på en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en ny skadlig kod, Chaindrop, som påverkar JavaScript-ekosystemet. Dessutom har det förekommit koordinerade leveranskedjeangrepp mot GitHub-repon och en pågående skadlig aktivitet riktad mot brandväggar. Även om dessa signaler inte indikerar en direkt storskalig attack, visar de på en aktiv och målinriktad hotbild mot svenska system och infrastruktur.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en ny skadlig kod, Chaindrop, som påverkar JavaScript-ekosystemet. Dessutom har en koordinerad attack mot AsyncAPI GitHub-repon rapporterats, vilket tyder på aktivt utnyttjande av sårbarheter. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är detta tillräckligt för att höja nivån till 'gul'.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 12,
+    "sweden_relevant": 11,
     "sweden_acute": 3,
-    "actively_exploited": 5,
+    "actively_exploited": 6,
     "critical": 7,
-    "authority_alerts": 17,
+    "authority_alerts": 16,
     "kev_recent": 4
   },
   "anomaly": {
@@ -142,6 +142,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-18577"
+      }
+    },
+    {
+      "title": "CISA warns of hackers exploiting Langflow, N-central, Apache Tomcat flaws",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-05T15:51:33.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-langflow-n-central-apache-tomcat-flaws/",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency is giving federal agencies three days to mitigate vulnerabilities in IBM Langflow, N-central, and Apache Tomcat, all actively exploited. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -361,21 +376,6 @@
       "date": "2026-06-12T10:30:00.000Z",
       "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
       "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Cyberverksamheten samlas hos FRA – övergång till Nationellt cybersäkerhetscenter den 1 juli 2026",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-12T10:00:20.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
-      "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
