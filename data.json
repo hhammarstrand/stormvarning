@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-05T18:45:04.759Z",
-  "next_update": "2026-08-05T19:15:04.759Z",
+  "updated": "2026-08-05T20:37:43.264Z",
+  "next_update": "2026-08-05T21:07:43.264Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktiva sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en skadlig kod som påverkar JavaScript-ekosystemet (Chaindrop). Dessa har en tydlig svensk koppling och är aktivt utnyttjade. Även om det inte finns bekräftade incidenter i stor skala, är CERT-SE:s varningar och CISA:s KEV-katalog nog så allvarliga för att motivera en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en skadlig kod som sprids via JavaScript-ekosystemet. CERT-SE har utfärdat varningar om dessa hot, vilket ger en tydlig svensk koppling. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de aktiva utnyttjandena och de kritiska sårbarheterna som påverkar svenska system.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
