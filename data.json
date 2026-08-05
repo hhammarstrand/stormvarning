@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-05T07:21:01.224Z",
-  "next_update": "2026-08-05T07:51:01.224Z",
+  "updated": "2026-08-05T10:13:46.819Z",
+  "next_update": "2026-08-05T10:43:46.819Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risk, särskilt CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket som drabbat svenska GitHub-repon. Dessa incidenter har en tydlig svensk koppling och visar på aktivt utnyttjande av sårbarheter. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de kritiska sårbarheterna som finns i svensk infrastruktur.",
+  "summary": "Förhöjt hotläge mot Sverige p.g.a. flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och IBM Langflow, har identifierats och är aktivt utnyttjade, vilket innebär en förhöjd risk. Dessutom har CERT-SE rapporterat om skadliga npm-paket och en ny skadlig kod, Chaindrop, som påverkar JavaScript-ekosystemet, vilket indikerar pågående attacker mot svenska mål. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att höja nivån till 'gul'.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 12,
+    "sweden_relevant": 11,
     "sweden_acute": 3,
-    "actively_exploited": 5,
-    "critical": 6,
-    "authority_alerts": 17,
+    "actively_exploited": 6,
+    "critical": 7,
+    "authority_alerts": 16,
     "kev_recent": 4
   },
   "anomaly": {
@@ -76,6 +76,21 @@
       "date": "2026-08-04T00:00:00.000Z",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-9198",
       "summary": "IBM Langflow – Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-9198"
+      }
+    },
+    {
+      "title": "CISA Flags Langflow RCE, Tomcat, and N-central Flaws as Actively Exploited",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-05T07:40:39.000Z",
+      "link": "https://thehackernews.com/2026/08/cisa-flags-langflow-rce-tomcat-and-n.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on August 5, 2026, added three flaws to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation in the wild. The list of vulnerabilities is as follows - CVE-2026-9198 (CVSS score:…",
       "flags": {
         "activelyExploited": true,
         "critical": true,
@@ -156,6 +171,21 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Ny skadlig kod sprids genom JavaScript ekosystemet - Chaindrop",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-05T09:00:00.000Z",
+      "link": "https://www.cert.se/2026/08/ny-skadlig-kod-sprids-genom-javascript-ekosystemet-chaindrop.html",
+      "summary": "<p>En ny självreplikerande skadlig kod, Chaindrop, har blivit uppmärksammat av bland annat StepSecurity [1]. Chaindrop påverkar över 400 paket i JavaScript ekosystemet.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
         "cve": null
       }
     },
@@ -346,36 +376,6 @@
       "date": "2026-06-12T10:30:00.000Z",
       "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
       "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Cyberverksamheten samlas hos FRA – övergång till Nationellt cybersäkerhetscenter den 1 juli 2026",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-12T10:00:20.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
-      "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Nu samlas cyberverksamheten hos Nationellt cybersäkerhetscenter – ska ge stärkt motståndskraft",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-12T10:00:00.000Z",
-      "link": "https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cybersakerhetscenter.html",
-      "summary": "<p>Den 1 juli övergår cyberverksamheten från Myndigheten för civilt försvar (MCF) till Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt (FRA), enligt regeringens beslut den 20 november 2025. Syftet är att stärka Sveriges cybersäkerhet.</p>",
       "flags": {
         "activelyExploited": false,
         "critical": false,
