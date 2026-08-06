@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-06T10:16:05.844Z",
-  "next_update": "2026-08-06T10:46:05.844Z",
+  "updated": "2026-08-06T12:28:47.485Z",
+  "next_update": "2026-08-06T12:58:47.485Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling genom CERT-SE:s varningar. Dessutom har det rapporterats om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bevis för en storskalig attack, är det förhöjda antalet incidenter och sårbarheter med svensk koppling anledning till oro.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling. Dessutom har CERT-SE rapporterat om en pågående attack mot svenska GitHub-repon och en skadlig kod, Chaindrop, som påverkar JavaScript-ekosystemet. Dessa signaler indikerar en förhöjd risk för svenska organisationer, vilket motiverar en gul nivå.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 10,
+    "sweden_relevant": 9,
     "sweden_acute": 3,
-    "actively_exploited": 7,
+    "actively_exploited": 8,
     "critical": 9,
-    "authority_alerts": 16,
+    "authority_alerts": 15,
     "kev_recent": 5
   },
   "anomaly": {
@@ -157,6 +157,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-18577"
+      }
+    },
+    {
+      "title": "AI Recommendation Poisoning: How \"Ask AI\" Buttons Silently Alter LLM Memory",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-06T11:30:00.000Z",
+      "link": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html",
+      "summary": "A new class of prompt injection is spreading across commercial websites. It requires no malware, no stolen credentials, and no zero-day exploit. It abuses a standard feature built into almost every major AI assistant: pre-filled deep links. We observed production websites embedd…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -361,21 +376,6 @@
       "date": "2026-06-18T13:00:00.000Z",
       "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
       "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.24",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-12T11:15:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v24.html",
-      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
