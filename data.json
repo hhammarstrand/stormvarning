@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-06T07:22:46.147Z",
-  "next_update": "2026-08-06T07:52:46.147Z",
+  "updated": "2026-08-06T10:16:05.844Z",
+  "next_update": "2026-08-06T10:46:05.844Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling genom CERT-SE:s varningar. Dessutom har en koordinerad attack mot svenska GitHub-repon rapporterats, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bevis för en storskalig samhällspåverkande attack, är det förhöjda antalet incidenter och sårbarheter med svensk koppling tillräckligt för att motivera en gul nivå.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling genom CERT-SE:s varningar. Dessutom har det rapporterats om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bevis för en storskalig attack, är det förhöjda antalet incidenter och sårbarheter med svensk koppling anledning till oro.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 11,
+    "sweden_relevant": 10,
     "sweden_acute": 3,
     "actively_exploited": 7,
-    "critical": 8,
-    "authority_alerts": 17,
+    "critical": 9,
+    "authority_alerts": 16,
     "kev_recent": 5
   },
   "anomaly": {
@@ -190,6 +190,21 @@
       }
     },
     {
+      "title": "CISA Flags TeamCity CVE-2026-63077 RCE Flaw Under Active Exploitation in the Wild",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-06T06:51:43.000Z",
+      "link": "https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html",
+      "summary": "A newly patched security flaw impacting on-premise versions of JetBrains TeamCity has come under active exploitation in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA). The vulnerability in question is CVE-2026-63077 (CVSS score: 9.8), a c…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-63077"
+      }
+    },
+    {
       "title": "Veeam, Terraform MCP, Django Patch Critical Flaws, Led by CVSS 10.0 Cross-Tenant Bug",
       "source": "The Hacker News",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-06-12T11:15:00.000Z",
       "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v24.html",
       "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Fortsätt att få våra utskick",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-12T10:30:00.000Z",
-      "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
-      "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
