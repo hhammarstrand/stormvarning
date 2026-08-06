@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-05T23:34:17.748Z",
-  "next_update": "2026-08-06T00:04:17.748Z",
+  "updated": "2026-08-06T01:02:21.544Z",
+  "next_update": "2026-08-06T01:32:21.544Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktiva och kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risknivå för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och en ny skadlig kod, Chaindrop, som påverkar JavaScript-ekosystemet. Dessutom har en koordinerad attack mot AsyncAPI GitHub-repon rapporterats, vilket tyder på aktivt utnyttjande. Även om dessa signaler inte indikerar en storskalig samhällspåverkande attack, är det tydliga tecken på aktivitet som kan påverka svenska organisationer. Det finns också en hög frekvens av myndighetsvarningar och aktivt utnyttjade sårbarheter som är relevanta för Sverige.",
+  "summary": "Förhöjt hotläge mot Sverige med flera aktiva sårbarheter och incidenter.",
+  "reasoning": "Flera högprioriterade signaler från CERT-SE indikerar pågående aktivitet och incidenter med direkt koppling till Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en koordinerad attack mot svenska GitHub-repon. Även om det inte finns bevis för en storskalig samhällspåverkande attack, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka svenska organisationer. Detta, tillsammans med CERT-SE:s varningar och CISA KEV-katalogens uppdateringar, motiverar en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
