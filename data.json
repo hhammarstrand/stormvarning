@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-07T11:27:38.528Z",
-  "next_update": "2026-08-07T11:57:38.528Z",
+  "updated": "2026-08-07T12:25:50.559Z",
+  "next_update": "2026-08-07T12:55:50.559Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket som utnyttjar GitHub Actions. Dessa har en tydlig svensk koppling och CERT-SE har utfärdat varningar. Även om det inte finns bevis för pågående storskaliga attacker mot svensk kritisk infrastruktur, är risken för sådana attacker förhöjd på grund av de aktiva hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling via CERT-SE. Dessutom har en koordinerad attack mot svenska GitHub-repon rapporterats, vilket indikerar pågående aktivitet riktad mot svenska mål. Även om det inte finns bevis för en storskalig samhällspåverkande attack, är det förhöjda antalet incidenter och sårbarheter med svensk koppling anledning till försiktighet.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
@@ -165,7 +165,7 @@
       "region": "INT",
       "date": "2026-08-07T10:09:54.000Z",
       "link": "https://thehackernews.com/2026/08/ai-assisted-http-terminator-finds-novel.html",
-      "summary": "PortSwigger says HTTP Terminator, an artificial intelligence (AI)-assisted research system built by James Kettle, generated and proved new HTTP desynchronization techniques after exploring 30,000 candidate attack vectors. PortSwigger said a separate human-guided discovery cascad…",
+      "summary": "PortSwigger says HTTP Terminator, an artificial intelligence (AI)-assisted research system built by James Kettle, generated and proved new HTTP desynchronization techniques after exploring 30,000 candidate desync vectors. PortSwigger said a separate human-guided discovery cascad…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -223,7 +223,7 @@
       "title": "CERT-SE:s veckobrev v.32",
       "source": "CERT-SE",
       "region": "SE",
-      "date": "2026-08-07T10:55:00.000Z",
+      "date": "2026-08-07T11:37:00.000Z",
       "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
       "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
       "flags": {
