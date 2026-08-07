@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-07T13:55:37.693Z",
-  "next_update": "2026-08-07T14:25:37.693Z",
+  "updated": "2026-08-07T15:06:36.764Z",
+  "next_update": "2026-08-07T15:36:36.764Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska och aktivt utnyttjade sårbarheter har identifierats, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, samt skadliga npm-paket som utnyttjar GitHub Actions. Dessa har en tydlig svensk koppling och CERT-SE har utfärdat varningar. Även om det inte finns bekräftade incidenter i stor skala, är risken för pågående angrepp mot svenska organisationer förhöjd.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en svensk koppling. Dessutom har CERT-SE rapporterat om skadliga npm-paket och en koordinerad attack mot svenska GitHub-repon. Även om det inte finns bevis för en pågående storskalig attack, är detta tillräckligt för att höja nivån till 'gul' på grund av den potentiella risken för svenska organisationer.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
@@ -225,13 +225,13 @@
       "region": "INT",
       "date": "2026-08-07T12:56:23.000Z",
       "link": "https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html",
-      "summary": "WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. Under additional conditions, the bug can be chained into PHP code execution on the server. Tracked as CVE-2026-6463…",
+      "summary": "WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrato…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-6463"
+        "cve": null
       }
     },
     {
