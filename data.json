@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-07T10:30:18.621Z",
-  "next_update": "2026-08-07T11:00:18.621Z",
+  "updated": "2026-08-07T11:27:38.528Z",
+  "next_update": "2026-08-07T11:57:38.528Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige med flera kritiska sårbarheter och incidenter.",
-  "reasoning": "Flera signaler visar på aktivt utnyttjade sårbarheter och incidenter med tydlig svensk koppling, inklusive kritiska sårbarheter i SonicWall SMA1000 och en skadlig kod som påverkar JavaScript-ekosystemet. CERT-SE har utfärdat varningar om dessa hot, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket som utnyttjar GitHub Actions. Dessa har en tydlig svensk koppling och CERT-SE har utfärdat varningar. Även om det inte finns bevis för pågående storskaliga attacker mot svensk kritisk infrastruktur, är risken för sådana attacker förhöjd på grund av de aktiva hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 9,
+    "sweden_relevant": 8,
     "sweden_acute": 3,
-    "actively_exploited": 8,
+    "actively_exploited": 9,
     "critical": 8,
-    "authority_alerts": 15,
+    "authority_alerts": 14,
     "kev_recent": 5
   },
   "anomaly": {
@@ -160,6 +160,21 @@
       }
     },
     {
+      "title": "AI-Assisted HTTP Terminator Finds Novel HTTP Desync Techniques and Apache Zero-Day",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-07T10:09:54.000Z",
+      "link": "https://thehackernews.com/2026/08/ai-assisted-http-terminator-finds-novel.html",
+      "summary": "PortSwigger says HTTP Terminator, an artificial intelligence (AI)-assisted research system built by James Kettle, generated and proved new HTTP desynchronization techniques after exploring 30,000 candidate attack vectors. PortSwigger said a separate human-guided discovery cascad…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "AI Recommendation Poisoning: How \"Ask AI\" Buttons Silently Alter LLM Memory",
       "source": "The Hacker News",
       "region": "INT",
@@ -201,6 +216,21 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.32",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-07T10:55:00.000Z",
+      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
+      "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
         "cve": null
       }
     },
@@ -346,36 +376,6 @@
       "date": "2026-06-26T08:34:35.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
       "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Klimatriskerna för Sverige ökar",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-25T09:30:10.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
-      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.25",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-18T13:00:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
-      "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
