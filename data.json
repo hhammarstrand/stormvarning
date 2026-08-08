@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-08T09:19:56.832Z",
-  "next_update": "2026-08-08T09:49:56.832Z",
+  "updated": "2026-08-08T10:05:57.242Z",
+  "next_update": "2026-08-08T10:35:57.242Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter (t.ex. SonicWall SMA1000 och JetBrains TeamCity) som är aktivt utnyttjade och har svensk koppling genom CERT-SE:s varningar. Dessutom har det rapporterats om koordinerade leveranskedjeangrepp mot svenska GitHub-repon. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är detta tillräckligt för att höja nivån till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 som är aktivt utnyttjade och finns i CISA:s KEV-katalog. Dessutom har CERT-SE rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon och information om attacker mot brandväggar, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det förhöjda antalet svenska incidenter och aktivt utnyttjade sårbarheter tillräckligt för att motivera en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
