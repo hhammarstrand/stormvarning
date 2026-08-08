@@ -1,16 +1,16 @@
 {
-  "updated": "2026-08-08T07:32:45.935Z",
-  "next_update": "2026-08-08T08:02:45.935Z",
+  "updated": "2026-08-08T08:19:14.826Z",
+  "next_update": "2026-08-08T08:49:14.826Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats och är aktivt utnyttjade. Dessa har en direkt koppling till Sverige genom CERT-SE:s varningar. Dessutom har det rapporterats om koordinerade leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bevis för en storskalig samhällspåverkande attack, är det nödvändigt att vara försiktig med tanke på de pågående incidenterna och de kritiska sårbarheterna.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska sårbarheter och incidenter med tydlig svensk koppling, såsom de kritiska sårbarheterna i SonicWall SMA1000 och skadliga npm-paket som drabbat svenska GitHub-repon. Dessa signaler, tillsammans med CERT-SE:s varningar, indikerar en förhöjd risk för cyberattacker mot svenska mål. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 3,
-    "actively_exploited": 10,
+    "actively_exploited": 11,
     "critical": 9,
     "authority_alerts": 13,
     "kev_recent": 6
@@ -172,6 +172,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-18577"
+      }
+    },
+    {
+      "title": "Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-08T06:58:31.000Z",
+      "link": "https://thehackernews.com/2026/08/metabase-zero-day-exploited-in-wild.html",
+      "summary": "Metabase has warned that a maximum-severity security flaw impacting its business intelligence and data visualization software package has been exploited in the wild as a zero-day. The vulnerability (CVSS score: 10.0), which does not carry a CVE identifier, allows an unauthentica…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -346,21 +361,6 @@
       "date": "2026-08-05T05:47:19.000Z",
       "link": "https://thehackernews.com/2026/08/quickfox-supply-chain-attack-delivers.html",
       "summary": "Cybersecurity researchers have disclosed what has been described as a \"long-standing supply chain attack\" on QuickFox, a virtual private network (VPN) and network acceleration tool designed for overseas Chinese users. According to Fortinet FortiGuard Labs, the supply chain attac…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "18 Malicious npm Packages Deliver Cross-Platform RAT to Alibaba Tool Users",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-03T18:43:53.000Z",
-      "link": "https://thehackernews.com/2026/08/18-malicious-npm-packages-deliver-cross.html",
-      "summary": "Cybersecurity researchers have discovered a new set of malicious npm packages that target users of Alibaba developer tools with a cross-platform remote access trojan (RAT) as part of a sophisticated, targeted software supply chain attack targeting Chinese-speaking environments.…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
