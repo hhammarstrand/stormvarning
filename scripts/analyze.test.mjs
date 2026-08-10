@@ -7,7 +7,7 @@ import assert from "node:assert/strict";
 import {
   normalizeLevel, levelRank, riskScore, heuristicLevel,
   computeIndicators, annotate, detectAnomaly, computeLevelSince,
-  applyLevelPolicy, applyHysteresis, buildNotificationEmail,
+  applyLevelPolicy, applyHysteresis, buildNotificationEmail, nextRunAfter,
 } from "./analyze.mjs";
 
 test("normalizeLevel mappar varianter", () => {
@@ -59,6 +59,25 @@ test("riskScore drivs av svensk akut exponering", () => {
   const high = riskScore({ sweden_acute: 2, actively_exploited: 2, critical: 0, kev_recent: 2, authority_alerts: 2 });
   assert.ok(high > low);
   assert.ok(riskScore({ sweden_acute: 9, actively_exploited: 9, critical: 9, kev_recent: 9, authority_alerts: 9 }) <= 100);
+});
+
+test("riskScore mättar mjukt – pinnas inte på 100", () => {
+  // En hektisk patchvecka ska INTE ge exakt 100 (mätaren måste behålla
+  // känslighet uppåt för trend + avvikelsedetektering).
+  const busy = riskScore({ sweden_acute: 3, actively_exploited: 10, critical: 9, kev_recent: 5, authority_alerts: 13 });
+  assert.ok(busy < 100, `busy=${busy}`);
+  assert.ok(busy > 70);
+  const calm = riskScore({ sweden_acute: 0, actively_exploited: 2, critical: 1, kev_recent: 2, authority_alerts: 4 });
+  assert.ok(calm < 35, `calm=${calm}`);
+  assert.equal(riskScore({ sweden_acute: 0, actively_exploited: 0, critical: 0, kev_recent: 0, authority_alerts: 0 }), 0);
+});
+
+test("nextRunAfter träffar nästa cron-slot (minut 7/37 UTC)", () => {
+  assert.equal(nextRunAfter(new Date("2026-08-10T10:00:00Z")).toISOString(), "2026-08-10T10:07:00.000Z");
+  assert.equal(nextRunAfter(new Date("2026-08-10T10:07:00Z")).toISOString(), "2026-08-10T10:37:00.000Z");
+  assert.equal(nextRunAfter(new Date("2026-08-10T10:36:59Z")).toISOString(), "2026-08-10T10:37:00.000Z");
+  assert.equal(nextRunAfter(new Date("2026-08-10T10:45:00Z")).toISOString(), "2026-08-10T11:07:00.000Z");
+  assert.equal(nextRunAfter(new Date("2026-08-10T23:50:00Z")).toISOString(), "2026-08-11T00:07:00.000Z");
 });
 
 test("heuristicLevel är konservativ", () => {

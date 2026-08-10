@@ -302,13 +302,16 @@ function computeIndicators(events) {
 function riskScore(ind) {
   // Svensk akut exponering är den dominerande drivkraften; internationell
   // exploit-volym (rutinmässig varje patch-vecka) bidrar mer måttfullt.
-  const s =
+  const raw =
     ind.sweden_acute * 22 +
     ind.actively_exploited * 3 +
     ind.critical * 3 +
     ind.kev_recent * 2 +
     Math.min(ind.authority_alerts, 4) * 1;
-  return Math.max(0, Math.min(100, Math.round(s)));
+  // Mjuk mättnad i stället för hård cap: en hård cap pinnade mätaren på 100
+  // i veckor, vilket dödade både trendkurvan och avvikelsedetekteringen.
+  // Kurvan behåller känslighet uppåt (raw 17→23, 66→64, 137→88, 240→97).
+  return Math.round(100 * (1 - Math.exp(-raw / 65)));
 }
 
 // Deterministisk fallback-nivå när AI inte är tillgänglig. Konservativ – larmar
@@ -345,6 +348,19 @@ function applyLevelPolicy(level, ind) {
  * att nivån inte flappar. `streak` är antalet på varandra följande körningar
  * som velat sänka.
  */
+// Cron-schemats minuter (måste matcha update-threat-level.yml). "Nästa
+// uppdatering" beräknas från nästa faktiska slot i stället för blint +30 min.
+const CRON_MINUTES = [7, 37];
+function nextRunAfter(from) {
+  const d = new Date(from.getTime());
+  d.setUTCSeconds(0, 0);
+  for (let i = 0; i < 60; i++) {
+    d.setUTCMinutes(d.getUTCMinutes() + 1);
+    if (CRON_MINUTES.includes(d.getUTCMinutes())) return d;
+  }
+  return new Date(from.getTime() + 30 * 60000); // ska aldrig nås
+}
+
 const DOWN_CONFIRMATIONS = 3;
 function applyHysteresis(computed, prevLevel, prevStreak) {
   const cur = normalizeLevel(prevLevel);
@@ -628,7 +644,7 @@ async function readJson(path, fallback) {
 
 async function main() {
   const now = new Date();
-  const next = new Date(now.getTime() + CONFIG.intervalMinutes * 60 * 1000);
+  const next = nextRunAfter(now);
 
   const { events, health } = await collectSignals();
   const indicators = computeIndicators(events);
@@ -753,5 +769,5 @@ if (isMain) {
   });
 }
 
-export { normalizeLevel, levelRank, riskScore, heuristicLevel, computeIndicators, annotate, detectAnomaly, computeLevelSince, applyLevelPolicy, applyHysteresis, buildNotificationEmail };
+export { normalizeLevel, levelRank, riskScore, heuristicLevel, computeIndicators, annotate, detectAnomaly, computeLevelSince, applyLevelPolicy, applyHysteresis, buildNotificationEmail, nextRunAfter };
 

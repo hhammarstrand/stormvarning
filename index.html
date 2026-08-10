@@ -6,6 +6,11 @@
   <meta name="description" content="Stormvarning – tidigt varningssystem för storskaliga cyberattacker mot Sverige. Automatiserad lägesbild baserad på öppna hotsignaler." />
   <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#0a0c0f" />
+  <meta property="og:title" content="Stormvarning – cyberhotnivå för Sverige" />
+  <meta property="og:description" content="Tidigt varningssystem för storskaliga cyberattacker mot Sverige. Hotnivå, riskindex och senaste signaler – uppdateras var 30:e minut." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hhammarstrand.github.io/stormvarning/" />
+  <meta property="og:locale" content="sv_SE" />
   <title>Stormvarning – cyberhotnivå för Sverige</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230a0c0f'/%3E%3Crect x='3' y='2' width='2' height='9' fill='%23ffb020'/%3E%3Crect x='3' y='12' width='2' height='2' fill='%23ffb020'/%3E%3Crect x='7' y='5' width='2' height='6' fill='%236b7280'/%3E%3Crect x='11' y='3' width='2' height='8' fill='%236b7280'/%3E%3C/svg%3E" />
   <link rel="manifest" href="manifest.webmanifest" />
@@ -53,12 +58,12 @@
 
     <!-- Tripwires / indikatorer (klickbara: filtrerar signalloggen) -->
     <section class="tripwires" id="tripwires" aria-label="Indikatorer – klicka för att filtrera signallistan">
-      <button type="button" class="tw" data-key="sweden_acute"><span class="tw-n" id="tw-sweden_acute">–</span><span class="tw-l">Svensk akut</span></button>
-      <button type="button" class="tw" data-key="actively_exploited"><span class="tw-n" id="tw-actively_exploited">–</span><span class="tw-l">Aktivt utnyttjade</span></button>
-      <button type="button" class="tw" data-key="critical"><span class="tw-n" id="tw-critical">–</span><span class="tw-l">Kritiska</span></button>
-      <button type="button" class="tw" data-key="kev_recent"><span class="tw-n" id="tw-kev_recent">–</span><span class="tw-l">Nya CISA KEV</span></button>
-      <button type="button" class="tw" data-key="sweden_relevant"><span class="tw-n" id="tw-sweden_relevant">–</span><span class="tw-l">Sverige-relaterade</span></button>
-      <button type="button" class="tw" data-key="authority_alerts"><span class="tw-n" id="tw-authority_alerts">–</span><span class="tw-l">Myndighets&shy;signaler</span></button>
+      <button type="button" class="tw" aria-pressed="false" data-key="sweden_acute"><span class="tw-n" id="tw-sweden_acute">–</span><span class="tw-l">Svensk akut</span></button>
+      <button type="button" class="tw" aria-pressed="false" data-key="actively_exploited"><span class="tw-n" id="tw-actively_exploited">–</span><span class="tw-l">Aktivt utnyttjade</span></button>
+      <button type="button" class="tw" aria-pressed="false" data-key="critical"><span class="tw-n" id="tw-critical">–</span><span class="tw-l">Kritiska</span></button>
+      <button type="button" class="tw" aria-pressed="false" data-key="kev_recent"><span class="tw-n" id="tw-kev_recent">–</span><span class="tw-l">Nya CISA KEV</span></button>
+      <button type="button" class="tw" aria-pressed="false" data-key="sweden_relevant"><span class="tw-n" id="tw-sweden_relevant">–</span><span class="tw-l">Sverige-relaterade</span></button>
+      <button type="button" class="tw" aria-pressed="false" data-key="authority_alerts"><span class="tw-n" id="tw-authority_alerts">–</span><span class="tw-l">Myndighets&shy;signaler</span></button>
     </section>
 
     <!-- Avvikelselarm (visas bara vid spik i aktiviteten) -->
