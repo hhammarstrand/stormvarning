@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-10T16:27:24.022Z",
-  "next_update": "2026-08-10T16:37:00.000Z",
+  "updated": "2026-08-10T17:31:59.658Z",
+  "next_update": "2026-08-10T17:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svenska myndigheters områden.",
-  "reasoning": "Flera kritiska sårbarheter, såsom de i SonicWall SMA1000 och JetBrains TeamCity, är aktivt utnyttjade och har identifierats av CERT-SE och CISA KEV. Dessutom har CERT-SE rapporterat om skadliga npm-paket och angrepp mot brandväggar, vilket indikerar en aktiv hotbild mot svenska system. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att Sverige är i fokus för aktiva hotaktörer.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats och är aktivt utnyttjade. Dessa har en direkt koppling till Sverige via CERT-SE:s varningar. Dessutom har ett koordinerat leveranskedjeangrepp mot separata AsyncAPI GitHub-repon rapporterats, vilket också har en svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att Sverige är i fokus för aktiva hotaktörer.",
   "score": 88,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
     "sweden_acute": 3,
     "actively_exploited": 11,
-    "critical": 9,
+    "critical": 8,
     "authority_alerts": 14,
     "kev_recent": 5
   },
   "anomaly": {
     "active": false,
     "baseline": 99,
-    "delta": -11
+    "delta": -10
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -100,21 +100,6 @@
       }
     },
     {
-      "title": "CISA Flags Langflow RCE, Tomcat, and N-central Flaws as Actively Exploited",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-05T07:40:39.000Z",
-      "link": "https://thehackernews.com/2026/08/cisa-flags-langflow-rce-tomcat-and-n.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on August 5, 2026, added three flaws to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation in the wild. The list of vulnerabilities is as follows - CVE-2026-9198 (CVSS score:…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-9198"
-      }
-    },
-    {
       "title": "CVE-2026-8037: Progress LoadMaster Command Injection Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -157,6 +142,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-34486"
+      }
+    },
+    {
+      "title": "⚡ Weekly Recap: AI Goes Rogue, Metabase 0-Day, MCP Supply-Chain Attacks, and Router Backdoors",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-10T15:00:29.000Z",
+      "link": "https://thehackernews.com/2026/08/weekly-recap-ai-goes-rogue-metabase-0.html",
+      "summary": "A lot of security problems still begin with someone doing a completely normal thing. Cloning a repo. Answering a call. Leaving a box exposed. Trusting the default. That pretty much covers the mood this week. Old bugs are back, supply chains are getting stranger, and some exploit…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
