@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-10T09:44:12.103Z",
-  "next_update": "2026-08-10T10:07:00.000Z",
+  "updated": "2026-08-10T11:18:23.964Z",
+  "next_update": "2026-08-10T11:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige p.g.a. flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för framtida attacker. Detta motiverar en förhöjd beredskap och nivån 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk, särskilt CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket som utnyttjar GitHub Actions. Dessa har en tydlig svensk koppling och är aktivt utnyttjade, vilket ökar risken för påverkan på svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
   "score": 88,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 3,
-    "actively_exploited": 10,
+    "actively_exploited": 11,
     "critical": 9,
-    "authority_alerts": 13,
+    "authority_alerts": 12,
     "kev_recent": 5
   },
   "anomaly": {
@@ -157,6 +157,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-34486"
+      }
+    },
+    {
+      "title": "Critical Progress LoadMaster flaw now actively exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-10T09:49:37.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-progress-loadmaster-flaw-exploited-in-attacks/",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned that hackers are exploiting a critical-severity Progress Kemp LoadMaster command injection vulnerability. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -361,21 +376,6 @@
       "date": "2026-07-15T11:30:00.000Z",
       "link": "https://www.cert.se/2026/07/patchtisdag-juli-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
       "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juli. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.26",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-26T12:55:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
-      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
