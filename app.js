@@ -170,7 +170,9 @@
       else chip.hidden = true;
     }
     document.querySelectorAll(".tw").forEach(function (t) {
-      t.classList.toggle("active", t.getAttribute("data-key") === activeFilter);
+      var on = t.getAttribute("data-key") === activeFilter;
+      t.classList.toggle("active", on);
+      t.setAttribute("aria-pressed", on ? "true" : "false");
     });
 
     if (!Array.isArray(list) || list.length === 0) {
@@ -186,6 +188,7 @@
       if (f.swedenRelevant) badges += '<span class="badge se">SE</span>';
       if (f.activelyExploited) badges += '<span class="badge exploit">EXPLOIT</span>';
       if (f.critical) badges += '<span class="badge crit">KRIT</span>';
+      if (f.incident) badges += '<span class="badge inc">INCIDENT</span>';
       var title = escapeHtml(ev.title || "Namnlös signal");
       var titleHtml = ev.link
         ? '<a href="' + escapeHtml(ev.link) + '" target="_blank" rel="noopener">' + title + "</a>"
