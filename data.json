@@ -1,19 +1,19 @@
 {
-  "updated": "2026-08-09T23:42:35.623Z",
-  "next_update": "2026-08-10T00:12:35.623Z",
+  "updated": "2026-08-10T02:29:50.456Z",
+  "next_update": "2026-08-10T02:59:50.456Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter och incidenter har identifierats, inklusive två med tydlig svensk koppling (SonicWall SMA1000 och AsyncAPI GitHub-repon). Dessa utgör en förhöjd risk för svenska organisationer, särskilt med tanke på CERT-SE:s varningar och CISA:s KEV-katalog som indikerar aktivt utnyttjande. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de identifierade hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 som är aktivt utnyttjade och har lagts till i CISA:s KEV-katalog. Dessutom har CERT-SE rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon och information om attacker mot brandväggar, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bekräftade incidenter av storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet svenska myndighetsvarningar och aktivt utnyttjade sårbarheter tillräckligt för att motivera en förhöjd beredskap.",
   "score": 100,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 3,
-    "actively_exploited": 11,
+    "actively_exploited": 10,
     "critical": 9,
     "authority_alerts": 13,
-    "kev_recent": 6
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
@@ -157,21 +157,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-34486"
-      }
-    },
-    {
-      "title": "CVE-2026-18577: N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-03T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-18577",
-      "summary": "N-able N-central – N-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-18577"
       }
     },
     {
@@ -383,6 +368,21 @@
         "swedenRelevant": true,
         "cve": null
       }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.26",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-26T12:55:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
+      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 6
+      "count": 5
     },
     {
       "name": "CISA",
