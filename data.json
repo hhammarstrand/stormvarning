@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-11T17:35:28.182Z",
-  "next_update": "2026-08-11T17:37:00.000Z",
+  "updated": "2026-08-11T18:33:32.210Z",
+  "next_update": "2026-08-11T18:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling. Dessutom har CERT-SE rapporterat om en koordinerad attack mot svenska GitHub-repon och information om attacker mot brandväggar, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bevis för en storskalig attack, är det förhöjda antalet incidenter och sårbarheter med svensk koppling tillräckligt för att höja nivån till 'gul'.",
-  "score": 83,
+  "reasoning": "Flera kritiska sårbarheter, såsom de i SonicWall SMA1000 och JetBrains TeamCity, har identifierats och är aktivt utnyttjade. Dessutom har CERT-SE rapporterat om skadliga npm-paket och en ny skadlig kod, Chaindrop, som påverkar JavaScript-ekosystemet. Dessa signaler, tillsammans med CERT-SE:s varningar, indikerar en förhöjd risk för cyberattacker mot svenska mål. Även om det inte finns bekräftade incidenter i stor skala, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
+  "score": 85,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 12,
+    "sweden_relevant": 10,
     "sweden_acute": 3,
-    "actively_exploited": 7,
-    "critical": 7,
-    "authority_alerts": 15,
+    "actively_exploited": 8,
+    "critical": 8,
+    "authority_alerts": 13,
     "kev_recent": 2
   },
   "anomaly": {
     "active": false,
-    "baseline": 93,
-    "delta": -10
+    "baseline": 92,
+    "delta": -7
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -115,6 +115,21 @@
       }
     },
     {
+      "title": "Microsoft August 2026 Patch Tuesday fixes 400 flaws, 3 zero-days",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-11T18:08:50.000Z",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-august-2026-patch-tuesday-fixes-400-flaws-3-zero-days/",
+      "summary": "Today is Microsoft's August 2026 Patch Tuesday, and with it comes security updates for a massive 400 flaws, including one actively exploited and two publicly disclosed zero-day vulnerabilities. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "⚡ Weekly Recap: AI Goes Rogue, Metabase 0-Day, MCP Supply-Chain Attacks, and Router Backdoors",
       "source": "The Hacker News",
       "region": "INT",
@@ -187,6 +202,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-11T16:47:44.000Z",
+      "link": "https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html",
+      "summary": "Security researchers found a way to enter Microsoft SharePoint servers as any user, including an administrator, with no valid account. A significant part of the work that found it was done through an AI agent. The flaw, tracked as CVE-2026-55040 (CVSS 9.1), affects SharePoint Se…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-55040"
       }
     },
     {
@@ -346,36 +376,6 @@
       "date": "2026-06-18T13:00:00.000Z",
       "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
       "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.24",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-12T11:15:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v24.html",
-      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Fortsätt att få våra utskick",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-12T10:30:00.000Z",
-      "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
-      "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
