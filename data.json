@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-11T11:25:30.333Z",
-  "next_update": "2026-08-11T11:37:00.000Z",
+  "updated": "2026-08-11T12:26:58.593Z",
+  "next_update": "2026-08-11T12:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktiva och kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive SonicWall SMA1000 och JetBrains TeamCity, med tydlig svensk koppling. CERT-SE har utfärdat varningar om dessa hot, vilket ökar risken för påverkan på svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det nödvändigt att vara försiktig med tanke på de rapporterade aktiviteterna.",
-  "score": 84,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter och aktivt utnyttjade säkerhetshål har identifierats, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, samt en skadlig kod (Chaindrop) som påverkar JavaScript-ekosystemet. Dessutom har CERT-SE rapporterat om en koordinerad attack mot AsyncAPI GitHub-repon och information om attacker mot brandväggar. Dessa signaler, särskilt de med svensk koppling, indikerar en förhöjd risk för cyberattacker mot svenska organisationer.",
+  "score": 85,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 10,
+    "sweden_relevant": 9,
     "sweden_acute": 3,
-    "actively_exploited": 8,
-    "critical": 7,
-    "authority_alerts": 13,
+    "actively_exploited": 9,
+    "critical": 8,
+    "authority_alerts": 12,
     "kev_recent": 2
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": -10
+    "delta": -9
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -82,6 +82,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-63077"
+      }
+    },
+    {
+      "title": "CISA: Microsoft SharePoint flaw now exploited in ransomware attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-11T12:12:16.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-microsoft-sharepoint-flaw-now-exploited-in-ransomware-attacks/",
+      "summary": "CISA confirmed today that ransomware gangs have begun abusing a high-severity Microsoft SharePoint remote code execution vulnerability, which has been flagged as actively exploited since early July. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -361,21 +376,6 @@
       "date": "2026-06-25T09:30:10.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
       "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.25",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-18T13:00:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
-      "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
