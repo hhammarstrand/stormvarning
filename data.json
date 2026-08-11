@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-11T12:26:58.593Z",
-  "next_update": "2026-08-11T12:37:00.000Z",
+  "updated": "2026-08-11T14:03:02.603Z",
+  "next_update": "2026-08-11T14:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter och aktivt utnyttjade säkerhetshål har identifierats, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, samt en skadlig kod (Chaindrop) som påverkar JavaScript-ekosystemet. Dessutom har CERT-SE rapporterat om en koordinerad attack mot AsyncAPI GitHub-repon och information om attacker mot brandväggar. Dessa signaler, särskilt de med svensk koppling, indikerar en förhöjd risk för cyberattacker mot svenska organisationer.",
-  "score": 85,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktiva och kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, såsom de i SonicWall SMA1000 och JetBrains TeamCity, är aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessutom har det rapporterats om koordinerade leveranskedjeangrepp och skadlig kod som sprids via JavaScript-ekosystemet, vilket ökar risken för påverkan på svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att motivera en förhöjd beredskap.",
+  "score": 83,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 9,
+    "sweden_relevant": 12,
     "sweden_acute": 3,
-    "actively_exploited": 9,
-    "critical": 8,
-    "authority_alerts": 12,
+    "actively_exploited": 7,
+    "critical": 7,
+    "authority_alerts": 15,
     "kev_recent": 2
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": -9
+    "delta": -11
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -130,42 +130,12 @@
       }
     },
     {
-      "title": "Critical Progress LoadMaster flaw now actively exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-10T09:49:37.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-progress-loadmaster-flaw-exploited-in-attacks/",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned that hackers are exploiting a critical-severity Progress Kemp LoadMaster command injection vulnerability. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication",
       "source": "The Hacker News",
       "region": "INT",
       "date": "2026-08-08T06:58:31.000Z",
       "link": "https://thehackernews.com/2026/08/metabase-zero-day-exploited-in-wild.html",
       "summary": "Metabase has warned that a maximum-severity security flaw impacting its business intelligence and data visualization software package has been exploited in the wild as a zero-day. The vulnerability (CVSS score: 10.0), which does not carry a CVE identifier, allows an unauthentica…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Metabase SQLi zero-day exploited in customer data-theft attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-07T20:14:46.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/framework-tally-disclose-metabase-data-theft-attacks/",
-      "summary": "A critical Metabase SQL injection vulnerability was exploited in zero-day attacks to breach customer instances in data theft attacks, known to impact Framework and Tally. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -295,21 +265,6 @@
       }
     },
     {
-      "title": "Veeam, Terraform MCP, Django Patch Critical Flaws, Led by CVSS 10.0 Cross-Tenant Bug",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-05T14:27:30.000Z",
-      "link": "https://thehackernews.com/2026/08/veeam-terraform-mcp-django-patch.html",
-      "summary": "HashiCorp, Veeam, and the Django Software Foundation have patched 11 vulnerabilities across Terraform MCP Server, Veeam Service Provider Console, and Django. The three most serious: An unauthenticated flaw in Veeam's console that hands over a managed agent's credentials, rated 9…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Ny skadlig kod sprids genom JavaScript ekosystemet - Chaindrop",
       "source": "CERT-SE",
       "region": "SE",
@@ -376,6 +331,51 @@
       "date": "2026-06-25T09:30:10.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
       "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.25",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-18T13:00:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v25.html",
+      "summary": "<p>Veckobrevet består som vanligt av nyheter och annan läsning inom cybersäkerhetssfären, bland annat om att NCSC har publicerat information om årets nationella cybersäkerhetskonferens “Svensk Cyber 2026”. CERT-SE vill även passa på att informera om att veckobrevet tar sommarupp…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.24",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-12T11:15:00.000Z",
+      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v24.html",
+      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Fortsätt att få våra utskick",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-06-12T10:30:00.000Z",
+      "link": "https://www.cert.se/2026/06/fortsatt-att-fa-vara-utskick.html",
+      "summary": "<p>CERT-SE blir den 1 juli 2026 en del av Nationellt cybersäkerhetscenter som en del i arbetet med att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet. Du kan läsa mer om detta här: <a href=\"https://www.cert.se/2026/06/nu-samlas-cyberverksamheten-hos-nationellt-cyb…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
