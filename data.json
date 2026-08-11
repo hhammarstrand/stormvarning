@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-11T14:03:02.603Z",
-  "next_update": "2026-08-11T14:07:00.000Z",
+  "updated": "2026-08-11T15:14:26.326Z",
+  "next_update": "2026-08-11T15:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktiva och kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, såsom de i SonicWall SMA1000 och JetBrains TeamCity, är aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessutom har det rapporterats om koordinerade leveranskedjeangrepp och skadlig kod som sprids via JavaScript-ekosystemet, vilket ökar risken för påverkan på svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att motivera en förhöjd beredskap.",
+  "reasoning": "Flera kritiska och aktivt utnyttjade sårbarheter har identifierats med tydlig svensk koppling, inklusive SonicWall SMA1000 och skadliga npm-paket. CERT-SE har utfärdat varningar om dessa hot, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
   "score": 83,
   "indicators": {
     "total_signals": 24,
@@ -17,8 +17,8 @@
   },
   "anomaly": {
     "active": false,
-    "baseline": 94,
-    "delta": -11
+    "baseline": 93,
+    "delta": -10
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
