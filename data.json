@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-12T17:36:27.975Z",
-  "next_update": "2026-08-12T17:37:00.000Z",
+  "updated": "2026-08-12T18:35:38.837Z",
+  "next_update": "2026-08-12T18:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 som är aktivt utnyttjade och har lagts till i CISA:s KEV-katalog. Det finns också rapporter om koordinerade leveranskedjeangrepp mot svenska GitHub-repon och pågående attacker mot brandväggar, vilket indikerar en aktiv hotbild mot svenska mål. Dessa signaler, tillsammans med CERT-SE:s varningar, tyder på en förhöjd risk för svenska organisationer.",
-  "score": 87,
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska mål. Detta motiverar en förhöjd beredskap på gul nivå.",
+  "score": 88,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 4,
     "sweden_acute": 3,
-    "actively_exploited": 14,
+    "actively_exploited": 15,
     "critical": 5,
-    "authority_alerts": 10,
+    "authority_alerts": 9,
     "kev_recent": 4
   },
   "anomaly": {
     "active": false,
     "baseline": 88,
-    "delta": -1
+    "delta": 0
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -127,6 +127,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-8037"
+      }
+    },
+    {
+      "title": "Lazarus Exploits Windows Zero-Day to Gain SYSTEM Access and Deploy Backdoor",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-12T17:39:27.000Z",
+      "link": "https://thehackernews.com/2026/08/lazarus-exploits-windows-zero-day-to.html",
+      "summary": "The North Korean threat actor known as Lazarus Group has been attributed to the zero-day exploitation of a newly patched security flaw impacting Microsoft Windows to deliver a never-before-seen backdoor targeting defense and aerospace companies across France, Germany, Brazil, an…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -366,21 +381,6 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.32",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-07T11:37:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
-      "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
