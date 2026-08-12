@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-12T09:46:11.125Z",
-  "next_update": "2026-08-12T10:07:00.000Z",
+  "updated": "2026-08-12T11:09:08.524Z",
+  "next_update": "2026-08-12T11:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och Microsoft SharePoint, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Dessutom har det rapporterats om koordinerade leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bekräftade incidenter av storskalig omfattning, är det uppenbart att Sverige är i fokus för aktiva hotaktörer.",
-  "score": 87,
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i Microsoft SharePoint, som är aktivt utnyttjade och har en direkt svensk koppling genom CERT-SE:s varningar. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det nödvändigt att vara försiktig med tanke på de rapporterade aktiviteterna och de potentiella konsekvenserna för svensk kritisk infrastruktur.",
+  "score": 88,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 5,
     "sweden_acute": 3,
-    "actively_exploited": 13,
+    "actively_exploited": 14,
     "critical": 6,
-    "authority_alerts": 11,
+    "authority_alerts": 10,
     "kev_recent": 4
   },
   "anomaly": {
     "active": false,
-    "baseline": 90,
-    "delta": -3
+    "baseline": 89,
+    "delta": -1
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -142,6 +142,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-8037"
+      }
+    },
+    {
+      "title": "New Microsoft Defender 'ShieldBreak' zero-day grants SYSTEM privileges",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-12T10:15:22.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldbreak-zero-day-grants-system-privileges/",
+      "summary": "Nightmare Eclipse has released a new Microsoft Defender zero-day exploit named \"ShieldBreak\" after Microsoft released the August 2026 Patch Tuesday security updates. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -366,21 +381,6 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Ny skadlig kod sprids genom JavaScript ekosystemet - Chaindrop",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-05T09:00:00.000Z",
-      "link": "https://www.cert.se/2026/08/ny-skadlig-kod-sprids-genom-javascript-ekosystemet-chaindrop.html",
-      "summary": "<p>En ny självreplikerande skadlig kod, Chaindrop, har blivit uppmärksammat av bland annat StepSecurity [1]. Chaindrop påverkar över 400 paket i JavaScript ekosystemet.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
