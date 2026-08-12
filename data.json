@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-12T12:29:17.661Z",
-  "next_update": "2026-08-12T12:37:00.000Z",
+  "updated": "2026-08-12T14:03:47.463Z",
+  "next_update": "2026-08-12T14:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och Microsoft Defender, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Dessutom har det rapporterats om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att höja nivån till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, inklusive i svenska sammanhang. CERT-SE har utfärdat varningar om pågående angrepp, såsom det koordinerade leveranskedjeangreppet mot AsyncAPI GitHub-repon och kritiska sårbarheter i SonicWall SMA1000. Även om det inte finns bekräftade incidenter i stor skala, är det en tydlig svensk koppling till flera av signalerna, vilket motiverar en förhöjd beredskap.",
   "score": 87,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 6,
     "sweden_acute": 3,
     "actively_exploited": 13,
-    "critical": 6,
-    "authority_alerts": 10,
+    "critical": 5,
+    "authority_alerts": 11,
     "kev_recent": 4
   },
   "anomaly": {
@@ -370,17 +370,17 @@
       }
     },
     {
-      "title": "ThreatsDay: Odysseus RCE, Samsung One-Click Takeover, iCloud Backdoor Fight + 27 More Stories",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-06T15:24:31.000Z",
-      "link": "https://thehackernews.com/2026/08/threatsday-odysseus-rce-samsung-one.html",
-      "summary": "Apparently, opening the thing is now enough. A repo can run before the first prompt, a package can hide among hundreds, and a harmless-looking PDF can finish the job. This week runs on cheap leverage: exposed servers, recycled bugs, poisoned agent instructions, remote-access too…",
+      "title": "Ny skadlig kod sprids genom JavaScript ekosystemet - Chaindrop",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-05T09:00:00.000Z",
+      "link": "https://www.cert.se/2026/08/ny-skadlig-kod-sprids-genom-javascript-ekosystemet-chaindrop.html",
+      "summary": "<p>En ny självreplikerande skadlig kod, Chaindrop, har blivit uppmärksammat av bland annat StepSecurity [1]. Chaindrop påverkar över 400 paket i JavaScript ekosystemet.</p>",
       "flags": {
         "activelyExploited": false,
-        "critical": true,
+        "critical": false,
         "incident": false,
-        "swedenRelevant": false,
+        "swedenRelevant": true,
         "cve": null
       }
     }
