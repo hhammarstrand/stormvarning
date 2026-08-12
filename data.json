@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-12T06:38:41.320Z",
-  "next_update": "2026-08-12T07:07:00.000Z",
+  "updated": "2026-08-12T08:36:48.512Z",
+  "next_update": "2026-08-12T08:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk, särskilt CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa har en tydlig svensk koppling och är aktivt utnyttjade. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska organisationer. Internationella rapporter om aktivt utnyttjade sårbarheter, som Microsoft SharePoint-felen, förstärker detta hot.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i Microsoft SharePoint, som är aktivt utnyttjade. CERT-SE har utfärdat varningar om pågående angrepp, särskilt riktade mot svenska mål, vilket indikerar en tydlig svensk koppling. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktiva hot och incidenter anledning till oro.",
   "score": 87,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 3,
-    "actively_exploited": 12,
+    "actively_exploited": 13,
     "critical": 6,
-    "authority_alerts": 12,
+    "authority_alerts": 11,
     "kev_recent": 4
   },
   "anomaly": {
@@ -145,6 +145,36 @@
       }
     },
     {
+      "title": "ShieldBreak Zero-Day PoC Claims Microsoft Defender Patch Bypass With SYSTEM Access",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-12T06:41:38.000Z",
+      "link": "https://thehackernews.com/2026/08/shieldbreak-zero-day-poc-claims.html",
+      "summary": "The security researcher going by the name Chaotic Eclipse (aka INFINITE NIGHTMARE, MSNightmare, and Nightmare-Eclipse) has released a proof-of-concept (PoC) for a new Microsoft zero-day called ShieldBreak. The vulnerability, rooted in Microsoft Defender for Windows, demonstrates…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Cisco ASA and FTD Flaw Exploited in the Wild Can Trigger Remote DoS",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-12T06:15:58.000Z",
+      "link": "https://thehackernews.com/2026/08/cisco-asa-and-ftd-flaw-exploited-in.html",
+      "summary": "Cisco has warned that a new vulnerability impacting Secure Firewall Adaptive Security Appliance (ASA) Software and Secure Firewall Threat Defense (FTD) Software has been exploited in the wild. The high-severity flaw, tracked as CVE-2026-20349 (CVSS score: 8.6), is a case of insu…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-20349"
+      }
+    },
+    {
       "title": "Microsoft Patches 398 Flaws Including a Windows Driver Zero-Day Under Active Attack",
       "source": "The Hacker News",
       "region": "INT",
@@ -235,21 +265,6 @@
       }
     },
     {
-      "title": "AI Recommendation Poisoning: How \"Ask AI\" Buttons Silently Alter LLM Memory",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-06T11:30:00.000Z",
-      "link": "https://thehackernews.com/2026/08/ai-recommendation-poisoning-how-ask-ai.html",
-      "summary": "A new class of prompt injection is spreading across commercial websites. It requires no malware, no stolen credentials, and no zero-day exploit. It abuses a standard feature built into almost every major AI assistant: pre-filled deep links. We observed production websites embedd…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -261,6 +276,21 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Patchtisdag augusti 2026 – samlad information om månadens säkerhetsuppdateringar",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-12T08:10:00.000Z",
+      "link": "https://www.cert.se/2026/08/patchtisdag-augusti-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för augusti. Tidigare har CERT-SE gjort ett urval på sårbarheterna som släppts. På grund av de släppta sårbarheternas volym rekommenderar CERT-SE att sätta upp egna rutiner för sårbarhetshantering.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
         "cve": null
       }
     },
@@ -346,36 +376,6 @@
       "date": "2026-08-05T09:00:00.000Z",
       "link": "https://www.cert.se/2026/08/ny-skadlig-kod-sprids-genom-javascript-ekosystemet-chaindrop.html",
       "summary": "<p>En ny självreplikerande skadlig kod, Chaindrop, har blivit uppmärksammat av bland annat StepSecurity [1]. Chaindrop påverkar över 400 paket i JavaScript ekosystemet.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-07-15T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/07/patchtisdag-juli-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juli. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.26",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-26T12:55:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
-      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
