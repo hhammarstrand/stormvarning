@@ -1,16 +1,16 @@
 {
-  "updated": "2026-08-13T20:58:23.729Z",
-  "next_update": "2026-08-13T21:07:00.000Z",
+  "updated": "2026-08-13T21:58:02.582Z",
+  "next_update": "2026-08-13T22:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 som är aktivt utnyttjade och finns i CISA:s KEV-katalog. Dessutom har CERT-SE rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en aktiv svensk koppling. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktiva hot och incidenter med svensk koppling tillräckligt för att motivera en förhöjd beredskap.",
-  "score": 88,
+  "summary": "Förhöjt hotläge mot Sverige p.g.a. flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera signaler med tydlig svensk koppling, inklusive kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa incidenter, tillsammans med aktivt utnyttjade sårbarheter i kritiska system som Cisco ASA och FTD, indikerar en förhöjd risk för cyberattacker mot svenska mål. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
+  "score": 87,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 3,
-    "actively_exploited": 13,
+    "actively_exploited": 12,
     "critical": 7,
     "authority_alerts": 10,
     "kev_recent": 4
@@ -18,7 +18,7 @@
   "anomaly": {
     "active": false,
     "baseline": 87,
-    "delta": 1
+    "delta": 0
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -172,21 +172,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Lazarus hackers exploited Windows zero-day to target defense firms",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-12T15:38:08.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/lazarus-hackers-exploited-windows-zero-day-to-target-defense-firms/",
-      "summary": "North Korean hackers have been exploiting a Windows zero-day vulnerability (CVE-2026-68820) to target defense-sector companies as part of the Operation Dream Job campaign. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-68820"
       }
     },
     {
@@ -382,6 +367,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-55040"
+      }
+    },
+    {
+      "title": "BdThemes Supply Chain Attack Poisons JSON to Create Rogue WordPress Admins",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-11T05:48:44.000Z",
+      "link": "https://thehackernews.com/2026/08/bdthemes-supply-chain-attack-poisons.html",
+      "summary": "Cybersecurity researchers have warned of a supply chain compromise impacting WordPress plugin vendor BdThemes, prompting the content management systems (CMS) platform's plugins team to temporarily disable their downloads. \"Unlike traditional software supply chain attacks, zero s…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
       }
     }
   ],
