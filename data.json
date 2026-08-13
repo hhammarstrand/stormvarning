@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-13T17:35:44.787Z",
-  "next_update": "2026-08-13T17:37:00.000Z",
+  "updated": "2026-08-13T18:35:57.173Z",
+  "next_update": "2026-08-13T18:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av upptäckta kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler med tydlig svensk koppling, inklusive kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa incidenter, tillsammans med internationella rapporter om aktivt utnyttjade sårbarheter, indikerar en förhöjd risk för cyberattacker mot svenska mål. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna.",
-  "score": 87,
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en tydlig risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de aktiva hoten och de svenska myndigheternas varningar.",
+  "score": 88,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 3,
-    "actively_exploited": 12,
+    "actively_exploited": 13,
     "critical": 7,
     "authority_alerts": 10,
     "kev_recent": 4
   },
   "anomaly": {
     "active": false,
-    "baseline": 87,
-    "delta": 1
+    "baseline": 86,
+    "delta": 2
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -127,6 +127,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-8037"
+      }
+    },
+    {
+      "title": "Microsoft patches LegacyHive Windows zero-day vulnerability",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-13T17:46:20.000Z",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-legacyhive-windows-zero-day-vulnerability/",
+      "summary": "Microsoft has released security patches to address a Windows zero-day vulnerability known as \"LegacyHive,\" disclosed after the July 2026 Patch Tuesday. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-55040"
-      }
-    },
-    {
-      "title": "BdThemes Supply Chain Attack Poisons JSON to Create Rogue WordPress Admins",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-11T05:48:44.000Z",
-      "link": "https://thehackernews.com/2026/08/bdthemes-supply-chain-attack-poisons.html",
-      "summary": "Cybersecurity researchers have warned of a supply chain compromise impacting WordPress plugin vendor BdThemes, prompting the content management systems (CMS) platform's plugins team to temporarily disable their downloads. \"Unlike traditional software supply chain attacks, zero s…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
       }
     }
   ],
