@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-14T09:41:43.460Z",
-  "next_update": "2026-08-14T10:07:00.000Z",
+  "updated": "2026-08-14T11:06:19.666Z",
+  "next_update": "2026-08-14T11:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktiva och kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och skadliga npm-paket, har identifierats med tydlig svensk koppling. Dessa utgör en akut risk för svenska organisationer och CERT-SE har utfärdat varningar. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska mål. Detta motiverar en förhöjd beredskap.",
   "score": 86,
   "indicators": {
     "total_signals": 24,
@@ -310,21 +310,6 @@
       }
     },
     {
-      "title": "Hackers exploit critical Adobe Commerce flaw to hijack customer accounts",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-12T20:54:59.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-adobe-commerce-flaw-to-hijack-customer-accounts/",
-      "summary": "Attempts to exploit a critical vulnerability (CVE-2026-71362) in Adobe's Commerce and Magento e-commerce platforms have been detected, potentially allowing attackers to hijack customer accounts. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-71362"
-      }
-    },
-    {
       "title": "Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws",
       "source": "The Hacker News",
       "region": "INT",
@@ -380,6 +365,21 @@
         "activelyExploited": false,
         "critical": false,
         "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-07T12:56:23.000Z",
+      "link": "https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html",
+      "summary": "WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrato…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
