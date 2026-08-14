@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-14T08:34:38.273Z",
-  "next_update": "2026-08-14T08:37:00.000Z",
+  "updated": "2026-08-14T09:41:43.460Z",
+  "next_update": "2026-08-14T10:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket med tydlig svensk koppling. Dessa är aktiva hot som CERT-SE har uppmärksammat. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska organisationer.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktiva och kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och skadliga npm-paket, har identifierats med tydlig svensk koppling. Dessa utgör en akut risk för svenska organisationer och CERT-SE har utfärdat varningar. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 86,
   "indicators": {
     "total_signals": 24,
@@ -270,7 +270,7 @@
       "region": "SE",
       "date": "2026-08-14T08:20:00.000Z",
       "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v33.html",
-      "summary": "<p>I veckans veckobrev kan du bland annat läsa om fortsatta utmaningar med AI-modeller som via AI-agenter agerar utanför de tänkta testmiljöerna, samt rapporter om en ökning av mer kraftfulla överbelastningsangrepp.</p>",
+      "summary": "<p>I veckans veckobrev kan du bland annat läsa om fortsatta utmaningar med AI-modeller som agerar utanför de tänkta testmiljöerna, samt rapporter om en ökning av mer kraftfulla överbelastningsangrepp.</p>",
       "flags": {
         "activelyExploited": false,
         "critical": false,
