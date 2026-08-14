@@ -1,19 +1,19 @@
 {
-  "updated": "2026-08-13T23:53:27.941Z",
-  "next_update": "2026-08-14T00:07:00.000Z",
+  "updated": "2026-08-14T02:40:07.646Z",
+  "next_update": "2026-08-14T03:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige med flera aktiva attacker och kritiska sårbarheter.",
-  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive två som är specifikt kopplade till Sverige (SonicWall SMA1000 och AsyncAPI GitHub-repon). Dessa signaler, tillsammans med CERT-SE:s varningar om pågående attacker mot brandväggar och leveranskedjeangrepp, tyder på en förhöjd risk för cyberattacker mot svenska mål. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för framtida attacker. Detta motiverar en förhöjd beredskap.",
   "score": 87,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 3,
-    "actively_exploited": 12,
-    "critical": 7,
-    "authority_alerts": 10,
-    "kev_recent": 4
+    "actively_exploited": 11,
+    "critical": 8,
+    "authority_alerts": 9,
+    "kev_recent": 3
   },
   "anomaly": {
     "active": false,
@@ -112,21 +112,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-72898"
-      }
-    },
-    {
-      "title": "CVE-2026-8037: Progress LoadMaster Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-07T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-8037",
-      "summary": "Progress LoadMaster – Progress LoadMaster contains a command injection vulnerability that allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-8037"
       }
     },
     {
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-07T12:56:23.000Z",
+      "link": "https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html",
+      "summary": "WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrato…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 4
+      "count": 3
     },
     {
       "name": "CISA",
