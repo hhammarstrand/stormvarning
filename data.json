@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-14T11:55:40.428Z",
-  "next_update": "2026-08-14T12:07:00.000Z",
+  "updated": "2026-08-14T13:35:23.014Z",
+  "next_update": "2026-08-14T13:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige pga flera aktiva attacker och kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera högprioriterade signaler från CERT-SE indikerar pågående attacker mot svenska mål, inklusive kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivt utnyttjande av sårbarheter som kan påverka svensk infrastruktur. Detta, tillsammans med internationella rapporter om aktivt utnyttjade kritiska sårbarheter, motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige p.g.a. flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i VMware vCenter, med aktivt utnyttjande globalt. CERT-SE har rapporterat om pågående leveranskedjeangrepp mot svenska GitHub-repon och fortsatta utmaningar med brandväggar, vilket indikerar en svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att höja nivån till 'gul'.",
   "score": 86,
   "indicators": {
     "total_signals": 24,
