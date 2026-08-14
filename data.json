@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-14T13:35:23.014Z",
-  "next_update": "2026-08-14T13:37:00.000Z",
+  "updated": "2026-08-14T14:37:38.694Z",
+  "next_update": "2026-08-14T15:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige p.g.a. flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i VMware vCenter, med aktivt utnyttjande globalt. CERT-SE har rapporterat om pågående leveranskedjeangrepp mot svenska GitHub-repon och fortsatta utmaningar med brandväggar, vilket indikerar en svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att höja nivån till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket som påverkar svenska aktörer. Dessa händelser, tillsammans med CERT-SE:s varningar och den ökade aktiviteten kring brandväggar, tyder på en ökad risk för svenska organisationer. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
   "score": 86,
   "indicators": {
     "total_signals": 24,
@@ -265,6 +265,21 @@
       }
     },
     {
+      "title": "Max severity SAP Commerce Cloud flaw now targeted in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-14T13:45:18.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/max-severity-sap-commerce-cloud-flaw-now-targeted-in-attacks/",
+      "summary": "A maximum-severity SAP Commerce Cloud remote code execution vulnerability patched three days ago is already being targeted in attacks, according to threat intelligence company Defused. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "CERT-SE:s veckobrev v.33",
       "source": "CERT-SE",
       "region": "SE",
@@ -365,21 +380,6 @@
         "activelyExploited": false,
         "critical": false,
         "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-07T12:56:23.000Z",
-      "link": "https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html",
-      "summary": "WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrato…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
