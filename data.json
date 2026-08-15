@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-15T20:57:08.129Z",
-  "next_update": "2026-08-15T21:07:00.000Z",
+  "updated": "2026-08-15T21:31:34.956Z",
+  "next_update": "2026-08-15T21:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling. Dessutom har CERT-SE rapporterat om pågående leveranskedjeangrepp mot svenska GitHub-repon och fortsatta utmaningar med brandväggar, vilket indikerar en ökad risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack, är det förhöjda antalet incidenter och sårbarheter med svensk koppling tillräckligt för att höja nivån till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive i SonicWall SMA1000 och Microsoft Windows, har identifierats och är aktivt utnyttjade, vilket innebär en förhöjd risk. CERT-SE har utfärdat varningar om pågående attacker, såsom det koordinerade leveranskedjeangreppet mot AsyncAPI GitHub-repon och angrepp mot brandväggar, vilket indikerar en svensk koppling. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de många aktiva hoten.",
   "score": 86,
   "indicators": {
     "total_signals": 24,
