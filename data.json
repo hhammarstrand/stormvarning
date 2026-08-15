@@ -1,24 +1,24 @@
 {
-  "updated": "2026-08-15T13:38:37.232Z",
-  "next_update": "2026-08-15T14:07:00.000Z",
+  "updated": "2026-08-15T14:34:46.171Z",
+  "next_update": "2026-08-15T14:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler visar på pågående aktivt utnyttjande av kritiska sårbarheter, inklusive två som är specifikt kopplade till Sverige (SonicWall SMA1000 och AsyncAPI GitHub-repon). Dessa utgör en tydlig risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet myndighetsvarningar och aktivt utnyttjade sårbarheter med svensk koppling tillräckligt för att motivera en förhöjd beredskap.",
-  "score": 87,
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling. Dessutom har CERT-SE rapporterat om pågående leveranskedjeangrepp mot svenska GitHub-repon och utmaningar med brandväggar, vilket indikerar en ökad risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack, är det förhöjda antalet incidenter och sårbarheter med svensk koppling tillräckligt för att höja nivån till 'gul'.",
+  "score": 86,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 6,
     "sweden_acute": 3,
     "actively_exploited": 11,
-    "critical": 8,
-    "authority_alerts": 10,
+    "critical": 7,
+    "authority_alerts": 11,
     "kev_recent": 3
   },
   "anomaly": {
     "active": false,
     "baseline": 87,
-    "delta": 0
+    "delta": -1
   },
   "level_since": "2026-07-15T08:39:45.453Z",
   "de_escalation": null,
@@ -295,21 +295,6 @@
       }
     },
     {
-      "title": "Critical VMware vCenter RCE flaw exploited for reverse SSH access",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-13T16:40:23.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-vmware-vcenter-rce-flaw-exploited-for-reverse-ssh-access/",
-      "summary": "A recently patched critical vulnerability (CVE-2026-59310) in VMware vCenter Syslog Server is being exploited in an active campaign to deploy a reverse SSH tool for persistence and remote access. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-59310"
-      }
-    },
-    {
       "title": "Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws",
       "source": "The Hacker News",
       "region": "INT",
@@ -381,6 +366,21 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.32",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-07T11:37:00.000Z",
+      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
+      "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
         "cve": null
       }
     }
