@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-16T16:37:56.276Z",
-  "next_update": "2026-08-16T17:07:00.000Z",
+  "updated": "2026-08-16T17:30:36.133Z",
+  "next_update": "2026-08-16T17:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktiva sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Även om det inte finns bekräftade attacker mot svensk kritisk infrastruktur, är CERT-SE:s varningar och CISA KEV-katalogens inkludering av aktivt utnyttjade sårbarheter oroväckande. Detta, tillsammans med ökade rapporter om överbelastningsangrepp, motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och skadliga npm-paket, har identifierats med tydlig svensk koppling och CERT-SE har utfärdat varningar. Även om det finns flera aktivt utnyttjade sårbarheter globalt, är det de svenska myndighetsvarningarna och de specifika incidenterna som motiverar en förhöjd nivå. Det finns dock inte tillräckligt med bekräftade incidenter för att motivera en 'röd' nivå.",
   "score": 86,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 3,
-    "actively_exploited": 11,
+    "actively_exploited": 10,
     "critical": 7,
-    "authority_alerts": 11,
+    "authority_alerts": 12,
     "kev_recent": 3
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 86,
     "delta": 0
   },
-  "level_since": "2026-07-15T15:57:06.122Z",
+  "level_since": "2026-07-15T17:08:20.629Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -112,21 +112,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-72898"
-      }
-    },
-    {
-      "title": "Microsoft patches LegacyHive Windows zero-day vulnerability",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-13T17:46:20.000Z",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-patches-legacyhive-windows-zero-day-vulnerability/",
-      "summary": "Microsoft has released security patches to address a Windows zero-day vulnerability known as \"LegacyHive,\" disclosed after the July 2026 Patch Tuesday. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
@@ -376,6 +361,21 @@
       "date": "2026-08-07T11:37:00.000Z",
       "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
       "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Ny skadlig kod sprids genom JavaScript ekosystemet - Chaindrop",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-05T09:00:00.000Z",
+      "link": "https://www.cert.se/2026/08/ny-skadlig-kod-sprids-genom-javascript-ekosystemet-chaindrop.html",
+      "summary": "<p>En ny självreplikerande skadlig kod, Chaindrop, har blivit uppmärksammat av bland annat StepSecurity [1]. Chaindrop påverkar över 400 paket i JavaScript ekosystemet.</p>",
       "flags": {
         "activelyExploited": false,
         "critical": false,
