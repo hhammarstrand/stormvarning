@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-17T17:38:35.952Z",
-  "next_update": "2026-08-17T18:07:00.000Z",
+  "updated": "2026-08-17T18:54:00.407Z",
+  "next_update": "2026-08-17T19:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, såsom de i SonicWall SMA1000 och Ray-Project Ray, har identifierats och är aktivt utnyttjade, vilket innebär en potentiell risk för svenska organisationer. Dessutom har CERT-SE rapporterat om pågående leveranskedjeangrepp och attacker mot brandväggar, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet svenska myndighetsvarningar och aktivt utnyttjade sårbarheter tillräckligt för att höja hotnivån till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket, vilket tyder på aktivt utnyttjande med svensk koppling. Dessutom har CISA KEV katalogen identifierat flera aktivt utnyttjade sårbarheter, vilket ökar den övergripande risken. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
   "score": 87,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 86,
     "delta": 1
   },
-  "level_since": "2026-07-17T17:42:56.077Z",
+  "level_since": "2026-07-17T19:23:53.950Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -73,7 +73,7 @@
       "title": "CVE-2025-62593: Ray-Project Ray Code Injection Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
-      "date": "2026-08-18T00:00:00.000Z",
+      "date": "2026-08-17T00:00:00.000Z",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-62593",
       "summary": "Ray-Project Ray – Ray-Project Ray contains a code injection vulnerability that could allow remote code execution. Developers using Ray as a development tool may be exposed to this vulnerability exploitable through Firefox and Safari.",
       "flags": {
