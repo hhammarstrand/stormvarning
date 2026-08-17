@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-17T03:09:29.207Z",
-  "next_update": "2026-08-17T03:37:00.000Z",
+  "updated": "2026-08-17T04:23:12.141Z",
+  "next_update": "2026-08-17T04:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i Siemens Siveillance Video, med en tydlig svensk koppling. Dessutom har CERT-SE rapporterat om pågående leveranskedjeangrepp mot svenska GitHub-repon och utnyttjande av brandväggsläckor, vilket indikerar en aktiv hotbild mot svenska mål. Även om det inte finns bevis för en storskalig attack, är det förhöjda antalet svenska myndighetsvarningar och aktivt utnyttjade sårbarheter med svensk koppling tillräckligt för att motivera en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i Siemens Siveillance Video, med svensk koppling genom CERT-SE:s varningar. Dessutom har en koordinerad attack mot svenska AsyncAPI GitHub-repon rapporterats, vilket indikerar aktivt utnyttjande riktat mot svenska mål. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att höja nivån till 'gul'.",
   "score": 86,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 86,
     "delta": 0
   },
-  "level_since": "2026-07-16T14:53:05.220Z",
+  "level_since": "2026-07-16T16:08:04.171Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
