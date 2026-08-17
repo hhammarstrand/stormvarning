@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-17T10:08:00.597Z",
-  "next_update": "2026-08-17T10:37:00.000Z",
+  "updated": "2026-08-17T10:59:58.229Z",
+  "next_update": "2026-08-17T11:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive i SonicWall SMA1000 och Microsoft Windows, har identifierats och är aktivt utnyttjade. CERT-SE har utfärdat varningar om dessa hot, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är risken för pågående attacker mot svenska organisationer förhöjd. Detta motiverar en förhöjd beredskap och nivån sätts till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i Microsoft Windows, som är aktivt utnyttjade och har en direkt koppling till Sverige. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivt utnyttjande som kan påverka svensk kritisk infrastruktur.",
   "score": 86,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 8,
     "sweden_acute": 3,
-    "actively_exploited": 11,
+    "actively_exploited": 10,
     "critical": 7,
-    "authority_alerts": 11,
+    "authority_alerts": 13,
     "kev_recent": 3
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 86,
     "delta": 0
   },
-  "level_since": "2026-07-16T22:44:24.305Z",
+  "level_since": "2026-07-16T23:44:52.336Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -66,6 +66,21 @@
         "critical": false,
         "incident": true,
         "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "GeoServer Zero-Day Targeted in Active Exploitation Attempts, Can Lead to RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-13T18:45:12.000Z",
+      "link": "https://thehackernews.com/2026/08/unpatched-geoserver-zero-day-targeted.html",
+      "summary": "A newly disclosed zero-day flaw in GeoServer is seeing active exploitation efforts, per watchTowr. The vulnerability, which has yet to be assigned a CVE identifier, is an SQL injection vulnerability in the open-source platform that can lead to remote code execution (RCE). The se…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
         "cve": null
       }
     },
@@ -220,36 +235,6 @@
       }
     },
     {
-      "title": "Metabase Zero-Day Exploited in Wild Allows Admin Access Without Authentication",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-08T06:58:31.000Z",
-      "link": "https://thehackernews.com/2026/08/metabase-zero-day-exploited-in-wild.html",
-      "summary": "Metabase has warned that a maximum-severity security flaw impacting its business intelligence and data visualization software package has been exploited in the wild as a zero-day. The vulnerability (CVSS score: 10.0), which does not carry a CVE identifier, allows an unauthentica…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "AI-Assisted HTTP Terminator Finds Novel HTTP Desync Techniques and Apache Zero-Day",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-07T10:09:54.000Z",
-      "link": "https://thehackernews.com/2026/08/ai-assisted-http-terminator-finds-novel.html",
-      "summary": "PortSwigger says HTTP Terminator, an artificial intelligence (AI)-assisted research system built by James Kettle, generated and proved new HTTP desynchronization techniques after exploring 30,000 candidate desync vectors. PortSwigger said a separate human-guided discovery cascad…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -355,27 +340,42 @@
       }
     },
     {
-      "title": "New WordPress Pre-Auth XSS Could Lead to PHP Code Execution - Patch ASAP",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-07T12:56:23.000Z",
-      "link": "https://thehackernews.com/2026/08/new-wordpress-pre-auth-xss-could-lead.html",
-      "summary": "WordPress has fixed a pre-authentication reflected cross-site scripting (XSS) flaw in its login screen that affects every version of the content management system. pwn.ai demonstrated how the flaw can be chained into PHP code execution on the server when a logged-in administrato…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "CERT-SE:s veckobrev v.32",
       "source": "CERT-SE",
       "region": "SE",
       "date": "2026-08-07T11:37:00.000Z",
       "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
       "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Ny skadlig kod sprids genom JavaScript ekosystemet - Chaindrop",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-05T09:00:00.000Z",
+      "link": "https://www.cert.se/2026/08/ny-skadlig-kod-sprids-genom-javascript-ekosystemet-chaindrop.html",
+      "summary": "<p>En ny självreplikerande skadlig kod, Chaindrop, har blivit uppmärksammat av bland annat StepSecurity [1]. Chaindrop påverkar över 400 paket i JavaScript ekosystemet.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-07-15T11:30:00.000Z",
+      "link": "https://www.cert.se/2026/07/patchtisdag-juli-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juli. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
