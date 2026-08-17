@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-16T23:52:30.927Z",
-  "next_update": "2026-08-17T00:07:00.000Z",
+  "updated": "2026-08-17T01:52:15.031Z",
+  "next_update": "2026-08-17T02:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svenska myndigheters områden.",
-  "reasoning": "Flera kritiska sårbarheter, såsom de i SonicWall SMA1000 och Microsoft Windows, är aktivt utnyttjade och har identifierats av CERT-SE och CISA KEV. Det finns också rapporter om koordinerade leveranskedjeangrepp och attacker mot brandväggar, vilket är särskilt oroande för svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i stor skala i Sverige, är det uppenbara hoten mot svenska myndigheter och system tillräckliga för att motivera en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i Siemens Siveillance Video, med en tydlig svensk koppling. Dessutom har CERT-SE rapporterat om pågående attacker mot svenska organisationer, såsom det koordinerade leveranskedjeangreppet mot separata AsyncAPI GitHub-repon. Dessa signaler, tillsammans med den ökade aktiviteten av aktivt utnyttjade sårbarheter globalt, indikerar ett förhöjt hotläge för Sverige.",
   "score": 86,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 86,
     "delta": 0
   },
-  "level_since": "2026-07-16T11:14:50.915Z",
+  "level_since": "2026-07-16T12:56:46.890Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
