@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-17T10:59:58.229Z",
-  "next_update": "2026-08-17T11:07:00.000Z",
+  "updated": "2026-08-17T11:36:02.539Z",
+  "next_update": "2026-08-17T11:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i Microsoft Windows, som är aktivt utnyttjade och har en direkt koppling till Sverige. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivt utnyttjande som kan påverka svensk kritisk infrastruktur.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och GeoServer, är aktivt utnyttjade och CERT-SE har utfärdat varningar om pågående attacker mot svenska mål, såsom skadliga npm-paket och angrepp mot brandväggar. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivitet som riktar sig mot svenska system och infrastruktur.",
   "score": 86,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 86,
     "delta": 0
   },
-  "level_since": "2026-07-16T23:44:52.336Z",
+  "level_since": "2026-07-17T01:19:57.249Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
