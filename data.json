@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-17T14:39:28.596Z",
-  "next_update": "2026-08-17T15:07:00.000Z",
+  "updated": "2026-08-17T15:35:30.161Z",
+  "next_update": "2026-08-17T15:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och Ray-Project Ray, är aktivt utnyttjade och har identifierats av CERT-SE och CISA KEV, vilket indikerar en hög risk. Dessutom har CERT-SE rapporterat om pågående leveranskedjeangrepp mot svenska GitHub-repon, vilket visar en direkt svensk koppling. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet aktiva hot och svenska incidenter tillräckligt för att motivera en gul nivå.",
-  "score": 88,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, såsom de i SonicWall SMA1000 och Ray-Project Ray, har identifierats och är aktivt utnyttjade, vilket innebär en potentiell risk för svenska organisationer. Dessutom har CERT-SE rapporterat om pågående leveranskedjeangrepp och attacker mot brandväggar, vilket indikerar en aktiv hotbild mot Sverige. Även om det inte finns bekräftade incidenter i stor skala, är det tillräckligt med svenska kopplingar och aktivt utnyttjade sårbarheter för att motivera en förhöjd beredskap.",
+  "score": 87,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 3,
     "actively_exploited": 12,
-    "critical": 8,
-    "authority_alerts": 12,
+    "critical": 7,
+    "authority_alerts": 13,
     "kev_recent": 4
   },
   "anomaly": {
     "active": false,
     "baseline": 86,
-    "delta": 2
+    "delta": 1
   },
-  "level_since": "2026-07-17T11:08:41.950Z",
+  "level_since": "2026-07-17T12:46:08.142Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -280,21 +280,6 @@
       }
     },
     {
-      "title": "Max severity SAP Commerce Cloud flaw now targeted in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-14T13:45:18.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/max-severity-sap-commerce-cloud-flaw-now-targeted-in-attacks/",
-      "summary": "A maximum-severity SAP Commerce Cloud remote code execution vulnerability patched three days ago is already being targeted in attacks, according to threat intelligence company Defused. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "CERT-SE:s veckobrev v.33",
       "source": "CERT-SE",
       "region": "SE",
@@ -376,6 +361,21 @@
       "date": "2026-08-07T11:37:00.000Z",
       "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
       "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Ny skadlig kod sprids genom JavaScript ekosystemet - Chaindrop",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-05T09:00:00.000Z",
+      "link": "https://www.cert.se/2026/08/ny-skadlig-kod-sprids-genom-javascript-ekosystemet-chaindrop.html",
+      "summary": "<p>En ny självreplikerande skadlig kod, Chaindrop, har blivit uppmärksammat av bland annat StepSecurity [1]. Chaindrop påverkar över 400 paket i JavaScript ekosystemet.</p>",
       "flags": {
         "activelyExploited": false,
         "critical": false,
