@@ -1,17 +1,17 @@
 {
-  "updated": "2026-08-17T18:54:00.407Z",
-  "next_update": "2026-08-17T19:07:00.000Z",
+  "updated": "2026-08-17T19:36:11.532Z",
+  "next_update": "2026-08-17T19:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket, vilket tyder på aktivt utnyttjande med svensk koppling. Dessutom har CISA KEV katalogen identifierat flera aktivt utnyttjade sårbarheter, vilket ökar den övergripande risken. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med tydlig svensk koppling.",
+  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en pågående attack mot separata AsyncAPI GitHub-repon. CERT-SE har utfärdat varningar om dessa hot, vilket ger en tydlig svensk koppling. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de aktiva utnyttjandena och de kritiska sårbarheterna.",
   "score": 87,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
     "sweden_acute": 3,
-    "actively_exploited": 12,
-    "critical": 7,
+    "actively_exploited": 11,
+    "critical": 8,
     "authority_alerts": 13,
     "kev_recent": 4
   },
@@ -20,7 +20,7 @@
     "baseline": 86,
     "delta": 1
   },
-  "level_since": "2026-07-17T19:23:53.950Z",
+  "level_since": "2026-07-17T20:31:35.664Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -250,21 +250,6 @@
       }
     },
     {
-      "title": "⚡ Weekly Recap: AI Goes Rogue, Metabase 0-Day, MCP Supply-Chain Attacks, and Router Backdoors",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-10T15:00:29.000Z",
-      "link": "https://thehackernews.com/2026/08/weekly-recap-ai-goes-rogue-metabase-0.html",
-      "summary": "A lot of security problems still begin with someone doing a completely normal thing. Cloning a repo. Answering a call. Leaving a box exposed. Trusting the default. That pretty much covers the mood this week. Old bugs are back, supply chains are getting stranger, and some exploit…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -277,6 +262,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "Forminator WordPress Flaw Can Enable Unauthenticated RCE via Malicious PHP Uploads",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-17T18:22:09.000Z",
+      "link": "https://thehackernews.com/2026/08/forminator-wordpress-flaw-can-enable.html",
+      "summary": "A critical security flaw has been disclosed in Forminator Forms, a WordPress plugin with more than 600,000 active installations, that could be exploited to achieve arbitrary code execution on susceptible sites. The vulnerability, tracked as CVE-2026-15748, is rated 9.8 out of 10…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-15748"
       }
     },
     {
