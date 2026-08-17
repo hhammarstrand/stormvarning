@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-17T20:38:24.917Z",
-  "next_update": "2026-08-17T21:07:00.000Z",
+  "updated": "2026-08-17T21:36:07.516Z",
+  "next_update": "2026-08-17T21:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, såsom de i SonicWall SMA1000 och skadliga npm-paket, har identifierats med tydlig svensk koppling. Dessa utgör en akut risk, särskilt med CERT-SE:s varningar om pågående angrepp och aktivt utnyttjande. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka svenska organisationer. Detta, tillsammans med CERT-SE:s rekommendationer om ökad försiktighet, motiverar en förhöjd beredskap.",
-  "score": 87,
+  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och Ray-Project Ray, är aktivt utnyttjade och har identifierats som en risk för Sverige. CERT-SE har utfärdat varningar om pågående attacker, såsom det koordinerade leveranskedjeangreppet mot AsyncAPI GitHub-repon och angrepp mot brandväggar. Dessa signaler indikerar en förhöjd risk för svenska organisationer, vilket motiverar en gul nivå.",
+  "score": 88,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
     "sweden_acute": 3,
     "actively_exploited": 11,
-    "critical": 8,
+    "critical": 9,
     "authority_alerts": 13,
     "kev_recent": 4
   },
   "anomaly": {
     "active": false,
     "baseline": 86,
-    "delta": 1
+    "delta": 2
   },
-  "level_since": "2026-07-17T22:28:20.108Z",
+  "level_since": "2026-07-17T23:31:30.791Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -265,6 +265,21 @@
       }
     },
     {
+      "title": "Critical GitLab GraphQL Flaw Could Let Unauthenticated Attackers Delete Public Projects",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-17T21:03:04.000Z",
+      "link": "https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html",
+      "summary": "GitLab has released security updates to address a critical vulnerability impacting its Community Edition (CE) and Enterprise Edition (EE) software that, under certain conditions, could allow an unauthenticated attacker to remotely modify or delete public projects and user data.…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Forminator WordPress Flaw Can Enable Unauthenticated RCE via Malicious PHP Uploads",
       "source": "The Hacker News",
       "region": "INT",
@@ -337,21 +352,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-55040"
-      }
-    },
-    {
-      "title": "BdThemes Supply Chain Attack Poisons JSON to Create Rogue WordPress Admins",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-11T05:48:44.000Z",
-      "link": "https://thehackernews.com/2026/08/bdthemes-supply-chain-attack-poisons.html",
-      "summary": "Cybersecurity researchers have warned of a supply chain compromise impacting WordPress plugin vendor BdThemes, prompting the content management systems (CMS) platform's plugins team to temporarily disable their downloads. \"Unlike traditional software supply chain attacks, zero s…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
