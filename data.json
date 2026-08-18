@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-18T07:00:15.204Z",
-  "next_update": "2026-08-18T07:07:00.000Z",
+  "updated": "2026-08-18T07:49:12.212Z",
+  "next_update": "2026-08-18T08:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter och incidenter har identifierats med tydlig svensk koppling, inklusive kritiska sårbarheter i SonicWall SMA1000 och en koordinerad attack mot svenska GitHub-repon. Dessa signaler, tillsammans med CERT-SE:s varningar och aktivt utnyttjade sårbarheter, indikerar en förhöjd risk för cyberattacker mot svenska mål. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de kritiska sårbarheterna.",
-  "score": 85,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-15409 och CVE-2026-15410 i SonicWall SMA1000, har identifierats och är aktivt utnyttjade, vilket utgör en direkt risk för svenska organisationer. Dessutom har CERT-SE rapporterat om ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar aktiv attacker mot svenska mål. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet kritiska och aktivt utnyttjade sårbarheter med svensk koppling tillräckligt för att höja hotnivån till 'gul'.",
+  "score": 86,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 10,
+    "sweden_relevant": 9,
     "sweden_acute": 3,
-    "actively_exploited": 8,
-    "critical": 9,
-    "authority_alerts": 13,
+    "actively_exploited": 9,
+    "critical": 10,
+    "authority_alerts": 12,
     "kev_recent": 1
   },
   "anomaly": {
     "active": false,
     "baseline": 86,
-    "delta": -1
+    "delta": 0
   },
-  "level_since": "2026-07-18T17:38:10.019Z",
+  "level_since": "2026-07-18T19:20:26.901Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -82,6 +82,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2025-62593"
+      }
+    },
+    {
+      "title": "CISA Flags Actively Exploited Ray Flaw That Can Trigger Browser-Based RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-18T06:34:20.000Z",
+      "link": "https://thehackernews.com/2026/08/cisa-flags-actively-exploited-ray-flaw.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a critical flaw impacting Ray to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. Ray is an open-source, Python-native distributed computing framework desig…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -361,21 +376,6 @@
       "date": "2026-06-26T12:55:00.000Z",
       "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
       "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-26T08:34:35.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
-      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
