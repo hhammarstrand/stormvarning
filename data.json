@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-18T16:45:23.011Z",
-  "next_update": "2026-08-18T17:07:00.000Z",
+  "updated": "2026-08-18T17:38:24.633Z",
+  "next_update": "2026-08-18T18:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Flera signaler indikerar en förhöjd risk för Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en pågående attack mot separata AsyncAPI GitHub-repon. Dessa har en tydlig svensk koppling och CERT-SE har utfärdat varningar. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
-  "score": 87,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket med tydlig svensk koppling. Dessa är aktiva hot som CERT-SE har rapporterat, vilket väger tungt. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
+  "score": 90,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 8,
+    "sweden_relevant": 5,
     "sweden_acute": 3,
-    "actively_exploited": 10,
+    "actively_exploited": 14,
     "critical": 10,
-    "authority_alerts": 11,
-    "kev_recent": 1
+    "authority_alerts": 12,
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
     "baseline": 86,
-    "delta": 1
+    "delta": 4
   },
-  "level_since": "2026-07-19T12:05:05.191Z",
+  "level_since": "2026-07-19T13:51:31.103Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -70,6 +70,21 @@
       }
     },
     {
+      "title": "CVE-2026-33824: Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-18T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-33824",
+      "summary": "Microsoft Internet Key Exchange (IKE) Service Extensions – Microsoft Internet Key Exchange (IKE) Service Extensions contains a double free vulnerability that could enable remote code execution.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-33824"
+      }
+    },
+    {
       "title": "CVE-2025-62593: Ray-Project Ray Code Injection Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -112,6 +127,51 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-59310: Broadcom VMware vCenter Path Traversal Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-18T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-59310",
+      "summary": "Broadcom VMware vCenter – Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-59310"
+      }
+    },
+    {
+      "title": "CVE-2026-55040: Microsoft SharePoint Weak Authentication Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-18T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-55040",
+      "summary": "Microsoft SharePoint – Microsoft SharePoint contains a weak authentication vulnerability which allows an unauthorized attacker to bypass a security feature over a network.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-55040"
+      }
+    },
+    {
+      "title": "CVE-2026-65400: Apple macOS Improper Authentication Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-18T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-65400",
+      "summary": "Apple macOS – Apple macOS contains an improper authentication vulnerability that could allow an attacker on the network to authenticate to Screen Sharing without valid credentials.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-65400"
       }
     },
     {
@@ -323,66 +383,6 @@
         "swedenRelevant": true,
         "cve": null
       }
-    },
-    {
-      "title": "Researchers Disclose AI-Assisted SharePoint Exploit Chain Reaching Unauthenticated RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-11T16:47:44.000Z",
-      "link": "https://thehackernews.com/2026/08/researchers-disclose-ai-assisted.html",
-      "summary": "Security researchers found a way to enter Microsoft SharePoint servers as any user, including an administrator, with no valid account. A significant part of the work that found it was done through an AI agent. The flaw, tracked as CVE-2026-55040 (CVSS 9.1), affects SharePoint Se…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-55040"
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.32",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-07T11:37:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
-      "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Ny skadlig kod sprids genom JavaScript ekosystemet - Chaindrop",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-05T09:00:00.000Z",
-      "link": "https://www.cert.se/2026/08/ny-skadlig-kod-sprids-genom-javascript-ekosystemet-chaindrop.html",
-      "summary": "<p>En ny självreplikerande skadlig kod, Chaindrop, har blivit uppmärksammat av bland annat StepSecurity [1]. Chaindrop påverkar över 400 paket i JavaScript ekosystemet.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-07-15T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/07/patchtisdag-juli-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juli. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 1
+      "count": 5
     },
     {
       "name": "CISA",
