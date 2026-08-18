@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-18T09:45:11.028Z",
-  "next_update": "2026-08-18T10:07:00.000Z",
+  "updated": "2026-08-18T10:42:06.664Z",
+  "next_update": "2026-08-18T11:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk IT-infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och Ray-Project Ray, har identifierats och är aktivt utnyttjade globalt, vilket kan påverka svenska organisationer. CERT-SE har utfärdat varningar om dessa sårbarheter och om pågående leveranskedjeangrepp, vilket indikerar en konkret svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet kritiska och aktivt utnyttjade sårbarheter oroväckande.",
-  "score": 86,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och Ray-Project Ray, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Dessutom har det rapporterats om koordinerade leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en direkt svensk koppling. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det förhöjda antalet kritiska och aktivt utnyttjade sårbarheter med svensk koppling anledning nog för en gul nivå.",
+  "score": 87,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 9,
+    "sweden_relevant": 8,
     "sweden_acute": 3,
-    "actively_exploited": 9,
+    "actively_exploited": 10,
     "critical": 10,
-    "authority_alerts": 12,
+    "authority_alerts": 11,
     "kev_recent": 1
   },
   "anomaly": {
     "active": false,
     "baseline": 86,
-    "delta": 0
+    "delta": 1
   },
-  "level_since": "2026-07-18T21:31:42.856Z",
+  "level_since": "2026-07-18T22:29:00.632Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -109,6 +109,21 @@
       "flags": {
         "activelyExploited": true,
         "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "CISA: Windows Task Host flaw now exploited by ransomware gangs",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-18T10:32:16.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-windows-task-host-flaw-now-exploited-by-ransomware-gangs/",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has confirmed that ransomware gangs are also exploiting a high-severity Windows Task Host vulnerability that was flagged as actively exploited in April. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
         "cve": null
@@ -361,21 +376,6 @@
       "date": "2026-07-15T11:30:00.000Z",
       "link": "https://www.cert.se/2026/07/patchtisdag-juli-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
       "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juli. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.26",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-26T12:55:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-veckobrev-v26.html",
-      "summary": "<p>Fortsätt att få våra utskick - För att ytterligare stärka Sveriges motståndskraft inom cybersäkerhet blir CERT-SE en del av Nationellt cybersäkerhetscenter den 1 juli 2026. Det innebär att vi måste inhämta nytt medgivande för fortsatt behandling av personuppgifter och att du…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
