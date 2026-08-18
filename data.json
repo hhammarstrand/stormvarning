@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-18T05:40:35.151Z",
-  "next_update": "2026-08-18T06:07:00.000Z",
+  "updated": "2026-08-18T07:00:15.204Z",
+  "next_update": "2026-08-18T07:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och Ray-Project Ray, har identifierats och är aktivt utnyttjade. CERT-SE har utfärdat varningar om pågående attacker, såsom det koordinerade leveranskedjeangreppet mot AsyncAPI GitHub-repon och angrepp mot brandväggar. Dessa signaler indikerar en förhöjd risk för svenska organisationer, särskilt med tanke på CERT-SE:s rapportering och CISA:s KEV-katalog. Även om det inte finns bekräftade incidenter i stor skala, är det nödvändigt att vara försiktig med tanke på de pågående hoten.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter och incidenter har identifierats med tydlig svensk koppling, inklusive kritiska sårbarheter i SonicWall SMA1000 och en koordinerad attack mot svenska GitHub-repon. Dessa signaler, tillsammans med CERT-SE:s varningar och aktivt utnyttjade sårbarheter, indikerar en förhöjd risk för cyberattacker mot svenska mål. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de kritiska sårbarheterna.",
   "score": 85,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 86,
     "delta": -1
   },
-  "level_since": "2026-07-18T16:33:03.105Z",
+  "level_since": "2026-07-18T17:38:10.019Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
