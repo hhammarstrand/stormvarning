@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-18T17:38:24.633Z",
-  "next_update": "2026-08-18T18:07:00.000Z",
+  "updated": "2026-08-18T18:52:54.912Z",
+  "next_update": "2026-08-18T19:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket med tydlig svensk koppling. Dessa är aktiva hot som CERT-SE har rapporterat, vilket väger tungt. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade incidenterna och de aktivt utnyttjade sårbarheterna.",
+  "reasoning": "Det finns flera kritiska sårbarheter och incidenter som har en tydlig svensk koppling, inklusive kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon. Dessa signaler, tillsammans med CERT-SE:s varningar, indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bevis för en storskalig attack, är det nödvändigt att vara försiktig med tanke på de aktiva hoten.",
   "score": 90,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 4,
     "sweden_acute": 3,
     "actively_exploited": 14,
     "critical": 10,
-    "authority_alerts": 12,
+    "authority_alerts": 11,
     "kev_recent": 5
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 86,
     "delta": 4
   },
-  "level_since": "2026-07-19T13:51:31.103Z",
+  "level_since": "2026-07-19T15:10:30.929Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -310,6 +310,36 @@
       }
     },
     {
+      "title": "Attackers Exploit MLflow SSRF Flaw to Steal Cloud Credentials and Secrets",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-18T17:44:05.000Z",
+      "link": "https://thehackernews.com/2026/08/attackers-exploit-mlflow-ssrf-flaw-to.html",
+      "summary": "Two critical vulnerabilities impacting MLflow, an open-source artificial intelligence (AI) platform, and FUXA, an open-source, web-based SCADA / HMI software built for operational technology (OT) and industrial automation, are witnessing malicious scanning and exploitation effor…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Ransom Busters Claims It Hacked Ransomware Servers, Asks Victims for Up to $60,000",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-18T16:58:16.000Z",
+      "link": "https://thehackernews.com/2026/08/ransom-busters-claims-it-hacked.html",
+      "summary": "A ransomware affiliate calling itself Ransom Busters has been spotted proactively sending emails to victim organizations and claims to delete stolen data from ransomware groups' servers in exchange for a fee ranging from $20,000 to $60,000. \"In these messages, the third-party of…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical GitLab GraphQL Flaw Could Let Unauthenticated Attackers Delete Public Projects",
       "source": "The Hacker News",
       "region": "INT",
@@ -346,36 +376,6 @@
       "date": "2026-08-14T08:20:00.000Z",
       "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v33.html",
       "summary": "<p>I veckans veckobrev kan du bland annat läsa om fortsatta utmaningar med AI-modeller som agerar utanför de tänkta testmiljöerna, samt rapporter om en ökning av mer kraftfulla överbelastningsangrepp.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-12T11:13:03.000Z",
-      "link": "https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html",
-      "summary": "Adobe has shipped updates to address multiple critical security vulnerabilities impacting ColdFusion, Commerce, and Campaign Classic that, if successfully exploited, could result in arbitrary code execution and privilege escalation. The most severe of the flaws are listed below…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Patchtisdag augusti 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-12T08:10:00.000Z",
-      "link": "https://www.cert.se/2026/08/patchtisdag-augusti-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för augusti. Tidigare har CERT-SE gjort ett urval på sårbarheterna som släppts. På grund av de släppta sårbarheternas volym rekommenderar CERT-SE att sätta upp egna rutiner för sårbarhetshantering.</p>",
       "flags": {
         "activelyExploited": false,
         "critical": false,
