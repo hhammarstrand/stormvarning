@@ -1,74 +1,33 @@
 {
-  "updated": "2026-08-18T13:04:21.698Z",
-  "next_update": "2026-08-18T13:07:00.000Z",
+  "updated": "2026-08-18T13:54:33.161Z",
+  "next_update": "2026-08-18T14:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive SonicWall SMA1000 och Ray-Project Ray, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Det finns också rapporter om koordinerade leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet kritiska och aktivt utnyttjade sårbarheter med svensk koppling anledning nog för att höja nivån till 'gul'.",
-  "score": 87,
+  "summary": "Förhöjt hotläge mot Sverige p.g.a. flera aktiva sårbarheter och myndighetsvarningar.",
+  "reasoning": "Flera aktiva och kritiska sårbarheter, inklusive Ray och GeoServer, är aktivt utnyttjade globalt, vilket ökar risken för Sverige. MCF har utfärdat varningar om cybersäkerhetsåtgärder och ökad sårbarhet, vilket indikerar en förhöjd medvetenhet om risker. Även om det inte finns specifika bekräftade incidenter i Sverige, väger de svenska myndighetsvarningarna och den ökade nationella cybersäkerhetsfokusen tungt. — Nivån begränsad till grön: gul kräver minst en akut signal med tydlig svensk koppling. Förhöjd internationell aktivitet syns i riskindexet. — Nedtrappning till grön inväntar bekräftelse (1 av 3 körningar).",
+  "score": 62,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
-    "sweden_acute": 3,
+    "sweden_acute": 0,
     "actively_exploited": 10,
-    "critical": 10,
+    "critical": 9,
     "authority_alerts": 11,
     "kev_recent": 1
   },
   "anomaly": {
     "active": false,
     "baseline": 86,
-    "delta": 1
+    "delta": -24
   },
-  "level_since": "2026-07-19T04:53:55.017Z",
-  "de_escalation": null,
-  "down_streak": 0,
+  "level_since": "2026-07-19T07:34:33.286Z",
+  "de_escalation": {
+    "to": "grön",
+    "confirmations": 1,
+    "required": 3
+  },
+  "down_streak": 1,
   "events": [
-    {
-      "title": "Kritiska sårbarheter i SonicWall SMA1000",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-07-15T10:40:00.000Z",
-      "link": "https://www.cert.se/2026/07/kritiska-sarbarheter-i-sonicwall.html",
-      "summary": "<p>SonicWall har publicerat säkerhetsuppdateringar gällande två sårbarheter (CVE-2026-15409 och CVE-2026-15410) i SMA1000-serien. [1] CISA har lagt till dessa sårbarheter i KEV-katalogen (Known Exploited Vulnerabilities catalog). [2]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-15409"
-      }
-    },
-    {
-      "title": "Skadliga npm-paket",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-07-14T13:25:00.000Z",
-      "link": "https://www.cert.se/2026/07/skadliga-npm-paket.html",
-      "summary": "<p>Ett koordinerat leveranskedjeangrepp har drabbat separata AsyncAPI GitHub-repon. Angripare har utnyttjat en sårbarhet i GitHub Actions. [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Information och rekommendationer gällande säkerhet kring brandväggar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-22T14:20:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-information-gallande-sakerhet-i-brandvaggar.html",
-      "summary": "<p>Brandväggar är en återkommande utmaning gällande angrepp från hotaktörer. Nu senast den uppmärksammade FortiBleed-läckan, där hotaktörer utnyttjar läckta inloggningsuppgifter i stor skala. [1] Med anledning av angrepp mot brandväggar publicerar CERT-SE information och rekomme…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
     {
       "title": "CVE-2025-62593: Ray-Project Ray Code Injection Vulnerability",
       "source": "CISA KEV",
@@ -280,21 +239,6 @@
       }
     },
     {
-      "title": "CERT-SE:s veckobrev v.33",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-14T08:20:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v33.html",
-      "summary": "<p>I veckans veckobrev kan du bland annat läsa om fortsatta utmaningar med AI-modeller som agerar utanför de tänkta testmiljöerna, samt rapporter om en ökning av mer kraftfulla överbelastningsangrepp.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
       "title": "Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws",
       "source": "The Hacker News",
       "region": "INT",
@@ -306,21 +250,6 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Patchtisdag augusti 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-12T08:10:00.000Z",
-      "link": "https://www.cert.se/2026/08/patchtisdag-augusti-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för augusti. Tidigare har CERT-SE gjort ett urval på sårbarheterna som släppts. På grund av de släppta sårbarheternas volym rekommenderar CERT-SE att sätta upp egna rutiner för sårbarhetshantering.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     },
@@ -340,12 +269,12 @@
       }
     },
     {
-      "title": "CERT-SE:s veckobrev v.32",
-      "source": "CERT-SE",
+      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
+      "source": "MCF",
       "region": "SE",
-      "date": "2026-08-07T11:37:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
-      "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
+      "date": "2026-06-26T08:34:35.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
+      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
@@ -355,12 +284,12 @@
       }
     },
     {
-      "title": "Ny skadlig kod sprids genom JavaScript ekosystemet - Chaindrop",
-      "source": "CERT-SE",
+      "title": "Klimatriskerna för Sverige ökar",
+      "source": "MCF",
       "region": "SE",
-      "date": "2026-08-05T09:00:00.000Z",
-      "link": "https://www.cert.se/2026/08/ny-skadlig-kod-sprids-genom-javascript-ekosystemet-chaindrop.html",
-      "summary": "<p>En ny självreplikerande skadlig kod, Chaindrop, har blivit uppmärksammat av bland annat StepSecurity [1]. Chaindrop påverkar över 400 paket i JavaScript ekosystemet.</p>",
+      "date": "2026-06-25T09:30:10.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
+      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
@@ -370,12 +299,87 @@
       }
     },
     {
-      "title": "Patchtisdag juli 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
+      "title": "Cyberverksamheten samlas hos FRA – övergång till Nationellt cybersäkerhetscenter den 1 juli 2026",
+      "source": "MCF",
       "region": "SE",
-      "date": "2026-07-15T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/07/patchtisdag-juli-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för juli. Nedan finns en sammanställning av de säkerhetsuppdateringar som Cisco, Microsoft, SAP, Ivanti, Fortinet och Adobe har publicerat inför och i samband med patchtisdagen. Följ länkarna för att komma ti…",
+      "date": "2026-06-12T10:00:20.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
+      "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "RSA‑föreskrifterna upphävs – förändringar för kommuner och regioner",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-05T10:24:12.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/rsaforeskrifterna-upphavs--forandringar-for-kommuner-och-regioner/",
+      "summary": "Myndigheten för civilt försvar har beslutat att upphäva de föreskrifter som i dag styr kommuners och regioners redovisning av risk- och sårbarhetsanalyser (RSA).",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Ny lag om skyddsrum träder i kraft – nya krav på kommuner och fastighetsägare",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-05-25T09:18:18.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/maj/ny-lag-om-skyddsrum-trader-i-kraft--nya-krav-pa-kommuner-och-fastighetsagare2/",
+      "summary": "Den 1 juni 2026 träder en ny lag om skyddsrum och skyddade utrymmen i kraft. Lagen ska stärka skyddet av civilbefolkningen vid krig och väpnat angrepp och innebär förändringar för främst kommuner och fastighetsägare samt att ett system för skyddade utrymmen införs.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Remissperioder för föreskrifter enligt ny cybersäkerhetslag",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-03-30T13:53:30.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/mars/remissperioder-for-foreskrifter-enligt-ny-cybersakerhetslag/",
+      "summary": "Arbetet med föreskrifter enligt ny cybersäkerhetslag går vidare. Två föreskrifter kommer att remitteras under våren.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Många cyberangrepp kan kopplas till geopolitiska händelser",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-03-26T07:15:10.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/mars/manga-cyberangrepp-kan-kopplas-till-geopolitiska-handelser/",
+      "summary": "Myndigheten för civilt försvars årsrapport om cyberincidenter visar på en låg andel cyberangrepp i incidentrapporter under 2025.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Myndigheten för civilt försvars arbete med anledning av incident hos it-företaget CGI",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-03-13T13:30:44.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/mars/myndigheten-for-civilt-forsvars-arbete-med-anledning-av-incident-kopplad-till-it--och-affarstjansteforetaget-cgi/",
+      "summary": "Det har skett en cyberincident hos it- och affärstjänsteföretaget CGI. Myndigheten för civilt försvar följer händelsen i nära samarbete med berörda aktörer.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
@@ -389,8 +393,8 @@
     {
       "name": "CERT-SE",
       "region": "SE",
-      "ok": true,
-      "count": 10
+      "ok": false,
+      "count": 0
     },
     {
       "name": "MCF",
