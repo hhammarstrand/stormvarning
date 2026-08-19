@@ -1,17 +1,17 @@
 {
-  "updated": "2026-08-19T07:50:26.897Z",
-  "next_update": "2026-08-19T08:07:00.000Z",
+  "updated": "2026-08-19T08:51:22.799Z",
+  "next_update": "2026-08-19T09:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige p.g.a. flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka Sverige. Det internationella bakgrundsbruset är högt, men den svenska kopplingen gör att vi höjer nivån till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en pågående attack mot separata AsyncAPI GitHub-repon. Dessa utgör en tydlig risk för svenska organisationer och kräver förhöjd beredskap. Även om det inte finns bevis för en storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att agera på de identifierade hoten.",
   "score": 90,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 3,
-    "actively_exploited": 14,
-    "critical": 10,
+    "actively_exploited": 13,
+    "critical": 11,
     "authority_alerts": 11,
     "kev_recent": 5
   },
@@ -20,7 +20,7 @@
     "baseline": 87,
     "delta": 3
   },
-  "level_since": "2026-07-20T22:10:56.004Z",
+  "level_since": "2026-07-20T23:35:58.993Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -205,21 +205,6 @@
       }
     },
     {
-      "title": "Microsoft working on Defender patch for ShieldBreak zero-day",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-17T09:05:33.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/microsoft-working-on-defender-patch-for-shieldbreak-zero-day/",
-      "summary": "Microsoft is working on a security patch for the \"ShieldBreak\" zero-day vulnerability disclosed last week by security researcher \"Nightmare Eclipse\" and now tracked as CVE-2026-69414. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-69414"
-      }
-    },
-    {
       "title": "Siemens Siveillance Video",
       "source": "CISA",
       "region": "INT",
@@ -381,6 +366,21 @@
         "critical": false,
         "incident": false,
         "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-12T11:13:03.000Z",
+      "link": "https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html",
+      "summary": "Adobe has shipped updates to address multiple critical security vulnerabilities impacting ColdFusion, Commerce, and Campaign Classic that, if successfully exploited, could result in arbitrary code execution and privilege escalation. The most severe of the flaws are listed below…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
         "cve": null
       }
     }
