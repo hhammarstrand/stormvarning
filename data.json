@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-19T10:41:41.599Z",
-  "next_update": "2026-08-19T11:07:00.000Z",
+  "updated": "2026-08-19T11:35:26.988Z",
+  "next_update": "2026-08-19T11:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjande globalt, inklusive två som är specifikt kopplade till Sverige (SonicWall SMA1000 och AsyncAPI GitHub-repon). Dessa utgör en tydlig risk för svenska organisationer och kräver förhöjd beredskap. Även om det inte finns bekräftade incidenter i stor skala i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka svenska intressen.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjade hot som påverkar Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, indikerar CERT-SE:s varningar och CISA KEV-katalogens uppdateringar en förhöjd risknivå.",
   "score": 91,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 14,
+    "actively_exploited": 15,
     "critical": 11,
-    "authority_alerts": 11,
+    "authority_alerts": 10,
     "kev_recent": 5
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 88,
     "delta": 3
   },
-  "level_since": "2026-07-21T04:31:16.733Z",
+  "level_since": "2026-07-21T07:16:18.436Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,6 +97,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2025-62593"
+      }
+    },
+    {
+      "title": "Critical macOS, SharePoint, vCenter, and Microsoft IKE Flaws Under Active Exploitation",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-19T11:01:48.000Z",
+      "link": "https://thehackernews.com/2026/08/critical-macos-sharepoint-vcenter-and.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added four critical vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog, stating they are being exploited in the wild. The shortcomings added to the KEV catalog are listed below - CVE-20…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -310,6 +325,21 @@
       }
     },
     {
+      "title": "StopAndProtect Uses Nearly 2,000 Hacked WordPress Sites to Spread Malware and Steal Data",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-19T11:25:28.000Z",
+      "link": "https://thehackernews.com/2026/08/stopandprotect-uses-nearly-2000-hacked.html",
+      "summary": "Cybersecurity researchers have flagged a global cybercrime operation that abuses thousands of hacked WordPress websites as infrastructure to disseminate malware, commandeer infected hosts, store stolen documents, screenshots, and activity logs created to track the status of the…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Attackers Exploit MLflow SSRF Flaw to Steal Cloud Credentials and Secrets",
       "source": "The Hacker News",
       "region": "INT",
@@ -351,36 +381,6 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Forminator WordPress Flaw Can Enable Unauthenticated RCE via Malicious PHP Uploads",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-17T18:22:09.000Z",
-      "link": "https://thehackernews.com/2026/08/forminator-wordpress-flaw-can-enable.html",
-      "summary": "A critical security flaw has been disclosed in Forminator Forms, a WordPress plugin with more than 600,000 active installations, that could be exploited to achieve arbitrary code execution on susceptible sites. The vulnerability, tracked as CVE-2026-15748, is rated 9.8 out of 10…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-15748"
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.33",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-14T08:20:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v33.html",
-      "summary": "<p>I veckans veckobrev kan du bland annat läsa om fortsatta utmaningar med AI-modeller som agerar utanför de tänkta testmiljöerna, samt rapporter om en ökning av mer kraftfulla överbelastningsangrepp.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
