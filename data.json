@@ -1,16 +1,16 @@
 {
-  "updated": "2026-08-19T09:45:45.617Z",
-  "next_update": "2026-08-19T10:07:00.000Z",
+  "updated": "2026-08-19T10:41:41.599Z",
+  "next_update": "2026-08-19T11:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjande globalt, men det som särskilt väger tungt är CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket med tydlig svensk koppling. Dessa utgör en akut risk för svenska organisationer och kräver förhöjd beredskap. Även om det inte finns bekräftade incidenter i stor skala i Sverige, är risken för påverkan på svensk kritisk infrastruktur förhöjd.",
-  "score": 90,
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjande globalt, inklusive två som är specifikt kopplade till Sverige (SonicWall SMA1000 och AsyncAPI GitHub-repon). Dessa utgör en tydlig risk för svenska organisationer och kräver förhöjd beredskap. Även om det inte finns bekräftade incidenter i stor skala i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka svenska intressen.",
+  "score": 91,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 3,
-    "actively_exploited": 13,
+    "actively_exploited": 14,
     "critical": 11,
     "authority_alerts": 11,
     "kev_recent": 5
@@ -18,9 +18,9 @@
   "anomaly": {
     "active": false,
     "baseline": 88,
-    "delta": 2
+    "delta": 3
   },
-  "level_since": "2026-07-21T01:07:13.067Z",
+  "level_since": "2026-07-21T04:31:16.733Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,6 +97,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2025-62593"
+      }
+    },
+    {
+      "title": "Critical RCE flaw in Windows IKE Extension now actively exploited",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-19T10:12:24.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-critical-windows-ike-extension-flaw-now-exploited-in-attacks/",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned that hackers are exploiting a critical-severity remote code execution (RCE) flaw in the Windows Internet Key Exchange (IKE) Service Extensions component. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -366,21 +381,6 @@
         "critical": false,
         "incident": false,
         "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-12T11:13:03.000Z",
-      "link": "https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html",
-      "summary": "Adobe has shipped updates to address multiple critical security vulnerabilities impacting ColdFusion, Commerce, and Campaign Classic that, if successfully exploited, could result in arbitrary code execution and privilege escalation. The most severe of the flaws are listed below…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
         "cve": null
       }
     }
