@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-19T16:43:10.703Z",
-  "next_update": "2026-08-19T17:07:00.000Z",
+  "updated": "2026-08-19T17:36:49.237Z",
+  "next_update": "2026-08-19T17:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka Sverige. Detta motiverar en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats, inklusive två i SonicWall SMA1000 och en i Microsoft IKE Service Extensions, vilka är aktivt utnyttjade och har svensk koppling genom CERT-SE:s varningar. Dessutom har ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon rapporterats, vilket indikerar en aktiv hotbild mot svenska system. Även om det inte finns bevis för en pågående storskalig attack, är det förhöjda antalet kritiska och aktivt utnyttjade sårbarheter med svensk koppling tillräckligt för att motivera en förhöjd beredskap.",
   "score": 91,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 3,
-    "actively_exploited": 12,
-    "critical": 13,
-    "authority_alerts": 11,
-    "kev_recent": 5
+    "actively_exploited": 13,
+    "critical": 12,
+    "authority_alerts": 12,
+    "kev_recent": 6
   },
   "anomaly": {
     "active": false,
     "baseline": 88,
     "delta": 3
   },
-  "level_since": "2026-07-21T19:47:04.602Z",
+  "level_since": "2026-07-21T21:23:10.192Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -157,6 +157,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-64849: MLflow Server-Side Request Forgery Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-19T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-64849",
+      "summary": "MLflow MLflow – MLflow contains a server-side request forgery vulnerability that can allow attackers to reach internal or cloud metadata services and receive response_status and response_body.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-64849"
       }
     },
     {
@@ -368,21 +383,6 @@
         "swedenRelevant": true,
         "cve": null
       }
-    },
-    {
-      "title": "Adobe Patches Three CVSS 10.0 ColdFusion and Campaign Classic Flaws",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-12T11:13:03.000Z",
-      "link": "https://thehackernews.com/2026/08/adobe-patches-three-cvss-100-coldfusion.html",
-      "summary": "Adobe has shipped updates to address multiple critical security vulnerabilities impacting ColdFusion, Commerce, and Campaign Classic that, if successfully exploited, could result in arbitrary code execution and privilege escalation. The most severe of the flaws are listed below…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 5
+      "count": 6
     },
     {
       "name": "CISA",
