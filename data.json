@@ -1,29 +1,44 @@
 {
-  "updated": "2026-08-20T11:37:18.375Z",
-  "next_update": "2026-08-20T12:07:00.000Z",
+  "updated": "2026-08-20T13:07:37.613Z",
+  "next_update": "2026-08-20T13:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjande globalt, inklusive i svenska sammanhang. CERT-SE har rapporterat om kritiska sårbarheter i SonicWall SMA1000 och ett koordinerat leveranskedjeangrepp mot svenska GitHub-repon, vilket indikerar en svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att höja nivån till 'gul'.",
-  "score": 92,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk kritisk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive Citrix NetScaler ADC och SonicWall SMA1000, har identifierats med tydlig svensk koppling och är aktivt utnyttjade. Dessa utgör en direkt risk för svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "score": 94,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 3,
-    "sweden_acute": 3,
+    "sweden_relevant": 4,
+    "sweden_acute": 4,
     "actively_exploited": 13,
     "critical": 14,
-    "authority_alerts": 11,
+    "authority_alerts": 12,
     "kev_recent": 6
   },
   "anomaly": {
     "active": false,
     "baseline": 91,
-    "delta": 1
+    "delta": 3
   },
-  "level_since": "2026-07-23T18:22:07.206Z",
+  "level_since": "2026-07-23T19:58:22.733Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
+    {
+      "title": "Kritisk sårbarhet i Citrix NetScaler ADC och NetScaler Gateway",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-20T11:30:00.000Z",
+      "link": "https://www.cert.se/2026/08/kritisk-sarbarhet-i-citrix.html",
+      "summary": "<p>Citrix har publicerat information om en kritisk sårbarhet som påverkar Citrix NetScaler ADC och NetScaler Gateway. Sårbarheten, CVE-2026-19490, har fått CVSS v.4-klassning på 9.3. [1, 2]</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-19490"
+      }
+    },
     {
       "title": "Kritiska sårbarheter i SonicWall SMA1000",
       "source": "CERT-SE",
@@ -365,21 +380,6 @@
         "activelyExploited": false,
         "critical": false,
         "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical GitLab GraphQL Flaw Could Let Unauthenticated Attackers Delete Public Projects",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-17T21:03:04.000Z",
-      "link": "https://thehackernews.com/2026/08/critical-gitlab-graphql-flaw-could-let.html",
-      "summary": "GitLab has released security updates to address a critical vulnerability impacting its Community Edition (CE) and Enterprise Edition (EE) software that, under certain conditions, could allow an unauthenticated attacker to remotely modify or delete public projects and user data.…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
