@@ -1,17 +1,17 @@
 {
-  "updated": "2026-08-20T13:07:37.613Z",
-  "next_update": "2026-08-20T13:37:00.000Z",
+  "updated": "2026-08-20T14:18:14.223Z",
+  "next_update": "2026-08-20T14:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk kritisk infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive Citrix NetScaler ADC och SonicWall SMA1000, har identifierats med tydlig svensk koppling och är aktivt utnyttjade. Dessa utgör en direkt risk för svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom kritisk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, vilket innebär en förhöjd risk. Särskilt anmärkningsvärt är de svenska myndighetsvarningarna om kritiska sårbarheter i Citrix NetScaler och SonicWall SMA1000, samt incidenter som rör skadliga npm-paket och brandväggar. Dessa signaler indikerar en tydlig svensk koppling och potentiellt pågående attacker mot svenska aktörer.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 13,
-    "critical": 14,
+    "actively_exploited": 11,
+    "critical": 15,
     "authority_alerts": 12,
     "kev_recent": 6
   },
@@ -20,7 +20,7 @@
     "baseline": 91,
     "delta": 3
   },
-  "level_since": "2026-07-23T19:58:22.733Z",
+  "level_since": "2026-07-23T21:18:40.982Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -136,21 +136,6 @@
       "date": "2026-08-19T11:01:48.000Z",
       "link": "https://thehackernews.com/2026/08/critical-macos-sharepoint-vcenter-and.html",
       "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added four critical vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog, stating they are being exploited in the wild. The shortcomings added to the KEV catalog are listed below - CVE-20…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical RCE flaw in Windows IKE Extension now actively exploited",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-19T10:12:24.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-critical-windows-ike-extension-flaw-now-exploited-in-attacks/",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) warned that hackers are exploiting a critical-severity remote code execution (RCE) flaw in the Windows Internet Key Exchange (IKE) Service Extensions component. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": true,
@@ -280,21 +265,6 @@
       }
     },
     {
-      "title": "Lazarus Exploits Windows Zero-Day to Gain SYSTEM Access and Deploy Backdoor",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-12T17:39:27.000Z",
-      "link": "https://thehackernews.com/2026/08/lazarus-exploits-windows-zero-day-to.html",
-      "summary": "The North Korean threat actor known as Lazarus Group has been attributed to the zero-day exploitation of a newly patched security flaw impacting Microsoft Windows to deliver a never-before-seen backdoor targeting defense and aerospace companies across France, Germany, Brazil, an…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -307,6 +277,36 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "Isolated-vm Flaw Lets Sandboxed JavaScript Escape to Host for Potential RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-20T13:48:24.000Z",
+      "link": "https://thehackernews.com/2026/08/isolated-vm-flaw-lets-sandboxed.html",
+      "summary": "Cybersecurity researchers have disclosed a critical security flaw in isolated-vm, a popular open-source sandbox with more than 2,900 stars and 190 forks on GitHub, that could allow attackers to escape the confines of the isolated environment. The vulnerability (\"GHSA-864f-rcv7-6…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Attackers Exploit Zimbra SNMP Flaw for Unauthenticated Remote Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-20T13:24:28.000Z",
+      "link": "https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html",
+      "summary": "A now-patched security flaw impacting Zimbra Collaboration (ZCS) has come under active exploitation in the wild, according to the Polish Computer Emergency Response Team (CERT Polska). The vulnerability in question is CVE-2026-73570 (CVSS score: 8.9), which refers to a case of c…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-73570"
       }
     },
     {
