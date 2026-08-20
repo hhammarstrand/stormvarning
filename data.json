@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-20T21:38:23.689Z",
-  "next_update": "2026-08-20T22:07:00.000Z",
+  "updated": "2026-08-20T22:40:19.114Z",
+  "next_update": "2026-08-20T23:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i Citrix NetScaler och SonicWall SMA1000 har identifierats med tydlig svensk koppling, och CERT-SE har utfärdat varningar om dessa. Dessutom har det rapporterats om aktivt utnyttjande av sårbarheter i Zimbra och andra plattformar globalt, vilket ökar risken för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige för närvarande, är detta tillräckligt för att motivera en förhöjd beredskap.",
-  "score": 95,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive Citrix NetScaler ADC och SonicWall SMA1000, har identifierats med aktivt utnyttjande och en tydlig svensk koppling via CERT-SE. Även om det inte finns bekräftade incidenter i stor skala, är risken för attacker mot svensk kritisk infrastruktur förhöjd på grund av dessa sårbarheter. Det finns också rapporter om skadliga npm-paket och angrepp mot brandväggar, vilket ytterligare förstärker behovet av försiktighet.",
+  "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
     "actively_exploited": 12,
-    "critical": 15,
+    "critical": 14,
     "authority_alerts": 14,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 92,
-    "delta": 4
+    "delta": 2
   },
-  "level_since": "2026-07-24T14:09:35.330Z",
+  "level_since": "2026-07-24T17:49:04.177Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -295,6 +295,21 @@
       }
     },
     {
+      "title": "Rust Supply Chain Attack Puts Build-Time Malware in Crates with 245 Million Downloads",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-20T20:22:35.000Z",
+      "link": "https://thehackernews.com/2026/08/rust-supply-chain-attack-puts-build.html",
+      "summary": "The Rust Project has deleted malicious versions of three widely used Rust crates from crates.io after a compromised maintainer account published releases that added a typosquatted dependency whose build script downloaded and executed a remote payload during compilation. The affe…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "ThreatsDay: Gogs 10.0 RCE, n8n Workflow-to-RCE, $10M Reward, GLM-5.3 AI Exploit and More",
       "source": "The Hacker News",
       "region": "INT",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Elementor Pro Flaw Could Let Unauthenticated Attackers Upload PHP and Execute Code",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-20T06:04:34.000Z",
-      "link": "https://thehackernews.com/2026/08/elementor-pro-flaw-could-let.html",
-      "summary": "Cybersecurity researchers have disclosed details of a critical flaw in the Elementor Pro WordPress plugin that, if successfully exploited, could lead to remote code execution. The vulnerability, tracked as CVE-2026-32475, carries a CVSS score of 9.0 out of 10.0. It has been desc…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-32475"
       }
     }
   ],
