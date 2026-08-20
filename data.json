@@ -1,17 +1,17 @@
 {
-  "updated": "2026-08-20T14:18:14.223Z",
-  "next_update": "2026-08-20T14:37:00.000Z",
+  "updated": "2026-08-20T15:08:23.525Z",
+  "next_update": "2026-08-20T15:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom kritisk infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, vilket innebär en förhöjd risk. Särskilt anmärkningsvärt är de svenska myndighetsvarningarna om kritiska sårbarheter i Citrix NetScaler och SonicWall SMA1000, samt incidenter som rör skadliga npm-paket och brandväggar. Dessa signaler indikerar en tydlig svensk koppling och potentiellt pågående attacker mot svenska aktörer.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive Citrix NetScaler ADC och SonicWall SMA1000, har identifierats med tydlig svensk koppling och är aktivt utnyttjade. Även om det finns enstaka incidenter, såsom skadliga npm-paket, saknas bevis för en storskalig attack mot svensk kritisk infrastruktur. Det finns dock tillräckligt med signaler för att motivera en förhöjd beredskap.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
     "actively_exploited": 11,
-    "critical": 15,
+    "critical": 16,
     "authority_alerts": 12,
     "kev_recent": 6
   },
@@ -20,7 +20,7 @@
     "baseline": 91,
     "delta": 3
   },
-  "level_since": "2026-07-23T21:18:40.982Z",
+  "level_since": "2026-07-23T22:34:47.261Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -280,6 +280,21 @@
       }
     },
     {
+      "title": "Critical Elementor Pro bug exposes WordPress sites to RCE attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-20T14:39:48.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-elementor-pro-bug-exposes-wordpress-sites-to-rce-attacks/",
+      "summary": "A critical vulnerability in the Elementor Pro WordPress plugin could allow attackers to upload executable files for remote code execution on the server. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Isolated-vm Flaw Lets Sandboxed JavaScript Escape to Host for Potential RCE",
       "source": "The Hacker News",
       "region": "INT",
@@ -365,21 +380,6 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Ransom Busters Claims It Hacked Ransomware Servers, Asks Victims for Up to $60,000",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-18T16:58:16.000Z",
-      "link": "https://thehackernews.com/2026/08/ransom-busters-claims-it-hacked.html",
-      "summary": "A ransomware affiliate calling itself Ransom Busters has been spotted proactively sending emails to victim organizations and claims to delete stolen data from ransomware groups' servers in exchange for a fee ranging from $20,000 to $60,000. \"In these messages, the third-party of…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
