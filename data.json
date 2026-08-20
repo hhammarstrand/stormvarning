@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-20T09:46:46.551Z",
-  "next_update": "2026-08-20T10:07:00.000Z",
+  "updated": "2026-08-20T10:43:14.650Z",
+  "next_update": "2026-08-20T11:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 12 aktivt utnyttjade sårbarheter, 12 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 91,
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska sårbarheter och aktivt utnyttjade hot som påverkar Sverige, inklusive kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, indikerar CERT-SE:s varningar och CISA KEV-katalogens inkludering av sårbarheter en förhöjd risknivå.",
+  "score": 92,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 3,
     "sweden_acute": 3,
-    "actively_exploited": 12,
-    "critical": 13,
-    "authority_alerts": 12,
+    "actively_exploited": 13,
+    "critical": 14,
+    "authority_alerts": 11,
     "kev_recent": 6
   },
   "anomaly": {
     "active": false,
     "baseline": 91,
-    "delta": 0
+    "delta": 1
   },
-  "level_since": "2026-07-23T15:34:49.888Z",
+  "level_since": "2026-07-23T17:04:03.291Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,6 +97,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2025-62593"
+      }
+    },
+    {
+      "title": "Critical Zimbra RCE flaw now actively exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-20T09:46:54.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-zimbra-rce-flaw-now-actively-exploited-in-attacks/",
+      "summary": "CERT Polska, the Polish Computer Emergency Response Team (CERT), warned that attackers have begun exploiting a critical vulnerability in Zimbra Collaboration Suite (ZCS). [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-15748"
       }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.33",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-14T08:20:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v33.html",
-      "summary": "<p>I veckans veckobrev kan du bland annat läsa om fortsatta utmaningar med AI-modeller som agerar utanför de tänkta testmiljöerna, samt rapporter om en ökning av mer kraftfulla överbelastningsangrepp.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
