@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-20T04:48:51.783Z",
-  "next_update": "2026-08-20T05:07:00.000Z",
+  "updated": "2026-08-20T05:42:40.461Z",
+  "next_update": "2026-08-20T06:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 12 aktivt utnyttjade sårbarheter, 12 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om kritiska sårbarheter i SonicWall SMA1000 och en incident med skadliga npm-paket. Dessa utgör en akut risk för svenska organisationer. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för framtida attacker.",
   "score": 91,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 90,
     "delta": 1
   },
-  "level_since": "2026-07-23T03:57:48.160Z",
+  "level_since": "2026-07-23T06:37:32.904Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
