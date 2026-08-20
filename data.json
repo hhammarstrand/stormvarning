@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-20T16:48:05.535Z",
-  "next_update": "2026-08-20T17:07:00.000Z",
+  "updated": "2026-08-20T17:40:47.363Z",
+  "next_update": "2026-08-20T18:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter som är aktivt utnyttjade globalt, och fyra signaler med tydlig svensk koppling har identifierats. Dessa inkluderar kritiska sårbarheter i Citrix NetScaler och SonicWall SMA1000, samt incidenter relaterade till skadliga npm-paket och brandväggar. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det uppenbart att Sverige är i fokus för aktiva hotaktörer.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive Citrix NetScaler ADC och SonicWall SMA1000, har identifierats med tydlig svensk koppling och är aktivt utnyttjade. Dessa utgör en direkt risk för svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 11,
-    "critical": 16,
-    "authority_alerts": 12,
-    "kev_recent": 6
+    "actively_exploited": 12,
+    "critical": 14,
+    "authority_alerts": 14,
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 91,
     "delta": 3
   },
-  "level_since": "2026-07-24T01:07:35.111Z",
+  "level_since": "2026-07-24T04:52:48.927Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -160,18 +160,33 @@
       }
     },
     {
-      "title": "GeoServer Zero-Day Targeted in Active Exploitation Attempts, Can Lead to RCE",
-      "source": "The Hacker News",
+      "title": "CVE-2026-72530: TrueConf Server Code Injection Vulnerability",
+      "source": "CISA KEV",
       "region": "INT",
-      "date": "2026-08-13T18:45:12.000Z",
-      "link": "https://thehackernews.com/2026/08/unpatched-geoserver-zero-day-targeted.html",
-      "summary": "A newly disclosed zero-day flaw in GeoServer is seeing active exploitation efforts, per watchTowr. The vulnerability, which has yet to be assigned a CVE identifier, is an SQL injection vulnerability in the open-source platform that can lead to remote code execution (RCE). The se…",
+      "date": "2026-08-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-72530",
+      "summary": "TrueConf Server – TrueConf Server contains a code injection vulnerability that could allow an unauthorized remote attacker with network access via port 4307/TCP to use a specially crafted script to break out of the isolated environment and execute arbitrary code on the host syst…",
       "flags": {
         "activelyExploited": true,
-        "critical": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
+        "cve": "CVE-2026-72530"
+      }
+    },
+    {
+      "title": "CVE-2026-72529: TrueConf Server Missing Authentication for Critical Function Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-72529",
+      "summary": "TrueConf Server – TrueConf Server contains a missing authentication for critical function vulnerability which could allow a remote unauthorized attacker with network access via port 4307/TCP to execute an arbitrary script.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-72529"
       }
     },
     {
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Attackers Exploit MLflow SSRF Flaw to Steal Cloud Credentials and Secrets",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-18T17:44:05.000Z",
-      "link": "https://thehackernews.com/2026/08/attackers-exploit-mlflow-ssrf-flaw-to.html",
-      "summary": "Two critical vulnerabilities impacting MLflow, an open-source artificial intelligence (AI) platform, and FUXA, an open-source, web-based SCADA / HMI software built for operational technology (OT) and industrial automation, are witnessing malicious scanning and exploitation effor…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 6
+      "count": 8
     },
     {
       "name": "CISA",
