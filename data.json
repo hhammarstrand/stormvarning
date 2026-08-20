@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-20T17:40:47.363Z",
-  "next_update": "2026-08-20T18:07:00.000Z",
+  "updated": "2026-08-20T18:55:35.600Z",
+  "next_update": "2026-08-20T19:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive Citrix NetScaler ADC och SonicWall SMA1000, har identifierats med tydlig svensk koppling och är aktivt utnyttjade. Dessa utgör en direkt risk för svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
-  "score": 94,
+  "summary": "Förhöjt hotläge mot Sverige på grund av kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i Citrix NetScaler och SonicWall SMA1000 har identifierats och är aktivt utnyttjade, vilket påverkar svenska organisationer direkt. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en konkret risk för svenska aktörer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
     "actively_exploited": 12,
-    "critical": 14,
+    "critical": 15,
     "authority_alerts": 14,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 91,
-    "delta": 3
+    "delta": 4
   },
-  "level_since": "2026-07-24T04:52:48.927Z",
+  "level_since": "2026-07-24T07:40:37.077Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -295,6 +295,21 @@
       }
     },
     {
+      "title": "ThreatsDay: Gogs 10.0 RCE, n8n Workflow-to-RCE, $10M Reward, GLM-5.3 AI Exploit and More",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-20T17:23:48.000Z",
+      "link": "https://thehackernews.com/2026/08/threatsday-gogs-100-rce-n8n-workflow-to.html",
+      "summary": "A lot of this week’s trouble starts with something trusted doing exactly what it was allowed to do. Signed drivers get turned against defenses. Legitimate apps help malware blend in. A weak header check opens a path to code execution. Elsewhere, exposed systems, old bugs, odd hi…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical Elementor Pro bug exposes WordPress sites to RCE attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-32475"
-      }
-    },
-    {
-      "title": "StopAndProtect Uses Nearly 2,000 Hacked WordPress Sites to Spread Malware and Steal Data",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-19T11:25:28.000Z",
-      "link": "https://thehackernews.com/2026/08/stopandprotect-uses-nearly-2000-hacked.html",
-      "summary": "Cybersecurity researchers have flagged a global cybercrime operation that abuses thousands of hacked WordPress websites as infrastructure to disseminate malware, commandeer infected hosts, store stolen documents, screenshots, and activity logs created to track the status of the…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
       }
     }
   ],
