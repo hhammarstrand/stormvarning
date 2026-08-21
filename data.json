@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-21T22:59:36.477Z",
-  "next_update": "2026-08-21T23:07:00.000Z",
+  "updated": "2026-08-21T23:34:49.668Z",
+  "next_update": "2026-08-21T23:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter globalt, och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Sårbarheter i Citrix NetScaler och SonicWall SMA1000 är särskilt anmärkningsvärda på grund av deras kritiska klassning och potentiella påverkan på svensk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är risken för påverkan på svenska organisationer förhöjd.",
+  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter och aktivt utnyttjande, med specifika svenska varningar.",
+  "reasoning": "CERT-SE har rapporterat om flera kritiska sårbarheter och aktivt utnyttjande som påverkar Sverige, inklusive en kritisk sårbarhet i Citrix NetScaler och SonicWall SMA1000. Dessa har fått hög vikt och har en tydlig svensk koppling. Även om det inte finns bekräftade incidenter för storskaliga attacker mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska organisationer. Det internationella bakgrundsbruset är högt, men den svenska kopplingen gör att vi höjer nivån till 'gul'.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 0
   },
-  "level_since": "2026-07-26T21:33:45.724Z",
+  "level_since": "2026-07-26T22:38:45.385Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
