@@ -1,16 +1,16 @@
 {
-  "updated": "2026-08-21T06:02:04.755Z",
-  "next_update": "2026-08-21T06:07:00.000Z",
+  "updated": "2026-08-21T07:03:49.855Z",
+  "next_update": "2026-08-21T07:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter (t.ex. Citrix NetScaler och SonicWall SMA1000) som CERT-SE har rapporterat med tydlig svensk koppling, vilket indikerar en förhöjd risk. Dessutom har det förekommit incidenter som skadliga npm-paket och attacker mot brandväggar, vilket ytterligare förstärker behovet av försiktighet. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara uppmärksam på dessa hot.",
-  "score": 94,
+  "reasoning": "Det finns flera kritiska sårbarheter (t.ex. Citrix NetScaler och SonicWall SMA1000) som har en tydlig svensk koppling och är aktivt utnyttjade. Dessutom har CERT-SE rapporterat om skadliga npm-paket och attacker mot brandväggar, vilket indikerar pågående hot mot svenska aktörer. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att höja nivån till 'gul'.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 12,
+    "actively_exploited": 13,
     "critical": 14,
     "authority_alerts": 14,
     "kev_recent": 8
@@ -18,9 +18,9 @@
   "anomaly": {
     "active": false,
     "baseline": 92,
-    "delta": 2
+    "delta": 3
   },
-  "level_since": "2026-07-25T08:34:52.628Z",
+  "level_since": "2026-07-25T10:15:08.103Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -112,6 +112,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2025-62593"
+      }
+    },
+    {
+      "title": "Microsoft Entra ID Flaw (CVSS 10.0) Exploited in Wild, Allows Remote Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-21T06:06:11.000Z",
+      "link": "https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html",
+      "summary": "Microsoft on Thursday warned of a maximum-severity security flaw in Entra ID that it said has been exploited in the wild, but noted that no customer action is required. The vulnerability, tracked as CVE-2026-69836 (CVSS score: 10.0), is a case of remote code execution impacting…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-69836"
       }
     },
     {
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-73570"
-      }
-    },
-    {
-      "title": "CISA warns of hackers exploiting critical MLflow vulnerability",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-20T11:06:14.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-mlflow-vulnerability/",
-      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that threat actors are now exploiting a critical vulnerability in the MLflow open-source AI engineering platform. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     }
   ],
