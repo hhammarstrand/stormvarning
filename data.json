@@ -1,16 +1,16 @@
 {
-  "updated": "2026-08-21T10:42:53.530Z",
-  "next_update": "2026-08-21T11:07:00.000Z",
+  "updated": "2026-08-21T11:36:30.972Z",
+  "next_update": "2026-08-21T11:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Det finns flera kritiska sårbarheter som är aktivt utnyttjade globalt, och minst två av dessa (Citrix NetScaler och SonicWall SMA1000) har en direkt svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i stor skala, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns också en incident med skadliga npm-paket som påverkar svenska GitHub-repon, vilket ytterligare stärker den svenska kopplingen.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
+  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk, särskilt CERT-SE:s varningar om aktivt utnyttjade sårbarheter och intrång i svenska system. Även om det inte finns bekräftade incidenter av större skala, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska organisationer. Den svenska kopplingen är tydlig genom CERT-SE:s rapportering och fokus på svenska system.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 13,
+    "actively_exploited": 14,
     "critical": 14,
     "authority_alerts": 14,
     "kev_recent": 8
@@ -20,10 +20,25 @@
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-07-25T16:29:48.578Z",
+  "level_since": "2026-07-25T17:37:24.494Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
+    {
+      "title": "CERT-SE:s veckobrev v.34",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-21T11:20:00.000Z",
+      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v34.html",
+      "summary": "<p>I veckans brev kan du läsa om ett flertal intrång och störningar i system samt om sårbarheter som utnyttjas aktivt av hotaktörer.</p>",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
     {
       "title": "Kritisk sårbarhet i Citrix NetScaler ADC och NetScaler Gateway",
       "source": "CERT-SE",
@@ -61,21 +76,6 @@
       "date": "2026-07-14T13:25:00.000Z",
       "link": "https://www.cert.se/2026/07/skadliga-npm-paket.html",
       "summary": "<p>Ett koordinerat leveranskedjeangrepp har drabbat separata AsyncAPI GitHub-repon. Angripare har utnyttjat en sårbarhet i GitHub Actions. [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Information och rekommendationer gällande säkerhet kring brandväggar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-06-22T14:20:00.000Z",
-      "link": "https://www.cert.se/2026/06/cert-se-information-gallande-sakerhet-i-brandvaggar.html",
-      "summary": "<p>Brandväggar är en återkommande utmaning gällande angrepp från hotaktörer. Nu senast den uppmärksammade FortiBleed-läckan, där hotaktörer utnyttjar läckta inloggningsuppgifter i stor skala. [1] Med anledning av angrepp mot brandväggar publicerar CERT-SE information och rekomme…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
@@ -310,6 +310,21 @@
       }
     },
     {
+      "title": "Cisco Patches Nine Crosswork and Secure Workload Flaws, Five Scoring CVSS 10.0",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-21T10:03:11.000Z",
+      "link": "https://thehackernews.com/2026/08/cisco-patches-nine-crosswork-and-secure.html",
+      "summary": "Cisco has published another round of security updates for Crosswork platforms and Secure Workload Software as part of a continued comprehensive internal security review. Four of the security vulnerabilities affect Crosswork Data Gateway, Crosswork Network Controller, and Crosswo…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Rust Supply Chain Attack Puts Build-Time Malware in Crates with 245 Million Downloads",
       "source": "The Hacker News",
       "region": "INT",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Attackers Exploit Zimbra SNMP Flaw for Unauthenticated Remote Code Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-20T13:24:28.000Z",
-      "link": "https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html",
-      "summary": "A now-patched security flaw impacting Zimbra Collaboration (ZCS) has come under active exploitation in the wild, according to the Polish Computer Emergency Response Team (CERT Polska). The vulnerability in question is CVE-2026-73570 (CVSS score: 8.9), which refers to a case of c…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-73570"
       }
     }
   ],
