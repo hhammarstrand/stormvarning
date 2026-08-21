@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-21T16:48:02.764Z",
-  "next_update": "2026-08-21T17:07:00.000Z",
+  "updated": "2026-08-21T17:39:48.634Z",
+  "next_update": "2026-08-21T18:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/CVE-2026-15410 i SonicWall SMA1000, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom CERT-SE:s rapportering och de kritiska sårbarheterna, saknas för närvarande bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Det finns dock en tydlig risk för pågående attacker mot svenska organisationer.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE:s varningar om pågående angrepp.",
+  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter och pågående angrepp mot svenska system, vilket är en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som påverkar svenska organisationer. Detta, tillsammans med internationella rapporter om aktivt utnyttjande av liknande sårbarheter, motiverar en förhöjd beredskap.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 15,
-    "critical": 13,
-    "authority_alerts": 14,
-    "kev_recent": 8
+    "actively_exploited": 17,
+    "critical": 11,
+    "authority_alerts": 16,
+    "kev_recent": 10
   },
   "anomaly": {
     "active": false,
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-07-26T03:50:05.242Z",
+  "level_since": "2026-07-26T06:46:03.720Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -172,6 +172,36 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-69836: Microsoft Entra ID Deserialization of Untrusted Data Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-21T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-69836",
+      "summary": "Microsoft Entra ID  – Microsoft Entra ID formerly known as Azure Active Directory contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-69836"
+      }
+    },
+    {
+      "title": "CVE-2026-73570: Zimbra Collaboration Suite (ZCS) OS Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-21T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-73570",
+      "summary": "Synacor Zimbra Collaboration Suite (ZCS) – Zimbra Collaboration Suite (ZCS) contains an OS command injection vulnerability which could allow an unauthenticated attacker to send specially crafted SMTP requests that may result in execution of arbitrary operating system commands as…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-73570"
       }
     },
     {
@@ -353,36 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "ThreatsDay: Gogs 10.0 RCE, n8n Workflow-to-RCE, $10M Reward, GLM-5.3 AI Exploit, and More",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-20T17:23:48.000Z",
-      "link": "https://thehackernews.com/2026/08/threatsday-gogs-100-rce-n8n-workflow-to.html",
-      "summary": "A lot of this week’s trouble starts with something trusted doing exactly what it was allowed to do. Signed drivers get turned against defenses. Legitimate apps help malware blend in. A weak header check opens a path to code execution. Elsewhere, exposed systems, old bugs, odd hi…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical Elementor Pro bug exposes WordPress sites to RCE attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-20T14:39:48.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-elementor-pro-bug-exposes-wordpress-sites-to-rce-attacks/",
-      "summary": "A critical vulnerability in the Elementor Pro WordPress plugin could allow attackers to upload executable files for remote code execution on the server. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 8
+      "count": 10
     },
     {
       "name": "CISA",
