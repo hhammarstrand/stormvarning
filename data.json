@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-21T05:08:03.340Z",
-  "next_update": "2026-08-21T05:37:00.000Z",
+  "updated": "2026-08-21T06:02:04.755Z",
+  "next_update": "2026-08-21T06:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk kritisk infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive Citrix NetScaler ADC och SonicWall SMA1000, har identifierats med tydlig svensk koppling och är aktivt utnyttjade. Dessa utgör en direkt risk för svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och incidenter med svensk koppling.",
+  "reasoning": "Det finns flera kritiska sårbarheter (t.ex. Citrix NetScaler och SonicWall SMA1000) som CERT-SE har rapporterat med tydlig svensk koppling, vilket indikerar en förhöjd risk. Dessutom har det förekommit incidenter som skadliga npm-paket och attacker mot brandväggar, vilket ytterligare förstärker behovet av försiktighet. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara uppmärksam på dessa hot.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 92,
     "delta": 2
   },
-  "level_since": "2026-07-25T06:26:40.399Z",
+  "level_since": "2026-07-25T08:34:52.628Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -310,7 +310,7 @@
       }
     },
     {
-      "title": "ThreatsDay: Gogs 10.0 RCE, n8n Workflow-to-RCE, $10M Reward, GLM-5.3 AI Exploit and More",
+      "title": "ThreatsDay: Gogs 10.0 RCE, n8n Workflow-to-RCE, $10M Reward, GLM-5.3 AI Exploit, and More",
       "source": "The Hacker News",
       "region": "INT",
       "date": "2026-08-20T17:23:48.000Z",
