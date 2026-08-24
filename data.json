@@ -1,17 +1,17 @@
 {
-  "updated": "2026-08-24T10:20:39.452Z",
-  "next_update": "2026-08-24T10:37:00.000Z",
+  "updated": "2026-08-24T11:04:45.111Z",
+  "next_update": "2026-08-24T11:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/CVE-2026-15410 i SonicWall SMA1000, har identifierats och är aktivt utnyttjade. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa faktorer.",
+  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk, inklusive CERT-SE:s varningar om aktivt utnyttjade sårbarheter och intrång i svenska system. Särskilt kritiska är de rapporterade sårbarheterna i Citrix NetScaler ADC och SonicWall SMA1000, vilka har en tydlig svensk koppling och är klassificerade som kritiska. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 13,
-    "critical": 12,
+    "actively_exploited": 14,
+    "critical": 11,
     "authority_alerts": 14,
     "kev_recent": 8
   },
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 0
   },
-  "level_since": "2026-08-02T17:40:15.676Z",
+  "level_since": "2026-08-02T19:24:34.590Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -235,6 +235,21 @@
       }
     },
     {
+      "title": "CISA orders urgent patching of actively exploited Zimbra flaw",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-24T10:45:12.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-urgent-patching-of-actively-exploited-zimbra-flaw/",
+      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) has ordered U.S. government agencies to patch an actively exploited vulnerability in Zimbra Collaboration Suite (ZCS) within three days. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "CISA orders feds to patch actively exploited TrueConf Server flaws",
       "source": "BleepingComputer",
       "region": "INT",
@@ -295,6 +310,21 @@
       }
     },
     {
+      "title": "Microsoft patches max severity code execution, privilege escalation flaws",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-21T11:04:10.000Z",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-warns-of-max-severity-entra-id-flaw-exploited-in-attacks/",
+      "summary": "Microsoft has patched multiple maximum-severity vulnerabilities in Entra ID, Azure Arc, and Exchange Online that allowed attackers to gain remote code execution and escalate privileges. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Cisco Patches Nine Crosswork and Secure Workload Flaws, Five Scoring CVSS 10.0",
       "source": "The Hacker News",
       "region": "INT",
@@ -346,36 +376,6 @@
       "date": "2026-08-20T17:23:48.000Z",
       "link": "https://thehackernews.com/2026/08/threatsday-gogs-100-rce-n8n-workflow-to.html",
       "summary": "A lot of this week’s trouble starts with something trusted doing exactly what it was allowed to do. Signed drivers get turned against defenses. Legitimate apps help malware blend in. A weak header check opens a path to code execution. Elsewhere, exposed systems, old bugs, odd hi…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical Elementor Pro bug exposes WordPress sites to RCE attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-20T14:39:48.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-elementor-pro-bug-exposes-wordpress-sites-to-rce-attacks/",
-      "summary": "A critical vulnerability in the Elementor Pro WordPress plugin could allow attackers to upload executable files for remote code execution on the server. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Isolated-vm Flaw Lets Sandboxed JavaScript Escape to Host for Potential RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-20T13:48:24.000Z",
-      "link": "https://thehackernews.com/2026/08/isolated-vm-flaw-lets-sandboxed.html",
-      "summary": "Cybersecurity researchers have disclosed a critical security flaw in isolated-vm, a popular open-source sandbox with more than 2,900 stars and 190 forks on GitHub, that could allow attackers to escape the confines of the isolated environment. The vulnerability (\"GHSA-864f-rcv7-6…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
