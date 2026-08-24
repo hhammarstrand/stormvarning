@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-24T14:22:32.505Z",
-  "next_update": "2026-08-24T14:37:00.000Z",
+  "updated": "2026-08-24T15:19:55.561Z",
+  "next_update": "2026-08-24T15:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE:s varningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/CVE-2026-15410 i SonicWall SMA1000, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom CERT-SE:s rapportering, saknas för närvarande bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Det finns dock en tydlig risk för pågående attacker mot svenska organisationer.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE:s varningar om pågående angrepp.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/CVE-2026-15410 i SonicWall SMA1000, är aktivt utnyttjade och har identifierats av CERT-SE som en risk för svenska organisationer. Även om det inte finns bekräftade incidenter för närvarande, indikerar CERT-SE:s varningar om intrång och störningar i system ett förhöjt hotläge. Detta, tillsammans med den höga aktiviteten av aktivt utnyttjade sårbarheter globalt, motiverar en gul nivå.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 0
   },
-  "level_since": "2026-08-02T22:34:14.895Z",
+  "level_since": "2026-08-02T23:38:42.688Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -310,21 +310,6 @@
       }
     },
     {
-      "title": "Microsoft patches max severity code execution, privilege escalation flaws",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-21T11:04:10.000Z",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-warns-of-max-severity-entra-id-flaw-exploited-in-attacks/",
-      "summary": "Microsoft has patched multiple maximum-severity vulnerabilities in Entra ID, Azure Arc, and Exchange Online that allowed attackers to gain remote code execution and escalate privileges. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Cisco Patches Nine Crosswork and Secure Workload Flaws, Five Scoring CVSS 10.0",
       "source": "The Hacker News",
       "region": "INT",
@@ -376,6 +361,21 @@
       "date": "2026-08-20T17:23:48.000Z",
       "link": "https://thehackernews.com/2026/08/threatsday-gogs-100-rce-n8n-workflow-to.html",
       "summary": "A lot of this week’s trouble starts with something trusted doing exactly what it was allowed to do. Signed drivers get turned against defenses. Legitimate apps help malware blend in. A weak header check opens a path to code execution. Elsewhere, exposed systems, old bugs, odd hi…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Isolated-vm Flaw Lets Sandboxed JavaScript Escape to Host for Potential RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-20T13:48:24.000Z",
+      "link": "https://thehackernews.com/2026/08/isolated-vm-flaw-lets-sandboxed.html",
+      "summary": "Cybersecurity researchers have disclosed a critical security flaw in isolated-vm, a popular open-source sandbox with more than 2,900 stars and 190 forks on GitHub, that could allow attackers to escape the confines of the isolated environment. The vulnerability (\"GHSA-864f-rcv7-6…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
