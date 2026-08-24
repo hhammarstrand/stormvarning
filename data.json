@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-23T23:53:30.002Z",
-  "next_update": "2026-08-24T00:07:00.000Z",
+  "updated": "2026-08-24T01:54:34.191Z",
+  "next_update": "2026-08-24T02:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/CVE-2026-15410 i SonicWall SMA1000, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom CERT-SE:s rapportering, finns det ännu inga bekräftade incidenter hos flera svenska aktörer som skulle motivera en högre nivå. Detta indikerar ett förhöjt men inte akut hotläge.",
+  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter globalt, och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Sårbarheter i Citrix NetScaler och SonicWall SMA1000 är särskilt anmärkningsvärda på grund av deras kritiska klassning och potentiella påverkan på svensk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 14,
+    "actively_exploited": 13,
     "critical": 12,
-    "authority_alerts": 15,
-    "kev_recent": 9
+    "authority_alerts": 14,
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
     "delta": 0
   },
-  "level_since": "2026-08-01T23:35:20.136Z",
+  "level_since": "2026-08-02T01:13:53.882Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,21 +97,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-33824"
-      }
-    },
-    {
-      "title": "CVE-2025-62593: Ray-Project Ray Code Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-17T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-62593",
-      "summary": "Ray-Project Ray – Ray-Project Ray contains a code injection vulnerability that could allow remote code execution. Developers using Ray as a development tool may be exposed to this vulnerability exploitable through Firefox and Safari.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2025-62593"
       }
     },
     {
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Isolated-vm Flaw Lets Sandboxed JavaScript Escape to Host for Potential RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-20T13:48:24.000Z",
+      "link": "https://thehackernews.com/2026/08/isolated-vm-flaw-lets-sandboxed.html",
+      "summary": "Cybersecurity researchers have disclosed a critical security flaw in isolated-vm, a popular open-source sandbox with more than 2,900 stars and 190 forks on GitHub, that could allow attackers to escape the confines of the isolated environment. The vulnerability (\"GHSA-864f-rcv7-6…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 8
     },
     {
       "name": "CISA",
