@@ -1,16 +1,16 @@
 {
-  "updated": "2026-08-25T19:41:39.080Z",
-  "next_update": "2026-08-25T20:07:00.000Z",
+  "updated": "2026-08-25T20:41:12.352Z",
+  "next_update": "2026-08-25T21:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter i Sverige, inklusive en kritisk sårbarhet i Citrix NetScaler och rapporter om intrång och systemstörningar. Även om det inte finns bekräftade incidenter i stor skala, väger CERT-SE:s varningar och de många aktivt utnyttjade sårbarheterna tyngre, vilket motiverar en förhöjd beredskap.",
-  "score": 93,
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/CVE-2026-15410 i SonicWall SMA1000, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom CERT-SE:s rapportering, saknas för närvarande bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Det finns dock tillräckligt med signaler för att motivera en förhöjd beredskap.",
+  "score": 92,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 10,
+    "actively_exploited": 9,
     "critical": 12,
     "authority_alerts": 12,
     "kev_recent": 6
@@ -18,9 +18,9 @@
   "anomaly": {
     "active": false,
     "baseline": 93,
-    "delta": 0
+    "delta": -1
   },
-  "level_since": "2026-08-05T18:45:04.759Z",
+  "level_since": "2026-08-05T20:37:43.264Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -220,21 +220,6 @@
       }
     },
     {
-      "title": "CISA orders urgent patching of actively exploited Zimbra flaw",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-24T10:45:12.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-orders-urgent-patching-of-actively-exploited-zimbra-flaw/",
-      "summary": "The Cybersecurity and Infrastructure Security Agency (CISA) has ordered U.S. government agencies to patch an actively exploited vulnerability in Zimbra Collaboration Suite (ZCS) within three days. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -382,6 +367,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-32475"
+      }
+    },
+    {
+      "title": "StopAndProtect Uses Nearly 2,000 Hacked WordPress Sites to Spread Malware and Steal Data",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-19T11:25:28.000Z",
+      "link": "https://thehackernews.com/2026/08/stopandprotect-uses-nearly-2000-hacked.html",
+      "summary": "Cybersecurity researchers have flagged a global cybercrime operation that abuses thousands of hacked WordPress websites as infrastructure to disseminate malware, commandeer infected hosts, store stolen documents, screenshots, and activity logs created to track the status of the…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
       }
     }
   ],
