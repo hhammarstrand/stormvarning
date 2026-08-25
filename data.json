@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-25T17:08:41.337Z",
-  "next_update": "2026-08-25T17:37:00.000Z",
+  "updated": "2026-08-25T18:01:05.711Z",
+  "next_update": "2026-08-25T18:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk, särskilt CERT-SE:s varningar om aktivt utnyttjade sårbarheter och intrång i svenska system. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket kan påverka svensk kritisk infrastruktur. Det finns också en svensk koppling genom CERT-SE:s rapportering och varningar om pågående aktivitet.",
-  "score": 92,
+  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter globalt, och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Särskilt viktigt är CERT-SE:s varningar om aktivt utnyttjade sårbarheter och incidenter som påverkar svenska organisationer. Även om det inte finns bekräftade storskaliga attacker mot svensk kritisk infrastruktur, är det förhöjda antalet varningar och aktiviteter en anledning till oro.",
+  "score": 93,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 9,
+    "actively_exploited": 10,
     "critical": 12,
-    "authority_alerts": 11,
-    "kev_recent": 5
+    "authority_alerts": 12,
+    "kev_recent": 6
   },
   "anomaly": {
     "active": false,
     "baseline": 93,
-    "delta": -1
+    "delta": 0
   },
-  "level_since": "2026-08-05T12:25:49.569Z",
+  "level_since": "2026-08-05T14:59:13.211Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,6 +97,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-60004: Gitea Code Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-25T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-60004",
+      "summary": "Gitea Gitea – Gitea contains a code injection vulnerability that allows an attacker with repository write access to send a malicious patch to the diffpatch API endpoint to plant an executable Git hook and run shell commands as the Gitea service account.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-60004"
       }
     },
     {
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-32475"
       }
-    },
-    {
-      "title": "StopAndProtect Uses Nearly 2,000 Hacked WordPress Sites to Spread Malware and Steal Data",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-19T11:25:28.000Z",
-      "link": "https://thehackernews.com/2026/08/stopandprotect-uses-nearly-2000-hacked.html",
-      "summary": "Cybersecurity researchers have flagged a global cybercrime operation that abuses thousands of hacked WordPress websites as infrastructure to disseminate malware, commandeer infected hosts, store stolen documents, screenshots, and activity logs created to track the status of the…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 5
+      "count": 6
     },
     {
       "name": "CISA",
