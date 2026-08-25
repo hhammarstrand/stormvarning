@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-25T22:40:25.636Z",
-  "next_update": "2026-08-25T23:07:00.000Z",
+  "updated": "2026-08-25T23:34:24.085Z",
+  "next_update": "2026-08-25T23:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk, särskilt CERT-SE:s varningar om aktivt utnyttjade sårbarheter (CVE-2026-19490) och intrång i svenska system. Även om det inte finns bekräftade incidenter i stor skala, väger myndighetsvarningarna och de kritiska sårbarheterna tungt. Det finns dock inte tillräckligt med oberoende signaler för att klassificera läget som 'rött'.",
+  "reasoning": "CERT-SE har rapporterat om flera intrång och störningar samt kritiska sårbarheter som utnyttjas aktivt, vilket indikerar en förhöjd risk för svenska organisationer. Särskilt sårbarheten i Citrix NetScaler ADC och NetScaler Gateway (CVE-2026-19490) är kritisk och har en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att höja nivån till 'gul'.",
   "score": 92,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": -1
   },
-  "level_since": "2026-08-05T23:34:17.748Z",
+  "level_since": "2026-08-06T01:02:21.544Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
