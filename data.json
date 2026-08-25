@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-25T18:53:54.622Z",
-  "next_update": "2026-08-25T19:07:00.000Z",
+  "updated": "2026-08-25T19:41:39.080Z",
+  "next_update": "2026-08-25T20:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter i Sverige, inklusive en kritisk sårbarhet i Citrix NetScaler och en incident med skadliga npm-paket. Även om det inte finns bevis för en pågående storskalig attack, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska organisationer. Det finns även en varning om en kritisk sårbarhet i SonicWall SMA1000, vilket ytterligare förstärker behovet av försiktighet.",
+  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter i Sverige, inklusive en kritisk sårbarhet i Citrix NetScaler och rapporter om intrång och systemstörningar. Även om det inte finns bekräftade incidenter i stor skala, väger CERT-SE:s varningar och de många aktivt utnyttjade sårbarheterna tyngre, vilket motiverar en förhöjd beredskap.",
   "score": 93,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": 0
   },
-  "level_since": "2026-08-05T16:49:40.788Z",
+  "level_since": "2026-08-05T18:45:04.759Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -190,6 +190,21 @@
       }
     },
     {
+      "title": "Zoneminder",
+      "source": "CISA",
+      "region": "INT",
+      "date": "2026-08-25T12:00:00.000Z",
+      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-237-02",
+      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-237-02.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could result in full Remote Code Execution (RCE) as the web server…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data",
       "source": "The Hacker News",
       "region": "INT",
@@ -214,21 +229,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Siemens Siveillance Video",
-      "source": "CISA",
-      "region": "INT",
-      "date": "2026-08-13T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-225-09",
-      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-225-09.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Siveillance Video Management Servers contains a vulnerability that could allow a Remote Code Execution attack. Si…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
         "incident": false,
         "swedenRelevant": false,
         "cve": null
