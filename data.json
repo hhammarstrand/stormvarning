@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-25T11:37:59.740Z",
-  "next_update": "2026-08-25T12:07:00.000Z",
+  "updated": "2026-08-25T14:25:02.189Z",
+  "next_update": "2026-08-25T14:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/CVE-2026-15410 i SonicWall SMA1000, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska organisationer förhöjd. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE:s varningar om pågående intrång och störningar.",
+  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter och pågående intrång i svenska system (CVE-2026-19490 och SonicWall SMA1000-sårbarheter). Även om det inte finns bekräftade incidenter i stor skala, väger CERT-SE:s varningar och de många kritiska sårbarheterna som utnyttjas internationellt tungt. Det finns dock inte tillräckligt med signaler för att klassificera läget som rött.",
   "score": 92,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": -2
   },
-  "level_since": "2026-08-05T04:24:06.947Z",
+  "level_since": "2026-08-05T07:21:01.224Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -235,6 +235,21 @@
       }
     },
     {
+      "title": "Hackers breached over 270 Zimbra servers in ongoing attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-25T12:04:02.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-breached-over-270-zimbra-servers-in-ongoing-attacks/",
+      "summary": "Threat actors have already compromised over 270 Zimbra instances in remote code execution attacks targeting a high-severity Zimbra Collaboration Suite (ZCS) vulnerability. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "South Korean startup platform breach exposes key management failures",
       "source": "BleepingComputer",
       "region": "INT",
@@ -365,21 +380,6 @@
         "activelyExploited": false,
         "critical": false,
         "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Attackers Exploit MLflow SSRF Flaw to Steal Cloud Credentials and Secrets",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-18T17:44:05.000Z",
-      "link": "https://thehackernews.com/2026/08/attackers-exploit-mlflow-ssrf-flaw-to.html",
-      "summary": "Two critical vulnerabilities impacting MLflow, an open-source artificial intelligence (AI) platform, and FUXA, an open-source, web-based SCADA / HMI software built for operational technology (OT) and industrial automation, are witnessing malicious scanning and exploitation effor…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
