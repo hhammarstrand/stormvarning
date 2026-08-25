@@ -1,17 +1,17 @@
 {
-  "updated": "2026-08-25T06:01:28.601Z",
-  "next_update": "2026-08-25T06:07:00.000Z",
+  "updated": "2026-08-25T07:04:37.504Z",
+  "next_update": "2026-08-25T07:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "CERT-SE har rapporterat om flera intrång och störningar samt kritiska sårbarheter som utnyttjas aktivt, vilket indikerar en förhöjd risk för svenska organisationer. Särskilt CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/-15410 i SonicWall SMA1000 är kritiska och utnyttjas aktivt, vilket påverkar svenska aktörer direkt. Även om det inte finns bekräftade incidenter för storskaliga attacker mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade aktiviteterna.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/CVE-2026-15410 i SonicWall SMA1000, är aktivt utnyttjade och har svensk koppling via CERT-SE:s varningar. Även om det inte finns bekräftade incidenter för närvarande, indikerar CERT-SE:s rapportering av intrång och störningar en förhöjd risk för svenska organisationer. Detta, tillsammans med den ökade aktiviteten av hotaktörer globalt, motiverar en förhöjd beredskap.",
   "score": 92,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
     "actively_exploited": 9,
-    "critical": 13,
+    "critical": 12,
     "authority_alerts": 11,
     "kev_recent": 5
   },
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": -2
   },
-  "level_since": "2026-08-04T16:30:03.307Z",
+  "level_since": "2026-08-04T18:15:51.846Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -91,21 +91,6 @@
       "date": "2026-08-19T11:01:48.000Z",
       "link": "https://thehackernews.com/2026/08/critical-macos-sharepoint-vcenter-and.html",
       "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added four critical vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog, stating they are being exploited in the wild. The shortcomings added to the KEV catalog are listed below - CVE-20…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CISA Flags Actively Exploited Ray Flaw That Can Trigger Browser-Based RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-18T06:34:20.000Z",
-      "link": "https://thehackernews.com/2026/08/cisa-flags-actively-exploited-ray-flaw.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a critical flaw impacting Ray to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. Ray is an open-source, Python-native distributed computing framework desig…",
       "flags": {
         "activelyExploited": true,
         "critical": true,
@@ -187,6 +172,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-64849"
+      }
+    },
+    {
+      "title": "Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-25T06:12:35.000Z",
+      "link": "https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a maximum-severity security flaw impacting Oracle HTTP Server and Oracle WebLogic Server to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabili…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
