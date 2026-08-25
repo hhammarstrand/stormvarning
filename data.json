@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-24T23:54:04.855Z",
-  "next_update": "2026-08-25T00:07:00.000Z",
+  "updated": "2026-08-25T01:48:33.788Z",
+  "next_update": "2026-08-25T02:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter och aktivt utnyttjande, med specifika svenska varningar.",
-  "reasoning": "CERT-SE har rapporterat om flera kritiska sårbarheter och aktivt utnyttjande som påverkar Sverige, inklusive en kritisk sårbarhet i Citrix NetScaler och SonicWall SMA1000. Dessa har fått hög vikt och har en tydlig svensk koppling. Även om det inte finns bekräftade incidenter för storskaliga attacker mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska organisationer. Det internationella bakgrundsbruset är högt, men den svenska kopplingen gör att vi höjer nivån till 'gul'.",
-  "score": 94,
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
+  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat om aktivt utnyttjade sårbarheter och intrång, samt kritiska sårbarheter i Citrix NetScaler och SonicWall SMA1000 som kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivitet som kan utgöra en fara för svensk kritisk infrastruktur. Det internationella bakgrundsbruset är högt, men den svenska kopplingen gör att hotnivån höjs till 'gul'.",
+  "score": 92,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 13,
-    "critical": 11,
-    "authority_alerts": 15,
-    "kev_recent": 9
+    "actively_exploited": 9,
+    "critical": 13,
+    "authority_alerts": 11,
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 0
+    "delta": -2
   },
-  "level_since": "2026-08-04T03:31:57.377Z",
+  "level_since": "2026-08-04T06:13:54.728Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -82,21 +82,6 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
-      }
-    },
-    {
-      "title": "CVE-2026-33824: Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-18T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-33824",
-      "summary": "Microsoft Internet Key Exchange (IKE) Service Extensions – Microsoft Internet Key Exchange (IKE) Service Extensions contains a double free vulnerability that could enable remote code execution.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-33824"
       }
     },
     {
@@ -202,51 +187,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-64849"
-      }
-    },
-    {
-      "title": "CVE-2026-59310: Broadcom VMware vCenter Path Traversal Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-18T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-59310",
-      "summary": "Broadcom VMware vCenter – Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-59310"
-      }
-    },
-    {
-      "title": "CVE-2026-55040: Microsoft SharePoint Weak Authentication Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-18T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-55040",
-      "summary": "Microsoft SharePoint – Microsoft SharePoint contains a weak authentication vulnerability which allows an unauthorized attacker to bypass a security feature over a network.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-55040"
-      }
-    },
-    {
-      "title": "CVE-2026-65400: Apple macOS Improper Authentication Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-18T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-65400",
-      "summary": "Apple macOS – Apple macOS contains an improper authentication vulnerability that could allow an attacker on the network to authenticate to Screen Sharing without valid credentials.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-65400"
       }
     },
     {
@@ -383,6 +323,66 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Attackers Exploit Zimbra SNMP Flaw for Unauthenticated Remote Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-20T13:24:28.000Z",
+      "link": "https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html",
+      "summary": "A now-patched security flaw impacting Zimbra Collaboration (ZCS) has come under active exploitation in the wild, according to the Polish Computer Emergency Response Team (CERT Polska). The vulnerability in question is CVE-2026-73570 (CVSS score: 8.9), which refers to a case of c…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-73570"
+      }
+    },
+    {
+      "title": "Elementor Pro Flaw Could Let Unauthenticated Attackers Upload PHP and Execute Code",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-20T06:04:34.000Z",
+      "link": "https://thehackernews.com/2026/08/elementor-pro-flaw-could-let.html",
+      "summary": "Cybersecurity researchers have disclosed details of a critical flaw in the Elementor Pro WordPress plugin that, if successfully exploited, could lead to remote code execution. The vulnerability, tracked as CVE-2026-32475, carries a CVSS score of 9.0 out of 10.0. It has been desc…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-32475"
+      }
+    },
+    {
+      "title": "StopAndProtect Uses Nearly 2,000 Hacked WordPress Sites to Spread Malware and Steal Data",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-19T11:25:28.000Z",
+      "link": "https://thehackernews.com/2026/08/stopandprotect-uses-nearly-2000-hacked.html",
+      "summary": "Cybersecurity researchers have flagged a global cybercrime operation that abuses thousands of hacked WordPress websites as infrastructure to disseminate malware, commandeer infected hosts, store stolen documents, screenshots, and activity logs created to track the status of the…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Attackers Exploit MLflow SSRF Flaw to Steal Cloud Credentials and Secrets",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-18T17:44:05.000Z",
+      "link": "https://thehackernews.com/2026/08/attackers-exploit-mlflow-ssrf-flaw-to.html",
+      "summary": "Two critical vulnerabilities impacting MLflow, an open-source artificial intelligence (AI) platform, and FUXA, an open-source, web-based SCADA / HMI software built for operational technology (OT) and industrial automation, are witnessing malicious scanning and exploitation effor…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 5
     },
     {
       "name": "CISA",
