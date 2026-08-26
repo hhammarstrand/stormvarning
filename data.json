@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-26T19:16:44.821Z",
-  "next_update": "2026-08-26T19:37:00.000Z",
+  "updated": "2026-08-26T22:29:25.242Z",
+  "next_update": "2026-08-26T22:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive i Citrix NetScaler och SonicWall SMA1000, är aktivt utnyttjade och påverkar Sverige direkt enligt CERT-SE. Även om det inte finns bekräftade incidenter för storskaliga attacker mot svensk kritisk infrastruktur, indikerar CERT-SE:s rapportering och CISA KEV-katalogen en ökad risk för cyberattacker mot svenska organisationer. Detta motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar om pågående angrepp.",
+  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter och pågående angrepp mot svenska system. Särskilt viktiga är varningarna om intrång och störningar samt den kritiska sårbarheten i Citrix NetScaler, som är en vanlig komponent i svensk infrastruktur. Även om det inte finns bekräftade incidenter i flera svenska organisationer, väger CERT-SE:s rapporter och den höga aktiviteten av aktivt utnyttjade sårbarheter tungt. Detta motiverar en förhöjd beredskap.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-08-07T11:27:38.528Z",
+  "level_since": "2026-08-07T12:25:50.559Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -310,6 +310,21 @@
       }
     },
     {
+      "title": "Critical Avada WordPress theme flaw enables zero-click RCE",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-26T21:33:20.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-avada-wordpress-theme-flaw-enables-zero-click-rce/",
+      "summary": "A critical vulnerability chain in the popular Avada theme for WordPress can be exploited by an unauthenticated attacker to execute arbitrary PHP code on the server. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Hackers target Microsoft SharePoint RCE chain with PoC exploit",
       "source": "BleepingComputer",
       "region": "INT",
@@ -365,21 +380,6 @@
         "activelyExploited": false,
         "critical": false,
         "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "ThreatsDay: Gogs 10.0 RCE, n8n Workflow-to-RCE, $10M Reward, GLM-5.3 AI Exploit, and More",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-20T17:23:48.000Z",
-      "link": "https://thehackernews.com/2026/08/threatsday-gogs-100-rce-n8n-workflow-to.html",
-      "summary": "A lot of this week’s trouble starts with something trusted doing exactly what it was allowed to do. Signed drivers get turned against defenses. Legitimate apps help malware blend in. A weak header check opens a path to code execution. Elsewhere, exposed systems, old bugs, odd hi…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
