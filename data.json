@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-26T11:39:56.683Z",
-  "next_update": "2026-08-26T12:07:00.000Z",
+  "updated": "2026-08-26T13:12:09.644Z",
+  "next_update": "2026-08-26T13:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "CERT-SE har rapporterat om flera intrång och störningar samt kritiska sårbarheter i Citrix NetScaler och SonicWall SMA1000, vilket indikerar aktivt utnyttjande riktat mot svenska system. Dessa signaler, tillsammans med internationella rapporter om aktivt utnyttjade kritiska sårbarheter som CISA KEV, ökar risken för pågående attacker mot svensk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga tecken på förhöjd hotbild.",
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 8 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 92,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": -1
   },
-  "level_since": "2026-08-07T05:48:02.704Z",
+  "level_since": "2026-08-07T07:38:05.293Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }
