@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-25T23:57:25.969Z",
-  "next_update": "2026-08-26T00:07:00.000Z",
+  "updated": "2026-08-26T05:09:11.871Z",
+  "next_update": "2026-08-26T05:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige p.g.a. aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera kritiska sårbarheter (t.ex. Citrix NetScaler och SonicWall SMA1000) är aktivt utnyttjade och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Även om det inte finns bekräftade incidenter i Sverige, är det en tydlig svensk koppling genom CERT-SE:s rapportering och de kritiska sårbarheter som påverkar svenska organisationer. Detta motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
+  "reasoning": "CERT-SE har rapporterat om flera intrång och störningar samt kritiska sårbarheter som utnyttjas aktivt, vilket indikerar en förhöjd risk för svenska organisationer. Särskilt sårbarheten i Citrix NetScaler ADC och NetScaler Gateway (CVE-2026-19490) är kritisk och har en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är detta tillräckligt för att höja nivån till 'gul'.",
   "score": 92,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 6,
     "sweden_acute": 4,
-    "actively_exploited": 9,
+    "actively_exploited": 8,
     "critical": 12,
     "authority_alerts": 13,
-    "kev_recent": 6
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
     "baseline": 93,
     "delta": -1
   },
-  "level_since": "2026-08-06T04:26:06.141Z",
+  "level_since": "2026-08-06T07:22:46.147Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -172,21 +172,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-72529"
-      }
-    },
-    {
-      "title": "CVE-2026-64849: MLflow Server-Side Request Forgery Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-19T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-64849",
-      "summary": "MLflow MLflow – MLflow contains a server-side request forgery vulnerability that can allow attackers to reach internal or cloud metadata services and receive response_status and response_body.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-64849"
       }
     },
     {
@@ -383,6 +368,21 @@
         "swedenRelevant": true,
         "cve": null
       }
+    },
+    {
+      "title": "Patchtisdag augusti 2026 – samlad information om månadens säkerhetsuppdateringar",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-12T08:10:00.000Z",
+      "link": "https://www.cert.se/2026/08/patchtisdag-augusti-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för augusti. Tidigare har CERT-SE gjort ett urval på sårbarheterna som släppts. På grund av de släppta sårbarheternas volym rekommenderar CERT-SE att sätta upp egna rutiner för sårbarhetshantering.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 6
+      "count": 5
     },
     {
       "name": "CISA",
