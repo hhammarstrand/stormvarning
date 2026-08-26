@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-26T14:22:16.210Z",
-  "next_update": "2026-08-26T14:37:00.000Z",
+  "updated": "2026-08-26T16:03:42.546Z",
+  "next_update": "2026-08-26T16:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "CERT-SE har rapporterat om flera kritiska sårbarheter och aktivt utnyttjande som påverkar Sverige, inklusive en kritisk sårbarhet i Citrix NetScaler ADC och NetScaler Gateway samt en incident med skadliga npm-paket. Dessa signaler indikerar en förhöjd risk för svenska organisationer och kritisk infrastruktur. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade aktiviteterna.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående attacker.",
+  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter i Sverige, inklusive Citrix NetScaler och SonicWall SMA1000. Dessa har en tydlig svensk koppling och är klassificerade som kritiska. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap. Internationella signaler om aktivt utnyttjande av andra kritiska sårbarheter, såsom Gitea och Zimbra, bidrar också till den övergripande hotbilden.",
   "score": 91,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": -2
   },
-  "level_since": "2026-08-07T09:12:46.206Z",
+  "level_since": "2026-08-07T10:30:18.621Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -220,12 +220,12 @@
       }
     },
     {
-      "title": "Hackers breached over 270 Zimbra servers in ongoing attacks",
+      "title": "Hackers target Microsoft SharePoint RCE chain with PoC exploit",
       "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-08-25T12:04:02.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-breached-over-270-zimbra-servers-in-ongoing-attacks/",
-      "summary": "Threat actors have already compromised over 270 Zimbra instances in remote code execution attacks targeting a high-severity Zimbra Collaboration Suite (ZCS) vulnerability. [...]",
+      "date": "2026-08-26T14:47:51.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-sharepoint-rce-chain-with-poc-exploit/",
+      "summary": "Attackers are now targeting a chain of two Microsoft SharePoint vulnerabilities that can allow them to execute arbitrary code on unpatched servers, according to threat intelligence company Defused. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
