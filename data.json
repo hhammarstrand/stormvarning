@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-26T16:03:42.546Z",
-  "next_update": "2026-08-26T16:07:00.000Z",
+  "updated": "2026-08-26T19:16:44.821Z",
+  "next_update": "2026-08-26T19:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående attacker.",
-  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter i Sverige, inklusive Citrix NetScaler och SonicWall SMA1000. Dessa har en tydlig svensk koppling och är klassificerade som kritiska. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap. Internationella signaler om aktivt utnyttjande av andra kritiska sårbarheter, såsom Gitea och Zimbra, bidrar också till den övergripande hotbilden.",
-  "score": 91,
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive i Citrix NetScaler och SonicWall SMA1000, är aktivt utnyttjade och påverkar Sverige direkt enligt CERT-SE. Även om det inte finns bekräftade incidenter för storskaliga attacker mot svensk kritisk infrastruktur, indikerar CERT-SE:s rapportering och CISA KEV-katalogen en ökad risk för cyberattacker mot svenska organisationer. Detta motiverar en förhöjd beredskap.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 8,
+    "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 8,
+    "actively_exploited": 14,
     "critical": 11,
-    "authority_alerts": 15,
-    "kev_recent": 5
+    "authority_alerts": 17,
+    "kev_recent": 11
   },
   "anomaly": {
     "active": false,
     "baseline": 93,
-    "delta": -2
+    "delta": 2
   },
-  "level_since": "2026-08-07T10:30:18.621Z",
+  "level_since": "2026-08-07T11:27:38.528Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -85,6 +85,36 @@
       }
     },
     {
+      "title": "CVE-2021-23758: Ajax.NET Professional Deserialization of Untrusted Data Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-26T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2021-23758",
+      "summary": "Ajax.NET Professional Ajax.NET Professional – Ajax.NET Professional (AjaxPro) contains a deserialization of untrusted data vulnerability that could allow for remote code execution via arbitrary .NET classes. The impacted product(s) could be end-of-life (EoL) and/or end-of-servic…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2021-23758"
+      }
+    },
+    {
+      "title": "CVE-2019-1068: Microsoft SQL Server Remote Code Execution Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-26T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2019-1068",
+      "summary": "Microsoft SQL Server – Microsoft SQL Server contains a remote code execution vulnerability that could allow an attacker to execute code in the context of the SQL Server Database Engine service account.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2019-1068"
+      }
+    },
+    {
       "title": "Critical Gitea RCE Actively Exploited as Reported Attack Drops Miner-Like Payload",
       "source": "The Hacker News",
       "region": "INT",
@@ -97,6 +127,66 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-60004"
+      }
+    },
+    {
+      "title": "CVE-2015-3246: Red Hat Libuser Race Condition Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-26T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2015-3246",
+      "summary": "Red Hat Libuser – Red Hat libuser contains a race condition vulnerability that allows authenticated local users to corrupt the /etc/passwd file to cause a denial of service or privilege escalation.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2015-3246"
+      }
+    },
+    {
+      "title": "CVE-2015-5287: Red Hat Automatic Bug Reporting Tool Privilege Escalation Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-26T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2015-5287",
+      "summary": "Red Hat Automatic Bug Reporting Tool – Red Hat Automatic Bug Reporting Tool (ABRT) contains a privilege escalation vulnerability that could allow local users with certain permissions to gain privileges via a symlink attack on a file with a predictable name. The impacted product(…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2015-5287"
+      }
+    },
+    {
+      "title": "CVE-2022-0995: Linux Kernel Out-of-Bounds Write Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-26T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2022-0995",
+      "summary": "Linux Kernel – Linux Kernel contains an out-of-bounds memory write vulnerability which could allow a local user to gain privileged access or cause a denial of service on the system.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2022-0995"
+      }
+    },
+    {
+      "title": "CVE-2026-8452: Citrix NetScaler ADC and NetScaler Gateway Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-26T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-8452",
+      "summary": "Citrix NetScaler ADC and NetScaler Gateway – Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability which could lead to denial of service.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-8452"
       }
     },
     {
@@ -293,96 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Isolated-vm Flaw Lets Sandboxed JavaScript Escape to Host for Potential RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-20T13:48:24.000Z",
-      "link": "https://thehackernews.com/2026/08/isolated-vm-flaw-lets-sandboxed.html",
-      "summary": "Cybersecurity researchers have disclosed a critical security flaw in isolated-vm, a popular open-source sandbox with more than 2,900 stars and 190 forks on GitHub, that could allow attackers to escape the confines of the isolated environment. The vulnerability (\"GHSA-864f-rcv7-6…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Attackers Exploit Zimbra SNMP Flaw for Unauthenticated Remote Code Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-20T13:24:28.000Z",
-      "link": "https://thehackernews.com/2026/08/attackers-exploit-zimbra-snmp-flaw-for.html",
-      "summary": "A now-patched security flaw impacting Zimbra Collaboration (ZCS) has come under active exploitation in the wild, according to the Polish Computer Emergency Response Team (CERT Polska). The vulnerability in question is CVE-2026-73570 (CVSS score: 8.9), which refers to a case of c…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-73570"
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.33",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-14T08:20:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v33.html",
-      "summary": "<p>I veckans veckobrev kan du bland annat läsa om fortsatta utmaningar med AI-modeller som agerar utanför de tänkta testmiljöerna, samt rapporter om en ökning av mer kraftfulla överbelastningsangrepp.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Patchtisdag augusti 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-12T08:10:00.000Z",
-      "link": "https://www.cert.se/2026/08/patchtisdag-augusti-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för augusti. Tidigare har CERT-SE gjort ett urval på sårbarheterna som släppts. På grund av de släppta sårbarheternas volym rekommenderar CERT-SE att sätta upp egna rutiner för sårbarhetshantering.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.32",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-07T11:37:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
-      "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Ny skadlig kod sprids genom JavaScript ekosystemet - Chaindrop",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-05T09:00:00.000Z",
-      "link": "https://www.cert.se/2026/08/ny-skadlig-kod-sprids-genom-javascript-ekosystemet-chaindrop.html",
-      "summary": "<p>En ny självreplikerande skadlig kod, Chaindrop, har blivit uppmärksammat av bland annat StepSecurity [1]. Chaindrop påverkar över 400 paket i JavaScript ekosystemet.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 5
+      "count": 11
     },
     {
       "name": "CISA",
