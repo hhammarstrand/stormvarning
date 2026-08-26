@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-26T06:03:53.997Z",
-  "next_update": "2026-08-26T06:07:00.000Z",
+  "updated": "2026-08-26T07:05:34.186Z",
+  "next_update": "2026-08-26T07:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": -1
   },
-  "level_since": "2026-08-06T10:16:05.844Z",
+  "level_since": "2026-08-06T12:28:47.485Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
