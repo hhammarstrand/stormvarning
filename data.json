@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-26T07:57:01.578Z",
-  "next_update": "2026-08-26T08:07:00.000Z",
+  "updated": "2026-08-26T08:58:10.514Z",
+  "next_update": "2026-08-26T09:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/-15410 i SonicWall SMA1000, har identifierats och är aktivt utnyttjade. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är risken för attacker mot svenska organisationer förhöjd på grund av dessa utnyttjade sårbarheter.",
+  "reasoning": "CERT-SE har rapporterat om flera intrång och störningar samt kritiska sårbarheter som aktivt utnyttjas, vilket indikerar en förhöjd risk för svenska organisationer. Särskilt sårbarheten i Citrix NetScaler ADC och NetScaler Gateway (CVE-2026-19490) och incidenter som involverar skadliga npm-paket är anmärkningsvärda. Även om det inte finns bevis för en pågående storskalig attack mot svensk kritisk infrastruktur, är det nödvändigt att vara försiktig med tanke på de rapporterade aktiviteterna och myndighetsvarningarna.",
   "score": 92,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 4,
     "actively_exploited": 8,
     "critical": 12,
-    "authority_alerts": 13,
+    "authority_alerts": 14,
     "kev_recent": 5
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": -1
   },
-  "level_since": "2026-08-06T14:58:34.128Z",
+  "level_since": "2026-08-07T00:43:49.320Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -340,21 +340,6 @@
       }
     },
     {
-      "title": "StopAndProtect Uses Nearly 2,000 Hacked WordPress Sites to Spread Malware and Steal Data",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-19T11:25:28.000Z",
-      "link": "https://thehackernews.com/2026/08/stopandprotect-uses-nearly-2000-hacked.html",
-      "summary": "Cybersecurity researchers have flagged a global cybercrime operation that abuses thousands of hacked WordPress websites as infrastructure to disseminate malware, commandeer infected hosts, store stolen documents, screenshots, and activity logs created to track the status of the…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "CERT-SE:s veckobrev v.33",
       "source": "CERT-SE",
       "region": "SE",
@@ -376,6 +361,21 @@
       "date": "2026-08-12T08:10:00.000Z",
       "link": "https://www.cert.se/2026/08/patchtisdag-augusti-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
       "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för augusti. Tidigare har CERT-SE gjort ett urval på sårbarheterna som släppts. På grund av de släppta sårbarheternas volym rekommenderar CERT-SE att sätta upp egna rutiner för sårbarhetshantering.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.32",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-07T11:37:00.000Z",
+      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
+      "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
       "flags": {
         "activelyExploited": false,
         "critical": false,
