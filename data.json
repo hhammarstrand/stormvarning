@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-26T13:12:09.644Z",
-  "next_update": "2026-08-26T13:37:00.000Z",
+  "updated": "2026-08-26T14:22:16.210Z",
+  "next_update": "2026-08-26T14:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 8 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 92,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "CERT-SE har rapporterat om flera kritiska sårbarheter och aktivt utnyttjande som påverkar Sverige, inklusive en kritisk sårbarhet i Citrix NetScaler ADC och NetScaler Gateway samt en incident med skadliga npm-paket. Dessa signaler indikerar en förhöjd risk för svenska organisationer och kritisk infrastruktur. Även om det inte finns bevis för en pågående storskalig attack, är det nödvändigt att vara försiktig med tanke på de rapporterade aktiviteterna.",
+  "score": 91,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 8,
     "sweden_acute": 4,
     "actively_exploited": 8,
-    "critical": 12,
-    "authority_alerts": 14,
+    "critical": 11,
+    "authority_alerts": 15,
     "kev_recent": 5
   },
   "anomaly": {
     "active": false,
     "baseline": 93,
-    "delta": -1
+    "delta": -2
   },
-  "level_since": "2026-08-07T07:38:05.293Z",
+  "level_since": "2026-08-07T09:12:46.206Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -325,21 +325,6 @@
       }
     },
     {
-      "title": "Elementor Pro Flaw Could Let Unauthenticated Attackers Upload PHP and Execute Code",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-20T06:04:34.000Z",
-      "link": "https://thehackernews.com/2026/08/elementor-pro-flaw-could-let.html",
-      "summary": "Cybersecurity researchers have disclosed details of a critical flaw in the Elementor Pro WordPress plugin that, if successfully exploited, could lead to remote code execution. The vulnerability, tracked as CVE-2026-32475, carries a CVSS score of 9.0 out of 10.0. It has been desc…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-32475"
-      }
-    },
-    {
       "title": "CERT-SE:s veckobrev v.33",
       "source": "CERT-SE",
       "region": "SE",
@@ -376,6 +361,21 @@
       "date": "2026-08-07T11:37:00.000Z",
       "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v32.html",
       "summary": "<p>CERT-SE:s veckobrev är tillbaka från sommaruppehållet. Sommaren har bestått av flera förändringar, såsom att CERT-SE sedan den 1 juli är en del av Nationellt cybersäkerhetscenter (NCSC) vid Försvarets radioanstalt.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Ny skadlig kod sprids genom JavaScript ekosystemet - Chaindrop",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-05T09:00:00.000Z",
+      "link": "https://www.cert.se/2026/08/ny-skadlig-kod-sprids-genom-javascript-ekosystemet-chaindrop.html",
+      "summary": "<p>En ny självreplikerande skadlig kod, Chaindrop, har blivit uppmärksammat av bland annat StepSecurity [1]. Chaindrop påverkar över 400 paket i JavaScript ekosystemet.</p>",
       "flags": {
         "activelyExploited": false,
         "critical": false,
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
