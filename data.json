@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-27T14:36:54.012Z",
-  "next_update": "2026-08-27T14:37:00.000Z",
+  "updated": "2026-08-27T23:59:40.295Z",
+  "next_update": "2026-08-28T00:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter som påverkar Sverige, inklusive Citrix NetScaler och SonicWall SMA1000. Dessa har fått hög prioritet och utgör en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjt riskläge på grund av de aktiva hoten mot svensk infrastruktur.",
-  "score": 94,
+  "reasoning": "Flera kritiska sårbarheter, inklusive Citrix NetScaler och SonicWall SMA1000, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom CERT-SE:s rapportering, saknas för närvarande bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Det finns dock en tydlig risk för pågående attacker mot svenska organisationer.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 13,
-    "critical": 12,
-    "authority_alerts": 15,
-    "kev_recent": 9
+    "actively_exploited": 18,
+    "critical": 9,
+    "authority_alerts": 18,
+    "kev_recent": 12
   },
   "anomaly": {
     "active": false,
     "baseline": 93,
-    "delta": 1
+    "delta": 2
   },
-  "level_since": "2026-08-07T15:06:36.764Z",
+  "level_since": "2026-08-07T16:07:54.138Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -145,6 +145,51 @@
       }
     },
     {
+      "title": "CVE-2023-49105: ownCloud Improper Authentication Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-27T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2023-49105",
+      "summary": "ownCloud ownCloud – ownCloud contains an improper authentication vulnerability that allows an attacker to access, modify, or delete any file without authentication if the username of a victim is known, and the victim has no signing-key configured.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2023-49105"
+      }
+    },
+    {
+      "title": "CVE-2026-53362: Linux Kernel Unspecified Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-27T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-53362",
+      "summary": "Linux Kernel – Linux Kernel contains an unspecified vulnerability that can allow for privilege escalation via IPv6 networking subsystem. This vulnerability can impact multiple products, including but not limited to Suse, Red Hat, and other products using Linux.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-53362"
+      }
+    },
+    {
+      "title": "CVE-2026-66384: JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-27T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-66384",
+      "summary": "JFrog Artifactory – JFrog Artifactory contains an improper limitation of a pathname to a restricted directory vulnerability. This can allow an authenticated user to write data outside the intended Docker cache path under specific remote-repository conditions.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-66384"
+      }
+    },
+    {
       "title": "CVE-2015-3246: Red Hat Libuser Race Condition Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -250,6 +295,36 @@
       }
     },
     {
+      "title": "OpenAI Says Reward Hacking Drove AI Agents to Exploit Zero-Days and Breach Hugging Face",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-27T18:36:19.000Z",
+      "link": "https://thehackernews.com/2026/08/openai-says-reward-hacking-drove-ai.html",
+      "summary": "OpenAI on Wednesday revealed that reward hacking was a key driver behind the artificial intelligence (AI)-powered hack of Hugging Face last month, adding that it found evidence of misaligned behavior as early as late May. The incident, the company said, took place during cyberse…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "PaperCut warns of NG, MF flaw exploited in zero-day attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-27T16:31:53.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/papercut-warns-of-ng-mf-flaw-exploited-in-zero-day-attacks/",
+      "summary": "PaperCut is warning that hackers are actively exploiting a vulnerability in all versions of its PaperCut NG and PaperCut MF print management software in zero-day attacks. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Zoneminder",
       "source": "CISA",
       "region": "INT",
@@ -295,87 +370,12 @@
       }
     },
     {
-      "title": "Australia arrests alleged TeamPCP hackers behind supply-chain attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-27T13:31:13.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/australia-arrests-alleged-teampcp-hackers-behind-supply-chain-attacks/",
-      "summary": "Australian authorities have arrested and charged two young men accused of belonging to TeamPCP, a hacking group linked to a string of far-reaching developer supply chain attacks. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Alleged TeamPCP Hackers Charged in Australia Over Major Supply Chain Attacks",
+      "title": "Next.js Patches Critical AVIF and Windows Flaws Enabling Unauthenticated RCE",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-08-27T11:56:26.000Z",
-      "link": "https://thehackernews.com/2026/08/alleged-teampcp-hackers-charged-in.html",
-      "summary": "The Australian Federal Police (AFP) has charged two Western Australian men with a combined total of 14 offences over their alleged role in TeamPCP, the cybercrime group behind the March 2026 compromise of the open-source security scanners Trivy and Checkmarx KICS and the AI gate…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical Avada WordPress theme flaw enables zero-click RCE",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-26T21:33:20.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-avada-wordpress-theme-flaw-enables-zero-click-rce/",
-      "summary": "A critical vulnerability chain in the popular Avada theme for WordPress can be exploited by an unauthenticated attacker to execute arbitrary PHP code on the server. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Hackers target Microsoft SharePoint RCE chain with PoC exploit",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-26T14:47:51.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-target-microsoft-sharepoint-rce-chain-with-poc-exploit/",
-      "summary": "Attackers are now targeting a chain of two Microsoft SharePoint vulnerabilities that can allow them to execute arbitrary code on unpatched servers, according to threat intelligence company Defused. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Cisco Patches Nine Crosswork and Secure Workload Flaws, Five Scoring CVSS 10.0",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-21T10:03:11.000Z",
-      "link": "https://thehackernews.com/2026/08/cisco-patches-nine-crosswork-and-secure.html",
-      "summary": "Cisco has published another round of security updates for Crosswork platforms and Secure Workload Software as part of a continued comprehensive internal security review. Four of the security vulnerabilities affect Crosswork Data Gateway, Crosswork Network Controller, and Crosswo…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Microsoft Patches Severe Entra ID Flaw (CVSS 10.0) Allowing Remote Code Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-21T06:06:11.000Z",
-      "link": "https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html",
-      "summary": "Update: The story was updated after publication to note that the vulnerability has not been exploited. Although the security bulletin originally marked the \"Exploited\" field under the Exploitability Assessment table as \"Yes,\" on August 21, 2026, Microsoft corrected the \"Exploite…",
+      "date": "2026-08-27T15:13:00.000Z",
+      "link": "https://thehackernews.com/2026/08/nextjs-patches-critical-avif-and.html",
+      "summary": "Credit: Hacktron Vercel has released security patches for two critical-severity vulnerabilities in the Next.js web framework, both of which allow unauthenticated remote code execution, one exploitable via specially crafted AVIF image files and the other through a path traversal…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 12
     },
     {
       "name": "CISA",
