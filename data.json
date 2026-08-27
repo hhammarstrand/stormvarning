@@ -1,17 +1,17 @@
 {
-  "updated": "2026-08-27T03:32:20.123Z",
-  "next_update": "2026-08-27T03:37:00.000Z",
+  "updated": "2026-08-27T14:36:54.012Z",
+  "next_update": "2026-08-27T14:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige pga aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive en specifik varning från CERT-SE om pågående intrång och störningar i system. Även om det inte finns bekräftade incidenter i stor skala, väger CERT-SE:s varningar och identifierade svenska kopplingar tungt. Detta motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
+  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter som påverkar Sverige, inklusive Citrix NetScaler och SonicWall SMA1000. Dessa har fått hög prioritet och utgör en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjt riskläge på grund av de aktiva hoten mot svensk infrastruktur.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 12,
-    "critical": 13,
+    "actively_exploited": 13,
+    "critical": 12,
     "authority_alerts": 15,
     "kev_recent": 9
   },
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": 1
   },
-  "level_since": "2026-08-07T13:55:37.693Z",
+  "level_since": "2026-08-07T15:06:36.764Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -112,6 +112,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2019-1068"
+      }
+    },
+    {
+      "title": "CISA orders feds to patch Citrix NetScaler RCE flaw by Saturday",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-27T09:16:50.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-hackers-now-exploiting-citrix-netscaler-rce-flaw-in-attacks/",
+      "summary": "CISA has ordered U.S. government agencies to patch their Citrix NetScaler appliances against an actively exploited remote code execution vulnerability by Saturday. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -280,6 +295,36 @@
       }
     },
     {
+      "title": "Australia arrests alleged TeamPCP hackers behind supply-chain attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-27T13:31:13.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/australia-arrests-alleged-teampcp-hackers-behind-supply-chain-attacks/",
+      "summary": "Australian authorities have arrested and charged two young men accused of belonging to TeamPCP, a hacking group linked to a string of far-reaching developer supply chain attacks. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Alleged TeamPCP Hackers Charged in Australia Over Major Supply Chain Attacks",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-27T11:56:26.000Z",
+      "link": "https://thehackernews.com/2026/08/alleged-teampcp-hackers-charged-in.html",
+      "summary": "The Australian Federal Police (AFP) has charged two Western Australian men with a combined total of 14 offences over their alleged role in TeamPCP, the cybercrime group behind the March 2026 compromise of the open-source security scanners Trivy and Checkmarx KICS and the AI gate…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical Avada WordPress theme flaw enables zero-click RCE",
       "source": "BleepingComputer",
       "region": "INT",
@@ -331,51 +376,6 @@
       "date": "2026-08-21T06:06:11.000Z",
       "link": "https://thehackernews.com/2026/08/microsoft-entra-id-flaw-cvss-100.html",
       "summary": "Update: The story was updated after publication to note that the vulnerability has not been exploited. Although the security bulletin originally marked the \"Exploited\" field under the Exploitability Assessment table as \"Yes,\" on August 21, 2026, Microsoft corrected the \"Exploite…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Rust Supply Chain Attack Puts Build-Time Malware in Crates with 245 Million Downloads",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-20T20:22:35.000Z",
-      "link": "https://thehackernews.com/2026/08/rust-supply-chain-attack-puts-build.html",
-      "summary": "The Rust Project has deleted malicious versions of three widely used Rust crates from crates.io after a compromised maintainer account published releases that added a typosquatted dependency whose build script downloaded and executed a remote payload during compilation. The affe…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "ThreatsDay: Gogs 10.0 RCE, n8n Workflow-to-RCE, $10M Reward, GLM-5.3 AI Exploit, and More",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-20T17:23:48.000Z",
-      "link": "https://thehackernews.com/2026/08/threatsday-gogs-100-rce-n8n-workflow-to.html",
-      "summary": "A lot of this week’s trouble starts with something trusted doing exactly what it was allowed to do. Signed drivers get turned against defenses. Legitimate apps help malware blend in. A weak header check opens a path to code execution. Elsewhere, exposed systems, old bugs, odd hi…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Isolated-vm Flaw Lets Sandboxed JavaScript Escape to Host for Potential RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-20T13:48:24.000Z",
-      "link": "https://thehackernews.com/2026/08/isolated-vm-flaw-lets-sandboxed.html",
-      "summary": "Cybersecurity researchers have disclosed a critical security flaw in isolated-vm, a popular open-source sandbox with more than 2,900 stars and 190 forks on GitHub, that could allow attackers to escape the confines of the isolated environment. The vulnerability (\"GHSA-864f-rcv7-6…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
