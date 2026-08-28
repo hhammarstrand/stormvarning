@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-27T23:59:40.295Z",
-  "next_update": "2026-08-28T00:07:00.000Z",
+  "updated": "2026-08-28T11:17:23.521Z",
+  "next_update": "2026-08-28T11:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive Citrix NetScaler och SonicWall SMA1000, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom CERT-SE:s rapportering, saknas för närvarande bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Det finns dock en tydlig risk för pågående attacker mot svenska organisationer.",
+  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter i Sverige, inklusive Citrix NetScaler och SonicWall SMA1000. Dessa har en tydlig svensk koppling och utgör en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 5,
     "sweden_acute": 4,
     "actively_exploited": 18,
-    "critical": 9,
+    "critical": 8,
     "authority_alerts": 18,
-    "kev_recent": 12
+    "kev_recent": 11
   },
   "anomaly": {
     "active": false,
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-08-07T16:07:54.138Z",
+  "level_since": "2026-08-07T17:29:22.560Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -280,18 +280,18 @@
       }
     },
     {
-      "title": "CVE-2026-73570: Zimbra Collaboration Suite (ZCS) OS Command Injection Vulnerability",
-      "source": "CISA KEV",
+      "title": "PaperCut Zero-Day Exploited in Attacks, Affecting All NG and MF Versions",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-08-21T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-73570",
-      "summary": "Synacor Zimbra Collaboration Suite (ZCS) – Zimbra Collaboration Suite (ZCS) contains an OS command injection vulnerability which could allow an unauthenticated attacker to send specially crafted SMTP requests that may result in execution of arbitrary operating system commands as…",
+      "date": "2026-08-28T08:25:36.000Z",
+      "link": "https://thehackernews.com/2026/08/papercut-zero-day-exploited-in-attacks.html",
+      "summary": "PaperCut has alerted customers that bad actors are actively exploiting a vulnerability impacting all versions of its PaperCut NG and PaperCut MF print management software in zero-day attacks. The company has released an emergency patch for v25 and v26 to address the issue. It sa…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-73570"
+        "cve": null
       }
     },
     {
@@ -370,17 +370,17 @@
       }
     },
     {
-      "title": "Next.js Patches Critical AVIF and Windows Flaws Enabling Unauthenticated RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-27T15:13:00.000Z",
-      "link": "https://thehackernews.com/2026/08/nextjs-patches-critical-avif-and.html",
-      "summary": "Credit: Hacktron Vercel has released security patches for two critical-severity vulnerabilities in the Next.js web framework, both of which allow unauthenticated remote code execution, one exploitable via specially crafted AVIF image files and the other through a path traversal…",
+      "title": "CERT-SE:s veckobrev v.35",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-28T08:40:00.000Z",
+      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v35.html",
+      "summary": "<p>I veckans brev kan du ta del av ett axplock av händelser inom cybersäkerhetsområdet. Dessutom hittar du en utvärdering av organisationers cyberförsvar som CISA gjort, som innehåller rekommendationer för att stärka sin motståndskraft.</p>",
       "flags": {
         "activelyExploited": false,
-        "critical": true,
+        "critical": false,
         "incident": false,
-        "swedenRelevant": false,
+        "swedenRelevant": true,
         "cve": null
       }
     }
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 12
+      "count": 11
     },
     {
       "name": "CISA",
