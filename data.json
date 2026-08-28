@@ -1,18 +1,18 @@
 {
-  "updated": "2026-08-28T11:17:23.521Z",
-  "next_update": "2026-08-28T11:37:00.000Z",
+  "updated": "2026-08-28T21:30:38.470Z",
+  "next_update": "2026-08-28T21:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter i Sverige, inklusive Citrix NetScaler och SonicWall SMA1000. Dessa har en tydlig svensk koppling och utgör en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/CVE-2026-15410 i SonicWall SMA1000, har identifierats och är aktivt utnyttjade. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är risken för attacker mot svenska organisationer förhöjd på grund av dessa utnyttjade sårbarheter.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 4,
     "sweden_acute": 4,
     "actively_exploited": 18,
     "critical": 8,
-    "authority_alerts": 18,
+    "authority_alerts": 17,
     "kev_recent": 11
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-08-07T17:29:22.560Z",
+  "level_since": "2026-08-07T18:27:12.614Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -112,21 +112,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2019-1068"
-      }
-    },
-    {
-      "title": "CISA orders feds to patch Citrix NetScaler RCE flaw by Saturday",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-27T09:16:50.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-hackers-now-exploiting-citrix-netscaler-rce-flaw-in-attacks/",
-      "summary": "CISA has ordered U.S. government agencies to patch their Citrix NetScaler appliances against an actively exploited remote code execution vulnerability by Saturday. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
@@ -280,6 +265,21 @@
       }
     },
     {
+      "title": "PaperCut releases second emergency patch for exploited flaws",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-28T19:08:26.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/papercut-releases-second-emergency-patch-for-exploited-flaws/",
+      "summary": "PaperCut has released a second emergency security update for two actively exploited vulnerabilities in its PaperCut NG and MF print management software after researchers discovered multiple ways to bypass the initial fixes. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "PaperCut Zero-Day Exploited in Attacks, Affecting All NG and MF Versions",
       "source": "The Hacker News",
       "region": "INT",
@@ -370,17 +370,17 @@
       }
     },
     {
-      "title": "CERT-SE:s veckobrev v.35",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-28T08:40:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v35.html",
-      "summary": "<p>I veckans brev kan du ta del av ett axplock av händelser inom cybersäkerhetsområdet. Dessutom hittar du en utvärdering av organisationers cyberförsvar som CISA gjort, som innehåller rekommendationer för att stärka sin motståndskraft.</p>",
+      "title": "Over 8,300 Gitea servers vulnerable to code execution attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-28T12:58:43.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/over-8-300-gitea-servers-vulnerable-to-code-execution-attacks/",
+      "summary": "Over 8,300 Internet-exposed Gitea instances are still unpatched against a critical security flaw exploited in ongoing remote code execution attacks, according to cybersecurity watchdog Shadowserver. [...]",
       "flags": {
         "activelyExploited": false,
-        "critical": false,
+        "critical": true,
         "incident": false,
-        "swedenRelevant": true,
+        "swedenRelevant": false,
         "cve": null
       }
     }
