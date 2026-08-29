@@ -1,10 +1,10 @@
 {
-  "updated": "2026-08-29T15:17:39.432Z",
-  "next_update": "2026-08-29T15:37:00.000Z",
+  "updated": "2026-08-29T18:49:29.654Z",
+  "next_update": "2026-08-29T19:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive en specifik varning från CERT-SE om en kritisk sårbarhet i Citrix NetScaler ADC och NetScaler Gateway (CVE-2026-19490). Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket ökar risken för svenska organisationer. Detta, tillsammans med CERT-SE:s veckobrev som nämner pågående intrång och störningar, motiverar en förhöjd hotnivå.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive i Citrix NetScaler och SonicWall SMA1000, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom CERT-SE:s rapportering och de påverkade produkterna är relevanta för svenska organisationer, finns det ännu ingen bekräftad storskalig attack mot svensk kritisk infrastruktur. Detta indikerar ett förhöjt men inte allvarligt hotläge.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-08-07T21:20:07.069Z",
+  "level_since": "2026-08-07T22:17:21.495Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -370,12 +370,12 @@
       }
     },
     {
-      "title": "Over 8,300 Gitea servers vulnerable to code execution attacks",
-      "source": "BleepingComputer",
+      "title": "Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-08-28T12:58:43.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/over-8-300-gitea-servers-vulnerable-to-code-execution-attacks/",
-      "summary": "Over 8,300 Internet-exposed Gitea instances are still unpatched against a critical security flaw exploited in ongoing remote code execution attacks, according to cybersecurity watchdog Shadowserver. [...]",
+      "date": "2026-08-29T16:25:03.000Z",
+      "link": "https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html",
+      "summary": "Multiple critical security flaws have been disclosed in WordPress plugins and themes, including WPMU DEV Dashboard, Avada, TranslatePress, Pods, and GiveWP, that could lead to authentication bypass, account takeover, and arbitrary code execution. The vulnerabilities, according t…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
