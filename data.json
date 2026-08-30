@@ -1,17 +1,17 @@
 {
-  "updated": "2026-08-30T11:50:09.627Z",
-  "next_update": "2026-08-30T12:07:00.000Z",
+  "updated": "2026-08-30T16:36:53.870Z",
+  "next_update": "2026-08-30T16:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter i Sverige, inklusive Citrix NetScaler och SonicWall SMA1000. Dessa har en tydlig svensk koppling och utgör en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige pga aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
+  "reasoning": "Flera kritiska sårbarheter (t.ex. Citrix NetScaler och SonicWall) är aktivt utnyttjade och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa faktorer. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 18,
-    "critical": 8,
+    "actively_exploited": 17,
+    "critical": 9,
     "authority_alerts": 17,
     "kev_recent": 11
   },
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-08-08T03:55:16.445Z",
+  "level_since": "2026-08-08T05:07:27.757Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -310,21 +310,6 @@
       }
     },
     {
-      "title": "PaperCut warns of NG, MF flaw exploited in zero-day attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-27T16:31:53.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/papercut-warns-of-ng-mf-flaw-exploited-in-zero-day-attacks/",
-      "summary": "PaperCut is warning that hackers are actively exploiting a vulnerability in all versions of its PaperCut NG and PaperCut MF print management software in zero-day attacks. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Zoneminder",
       "source": "CISA",
       "region": "INT",
@@ -376,6 +361,21 @@
       "date": "2026-08-29T16:25:03.000Z",
       "link": "https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html",
       "summary": "Multiple critical security flaws have been disclosed in WordPress plugins and themes, including WPMU DEV Dashboard, Avada, TranslatePress, Pods, and GiveWP, that could lead to authentication bypass, account takeover, and arbitrary code execution. The vulnerabilities, according t…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Over 8,300 Gitea servers vulnerable to code execution attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-08-28T12:58:43.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/over-8-300-gitea-servers-vulnerable-to-code-execution-attacks/",
+      "summary": "Over 8,300 Internet-exposed Gitea instances are still unpatched against a critical security flaw exploited in ongoing remote code execution attacks, according to cybersecurity watchdog Shadowserver. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
