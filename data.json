@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-31T13:40:44.376Z",
-  "next_update": "2026-08-31T14:07:00.000Z",
+  "updated": "2026-08-31T19:59:18.015Z",
+  "next_update": "2026-08-31T20:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 16 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige p.g.a. aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar om pågående angrepp.",
+  "reasoning": "Flera kritiska sårbarheter (t.ex. Citrix NetScaler och SonicWall) är aktivt utnyttjade och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Även om det inte finns bekräftade incidenter i flera svenska organisationer, indikerar CERT-SE:s rapportering en tydlig svensk koppling till den pågående hotbilden. Detta motiverar en förhöjd beredskap.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 15,
-    "critical": 11,
-    "authority_alerts": 16,
-    "kev_recent": 10
+    "actively_exploited": 16,
+    "critical": 10,
+    "authority_alerts": 18,
+    "kev_recent": 12
   },
   "anomaly": {
     "active": false,
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-08-08T10:05:57.242Z",
+  "level_since": "2026-08-08T10:49:26.857Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -127,6 +127,36 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-60004"
+      }
+    },
+    {
+      "title": "CVE-2026-82078: PaperCut NG/MF Unsafe Reflection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-31T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-82078",
+      "summary": "PaperCut NG/MF – PaperCut NG/MF contains an unsafe reflection vulnerability that allows an attacker to manipulate system configuration parameters and execute arbitrary Java bytecode residing on the application classpath under the security context of the PaperCut server process.…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-82078"
+      }
+    },
+    {
+      "title": "CVE-2026-81578: PaperCut NG/MF Missing Authentication for Critical Function Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-08-31T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-81578",
+      "summary": "PaperCut NG/MF – PaperCut NG/MF contains a missing authentication for critical function vulnerability which allows an unauthenticated remote attacker to modify certain system configurations. This vulnerability can be chained with CVE-2026-82078.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-81578"
       }
     },
     {
@@ -250,21 +280,6 @@
       }
     },
     {
-      "title": "PaperCut releases second emergency patch for exploited flaws",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-28T19:08:26.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/papercut-releases-second-emergency-patch-for-exploited-flaws/",
-      "summary": "PaperCut has released a second emergency security update for two actively exploited vulnerabilities in its PaperCut NG and MF print management software after researchers discovered multiple ways to bypass the initial fixes. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "PaperCut Zero-Day Exploited in Attacks, Affecting All NG and MF Versions",
       "source": "The Hacker News",
       "region": "INT",
@@ -340,21 +355,6 @@
       }
     },
     {
-      "title": "Over 8,300 Gitea servers vulnerable to code execution attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-08-28T12:58:43.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/over-8-300-gitea-servers-vulnerable-to-code-execution-attacks/",
-      "summary": "Over 8,300 Internet-exposed Gitea instances are still unpatched against a critical security flaw exploited in ongoing remote code execution attacks, according to cybersecurity watchdog Shadowserver. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Two Unitree G1 EDU Humanoid Robot Flaws Enable Root RCE, One Starts Over Bluetooth",
       "source": "The Hacker News",
       "region": "INT",
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 10
+      "count": 12
     },
     {
       "name": "CISA",
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
