@@ -1,17 +1,17 @@
 {
-  "updated": "2026-08-31T06:04:38.589Z",
-  "next_update": "2026-08-31T06:07:00.000Z",
+  "updated": "2026-08-31T13:40:44.376Z",
+  "next_update": "2026-08-31T14:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Det finns flera signaler som indikerar ett förhöjt hotläge mot Sverige. CERT-SE har rapporterat om aktivt utnyttjade sårbarheter och intrång, vilket är direkt kopplat till svenska system. Dessutom har kritiska sårbarheter i Citrix NetScaler ADC och NetScaler Gateway identifierats, vilket kan påverka svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivitet som kan utgöra en risk för svenska organisationer.",
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 16 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 16,
-    "critical": 10,
+    "actively_exploited": 15,
+    "critical": 11,
     "authority_alerts": 16,
     "kev_recent": 10
   },
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-08-08T09:19:56.832Z",
+  "level_since": "2026-08-08T10:05:57.242Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -310,21 +310,6 @@
       }
     },
     {
-      "title": "Actively Exploited Oracle WebLogic Flaw Lets Unauthenticated Attackers Access Critical Data",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-25T06:12:35.000Z",
-      "link": "https://thehackernews.com/2026/08/actively-exploited-oracle-weblogic-flaw.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a maximum-severity security flaw impacting Oracle HTTP Server and Oracle WebLogic Server to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabili…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -382,6 +367,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-76639"
+      }
+    },
+    {
+      "title": "Three CVSS 10.0 ServiceNow Flaws Could Let Unauthenticated Attackers Execute Code and SQL",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-28T11:20:32.000Z",
+      "link": "https://thehackernews.com/2026/08/three-cvss-100-servicenow-flaws-could.html",
+      "summary": "ServiceNow has released patches for four security flaws impacting the ServiceNow AI Platform, three of them rated 10.0 on the CVSS scoring system and exploitable, in certain circumstances, by an unauthenticated attacker. The company said it deployed a security update to hosted i…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     }
   ],
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }
