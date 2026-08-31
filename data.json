@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-30T22:02:12.101Z",
-  "next_update": "2026-08-30T22:07:00.000Z",
+  "updated": "2026-08-31T00:30:10.591Z",
+  "next_update": "2026-08-31T00:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive i Citrix NetScaler och SonicWall, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom CERT-SE:s rapportering och de kritiska sårbarheterna, saknas bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Det finns dock tillräckligt med signaler för att motivera ett förhöjt läge.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE:s varningar.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/CVE-2026-15410 i SonicWall SMA1000, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom CERT-SE:s rapporter och de kritiska sårbarheterna, saknas för närvarande bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 17,
-    "critical": 9,
-    "authority_alerts": 17,
-    "kev_recent": 11
+    "actively_exploited": 16,
+    "critical": 10,
+    "authority_alerts": 16,
+    "kev_recent": 10
   },
   "anomaly": {
     "active": false,
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-08-08T07:32:45.935Z",
+  "level_since": "2026-08-08T08:19:14.826Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -250,21 +250,6 @@
       }
     },
     {
-      "title": "CVE-2026-21962: Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in Improper Access Control Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-24T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-21962",
-      "summary": "Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in – Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in contain an improper access control vulnerability that can result in unauthorized creation, deletion or modification access to critical data as well as unauth…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-21962"
-      }
-    },
-    {
       "title": "PaperCut releases second emergency patch for exploited flaws",
       "source": "BleepingComputer",
       "region": "INT",
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Two Unitree G1 EDU Humanoid Robot Flaws Enable Root RCE, One Starts Over Bluetooth",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-28T12:07:24.000Z",
+      "link": "https://thehackernews.com/2026/08/two-unitree-g1-edu-humanoid-robot-flaws.html",
+      "summary": "Security researcher Olivier Laflamme has disclosed two independent root remote code execution (RCE) chains affecting the Unitree G1 EDU, including a Bluetooth Low Energy (BLE) path that can reach root on the robot's Locomotion PC. The flaws are tracked as CVE-2026-76639 and CVE-…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-76639"
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 11
+      "count": 10
     },
     {
       "name": "CISA",
