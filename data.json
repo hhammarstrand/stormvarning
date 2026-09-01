@@ -1,26 +1,26 @@
 {
-  "updated": "2026-08-31T23:47:27.489Z",
-  "next_update": "2026-09-01T00:07:00.000Z",
+  "updated": "2026-09-01T04:59:22.204Z",
+  "next_update": "2026-09-01T05:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive i Citrix NetScaler och SonicWall, är aktivt utnyttjade och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Även om det finns en svensk koppling genom CERT-SE och de kritiska sårbarheterna, saknas bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation, vilket begränsar hotnivån till 'gul'.",
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 5,
     "sweden_acute": 4,
-    "actively_exploited": 16,
+    "actively_exploited": 15,
     "critical": 10,
     "authority_alerts": 18,
-    "kev_recent": 12
+    "kev_recent": 11
   },
   "anomaly": {
     "active": false,
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-08-08T11:38:18.950Z",
+  "level_since": "2026-08-08T13:08:45.095Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -265,21 +265,6 @@
       }
     },
     {
-      "title": "CVE-2026-60004: Gitea Code Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-25T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-60004",
-      "summary": "Gitea Gitea – Gitea contains a code injection vulnerability that allows an attacker with repository write access to send a malicious patch to the diffpatch API endpoint to plant an executable Git hook and run shell commands as the Gitea service account.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-60004"
-      }
-    },
-    {
       "title": "PaperCut Zero-Day Exploited in Attacks, Affecting All NG and MF Versions",
       "source": "The Hacker News",
       "region": "INT",
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.35",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-28T08:40:00.000Z",
+      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v35.html",
+      "summary": "<p>I veckans brev kan du ta del av ett axplock av händelser inom cybersäkerhetsområdet. Dessutom hittar du en utvärdering av organisationers cyberförsvar som CISA gjort, som innehåller rekommendationer för att stärka sin motståndskraft.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 12
+      "count": 11
     },
     {
       "name": "CISA",
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }
