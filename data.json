@@ -1,16 +1,16 @@
 {
-  "updated": "2026-09-01T14:48:42.437Z",
-  "next_update": "2026-09-01T15:07:00.000Z",
+  "updated": "2026-09-01T18:26:02.245Z",
+  "next_update": "2026-09-01T18:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
+  "reasoning": "Det finns flera kritiska sårbarheter som utnyttjas aktivt globalt, och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Särskilt viktigt är den kritiska sårbarheten i Citrix NetScaler ADC och NetScaler Gateway, som kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige ännu, är risken för attacker mot svenska mål förhöjd.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 16,
+    "actively_exploited": 15,
     "critical": 10,
     "authority_alerts": 17,
     "kev_recent": 11
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-08T15:01:12.541Z",
+  "level_since": "2026-08-08T15:41:27.534Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -112,21 +112,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2019-1068"
-      }
-    },
-    {
-      "title": "Critical Gitea RCE Actively Exploited as Reported Attack Drops Miner-Like Payload",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-26T06:27:07.000Z",
-      "link": "https://thehackernews.com/2026/08/critical-gitea-rce-actively-exploited.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday warned of active exploitation efforts targeting a recently patched critical security flaw impacting Gitea. The vulnerability in question is CVE-2026-60004 (CVSS score: 9.8), a case of remote code executi…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-60004"
       }
     },
     {
@@ -340,6 +325,21 @@
       }
     },
     {
+      "title": "Critical Langflow flaw exploited to steal OpenAI and AWS keys",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-01T17:54:22.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-langflow-flaw-exploited-to-steal-openai-and-aws-keys/",
+      "summary": "Threat actors are exploiting an unauthenticated remote code execution vulnerability (CVE-2026-0768) in Langflow, an open-source framework for building AI applications, to steal credentials, tokens, and keys. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-0768"
+      }
+    },
+    {
       "title": "Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE",
       "source": "The Hacker News",
       "region": "INT",
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
