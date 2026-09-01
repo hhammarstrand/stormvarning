@@ -1,18 +1,18 @@
 {
-  "updated": "2026-09-01T04:59:22.204Z",
-  "next_update": "2026-09-01T05:07:00.000Z",
+  "updated": "2026-09-01T10:01:09.796Z",
+  "next_update": "2026-09-01T10:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive i Citrix NetScaler och SonicWall, är aktivt utnyttjade och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Även om det inte finns bekräftade incidenter i flera svenska organisationer, är det tydliga tecken på aktivitet som kan påverka svenska aktörer. Detta motiverar en förhöjd beredskap.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 15,
+    "actively_exploited": 16,
     "critical": 10,
-    "authority_alerts": 18,
+    "authority_alerts": 17,
     "kev_recent": 11
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 93,
     "delta": 2
   },
-  "level_since": "2026-08-08T13:08:45.095Z",
+  "level_since": "2026-08-08T14:15:36.948Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -265,6 +265,21 @@
       }
     },
     {
+      "title": "Recently patched PaperCut zero-days used in data theft attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-01T07:48:24.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/recently-patched-papercut-zero-days-used-in-data-theft-attacks/",
+      "summary": "Two security vulnerabilities in the PaperCut NG and MF print management software, patched last week after being exploited as zero-days, are now being abused in data theft attacks. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "PaperCut Zero-Day Exploited in Attacks, Affecting All NG and MF Versions",
       "source": "The Hacker News",
       "region": "INT",
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.35",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-28T08:40:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v35.html",
-      "summary": "<p>I veckans brev kan du ta del av ett axplock av händelser inom cybersäkerhetsområdet. Dessutom hittar du en utvärdering av organisationers cyberförsvar som CISA gjort, som innehåller rekommendationer för att stärka sin motståndskraft.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
