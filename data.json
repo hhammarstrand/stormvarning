@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-01T23:32:23.718Z",
-  "next_update": "2026-09-01T23:37:00.000Z",
+  "updated": "2026-09-02T01:22:15.141Z",
+  "next_update": "2026-09-02T01:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "CERT-SE har rapporterat om flera kritiska sårbarheter och aktivt utnyttjande som påverkar Sverige, inklusive en kritisk sårbarhet i Citrix NetScaler ADC och NetScaler Gateway samt intrång och störningar i system. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka svensk infrastruktur. Detta, tillsammans med internationella rapporter om aktivt utnyttjande av kritiska sårbarheter, motiverar en förhöjd beredskap.",
-  "score": 95,
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
+  "reasoning": "Det finns flera signaler som indikerar ett förhöjt hotläge mot Sverige. CERT-SE har rapporterat om aktivt utnyttjade sårbarheter och intrång, samt kritiska sårbarheter i Citrix NetScaler och SonicWall SMA1000 som kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivitet som kan utgöra en risk för svensk kritisk infrastruktur. Internationella rapporter om aktivt utnyttjade sårbarheter, som de i PaperCut, förstärker detta hot.",
+  "score": 91,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 7,
     "sweden_acute": 4,
-    "actively_exploited": 15,
+    "actively_exploited": 9,
     "critical": 10,
-    "authority_alerts": 17,
-    "kev_recent": 11
+    "authority_alerts": 14,
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 1
+    "delta": -3
   },
-  "level_since": "2026-08-08T17:42:14.948Z",
+  "level_since": "2026-08-08T18:54:08.930Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -82,36 +82,6 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
-      }
-    },
-    {
-      "title": "CVE-2021-23758: Ajax.NET Professional Deserialization of Untrusted Data Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-26T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2021-23758",
-      "summary": "Ajax.NET Professional Ajax.NET Professional – Ajax.NET Professional (AjaxPro) contains a deserialization of untrusted data vulnerability that could allow for remote code execution via arbitrary .NET classes. The impacted product(s) could be end-of-life (EoL) and/or end-of-servic…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2021-23758"
-      }
-    },
-    {
-      "title": "CVE-2019-1068: Microsoft SQL Server Remote Code Execution Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-26T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2019-1068",
-      "summary": "Microsoft SQL Server – Microsoft SQL Server contains a remote code execution vulnerability that could allow an attacker to execute code in the context of the SQL Server Database Engine service account.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2019-1068"
       }
     },
     {
@@ -187,66 +157,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-66384"
-      }
-    },
-    {
-      "title": "CVE-2015-3246: Red Hat Libuser Race Condition Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-26T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2015-3246",
-      "summary": "Red Hat Libuser – Red Hat libuser contains a race condition vulnerability that allows authenticated local users to corrupt the /etc/passwd file to cause a denial of service or privilege escalation.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2015-3246"
-      }
-    },
-    {
-      "title": "CVE-2015-5287: Red Hat Automatic Bug Reporting Tool Privilege Escalation Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-26T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2015-5287",
-      "summary": "Red Hat Automatic Bug Reporting Tool – Red Hat Automatic Bug Reporting Tool (ABRT) contains a privilege escalation vulnerability that could allow local users with certain permissions to gain privileges via a symlink attack on a file with a predictable name. The impacted product(…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2015-5287"
-      }
-    },
-    {
-      "title": "CVE-2022-0995: Linux Kernel Out-of-Bounds Write Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-26T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2022-0995",
-      "summary": "Linux Kernel – Linux Kernel contains an out-of-bounds memory write vulnerability which could allow a local user to gain privileged access or cause a denial of service on the system.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2022-0995"
-      }
-    },
-    {
-      "title": "CVE-2026-8452: Citrix NetScaler ADC and NetScaler Gateway Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-26T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-8452",
-      "summary": "Citrix NetScaler ADC and NetScaler Gateway – Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability which could lead to denial of service.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-8452"
       }
     },
     {
@@ -383,6 +293,96 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.35",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-28T08:40:00.000Z",
+      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v35.html",
+      "summary": "<p>I veckans brev kan du ta del av ett axplock av händelser inom cybersäkerhetsområdet. Dessutom hittar du en utvärdering av organisationers cyberförsvar som CISA gjort, som innehåller rekommendationer för att stärka sin motståndskraft.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Next.js Patches Critical AVIF and Windows Flaws Enabling Unauthenticated RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-27T15:13:00.000Z",
+      "link": "https://thehackernews.com/2026/08/nextjs-patches-critical-avif-and.html",
+      "summary": "Credit: Hacktron Vercel has released security patches for two critical-severity vulnerabilities in the Next.js web framework, both of which allow unauthenticated remote code execution, one exploitable via specially crafted AVIF image files and the other through a path traversal…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "ThreatsDay: 296K IoT Botnet, 100+ Water Systems Targeted, SharePoint RCE Chain + 27 New Stories",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-27T15:12:16.000Z",
+      "link": "https://thehackernews.com/2026/08/threatsday-296k-iot-botnet-100-water.html",
+      "summary": "A fake login page. A fake security scan. A fake productivity app. Apparently, pretending to be useful is still one of the easier ways into a machine. The rest of the week gets stranger: botnets borrowing AI, command traffic hiding in public infrastructure, malicious tools waitin…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Alleged TeamPCP Hackers Charged in Australia Over Major Supply Chain Attacks",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-27T11:56:26.000Z",
+      "link": "https://thehackernews.com/2026/08/alleged-teampcp-hackers-charged-in.html",
+      "summary": "The Australian Federal Police (AFP) has charged two Western Australian men with a combined total of 14 offences over their alleged role in TeamPCP, the cybercrime group behind the March 2026 compromise of the open-source security scanners Trivy and Checkmarx KICS and the AI gate…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.33",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-14T08:20:00.000Z",
+      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v33.html",
+      "summary": "<p>I veckans veckobrev kan du bland annat läsa om fortsatta utmaningar med AI-modeller som agerar utanför de tänkta testmiljöerna, samt rapporter om en ökning av mer kraftfulla överbelastningsangrepp.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Patchtisdag augusti 2026 – samlad information om månadens säkerhetsuppdateringar",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-08-12T08:10:00.000Z",
+      "link": "https://www.cert.se/2026/08/patchtisdag-augusti-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
+      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för augusti. Tidigare har CERT-SE gjort ett urval på sårbarheterna som släppts. På grund av de släppta sårbarheternas volym rekommenderar CERT-SE att sätta upp egna rutiner för sårbarhetshantering.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 11
+      "count": 5
     },
     {
       "name": "CISA",
