@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-02T19:29:26.069Z",
-  "next_update": "2026-09-02T19:37:00.000Z",
+  "updated": "2026-09-02T21:57:47.610Z",
+  "next_update": "2026-09-02T22:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Det finns flera kritiska sårbarheter som utnyttjas aktivt globalt, och CERT-SE har utfärdat varningar om dessa, inklusive sårbarheter i Citrix NetScaler och SonicWall SMA1000. Även om det finns en svensk koppling genom myndighetsvarningar, saknas bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Därför bedöms läget som förhöjt (gul) men inte allvarligt (röd).",
+  "reasoning": "CERT-SE har rapporterat om flera intrång och störningar samt kritiska sårbarheter i Citrix NetScaler ADC och SonicWall SMA1000, vilket indikerar aktivt utnyttjande av sårbarheter med svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket ökar risken för attacker mot svenska organisationer. Det finns också en betydande mängd internationella rapporter om aktivt utnyttjade kritiska sårbarheter, vilket ytterligare förstärker behovet av försiktighet.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-08T22:42:44.628Z",
+  "level_since": "2026-08-08T23:40:04.614Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -355,27 +355,27 @@
       }
     },
     {
+      "title": "Hackers exploit Sangoma Switchvox flaw to deploy reverse shells",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-02T21:00:13.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-sangoma-switchvox-flaw-to-deploy-reverse-shells/",
+      "summary": "Attackers are actively exploiting CVE-2026-9586, an unauthenticated SQL injection vulnerability in the Sangoma Switchvox VoIP platform that can lead to remote code execution. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-9586"
+      }
+    },
+    {
       "title": "GeoNetwork Fixes Unauthenticated RCE Chain Affecting Government Geoportal Backends",
       "source": "The Hacker News",
       "region": "INT",
       "date": "2026-09-02T09:18:02.000Z",
       "link": "https://thehackernews.com/2026/09/geonetwork-fixes-unauthenticated-rce.html",
       "summary": "Two vulnerabilities in GeoNetwork can be chained to achieve unauthenticated remote code execution (RCE) on the open-source geospatial metadata catalog, which sits behind many government and agency geoportals. The project shipped fixes in versions 4.4.12 and 4.2.17 on July 8, 202…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Researchers Use Claude to Port Pre-Auth RCE Exploit From One PLC Model to Another",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-02T07:47:13.000Z",
-      "link": "https://thehackernews.com/2026/09/researchers-use-claude-to-port-pre-auth.html",
-      "summary": "Forescout Research - Vedere Labs said it used Anthropic's Claude to port a working pre-authentication remote code execution (RCE) exploit from one WAGO programmable logic controller (PLC) to another, executing attacker-supplied ARM shellcode on live hardware. The exploit targets…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
