@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-02T16:30:22.368Z",
-  "next_update": "2026-09-02T16:37:00.000Z",
+  "updated": "2026-09-02T19:29:26.069Z",
+  "next_update": "2026-09-02T19:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive en varning från CERT-SE om pågående intrång och störningar. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka svenska organisationer. Detta, tillsammans med CERT-SE:s varningar, räcker för att höja nivån till 'gul'.",
-  "score": 93,
+  "reasoning": "Det finns flera kritiska sårbarheter som utnyttjas aktivt globalt, och CERT-SE har utfärdat varningar om dessa, inklusive sårbarheter i Citrix NetScaler och SonicWall SMA1000. Även om det finns en svensk koppling genom myndighetsvarningar, saknas bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Därför bedöms läget som förhöjt (gul) men inte allvarligt (röd).",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 10,
-    "critical": 13,
-    "authority_alerts": 12,
-    "kev_recent": 5
+    "actively_exploited": 17,
+    "critical": 8,
+    "authority_alerts": 18,
+    "kev_recent": 12
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": -1
+    "delta": 1
   },
-  "level_since": "2026-08-08T21:42:04.468Z",
+  "level_since": "2026-08-08T22:42:44.628Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -85,6 +85,21 @@
       }
     },
     {
+      "title": "CVE-2026-83549: SonicWall SMA1000 Appliances OS Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-02T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-83549",
+      "summary": "SonicWall SMA1000 Appliances – SonicWall SMA1000 Appliances contains an OS command injection vulnerability that could enable a remote authenticated attacker as administrator to execute arbitrary OS commands, resulting in remote code execution.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-83549"
+      }
+    },
+    {
       "title": "SonicWall warns of actively exploited SMA1000 zero-day flaws",
       "source": "BleepingComputer",
       "region": "INT",
@@ -97,6 +112,96 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-59822: BerriAI LiteLLM Improper Authentication Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-02T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-59822",
+      "summary": "BerriAI LiteLLM – BerriAI LiteLLM contains an improper authentication vulnerability in the MCP Streamable HTTP endpoint that could allow an unauthenticated attacker to establish an authenticated MCP session using an arbitrary Bearer token.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-59822"
+      }
+    },
+    {
+      "title": "CVE-2026-48710: Kludex Starlette HTTP Request/Response Smuggling Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-02T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-48710",
+      "summary": "Kludex Starlette – Kludex Starlette contains a HTTP request/response smuggling vulnerability that could allow attackers to inject paths into the host part, prepending the actual path leading to issues such as authentication bypass when the authentication depends on the reconstru…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-48710"
+      }
+    },
+    {
+      "title": "CVE-2026-49869: Kestra OSS OS Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-02T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-49869",
+      "summary": "Kestra Kestra OSS – Kestra OSS contains an OS command injection vulnerability that could allow an unauthenticated remote attacker to create and execute arbitrary workflows without credentials.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-49869"
+      }
+    },
+    {
+      "title": "CVE-2026-82329: JFrog Artifactory Improper Authentication Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-02T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-82329",
+      "summary": "JFrog Artifactory – JFrog Artifactory contains an improper authentication vulnerability that under default configuration can allow an unauthenticated attacker with network access to obtain administrative privileges.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-82329"
+      }
+    },
+    {
+      "title": "CVE-2026-9586: Sangoma Switchvox SQL Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-02T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-9586",
+      "summary": "Sangoma Switchvox – Sangoma Switchvox contains a SQL injection vulnerability which allows an unauthenticated remote attacker to execute arbitrary SQL statements against the backend PostgreSQL database using a single crafted request, including database operations and remote code…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-9586"
+      }
+    },
+    {
+      "title": "CVE-2026-83548: SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-02T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-83548",
+      "summary": "SonicWall SMA1000 Appliances – SonicWall SMA1000 Appliances contains a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to gain unauthorized access to sensitive functionality and perform unauthorized operations.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-83548"
       }
     },
     {
@@ -278,111 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Attackers Exploit Critical Switchvox Flaw to Deploy Reverse Shells Without Credentials",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-02T07:08:50.000Z",
-      "link": "https://thehackernews.com/2026/09/attackers-exploit-critical-switchvox.html",
-      "summary": "Threat actors are exploiting a severe security vulnerability in Sangoma Switchvox, an enterprise VoIP platform, that could allow unauthenticated remote code execution. The vulnerability in question is CVE-2026-9586 (CVSS score: 9.3), a critical unauthenticated SQL injection vuln…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-9586"
-      }
-    },
-    {
-      "title": "Critical Langflow flaw exploited to steal OpenAI and AWS keys",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-01T17:54:22.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-langflow-flaw-exploited-to-steal-openai-and-aws-keys/",
-      "summary": "Threat actors are exploiting an unauthenticated remote code execution vulnerability (CVE-2026-0768) in Langflow, an open-source framework for building AI applications, to steal credentials, tokens, and keys. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-0768"
-      }
-    },
-    {
-      "title": "Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-29T16:25:03.000Z",
-      "link": "https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html",
-      "summary": "Multiple critical security flaws have been disclosed in WordPress plugins and themes, including WPMU DEV Dashboard, Avada, TranslatePress, Pods, and GiveWP, that could lead to authentication bypass, account takeover, and arbitrary code execution. The vulnerabilities, according t…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Two Unitree G1 EDU Humanoid Robot Flaws Enable Root RCE, One Starts Over Bluetooth",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-28T12:07:24.000Z",
-      "link": "https://thehackernews.com/2026/08/two-unitree-g1-edu-humanoid-robot-flaws.html",
-      "summary": "Security researcher Olivier Laflamme has disclosed two independent root remote code execution (RCE) chains affecting the Unitree G1 EDU, including a Bluetooth Low Energy (BLE) path that can reach root on the robot's Locomotion PC. The flaws are tracked as CVE-2026-76639 and CVE-…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-76639"
-      }
-    },
-    {
-      "title": "Three CVSS 10.0 ServiceNow Flaws Could Let Unauthenticated Attackers Execute Code and SQL",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-28T11:20:32.000Z",
-      "link": "https://thehackernews.com/2026/08/three-cvss-100-servicenow-flaws-could.html",
-      "summary": "ServiceNow has released patches for four security flaws impacting the ServiceNow AI Platform, three of them rated 10.0 on the CVSS scoring system and exploitable, in certain circumstances, by an unauthenticated attacker. The company said it deployed a security update to hosted i…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.35",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-28T08:40:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v35.html",
-      "summary": "<p>I veckans brev kan du ta del av ett axplock av händelser inom cybersäkerhetsområdet. Dessutom hittar du en utvärdering av organisationers cyberförsvar som CISA gjort, som innehåller rekommendationer för att stärka sin motståndskraft.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Next.js Patches Critical AVIF and Windows Flaws Enabling Unauthenticated RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-27T15:13:00.000Z",
-      "link": "https://thehackernews.com/2026/08/nextjs-patches-critical-avif-and.html",
-      "summary": "Credit: Hacktron Vercel has released security patches for two critical-severity vulnerabilities in the Next.js web framework, both of which allow unauthenticated remote code execution, one exploitable via specially crafted AVIF image files and the other through a path traversal…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 5
+      "count": 12
     },
     {
       "name": "CISA",
