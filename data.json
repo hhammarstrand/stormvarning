@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-02T11:41:18.779Z",
-  "next_update": "2026-09-02T12:07:00.000Z",
+  "updated": "2026-09-02T16:30:22.368Z",
+  "next_update": "2026-09-02T16:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive en specifik varning från CERT-SE om intrång och störningar i system. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivitet som kan påverka svenska organisationer, särskilt med hänvisning till Citrix NetScaler och SonicWall SMA1000 sårbarheter. Detta motiverar en förhöjd beredskap.",
+  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive en varning från CERT-SE om pågående intrång och störningar. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka svenska organisationer. Detta, tillsammans med CERT-SE:s varningar, räcker för att höja nivån till 'gul'.",
   "score": 93,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 4,
-    "actively_exploited": 11,
-    "critical": 12,
+    "actively_exploited": 10,
+    "critical": 13,
     "authority_alerts": 12,
     "kev_recent": 5
   },
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": -1
   },
-  "level_since": "2026-08-08T20:44:33.042Z",
+  "level_since": "2026-08-08T21:42:04.468Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -181,21 +181,6 @@
       "date": "2026-09-02T10:53:49.000Z",
       "link": "https://thehackernews.com/2026/09/attackers-exploit-two-sonicwall-sma.html",
       "summary": "SonicWall has released security updates to address two security flaws impacting its Secure Mobile Access (SMA) 1000 series VPN appliances that have been exploited in zero-day attacks. The vulnerabilities, discovered internally by SonicWall's William Perry and Adam Babis, are lis…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Recently patched PaperCut zero-days used in data theft attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-01T07:48:24.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/recently-patched-papercut-zero-days-used-in-data-theft-attacks/",
-      "summary": "Two security vulnerabilities in the PaperCut NG and MF print management software, patched last week after being exploited as zero-days, are now being abused in data theft attacks. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -381,6 +366,21 @@
         "critical": false,
         "incident": false,
         "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Next.js Patches Critical AVIF and Windows Flaws Enabling Unauthenticated RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-27T15:13:00.000Z",
+      "link": "https://thehackernews.com/2026/08/nextjs-patches-critical-avif-and.html",
+      "summary": "Credit: Hacktron Vercel has released security patches for two critical-severity vulnerabilities in the Next.js web framework, both of which allow unauthenticated remote code execution, one exploitable via specially crafted AVIF image files and the other through a path traversal…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
         "cve": null
       }
     }
