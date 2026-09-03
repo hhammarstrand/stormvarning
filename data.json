@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-03T05:01:29.079Z",
-  "next_update": "2026-09-03T05:07:00.000Z",
+  "updated": "2026-09-03T09:41:13.491Z",
+  "next_update": "2026-09-03T10:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-15409/CVE-2026-15410 i SonicWall SMA1000, är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom myndighetsvarningar och rapporterade incidenter, saknas för närvarande bekräftade storskaliga attacker mot svensk kritisk infrastruktur. Detta indikerar ett förhöjt men inte akut allvarligt hotläge.",
-  "score": 94,
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående attacker.",
+  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, särskilt mot Citrix NetScaler och SonicWall SMA1000, vilket har en tydlig svensk koppling. Dessa sårbarheter har en hög CVSS-klassning och är noterade i CISA:s KEV-katalog, vilket indikerar en hög risk för attacker. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "score": 96,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
-    "sweden_acute": 4,
-    "actively_exploited": 14,
-    "critical": 11,
-    "authority_alerts": 15,
+    "sweden_relevant": 5,
+    "sweden_acute": 5,
+    "actively_exploited": 15,
+    "critical": 9,
+    "authority_alerts": 16,
     "kev_recent": 9
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 0
+    "delta": 2
   },
-  "level_since": "2026-08-09T04:03:10.436Z",
+  "level_since": "2026-08-09T05:15:43.453Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -35,6 +35,21 @@
         "activelyExploited": true,
         "critical": false,
         "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Lärdomar från Polen: frontlinjen för hybridhot",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-09-03T06:00:00.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/september/lardomar-fran-polen-frontlinjen-for-hybridhot/",
+      "summary": "Erfarenheter från Polen visar hur civila samhällsfunktioner hamnar i frontlinjen för hybridhot. Angrepp mot energi, transporter, sjukvård och digital infrastruktur har kombinerats med otillbörlig informationspåverkan.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
         "swedenRelevant": true,
         "cve": null
       }
@@ -235,6 +250,21 @@
       }
     },
     {
+      "title": "Researcher Releases FalconFlank PoC Showing Privilege Escalation in CrowdStrike Falcon",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-03T06:26:59.000Z",
+      "link": "https://thehackernews.com/2026/09/researcher-releases-falconflank-poc.html",
+      "summary": "The security researcher known as Chaotic Eclipse (aka INFINITE NIGHTMARE, MSNightmare, and Nightmare-Eclipse) has dropped a new zero-day dubbed FalconFlank, a privilege escalation flaw impacting Crowdstrike Falcon. \"FalconFlank is a 0day privilege escalation that abuses the offi…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Attackers Exploit Two SonicWall SMA 1000 Zero-Days That May Form an Attack Chain",
       "source": "The Hacker News",
       "region": "INT",
@@ -353,36 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Attackers Exploit Critical Switchvox Flaw to Deploy Reverse Shells Without Credentials",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-02T07:08:50.000Z",
-      "link": "https://thehackernews.com/2026/09/attackers-exploit-critical-switchvox.html",
-      "summary": "Threat actors are exploiting a severe security vulnerability in Sangoma Switchvox, an enterprise VoIP platform, that could allow unauthenticated remote code execution. The vulnerability in question is CVE-2026-9586 (CVSS score: 9.3), a critical unauthenticated SQL injection vuln…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-9586"
-      }
-    },
-    {
-      "title": "Critical Langflow flaw exploited to steal OpenAI and AWS keys",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-01T17:54:22.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-langflow-flaw-exploited-to-steal-openai-and-aws-keys/",
-      "summary": "Threat actors are exploiting an unauthenticated remote code execution vulnerability (CVE-2026-0768) in Langflow, an open-source framework for building AI applications, to steal credentials, tokens, and keys. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-0768"
-      }
     }
   ],
   "sources_health": [
@@ -396,7 +396,7 @@
       "name": "MCF",
       "region": "SE",
       "ok": true,
-      "count": 12
+      "count": 13
     },
     {
       "name": "Krisinformation",
