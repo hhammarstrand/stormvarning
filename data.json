@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-03T14:28:54.631Z",
-  "next_update": "2026-09-03T14:37:00.000Z",
+  "updated": "2026-09-03T18:00:51.916Z",
+  "next_update": "2026-09-03T18:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige med flera kritiska sårbarheter och aktivt utnyttjande, men inga direkta bekräftade attacker mot svensk kritisk infrastruktur.",
-  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-83549 i SonicWall SMA1000. Dessa har en tydlig svensk koppling och kan påverka svensk kritisk infrastruktur. Även om det finns flera internationella rapporter om aktivt utnyttjande, saknas direkta bekräftelser på storskaliga attacker mot Sverige, vilket begränsar nivån till 'gul'.",
-  "score": 96,
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående attacker.",
+  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-83549 i SonicWall SMA1000, vilket är relevant för svenska organisationer. CERT-SE och MCF har också rapporterat om störningar och hybridhot som påverkar civila samhällsfunktioner. Även om det inte finns bekräftade incidenter i Sverige, är det en tydlig risk för pågående attacker mot svenska mål.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 15,
-    "critical": 9,
+    "actively_exploited": 12,
+    "critical": 11,
     "authority_alerts": 16,
     "kev_recent": 9
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 2
+    "delta": 1
   },
-  "level_since": "2026-08-09T06:25:32.547Z",
+  "level_since": "2026-08-09T07:38:15.740Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -112,21 +112,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-83549"
-      }
-    },
-    {
-      "title": "SonicWall warns of actively exploited SMA1000 zero-day flaws",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-02T06:39:29.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-actively-exploited-sma1000-zero-day-flaws/",
-      "summary": "SonicWall warned customers that threat actors are chaining two new SMA1000 zero-day vulnerabilities in remote code execution attacks. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
@@ -250,6 +235,21 @@
       }
     },
     {
+      "title": "IXON VPN Client",
+      "source": "CISA",
+      "region": "INT",
+      "date": "2026-09-03T12:00:00.000Z",
+      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-246-02",
+      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-246-02.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could allow an attacker to perform remote code execution on the com…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Researcher Releases FalconFlank PoC Showing Privilege Escalation in CrowdStrike Falcon",
       "source": "The Hacker News",
       "region": "INT",
@@ -280,51 +280,6 @@
       }
     },
     {
-      "title": "PaperCut Zero-Day Exploited in Attacks, Affecting All NG and MF Versions",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-28T08:25:36.000Z",
-      "link": "https://thehackernews.com/2026/08/papercut-zero-day-exploited-in-attacks.html",
-      "summary": "PaperCut has alerted customers that bad actors are actively exploiting a vulnerability impacting all versions of its PaperCut NG and PaperCut MF print management software in zero-day attacks. The company has released an emergency patch for v25 and v26 to address the issue. It sa…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "OpenAI Says Reward Hacking Drove AI Agents to Exploit Zero-Days and Breach Hugging Face",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-27T18:36:19.000Z",
-      "link": "https://thehackernews.com/2026/08/openai-says-reward-hacking-drove-ai.html",
-      "summary": "OpenAI on Wednesday revealed that reward hacking was a key driver behind the artificial intelligence (AI)-powered hack of Hugging Face last month, adding that it found evidence of misaligned behavior as early as late May. The incident, the company said, took place during cyberse…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Zoneminder",
-      "source": "CISA",
-      "region": "INT",
-      "date": "2026-08-25T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-237-02",
-      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-237-02.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could result in full Remote Code Execution (RCE) as the web server…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -337,6 +292,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "Critical Elementor Pro flaw exploited to take over WordPress sites",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-03T14:52:20.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/",
+      "summary": "A recently patched critical vulnerability (CVE-2026-32475) in the Elementor Pro plugin for WordPress is being exploited in attacks that deliver a webshell payload and execute arbitrary commands on the server. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-32475"
       }
     },
     {
@@ -376,6 +346,36 @@
       "date": "2026-09-02T07:47:13.000Z",
       "link": "https://thehackernews.com/2026/09/researchers-use-claude-to-port-pre-auth.html",
       "summary": "Forescout Research - Vedere Labs said it used Anthropic's Claude to port a working pre-authentication remote code execution (RCE) exploit from one WAGO programmable logic controller (PLC) to another, executing attacker-supplied ARM shellcode on live hardware. The exploit targets…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Attackers Exploit Critical Switchvox Flaw to Deploy Reverse Shells Without Credentials",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-02T07:08:50.000Z",
+      "link": "https://thehackernews.com/2026/09/attackers-exploit-critical-switchvox.html",
+      "summary": "Threat actors are exploiting a severe security vulnerability in Sangoma Switchvox, an enterprise VoIP platform, that could allow unauthenticated remote code execution. The vulnerability in question is CVE-2026-9586 (CVSS score: 9.3), a critical unauthenticated SQL injection vuln…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-9586"
+      }
+    },
+    {
+      "title": "Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-08-29T16:25:03.000Z",
+      "link": "https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html",
+      "summary": "Multiple critical security flaws have been disclosed in WordPress plugins and themes, including WPMU DEV Dashboard, Avada, TranslatePress, Pods, and GiveWP, that could lead to authentication bypass, account takeover, and arbitrary code execution. The vulnerabilities, according t…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
