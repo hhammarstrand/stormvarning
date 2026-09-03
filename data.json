@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-03T18:00:51.916Z",
-  "next_update": "2026-09-03T18:07:00.000Z",
+  "updated": "2026-09-03T20:56:56.928Z",
+  "next_update": "2026-09-03T21:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående attacker.",
-  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-83549 i SonicWall SMA1000, vilket är relevant för svenska organisationer. CERT-SE och MCF har också rapporterat om störningar och hybridhot som påverkar civila samhällsfunktioner. Även om det inte finns bekräftade incidenter i Sverige, är det en tydlig risk för pågående attacker mot svenska mål.",
+  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 och CVE-2026-83549, vilket är bekymmersamt. Dessutom har CERT-SE och MCF utfärdat varningar om pågående attacker och störningar i system, vilket tyder på en ökad risk för svenska aktörer. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet kritiska sårbarheter och aktiviteter en anledning till oro.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-09T07:38:15.740Z",
+  "level_since": "2026-08-09T08:57:37.177Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -295,6 +295,21 @@
       }
     },
     {
+      "title": "HPE patches critical ArubaOS-CX remote code execution flaw",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-03T18:28:12.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hpe-patches-critical-arubaos-cx-remote-code-execution-flaw/",
+      "summary": "Hewlett Packard Enterprise (HPE) has patched a critical vulnerability in the ArubaOS-CX network operating system that could lead to remote code execution. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical Elementor Pro flaw exploited to take over WordPress sites",
       "source": "BleepingComputer",
       "region": "INT",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-9586"
-      }
-    },
-    {
-      "title": "Five Critical WordPress Plugin and Theme Flaws Enable Site Takeover or RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-08-29T16:25:03.000Z",
-      "link": "https://thehackernews.com/2026/08/five-critical-wordpress-plugin-and.html",
-      "summary": "Multiple critical security flaws have been disclosed in WordPress plugins and themes, including WPMU DEV Dashboard, Avada, TranslatePress, Pods, and GiveWP, that could lead to authentication bypass, account takeover, and arbitrary code execution. The vulnerabilities, according t…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     }
   ],
