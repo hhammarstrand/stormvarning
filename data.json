@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-02T21:57:47.610Z",
-  "next_update": "2026-09-02T22:07:00.000Z",
+  "updated": "2026-09-03T00:09:12.367Z",
+  "next_update": "2026-09-03T00:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "CERT-SE har rapporterat om flera intrång och störningar samt kritiska sårbarheter i Citrix NetScaler ADC och SonicWall SMA1000, vilket indikerar aktivt utnyttjande av sårbarheter med svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket ökar risken för attacker mot svenska organisationer. Det finns också en betydande mängd internationella rapporter om aktivt utnyttjade kritiska sårbarheter, vilket ytterligare förstärker behovet av försiktighet.",
-  "score": 95,
+  "reasoning": "Flera kritiska sårbarheter, inklusive i Citrix NetScaler och SonicWall SMA1000, rapporteras aktivt utnyttjade globalt och har svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns även rapporter om skadliga npm-paket som påverkar GitHub Actions, vilket kan påverka svenska aktörer.",
+  "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 17,
-    "critical": 8,
-    "authority_alerts": 18,
-    "kev_recent": 12
+    "actively_exploited": 14,
+    "critical": 11,
+    "authority_alerts": 15,
+    "kev_recent": 9
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 1
+    "delta": 0
   },
-  "level_since": "2026-08-08T23:40:04.614Z",
+  "level_since": "2026-08-09T02:24:46.451Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -235,51 +235,6 @@
       }
     },
     {
-      "title": "CVE-2023-49105: ownCloud Improper Authentication Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-27T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2023-49105",
-      "summary": "ownCloud ownCloud – ownCloud contains an improper authentication vulnerability that allows an attacker to access, modify, or delete any file without authentication if the username of a victim is known, and the victim has no signing-key configured.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2023-49105"
-      }
-    },
-    {
-      "title": "CVE-2026-53362: Linux Kernel Unspecified Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-27T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-53362",
-      "summary": "Linux Kernel – Linux Kernel contains an unspecified vulnerability that can allow for privilege escalation via IPv6 networking subsystem. This vulnerability can impact multiple products, including but not limited to Suse, Red Hat, and other products using Linux.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-53362"
-      }
-    },
-    {
-      "title": "CVE-2026-66384: JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-08-27T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-66384",
-      "summary": "JFrog Artifactory – JFrog Artifactory contains an improper limitation of a pathname to a restricted directory vulnerability. This can allow an authenticated user to write data outside the intended Docker cache path under specific remote-repository conditions.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-66384"
-      }
-    },
-    {
       "title": "Attackers Exploit Two SonicWall SMA 1000 Zero-Days That May Form an Attack Chain",
       "source": "The Hacker News",
       "region": "INT",
@@ -383,6 +338,51 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Researchers Use Claude to Port Pre-Auth RCE Exploit From One PLC Model to Another",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-02T07:47:13.000Z",
+      "link": "https://thehackernews.com/2026/09/researchers-use-claude-to-port-pre-auth.html",
+      "summary": "Forescout Research - Vedere Labs said it used Anthropic's Claude to port a working pre-authentication remote code execution (RCE) exploit from one WAGO programmable logic controller (PLC) to another, executing attacker-supplied ARM shellcode on live hardware. The exploit targets…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Attackers Exploit Critical Switchvox Flaw to Deploy Reverse Shells Without Credentials",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-02T07:08:50.000Z",
+      "link": "https://thehackernews.com/2026/09/attackers-exploit-critical-switchvox.html",
+      "summary": "Threat actors are exploiting a severe security vulnerability in Sangoma Switchvox, an enterprise VoIP platform, that could allow unauthenticated remote code execution. The vulnerability in question is CVE-2026-9586 (CVSS score: 9.3), a critical unauthenticated SQL injection vuln…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-9586"
+      }
+    },
+    {
+      "title": "Critical Langflow flaw exploited to steal OpenAI and AWS keys",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-01T17:54:22.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-langflow-flaw-exploited-to-steal-openai-and-aws-keys/",
+      "summary": "Threat actors are exploiting an unauthenticated remote code execution vulnerability (CVE-2026-0768) in Langflow, an open-source framework for building AI applications, to steal credentials, tokens, and keys. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-0768"
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 12
+      "count": 9
     },
     {
       "name": "CISA",
