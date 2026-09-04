@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-04T01:20:12.474Z",
-  "next_update": "2026-09-04T01:37:00.000Z",
+  "updated": "2026-09-04T06:30:45.851Z",
+  "next_update": "2026-09-04T06:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och varningar från CERT-SE och MCF.",
-  "reasoning": "Flera signaler från CERT-SE och MCF indikerar aktivt utnyttjande av kritiska sårbarheter och pågående incidenter som påverkar Sverige. Särskilt CERT-SE:s varningar om intrång och störningar samt kritiska sårbarheter i Citrix NetScaler och SonicWall SMA1000 är anmärkningsvärda. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka svensk infrastruktur. Därför är hotnivån förhöjd.",
+  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "CERT-SE har rapporterat om aktivt utnyttjade sårbarheter och störningar i svenska system, vilket indikerar en pågående hotbild. Dessutom finns kritiska sårbarheter i Citrix NetScaler och SonicWall SMA1000, som båda är vanligt förekommande i svenska organisationer. Även om det inte finns bekräftade incidenter för närvarande, väger de svenska myndighetsvarningarna och den höga aktiviteten kring dessa sårbarheter tungt. Detta motiverar en förhöjd beredskap.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-09T10:49:10.524Z",
+  "level_since": "2026-08-09T11:39:43.498Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -255,7 +255,7 @@
       "region": "INT",
       "date": "2026-09-03T06:26:59.000Z",
       "link": "https://thehackernews.com/2026/09/researcher-releases-falconflank-poc.html",
-      "summary": "The security researcher known as Chaotic Eclipse (aka INFINITE NIGHTMARE, MSNightmare, and Nightmare-Eclipse) has dropped a new zero-day dubbed FalconFlank, a privilege escalation flaw impacting Crowdstrike Falcon. \"FalconFlank is a 0day privilege escalation that abuses the offi…",
+      "summary": "The security researcher known as Chaotic Eclipse (aka INFINITE NIGHTMARE, MSNightmare, and Nightmare-Eclipse) has dropped a new zero-day dubbed FalconFlank, a proof-of-concept (PoC) for a privilege escalation flaw impacting Crowdstrike Falcon. \"FalconFlank is a 0-day privilege e…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
