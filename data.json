@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-04T16:17:04.501Z",
-  "next_update": "2026-09-04T16:37:00.000Z",
+  "updated": "2026-09-04T19:07:01.492Z",
+  "next_update": "2026-09-04T19:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade sårbarheter och myndighetsvarningar om pågående angrepp.",
-  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-83549 i SonicWall SMA1000. Dessa har en tydlig svensk koppling och kan påverka svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående angrepp uppenbar. Detta motiverar en förhöjd 'gul' nivå.",
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 4,
-    "actively_exploited": 15,
-    "critical": 8,
-    "authority_alerts": 16,
-    "kev_recent": 9
+    "actively_exploited": 16,
+    "critical": 7,
+    "authority_alerts": 17,
+    "kev_recent": 10
   },
   "anomaly": {
     "active": false,
-    "baseline": 94,
+    "baseline": 95,
     "delta": 0
   },
-  "level_since": "2026-08-09T14:17:25.009Z",
+  "level_since": "2026-08-09T15:04:35.890Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,6 +97,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-83549"
+      }
+    },
+    {
+      "title": "CVE-2026-85046: Google Chromium V8 Type Confusion Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-04T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-85046",
+      "summary": "Google Chromium V8 – Google Chromium V8 contains a type confusion vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not lim…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-85046"
       }
     },
     {
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Critical Elementor Pro flaw exploited to take over WordPress sites",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-03T14:52:20.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-elementor-pro-flaw-exploited-to-take-over-wordpress-sites/",
-      "summary": "A recently patched critical vulnerability (CVE-2026-32475) in the Elementor Pro plugin for WordPress is being exploited in attacks that deliver a webshell payload and execute arbitrary commands on the server. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-32475"
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 10
     },
     {
       "name": "CISA",
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }
