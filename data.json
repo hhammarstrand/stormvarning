@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-04T21:27:47.579Z",
-  "next_update": "2026-09-04T21:37:00.000Z",
+  "updated": "2026-09-04T23:16:45.350Z",
+  "next_update": "2026-09-04T23:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade sårbarheter och myndighetsvarningar om pågående attacker.",
-  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-83549 i SonicWall SMA1000. Dessa har en tydlig svensk koppling och kan påverka svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige pga aktivt utnyttjade kritiska sårbarheter och varningar från CERT-SE om pågående angrepp.",
+  "reasoning": "Flera signaler från CERT-SE indikerar aktivt utnyttjande av kritiska sårbarheter och pågående intrång i svenska system. Särskilt viktigt är CERT-SE:s varningar om intrång och störningar samt kritiska sårbarheter i Citrix NetScaler och SonicWall SMA1000, som är utbredda i svensk infrastruktur. Även om det finns flera aktivt utnyttjade sårbarheter globalt, är det de svenska myndighetsvarningarna som driver upp hotnivån till 'gul'.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 95,
     "delta": -1
   },
-  "level_since": "2026-08-09T15:44:17.538Z",
+  "level_since": "2026-08-09T16:49:50.624Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
