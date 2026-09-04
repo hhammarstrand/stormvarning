@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-04T11:42:31.054Z",
-  "next_update": "2026-09-04T12:07:00.000Z",
+  "updated": "2026-09-04T16:17:04.501Z",
+  "next_update": "2026-09-04T16:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade sårbarheter och myndighetsvarningar om pågående angrepp.",
-  "reasoning": "Flera signaler från CERT-SE och internationella källor indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-83549 i SonicWall SMA1000. Dessa har en tydlig svensk koppling och CERT-SE har utfärdat varningar om pågående intrång och störningar. Även om det inte finns bekräftade incidenter i Sverige, är hotbilden tillräckligt allvarlig för att motivera en förhöjd beredskap.",
+  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-83549 i SonicWall SMA1000. Dessa har en tydlig svensk koppling och kan påverka svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående angrepp uppenbar. Detta motiverar en förhöjd 'gul' nivå.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 4,
-    "actively_exploited": 13,
-    "critical": 10,
+    "actively_exploited": 15,
+    "critical": 8,
     "authority_alerts": 16,
     "kev_recent": 9
   },
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 0
   },
-  "level_since": "2026-08-09T13:11:37.074Z",
+  "level_since": "2026-08-09T14:17:25.009Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -220,6 +220,36 @@
       }
     },
     {
+      "title": "New CrowdStrike 'FalconFlank' zero-day grants SYSTEM privileges",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-04T13:22:01.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/",
+      "summary": "An anonymous security researcher who uses the \"Nightmare Eclipse\" handle released a CrowdStrike Falcon zero-day exploit named \"FalconFlank\" that lets attackers escalate privileges on up-to-date Windows systems. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Google warns of new Chrome zero-day flaw exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-04T11:48:17.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/google-warns-of-new-chrome-zero-day-flaw-exploited-in-attacks/",
+      "summary": "Google has updated the Chrome browser to address an actively exploited high-severity zero-day flaw in the V8 engine and 11 other vulnerabilities. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Google Releases Chrome Update to Patch Actively Exploited V8 Zero-Day",
       "source": "The Hacker News",
       "region": "INT",
@@ -352,36 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-32475"
-      }
-    },
-    {
-      "title": "Hackers exploit Sangoma Switchvox flaw to deploy reverse shells",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-02T21:00:13.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-sangoma-switchvox-flaw-to-deploy-reverse-shells/",
-      "summary": "Attackers are actively exploiting CVE-2026-9586, an unauthenticated SQL injection vulnerability in the Sangoma Switchvox VoIP platform that can lead to remote code execution. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-9586"
-      }
-    },
-    {
-      "title": "GeoNetwork Fixes Unauthenticated RCE Chain Affecting Government Geoportal Backends",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-02T09:18:02.000Z",
-      "link": "https://thehackernews.com/2026/09/geonetwork-fixes-unauthenticated-rce.html",
-      "summary": "Two vulnerabilities in GeoNetwork can be chained to achieve unauthenticated remote code execution (RCE) on the open-source geospatial metadata catalog, which sits behind many government and agency geoportals. The project shipped fixes in versions 4.4.12 and 4.2.17 on July 8, 202…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     }
   ],
