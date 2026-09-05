@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-05T13:50:27.010Z",
-  "next_update": "2026-09-05T14:07:00.000Z",
+  "updated": "2026-09-05T16:47:33.359Z",
+  "next_update": "2026-09-05T17:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige pga aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om hybridhot.",
-  "reasoning": "Flera kritiska sårbarheter (t.ex. Citrix NetScaler och SonicWall SMA1000) är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Dessutom har MCF rapporterat om hybridhot som påverkar civila samhällsfunktioner, vilket indikerar en ökad risk för Sverige. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga tecken på förhöjd hotbild.",
-  "score": 94,
+  "summary": "Förhöjt hotläge mot Sverige med flera aktiva sårbarheter och myndighetsvarningar om pågående angrepp.",
+  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-83549 i SonicWall SMA1000. Dessa har en tydlig svensk koppling och kan påverka svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "score": 93,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 4,
     "actively_exploited": 16,
-    "critical": 7,
+    "critical": 5,
     "authority_alerts": 17,
     "kev_recent": 10
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": -1
+    "delta": -2
   },
-  "level_since": "2026-08-09T20:48:37.656Z",
+  "level_since": "2026-08-09T21:44:43.675Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -340,6 +340,36 @@
       }
     },
     {
+      "title": "Over 5,400 hacked sites serve ClickFix payloads stored on the blockchain",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-05T14:29:13.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/over-5-400-hacked-sites-serve-clickfix-payloads-stored-on-the-blockchain/",
+      "summary": "A massive cybercriminal operation is leveraging thousands of compromised small-business websites to deliver ClickFix payloads stored in smart contracts on the BNB Smart Chain (BSC). [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Trezor Says ShipMonk Breach Exposed 67,000 U.S. Customers' Data It Said Was Deleted",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-05T14:17:02.000Z",
+      "link": "https://thehackernews.com/2026/09/trezor-says-shipmonk-breach-exposed.html",
+      "summary": "Hardware wallet manufacturer Trezor on Friday disclosed that another 67,000 customers from the U.S. have been impacted in a breach at its shipping provider ShipMonk. The exposed information includes customer names, email addresses, phone numbers, shipping addresses, and order nu…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "CERT-SE:s veckobrev v.36",
       "source": "CERT-SE",
       "region": "SE",
@@ -351,36 +381,6 @@
         "critical": false,
         "incident": false,
         "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Over 440,000 Exploit Attempts Target Super Forms and Elementor Pro RCE Flaws",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-04T08:48:45.000Z",
-      "link": "https://thehackernews.com/2026/09/over-440000-exploit-attempts-target.html",
-      "summary": "Threat actors are exploiting two critical security flaws in WordPress plugins Super Forms and Elementor Pro, according to findings from Wordfence. The vulnerabilities in question are - CVE-2026-14894 (CVSS score: 9.8) - A missing file type validation vulnerability in Super Forms…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-14894"
-      }
-    },
-    {
-      "title": "HPE patches critical ArubaOS-CX remote code execution flaw",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-03T18:28:12.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hpe-patches-critical-arubaos-cx-remote-code-execution-flaw/",
-      "summary": "Hewlett Packard Enterprise (HPE) has patched a critical vulnerability in the ArubaOS-CX network operating system that could lead to remote code execution. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
         "cve": null
       }
     }
