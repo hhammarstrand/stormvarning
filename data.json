@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-05T10:53:50.697Z",
-  "next_update": "2026-09-05T11:07:00.000Z",
+  "updated": "2026-09-05T13:50:27.010Z",
+  "next_update": "2026-09-05T14:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
-  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 och CVE-2026-83549, vilket är bekymmersamt. Även om det finns en svensk koppling genom CERT-SE:s varningar och identifierade hot mot svensk infrastruktur, saknas för närvarande bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Därför bedöms läget som förhöjt (gul).",
+  "summary": "Förhöjt hotläge mot Sverige pga aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om hybridhot.",
+  "reasoning": "Flera kritiska sårbarheter (t.ex. Citrix NetScaler och SonicWall SMA1000) är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Dessutom har MCF rapporterat om hybridhot som påverkar civila samhällsfunktioner, vilket indikerar en ökad risk för Sverige. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga tecken på förhöjd hotbild.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 95,
     "delta": -1
   },
-  "level_since": "2026-08-09T19:45:02.622Z",
+  "level_since": "2026-08-09T20:48:37.656Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
