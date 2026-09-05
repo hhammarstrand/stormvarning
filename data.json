@@ -1,16 +1,16 @@
 {
-  "updated": "2026-09-05T19:00:06.041Z",
-  "next_update": "2026-09-05T19:07:00.000Z",
+  "updated": "2026-09-05T21:10:03.664Z",
+  "next_update": "2026-09-05T21:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 16 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 17 aktivt utnyttjade sårbarheter, 16 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 16,
+    "actively_exploited": 17,
     "critical": 6,
     "authority_alerts": 16,
     "kev_recent": 10
@@ -18,9 +18,9 @@
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": -1
+    "delta": 0
   },
-  "level_since": "2026-08-09T22:46:03.371Z",
+  "level_since": "2026-08-09T23:42:35.623Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -235,6 +235,21 @@
       }
     },
     {
+      "title": "Unpatched Magento and Adobe Commerce Zero-Day Exploited to Backdoor Online Stores",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-05T20:14:47.000Z",
+      "link": "https://thehackernews.com/2026/09/unpatched-magento-and-adobe-commerce.html",
+      "summary": "Attackers are exploiting a new unpatched vulnerability in Magento Open Source and Adobe Commerce that lets them run malicious code on an online store's server without logging in, Dutch e-commerce security company Sansec said in an advisory published on September 5. Sansec, which…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "New CrowdStrike 'FalconFlank' zero-day grants SYSTEM privileges",
       "source": "BleepingComputer",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-09-05T14:29:13.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/over-5-400-hacked-sites-serve-clickfix-payloads-stored-on-the-blockchain/",
       "summary": "A massive cybercriminal operation is leveraging thousands of compromised small-business websites to deliver ClickFix payloads stored in smart contracts on the BNB Smart Chain (BSC). [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Trezor Says ShipMonk Breach Exposed 67,000 U.S. Customers' Data It Said Was Deleted",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-05T14:17:02.000Z",
-      "link": "https://thehackernews.com/2026/09/trezor-says-shipmonk-breach-exposed.html",
-      "summary": "Hardware wallet manufacturer Trezor on Friday disclosed that another 67,000 customers from the U.S. have been impacted in a breach at its shipping provider ShipMonk. The exposed information includes customer names, email addresses, phone numbers, shipping addresses, and order nu…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
