@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-05T16:47:33.359Z",
-  "next_update": "2026-09-05T17:07:00.000Z",
+  "updated": "2026-09-05T19:00:06.041Z",
+  "next_update": "2026-09-05T19:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige med flera aktiva sårbarheter och myndighetsvarningar om pågående angrepp.",
-  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-83549 i SonicWall SMA1000. Dessa har en tydlig svensk koppling och kan påverka svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
-  "score": 93,
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 16 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 94,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 4,
     "sweden_acute": 4,
     "actively_exploited": 16,
-    "critical": 5,
-    "authority_alerts": 17,
+    "critical": 6,
+    "authority_alerts": 16,
     "kev_recent": 10
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": -2
+    "delta": -1
   },
-  "level_since": "2026-08-09T21:44:43.675Z",
+  "level_since": "2026-08-09T22:46:03.371Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -340,6 +340,21 @@
       }
     },
     {
+      "title": "Attackers Breached JetBrains Cadence via Unpatched TeamCity, Extracting AWS Credentials",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-05T16:52:33.000Z",
+      "link": "https://thehackernews.com/2026/09/attackers-breached-jetbrains-cadence.html",
+      "summary": "JetBrains is urging Cadence users to revoke and rotate all credentials following a security incident last month in which unidentified threat actors exploited a recently disclosed critical vulnerability in TeamCity to breach its own environment. \"Cadence users should immediately…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Over 5,400 hacked sites serve ClickFix payloads stored on the blockchain",
       "source": "BleepingComputer",
       "region": "INT",
@@ -366,21 +381,6 @@
         "critical": false,
         "incident": true,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.36",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-04T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/09/cert-se-veckobrev-v36.html",
-      "summary": "<p>Den 13 september är det val i Sverige och Nationellt cybersäkerhetscenter (NCSC) bevakar hotläget från ett cybersäkerhetsperspektiv. NCSC:s chef John Billow berättar om uppdraget i Sveriges Radios program Gräns.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }
