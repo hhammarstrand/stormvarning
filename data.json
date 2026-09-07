@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-07T15:47:53.791Z",
-  "next_update": "2026-09-07T16:07:00.000Z",
+  "updated": "2026-09-07T19:53:55.838Z",
+  "next_update": "2026-09-07T20:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
-  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat om aktivt utnyttjade sårbarheter och intrång, samt en kritisk sårbarhet i Citrix NetScaler som kan påverka svenska organisationer. MCF har också varnat för hybridhot som riktar sig mot kritiska samhällsfunktioner, vilket är särskilt oroande. Även om det inte finns bekräftade incidenter i Sverige för närvarande, väger myndighetsvarningarna och de aktivt utnyttjade sårbarheterna tungt, vilket motiverar en gul nivå.",
-  "score": 93,
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 14,
-    "critical": 9,
+    "actively_exploited": 16,
+    "critical": 8,
     "authority_alerts": 14,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": -1
+    "delta": 0
   },
-  "level_since": "2026-08-10T17:31:59.658Z",
+  "level_since": "2026-08-10T18:29:21.989Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,6 +97,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-83549"
+      }
+    },
+    {
+      "title": "⚡ Weekly Recap: Chrome 0-Day, Router Hijacks, Coder Supply Chain Attack and More",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-07T14:36:07.000Z",
+      "link": "https://thehackernews.com/2026/09/weekly-recap-chrome-0-day-router.html",
+      "summary": "Turning off email images should at least stop the pictures. This week, attackers had a workaround: a scannable QR code built out of text. It still appears, even with images blocked. A small detail, but an annoying one if that was a precaution you were counting on. Elsewhere, a t…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -217,6 +232,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-83548"
+      }
+    },
+    {
+      "title": "Magento StyleSmuggler zero-day exploited to deploy Linux backdoor",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-07T16:50:29.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/magento-stylesmuggler-zero-day-exploited-to-deploy-linux-backdoor/",
+      "summary": "A zero-day vulnerability dubbed \"StyleSmuggler\" affecting all versions of Magento and Adobe Commerce is being exploited in attacks to deploy a backdoor. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -353,36 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Attackers Breached JetBrains Cadence via Unpatched TeamCity, Extracting AWS Credentials",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-05T16:52:33.000Z",
-      "link": "https://thehackernews.com/2026/09/attackers-breached-jetbrains-cadence.html",
-      "summary": "JetBrains is urging Cadence users to revoke and rotate all credentials following a security incident last month in which unidentified threat actors exploited a recently disclosed critical vulnerability in TeamCity to breach its own environment. \"Cadence users should immediately…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Over 5,400 hacked sites serve ClickFix payloads stored on the blockchain",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-05T14:29:13.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/over-5-400-hacked-sites-serve-clickfix-payloads-stored-on-the-blockchain/",
-      "summary": "A massive cybercriminal operation is leveraging thousands of compromised small-business websites to deliver ClickFix payloads stored in smart contracts on the BNB Smart Chain (BSC). [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }
