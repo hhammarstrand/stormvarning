@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-07T09:40:44.552Z",
-  "next_update": "2026-09-07T10:07:00.000Z",
+  "updated": "2026-09-07T15:47:53.791Z",
+  "next_update": "2026-09-07T16:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter och aktivt utnyttjande, med specifika svenska varningar.",
-  "reasoning": "Flera kritiska sårbarheter (t.ex. Citrix NetScaler och SonicWall SMA1000) är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom CERT-SE:s varningar och specifika svenska myndighetsrapporteringar, saknas för närvarande bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en röd nivå. Därför bedöms läget som förhöjt (gul).",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
+  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk för Sverige. CERT-SE har rapporterat om aktivt utnyttjade sårbarheter och intrång, samt en kritisk sårbarhet i Citrix NetScaler som kan påverka svenska organisationer. MCF har också varnat för hybridhot som riktar sig mot kritiska samhällsfunktioner, vilket är särskilt oroande. Även om det inte finns bekräftade incidenter i Sverige för närvarande, väger myndighetsvarningarna och de aktivt utnyttjade sårbarheterna tungt, vilket motiverar en gul nivå.",
   "score": 93,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 15,
-    "critical": 7,
+    "actively_exploited": 14,
+    "critical": 9,
     "authority_alerts": 14,
     "kev_recent": 8
   },
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": -1
   },
-  "level_since": "2026-08-10T16:27:24.022Z",
+  "level_since": "2026-08-10T17:31:59.658Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,6 +97,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-83549"
+      }
+    },
+    {
+      "title": "N-able Issues Fourth N-central Hotfix in Five Weeks for Unauthenticated RCE Flaw",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-07T08:31:12.000Z",
+      "link": "https://thehackernews.com/2026/09/n-able-issues-fourth-n-central-hotfix.html",
+      "summary": "Every on-premises N-central build below 2026.3.1.14 — including servers updated to Hotfix 3 a day earlier — needs Hotfix 4. N-able's incident notice says the flaw has been exploited in the wild; its release notes say that is unconfirmed. N-able has released its fourth hotfix in…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -220,36 +235,6 @@
       }
     },
     {
-      "title": "New CrowdStrike 'FalconFlank' zero-day grants SYSTEM privileges",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-04T13:22:01.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/new-crowdstrike-falconflank-zero-day-grants-system-privileges/",
-      "summary": "An anonymous security researcher who uses the \"Nightmare Eclipse\" handle released a CrowdStrike Falcon zero-day exploit named \"FalconFlank\" that lets attackers escalate privileges on up-to-date Windows systems. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Google warns of new Chrome zero-day flaw exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-04T11:48:17.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/google-warns-of-new-chrome-zero-day-flaw-exploited-in-attacks/",
-      "summary": "Google has updated the Chrome browser to address an actively exploited high-severity zero-day flaw in the V8 engine and 11 other vulnerabilities. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Google Releases Chrome Update to Patch Actively Exploited V8 Zero-Day",
       "source": "The Hacker News",
       "region": "INT",
@@ -325,6 +310,36 @@
       }
     },
     {
+      "title": "Trezor data breach impact now reaches 81,000 customers",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-07T12:16:32.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/trezor-data-breach-impact-now-reaches-81-000-customers/",
+      "summary": "Cryptocurrency hardware wallet maker Trezor says an August data breach at its shipping and logistics provider, ShipMonk, affects an additional 67,000 U.S. customers. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Telerik UI Padding-Oracle Bug Chained to Unauthenticated RCE — Public Exploit Released",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-07T11:20:14.000Z",
+      "link": "https://thehackernews.com/2026/09/telerik-ui-padding-oracle-bug-chained.html",
+      "summary": "A TantoSec proof-of-concept turns an AES-CBC \"padding oracle\" in Telerik UI for ASP.NET AJAX into unauthenticated remote code execution — but only against applications in a specific non-default configuration, and Progress patched the chain in July. There are no confirmed reports…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "N-able patches max severity N-central flaw amid ongoing attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-09-05T14:29:13.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/over-5-400-hacked-sites-serve-clickfix-payloads-stored-on-the-blockchain/",
       "summary": "A massive cybercriminal operation is leveraging thousands of compromised small-business websites to deliver ClickFix payloads stored in smart contracts on the BNB Smart Chain (BSC). [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Trezor Says ShipMonk Breach Exposed 67,000 U.S. Customers' Data It Said Was Deleted",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-05T14:17:02.000Z",
-      "link": "https://thehackernews.com/2026/09/trezor-says-shipmonk-breach-exposed.html",
-      "summary": "Hardware wallet manufacturer Trezor on Friday disclosed that another 67,000 customers from the U.S. have been impacted in a breach at its shipping provider ShipMonk. The exposed information includes customer names, email addresses, phone numbers, shipping addresses, and order nu…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
