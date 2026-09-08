@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-08T19:34:11.991Z",
-  "next_update": "2026-09-08T19:37:00.000Z",
+  "updated": "2026-09-08T22:00:49.825Z",
+  "next_update": "2026-09-08T22:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige med flera aktiva sårbarheter och varningar från CERT-SE.",
-  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive en specifik varning om intrång och störningar i system från CERT-SE. Även om det finns en svensk koppling genom CERT-SE:s varningar och identifierade sårbarheter, saknas bekräftade incidenter eller VMA/krisinformation som skulle motivera en högre nivå. Det finns dock tillräckligt med indikationer på förhöjd aktivitet för att motivera en gul nivå.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
+  "reasoning": "CERT-SE har rapporterat om flera intrång och störningar samt kritiska sårbarheter i Citrix NetScaler ADC och SonicWall SMA1000, vilket indikerar aktivt utnyttjande med svensk koppling. Även om det inte finns bekräftade incidenter i flera svenska aktörer, väger myndighetsvarningarna och de kritiska sårbarheterna tungt. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-11T02:23:13.957Z",
+  "level_since": "2026-08-11T04:04:34.757Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -295,6 +295,21 @@
       }
     },
     {
+      "title": "The EU CRA's Real Question: What Shipped, and When Did You Know?",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-08T20:24:16.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/the-eu-cras-real-question-what-shipped-and-when-did-you-know/",
+      "summary": "The EU Cyber Resilience Act's vulnerability reporting requirements take effect September 11, giving software vendors as little as 24 hours to report actively exploited flaws. ActiveState explains why knowing exactly what shipped and when vulnerabilities were discovered will be c…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Microsoft September 2026 Patch Tuesday fixes 966 flaws, 2 zero-days",
       "source": "BleepingComputer",
       "region": "INT",
@@ -352,21 +367,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-75650"
-      }
-    },
-    {
-      "title": "Magento StyleSmuggler zero-day exploited to deploy Linux backdoor",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-07T16:50:29.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/magento-stylesmuggler-zero-day-exploited-to-deploy-linux-backdoor/",
-      "summary": "A zero-day vulnerability dubbed \"StyleSmuggler\" affecting all versions of Magento and Adobe Commerce is being exploited in attacks to deploy a backdoor. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
