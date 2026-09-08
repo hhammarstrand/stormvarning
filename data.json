@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-08T06:30:57.073Z",
-  "next_update": "2026-09-08T06:37:00.000Z",
+  "updated": "2026-09-08T11:42:53.135Z",
+  "next_update": "2026-09-08T12:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
-  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler och CVE-2026-83549 i SonicWall SMA1000. Dessa har en tydlig svensk koppling och kan påverka svensk kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående angrepp uppenbar. Detta motiverar en förhöjd 'gul' nivå.",
+  "summary": "Förhöjt hotläge mot Sverige med flera aktiva sårbarheter och varningar från CERT-SE och MCF.",
+  "reasoning": "Det finns flera signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om aktivt utnyttjade sårbarheter och MCF:s rapport om hybridhot mot samhällsviktiga funktioner. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar kritiska sårbarheter, vilket ökar risken för svenska mål. Detta motiverar en förhöjd beredskap.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 16,
-    "critical": 8,
+    "actively_exploited": 17,
+    "critical": 7,
     "authority_alerts": 14,
     "kev_recent": 8
   },
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 0
   },
-  "level_since": "2026-08-10T21:54:27.320Z",
+  "level_since": "2026-08-10T22:53:03.788Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -235,6 +235,21 @@
       }
     },
     {
+      "title": "Adobe Patches Magento Zero-Day Exploited to Deploy Rust Backdoor and PHP Web Shell",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-08T09:13:47.000Z",
+      "link": "https://thehackernews.com/2026/09/adobe-patches-magento-zero-day.html",
+      "summary": "Adobe on Monday released security patches to address a maximum-severity flaw impacting Adobe Commerce and Magento Open Source that has come under active exploitation in the wild. The vulnerability, now tracked as CVE-2026-75650 (CVSS score: 10.0), has been codenamed StyleSmuggle…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-75650"
+      }
+    },
+    {
       "title": "Magento StyleSmuggler zero-day exploited to deploy Linux backdoor",
       "source": "BleepingComputer",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-09-07T11:20:14.000Z",
       "link": "https://thehackernews.com/2026/09/telerik-ui-padding-oracle-bug-chained.html",
       "summary": "A TantoSec proof-of-concept turns an AES-CBC \"padding oracle\" in Telerik UI for ASP.NET AJAX into unauthenticated remote code execution — but only against applications in a specific non-default configuration, and Progress patched the chain in July. There are no confirmed reports…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "N-able patches max severity N-central flaw amid ongoing attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-07T06:17:41.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/n-able-patches-max-severity-n-central-flaw-amid-ongoing-attacks/",
-      "summary": "N-able has released an emergency hotfix for a maximum-severity remote code execution (RCE) flaw affecting its N-central remote monitoring and management (RMM) platform. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
