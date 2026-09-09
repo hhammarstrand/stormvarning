@@ -1,18 +1,18 @@
 {
-  "updated": "2026-09-09T05:11:24.678Z",
-  "next_update": "2026-09-09T05:37:00.000Z",
+  "updated": "2026-09-09T10:04:48.696Z",
+  "next_update": "2026-09-09T10:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige med flera aktiva och kritiska sårbarheter, samt varningar från CERT-SE och MCF.",
-  "reasoning": "Flera signaler indikerar aktivt utnyttjande av kritiska sårbarheter globalt, och CERT-SE och MCF har utfärdat varningar om pågående intrång och störningar i system. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga tecken på förhöjd risk för svenska aktörer, särskilt med tanke på de kritiska sårbarheterna i Citrix NetScaler och SonicWall SMA1000.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående attacker.",
+  "reasoning": "Flera signaler från CERT-SE och internationella källor indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive en specifik varning från CERT-SE om pågående intrång och störningar i system. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som potentiellt kan påverka svensk infrastruktur. Detta, tillsammans med CERT-SE:s varningar och uppdateringar om kritiska sårbarheter, motiverar en förhöjd beredskap.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 17,
-    "critical": 9,
-    "authority_alerts": 11,
+    "actively_exploited": 20,
+    "critical": 6,
+    "authority_alerts": 10,
     "kev_recent": 5
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 0
   },
-  "level_since": "2026-08-11T06:31:46.243Z",
+  "level_since": "2026-08-11T07:50:29.008Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -205,6 +205,81 @@
       }
     },
     {
+      "title": "Chrome V8 Zero-Day Exploited in the Wild Enables Code Execution Inside Sandbox",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-09T09:11:03.000Z",
+      "link": "https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html",
+      "summary": "Google on Thursday released updates to patch 230 security vulnerabilities, including one that has come under active exploitation in the wild. The medium-severity vulnerability, assigned the CVE identifier CVE-2026-87491 (CVSS score: N/A), has been described as an out-of-bounds b…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-87491"
+      }
+    },
+    {
+      "title": "New Microsoft Defender 'ShieldCrash' zero-day grants SYSTEM access",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-09T07:30:15.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldcrash-zero-day-grants-system-access/",
+      "summary": "An anonymous security researcher known as Nightmare Eclipse has released a new Microsoft Defender zero-day exploit named \"ShieldCrash\" right after Microsoft rolled out its September 2026 Patch Tuesday security updates. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Researcher Drops New Microsoft Defender PoC Showing ShieldBreak Patch Can Be Bypassed",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-09T06:47:27.000Z",
+      "link": "https://thehackernews.com/2026/09/researcher-drops-new-microsoft-defender.html",
+      "summary": "The security researcher known as Chaotic Eclipse has dropped a proof-of-concept (PoC) for yet another zero-day in Microsoft Defender. The vulnerability, codenamed ShieldCrash, is assessed to be a patch bypass for CVE-2026-69414 (CVSS score: 7.8), also called ShieldBreak, which t…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-69414"
+      }
+    },
+    {
+      "title": "Google warns of new Chrome zero-day bug exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-09T06:25:48.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/google-patches-seventh-chrome-zero-day-exploited-in-attacks-this-year/",
+      "summary": "Google has patched 230 vulnerabilities on Tuesday, including another actively exploited Chrome zero-day bug, the seventh such vulnerability patched since the start of the year. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Microsoft Patches Record 974 Flaws, Including Two Exploited Windows Zero-Days",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-09T04:41:29.000Z",
+      "link": "https://thehackernews.com/2026/09/microsoft-patches-record-974-flaws.html",
+      "summary": "Microsoft on Tuesday broke Patch Tuesday records by addressing an earth-shattering 974 vulnerabilities spanning its software portfolio, including two flaws that it said have been actively exploited in the wild. These include 723 flaws in Windows, 111 in Office and Office 2016, 6…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "The EU CRA's Real Question: What Shipped, and When Did You Know?",
       "source": "BleepingComputer",
       "region": "INT",
@@ -247,21 +322,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Adobe fixes critical Magento zero-day exploited to backdoor servers",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-08T13:34:47.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/adobe-fixes-critical-magento-zero-day-exploited-to-backdoor-servers/",
-      "summary": "Adobe has released an emergency fix for CVE-2026-75650, an actively exploited max-severity zero-day vulnerability dubbed StyleSmuggler, that impacts multiple versions of Magento and Adobe Commerce. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-75650"
       }
     },
     {
@@ -316,66 +376,6 @@
       "date": "2026-09-03T12:00:00.000Z",
       "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-246-02",
       "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-246-02.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could allow an attacker to perform remote code execution on the com…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Researcher Releases FalconFlank PoC Showing Privilege Escalation in CrowdStrike Falcon",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-03T06:26:59.000Z",
-      "link": "https://thehackernews.com/2026/09/researcher-releases-falconflank-poc.html",
-      "summary": "The security researcher known as Chaotic Eclipse (aka INFINITE NIGHTMARE, MSNightmare, and Nightmare-Eclipse) has dropped a new zero-day dubbed FalconFlank, a proof-of-concept (PoC) for a privilege escalation flaw impacting Crowdstrike Falcon. \"FalconFlank is a 0-day privilege e…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Vulnerability affecting F5 BIG-IP APM",
-      "source": "NCSC-UK",
-      "region": "INT",
-      "date": "2026-03-30T12:00:00.000Z",
-      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
-      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Telerik UI Padding-Oracle Bug Chained to Unauthenticated RCE — Public Exploit Released",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-07T11:20:14.000Z",
-      "link": "https://thehackernews.com/2026/09/telerik-ui-padding-oracle-bug-chained.html",
-      "summary": "A TantoSec proof-of-concept turns an AES-CBC \"padding oracle\" in Telerik UI for ASP.NET AJAX into unauthenticated remote code execution — but only against applications in a specific non-default configuration, and Progress patched the chain in July. There are no confirmed reports…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Attackers Breached JetBrains Cadence via Unpatched TeamCity, Extracting AWS Credentials",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-05T16:52:33.000Z",
-      "link": "https://thehackernews.com/2026/09/attackers-breached-jetbrains-cadence.html",
-      "summary": "JetBrains is urging Cadence users to revoke and rotate all credentials following a security incident last month in which unidentified threat actors exploited a recently disclosed critical vulnerability in TeamCity to breach its own environment. \"Cadence users should immediately…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
