@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-09T20:53:06.466Z",
-  "next_update": "2026-09-09T21:07:00.000Z",
+  "updated": "2026-09-09T23:11:00.558Z",
+  "next_update": "2026-09-09T23:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
-  "reasoning": "Det finns flera signaler som indikerar ett förhöjt hotläge mot Sverige. CERT-SE har rapporterat om aktivt utnyttjade sårbarheter och intrång, samt en kritisk sårbarhet i Citrix NetScaler som kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga tecken på aktivitet som kan utgöra en risk för svenska myndigheter och företag. Dessa signaler, tillsammans med internationella rapporter om aktivt utnyttjade sårbarheter, motiverar en förhöjd beredskap.",
+  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive en från CERT-SE om Citrix NetScaler (CVE-2026-19490) och en från CISA KEV om samma sårbarhet. Dessa signaler, tillsammans med CERT-SE:s varningar om intrång och störningar i system, tyder på en ökad risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 0
   },
-  "level_since": "2026-08-11T11:25:30.333Z",
+  "level_since": "2026-08-11T12:26:58.593Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -265,6 +265,21 @@
       }
     },
     {
+      "title": "Cisco confirms CVE-2026-20079 Secure FMC flaw exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-09T21:40:44.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisco-confirms-cve-2026-20079-secure-fmc-flaw-exploited-in-attacks/",
+      "summary": "Cisco has confirmed that a maximum-severity authentication bypass vulnerability tracked as CVE-2026-20079 in its Secure Firewall Management Center (FMC) software is being actively exploited in attacks. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-20079"
+      }
+    },
+    {
       "title": "Four Spy Groups Used the Same Chrome and Windows Exploit Kit Within a Week",
       "source": "The Hacker News",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-09-08T20:24:16.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/the-eu-cras-real-question-what-shipped-and-when-did-you-know/",
       "summary": "The EU Cyber Resilience Act's vulnerability reporting requirements take effect September 11, giving software vendors as little as 24 hours to report actively exploited flaws. ActiveState explains why knowing exactly what shipped and when vulnerabilities were discovered will be c…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Microsoft September 2026 Patch Tuesday fixes 966 flaws, 2 zero-days",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-08T18:18:05.000Z",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-september-2026-patch-tuesday-fixes-966-flaws-2-zero-days/",
-      "summary": "Today is Microsoft's September 2026 Patch Tuesday, with security updates released for a record-breaking 966 flaws, including two actively exploited zero-day vulnerabilities. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
