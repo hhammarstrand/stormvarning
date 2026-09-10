@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-10T11:49:51.719Z",
-  "next_update": "2026-09-10T12:07:00.000Z",
+  "updated": "2026-09-10T16:20:10.420Z",
+  "next_update": "2026-09-10T16:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
-  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-19490 i Citrix NetScaler, som har en svensk koppling. CERT-SE har också rapporterat om intrång och störningar i system, vilket tyder på pågående hot. Även om det inte finns bekräftade incidenter i flera svenska organisationer, är det uppenbart att hotaktörer aktivt utnyttjar sårbarheter som kan påverka svensk kritisk infrastruktur.",
-  "score": 95,
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade sårbarheter och myndighetsvarningar om pågående angrepp.",
+  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter globalt, och CERT-SE har rapporterat om intrång och störningar i system. Dessutom har MCF varnat för hybridhot som påverkar civila samhällsfunktioner, vilket visar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet varningar och aktiviteter tillräckligt för att motivera en förhöjd beredskap.",
+  "score": 93,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
-    "sweden_acute": 4,
-    "actively_exploited": 21,
-    "critical": 6,
-    "authority_alerts": 13,
+    "sweden_relevant": 3,
+    "sweden_acute": 3,
+    "actively_exploited": 22,
+    "critical": 5,
+    "authority_alerts": 12,
     "kev_recent": 9
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 1
+    "delta": -1
   },
-  "level_since": "2026-08-11T16:29:57.400Z",
+  "level_since": "2026-08-11T17:35:28.182Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -67,21 +67,6 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-19490"
-      }
-    },
-    {
-      "title": "Kritiska sårbarheter i SonicWall SMA1000",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-07-15T10:40:00.000Z",
-      "link": "https://www.cert.se/2026/07/kritiska-sarbarheter-i-sonicwall.html",
-      "summary": "<p>SonicWall har publicerat säkerhetsuppdateringar gällande två sårbarheter (CVE-2026-15409 och CVE-2026-15410) i SMA1000-serien. [1] CISA har lagt till dessa sårbarheter i KEV-katalogen (Known Exploited Vulnerabilities catalog). [2]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-15409"
       }
     },
     {
@@ -280,6 +265,21 @@
       }
     },
     {
+      "title": "New 'BlueMoon' kit exploited Windows and Chrome zero-day flaws",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-10T14:11:34.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/new-bluemoon-kit-exploited-windows-and-chrome-zero-day-flaws/",
+      "summary": "Multiple cyber-espionage groups deployed an exploit kit dubbed \"BlueMoon\" that leveraged zero-day vulnerabilities in Microsoft Windows and Google Chrome. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Cisco confirms CVE-2026-20079 Secure FMC flaw exploited in attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -325,21 +325,6 @@
       }
     },
     {
-      "title": "New Microsoft Defender 'ShieldCrash' zero-day grants SYSTEM access",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-09T07:30:15.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/new-microsoft-defender-shieldcrash-zero-day-grants-system-access/",
-      "summary": "An anonymous security researcher known as Nightmare Eclipse has released a new Microsoft Defender zero-day exploit named \"ShieldCrash\" right after Microsoft rolled out its September 2026 Patch Tuesday security updates. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Researcher Drops New Microsoft Defender PoC Showing ShieldBreak Patch Can Be Bypassed",
       "source": "The Hacker News",
       "region": "INT",
@@ -355,12 +340,12 @@
       }
     },
     {
-      "title": "Google warns of new Chrome zero-day bug exploited in attacks",
-      "source": "BleepingComputer",
+      "title": "Microsoft Patches Record 974 Flaws, Including Two Exploited Windows Zero-Days",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-09-09T06:25:48.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/google-patches-seventh-chrome-zero-day-exploited-in-attacks-this-year/",
-      "summary": "Google has patched 230 vulnerabilities on Tuesday, including another actively exploited Chrome zero-day bug, the seventh such vulnerability patched since the start of the year. [...]",
+      "date": "2026-09-09T04:41:29.000Z",
+      "link": "https://thehackernews.com/2026/09/microsoft-patches-record-974-flaws.html",
+      "summary": "Microsoft on Tuesday broke Patch Tuesday records by addressing an earth-shattering 974 vulnerabilities spanning its software portfolio, including two flaws that it said have been actively exploited in the wild. These include 723 flaws in Windows, 111 in Office and Office 2016, 6…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -370,12 +355,27 @@
       }
     },
     {
-      "title": "Microsoft Patches Record 974 Flaws, Including Two Exploited Windows Zero-Days",
+      "title": "Adobe Patches Magento Zero-Day Exploited to Deploy Rust Backdoor and PHP Web Shell",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-09-09T04:41:29.000Z",
-      "link": "https://thehackernews.com/2026/09/microsoft-patches-record-974-flaws.html",
-      "summary": "Microsoft on Tuesday broke Patch Tuesday records by addressing an earth-shattering 974 vulnerabilities spanning its software portfolio, including two flaws that it said have been actively exploited in the wild. These include 723 flaws in Windows, 111 in Office and Office 2016, 6…",
+      "date": "2026-09-08T09:13:47.000Z",
+      "link": "https://thehackernews.com/2026/09/adobe-patches-magento-zero-day.html",
+      "summary": "Adobe on Monday released security patches to address a maximum-severity flaw impacting Adobe Commerce and Magento Open Source that has come under active exploitation in the wild. The vulnerability, now tracked as CVE-2026-75650 (CVSS score: 10.0), has been codenamed StyleSmuggle…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-75650"
+      }
+    },
+    {
+      "title": "Unpatched Magento and Adobe Commerce Zero-Day Exploited to Backdoor Online Stores",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-05T20:14:47.000Z",
+      "link": "https://thehackernews.com/2026/09/unpatched-magento-and-adobe-commerce.html",
+      "summary": "Attackers are exploiting a new unpatched vulnerability in Magento Open Source and Adobe Commerce that lets them run malicious code on an online store's server without logging in, Dutch e-commerce security company Sansec said in an advisory published on September 5. Sansec, which…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
