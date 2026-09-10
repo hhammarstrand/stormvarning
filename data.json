@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-10T19:14:14.567Z",
-  "next_update": "2026-09-10T19:37:00.000Z",
+  "updated": "2026-09-10T21:50:56.920Z",
+  "next_update": "2026-09-10T22:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 22 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade sårbarheter och myndighetsvarningar om pågående attacker.",
+  "reasoning": "Flera signaler från CERT-SE och MCF indikerar aktivt utnyttjande av kritiska sårbarheter och pågående attacker mot svenska system och infrastruktur. Särskilt CERT-SE:s varningar om intrång och störningar samt den kritiska sårbarheten i Citrix NetScaler är anmärkningsvärda. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga tecken på aktivitet som kan påverka Sverige. Internationella signaler om aktivt utnyttjande av sårbarheter som WatchGuard och N-able stöder också en förhöjd beredskap.",
   "score": 93,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": -1
   },
-  "level_since": "2026-08-11T18:33:32.210Z",
+  "level_since": "2026-08-11T19:42:49.215Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
