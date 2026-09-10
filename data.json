@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-10T16:20:10.420Z",
-  "next_update": "2026-09-10T16:37:00.000Z",
+  "updated": "2026-09-10T19:14:14.567Z",
+  "next_update": "2026-09-10T19:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade sårbarheter och myndighetsvarningar om pågående angrepp.",
-  "reasoning": "Det finns flera signaler som indikerar aktivt utnyttjande av kritiska sårbarheter globalt, och CERT-SE har rapporterat om intrång och störningar i system. Dessutom har MCF varnat för hybridhot som påverkar civila samhällsfunktioner, vilket visar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet varningar och aktiviteter tillräckligt för att motivera en förhöjd beredskap.",
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 22 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 93,
   "indicators": {
     "total_signals": 24,
@@ -12,15 +12,15 @@
     "sweden_acute": 3,
     "actively_exploited": 22,
     "critical": 5,
-    "authority_alerts": 12,
-    "kev_recent": 9
+    "authority_alerts": 14,
+    "kev_recent": 11
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
     "delta": -1
   },
-  "level_since": "2026-08-11T17:35:28.182Z",
+  "level_since": "2026-08-11T18:33:32.210Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -142,6 +142,36 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-86060: MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-10T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-86060",
+      "summary": "MikroTik RouterOS – MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacked to change the trusted RouterOS policy mask, leading to privilege escalation.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-86060"
+      }
+    },
+    {
+      "title": "CVE-2026-67277: MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-10T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-67277",
+      "summary": "MikroTik RouterOS – MikroTik RouterOS contains a missing authenticaion for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-67277"
       }
     },
     {
@@ -353,36 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Adobe Patches Magento Zero-Day Exploited to Deploy Rust Backdoor and PHP Web Shell",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-08T09:13:47.000Z",
-      "link": "https://thehackernews.com/2026/09/adobe-patches-magento-zero-day.html",
-      "summary": "Adobe on Monday released security patches to address a maximum-severity flaw impacting Adobe Commerce and Magento Open Source that has come under active exploitation in the wild. The vulnerability, now tracked as CVE-2026-75650 (CVSS score: 10.0), has been codenamed StyleSmuggle…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-75650"
-      }
-    },
-    {
-      "title": "Unpatched Magento and Adobe Commerce Zero-Day Exploited to Backdoor Online Stores",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-05T20:14:47.000Z",
-      "link": "https://thehackernews.com/2026/09/unpatched-magento-and-adobe-commerce.html",
-      "summary": "Attackers are exploiting a new unpatched vulnerability in Magento Open Source and Adobe Commerce that lets them run malicious code on an online store's server without logging in, Dutch e-commerce security company Sansec said in an advisory published on September 5. Sansec, which…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 11
     },
     {
       "name": "CISA",
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }
