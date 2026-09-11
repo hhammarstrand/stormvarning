@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-11T09:07:15.928Z",
-  "next_update": "2026-09-11T09:37:00.000Z",
+  "updated": "2026-09-11T13:47:56.289Z",
+  "next_update": "2026-09-11T14:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 22 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
+  "reasoning": "Flera signaler från CERT-SE och MCF indikerar aktivt utnyttjande av kritiska sårbarheter och pågående angrepp mot svenska mål. Exempelvis varnar CERT-SE för intrång och störningar, och MCF beskriver hybridhot mot civila samhällsfunktioner. Även om det finns många internationella rapporter om aktivt utnyttjade sårbarheter, är det de svenska myndighetsvarningarna som väger tyngst och motiverar en förhöjd nivå.",
   "score": 93,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": -1
   },
-  "level_since": "2026-08-11T22:57:45.679Z",
+  "level_since": "2026-08-11T23:54:06.068Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
