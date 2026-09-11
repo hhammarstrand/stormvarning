@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-11T04:34:14.523Z",
-  "next_update": "2026-09-11T04:37:00.000Z",
+  "updated": "2026-09-11T09:07:15.928Z",
+  "next_update": "2026-09-11T09:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": -1
   },
-  "level_since": "2026-08-11T21:59:32.483Z",
+  "level_since": "2026-08-11T22:57:45.679Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -280,6 +280,21 @@
       }
     },
     {
+      "title": "PaperCut Replaces Emergency Patches With Fixes for Two Actively Exploited Flaws",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-11T06:46:18.000Z",
+      "link": "https://thehackernews.com/2026/09/papercut-replaces-emergency-patches.html",
+      "summary": "PaperCut on Thursday released a new security maintenance release that replaces all previously published emergency patches that were pushed to address two security flaws that have come under active exploitation. The software development company said PaperCut NG/MF versions 26.0.5…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "New 'BlueMoon' kit exploited Windows and Chrome zero-day flaws",
       "source": "BleepingComputer",
       "region": "INT",
@@ -292,21 +307,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Cisco confirms CVE-2026-20079 Secure FMC flaw exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-09T21:40:44.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisco-confirms-cve-2026-20079-secure-fmc-flaw-exploited-in-attacks/",
-      "summary": "Cisco has confirmed that a maximum-severity authentication bypass vulnerability tracked as CVE-2026-20079 in its Secure Firewall Management Center (FMC) software is being actively exploited in attacks. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-20079"
       }
     },
     {
