@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-11T00:04:56.221Z",
-  "next_update": "2026-09-11T00:07:00.000Z",
+  "updated": "2026-09-11T04:34:14.523Z",
+  "next_update": "2026-09-11T04:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
-  "reasoning": "Det finns flera signaler som indikerar ett förhöjt hotläge mot Sverige. CERT-SE har rapporterat om intrång och störningar samt identifierat kritiska sårbarheter som CVE-2026-19490 i Citrix NetScaler, vilket är aktivt utnyttjat. Även om det inte finns bekräftade incidenter i flera svenska organisationer, väger myndighetsvarningarna och de aktivt utnyttjade kritiska sårbarheterna tungt. Internationella rapporter om aktivt utnyttjade sårbarheter som påverkar Windows och Chrome kan också utgöra en risk för svenska enheter och system.",
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 22 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 93,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": -1
   },
-  "level_since": "2026-08-11T20:59:24.517Z",
+  "level_since": "2026-08-11T21:59:32.483Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }
