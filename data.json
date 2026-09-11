@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-11T17:43:52.119Z",
-  "next_update": "2026-09-11T18:07:00.000Z",
+  "updated": "2026-09-11T20:54:07.762Z",
+  "next_update": "2026-09-11T21:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 22 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 93,
+  "summary": "Förhöjt hotläge mot Sverige med flera aktiva sårbarheter och potentiella risker för samhällsviktiga funktioner.",
+  "reasoning": "Det finns flera signaler som indikerar ett förhöjt hotläge mot Sverige. CERT-SE har rapporterat om aktivt utnyttjade sårbarheter och störningar i system, samt en kritisk sårbarhet i Citrix NetScaler som kan påverka svenska organisationer. Dessutom har MCF varnat för hybridhot som riktar sig mot kritiska samhällsfunktioner, vilket ökar risken för störningar i energi, transporter och sjukvård. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga tecken på aktivitet som kan påverka svenska intressen.",
+  "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 3,
     "sweden_acute": 3,
     "actively_exploited": 22,
     "critical": 5,
-    "authority_alerts": 13,
-    "kev_recent": 10
+    "authority_alerts": 17,
+    "kev_recent": 14
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": -1
+    "delta": 0
   },
-  "level_since": "2026-08-12T02:39:11.544Z",
+  "level_since": "2026-08-12T04:57:04.438Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -142,6 +142,66 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-84869: ConnectWise ScreenConnect Improper Privilege Management and Missing Authorization Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-11T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-84869",
+      "summary": "ConnectWise ScreenConnect – ConnectWise ScreenConnect contains both an improper privilege management and missing authorization vulnerability that may allow an attacker to file transfer and execution through an active remote sessions without authorization or host confirmation.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-84869"
+      }
+    },
+    {
+      "title": "CVE-2026-42016: JFrog Artifactory Incorrect Authorization Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-11T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-42016",
+      "summary": "JFrog Artifactory – JFrog Artifactory contains an incorrect authorization vulnerability that allows leads to privilege escalation attack due to a validation check of the token signature/issuer and not the token’s scope.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-42016"
+      }
+    },
+    {
+      "title": "CVE-2026-42018: JFrog Artifactory Improper Authentication Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-11T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-42018",
+      "summary": "JFrog Artifactory – JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-42018"
+      }
+    },
+    {
+      "title": "CVE-2026-85706: GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-11T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-85706",
+      "summary": "GitLab Community Edition and Enterprise Edition – GitLab Community Edition and Enterprise Edition contains a path traversal vulnerability that allows an unauthenticated user to read arbitrary files due to an improper path confinement and missing authentication enforcement in the…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-85706"
       }
     },
     {
@@ -295,21 +355,6 @@
       }
     },
     {
-      "title": "New 'BlueMoon' kit exploited Windows and Chrome zero-day flaws",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-10T14:11:34.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/new-bluemoon-kit-exploited-windows-and-chrome-zero-day-flaws/",
-      "summary": "Multiple cyber-espionage groups deployed an exploit kit dubbed \"BlueMoon\" that leveraged zero-day vulnerabilities in Microsoft Windows and Google Chrome. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Four Spy Groups Used the Same Chrome and Windows Exploit Kit Within a Week",
       "source": "The Hacker News",
       "region": "INT",
@@ -338,51 +383,6 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-87491"
       }
-    },
-    {
-      "title": "Researcher Drops New Microsoft Defender PoC Showing ShieldBreak Patch Can Be Bypassed",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-09T06:47:27.000Z",
-      "link": "https://thehackernews.com/2026/09/researcher-drops-new-microsoft-defender.html",
-      "summary": "The security researcher known as Chaotic Eclipse has dropped a proof-of-concept (PoC) for yet another zero-day in Microsoft Defender. The vulnerability, codenamed ShieldCrash, is assessed to be a patch bypass for CVE-2026-69414 (CVSS score: 7.8), also called ShieldBreak, which t…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-69414"
-      }
-    },
-    {
-      "title": "Microsoft Patches Record 974 Flaws, Including Two Exploited Windows Zero-Days",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-09T04:41:29.000Z",
-      "link": "https://thehackernews.com/2026/09/microsoft-patches-record-974-flaws.html",
-      "summary": "Microsoft on Tuesday broke Patch Tuesday records by addressing an earth-shattering 974 vulnerabilities spanning its software portfolio, including two flaws that it said have been actively exploited in the wild. These include 723 flaws in Windows, 111 in Office and Office 2016, 6…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Adobe Patches Magento Zero-Day Exploited to Deploy Rust Backdoor and PHP Web Shell",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-08T09:13:47.000Z",
-      "link": "https://thehackernews.com/2026/09/adobe-patches-magento-zero-day.html",
-      "summary": "Adobe on Monday released security patches to address a maximum-severity flaw impacting Adobe Commerce and Magento Open Source that has come under active exploitation in the wild. The vulnerability, now tracked as CVE-2026-75650 (CVSS score: 10.0), has been codenamed StyleSmuggle…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-75650"
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 10
+      "count": 14
     },
     {
       "name": "CISA",
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
