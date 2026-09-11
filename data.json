@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-11T20:54:07.762Z",
-  "next_update": "2026-09-11T21:07:00.000Z",
+  "updated": "2026-09-11T23:12:39.702Z",
+  "next_update": "2026-09-11T23:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige med flera aktiva sårbarheter och potentiella risker för samhällsviktiga funktioner.",
-  "reasoning": "Det finns flera signaler som indikerar ett förhöjt hotläge mot Sverige. CERT-SE har rapporterat om aktivt utnyttjade sårbarheter och störningar i system, samt en kritisk sårbarhet i Citrix NetScaler som kan påverka svenska organisationer. Dessutom har MCF varnat för hybridhot som riktar sig mot kritiska samhällsfunktioner, vilket ökar risken för störningar i energi, transporter och sjukvård. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga tecken på aktivitet som kan påverka svenska intressen.",
-  "score": 94,
+  "summary": "Förhöjt hotläge mot Sverige med flera aktiva sårbarheter och myndighetsvarningar om pågående angrepp.",
+  "reasoning": "CERT-SE har rapporterat om flera intrång och störningar samt kritiska sårbarheter som utnyttjas aktivt, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, väger CERT-SE:s varningar och de kritiska sårbarheterna i Citrix och GitLab tungt. Dessa signaler, tillsammans med internationella rapporter om aktivt utnyttjande, motiverar en förhöjd beredskap.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 3,
-    "sweden_acute": 3,
-    "actively_exploited": 22,
-    "critical": 5,
-    "authority_alerts": 17,
+    "sweden_relevant": 4,
+    "sweden_acute": 4,
+    "actively_exploited": 21,
+    "critical": 6,
+    "authority_alerts": 18,
     "kev_recent": 14
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 0
+    "delta": 1
   },
-  "level_since": "2026-08-12T04:57:04.438Z",
+  "level_since": "2026-08-12T06:38:41.320Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -37,6 +37,21 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "GitLab rättar kritiska sårbarheter",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-09-11T21:30:00.000Z",
+      "link": "https://www.cert.se/2026/09/gitlab-rattar-kritiska-sarbarheter.html",
+      "summary": "<p>GitLab har publicerat säkerhetsuppdateringar för flera sårbarheter i GitLab Community Edition (CE) och Enterprise Edition (EE). [1] Två av dessa sårbarheter, CVE-2026-85706 och CVE-2026-87719, klassas som kritiska.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-85706"
       }
     },
     {
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Chrome V8 Zero-Day Exploited in the Wild Enables Code Execution Inside Sandbox",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-09T09:11:03.000Z",
-      "link": "https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html",
-      "summary": "Google on Tuesday released updates to patch 230 security vulnerabilities, including one that has come under active exploitation in the wild. The medium-severity vulnerability, assigned the CVE identifier CVE-2026-87491 (CVSS score: N/A), has been described as an out-of-bounds bu…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-87491"
       }
     }
   ],
