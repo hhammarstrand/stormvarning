@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-12T11:13:33.644Z",
-  "next_update": "2026-09-12T11:37:00.000Z",
+  "updated": "2026-09-12T14:20:53.044Z",
+  "next_update": "2026-09-12T14:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige med flera kritiska sårbarheter aktivt utnyttjade och myndighetsvarningar om pågående attacker.",
-  "reasoning": "Flera signaler från CERT-SE och MCF indikerar pågående attacker och utnyttjande av kritiska sårbarheter med tydlig svensk koppling. Exempelvis varnar CERT-SE för intrång och störningar, och MCF beskriver hybridhot mot samhällsviktig infrastruktur. Även internationella källor bekräftar aktivt utnyttjande av sårbarheter som CVE-2026-85706 och CVE-2026-19490, vilket ökar risken för svenska mål. Det finns dock inte tillräckligt med bekräftade incidenter för att klassificera läget som rött.",
+  "reasoning": "CERT-SE har rapporterat om flera intrång och störningar samt kritiska sårbarheter som utnyttjas aktivt, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för attacker mot svenska mål. Den svenska kopplingen är stark med CERT-SE:s rapportering och MCF:s analys av hybridhot.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-12T11:09:08.524Z",
+  "level_since": "2026-08-12T12:29:17.661Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
