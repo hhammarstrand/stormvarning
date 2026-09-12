@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-12T17:25:29.805Z",
-  "next_update": "2026-09-12T17:37:00.000Z",
+  "updated": "2026-09-12T19:37:11.416Z",
+  "next_update": "2026-09-12T20:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter och aktivt utnyttjande, men ingen direkt storskalig attack mot svensk infrastruktur bekräftad.",
-  "reasoning": "Flera kritiska sårbarheter (t.ex. Citrix NetScaler, GitLab) rapporteras aktivt utnyttjas globalt, och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Även om det finns en tydlig svensk koppling genom CERT-SE:s rapportering, saknas bekräftade incidenter mot svensk kritisk infrastruktur som skulle motivera en högre nivå. Det finns dock tillräckligt med signaler för att motivera ett förhöjt läge.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, med specifika varningar från CERT-SE.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, vilket innebär en förhöjd risk. CERT-SE har utfärdat varningar om både intrång och störningar i system samt om sårbarheter som utnyttjas aktivt av hotaktörer, vilket ger en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för svenska organisationer.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
     "actively_exploited": 21,
-    "critical": 6,
+    "critical": 5,
     "authority_alerts": 18,
     "kev_recent": 14
   },
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-12T14:03:47.463Z",
+  "level_since": "2026-08-12T15:11:31.965Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -140,21 +140,6 @@
         "activelyExploited": true,
         "critical": false,
         "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "N-able Issues Fourth N-central Hotfix in Five Weeks for Unauthenticated RCE Flaw",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-07T08:31:12.000Z",
-      "link": "https://thehackernews.com/2026/09/n-able-issues-fourth-n-central-hotfix.html",
-      "summary": "Every on-premises N-central build below 2026.3.1.14 — including servers updated to Hotfix 3 a day earlier — needs Hotfix 4. N-able's incident notice says the flaw has been exploited in the wild; its release notes say that is unconfirmed. N-able has released its fourth hotfix in…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -352,6 +337,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-85880"
+      }
+    },
+    {
+      "title": "CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-12T15:54:45.000Z",
+      "link": "https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added five security flaws impacting JFrog Artifactory, ConnectWise ScreenConnect, and MikroTik RouterOS to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation in the wild…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
