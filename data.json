@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-12T01:30:47.074Z",
-  "next_update": "2026-09-12T01:37:00.000Z",
+  "updated": "2026-09-12T06:28:09.554Z",
+  "next_update": "2026-09-12T06:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige pga aktivt utnyttjade kritiska sårbarheter och varningar från CERT-SE.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-85706 och CVE-2026-19490, är aktivt utnyttjade och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga tecken på aktivitet som kan påverka svenska organisationer. Detta, tillsammans med internationella rapporter om hybridhot, motiverar en förhöjd beredskap.",
-  "score": 94,
+  "summary": "Förhöjt hotläge mot Sverige med flera kritiska sårbarheter aktivt utnyttjade och myndighetsvarningar om pågående angrepp.",
+  "reasoning": "Flera signaler från CERT-SE och MCF indikerar aktivt utnyttjande av kritiska sårbarheter och pågående angrepp mot svenska system och infrastruktur. Särskilt CVE-2026-85706 och CVE-2026-19490 har uppmärksammats av både CERT-SE och internationella källor, vilket visar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt riktar in sig på kända svagheter.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 8,
+    "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 15,
-    "critical": 5,
-    "authority_alerts": 24,
+    "actively_exploited": 21,
+    "critical": 6,
+    "authority_alerts": 18,
     "kev_recent": 14
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 0
+    "delta": 1
   },
-  "level_since": "2026-08-12T08:36:48.512Z",
+  "level_since": "2026-08-12T09:46:11.125Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,6 +97,66 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-86218"
+      }
+    },
+    {
+      "title": "GitLab CVSS 10 File-Read Flaw Draws In-the-Wild Probes After Disclosure",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-11T16:30:18.000Z",
+      "link": "https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html",
+      "summary": "GitLab has released patches to address multiple flaws, including a maximum-severity security vulnerability that has witnessed in-the-wild probes within hours of public disclosure. The vulnerability in question is CVE-2026-85706 (CVSS score: 10.0), a path traversal issue in the r…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-85706"
+      }
+    },
+    {
+      "title": "N-able N-central Pre-Auth RCE Flaw Exploited in the Wild",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-09T04:27:51.000Z",
+      "link": "https://thehackernews.com/2026/09/n-able-n-central-pre-auth-rce-flaw.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a maximum-severity security flaw impacting N-able N-central to its Known Exploited Vulnerabilities (KEV) catalog, requiring Federal Civilian Executive Branch (FCEB) agencies to apply the fixes by S…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "⚡ Weekly Recap: Chrome 0-Day, Router Hijacks, Coder Supply Chain Attack and More",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-07T14:36:07.000Z",
+      "link": "https://thehackernews.com/2026/09/weekly-recap-chrome-0-day-router.html",
+      "summary": "Turning off email images should at least stop the pictures. This week, attackers had a workaround: a scannable QR code built out of text. It still appears, even with images blocked. A small detail, but an annoying one if that was a precaution you were counting on. Elsewhere, a t…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "N-able Issues Fourth N-central Hotfix in Five Weeks for Unauthenticated RCE Flaw",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-07T08:31:12.000Z",
+      "link": "https://thehackernews.com/2026/09/n-able-issues-fourth-n-central-hotfix.html",
+      "summary": "Every on-premises N-central build below 2026.3.1.14 — including servers updated to Hotfix 3 a day earlier — needs Hotfix 4. N-able's incident notice says the flaw has been exploited in the wild; its release notes say that is unconfirmed. N-able has released its fourth hotfix in…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -295,92 +355,32 @@
       }
     },
     {
-      "title": "IXON VPN Client",
-      "source": "CISA",
+      "title": "PaperCut Replaces Emergency Patches With Fixes for Two Actively Exploited Flaws",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-09-03T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-246-02",
-      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-246-02.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could allow an attacker to perform remote code execution on the com…",
+      "date": "2026-09-11T06:46:18.000Z",
+      "link": "https://thehackernews.com/2026/09/papercut-replaces-emergency-patches.html",
+      "summary": "PaperCut on Thursday released a new security maintenance release that replaces all previously published emergency patches that were pushed to address two security flaws that have come under active exploitation. The software development company said PaperCut NG/MF versions 26.0.5…",
       "flags": {
-        "activelyExploited": false,
-        "critical": true,
+        "activelyExploited": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
     },
     {
-      "title": "Vulnerability affecting F5 BIG-IP APM",
-      "source": "NCSC-UK",
+      "title": "Four Spy Groups Used the Same Chrome and Windows Exploit Kit Within a Week",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-03-30T12:00:00.000Z",
-      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
-      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
+      "date": "2026-09-09T16:34:05.000Z",
+      "link": "https://thehackernews.com/2026/09/four-spy-groups-used-same-chrome-and.html",
+      "summary": "Multiple espionage-motivated threat activity clusters have been found deploying a previously undocumented exploit kit called BlueMoon that chains together multiple vulnerabilities in Microsoft Windows and Google Chrome. The first in-the-wild use of BlueMoon has been attributed t…",
       "flags": {
-        "activelyExploited": false,
-        "critical": true,
+        "activelyExploited": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.37",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-11T12:30:00.000Z",
-      "link": "https://www.cert.se/2026/09/cert-se-veckobrev-v37.html",
-      "summary": "<p>I veckans brev kan du läsa om EU:s Cyber Resilience Act (CRA), där de första kraven träder i kraft idag. Du kan även läsa om cybersäkerhetskonferensen Svensk cyber 2026 som arrangeras av NCSC i november, där årets tema är ”Förmåga att agera i en föränderlig tid”.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Patchtisdag september 2026 – samlad information om månadens säkerhetsuppdateringar",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-10T11:50:00.000Z",
-      "link": "https://www.cert.se/2026/09/patchtisdag-september-2026-samlad-information-om-manadens-sakerhetsuppdateringar.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för september. Microsofts säkerhetsuppdateringar omfattar 973 sårbarheter varav 113 klassade som kritiska. Det är den i särklass största ”Patch Tuesday”-omgången hittills.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.36",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-04T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/09/cert-se-veckobrev-v36.html",
-      "summary": "<p>Den 13 september är det val i Sverige och Nationellt cybersäkerhetscenter (NCSC) bevakar hotläget från ett cybersäkerhetsperspektiv. NCSC:s chef John Billow berättar om uppdraget i Sveriges Radios program Gräns.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.35",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-28T08:40:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v35.html",
-      "summary": "<p>I veckans brev kan du ta del av ett axplock av händelser inom cybersäkerhetsområdet. Dessutom hittar du en utvärdering av organisationers cyberförsvar som CISA gjort, som innehåller rekommendationer för att stärka sin motståndskraft.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
@@ -426,7 +426,7 @@
       "name": "The Hacker News",
       "region": "INT",
       "ok": true,
-      "count": 0
+      "count": 50
     },
     {
       "name": "BleepingComputer",
