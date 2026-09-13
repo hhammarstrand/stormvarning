@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-13T05:19:54.303Z",
-  "next_update": "2026-09-13T05:37:00.000Z",
+  "updated": "2026-09-13T10:35:33.746Z",
+  "next_update": "2026-09-13T10:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-85706 och CVE-2026-19490, vilket är bekymmersamt. Även om det finns en svensk koppling genom CERT-SE:s varningar och rapporter om pågående intrång och störningar, saknas bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Därför bedöms läget som förhöjt (gul) men inte allvarligt (rött).",
+  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter och aktivt utnyttjande, med specifika svenska varningar.",
+  "reasoning": "Flera kritiska sårbarheter (t.ex. CVE-2026-85706 och CVE-2026-19490) rapporteras aktivt utnyttjas globalt, och CERT-SE har utfärdat varningar om pågående intrång och störningar i svenska system. Även om det inte finns bekräftade incidenter i Sverige, är det en tydlig svensk koppling genom CERT-SE:s rapportering och de kritiska sårbarheter som påverkar plattformar som används i Sverige. Detta indikerar ett förhöjt hotläge.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-12T18:35:38.837Z",
+  "level_since": "2026-08-12T19:46:21.216Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
