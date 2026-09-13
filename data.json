@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-13T14:40:23.014Z",
-  "next_update": "2026-09-13T15:07:00.000Z",
+  "updated": "2026-09-13T18:07:39.779Z",
+  "next_update": "2026-09-13T18:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter och aktivt utnyttjande, med specifika svenska varningar.",
-  "reasoning": "Flera kritiska sårbarheter (t.ex. CVE-2026-85706 och CVE-2026-19490) rapporteras aktivt utnyttjas globalt, och CERT-SE har utfärdat varningar om pågående intrång och störningar i svenska system. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga signaler om risk för påverkan på svensk infrastruktur. Detta motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, inklusive CVE-2026-85706 i GitLab och CVE-2026-19490 i Citrix NetScaler, vilka har rapporterats av CERT-SE med tydlig svensk koppling. Dessa utgör en direkt risk för svenska organisationer och kräver förhöjd beredskap. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket ökar risken för svenska intressenter.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-12T20:58:51.950Z",
+  "level_since": "2026-08-12T21:58:18.459Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
