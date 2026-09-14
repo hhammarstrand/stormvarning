@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-13T23:08:43.253Z",
-  "next_update": "2026-09-13T23:37:00.000Z",
+  "updated": "2026-09-14T01:36:15.890Z",
+  "next_update": "2026-09-14T01:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige med flera kritiska sårbarheter aktivt utnyttjade och myndighetsvarningar om pågående attacker.",
-  "reasoning": "Det finns flera tecken på förhöjt hot mot Sverige, inklusive CERT-SE:s varningar om pågående intrång och störningar samt kritiska sårbarheter i plattformar som Citrix och GitLab som är aktivt utnyttjade. Även om det inte finns bekräftade incidenter i stor skala, indikerar CERT-SE och MCF:s rapporter att hotaktörer aktivt riktar in sig på svenska mål, särskilt inom energi, transporter och sjukvård. Detta, tillsammans med den höga aktiviteten av internationellt utnyttjade kritiska sårbarheter, motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-85706 och CVE-2026-19490, rapporteras aktivt utnyttjade globalt, och CERT-SE har utfärdat varningar om pågående intrång och störningar i system. Även om det inte finns specifika rapporter om storskaliga attacker mot svensk kritisk infrastruktur, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket ökar risken för svenska organisationer. Därför bedöms läget som förhöjt (gul).",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-12T23:54:43.972Z",
+  "level_since": "2026-08-13T02:41:46.337Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
