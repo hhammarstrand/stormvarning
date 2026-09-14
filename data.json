@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-14T13:59:53.127Z",
-  "next_update": "2026-09-14T14:07:00.000Z",
+  "updated": "2026-09-14T19:17:35.593Z",
+  "next_update": "2026-09-14T19:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera signaler från CERT-SE och CISA KEV indikerar aktivt utnyttjande av kritiska sårbarheter, inklusive CVE-2026-85706 och CVE-2026-19490, vilket är bekymmersamt. Även om det finns en svensk koppling genom CERT-SE:s rapportering och varningar, saknas för närvarande bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Därför bedöms läget som förhöjt (gul) men inte allvarligt (rött).",
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 21 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-13T06:41:08.074Z",
+  "level_since": "2026-08-13T08:40:34.480Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -125,21 +125,6 @@
         "activelyExploited": true,
         "critical": true,
         "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "⚡ Weekly Recap: Chrome 0-Day, Router Hijacks, Coder Supply Chain Attack and More",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-07T14:36:07.000Z",
-      "link": "https://thehackernews.com/2026/09/weekly-recap-chrome-0-day-router.html",
-      "summary": "Turning off email images should at least stop the pictures. This week, attackers had a workaround: a scannable QR code built out of text. It still appears, even with images blocked. A small detail, but an annoying one if that was a precaution you were counting on. Elsewhere, a t…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Chrome V8 Zero-Day Exploited in the Wild Enables Code Execution Inside Sandbox",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-09T09:11:03.000Z",
+      "link": "https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html",
+      "summary": "Google on Tuesday released updates to patch 230 security vulnerabilities, including one that has come under active exploitation in the wild. The medium-severity vulnerability, assigned the CVE identifier CVE-2026-87491 (CVSS score: N/A), has been described as an out-of-bounds bu…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-87491"
+      }
     }
   ],
   "sources_health": [
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }
