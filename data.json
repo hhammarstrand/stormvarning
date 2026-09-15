@@ -1,29 +1,44 @@
 {
-  "updated": "2026-09-15T12:37:55.265Z",
-  "next_update": "2026-09-15T13:07:00.000Z",
+  "updated": "2026-09-15T17:38:50.216Z",
+  "next_update": "2026-09-15T18:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
-  "reasoning": "Flera signaler från CERT-SE och MCF indikerar aktivt utnyttjande av kritiska sårbarheter och pågående angrepp mot svenska system och infrastruktur. Dessa inkluderar varningar om intrång och störningar samt kritiska sårbarheter i plattformar som Citrix NetScaler och GitLab. Även om det inte finns bekräftade incidenter i stor skala, väger de svenska myndighetsvarningarna och det aktiva utnyttjandet av kritiska sårbarheter tungt, vilket motiverar en förhöjd hotnivå.",
-  "score": 95,
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-19490 i Citrix NetScaler, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, indikerar CERT-SE:s rapportering och CISA KEV-katalogen att dessa hot är relevanta och potentiellt skadliga för svenska organisationer. Detta motiverar en förhöjd beredskap.",
+  "score": 96,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
-    "sweden_acute": 4,
+    "sweden_relevant": 5,
+    "sweden_acute": 5,
     "actively_exploited": 21,
     "critical": 5,
-    "authority_alerts": 15,
+    "authority_alerts": 16,
     "kev_recent": 11
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 1
+    "delta": 2
   },
-  "level_since": "2026-08-13T14:05:04.614Z",
+  "level_since": "2026-08-13T15:12:41.924Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
+    {
+      "title": "Kritisk sårbarhet i Cisco Secure Email Gateway utnyttjas aktivt",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-09-15T13:00:00.000Z",
+      "link": "https://www.cert.se/2026/09/kritisk-sarbarhet-i-cisco-secure-email-gateway-utnyttjas-aktivt.html",
+      "summary": "<p>Cisco har publicerat information om en kritisk SQL injection-sårbarhet i Cisco Secure Email Gateway som utnyttjas aktivt. Sårbarheten (CVE-2026-76461) har fått CVSS-klassificering 9.8 (CVSS v.3.1). [1] CISA har lagt till sårbarheten i KEV-katalogen (Known Exploited Vulnerabil…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-76461"
+      }
+    },
     {
       "title": "CERT-SE:s veckobrev v.34",
       "source": "CERT-SE",
@@ -112,21 +127,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-85706"
-      }
-    },
-    {
-      "title": "N-able N-central Pre-Auth RCE Flaw Exploited in the Wild",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-09T04:27:51.000Z",
-      "link": "https://thehackernews.com/2026/09/n-able-n-central-pre-auth-rce-flaw.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a maximum-severity security flaw impacting N-able N-central to its Known Exploited Vulnerabilities (KEV) catalog, requiring Federal Civilian Executive Branch (FCEB) agencies to apply the fixes by S…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
@@ -295,6 +295,21 @@
       }
     },
     {
+      "title": "What Zero-Day Response Should Be in the Post-Mythos Era",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-15T13:45:54.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/what-zero-day-response-should-be-in-the-post-mythos-era/",
+      "summary": "AI is shrinking the time between vulnerability disclosure and exploitation, leaving defenders less time to wait for patches or public exploits. Picus Security explains how exploitability validation, security control testing, and autonomous pentesting can help teams close exposur…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Cisco patches Secure Email Gateway zero-day exploited in attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Chrome V8 Zero-Day Exploited in the Wild Enables Code Execution Inside Sandbox",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-09T09:11:03.000Z",
-      "link": "https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html",
-      "summary": "Google on Tuesday released updates to patch 230 security vulnerabilities, including one that has come under active exploitation in the wild. The medium-severity vulnerability, assigned the CVE identifier CVE-2026-87491 (CVSS score: N/A), has been described as an out-of-bounds bu…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-87491"
       }
     }
   ],
