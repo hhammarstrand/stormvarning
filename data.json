@@ -1,18 +1,18 @@
 {
-  "updated": "2026-09-15T01:23:15.486Z",
-  "next_update": "2026-09-15T01:37:00.000Z",
+  "updated": "2026-09-15T06:38:52.986Z",
+  "next_update": "2026-09-15T07:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera signaler från CERT-SE och MCF indikerar aktivt utnyttjande av kritiska sårbarheter och pågående intrång i svenska system. Särskilt CVE-2026-85706 och CVE-2026-19490 är kritiska och har rapporterats som aktivt utnyttjade. Även om det inte finns bekräftade incidenter i kritisk infrastruktur, är det en tydlig svensk koppling genom myndighetsvarningarna och rapporterade intrång. Detta motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar om pågående angrepp.",
+  "reasoning": "CERT-SE har rapporterat om flera intrång och störningar samt kritiska sårbarheter som utnyttjas aktivt, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar kända sårbarheter, vilket ökar risken för attacker mot svenska mål. Det finns också en svensk koppling genom CERT-SE:s rapportering och varningar om dessa hot.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 20,
+    "actively_exploited": 21,
     "critical": 5,
-    "authority_alerts": 16,
+    "authority_alerts": 15,
     "kev_recent": 11
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 94,
     "delta": 1
   },
-  "level_since": "2026-08-13T11:25:14.576Z",
+  "level_since": "2026-08-13T12:29:55.206Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -82,6 +82,21 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-19490"
+      }
+    },
+    {
+      "title": "Cisco Secure Email Gateway Flaw Exploited in the Wild, Enables Root Command Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-15T06:11:11.000Z",
+      "link": "https://thehackernews.com/2026/09/cisco-secure-email-gateway-flaw.html",
+      "summary": "Cisco has warned that a new critical vulnerability impacting AsyncOS Software for Cisco Secure Email Gateway has come under active exploitation in the wild. The vulnerability, tracked as CVE-2026-76461, carries a CVSS score of 9.8 out of a maximum of 10.0. It has been described…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-76461"
       }
     },
     {
@@ -280,6 +295,21 @@
       }
     },
     {
+      "title": "China-Linked Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy GRIMWEDGE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-15T05:31:05.000Z",
+      "link": "https://thehackernews.com/2026/09/china-linked-hackers-exploit-chrome.html",
+      "summary": "A Chinese threat actor has been attributed to a spear-phishing campaign that exploits recently patched security flaws in Google Chrome and Microsoft Windows to deliver a malicious JavaScript backdoor called GRIMWEDGE. Volexity, which is tracking the threat cluster under the moni…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV",
       "source": "The Hacker News",
       "region": "INT",
@@ -352,36 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-69414"
-      }
-    },
-    {
-      "title": "Microsoft Patches Record 974 Flaws, Including Two Exploited Windows Zero-Days",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-09T04:41:29.000Z",
-      "link": "https://thehackernews.com/2026/09/microsoft-patches-record-974-flaws.html",
-      "summary": "Microsoft on Tuesday broke Patch Tuesday records by addressing an earth-shattering 974 vulnerabilities spanning its software portfolio, including two flaws that it said have been actively exploited in the wild. These include 723 flaws in Windows, 111 in Office and Office 2016, 6…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "IXON VPN Client",
-      "source": "CISA",
-      "region": "INT",
-      "date": "2026-09-03T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-246-02",
-      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-246-02.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could allow an attacker to perform remote code execution on the com…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     }
   ],
