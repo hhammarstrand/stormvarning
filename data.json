@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-15T23:40:13.219Z",
-  "next_update": "2026-09-16T00:07:00.000Z",
+  "updated": "2026-09-16T04:43:20.509Z",
+  "next_update": "2026-09-16T05:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa sårbarheter har höga CVSS-poäng och är katalogiserade av CISA som aktivt utnyttjade. Även om det inte finns bekräftade incidenter i Sverige, indikerar CERT-SE:s rapportering och CISA:s KEV-katalog en tydlig risk för svenska organisationer. Detta motiverar en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa sårbarheter har en tydlig svensk koppling och kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter ännu, indikerar CERT-SE:s rapporter och CISA KEV-katalogen en förhöjd risk för attacker mot svenska mål.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 21,
-    "critical": 5,
-    "authority_alerts": 16,
-    "kev_recent": 11
+    "actively_exploited": 20,
+    "critical": 6,
+    "authority_alerts": 13,
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
     "delta": 2
   },
-  "level_since": "2026-08-13T17:35:44.787Z",
+  "level_since": "2026-08-13T18:35:57.173Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -235,66 +235,6 @@
       }
     },
     {
-      "title": "CVE-2026-19490: Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-09T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-19490",
-      "summary": "Citrix NetScaler – Citrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an u…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-19490"
-      }
-    },
-    {
-      "title": "CVE-2025-25249: Fortinet Multiple Products Heap-based Buffer Overflow Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-09T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-25249",
-      "summary": "Fortinet Multiple Products – Fortinet FortiOS, FortiSwitchManager, and FortiSASE contain a heap-based buffer overflow vulnerability that allows an attacker to execute unauthorized code or commands via specially crafted packets.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2025-25249"
-      }
-    },
-    {
-      "title": "CVE-2026-87491: Google Chromium V8 Out of Bounds Write Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-09T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-87491",
-      "summary": "Google Chromium V8 – Google Chromium V8 contains an out of bounds write vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but n…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-87491"
-      }
-    },
-    {
-      "title": "CVE-2026-20079: Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-09T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-20079",
-      "summary": "Cisco Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management – Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or chan…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-20079"
-      }
-    },
-    {
       "title": "Acronis warns of actively exploited flaw in its cPanel backup plugin",
       "source": "BleepingComputer",
       "region": "INT",
@@ -383,6 +323,66 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Four Spy Groups Used the Same Chrome and Windows Exploit Kit Within a Week",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-09T16:34:05.000Z",
+      "link": "https://thehackernews.com/2026/09/four-spy-groups-used-same-chrome-and.html",
+      "summary": "Multiple espionage-motivated threat activity clusters have been found deploying a previously undocumented exploit kit called BlueMoon that chains together multiple vulnerabilities in Microsoft Windows and Google Chrome. The first in-the-wild use of BlueMoon has been attributed t…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Chrome V8 Zero-Day Exploited in the Wild Enables Code Execution Inside Sandbox",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-09T09:11:03.000Z",
+      "link": "https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html",
+      "summary": "Google on Tuesday released updates to patch 230 security vulnerabilities, including one that has come under active exploitation in the wild. The medium-severity vulnerability, assigned the CVE identifier CVE-2026-87491 (CVSS score: N/A), has been described as an out-of-bounds bu…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-87491"
+      }
+    },
+    {
+      "title": "Researcher Drops New Microsoft Defender PoC Showing ShieldBreak Patch Can Be Bypassed",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-09T06:47:27.000Z",
+      "link": "https://thehackernews.com/2026/09/researcher-drops-new-microsoft-defender.html",
+      "summary": "The security researcher known as Chaotic Eclipse has dropped a proof-of-concept (PoC) for yet another zero-day in Microsoft Defender. The vulnerability, codenamed ShieldCrash, is assessed to be a patch bypass for CVE-2026-69414 (CVSS score: 7.8), also called ShieldBreak, which t…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-69414"
+      }
+    },
+    {
+      "title": "Vulnerability affecting F5 BIG-IP APM",
+      "source": "NCSC-UK",
+      "region": "INT",
+      "date": "2026-03-30T12:00:00.000Z",
+      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
+      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 11
+      "count": 7
     },
     {
       "name": "CISA",
