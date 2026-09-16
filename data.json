@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-16T18:51:20.439Z",
-  "next_update": "2026-09-16T19:07:00.000Z",
+  "updated": "2026-09-16T22:05:35.777Z",
+  "next_update": "2026-09-16T22:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats som en risk för Sverige. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet aktiva hot och myndighetsvarningar tillräckligt för att motivera en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats som en risk för svenska organisationer. CERT-SE har utfärdat varningar om dessa hot, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet aktiva hot och myndighetsvarningar tillräckligt för att motivera en förhöjd beredskap.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
@@ -12,15 +12,15 @@
     "sweden_acute": 5,
     "actively_exploited": 21,
     "critical": 5,
-    "authority_alerts": 14,
-    "kev_recent": 9
+    "authority_alerts": 15,
+    "kev_recent": 10
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
     "delta": 1
   },
-  "level_since": "2026-08-13T21:58:02.582Z",
+  "level_since": "2026-08-13T22:57:57.414Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -157,6 +157,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-76460"
+      }
+    },
+    {
+      "title": "CVE-2026-87886: Acronis Backup Incorrect Default Permissions Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-16T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-87886",
+      "summary": "Acronis Backup – Acronis Backup plugin for cPanel & WHM and extension for Plesk contains an incorrect default permissions vulnerability that could allow for privilege escalation.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-87886"
       }
     },
     {
@@ -325,21 +340,6 @@
       }
     },
     {
-      "title": "What Zero-Day Response Should Be in the Post-Mythos Era",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-15T13:45:54.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/what-zero-day-response-should-be-in-the-post-mythos-era/",
-      "summary": "AI is shrinking the time between vulnerability disclosure and exploitation, leaving defenders less time to wait for patches or public exploits. Picus Security explains how exploitability validation, security control testing, and autonomous pentesting can help teams close exposur…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "China-Linked Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy GRIMWEDGE",
       "source": "The Hacker News",
       "region": "INT",
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 10
     },
     {
       "name": "CISA",
