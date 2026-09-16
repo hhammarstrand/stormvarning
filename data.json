@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-16T04:43:20.509Z",
-  "next_update": "2026-09-16T05:07:00.000Z",
+  "updated": "2026-09-16T09:52:38.775Z",
+  "next_update": "2026-09-16T10:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa sårbarheter har en tydlig svensk koppling och kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter ännu, indikerar CERT-SE:s rapporter och CISA KEV-katalogen en förhöjd risk för attacker mot svenska mål.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa sårbarheter har en tydlig svensk koppling och CERT-SE har utfärdat varningar om pågående angrepp. Även om det inte finns bekräftade incidenter i Sverige, är risken för storskaliga attacker mot svensk infrastruktur förhöjd.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
@@ -17,10 +17,10 @@
   },
   "anomaly": {
     "active": false,
-    "baseline": 94,
+    "baseline": 95,
     "delta": 2
   },
-  "level_since": "2026-08-13T18:35:57.173Z",
+  "level_since": "2026-08-13T19:42:54.301Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -235,6 +235,21 @@
       }
     },
     {
+      "title": "Google fixes actively exploited Android zero-day on Pixel devices",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-16T07:00:19.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/google-fixes-actively-exploited-android-zero-day-on-pixel-devices/",
+      "summary": "Google has released the September 2026 security patches to address 110 vulnerabilities affecting its Pixel devices, including one zero-day flaw actively exploited in targeted attacks. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Acronis warns of actively exploited flaw in its cPanel backup plugin",
       "source": "BleepingComputer",
       "region": "INT",
@@ -355,21 +370,6 @@
       }
     },
     {
-      "title": "Researcher Drops New Microsoft Defender PoC Showing ShieldBreak Patch Can Be Bypassed",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-09T06:47:27.000Z",
-      "link": "https://thehackernews.com/2026/09/researcher-drops-new-microsoft-defender.html",
-      "summary": "The security researcher known as Chaotic Eclipse has dropped a proof-of-concept (PoC) for yet another zero-day in Microsoft Defender. The vulnerability, codenamed ShieldCrash, is assessed to be a patch bypass for CVE-2026-69414 (CVSS score: 7.8), also called ShieldBreak, which t…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-69414"
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -396,7 +396,7 @@
       "name": "MCF",
       "region": "SE",
       "ok": true,
-      "count": 12
+      "count": 11
     },
     {
       "name": "Krisinformation",
