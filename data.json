@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-16T14:53:57.428Z",
-  "next_update": "2026-09-16T15:07:00.000Z",
+  "updated": "2026-09-16T18:51:20.439Z",
+  "next_update": "2026-09-16T19:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa sårbarheter har höga CVSS-poäng och är noterade i CISA:s KEV-katalog, vilket indikerar en hög risk för attacker. Även om det inte finns bekräftade incidenter i Sverige, väger CERT-SE:s varningar och den internationella aktiviteten tungt. Detta indikerar ett förhöjt hotläge, men det saknas ännu bevis för en storskalig, samhällspåverkande attack.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats som en risk för Sverige. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet aktiva hot och myndighetsvarningar tillräckligt för att motivera en förhöjd beredskap.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
@@ -12,15 +12,15 @@
     "sweden_acute": 5,
     "actively_exploited": 21,
     "critical": 5,
-    "authority_alerts": 13,
-    "kev_recent": 8
+    "authority_alerts": 14,
+    "kev_recent": 9
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
     "delta": 1
   },
-  "level_since": "2026-08-13T20:58:23.729Z",
+  "level_since": "2026-08-13T21:58:02.582Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -142,6 +142,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-58704"
+      }
+    },
+    {
+      "title": "CVE-2026-76460: Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-16T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76460",
+      "summary": "Cisco Identity Services Engine – Cisco Identity Services Engine (ISE) and Cisco ISE Passive Identity Connector (ISE-PIC) contain an incorrect use of privileged APIs vulnerability that could allow an unauthenticated, remote attacker to gain unauthorized access to the affected dev…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-76460"
       }
     },
     {
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Four Spy Groups Used the Same Chrome and Windows Exploit Kit Within a Week",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-09T16:34:05.000Z",
-      "link": "https://thehackernews.com/2026/09/four-spy-groups-used-same-chrome-and.html",
-      "summary": "Multiple espionage-motivated threat activity clusters have been found deploying a previously undocumented exploit kit called BlueMoon that chains together multiple vulnerabilities in Microsoft Windows and Google Chrome. The first in-the-wild use of BlueMoon has been attributed t…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 8
+      "count": 9
     },
     {
       "name": "CISA",
