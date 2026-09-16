@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-16T09:52:38.775Z",
-  "next_update": "2026-09-16T10:07:00.000Z",
+  "updated": "2026-09-16T14:53:57.428Z",
+  "next_update": "2026-09-16T15:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa sårbarheter har en tydlig svensk koppling och CERT-SE har utfärdat varningar om pågående angrepp. Även om det inte finns bekräftade incidenter i Sverige, är risken för storskaliga attacker mot svensk infrastruktur förhöjd.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa sårbarheter har höga CVSS-poäng och är noterade i CISA:s KEV-katalog, vilket indikerar en hög risk för attacker. Även om det inte finns bekräftade incidenter i Sverige, väger CERT-SE:s varningar och den internationella aktiviteten tungt. Detta indikerar ett förhöjt hotläge, men det saknas ännu bevis för en storskalig, samhällspåverkande attack.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 20,
-    "critical": 6,
+    "actively_exploited": 21,
+    "critical": 5,
     "authority_alerts": 13,
-    "kev_recent": 7
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": 2
+    "delta": 1
   },
-  "level_since": "2026-08-13T19:42:54.301Z",
+  "level_since": "2026-08-13T20:58:23.729Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -130,6 +130,21 @@
       }
     },
     {
+      "title": "CVE-2026-58704: Google Pixel Improper Authorization Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-16T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-58704",
+      "summary": "Google Pixel – Google Pixel devices contain an improper authorization vulnerability in the cellular modem. A logic error may allow an attacker to bypass permission checks and escalate privileges.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-58704"
+      }
+    },
+    {
       "title": "CVE-2026-76461: Cisco Secure Email Gateway SQL Injection Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -150,7 +165,7 @@
       "region": "INT",
       "date": "2026-09-11T00:00:00.000Z",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-84869",
-      "summary": "ConnectWise ScreenConnect – ConnectWise ScreenConnect contains both an improper privilege management and missing authorization vulnerability that may allow an attacker to file transfer and execution through an active remote sessions without authorization or host confirmation.",
+      "summary": "ConnectWise ScreenConnect – ConnectWise ScreenConnect contains both an improper privilege management and missing authorization vulnerability that may allow an attacker to transfer and execute files through an active remote session without authorization or host confirmation.",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -165,7 +180,7 @@
       "region": "INT",
       "date": "2026-09-11T00:00:00.000Z",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-42016",
-      "summary": "JFrog Artifactory – JFrog Artifactory contains an incorrect authorization vulnerability that allows leads to privilege escalation attack due to a validation check of the token signature/issuer and not the token’s scope.",
+      "summary": "JFrog Artifactory – JFrog Artifactory contains an incorrect authorization vulnerability that leads to a privilege escalation attack due to a validation check of the token signature/issuer and not the token’s scope.",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -210,7 +225,7 @@
       "region": "INT",
       "date": "2026-09-10T00:00:00.000Z",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-86060",
-      "summary": "MikroTik RouterOS – MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacked to change the trusted RouterOS policy mask, leading to privilege escalation.",
+      "summary": "MikroTik RouterOS – MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacker to change the trusted RouterOS policy mask, leading to privilege escalation.",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -225,13 +240,43 @@
       "region": "INT",
       "date": "2026-09-10T00:00:00.000Z",
       "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-67277",
-      "summary": "MikroTik RouterOS – MikroTik RouterOS contains a missing authenticaion for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service.",
+      "summary": "MikroTik RouterOS – MikroTik RouterOS contains a missing authentication for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service.",
       "flags": {
         "activelyExploited": true,
         "critical": false,
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-67277"
+      }
+    },
+    {
+      "title": "Critical ScreenConnect flaw now actively exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-16T11:14:28.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-screenconnect-flaw/",
+      "summary": "Attackers now exploit a critical-severity ConnectWise ScreenConnect vulnerability in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA). [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Acronis cPanel Backup Plugin Vulnerability Exploited in Targeted Attacks",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-16T11:08:54.000Z",
+      "link": "https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html",
+      "summary": "Acronis has warned that a high-severity security flaw in its Backup plugin for cPanel and Web Host Manager (WHM) deployments has been exploited in the wild. The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as a case of local privilege escalation due t…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-87886"
       }
     },
     {
@@ -271,21 +316,6 @@
       "date": "2026-09-15T13:45:54.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/what-zero-day-response-should-be-in-the-post-mythos-era/",
       "summary": "AI is shrinking the time between vulnerability disclosure and exploitation, leaving defenders less time to wait for patches or public exploits. Picus Security explains how exploitability validation, security control testing, and autonomous pentesting can help teams close exposur…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Cisco patches Secure Email Gateway zero-day exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-15T07:31:09.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/new-cisco-secure-email-zero-day-exploited-to-execute-commands-as-root/",
-      "summary": "Cisco warned customers to patch a critical Secure Email Gateway zero-day security flaw that threat actors have been exploiting in attacks. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -353,36 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Chrome V8 Zero-Day Exploited in the Wild Enables Code Execution Inside Sandbox",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-09T09:11:03.000Z",
-      "link": "https://thehackernews.com/2026/09/chrome-v8-zero-day-exploited-in-wild.html",
-      "summary": "Google on Tuesday released updates to patch 230 security vulnerabilities, including one that has come under active exploitation in the wild. The medium-severity vulnerability, assigned the CVE identifier CVE-2026-87491 (CVSS score: N/A), has been described as an out-of-bounds bu…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-87491"
-      }
-    },
-    {
-      "title": "Vulnerability affecting F5 BIG-IP APM",
-      "source": "NCSC-UK",
-      "region": "INT",
-      "date": "2026-03-30T12:00:00.000Z",
-      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
-      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 7
+      "count": 8
     },
     {
       "name": "CISA",
