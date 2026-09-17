@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-17T00:28:28.905Z",
-  "next_update": "2026-09-17T00:37:00.000Z",
+  "updated": "2026-09-17T05:18:37.968Z",
+  "next_update": "2026-09-17T05:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa sårbarheter har höga CVSS-poäng och är kända för att användas i attacker. Även om det inte finns bekräftade incidenter i Sverige, indikerar CERT-SE:s rapportering och CISA KEV-katalogen att det finns en pågående risk som kräver förhöjd uppmärksamhet.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa sårbarheter har höga CVSS-poäng och är noterade i CISA:s KEV-katalog, vilket indikerar en hög sannolikhet för utnyttjande. Även om det inte finns bekräftade incidenter i Sverige, uppmanar CERT-SE till försiktighet och snabb åtgärd, vilket indikerar en förhöjd risknivå.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 95,
     "delta": 1
   },
-  "level_since": "2026-08-13T23:53:27.941Z",
+  "level_since": "2026-08-14T02:40:07.646Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -370,12 +370,12 @@
       }
     },
     {
-      "title": "Hackers target WordPress sites via third-party WooCommerce plugin",
-      "source": "BleepingComputer",
+      "title": "Human Attacker Exploits Marimo RCE, Reaches SSH Bastion in Eight Seconds",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-09-15T14:45:10.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-target-wordpress-sites-via-third-party-woocommerce-plugin/",
-      "summary": "Hackers are actively exploiting a critical vulnerability in the WooCommerce Wholesale Lead Capture premium plugin for WordPress to upload a PHP backdoor. [...]",
+      "date": "2026-09-15T11:52:28.000Z",
+      "link": "https://thehackernews.com/2026/09/human-attacker-exploits-marimo-rce.html",
+      "summary": "With artificial intelligence (AI) shrinking the window between vulnerability discovery and exploitation and lowering the barrier to entry for bad actors, new findings from Sysdig show that skilled human operators can move just as swiftly after gaining initial access. In one inst…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
