@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-17T15:17:27.759Z",
-  "next_update": "2026-09-17T15:37:00.000Z",
+  "updated": "2026-09-17T19:14:14.955Z",
+  "next_update": "2026-09-17T19:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som Cisco Secure Email Gateway och Cisco Identity Services Engine utnyttjas aktivt och har en direkt koppling till Sverige genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i storskalig skala, är risken för påverkan på svenska organisationer uppenbar. Det finns också en generell ökad aktivitet av aktivt utnyttjade sårbarheter globalt, vilket ökar risken för attacker mot svenska mål.",
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 6 svensk-akuta signaler, 19 aktivt utnyttjade sårbarheter, 15 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 20,
-    "critical": 7,
+    "actively_exploited": 19,
+    "critical": 8,
     "authority_alerts": 15,
     "kev_recent": 8
   },
@@ -20,7 +20,7 @@
     "baseline": 95,
     "delta": 2
   },
-  "level_since": "2026-08-14T06:38:14.097Z",
+  "level_since": "2026-08-14T08:34:38.273Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -295,21 +295,6 @@
       }
     },
     {
-      "title": "Critical ScreenConnect flaw now actively exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-16T11:14:28.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-exploiting-critical-screenconnect-flaw/",
-      "summary": "Attackers now exploit a critical-severity ConnectWise ScreenConnect vulnerability in the wild, according to the U.S. Cybersecurity and Infrastructure Security Agency (CISA). [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Acronis cPanel Backup Plugin Vulnerability Exploited in Targeted Attacks",
       "source": "The Hacker News",
       "region": "INT",
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Critical Unbound DNSSEC Validator Flaw Could Allow RCE via a Malicious DNS Zone",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-17T12:30:00.000Z",
+      "link": "https://thehackernews.com/2026/09/critical-unbound-dnssec-validator-flaw.html",
+      "summary": "Every release of the Unbound DNS resolver before 1.26.1 has a critical heap overflow in its DNSSEC validator, maintainer NLnet Labs said in an advisory on Wednesday. An attacker who controls a malicious zone and queries a vulnerable resolver can trigger it, enabling remote code…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }
