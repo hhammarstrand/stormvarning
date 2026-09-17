@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-16T22:05:35.777Z",
-  "next_update": "2026-09-16T22:07:00.000Z",
+  "updated": "2026-09-17T00:28:28.905Z",
+  "next_update": "2026-09-17T00:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats som en risk för svenska organisationer. CERT-SE har utfärdat varningar om dessa hot, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är det förhöjda antalet aktiva hot och myndighetsvarningar tillräckligt för att motivera en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa sårbarheter har höga CVSS-poäng och är kända för att användas i attacker. Även om det inte finns bekräftade incidenter i Sverige, indikerar CERT-SE:s rapportering och CISA KEV-katalogen att det finns en pågående risk som kräver förhöjd uppmärksamhet.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 21,
-    "critical": 5,
-    "authority_alerts": 15,
-    "kev_recent": 10
+    "actively_exploited": 19,
+    "critical": 7,
+    "authority_alerts": 14,
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
     "delta": 1
   },
-  "level_since": "2026-08-13T22:57:57.414Z",
+  "level_since": "2026-08-13T23:53:27.941Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -250,36 +250,6 @@
       }
     },
     {
-      "title": "CVE-2026-86060: MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-10T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-86060",
-      "summary": "MikroTik RouterOS – MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacker to change the trusted RouterOS policy mask, leading to privilege escalation.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-86060"
-      }
-    },
-    {
-      "title": "CVE-2026-67277: MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-10T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-67277",
-      "summary": "MikroTik RouterOS – MikroTik RouterOS contains a missing authentication for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-67277"
-      }
-    },
-    {
       "title": "Critical ScreenConnect flaw now actively exploited in attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -383,6 +353,36 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Vulnerability affecting F5 BIG-IP APM",
+      "source": "NCSC-UK",
+      "region": "INT",
+      "date": "2026-03-30T12:00:00.000Z",
+      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
+      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Hackers target WordPress sites via third-party WooCommerce plugin",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-15T14:45:10.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-target-wordpress-sites-via-third-party-woocommerce-plugin/",
+      "summary": "Hackers are actively exploiting a critical vulnerability in the WooCommerce Wholesale Lead Capture premium plugin for WordPress to upload a PHP backdoor. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 10
+      "count": 8
     },
     {
       "name": "CISA",
