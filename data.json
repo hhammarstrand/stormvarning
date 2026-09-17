@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-17T05:18:37.968Z",
-  "next_update": "2026-09-17T05:37:00.000Z",
+  "updated": "2026-09-17T10:23:43.872Z",
+  "next_update": "2026-09-17T10:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa sårbarheter har höga CVSS-poäng och är noterade i CISA:s KEV-katalog, vilket indikerar en hög sannolikhet för utnyttjande. Även om det inte finns bekräftade incidenter i Sverige, uppmanar CERT-SE till försiktighet och snabb åtgärd, vilket indikerar en förhöjd risknivå.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa utgör en tydlig svensk koppling och kräver förhöjd uppmärksamhet. Även om det inte finns bekräftade incidenter i stor skala, indikerar CERT-SE:s rapportering och CISA KEV-katalogen en aktiv hotbild som påverkar svenska system.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 19,
-    "critical": 7,
+    "actively_exploited": 20,
+    "critical": 6,
     "authority_alerts": 14,
     "kev_recent": 8
   },
@@ -20,7 +20,7 @@
     "baseline": 95,
     "delta": 1
   },
-  "level_since": "2026-08-14T02:40:07.646Z",
+  "level_since": "2026-08-14T04:57:34.840Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -250,6 +250,21 @@
       }
     },
     {
+      "title": "Cisco warns of max severity ISE zero-day exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-17T07:20:54.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-identity-service-engine-zero-day-exploited-in-attacks/",
+      "summary": "Cisco has released security updates to address a maximum-severity Identity Services Engine vulnerability that attackers are actively exploiting in the wild. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical ScreenConnect flaw now actively exploited in attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-03-30T12:00:00.000Z",
       "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
       "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Human Attacker Exploits Marimo RCE, Reaches SSH Bastion in Eight Seconds",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-15T11:52:28.000Z",
-      "link": "https://thehackernews.com/2026/09/human-attacker-exploits-marimo-rce.html",
-      "summary": "With artificial intelligence (AI) shrinking the window between vulnerability discovery and exploitation and lowering the barrier to entry for bad actors, new findings from Sysdig show that skilled human operators can move just as swiftly after gaining initial access. In one inst…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
