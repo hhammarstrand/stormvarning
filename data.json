@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-17T10:23:43.872Z",
-  "next_update": "2026-09-17T10:37:00.000Z",
+  "updated": "2026-09-17T15:17:27.759Z",
+  "next_update": "2026-09-17T15:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-85706 i GitLab, utnyttjas aktivt och har identifierats av CERT-SE som en risk för Sverige. Dessa utgör en tydlig svensk koppling och kräver förhöjd uppmärksamhet. Även om det inte finns bekräftade incidenter i stor skala, indikerar CERT-SE:s rapportering och CISA KEV-katalogen en aktiv hotbild som påverkar svenska system.",
-  "score": 96,
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som Cisco Secure Email Gateway och Cisco Identity Services Engine utnyttjas aktivt och har en direkt koppling till Sverige genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i storskalig skala, är risken för påverkan på svenska organisationer uppenbar. Det finns också en generell ökad aktivitet av aktivt utnyttjade sårbarheter globalt, vilket ökar risken för attacker mot svenska mål.",
+  "score": 97,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
-    "sweden_acute": 5,
+    "sweden_relevant": 6,
+    "sweden_acute": 6,
     "actively_exploited": 20,
-    "critical": 6,
-    "authority_alerts": 14,
+    "critical": 7,
+    "authority_alerts": 15,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": 1
+    "delta": 2
   },
-  "level_since": "2026-08-14T04:57:34.840Z",
+  "level_since": "2026-08-14T06:38:14.097Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -37,6 +37,21 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-76461"
+      }
+    },
+    {
+      "title": "Cisco publicerar säkerhetsuppdateringar för flera sårbarheter",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-09-17T13:20:00.000Z",
+      "link": "https://www.cert.se/2026/09/cisco-publicerar-sakerhetsuppdateringar.html",
+      "summary": "<p>Den 16 september publicerade Cisco säkerhetsuppdateringar för flera sårbarheter, där några av dessa utnyttjas aktivt enligt Cisco. [1, 2] Ett exempel är CVE-2026-76460, en sårbarhet i ett API för Cisco Identity Services Engine (ISE). Framgångsrikt utnyttjande innebär att en o…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-76460"
       }
     },
     {
@@ -97,6 +112,21 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-19490"
+      }
+    },
+    {
+      "title": "Cisco Warns of New Zero-Day ISE Auth Bypass (CVSS 10.0) Exploited in Active Attacks",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-17T06:39:40.000Z",
+      "link": "https://thehackernews.com/2026/09/cisco-warns-of-new-zero-day-ise-auth.html",
+      "summary": "Cisco has warned of a fresh maximum-severity security flaw impacting Identity Services Engine (ISE) that has come under active exploitation. The vulnerability, tracked as CVE-2026-76460 (CVSS score: 10.0), could allow an unauthenticated, remote attacker to bypass authentication.…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-76460"
       }
     },
     {
@@ -292,36 +322,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-87886"
-      }
-    },
-    {
-      "title": "Google fixes actively exploited Android zero-day on Pixel devices",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-16T07:00:19.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/google-fixes-actively-exploited-android-zero-day-on-pixel-devices/",
-      "summary": "Google has released the September 2026 security patches to address 110 vulnerabilities affecting its Pixel devices, including one zero-day flaw actively exploited in targeted attacks. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Acronis warns of actively exploited flaw in its cPanel backup plugin",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-15T21:37:35.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/acronis-warns-of-actively-exploited-flaw-in-its-cpanel-backup-plugin/",
-      "summary": "Acronis disclosed a high-severity Linux local privilege escalation vulnerability in its backup plugin for cPanel, WebHost Manager (WHM), and Plesk that may be exploited in the wild. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
