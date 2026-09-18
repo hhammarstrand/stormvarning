@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-18T11:06:44.883Z",
-  "next_update": "2026-09-18T11:07:00.000Z",
+  "updated": "2026-09-18T14:58:39.414Z",
+  "next_update": "2026-09-18T15:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i Cisco-produkter, inklusive Secure Email Gateway och Identity Services Engine, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en akut risk för svenska organisationer, särskilt myndigheter och kritiska infrastrukturer. Även om det inte finns bekräftade incidenter i Sverige ännu, är risken för pågående attacker hög. Det internationella bakgrundsbruset är också högt, men det är de svenska signalerna som driver bedömningen mot 'gul'.",
-  "score": 97,
+  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
-    "sweden_acute": 6,
-    "actively_exploited": 14,
-    "critical": 11,
-    "authority_alerts": 12,
-    "kev_recent": 4
+    "sweden_relevant": 6,
+    "sweden_acute": 5,
+    "actively_exploited": 15,
+    "critical": 9,
+    "authority_alerts": 13,
+    "kev_recent": 6
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": 2
+    "delta": 0
   },
-  "level_since": "2026-08-14T13:35:23.014Z",
+  "level_since": "2026-08-14T14:37:38.694Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -100,21 +100,6 @@
       }
     },
     {
-      "title": "Kritisk sårbarhet i Citrix NetScaler ADC och NetScaler Gateway",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-08-20T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/08/kritisk-sarbarhet-i-citrix.html",
-      "summary": "<p>Citrix har publicerat information om en kritisk sårbarhet som påverkar Citrix NetScaler ADC och NetScaler Gateway. Sårbarheten, CVE-2026-19490, har fått CVSS v.4-klassning på 9.3. [1, 2]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-19490"
-      }
-    },
-    {
       "title": "Cisco Warns of New Zero-Day ISE Auth Bypass (CVSS 10.0) Exploited in Active Attacks",
       "source": "The Hacker News",
       "region": "INT",
@@ -145,18 +130,33 @@
       }
     },
     {
-      "title": "GitLab CVSS 10 File-Read Flaw Draws In-the-Wild Probes After Disclosure",
-      "source": "The Hacker News",
+      "title": "CVE-2025-39964: Linux Kernel Race Condition Vulnerability",
+      "source": "CISA KEV",
       "region": "INT",
-      "date": "2026-09-11T16:30:18.000Z",
-      "link": "https://thehackernews.com/2026/09/gitlab-cvss-10-file-read-flaw-draws-in.html",
-      "summary": "GitLab has released patches to address multiple flaws, including a maximum-severity security vulnerability that has witnessed in-the-wild probes within hours of public disclosure. The vulnerability in question is CVE-2026-85706 (CVSS score: 10.0), a path traversal issue in the r…",
+      "date": "2026-09-18T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-39964",
+      "summary": "Linux Kernel – Linux Kernel contains a race condition vulnerability which allows concurrent writes to the same AF_ALG socket causing data to be unpredictably interleaved and creating inconsistencies in the socket's internal state.",
       "flags": {
         "activelyExploited": true,
-        "critical": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-85706"
+        "cve": "CVE-2025-39964"
+      }
+    },
+    {
+      "title": "CVE-2026-53266: Linux Kernel Out-of-Bounds Write Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-18T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-53266",
+      "summary": "Linux Kernel – Linux Kernel contains an out-of-bounds write vulnerability in the ebtables SNAT target which allows an ARP sender hardware address rewrite to write directly into a nonlinear socket-buffer fragment backed by a splice-imported file page. The impacted product(s) coul…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-53266"
       }
     },
     {
@@ -295,6 +295,36 @@
       }
     },
     {
+      "title": "Microsoft Patches CVSS 10.0 Azure AI Foundry Flaw Enabling Unauthorized Privilege Escalation",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-18T12:47:04.000Z",
+      "link": "https://thehackernews.com/2026/09/microsoft-patches-cvss-100-azure-ai.html",
+      "summary": "Microsoft has released fixes for a maximum-severity security flaw in Azure AI Foundry that could be exploited to achieve privilege escalation. No customer action is required. The vulnerability, tracked as CVE-2026-85889, carries a CVSS score of 10.0. \"Missing authentication for…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-85889"
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.38",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-09-18T11:15:00.000Z",
+      "link": "https://www.cert.se/2026/09/cert-se-veckobrev-v38.html",
+      "summary": "<p>Den här veckan innehåller CERT-SE:s veckobrev bland annat information om att NCSC och AI Sweden med flera bjuder in till seminarium den 22 oktober på temat “Modern sårbarhetshantering i en AI-driven hotmiljö”. Läs mer om detta nedan.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
       "title": "New Check Point flaw lets hackers execute code with root privileges",
       "source": "BleepingComputer",
       "region": "INT",
@@ -353,36 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Human Attacker Exploits Marimo RCE, Reaches SSH Bastion in Eight Seconds",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-15T11:52:28.000Z",
-      "link": "https://thehackernews.com/2026/09/human-attacker-exploits-marimo-rce.html",
-      "summary": "With artificial intelligence (AI) shrinking the window between vulnerability discovery and exploitation and lowering the barrier to entry for bad actors, new findings from Sysdig show that skilled human operators can move just as swiftly after gaining initial access. In one inst…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "MISP-dagen 2026 - anmälan stängd",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-15T09:50:00.000Z",
-      "link": "https://www.cert.se/2026/09/misp-dagen-2026.html",
-      "summary": "<p>Varmt välkommen till en dag för alla som vill stärka Sveriges cybersäkerhet genom informationsdelning!</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 4
+      "count": 6
     },
     {
       "name": "CISA",
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "MiniMax-Text-01",
+  "model": "heuristik (utan AI)",
   "notified_level": "gul"
 }
