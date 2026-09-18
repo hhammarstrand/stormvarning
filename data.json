@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-18T05:51:36.737Z",
-  "next_update": "2026-09-18T06:07:00.000Z",
+  "updated": "2026-09-18T11:06:44.883Z",
+  "next_update": "2026-09-18T11:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i Cisco-produkter, inklusive Secure Email Gateway och Identity Services Engine, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en akut risk för svenska organisationer, särskilt inom kritiska sektorer. Även om det inte finns bekräftade incidenter i Sverige ännu, är risken för pågående attacker hög. Internationella rapporter om liknande sårbarheter och attacker förstärker det förhöjda hotet.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i Cisco-produkter, inklusive Secure Email Gateway och Identity Services Engine, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en akut risk för svenska organisationer, särskilt myndigheter och kritiska infrastrukturer. Även om det inte finns bekräftade incidenter i Sverige ännu, är risken för pågående attacker hög. Det internationella bakgrundsbruset är också högt, men det är de svenska signalerna som driver bedömningen mot 'gul'.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 95,
     "delta": 2
   },
-  "level_since": "2026-08-14T11:55:40.428Z",
+  "level_since": "2026-08-14T13:35:23.014Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -295,6 +295,21 @@
       }
     },
     {
+      "title": "New Check Point flaw lets hackers execute code with root privileges",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-18T09:34:33.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/check-point-warns-critical-flaw-lets-hackers-execute-code-as-root/",
+      "summary": "Check Point Software has released security updates to address a critical vulnerability that can let attackers execute code with root privileges on management systems. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical Check Point Management Flaw Lets Unauthenticated Attackers Run Code as Root",
       "source": "The Hacker News",
       "region": "INT",
@@ -366,21 +381,6 @@
         "critical": false,
         "incident": false,
         "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "LiteSpeed Enterprise Flaw Could Let One Hosting Account Gain Root Access on a Shared Server",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-15T06:52:16.000Z",
-      "link": "https://thehackernews.com/2026/09/litespeed-enterprise-flaw-could-let-one.html",
-      "summary": "A critical vulnerability in LiteSpeed Web Server Enterprise could let a low-privilege website user gain root access on a shared-hosting server, cPanel warned in an advisory published on September 14. On such servers, many customers' sites run on a single machine, and an attacker…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
         "cve": null
       }
     }
