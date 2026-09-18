@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-17T22:24:22.102Z",
-  "next_update": "2026-09-17T22:37:00.000Z",
+  "updated": "2026-09-18T00:45:26.065Z",
+  "next_update": "2026-09-18T01:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som Cisco Secure Email Gateway och Cisco Identity Services Engine utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för påverkan på svenska organisationer hög på grund av den utbredda användningen av de berörda systemen. Detta indikerar ett förhöjt hotläge.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en akut risk för svenska organisationer, särskilt inom IT-infrastruktur. Även om det inte finns bekräftade incidenter i Sverige ännu, är risken för pågående attacker hög. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 6,
-    "actively_exploited": 19,
-    "critical": 8,
-    "authority_alerts": 15,
-    "kev_recent": 8
+    "actively_exploited": 15,
+    "critical": 10,
+    "authority_alerts": 12,
+    "kev_recent": 4
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
     "delta": 2
   },
-  "level_since": "2026-08-14T09:41:43.460Z",
+  "level_since": "2026-08-14T11:06:19.666Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -220,66 +220,6 @@
       }
     },
     {
-      "title": "CVE-2026-84869: ConnectWise ScreenConnect Improper Privilege Management and Missing Authorization Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-11T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-84869",
-      "summary": "ConnectWise ScreenConnect – ConnectWise ScreenConnect contains both an improper privilege management and missing authorization vulnerability that may allow an attacker to transfer and execute files through an active remote session without authorization or host confirmation.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-84869"
-      }
-    },
-    {
-      "title": "CVE-2026-42016: JFrog Artifactory Incorrect Authorization Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-11T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-42016",
-      "summary": "JFrog Artifactory – JFrog Artifactory contains an incorrect authorization vulnerability that leads to a privilege escalation attack due to a validation check of the token signature/issuer and not the token’s scope.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-42016"
-      }
-    },
-    {
-      "title": "CVE-2026-42018: JFrog Artifactory Improper Authentication Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-11T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-42018",
-      "summary": "JFrog Artifactory – JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-42018"
-      }
-    },
-    {
-      "title": "CVE-2026-85706: GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-11T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-85706",
-      "summary": "GitLab Community Edition and Enterprise Edition – GitLab Community Edition and Enterprise Edition contains a path traversal vulnerability that allows an unauthenticated user to read arbitrary files due to an improper path confinement and missing authentication enforcement in the…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-85706"
-      }
-    },
-    {
       "title": "Cisco warns of max severity ISE zero-day exploited in attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -383,6 +323,66 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Gyazo Breach Exposes 23.62 Million User Records and 490 Million Image Metadata Records",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-17T07:30:01.000Z",
+      "link": "https://thehackernews.com/2026/09/gyazo-breach-exposes-2362-million-user.html",
+      "summary": "A security breach at Gyazo, Helpfeel's image-sharing service, exposed about 23.62 million user records, including email addresses and password hashes, the Kyoto-based company said in a notice published Wednesday. It also exposed about 490 million image metadata records, mostly f…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Human Attacker Exploits Marimo RCE, Reaches SSH Bastion in Eight Seconds",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-15T11:52:28.000Z",
+      "link": "https://thehackernews.com/2026/09/human-attacker-exploits-marimo-rce.html",
+      "summary": "With artificial intelligence (AI) shrinking the window between vulnerability discovery and exploitation and lowering the barrier to entry for bad actors, new findings from Sysdig show that skilled human operators can move just as swiftly after gaining initial access. In one inst…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "MISP-dagen 2026 - anmälan stängd",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-09-15T09:50:00.000Z",
+      "link": "https://www.cert.se/2026/09/misp-dagen-2026.html",
+      "summary": "<p>Varmt välkommen till en dag för alla som vill stärka Sveriges cybersäkerhet genom informationsdelning!</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "LiteSpeed Enterprise Flaw Could Let One Hosting Account Gain Root Access on a Shared Server",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-15T06:52:16.000Z",
+      "link": "https://thehackernews.com/2026/09/litespeed-enterprise-flaw-could-let-one.html",
+      "summary": "A critical vulnerability in LiteSpeed Web Server Enterprise could let a low-privilege website user gain root access on a shared-hosting server, cPanel warned in an advisory published on September 14. On such servers, many customers' sites run on a single machine, and an attacker…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 8
+      "count": 4
     },
     {
       "name": "CISA",
