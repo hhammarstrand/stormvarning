@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-18T00:45:26.065Z",
-  "next_update": "2026-09-18T01:07:00.000Z",
+  "updated": "2026-09-18T05:51:36.737Z",
+  "next_update": "2026-09-18T06:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en akut risk för svenska organisationer, särskilt inom IT-infrastruktur. Även om det inte finns bekräftade incidenter i Sverige ännu, är risken för pågående attacker hög. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i Cisco-produkter, inklusive Secure Email Gateway och Identity Services Engine, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en akut risk för svenska organisationer, särskilt inom kritiska sektorer. Även om det inte finns bekräftade incidenter i Sverige ännu, är risken för pågående attacker hög. Internationella rapporter om liknande sårbarheter och attacker förstärker det förhöjda hotet.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
     "sweden_acute": 6,
-    "actively_exploited": 15,
-    "critical": 10,
+    "actively_exploited": 14,
+    "critical": 11,
     "authority_alerts": 12,
     "kev_recent": 4
   },
@@ -20,7 +20,7 @@
     "baseline": 95,
     "delta": 2
   },
-  "level_since": "2026-08-14T11:06:19.666Z",
+  "level_since": "2026-08-14T11:55:40.428Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -280,27 +280,27 @@
       }
     },
     {
-      "title": "PaperCut Replaces Emergency Patches With Fixes for Two Actively Exploited Flaws",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-11T06:46:18.000Z",
-      "link": "https://thehackernews.com/2026/09/papercut-replaces-emergency-patches.html",
-      "summary": "PaperCut on Thursday released a new security maintenance release that replaces all previously published emergency patches that were pushed to address two security flaws that have come under active exploitation. The software development company said PaperCut NG/MF versions 26.0.5…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
       "date": "2026-03-30T12:00:00.000Z",
       "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
       "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Critical Check Point Management Flaw Lets Unauthenticated Attackers Run Code as Root",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-17T18:08:28.000Z",
+      "link": "https://thehackernews.com/2026/09/critical-check-point-management-server.html",
+      "summary": "A critical vulnerability in Check Point's Security Management and Log Servers could allow an attacker without login credentials to run code as root on those servers over the network. The Security Management Server is the system that controls firewall policy and administrator acc…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
