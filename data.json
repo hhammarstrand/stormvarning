@@ -1,18 +1,18 @@
 {
-  "updated": "2026-09-18T14:58:39.414Z",
-  "next_update": "2026-09-18T15:07:00.000Z",
+  "updated": "2026-09-18T18:22:42.484Z",
+  "next_update": "2026-09-18T18:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 13 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 5,
-    "actively_exploited": 15,
-    "critical": 9,
-    "authority_alerts": 13,
+    "actively_exploited": 13,
+    "critical": 10,
+    "authority_alerts": 14,
     "kev_recent": 6
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 95,
     "delta": 0
   },
-  "level_since": "2026-08-14T14:37:38.694Z",
+  "level_since": "2026-08-14T16:02:04.884Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -220,21 +220,6 @@
       }
     },
     {
-      "title": "Cisco warns of max severity ISE zero-day exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-17T07:20:54.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-identity-service-engine-zero-day-exploited-in-attacks/",
-      "summary": "Cisco has released security updates to address a maximum-severity Identity Services Engine vulnerability that attackers are actively exploiting in the wild. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Acronis cPanel Backup Plugin Vulnerability Exploited in Targeted Attacks",
       "source": "The Hacker News",
       "region": "INT",
@@ -256,21 +241,6 @@
       "date": "2026-09-15T05:31:05.000Z",
       "link": "https://thehackernews.com/2026/09/china-linked-hackers-exploit-chrome.html",
       "summary": "A Chinese threat actor has been attributed to a spear-phishing campaign that exploits recently patched security flaws in Google Chrome and Microsoft Windows to deliver a malicious JavaScript backdoor called GRIMWEDGE. Volexity, which is tracking the threat cluster under the moni…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CISA Adds 5 Actively Exploited Artifactory, ScreenConnect, and RouterOS Flaws to KEV",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-12T15:54:45.000Z",
-      "link": "https://thehackernews.com/2026/09/cisa-adds-5-actively-exploited.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added five security flaws impacting JFrog Artifactory, ConnectWise ScreenConnect, and MikroTik RouterOS to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation in the wild…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -381,6 +351,36 @@
         "critical": false,
         "incident": true,
         "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Human Attacker Exploits Marimo RCE, Reaches SSH Bastion in Eight Seconds",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-15T11:52:28.000Z",
+      "link": "https://thehackernews.com/2026/09/human-attacker-exploits-marimo-rce.html",
+      "summary": "With artificial intelligence (AI) shrinking the window between vulnerability discovery and exploitation and lowering the barrier to entry for bad actors, new findings from Sysdig show that skilled human operators can move just as swiftly after gaining initial access. In one inst…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "MISP-dagen 2026 - anmälan stängd",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-09-15T09:50:00.000Z",
+      "link": "https://www.cert.se/2026/09/misp-dagen-2026.html",
+      "summary": "<p>Varmt välkommen till en dag för alla som vill stärka Sveriges cybersäkerhet genom informationsdelning!</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
         "cve": null
       }
     }
