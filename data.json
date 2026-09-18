@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-18T18:22:42.484Z",
-  "next_update": "2026-09-18T18:37:00.000Z",
+  "updated": "2026-09-18T21:13:03.146Z",
+  "next_update": "2026-09-18T21:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 13 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 14 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 13,
+    "actively_exploited": 14,
     "critical": 10,
     "authority_alerts": 14,
-    "kev_recent": 6
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
     "delta": 0
   },
-  "level_since": "2026-08-14T16:02:04.884Z",
+  "level_since": "2026-08-14T17:06:11.730Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -157,6 +157,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-53266"
+      }
+    },
+    {
+      "title": "CVE-2025-39682: Linux Kernel Improper Check for Unusual or Exceptional Conditions Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-18T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-39682",
+      "summary": "Linux Kernel – Linux Kernel contains an improper check for unusual or exceptional conditions vulnerability in the TLS receive path which allows a zero-length record retrieved from the rx_list to bypass the intended recvmsg() record-type handling, potentially causing subsequent T…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2025-39682"
       }
     },
     {
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "MISP-dagen 2026 - anmälan stängd",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-15T09:50:00.000Z",
-      "link": "https://www.cert.se/2026/09/misp-dagen-2026.html",
-      "summary": "<p>Varmt välkommen till en dag för alla som vill stärka Sveriges cybersäkerhet genom informationsdelning!</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 6
+      "count": 7
     },
     {
       "name": "CISA",
