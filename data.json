@@ -1,16 +1,16 @@
 {
-  "updated": "2026-09-19T06:35:16.135Z",
-  "next_update": "2026-09-19T06:37:00.000Z",
+  "updated": "2026-09-19T11:31:25.919Z",
+  "next_update": "2026-09-19T11:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 14 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 95,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 14,
+    "actively_exploited": 16,
     "critical": 10,
     "authority_alerts": 14,
     "kev_recent": 7
@@ -18,9 +18,9 @@
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": 0
+    "delta": 1
   },
-  "level_since": "2026-08-14T20:07:04.004Z",
+  "level_since": "2026-08-14T20:44:40.160Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,6 +97,21 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "Critical Pre-Auth RCE in Orkes Conductor Workflow Platform Exploited in the Wild",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-19T08:18:54.000Z",
+      "link": "https://thehackernews.com/2026/09/critical-pre-auth-rce-in-orkes.html",
+      "summary": "A critical vulnerability impacting Orkes Conductor is being actively exploited in the wild, according to Fortinet. The vulnerability in question is CVE-2026-58138 (CVSS v3.1 score: 9.8/CVSS v4 score: 9.3), which relates to a case of unauthenticated remote code execution. \"Orkes…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-58138"
       }
     },
     {
@@ -235,6 +250,21 @@
       }
     },
     {
+      "title": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-19T06:24:10.000Z",
+      "link": "https://thehackernews.com/2026/09/cisa-flags-three-linux-kernel.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added three security flaws impacting the Linux kernel to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabilities are listed below - CVE-2025-39682 (C…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2025-39682"
+      }
+    },
+    {
       "title": "Acronis cPanel Backup Plugin Vulnerability Exploited in Targeted Attacks",
       "source": "The Hacker News",
       "region": "INT",
@@ -277,6 +307,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "SolarWinds Patches ARM Hard-Coded Key Flaw Enabling Unauthenticated RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-19T09:31:17.000Z",
+      "link": "https://thehackernews.com/2026/09/solarwinds-patches-arm-hard-coded-key.html",
+      "summary": "SolarWinds has released security updates to address a high-severity flaw in Access Rights Manager (ARM) that, if successfully exploited, could lead to an unauthenticated remote code execution vulnerability. The vulnerability, tracked as CVE-2026-28326, is rated 8.8 out of 10.0 o…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-28326"
       }
     },
     {
@@ -331,51 +376,6 @@
       "date": "2026-09-17T18:08:28.000Z",
       "link": "https://thehackernews.com/2026/09/critical-check-point-management-server.html",
       "summary": "A critical vulnerability in Check Point's Security Management and Log Servers could allow an attacker without login credentials to run code as root on those servers over the network. The Security Management Server is the system that controls firewall policy and administrator acc…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical Unbound DNSSEC Validator Flaw Could Allow RCE via a Malicious DNS Zone",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-17T12:30:00.000Z",
-      "link": "https://thehackernews.com/2026/09/critical-unbound-dnssec-validator-flaw.html",
-      "summary": "Every release of the Unbound DNS resolver before 1.26.1 has a critical heap overflow in its DNSSEC validator, maintainer NLnet Labs said in an advisory on Wednesday. An attacker who controls a malicious zone and queries a vulnerable resolver can trigger it, enabling remote code…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Gyazo Breach Exposes 23.62 Million User Records and 490 Million Image Metadata Records",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-17T07:30:01.000Z",
-      "link": "https://thehackernews.com/2026/09/gyazo-breach-exposes-2362-million-user.html",
-      "summary": "A security breach at Gyazo, Helpfeel's image-sharing service, exposed about 23.62 million user records, including email addresses and password hashes, the Kyoto-based company said in a notice published Wednesday. It also exposed about 490 million image metadata records, mostly f…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Human Attacker Exploits Marimo RCE, Reaches SSH Bastion in Eight Seconds",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-15T11:52:28.000Z",
-      "link": "https://thehackernews.com/2026/09/human-attacker-exploits-marimo-rce.html",
-      "summary": "With artificial intelligence (AI) shrinking the window between vulnerability discovery and exploitation and lowering the barrier to entry for bad actors, new findings from Sysdig show that skilled human operators can move just as swiftly after gaining initial access. In one inst…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
