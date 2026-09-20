@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-20T17:38:42.602Z",
-  "next_update": "2026-09-20T18:07:00.000Z",
+  "updated": "2026-09-20T20:44:41.358Z",
+  "next_update": "2026-09-20T21:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Cisco Identity Services Engine, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga signaler om aktivt utnyttjande som kräver förhöjd beredskap. Internationella rapporter om liknande sårbarheter förstärker det förhöjda hotet.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) rapporteras aktivt utnyttjas och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en akut risk för svenska organisationer, särskilt inom kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige ännu, är hotbilden tillräckligt allvarlig för att motivera en förhöjd beredskap.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 0
   },
-  "level_since": "2026-08-15T03:50:21.819Z",
+  "level_since": "2026-08-15T04:42:45.799Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
