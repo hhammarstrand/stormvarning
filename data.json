@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-20T23:11:39.917Z",
-  "next_update": "2026-09-20T23:37:00.000Z",
+  "updated": "2026-09-21T01:36:50.974Z",
+  "next_update": "2026-09-21T01:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som Cisco Secure Email Gateway och Cisco Identity Services Engine utnyttjas aktivt och har en direkt svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska organisationer förhöjd. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) rapporteras aktivt utnyttjas och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska organisationer förhöjd. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 16,
-    "critical": 10,
-    "authority_alerts": 14,
-    "kev_recent": 7
+    "actively_exploited": 15,
+    "critical": 11,
+    "authority_alerts": 13,
+    "kev_recent": 6
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
     "delta": 0
   },
-  "level_since": "2026-08-15T05:36:28.370Z",
+  "level_since": "2026-08-15T05:59:36.275Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -235,21 +235,6 @@
       }
     },
     {
-      "title": "CVE-2026-76461: Cisco Secure Email Gateway SQL Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-14T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76461",
-      "summary": "Cisco Secure Email Gateway – Cisco AsyncOS software for Cisco Secure Email Gateway (SEG) contains a SQL injection vulnerability that could allow an unauthenticated, remote attacker to execute arbitrary commands with root privileges on the underlying operating system.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-76461"
-      }
-    },
-    {
       "title": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild",
       "source": "The Hacker News",
       "region": "INT",
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Critical Unbound DNSSEC Validator Flaw Could Allow RCE via a Malicious DNS Zone",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-17T12:30:00.000Z",
+      "link": "https://thehackernews.com/2026/09/critical-unbound-dnssec-validator-flaw.html",
+      "summary": "Every release of the Unbound DNS resolver before 1.26.1 has a critical heap overflow in its DNSSEC validator, maintainer NLnet Labs said in an advisory on Wednesday. An attacker who controls a malicious zone and queries a vulnerable resolver can trigger it, enabling remote code…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 7
+      "count": 6
     },
     {
       "name": "CISA",
