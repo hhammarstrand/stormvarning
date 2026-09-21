@@ -1,16 +1,16 @@
 {
-  "updated": "2026-09-21T07:10:55.692Z",
-  "next_update": "2026-09-21T07:37:00.000Z",
+  "updated": "2026-09-21T14:31:13.026Z",
+  "next_update": "2026-09-21T14:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Cisco Identity Services Engine, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
-  "score": 96,
+  "reasoning": "Flera kritiska sårbarheter i produkter som Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska organisationer förhöjd. Det internationella bakgrundsbruset är högt, men det är de svenska myndighetsvarningarna som driver bedömningen mot 'gul'.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 15,
+    "actively_exploited": 14,
     "critical": 11,
     "authority_alerts": 13,
     "kev_recent": 6
@@ -18,9 +18,9 @@
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 0
+    "delta": -1
   },
-  "level_since": "2026-08-15T06:54:29.145Z",
+  "level_since": "2026-08-15T07:38:59.021Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -265,21 +265,6 @@
       }
     },
     {
-      "title": "China-Linked Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy GRIMWEDGE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-15T05:31:05.000Z",
-      "link": "https://thehackernews.com/2026/09/china-linked-hackers-exploit-chrome.html",
-      "summary": "A Chinese threat actor has been attributed to a spear-phishing campaign that exploits recently patched security flaws in Google Chrome and Microsoft Windows to deliver a malicious JavaScript backdoor called GRIMWEDGE. Volexity, which is tracking the threat cluster under the moni…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Vulnerability affecting F5 BIG-IP APM",
       "source": "NCSC-UK",
       "region": "INT",
@@ -340,21 +325,6 @@
       }
     },
     {
-      "title": "New Check Point flaw lets hackers execute code with root privileges",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-18T09:34:33.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/check-point-warns-critical-flaw-lets-hackers-execute-code-as-root/",
-      "summary": "Check Point Software has released security updates to address a critical vulnerability that can let attackers execute code with root privileges on management systems. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Critical Check Point Management Flaw Lets Unauthenticated Attackers Run Code as Root",
       "source": "The Hacker News",
       "region": "INT",
@@ -376,6 +346,36 @@
       "date": "2026-09-17T12:30:00.000Z",
       "link": "https://thehackernews.com/2026/09/critical-unbound-dnssec-validator-flaw.html",
       "summary": "Every release of the Unbound DNS resolver before 1.26.1 has a critical heap overflow in its DNSSEC validator, maintainer NLnet Labs said in an advisory on Wednesday. An attacker who controls a malicious zone and queries a vulnerable resolver can trigger it, enabling remote code…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Gyazo Breach Exposes 23.62 Million User Records and 490 Million Image Metadata Records",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-17T07:30:01.000Z",
+      "link": "https://thehackernews.com/2026/09/gyazo-breach-exposes-2362-million-user.html",
+      "summary": "A security breach at Gyazo, Helpfeel's image-sharing service, exposed about 23.62 million user records, including email addresses and password hashes, the Kyoto-based company said in a notice published Wednesday. It also exposed about 490 million image metadata records, mostly f…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Human Attacker Exploits Marimo RCE, Reaches SSH Bastion in Eight Seconds",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-15T11:52:28.000Z",
+      "link": "https://thehackernews.com/2026/09/human-attacker-exploits-marimo-rce.html",
+      "summary": "With artificial intelligence (AI) shrinking the window between vulnerability discovery and exploitation and lowering the barrier to entry for bad actors, new findings from Sysdig show that skilled human operators can move just as swiftly after gaining initial access. In one inst…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
