@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-21T14:31:13.026Z",
-  "next_update": "2026-09-21T14:37:00.000Z",
+  "updated": "2026-09-21T19:43:21.096Z",
+  "next_update": "2026-09-21T20:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska organisationer förhöjd. Det internationella bakgrundsbruset är högt, men det är de svenska myndighetsvarningarna som driver bedömningen mot 'gul'.",
-  "score": 95,
+  "reasoning": "Flera kritiska sårbarheter i Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) rapporteras aktivt utnyttjas och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en akut risk för svenska organisationer, särskilt inom IT-infrastruktur. Även om det inte finns bekräftade incidenter i Sverige ännu, är det högst sannolikt att dessa sårbarheter kan användas för att angripa svenska mål. Det internationella bakgrundsbruset är också högt, men det är de svenska signalerna som driver bedömningen mot 'gul'.",
+  "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 14,
-    "critical": 11,
-    "authority_alerts": 13,
-    "kev_recent": 6
+    "actively_exploited": 15,
+    "critical": 10,
+    "authority_alerts": 14,
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": -1
+    "delta": 0
   },
-  "level_since": "2026-08-15T07:38:59.021Z",
+  "level_since": "2026-08-15T08:42:09.013Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -100,6 +100,21 @@
       }
     },
     {
+      "title": "⚡ Weekly Recap: Cisco 0-Day, AI Agent RCE, ClickFix Attacks, ClickFix Surge, and Browser Hijacks",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-21T14:24:13.000Z",
+      "link": "https://thehackernews.com/2026/09/weekly-recap-cisco-0-day-ai-agent-rce.html",
+      "summary": "A browser. A plugin. A package. A login screen. Normal stuff. That is basically the problem this week. The trouble keeps showing up inside things people already trust: code that takes a bad turn, old payloads coming back, exposed systems, weak checks, fake fixes, and attack path…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical Pre-Auth RCE in Orkes Conductor Workflow Platform Exploited in the Wild",
       "source": "The Hacker News",
       "region": "INT",
@@ -130,18 +145,18 @@
       }
     },
     {
-      "title": "Cisco Secure Email Gateway Flaw Exploited in the Wild, Enables Root Command Execution",
-      "source": "The Hacker News",
+      "title": "CVE-2026-7273: Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability",
+      "source": "CISA KEV",
       "region": "INT",
-      "date": "2026-09-15T06:11:11.000Z",
-      "link": "https://thehackernews.com/2026/09/cisco-secure-email-gateway-flaw.html",
-      "summary": "Cisco has warned that a new critical vulnerability impacting AsyncOS Software for Cisco Secure Email Gateway has come under active exploitation in the wild. The vulnerability, tracked as CVE-2026-76461, carries a CVSS score of 9.8 out of a maximum of 10.0. It has been described…",
+      "date": "2026-09-21T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-7273",
+      "summary": "Zyxel GS1900 Series Switches – Zyxel GS1900 series switches contain a stack-based buffer overflow vulnerability in the CGI program which could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request.",
       "flags": {
         "activelyExploited": true,
-        "critical": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-76461"
+        "cve": "CVE-2026-7273"
       }
     },
     {
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Human Attacker Exploits Marimo RCE, Reaches SSH Bastion in Eight Seconds",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-15T11:52:28.000Z",
-      "link": "https://thehackernews.com/2026/09/human-attacker-exploits-marimo-rce.html",
-      "summary": "With artificial intelligence (AI) shrinking the window between vulnerability discovery and exploitation and lowering the barrier to entry for bad actors, new findings from Sysdig show that skilled human operators can move just as swiftly after gaining initial access. In one inst…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 6
+      "count": 7
     },
     {
       "name": "CISA",
