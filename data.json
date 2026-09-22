@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-22T17:44:36.712Z",
-  "next_update": "2026-09-22T18:07:00.000Z",
+  "updated": "2026-09-22T21:13:41.249Z",
+  "next_update": "2026-09-22T21:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) rapporteras aktivt utnyttjas och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en akut risk för svenska organisationer, särskilt inom IT-infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
-  "score": 96,
+  "reasoning": "Flera kritiska sårbarheter i Cisco och andra plattformar utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s rapportering. Dessa inkluderar sårbarheter i Cisco Secure Email Gateway och Cisco Identity Services Engine, vilket ökar risken för attacker mot svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige ännu, är detta tillräckligt för att höja nivån till 'gul'.",
+  "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 19,
-    "critical": 9,
-    "authority_alerts": 13,
-    "kev_recent": 7
+    "actively_exploited": 22,
+    "critical": 6,
+    "authority_alerts": 16,
+    "kev_recent": 11
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 0
+    "delta": 1
   },
-  "level_since": "2026-08-15T11:30:40.731Z",
+  "level_since": "2026-08-15T11:52:21.335Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -100,6 +100,21 @@
       }
     },
     {
+      "title": "CVE-2026-94127: F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-22T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-94127",
+      "summary": "F5 BIG-IP APM – F5 BIG-IP APM contains a heap-based buffer overflow vulnerability when access policy and an OAuth profile are configured on a virtual server. This vulnerability could allow an unauthenticated attacker to perform remote code execution.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-94127"
+      }
+    },
+    {
       "title": "New CVSS 10.0 VeloCloud Orchestrator Flaw Actively Exploited in Certificate-Based Setups",
       "source": "The Hacker News",
       "region": "INT",
@@ -145,18 +160,48 @@
       }
     },
     {
-      "title": "Cisco Warns of New Zero-Day ISE Auth Bypass (CVSS 10.0) Exploited in Active Attacks",
-      "source": "The Hacker News",
+      "title": "CVE-2026-93952: Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
+      "source": "CISA KEV",
       "region": "INT",
-      "date": "2026-09-17T06:39:40.000Z",
-      "link": "https://thehackernews.com/2026/09/cisco-warns-of-new-zero-day-ise-auth.html",
-      "summary": "Cisco has warned of a fresh maximum-severity security flaw impacting Identity Services Engine (ISE) that has come under active exploitation. The vulnerability, tracked as CVE-2026-76460 (CVSS score: 10.0), could allow an unauthenticated, remote attacker to bypass authentication.…",
+      "date": "2026-09-22T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-93952",
+      "summary": "Arista VeloCloud Orchestrator – Arista VeloCloud Orchestrator (VCO) on-prem contains an improper input validation vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confid…",
       "flags": {
         "activelyExploited": true,
-        "critical": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-76460"
+        "cve": "CVE-2026-93952"
+      }
+    },
+    {
+      "title": "CVE-2026-93616: Check Point Multiple Products Path Traversal Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-22T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-93616",
+      "summary": "Check Point Multiple Products – Check Point Security Management Server, Multi-Domain Security Management Server, Log Server, Multi-Domain Log Server, and SmartEvent contain a path traversal vulnerability that allows an unauthenticated attacker to upload and execute arbitrary scr…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-93616"
+      }
+    },
+    {
+      "title": "CVE-2026-85102: Check Point Multiple Products Improper Certificate Validation Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-22T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-85102",
+      "summary": "Check Point Multiple Products – Check Point Security Gateway and Check Point Spark Firewall using Site to Site VPN or Remote Access VPN contain an improper certificate validation vulnerability which could allow an unauthenticated remote attacker to execute arbitrary code on the…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-85102"
       }
     },
     {
@@ -265,6 +310,36 @@
       }
     },
     {
+      "title": "ShinyHunters claims FBI hack, data theft in PeopleSoft zero-day breach",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-22T19:13:29.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/shinyhunters-claims-fbi-hack-data-theft-in-peoplesoft-zero-day-breach/",
+      "summary": "The ShinyHunters extortion gang claims it breached FBI systems using a new Oracle PeopleSoft zero-day vulnerability, gaining access to internal services and stealing sensitive data on employees and job applicants. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-22T18:29:39.000Z",
+      "link": "https://thehackernews.com/2026/09/check-point-warns-of-management-server.html",
+      "summary": "Attackers exploited a previously unknown flaw in Check Point's Security Management Server in a handful of targeted attacks on July 23, the company said. The flaw, CVE-2026-93616, allows an attacker who can access the server's web service to run scripts on it without logging in.…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-93616"
+      }
+    },
+    {
       "title": "Check Point warns of Management Server zero-day exploited in attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -308,81 +383,6 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-86296"
       }
-    },
-    {
-      "title": "New Windows Defender zero-day blocks Microsoft antivirus updates",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-22T09:55:11.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/",
-      "summary": "Over the weekend, security researcher Abdelhamid Naceri (also known as Nightmare Eclipse) released another Microsoft Defender zero-day exploit that blocks antivirus updates. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-19T06:24:10.000Z",
-      "link": "https://thehackernews.com/2026/09/cisa-flags-three-linux-kernel.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added three security flaws impacting the Linux kernel to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabilities are listed below - CVE-2025-39682 (C…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2025-39682"
-      }
-    },
-    {
-      "title": "Vulnerability affecting F5 BIG-IP APM",
-      "source": "NCSC-UK",
-      "region": "INT",
-      "date": "2026-03-30T12:00:00.000Z",
-      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
-      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical Bifrost AI Gateway Flaw Lets Attackers Run Commands Without Credentials",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-22T16:41:12.000Z",
-      "link": "https://thehackernews.com/2026/09/critical-bifrost-ai-gateway-flaw-lets.html",
-      "summary": "A critical vulnerability in Bifrost, an open-source AI gateway that routes requests to more than 20 LLM providers, allows an unauthenticated attacker to run arbitrary commands on the gateway server with a single HTTP request. The flaw, tracked as CVE-2026-90898 (CVSS score: 9.8)…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-90898"
-      }
-    },
-    {
-      "title": "SharePoint Flaw Initially Listed as Spoofing by Microsoft Enables Authenticated RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-22T11:17:41.000Z",
-      "link": "https://thehackernews.com/2026/09/sharepoint-flaw-initially-listed-as.html",
-      "summary": "A SharePoint Server vulnerability that Microsoft initially classified as a spoofing flaw with a CVSS score of 6.5 actually enables authenticated remote code execution, according to full technical details published today by Viettel Cyber Security researcher Dinh Ho Anh Khoa. The…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 7
+      "count": 11
     },
     {
       "name": "CISA",
