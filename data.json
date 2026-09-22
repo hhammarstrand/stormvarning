@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-22T01:49:24.699Z",
-  "next_update": "2026-09-22T02:07:00.000Z",
+  "updated": "2026-09-22T07:39:42.286Z",
+  "next_update": "2026-09-22T08:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) rapporteras aktivt utnyttjas och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, utgör de aktivt utnyttjade sårbarheterna en påtaglig risk för svenska organisationer, särskilt inom IT-infrastruktur. Detta motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) rapporteras aktivt utnyttjas och CERT-SE har utfärdat varningar om dessa hot. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga tecken på aktivt utnyttjande som kan påverka svenska organisationer. Dessa signaler, tillsammans med CERT-SE:s rapporter om pågående intrång och störningar, indikerar ett förhöjt hotläge.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
     "actively_exploited": 15,
-    "critical": 10,
+    "critical": 11,
     "authority_alerts": 14,
     "kev_recent": 7
   },
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 0
   },
-  "level_since": "2026-08-15T09:57:52.744Z",
+  "level_since": "2026-08-15T10:35:05.565Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -295,6 +295,21 @@
       }
     },
     {
+      "title": "WordPress Comment2Shell Flaw Can Turn Anonymous Comment XSS Into RCE via Admin Session",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-22T06:03:14.000Z",
+      "link": "https://thehackernews.com/2026/09/wordpress-comment2shell-flaw-can-turn.html",
+      "summary": "A new flaw in WordPress core let an anonymous visitor leave a comment that planted a hidden script on the page. If a logged-in administrator later opened that page, the script could run code on the site's server. WordPress fixed the flaw, tracked as CVE-2026-93485 and dubbed \"Co…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-93485"
+      }
+    },
+    {
       "title": "SolarWinds Patches ARM Hard-Coded Key Flaw Enabling Unauthenticated RCE",
       "source": "The Hacker News",
       "region": "INT",
@@ -365,21 +380,6 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Gyazo Breach Exposes 23.62 Million User Records and 490 Million Image Metadata Records",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-17T07:30:01.000Z",
-      "link": "https://thehackernews.com/2026/09/gyazo-breach-exposes-2362-million-user.html",
-      "summary": "A security breach at Gyazo, Helpfeel's image-sharing service, exposed about 23.62 million user records, including email addresses and password hashes, the Kyoto-based company said in a notice published Wednesday. It also exposed about 490 million image metadata records, mostly f…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
