@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-22T07:39:42.286Z",
-  "next_update": "2026-09-22T08:07:00.000Z",
+  "updated": "2026-09-22T13:21:58.182Z",
+  "next_update": "2026-09-22T13:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) rapporteras aktivt utnyttjas och CERT-SE har utfärdat varningar om dessa hot. Även om det inte finns bekräftade incidenter i Sverige, är det tydliga tecken på aktivt utnyttjande som kan påverka svenska organisationer. Dessa signaler, tillsammans med CERT-SE:s rapporter om pågående intrång och störningar, indikerar ett förhöjt hotläge.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Cisco Identity Services Engine, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 15,
-    "critical": 11,
+    "actively_exploited": 16,
+    "critical": 10,
     "authority_alerts": 14,
     "kev_recent": 7
   },
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 0
   },
-  "level_since": "2026-08-15T10:35:05.565Z",
+  "level_since": "2026-08-15T10:56:44.702Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -250,6 +250,36 @@
       }
     },
     {
+      "title": "D-Link warns of max severity zero-day bug in DIR-822A routers",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-22T12:48:06.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-max-severity-zero-day-bug-in-dir-822a-routers/",
+      "summary": "D-Link warned customers of a maximum-severity vulnerability (CVE-2026-86296) with public proof-of-concept (PoC) exploit code and no patch, affecting legacy DIR-822A dual-band Wi-Fi routers. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-86296"
+      }
+    },
+    {
+      "title": "New Windows Defender zero-day blocks Microsoft antivirus updates",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-22T09:55:11.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/",
+      "summary": "Over the weekend, security researcher Abdelhamid Naceri (also known as Nightmare Eclipse) released another Microsoft Defender zero-day exploit that blocks antivirus updates. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild",
       "source": "The Hacker News",
       "region": "INT",
@@ -262,21 +292,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2025-39682"
-      }
-    },
-    {
-      "title": "Acronis cPanel Backup Plugin Vulnerability Exploited in Targeted Attacks",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-16T11:08:54.000Z",
-      "link": "https://thehackernews.com/2026/09/acronis-cpanel-backup-plugin.html",
-      "summary": "Acronis has warned that a high-severity security flaw in its Backup plugin for cPanel and Web Host Manager (WHM) deployments has been exploited in the wild. The vulnerability, tracked as CVE-2026-87886 (CVSS score: 7.8), is described as a case of local privilege escalation due t…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-87886"
       }
     },
     {
@@ -295,12 +310,27 @@
       }
     },
     {
+      "title": "SharePoint Flaw Initially Listed as Spoofing by Microsoft Enables Authenticated RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-22T11:17:41.000Z",
+      "link": "https://thehackernews.com/2026/09/sharepoint-flaw-initially-listed-as.html",
+      "summary": "A SharePoint Server vulnerability that Microsoft initially classified as a spoofing flaw with a CVSS score of 6.5 actually enables authenticated remote code execution, according to full technical details published today by Viettel Cyber Security researcher Dinh Ho Anh Khoa. The…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "WordPress Comment2Shell Flaw Can Turn Anonymous Comment XSS Into RCE via Admin Session",
       "source": "The Hacker News",
       "region": "INT",
       "date": "2026-09-22T06:03:14.000Z",
       "link": "https://thehackernews.com/2026/09/wordpress-comment2shell-flaw-can-turn.html",
-      "summary": "A new flaw in WordPress core let an anonymous visitor leave a comment that planted a hidden script on the page. If a logged-in administrator later opened that page, the script could run code on the site's server. WordPress fixed the flaw, tracked as CVE-2026-93485 and dubbed \"Co…",
+      "summary": "A new flaw in WordPress core let an anonymous visitor leave a comment that planted a hidden script on the page. If a logged-in administrator later opened that page, the script could run code on the site's server. WordPress fixed the flaw, tracked as CVE-2026-93485 and called \"Co…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -351,36 +381,6 @@
         "critical": false,
         "incident": false,
         "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical Check Point Management Flaw Lets Unauthenticated Attackers Run Code as Root",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-17T18:08:28.000Z",
-      "link": "https://thehackernews.com/2026/09/critical-check-point-management-server.html",
-      "summary": "A critical vulnerability in Check Point's Security Management and Log Servers could allow an attacker without login credentials to run code as root on those servers over the network. The Security Management Server is the system that controls firewall policy and administrator acc…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical Unbound DNSSEC Validator Flaw Could Allow RCE via a Malicious DNS Zone",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-17T12:30:00.000Z",
-      "link": "https://thehackernews.com/2026/09/critical-unbound-dnssec-validator-flaw.html",
-      "summary": "Every release of the Unbound DNS resolver before 1.26.1 has a critical heap overflow in its DNSSEC validator, maintainer NLnet Labs said in an advisory on Wednesday. An attacker who controls a malicious zone and queries a vulnerable resolver can trigger it, enabling remote code…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
         "cve": null
       }
     }
