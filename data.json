@@ -1,18 +1,18 @@
 {
-  "updated": "2026-09-22T13:21:58.182Z",
-  "next_update": "2026-09-22T13:37:00.000Z",
+  "updated": "2026-09-22T17:44:36.712Z",
+  "next_update": "2026-09-22T18:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Cisco Identity Services Engine, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter i Cisco Secure Email Gateway och Cisco Identity Services Engine (ISE) rapporteras aktivt utnyttjas och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en akut risk för svenska organisationer, särskilt inom IT-infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 16,
-    "critical": 10,
-    "authority_alerts": 14,
+    "actively_exploited": 19,
+    "critical": 9,
+    "authority_alerts": 13,
     "kev_recent": 7
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 0
   },
-  "level_since": "2026-08-15T10:56:44.702Z",
+  "level_since": "2026-08-15T11:30:40.731Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,6 +97,21 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "New CVSS 10.0 VeloCloud Orchestrator Flaw Actively Exploited in Certificate-Based Setups",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-22T12:29:00.000Z",
+      "link": "https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html",
+      "summary": "Attackers are exploiting a new flaw in on-premises VeloCloud Orchestrator (VCO), the server that manages the Edge devices in a VeloCloud SD-WAN, Arista said on September 22. The flaw, tracked as CVE-2026-93952, may allow a remote attacker with no login access to privilege intern…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-93952"
       }
     },
     {
@@ -250,6 +265,36 @@
       }
     },
     {
+      "title": "Check Point warns of Management Server zero-day exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-22T16:32:47.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/",
+      "summary": "Check Point Software released emergency hotfixes to address a critical Security Management Server vulnerability that could let attackers run arbitrary scripts. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Researcher Drops BigDiskBuster Zero-Day PoC That Blocks Microsoft Defender Updates",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-22T16:14:04.000Z",
+      "link": "https://thehackernews.com/2026/09/researcher-drops-bigdiskbuster-zero-day.html",
+      "summary": "A zero-day proof-of-concept tool that stops Microsoft Defender from installing platform and signature updates by filling all available disk space was published on GitHub on September 19. The tool, called BigDiskBuster, has no patch, no CVE, and no Microsoft advisory. Its author,…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "D-Link warns of max severity zero-day bug in DIR-822A routers",
       "source": "BleepingComputer",
       "region": "INT",
@@ -310,6 +355,21 @@
       }
     },
     {
+      "title": "Critical Bifrost AI Gateway Flaw Lets Attackers Run Commands Without Credentials",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-22T16:41:12.000Z",
+      "link": "https://thehackernews.com/2026/09/critical-bifrost-ai-gateway-flaw-lets.html",
+      "summary": "A critical vulnerability in Bifrost, an open-source AI gateway that routes requests to more than 20 LLM providers, allows an unauthenticated attacker to run arbitrary commands on the gateway server with a single HTTP request. The flaw, tracked as CVE-2026-90898 (CVSS score: 9.8)…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-90898"
+      }
+    },
+    {
       "title": "SharePoint Flaw Initially Listed as Spoofing by Microsoft Enables Authenticated RCE",
       "source": "The Hacker News",
       "region": "INT",
@@ -321,66 +381,6 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "WordPress Comment2Shell Flaw Can Turn Anonymous Comment XSS Into RCE via Admin Session",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-22T06:03:14.000Z",
-      "link": "https://thehackernews.com/2026/09/wordpress-comment2shell-flaw-can-turn.html",
-      "summary": "A new flaw in WordPress core let an anonymous visitor leave a comment that planted a hidden script on the page. If a logged-in administrator later opened that page, the script could run code on the site's server. WordPress fixed the flaw, tracked as CVE-2026-93485 and called \"Co…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-93485"
-      }
-    },
-    {
-      "title": "SolarWinds Patches ARM Hard-Coded Key Flaw Enabling Unauthenticated RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-19T09:31:17.000Z",
-      "link": "https://thehackernews.com/2026/09/solarwinds-patches-arm-hard-coded-key.html",
-      "summary": "SolarWinds has released security updates to address a high-severity flaw in Access Rights Manager (ARM) that, if successfully exploited, could lead to an unauthenticated remote code execution vulnerability. The vulnerability, tracked as CVE-2026-28326, is rated 8.8 out of 10.0 o…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-28326"
-      }
-    },
-    {
-      "title": "Microsoft Patches CVSS 10.0 Azure AI Foundry Flaw Enabling Unauthorized Privilege Escalation",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-18T12:47:04.000Z",
-      "link": "https://thehackernews.com/2026/09/microsoft-patches-cvss-100-azure-ai.html",
-      "summary": "Microsoft has released fixes for a maximum-severity security flaw in Azure AI Foundry that could be exploited to achieve privilege escalation. No customer action is required. The vulnerability, tracked as CVE-2026-85889, carries a CVSS score of 10.0. \"Missing authentication for…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-85889"
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.38",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-18T11:15:00.000Z",
-      "link": "https://www.cert.se/2026/09/cert-se-veckobrev-v38.html",
-      "summary": "<p>Den här veckan innehåller CERT-SE:s veckobrev bland annat information om att NCSC och AI Sweden med flera bjuder in till seminarium den 22 oktober på temat “Modern sårbarhetshantering i en AI-driven hotmiljö”. Läs mer om detta nedan.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
