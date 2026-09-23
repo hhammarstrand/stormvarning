@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-23T19:00:43.512Z",
-  "next_update": "2026-09-23T19:07:00.000Z",
+  "updated": "2026-09-23T22:14:24.469Z",
+  "next_update": "2026-09-23T22:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 och CVE-2026-94127, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående angrepp mot svenska organisationer förhöjd. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i Cisco och F5-produkter, som används i stor utsträckning i Sverige, utnyttjas aktivt. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige ännu, är risken för attacker mot svenska organisationer förhöjd. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 1
   },
-  "level_since": "2026-08-15T15:32:03.305Z",
+  "level_since": "2026-08-15T15:52:59.896Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -370,12 +370,12 @@
       }
     },
     {
-      "title": "Check Point warns of Management Server zero-day exploited in attacks",
-      "source": "BleepingComputer",
+      "title": "Researcher Drops BigDiskBuster Zero-Day PoC That Blocks Microsoft Defender Updates",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-09-22T16:32:47.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/check-point-patches-management-server-zero-day-exploited-in-attacks/",
-      "summary": "Check Point Software released emergency hotfixes to address a critical Security Management Server vulnerability that could let attackers run arbitrary scripts. [...]",
+      "date": "2026-09-22T16:14:04.000Z",
+      "link": "https://thehackernews.com/2026/09/researcher-drops-bigdiskbuster-zero-day.html",
+      "summary": "A zero-day proof-of-concept tool that stops Microsoft Defender from installing platform and signature updates by filling all available disk space was published on GitHub on September 19. The tool, called BigDiskBuster, has no patch, no CVE, and no Microsoft advisory. Its author,…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
