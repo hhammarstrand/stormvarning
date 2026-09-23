@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-23T09:54:38.521Z",
-  "next_update": "2026-09-23T10:07:00.000Z",
+  "updated": "2026-09-23T14:57:17.988Z",
+  "next_update": "2026-09-23T15:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 och CVE-2026-94127, utnyttjas aktivt och har identifierats av CERT-SE med tydlig svensk koppling. Dessa sårbarheter i produkter som Cisco Secure Email Gateway och F5 BIG-IP APM är särskilt oroande på grund av deras kritiska natur och potentiella påverkan på svensk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i Cisco och F5-produkter, som används i svenska organisationer, utnyttjas aktivt. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en konkret risk för svenska aktörer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
     "actively_exploited": 21,
-    "critical": 9,
+    "critical": 10,
     "authority_alerts": 13,
     "kev_recent": 8
   },
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 1
   },
-  "level_since": "2026-08-15T14:34:46.171Z",
+  "level_since": "2026-08-15T14:57:38.410Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -55,7 +55,7 @@
       }
     },
     {
-      "title": "Information om kritisk sårbarhet i F5 BIG-IP APM",
+      "title": "F5 informerar om kritisk sårbarhet i BIG-IP APM",
       "source": "CERT-SE",
       "region": "SE",
       "date": "2026-09-23T09:20:00.000Z",
@@ -112,6 +112,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-94127"
+      }
+    },
+    {
+      "title": "InfraTrust report warns network management systems under attack",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-23T14:35:26.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/infratrust-report-warns-network-management-systems-under-attack/",
+      "summary": "Attackers are increasingly targeting the management systems used to control enterprise infrastructure, with several critical vulnerabilities actively exploited before or shortly after vendors disclosed them. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -295,6 +310,21 @@
       }
     },
     {
+      "title": "Arista patches actively exploited VeloCloud Orchestrator zero-day",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-23T12:29:53.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/",
+      "summary": "Arista Networks has released security patches for a zero-day flaw that is being actively exploited and affects VeloCloud Orchestrator (VCO) On-Prem deployments. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Chinese Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy CLEANGULP Malware",
       "source": "The Hacker News",
       "region": "INT",
@@ -352,36 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Researcher Drops BigDiskBuster Zero-Day PoC That Blocks Microsoft Defender Updates",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-22T16:14:04.000Z",
-      "link": "https://thehackernews.com/2026/09/researcher-drops-bigdiskbuster-zero-day.html",
-      "summary": "A zero-day proof-of-concept tool that stops Microsoft Defender from installing platform and signature updates by filling all available disk space was published on GitHub on September 19. The tool, called BigDiskBuster, has no patch, no CVE, and no Microsoft advisory. Its author,…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "D-Link warns of max severity zero-day bug in DIR-822A routers",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-22T12:48:06.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-max-severity-zero-day-bug-in-dir-822a-routers/",
-      "summary": "D-Link warned customers of a maximum-severity vulnerability (CVE-2026-86296) with public proof-of-concept (PoC) exploit code and no patch, affecting legacy DIR-822A dual-band Wi-Fi routers. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-86296"
       }
     }
   ],
