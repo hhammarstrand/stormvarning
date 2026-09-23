@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-23T04:38:52.942Z",
-  "next_update": "2026-09-23T05:07:00.000Z",
+  "updated": "2026-09-23T09:54:38.521Z",
+  "next_update": "2026-09-23T10:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i Cisco och andra plattformar rapporteras aktivt utnyttjas, med tydlig svensk koppling via CERT-SE:s varningar. Dessa inkluderar sårbarheter i Cisco Secure Email Gateway och Cisco Identity Services Engine, vilket ökar risken för attacker mot svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
-  "score": 96,
+  "summary": "Förhöjt hotläge på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 och CVE-2026-94127, utnyttjas aktivt och har identifierats av CERT-SE med tydlig svensk koppling. Dessa sårbarheter i produkter som Cisco Secure Email Gateway och F5 BIG-IP APM är särskilt oroande på grund av deras kritiska natur och potentiella påverkan på svensk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd.",
+  "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
     "actively_exploited": 21,
-    "critical": 7,
-    "authority_alerts": 14,
+    "critical": 9,
+    "authority_alerts": 13,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 0
+    "delta": 1
   },
-  "level_since": "2026-08-15T13:38:37.232Z",
+  "level_since": "2026-08-15T14:34:46.171Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -55,18 +55,18 @@
       }
     },
     {
-      "title": "CERT-SE:s veckobrev v.34",
+      "title": "Information om kritisk sårbarhet i F5 BIG-IP APM",
       "source": "CERT-SE",
       "region": "SE",
-      "date": "2026-08-21T11:20:00.000Z",
-      "link": "https://www.cert.se/2026/08/cert-se-veckobrev-v34.html",
-      "summary": "<p>I veckans brev kan du läsa om ett flertal intrång, störningar i system samt om sårbarheter som utnyttjas aktivt av hotaktörer.</p>",
+      "date": "2026-09-23T09:20:00.000Z",
+      "link": "https://www.cert.se/2026/09/information-om-kritisk-sarbarhet-i-big-ip-apm.html",
+      "summary": "<p>F5 har publicerat information om en kritisk sårbarhet, CVE-2026-94127, i BIG-IP APM. Sårbarheten kan resultera i att en oautentiserad angripare kan fjärrexekvera godtycklig kod.</p>",
       "flags": {
-        "activelyExploited": true,
-        "critical": false,
+        "activelyExploited": false,
+        "critical": true,
         "incident": false,
         "swedenRelevant": true,
-        "cve": null
+        "cve": "CVE-2026-94127"
       }
     },
     {
@@ -112,6 +112,36 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-94127"
+      }
+    },
+    {
+      "title": "F5 Patches Critical BIG-IP APM Zero-Day Exploited for Unauthenticated RCE on OAuth Servers",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-23T08:29:48.000Z",
+      "link": "https://thehackernews.com/2026/09/f5-patches-critical-big-ip-apm-zero-day.html",
+      "summary": "Attackers are exploiting a critical flaw in F5 BIG-IP Access Policy Manager (APM) that lets them run code on a BIG-IP system without logging in, F5 says. The flaw, CVE-2026-94127, affects only systems in which APM serves as an OAuth authorization server, issuing access tokens to…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-94127"
+      }
+    },
+    {
+      "title": "F5 patches BIG-IP APM zero-day flaw exploited in RCE attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-23T07:17:23.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks/",
+      "summary": "F5 has released security updates to address a critical BIG-IP APM zero-day vulnerability being exploited in remote code execution attacks. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -265,6 +295,21 @@
       }
     },
     {
+      "title": "Chinese Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy CLEANGULP Malware",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-23T08:29:24.000Z",
+      "link": "https://thehackernews.com/2026/09/chinese-hackers-exploit-chrome-windows.html",
+      "summary": "A Chinese threat actor codenamed UTA0565 has been observed exploiting the recently disclosed Google Chrome-Microsoft Windows exploit chain as zero-days through fake websites. The attacks, detected on September 3 and 4, 2026, involved the chaining of two vulnerabilities in Chrome…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "ShinyHunters claims FBI hack, data theft in PeopleSoft zero-day breach",
       "source": "BleepingComputer",
       "region": "INT",
@@ -338,51 +383,6 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-86296"
       }
-    },
-    {
-      "title": "New Windows Defender zero-day blocks Microsoft antivirus updates",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-22T09:55:11.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/",
-      "summary": "Over the weekend, security researcher Abdelhamid Naceri (also known as Nightmare Eclipse) released another Microsoft Defender zero-day exploit that blocks antivirus updates. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-19T06:24:10.000Z",
-      "link": "https://thehackernews.com/2026/09/cisa-flags-three-linux-kernel.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added three security flaws impacting the Linux kernel to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabilities are listed below - CVE-2025-39682 (C…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2025-39682"
-      }
-    },
-    {
-      "title": "Vulnerability affecting F5 BIG-IP APM",
-      "source": "NCSC-UK",
-      "region": "INT",
-      "date": "2026-03-30T12:00:00.000Z",
-      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
-      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -396,7 +396,7 @@
       "name": "MCF",
       "region": "SE",
       "ok": true,
-      "count": 11
+      "count": 10
     },
     {
       "name": "Krisinformation",
