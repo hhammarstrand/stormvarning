@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-22T23:46:57.549Z",
-  "next_update": "2026-09-23T00:07:00.000Z",
+  "updated": "2026-09-23T04:38:52.942Z",
+  "next_update": "2026-09-23T05:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Cisco Identity Services Engine, utnyttjas aktivt enligt CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
-  "score": 97,
+  "reasoning": "Flera kritiska sårbarheter i Cisco och andra plattformar rapporteras aktivt utnyttjas, med tydlig svensk koppling via CERT-SE:s varningar. Dessa inkluderar sårbarheter i Cisco Secure Email Gateway och Cisco Identity Services Engine, vilket ökar risken för attacker mot svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att hotaktörer aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 22,
-    "critical": 6,
-    "authority_alerts": 16,
-    "kev_recent": 11
+    "actively_exploited": 21,
+    "critical": 7,
+    "authority_alerts": 14,
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 1
+    "delta": 0
   },
-  "level_since": "2026-08-15T12:55:44.762Z",
+  "level_since": "2026-08-15T13:38:37.232Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -265,51 +265,6 @@
       }
     },
     {
-      "title": "CVE-2026-58704: Google Pixel Improper Authorization Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-16T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-58704",
-      "summary": "Google Pixel – Google Pixel devices contain an improper authorization vulnerability in the cellular modem. A logic error may allow an attacker to bypass permission checks and escalate privileges.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-58704"
-      }
-    },
-    {
-      "title": "CVE-2026-76460: Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-16T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76460",
-      "summary": "Cisco Identity Services Engine – Cisco Identity Services Engine (ISE) and Cisco ISE Passive Identity Connector (ISE-PIC) contain an incorrect use of privileged APIs vulnerability that could allow an unauthenticated, remote attacker to gain unauthorized access to the affected dev…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-76460"
-      }
-    },
-    {
-      "title": "CVE-2026-87886: Acronis Backup Incorrect Default Permissions Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-16T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-87886",
-      "summary": "Acronis Backup – Acronis Backup plugin for cPanel & WHM and extension for Plesk contains an incorrect default permissions vulnerability that could allow for privilege escalation.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-87886"
-      }
-    },
-    {
       "title": "ShinyHunters claims FBI hack, data theft in PeopleSoft zero-day breach",
       "source": "BleepingComputer",
       "region": "INT",
@@ -383,6 +338,51 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-86296"
       }
+    },
+    {
+      "title": "New Windows Defender zero-day blocks Microsoft antivirus updates",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-22T09:55:11.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/new-windows-defender-zero-day-blocks-microsoft-antivirus-updates/",
+      "summary": "Over the weekend, security researcher Abdelhamid Naceri (also known as Nightmare Eclipse) released another Microsoft Defender zero-day exploit that blocks antivirus updates. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-19T06:24:10.000Z",
+      "link": "https://thehackernews.com/2026/09/cisa-flags-three-linux-kernel.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added three security flaws impacting the Linux kernel to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabilities are listed below - CVE-2025-39682 (C…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2025-39682"
+      }
+    },
+    {
+      "title": "Vulnerability affecting F5 BIG-IP APM",
+      "source": "NCSC-UK",
+      "region": "INT",
+      "date": "2026-03-30T12:00:00.000Z",
+      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
+      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 11
+      "count": 8
     },
     {
       "name": "CISA",
