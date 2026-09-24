@@ -1,18 +1,18 @@
 {
-  "updated": "2026-09-24T12:09:31.093Z",
-  "next_update": "2026-09-24T12:37:00.000Z",
+  "updated": "2026-09-24T17:31:10.309Z",
+  "next_update": "2026-09-24T17:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
   "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och F5 BIG-IP APM, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 21,
+    "actively_exploited": 20,
     "critical": 10,
-    "authority_alerts": 13,
+    "authority_alerts": 14,
     "kev_recent": 8
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 1
   },
-  "level_since": "2026-08-15T17:32:03.216Z",
+  "level_since": "2026-08-15T17:53:47.079Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -142,21 +142,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-94127"
-      }
-    },
-    {
-      "title": "F5 patches BIG-IP APM zero-day flaw exploited in RCE attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-23T07:17:23.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/f5-warns-of-big-ip-apm-remote-code-execution-zero-day-exploited-in-attacks/",
-      "summary": "F5 has released security updates to address a critical BIG-IP APM zero-day vulnerability being exploited in remote code execution attacks. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
@@ -310,6 +295,21 @@
       }
     },
     {
+      "title": "Hackers now exploit critical Roundcube flaw in code injection attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-24T13:27:57.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-roundcube-flaw-now-actively-exploited-in-code-injection-attacks/",
+      "summary": "A high-severity Roundcube Webmail vulnerability patched in May is now being actively exploited in attacks, according to the Canadian Centre for Cyber Security. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Arista patches actively exploited VeloCloud Orchestrator zero-day",
       "source": "BleepingComputer",
       "region": "INT",
@@ -370,18 +370,18 @@
       }
     },
     {
-      "title": "CISA Flags Three Linux Kernel Vulnerabilities Exploited in the Wild",
-      "source": "The Hacker News",
+      "title": "Vulnerability affecting F5 BIG-IP APM",
+      "source": "NCSC-UK",
       "region": "INT",
-      "date": "2026-09-19T06:24:10.000Z",
-      "link": "https://thehackernews.com/2026/09/cisa-flags-three-linux-kernel.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added three security flaws impacting the Linux kernel to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabilities are listed below - CVE-2025-39682 (C…",
+      "date": "2026-03-30T12:00:00.000Z",
+      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
+      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
       "flags": {
-        "activelyExploited": true,
-        "critical": false,
+        "activelyExploited": false,
+        "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2025-39682"
+        "cve": null
       }
     }
   ],
