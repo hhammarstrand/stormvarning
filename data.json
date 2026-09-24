@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-24T20:44:53.282Z",
-  "next_update": "2026-09-24T21:07:00.000Z",
+  "updated": "2026-09-24T23:51:16.800Z",
+  "next_update": "2026-09-25T00:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-94127 i F5 BIG-IP APM, utnyttjas aktivt och har en direkt koppling till Sverige genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter för närvarande, indikerar CERT-SE:s rapporter att dessa sårbarheter utgör en akut risk för svenska organisationer. Detta, tillsammans med den ökade aktiviteten kring nätverkshanteringssystem och andra kritiska teknologier, motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-94127 i F5 BIG-IP APM, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att flera svenska myndigheter och CERT-SE har uppmärksammat dessa hot, vilket motiverar en förhöjd beredskap.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 1
   },
-  "level_since": "2026-08-15T18:44:23.372Z",
+  "level_since": "2026-08-15T19:30:08.403Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
