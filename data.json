@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-24T17:31:10.309Z",
-  "next_update": "2026-09-24T17:37:00.000Z",
+  "updated": "2026-09-24T20:44:53.282Z",
+  "next_update": "2026-09-24T21:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och F5 BIG-IP APM, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-94127 i F5 BIG-IP APM, utnyttjas aktivt och har en direkt koppling till Sverige genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter för närvarande, indikerar CERT-SE:s rapporter att dessa sårbarheter utgör en akut risk för svenska organisationer. Detta, tillsammans med den ökade aktiviteten kring nätverkshanteringssystem och andra kritiska teknologier, motiverar en förhöjd beredskap.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
@@ -12,15 +12,15 @@
     "sweden_acute": 5,
     "actively_exploited": 20,
     "critical": 10,
-    "authority_alerts": 14,
-    "kev_recent": 8
+    "authority_alerts": 16,
+    "kev_recent": 10
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
     "delta": 1
   },
-  "level_since": "2026-08-15T17:53:47.079Z",
+  "level_since": "2026-08-15T18:44:23.372Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -100,6 +100,21 @@
       }
     },
     {
+      "title": "CVE-2026-5430: WSO2 Multiple Products Path Traversal Vulnerability ",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-24T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-5430",
+      "summary": "WSO2 Multiple Products – WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-5430"
+      }
+    },
+    {
       "title": "CVE-2026-94127: F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -175,18 +190,18 @@
       }
     },
     {
-      "title": "Critical Pre-Auth RCE in Orkes Conductor Workflow Platform Exploited in the Wild",
-      "source": "The Hacker News",
+      "title": "CVE-2026-71362: Adobe Commerce and Magento Incorrect Authorization Vulnerability ",
+      "source": "CISA KEV",
       "region": "INT",
-      "date": "2026-09-19T08:18:54.000Z",
-      "link": "https://thehackernews.com/2026/09/critical-pre-auth-rce-in-orkes.html",
-      "summary": "A critical vulnerability impacting Orkes Conductor is being actively exploited in the wild, according to Fortinet. The vulnerability in question is CVE-2026-58138 (CVSS v3.1 score: 9.8/CVSS v4 score: 9.3), which relates to a case of unauthenticated remote code execution. \"Orkes…",
+      "date": "2026-09-24T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-71362",
+      "summary": "Adobe Commerce and Magento  – Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction.",
       "flags": {
         "activelyExploited": true,
-        "critical": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-58138"
+        "cve": "CVE-2026-71362"
       }
     },
     {
@@ -310,21 +325,6 @@
       }
     },
     {
-      "title": "Arista patches actively exploited VeloCloud Orchestrator zero-day",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-23T12:29:53.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/arista-patches-actively-exploited-velocloud-orchestrator-zero-day/",
-      "summary": "Arista Networks has released security patches for a zero-day flaw that is being actively exploited and affects VeloCloud Orchestrator (VCO) On-Prem deployments. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Chinese Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy CLEANGULP Malware",
       "source": "The Hacker News",
       "region": "INT",
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 8
+      "count": 10
     },
     {
       "name": "CISA",
