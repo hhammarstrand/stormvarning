@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-24T23:51:16.800Z",
-  "next_update": "2026-09-25T00:07:00.000Z",
+  "updated": "2026-09-25T04:49:27.702Z",
+  "next_update": "2026-09-25T05:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-94127 i F5 BIG-IP APM, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att flera svenska myndigheter och CERT-SE har uppmärksammat dessa hot, vilket motiverar en förhöjd beredskap.",
-  "score": 97,
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och F5 BIG-IP APM, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 20,
-    "critical": 10,
-    "authority_alerts": 16,
-    "kev_recent": 10
+    "actively_exploited": 17,
+    "critical": 11,
+    "authority_alerts": 13,
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 1
+    "delta": 0
   },
-  "level_since": "2026-08-15T19:30:08.403Z",
+  "level_since": "2026-08-15T19:51:32.856Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -265,51 +265,6 @@
       }
     },
     {
-      "title": "CVE-2025-39964: Linux Kernel Race Condition Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-18T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-39964",
-      "summary": "Linux Kernel – Linux Kernel contains a race condition vulnerability which allows concurrent writes to the same AF_ALG socket causing data to be unpredictably interleaved and creating inconsistencies in the socket's internal state.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2025-39964"
-      }
-    },
-    {
-      "title": "CVE-2026-53266: Linux Kernel Out-of-Bounds Write Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-18T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-53266",
-      "summary": "Linux Kernel – Linux Kernel contains an out-of-bounds write vulnerability in the ebtables SNAT target which allows an ARP sender hardware address rewrite to write directly into a nonlinear socket-buffer fragment backed by a splice-imported file page. The impacted product(s) coul…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-53266"
-      }
-    },
-    {
-      "title": "CVE-2025-39682: Linux Kernel Improper Check for Unusual or Exceptional Conditions Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-18T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-39682",
-      "summary": "Linux Kernel – Linux Kernel contains an improper check for unusual or exceptional conditions vulnerability in the TLS receive path which allows a zero-length record retrieved from the rx_list to bypass the intended recvmsg() record-type handling, potentially causing subsequent T…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2025-39682"
-      }
-    },
-    {
       "title": "Hackers now exploit critical Roundcube flaw in code injection attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -383,6 +338,51 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Hacked Ukrainian Sites Serve Fake Cloudflare ClickFix Lures for Psychedelic Stealer",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-24T14:29:06.000Z",
+      "link": "https://thehackernews.com/2026/09/hacked-ukrainian-sites-serve-fake.html",
+      "summary": "An active ClickFix campaign has been observed compromising legitimate Ukrainian business websites to inject bogus Cloudflare verification pages and trick victims into downloading a previously undocumented information stealer called Psychedelic. \"When a visitor interacts with the…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "OpenAI hacked Australian Medicare govt site, probed data providers",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-24T09:38:53.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/openai-hacked-australian-medicare-govt-site-probed-data-providers/",
+      "summary": "OpenAI agents targeted public data providers in multiple countries, probing some for vulnerabilities and exploiting a security weakness in an Australian government portal while performing information-retrieval tasks as part of a research project. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Attackers Exploit WordPress CVE-2026-87902 Within Hours of Disclosure",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-24T05:36:18.000Z",
+      "link": "https://thehackernews.com/2026/09/attackers-exploit-wordpress-cve-2026.html",
+      "summary": "Threat actors have begun to actively exploit a critical security flaw in WordPress within hours of public disclosure. The vulnerability in question is CVE-2026-87902 (CVSS score: 9.2), which could allow an unauthenticated attacker to obtain remote code execution (RCE). \"An unaut…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-87902"
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 10
+      "count": 7
     },
     {
       "name": "CISA",
