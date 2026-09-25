@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-25T10:08:44.620Z",
-  "next_update": "2026-09-25T10:37:00.000Z",
+  "updated": "2026-09-25T15:31:30.403Z",
+  "next_update": "2026-09-25T15:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-94127 i F5 BIG-IP APM, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, indikerar CERT-SE:s rapporter att dessa sårbarheter utgör en akut risk. Detta, tillsammans med internationella rapporter om aktivt utnyttjande, motiverar en förhöjd beredskap.",
-  "score": 96,
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och F5 BIG-IP APM, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 16,
+    "actively_exploited": 19,
     "critical": 10,
-    "authority_alerts": 14,
-    "kev_recent": 7
+    "authority_alerts": 16,
+    "kev_recent": 9
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 0
+    "delta": 1
   },
-  "level_since": "2026-08-15T20:34:51.685Z",
+  "level_since": "2026-08-15T20:57:08.129Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -130,6 +130,21 @@
       }
     },
     {
+      "title": "Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-25T10:14:02.000Z",
+      "link": "https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html",
+      "summary": "The Canadian Centre for Cyber Security has warned that a now-patched Roundcube Webmail vulnerability is being actively exploited in the wild. The vulnerability in question is CVE-2026-48842 (CVSS score: 8.1), a pre-authentication SQL injection in the virtuser_query plugin of Rou…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-48842"
+      }
+    },
+    {
       "title": "F5 Patches Critical BIG-IP APM Zero-Day Exploited for Unauthenticated RCE on OAuth Servers",
       "source": "The Hacker News",
       "region": "INT",
@@ -172,6 +187,36 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-67279: Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-25T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-67279",
+      "summary": "MikroTik RouterOS – Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to achieve unauthenticated exploitation of…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-67279"
+      }
+    },
+    {
+      "title": "CVE-2026-65660: Microsoft SharePoint Code Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-25T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-65660",
+      "summary": "Microsoft SharePoint – Microsoft SharePoint contains a code injection vulnerability which could allow an authorized attacker to execute code over a network.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-65660"
       }
     },
     {
@@ -338,51 +383,6 @@
         "swedenRelevant": true,
         "cve": null
       }
-    },
-    {
-      "title": "Hacked Ukrainian Sites Serve Fake Cloudflare ClickFix Lures for Psychedelic Stealer",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-24T14:29:06.000Z",
-      "link": "https://thehackernews.com/2026/09/hacked-ukrainian-sites-serve-fake.html",
-      "summary": "An active ClickFix campaign has been observed compromising legitimate Ukrainian business websites to inject bogus Cloudflare verification pages and trick victims into downloading a previously undocumented information stealer called Psychedelic. \"When a visitor interacts with the…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "OpenAI hacked Australian Medicare govt site, probed data providers",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-24T09:38:53.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/openai-hacked-australian-medicare-govt-site-probed-data-providers/",
-      "summary": "OpenAI agents targeted public data providers in multiple countries, probing some for vulnerabilities and exploiting a security weakness in an Australian government portal while performing information-retrieval tasks as part of a research project. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Attackers Exploit WordPress CVE-2026-87902 Within Hours of Disclosure",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-24T05:36:18.000Z",
-      "link": "https://thehackernews.com/2026/09/attackers-exploit-wordpress-cve-2026.html",
-      "summary": "Threat actors have begun to actively exploit a critical security flaw in WordPress within hours of public disclosure. The vulnerability in question is CVE-2026-87902 (CVSS score: 9.2), which could allow an unauthenticated attacker to obtain remote code execution (RCE). \"An unaut…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-87902"
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 7
+      "count": 9
     },
     {
       "name": "CISA",
