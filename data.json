@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-25T19:31:06.689Z",
-  "next_update": "2026-09-25T19:37:00.000Z",
+  "updated": "2026-09-25T22:46:41.058Z",
+  "next_update": "2026-09-25T23:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och F5 BIG-IP APM, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter för närvarande, är det uppenbart att svenska aktörer kan vara i farozonen. Det internationella bakgrundsbruset är högt, men den svenska kopplingen gör att vi höjer nivån till 'gul'.",
+  "reasoning": "Flera kritiska sårbarheter i vanliga system som Cisco Secure Email Gateway och F5 BIG-IP APM rapporteras aktivt utnyttjas och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska organisationer förhöjd. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 19,
-    "critical": 10,
+    "actively_exploited": 20,
+    "critical": 11,
     "authority_alerts": 16,
-    "kev_recent": 9
+    "kev_recent": 10
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
     "delta": 1
   },
-  "level_since": "2026-08-15T21:31:34.956Z",
+  "level_since": "2026-08-15T21:53:00.814Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -97,6 +97,21 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-87902: WordPress Core Remote File Inclusion Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-25T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-87902",
+      "summary": "WordPress Core – WordPress Core contains a remote file inclusion vulnerability which could allow an unauthenticated attacker to make page-template resolution include a chosen readable local `.php` file outside the active theme directories, leading to remote code execution.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-87902"
       }
     },
     {
@@ -295,12 +310,12 @@
       }
     },
     {
-      "title": "Hackers now exploit critical Roundcube flaw in code injection attacks",
+      "title": "Kiteworks urges 6-hour server shutdown over potential zero-day attacks",
       "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-09-24T13:27:57.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-roundcube-flaw-now-actively-exploited-in-code-injection-attacks/",
-      "summary": "A high-severity Roundcube Webmail vulnerability patched in May is now being actively exploited in attacks, according to the Canadian Centre for Cyber Security. [...]",
+      "date": "2026-09-25T21:41:07.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/kiteworks-urges-6-hour-server-shutdown-over-potential-zero-day-attacks/",
+      "summary": "Secure file-sharing software company Kiteworks is urging customers worldwide to temporarily shut down their servers on Saturday for a six-hour window after receiving threat intelligence warning of a potentially imminent cyberattack. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.39",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-25T08:45:00.000Z",
-      "link": "https://www.cert.se/2026/09/cert-se-veckobrev-v39.html",
-      "summary": "<p>För tionde året genomförs Beredskapsveckan i Sverige vecka 39. I år är det fokus på Sveriges totalförsvar, där samhällets motståndskraft mot cyberhot är en viktig del. Tänk på att ha en radio inställd på Sveriges Radio P4 och viktiga telefonnummer nedskrivna på papper.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 10
     },
     {
       "name": "CISA",
