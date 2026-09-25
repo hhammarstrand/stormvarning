@@ -1,18 +1,18 @@
 {
-  "updated": "2026-09-25T04:49:27.702Z",
-  "next_update": "2026-09-25T05:07:00.000Z",
+  "updated": "2026-09-25T10:08:44.620Z",
+  "next_update": "2026-09-25T10:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och F5 BIG-IP APM, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-94127 i F5 BIG-IP APM, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, indikerar CERT-SE:s rapporter att dessa sårbarheter utgör en akut risk. Detta, tillsammans med internationella rapporter om aktivt utnyttjande, motiverar en förhöjd beredskap.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 17,
-    "critical": 11,
-    "authority_alerts": 13,
+    "actively_exploited": 16,
+    "critical": 10,
+    "authority_alerts": 14,
     "kev_recent": 7
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 0
   },
-  "level_since": "2026-08-15T19:51:32.856Z",
+  "level_since": "2026-08-15T20:34:51.685Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -127,21 +127,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-94127"
-      }
-    },
-    {
-      "title": "InfraTrust report warns network management systems under attack",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-23T14:35:26.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/infratrust-report-warns-network-management-systems-under-attack/",
-      "summary": "Attackers are increasingly targeting the management systems used to control enterprise infrastructure, with several critical vulnerabilities actively exploited before or shortly after vendors disclosed them. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
@@ -336,6 +321,21 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.39",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-09-25T08:45:00.000Z",
+      "link": "https://www.cert.se/2026/09/cert-se-veckobrev-v39.html",
+      "summary": "<p>För tionde året genomförs Beredskapsveckan i Sverige vecka 39. I år är det fokus på Sveriges totalförsvar, där samhällets motståndskraft mot cyberhot är en viktig del. Tänk på att ha en radio inställd på Sveriges Radio P4 och viktiga telefonnummer nedskrivna på papper.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
         "cve": null
       }
     },
