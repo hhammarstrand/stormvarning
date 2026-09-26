@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-26T06:35:02.140Z",
-  "next_update": "2026-09-26T06:37:00.000Z",
+  "updated": "2026-09-26T11:46:00.300Z",
+  "next_update": "2026-09-26T12:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i vanliga system som Cisco Secure Email Gateway och F5 BIG-IP APM rapporteras aktivt utnyttjas och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Internationella signaler om aktivt utnyttjande stärker detta hotbild, men det saknas ännu flera oberoende signaler om storskaliga attacker mot svensk kritisk infrastruktur.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
+  "reasoning": "Det finns flera kritiska och aktivt utnyttjade sårbarheter som påverkar svenska system, inklusive Cisco Secure Email Gateway och F5 BIG-IP APM. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter för närvarande, är risken för attacker mot svenska organisationer förhöjd på grund av de aktiva hoten.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 1
   },
-  "level_since": "2026-08-15T22:55:23.611Z",
+  "level_since": "2026-08-15T23:31:11.716Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -145,6 +145,21 @@
       }
     },
     {
+      "title": "SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-26T08:49:53.000Z",
+      "link": "https://thehackernews.com/2026/09/sharepoint-rce-and-mikrotik-routeros.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two security flaws impacting Microsoft SharePoint and Mikrotik RouterOS to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabilities in question…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild",
       "source": "The Hacker News",
       "region": "INT",
@@ -187,21 +202,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-93952"
-      }
-    },
-    {
-      "title": "⚡ Weekly Recap: Cisco 0-Day, AI Agent RCE, ClickFix Attacks, ClickFix Surge, and Browser Hijacks",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-21T14:24:13.000Z",
-      "link": "https://thehackernews.com/2026/09/weekly-recap-cisco-0-day-ai-agent-rce.html",
-      "summary": "A browser. A plugin. A package. A login screen. Normal stuff. That is basically the problem this week. The trouble keeps showing up inside things people already trust: code that takes a bad turn, old payloads coming back, exposed systems, weak checks, fake fixes, and attack path…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
