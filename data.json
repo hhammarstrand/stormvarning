@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-27T20:21:41.068Z",
-  "next_update": "2026-09-27T20:37:00.000Z",
+  "updated": "2026-09-27T23:22:53.806Z",
+  "next_update": "2026-09-27T23:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-88771/CVE-2026-88772 i Citrix NetScaler, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska organisationer förhöjd. Det internationella bakgrundsbruset är högt, men den svenska kopplingen och antalet kritiska sårbarheter som utnyttjas aktivt motiverar en förhöjd nivå.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket ökar risken för attacker mot svenska mål. Detta, tillsammans med CERT-SE:s varningar, indikerar ett förhöjt hotläge.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 6,
     "actively_exploited": 20,
-    "critical": 13,
-    "authority_alerts": 17,
-    "kev_recent": 10
+    "critical": 14,
+    "authority_alerts": 18,
+    "kev_recent": 11
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
     "delta": 1
   },
-  "level_since": "2026-08-16T07:40:59.001Z",
+  "level_since": "2026-08-16T08:43:29.018Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -112,6 +112,21 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-88772: Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-27T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-88772",
+      "summary": "Citrix NetScaler – Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-88772"
       }
     },
     {
@@ -265,6 +280,21 @@
       }
     },
     {
+      "title": "CVE-2026-88771: Citrix NetScaler Improper Input Validation Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-27T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-88771",
+      "summary": "Citrix NetScaler – Citrix NetScaler ADC and NetScaler Gateway contain an improper input validation vulnerability that could allow an unauthenticated attacker to execute arbitrary commands.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-88771"
+      }
+    },
+    {
       "title": "CVE-2026-67279: Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -353,36 +383,6 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-85102"
       }
-    },
-    {
-      "title": "CVE-2026-7273: Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-21T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-7273",
-      "summary": "Zyxel GS1900 Series Switches – Zyxel GS1900 series switches contain a stack-based buffer overflow vulnerability in the CGI program which could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-7273"
-      }
-    },
-    {
-      "title": "Kiteworks urges 6-hour server shutdown over potential zero-day attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-25T21:41:07.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/kiteworks-urges-6-hour-server-shutdown-over-potential-zero-day-attacks/",
-      "summary": "Secure file-sharing software company Kiteworks is urging customers worldwide to temporarily shut down their servers on Saturday for a six-hour window after receiving threat intelligence warning of a potentially imminent cyberattack. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 10
+      "count": 12
     },
     {
       "name": "CISA",
