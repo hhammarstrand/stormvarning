@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-26T22:10:53.571Z",
-  "next_update": "2026-09-26T22:37:00.000Z",
+  "updated": "2026-09-27T00:50:27.945Z",
+  "next_update": "2026-09-27T01:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter i vanliga system som Cisco Secure Email Gateway och F5 BIG-IP APM utnyttjas aktivt och har identifierats av CERT-SE, vilket ger en tydlig svensk koppling. Dessa sårbarheter har höga CVSS-poäng och kan ge angripare möjlighet till fjärrkörning av kod. Även om det inte finns bekräftade incidenter i Sverige, indikerar CERT-SE:s varningar och CISA KEV-katalogens inkludering av dessa sårbarheter en förhöjd risk för svenska organisationer.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i Cisco och F5-produkter, som används brett i svenska organisationer, rapporteras aktivt utnyttjas. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en konkret risk för svenska aktörer. Även om det inte finns bekräftade incidenter i Sverige ännu, är det hög sannolikhet för attacker mot sårbara system. Det internationella hotbilden förstärker detta, men den svenska kopplingen är avgörande för att höja nivån till 'gul'.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 1
   },
-  "level_since": "2026-08-16T03:09:17.864Z",
+  "level_since": "2026-08-16T04:18:28.865Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
