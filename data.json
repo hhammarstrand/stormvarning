@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-27T17:15:31.501Z",
-  "next_update": "2026-09-27T17:37:00.000Z",
+  "updated": "2026-09-27T20:21:41.068Z",
+  "next_update": "2026-09-27T20:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Även om det inte finns bekräftade incidenter i Sverige, indikerar CERT-SE:s varningar och CISA KEV-katalogen en ökad risk för attacker mot svenska organisationer. Detta kräver förhöjd beredskap och uppmärksamhet.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-76461 i Cisco Secure Email Gateway och CVE-2026-88771/CVE-2026-88772 i Citrix NetScaler, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska organisationer förhöjd. Det internationella bakgrundsbruset är högt, men den svenska kopplingen och antalet kritiska sårbarheter som utnyttjas aktivt motiverar en förhöjd nivå.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 6,
     "actively_exploited": 20,
-    "critical": 12,
-    "authority_alerts": 16,
+    "critical": 13,
+    "authority_alerts": 17,
     "kev_recent": 10
   },
   "anomaly": {
     "active": false,
-    "baseline": 96,
-    "delta": 2
+    "baseline": 97,
+    "delta": 1
   },
-  "level_since": "2026-08-16T06:55:59.161Z",
+  "level_since": "2026-08-16T07:40:59.001Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -55,12 +55,12 @@
       }
     },
     {
-      "title": "Kritiska sårbarheter i Citrix NetScaler ADC and Citrix NetScaler Gateway",
+      "title": "Kritiska sårbarheter i Citrix NetScaler ADC och Citrix NetScaler Gateway",
       "source": "CERT-SE",
       "region": "SE",
       "date": "2026-09-27T16:09:00.000Z",
       "link": "https://www.cert.se/2026/09/information-om-kritiska-sarbarheter-i-citrixnetscaler.html",
-      "summary": "<p>Citrix har publicerat information om åtta allvarliga och kritiska sårbarheter i Citrix NetScaler ADC (tidigare Citrix ADC) and Citrix NetScaler Gateway (tidigare Citrix Gateway). Två av sårbarheterna, CVE-2026-88771 och CVE-2026-88772, har fått en CVSS-klassning på 9.5 där et…",
+      "summary": "<p>Citrix har publicerat information om allvarliga och kritiska sårbarheter i Citrix NetScaler ADC (tidigare Citrix ADC) and Citrix NetScaler Gateway (tidigare Citrix Gateway). Två av sårbarheterna, CVE-2026-88771 och CVE-2026-88772, har fått en CVSS-klassning på 9.5 där ett ett…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -160,6 +160,21 @@
       }
     },
     {
+      "title": "Citrix confirms two NetScaler RCE zero-days exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-27T16:02:37.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/citrix-admins-warned-to-shut-down-netscalers-over-2-exploited-zero-days/",
+      "summary": "Citrix has confirmed that two critical NetScaler remote code execution vulnerabilities, tracked as CVE-2026-88771 and CVE-2026-88772, are being exploited in attacks and that it has released security updates to fix the flaws. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-88771"
+      }
+    },
+    {
       "title": "Warning: Two Unpatched Citrix NetScaler RCE Zero-Days Under Active Exploitation",
       "source": "The Hacker News",
       "region": "INT",
@@ -232,6 +247,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-93952"
+      }
+    },
+    {
+      "title": "Critical Zero-Day Vulnerabilities Exploited in Citrix NetScaler ADC, Gateway",
+      "source": "CISA",
+      "region": "INT",
+      "date": "2026-09-27T12:00:00.000Z",
+      "link": "https://www.cisa.gov/news-events/alerts/2026/09/27/critical-zero-day-vulnerabilities-exploited-citrix-netscaler-adc-gateway",
+      "summary": "<p>CISA is amplifying Citrix’s disclosure of eight new vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway products: <a href=\"https://www.cve.org/CVERecord?id=CVE-2026-88771\">CVE-2026-88771</a>, <a href=\"https://www.cve.org/CVERecord?id=CVE-2026-88772\">CV…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-88771"
       }
     },
     {
@@ -340,42 +370,12 @@
       }
     },
     {
-      "title": "Citrix admins warned to shut down NetScalers over 2 exploited zero-days",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-27T16:02:37.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/citrix-admins-warned-to-shut-down-netscalers-over-2-exploited-zero-days/",
-      "summary": "Two unpatched Citrix NetScaler zero-day vulnerabilities are reportedly being exploited in attacks, with cybersecurity agencies, security researchers, and IT providers privately warning organizations about the flaws ahead of patches expected next week. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Kiteworks urges 6-hour server shutdown over potential zero-day attacks",
       "source": "BleepingComputer",
       "region": "INT",
       "date": "2026-09-25T21:41:07.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/kiteworks-urges-6-hour-server-shutdown-over-potential-zero-day-attacks/",
       "summary": "Secure file-sharing software company Kiteworks is urging customers worldwide to temporarily shut down their servers on Saturday for a six-hour window after receiving threat intelligence warning of a potentially imminent cyberattack. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Chinese Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy CLEANGULP Malware",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-23T08:29:24.000Z",
-      "link": "https://thehackernews.com/2026/09/chinese-hackers-exploit-chrome-windows.html",
-      "summary": "A Chinese threat actor codenamed UTA0565 has been observed exploiting the recently disclosed Google Chrome-Microsoft Windows exploit chain as zero-days through fake websites. The attacks, detected on September 3 and 4, 2026, involved the chaining of two vulnerabilities in Chrome…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
