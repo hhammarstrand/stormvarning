@@ -1,18 +1,18 @@
 {
-  "updated": "2026-09-27T06:33:54.811Z",
-  "next_update": "2026-09-27T06:37:00.000Z",
+  "updated": "2026-09-27T12:25:29.299Z",
+  "next_update": "2026-09-27T12:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och F5 BIG-IP APM, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och F5 BIG-IP APM, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter för närvarande, är det tydliga tecken på aktivt utnyttjande som kräver förhöjd beredskap. Internationella rapporter om aktivt utnyttjande av andra kritiska sårbarheter, såsom i Citrix NetScaler och Microsoft SharePoint, förstärker det förhöjda hotet.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 20,
+    "actively_exploited": 21,
     "critical": 11,
-    "authority_alerts": 16,
+    "authority_alerts": 15,
     "kev_recent": 10
   },
   "anomaly": {
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 1
   },
-  "level_since": "2026-08-16T05:03:59.704Z",
+  "level_since": "2026-08-16T05:39:30.063Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -142,6 +142,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-94127"
+      }
+    },
+    {
+      "title": "Warning: Two Unpatched Citrix NetScaler RCE Zero-Days Under Active Exploitation",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-09-27T07:47:57.000Z",
+      "link": "https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html",
+      "summary": "Two new unpatched zero-day vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway appliances that allow remote code execution are being actively exploited in the wild, security firm watchTowr said on September 26. Citrix has not confirmed the flaws or published a fix. Som…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -364,21 +379,6 @@
       "flags": {
         "activelyExploited": true,
         "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Vulnerability affecting F5 BIG-IP APM",
-      "source": "NCSC-UK",
-      "region": "INT",
-      "date": "2026-03-30T12:00:00.000Z",
-      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
-      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
         "incident": false,
         "swedenRelevant": false,
         "cve": null
