@@ -1,26 +1,26 @@
 {
-  "updated": "2026-09-27T12:25:29.299Z",
-  "next_update": "2026-09-27T12:37:00.000Z",
+  "updated": "2026-09-27T17:15:31.501Z",
+  "next_update": "2026-09-27T17:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och F5 BIG-IP APM, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter för närvarande, är det tydliga tecken på aktivt utnyttjande som kräver förhöjd beredskap. Internationella rapporter om aktivt utnyttjande av andra kritiska sårbarheter, såsom i Citrix NetScaler och Microsoft SharePoint, förstärker det förhöjda hotet.",
-  "score": 97,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Även om det inte finns bekräftade incidenter i Sverige, indikerar CERT-SE:s varningar och CISA KEV-katalogen en ökad risk för attacker mot svenska organisationer. Detta kräver förhöjd beredskap och uppmärksamhet.",
+  "score": 98,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
-    "sweden_acute": 5,
-    "actively_exploited": 21,
-    "critical": 11,
-    "authority_alerts": 15,
+    "sweden_relevant": 6,
+    "sweden_acute": 6,
+    "actively_exploited": 20,
+    "critical": 12,
+    "authority_alerts": 16,
     "kev_recent": 10
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 1
+    "delta": 2
   },
-  "level_since": "2026-08-16T05:39:30.063Z",
+  "level_since": "2026-08-16T06:55:59.161Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -52,6 +52,21 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-76460"
+      }
+    },
+    {
+      "title": "Kritiska sårbarheter i Citrix NetScaler ADC and Citrix NetScaler Gateway",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-09-27T16:09:00.000Z",
+      "link": "https://www.cert.se/2026/09/information-om-kritiska-sarbarheter-i-citrixnetscaler.html",
+      "summary": "<p>Citrix har publicerat information om åtta allvarliga och kritiska sårbarheter i Citrix NetScaler ADC (tidigare Citrix ADC) and Citrix NetScaler Gateway (tidigare Citrix Gateway). Två av sårbarheterna, CVE-2026-88771 och CVE-2026-88772, har fått en CVSS-klassning på 9.5 där et…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-88771"
       }
     },
     {
@@ -150,7 +165,7 @@
       "region": "INT",
       "date": "2026-09-27T07:47:57.000Z",
       "link": "https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html",
-      "summary": "Two new unpatched zero-day vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway appliances that allow remote code execution are being actively exploited in the wild, security firm watchTowr said on September 26. Citrix has not confirmed the flaws or published a fix. Som…",
+      "summary": "Two critical vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway that allow remote code execution have been exploited in the wild, Citrix confirmed on September 27. It released fixes for both, along with six other flaws. One of the two affects every deployment on an af…",
       "flags": {
         "activelyExploited": true,
         "critical": true,
@@ -325,6 +340,21 @@
       }
     },
     {
+      "title": "Citrix admins warned to shut down NetScalers over 2 exploited zero-days",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-27T16:02:37.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/citrix-admins-warned-to-shut-down-netscalers-over-2-exploited-zero-days/",
+      "summary": "Two unpatched Citrix NetScaler zero-day vulnerabilities are reportedly being exploited in attacks, with cybersecurity agencies, security researchers, and IT providers privately warning organizations about the flaws ahead of patches expected next week. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Kiteworks urges 6-hour server shutdown over potential zero-day attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -346,36 +376,6 @@
       "date": "2026-09-23T08:29:24.000Z",
       "link": "https://thehackernews.com/2026/09/chinese-hackers-exploit-chrome-windows.html",
       "summary": "A Chinese threat actor codenamed UTA0565 has been observed exploiting the recently disclosed Google Chrome-Microsoft Windows exploit chain as zero-days through fake websites. The attacks, detected on September 3 and 4, 2026, involved the chaining of two vulnerabilities in Chrome…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-22T18:29:39.000Z",
-      "link": "https://thehackernews.com/2026/09/check-point-warns-of-management-server.html",
-      "summary": "Attackers exploited a previously unknown flaw in Check Point's Security Management Server in a handful of targeted attacks on July 23, the company said. The flaw, CVE-2026-93616, allows an attacker who can access the server's web service to run scripts on it without logging in.…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-93616"
-      }
-    },
-    {
-      "title": "Researcher Drops BigDiskBuster Zero-Day PoC That Blocks Microsoft Defender Updates",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-22T16:14:04.000Z",
-      "link": "https://thehackernews.com/2026/09/researcher-drops-bigdiskbuster-zero-day.html",
-      "summary": "A zero-day proof-of-concept tool that stops Microsoft Defender from installing platform and signature updates by filling all available disk space was published on GitHub on September 19. The tool, called BigDiskBuster, has no patch, no CVE, and no Microsoft advisory. Its author,…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
