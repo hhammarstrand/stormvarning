@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-27T23:22:53.806Z",
-  "next_update": "2026-09-27T23:37:00.000Z",
-  "level": "gul",
-  "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket ökar risken för attacker mot svenska mål. Detta, tillsammans med CERT-SE:s varningar, indikerar ett förhöjt hotläge.",
+  "updated": "2026-09-28T01:57:31.310Z",
+  "next_update": "2026-09-28T02:07:00.000Z",
+  "level": "röd",
+  "level_label": "Röd – allvarlig hotnivå",
+  "summary": "Allvarligt hotläge med flera kritiska, aktivt utnyttjade sårbarheter och specifika svenska myndighetsvarningar om pågående attacker.",
+  "reasoning": "Flera kritiska sårbarheter i centrala system som Citrix NetScaler, F5 BIG-IP och andra utnyttjas aktivt globalt, och CERT-SE har utfärdat varningar om dessa hot med tydlig svensk koppling. Det finns också en specifik varning från MCF om hybridthreats som påverkar samhällsviktiga funktioner, vilket indikerar en ökad risk för Sverige. Kombinationen av flera oberoende signaler om pågående attacker och kritiska sårbarheter motverkar en lugn bedömning.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 97,
     "delta": 1
   },
-  "level_since": "2026-08-16T08:43:29.018Z",
+  "level_since": "2026-09-28T01:57:31.310Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 12
+      "count": 11
     },
     {
       "name": "CISA",
@@ -446,5 +446,5 @@
     "BleepingComputer"
   ],
   "model": "MiniMax-Text-01",
-  "notified_level": "gul"
+  "notified_level": "röd"
 }
