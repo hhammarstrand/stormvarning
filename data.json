@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-28T01:57:31.310Z",
-  "next_update": "2026-09-28T02:07:00.000Z",
+  "updated": "2026-09-28T08:37:48.339Z",
+  "next_update": "2026-09-28T09:07:00.000Z",
   "level": "röd",
   "level_label": "Röd – allvarlig hotnivå",
-  "summary": "Allvarligt hotläge med flera kritiska, aktivt utnyttjade sårbarheter och specifika svenska myndighetsvarningar om pågående attacker.",
-  "reasoning": "Flera kritiska sårbarheter i centrala system som Citrix NetScaler, F5 BIG-IP och andra utnyttjas aktivt globalt, och CERT-SE har utfärdat varningar om dessa hot med tydlig svensk koppling. Det finns också en specifik varning från MCF om hybridthreats som påverkar samhällsviktiga funktioner, vilket indikerar en ökad risk för Sverige. Kombinationen av flera oberoende signaler om pågående attacker och kritiska sårbarheter motverkar en lugn bedömning.",
+  "summary": "Flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling utgör en allvarlig risk för svensk kritisk infrastruktur.",
+  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om aktivt utnyttjade sårvarheter i Cisco, Citrix och F5-produkter som används i svensk infrastruktur. Dessa sårbarheter har hög CVSS-klassificering och är bekräftade som aktivt utnyttjade globalt, vilket ökar risken för svenska mål. Dessutom har MCF rapporterat om hybridthreats som påverkar samhällsviktiga funktioner, vilket ytterligare förstärker hotbilden. Flera oberoende signaler och myndighetsvarningar indikerar en hög sannolikhet för pågående eller nära förestående attacker mot svenska mål.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
