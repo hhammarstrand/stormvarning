@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-28T08:37:48.339Z",
-  "next_update": "2026-09-28T09:07:00.000Z",
+  "updated": "2026-09-28T17:36:41.630Z",
+  "next_update": "2026-09-28T17:37:00.000Z",
   "level": "röd",
   "level_label": "Röd – allvarlig hotnivå",
-  "summary": "Flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling utgör en allvarlig risk för svensk kritisk infrastruktur.",
-  "reasoning": "Det finns flera kritiska signaler med tydlig svensk koppling, inklusive CERT-SE:s varningar om aktivt utnyttjade sårvarheter i Cisco, Citrix och F5-produkter som används i svensk infrastruktur. Dessa sårbarheter har hög CVSS-klassificering och är bekräftade som aktivt utnyttjade globalt, vilket ökar risken för svenska mål. Dessutom har MCF rapporterat om hybridthreats som påverkar samhällsviktiga funktioner, vilket ytterligare förstärker hotbilden. Flera oberoende signaler och myndighetsvarningar indikerar en hög sannolikhet för pågående eller nära förestående attacker mot svenska mål.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige ännu, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap. — Nedtrappning till gul inväntar bekräftelse (1 av 3 körningar).",
   "score": 98,
   "indicators": {
     "total_signals": 24,
@@ -13,7 +13,7 @@
     "actively_exploited": 20,
     "critical": 14,
     "authority_alerts": 18,
-    "kev_recent": 11
+    "kev_recent": 10
   },
   "anomaly": {
     "active": false,
@@ -21,8 +21,12 @@
     "delta": 1
   },
   "level_since": "2026-09-28T01:57:31.310Z",
-  "de_escalation": null,
-  "down_streak": 0,
+  "de_escalation": {
+    "to": "gul",
+    "confirmations": 1,
+    "required": 3
+  },
+  "down_streak": 1,
   "events": [
     {
       "title": "Kritisk sårbarhet i Cisco Secure Email Gateway utnyttjas aktivt",
@@ -265,6 +269,21 @@
       }
     },
     {
+      "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
+      "source": "NCSC-UK",
+      "region": "INT",
+      "date": "2026-09-28T12:00:00.000Z",
+      "link": "https://www.ncsc.gov.uk/news/exploitation-of-vulnerabilities-affecting-citrix-netscaler-adc-and-citrix-netscaler-gateway",
+      "summary": "The NCSC is urging UK organisations to promptly mitigate vulnerabilities affecting Citrix NetScaler ADC and Gateway, two of which are being actively exploited.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical Zero-Day Vulnerabilities Exploited in Citrix NetScaler ADC, Gateway",
       "source": "CISA",
       "region": "INT",
@@ -367,21 +386,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-93616"
-      }
-    },
-    {
-      "title": "CVE-2026-85102: Check Point Multiple Products Improper Certificate Validation Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-22T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-85102",
-      "summary": "Check Point Multiple Products – Check Point Security Gateway and Check Point Spark Firewall using Site to Site VPN or Remote Access VPN contain an improper certificate validation vulnerability which could allow an unauthenticated remote attacker to execute arbitrary code on the…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-85102"
       }
     }
   ],
