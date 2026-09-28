@@ -1,19 +1,19 @@
 {
-  "updated": "2026-09-28T17:36:41.630Z",
-  "next_update": "2026-09-28T17:37:00.000Z",
+  "updated": "2026-09-28T22:38:06.524Z",
+  "next_update": "2026-09-28T23:07:00.000Z",
   "level": "röd",
   "level_label": "Röd – allvarlig hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige ännu, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap. — Nedtrappning till gul inväntar bekräftelse (1 av 3 körningar).",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige ännu, är det uppenbart att dessa sårbarheter utgör en akut och pågående hotbild. Det finns också en generell ökad aktivitet av aktivt utnyttjade sårbarheter globalt, vilket ökar risken för svenska aktörer. — Nedtrappning till gul inväntar bekräftelse (2 av 3 körningar).",
   "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 6,
     "actively_exploited": 20,
-    "critical": 14,
-    "authority_alerts": 18,
-    "kev_recent": 10
+    "critical": 13,
+    "authority_alerts": 19,
+    "kev_recent": 11
   },
   "anomaly": {
     "active": false,
@@ -23,10 +23,10 @@
   "level_since": "2026-09-28T01:57:31.310Z",
   "de_escalation": {
     "to": "gul",
-    "confirmations": 1,
+    "confirmations": 2,
     "required": 3
   },
-  "down_streak": 1,
+  "down_streak": 2,
   "events": [
     {
       "title": "Kritisk sårbarhet i Cisco Secure Email Gateway utnyttjas aktivt",
@@ -254,21 +254,6 @@
       }
     },
     {
-      "title": "New CVSS 10.0 VeloCloud Orchestrator Flaw Actively Exploited in Certificate-Based Setups",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-22T12:29:00.000Z",
-      "link": "https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html",
-      "summary": "Attackers are exploiting a new flaw in on-premises VeloCloud Orchestrator (VCO), the server that manages the Edge devices in a VeloCloud SD-WAN, Arista said on September 22. The flaw, tracked as CVE-2026-93952, may allow a remote attacker with no login access to privilege intern…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-93952"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
@@ -386,6 +371,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-93616"
+      }
+    },
+    {
+      "title": "CVE-2026-85102: Check Point Multiple Products Improper Certificate Validation Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-22T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-85102",
+      "summary": "Check Point Multiple Products – Check Point Security Gateway and Check Point Spark Firewall using Site to Site VPN or Remote Access VPN contain an improper certificate validation vulnerability which could allow an unauthenticated remote attacker to execute arbitrary code on the…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-85102"
       }
     }
   ],
