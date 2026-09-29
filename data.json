@@ -1,19 +1,19 @@
 {
-  "updated": "2026-09-29T09:00:15.671Z",
-  "next_update": "2026-09-29T09:07:00.000Z",
+  "updated": "2026-09-29T15:43:31.867Z",
+  "next_update": "2026-09-29T16:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer och kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att dessa hot är relevanta och potentiellt skadliga för svenska intressen.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 18,
-    "critical": 13,
-    "authority_alerts": 17,
-    "kev_recent": 7
+    "actively_exploited": 17,
+    "critical": 14,
+    "authority_alerts": 18,
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
@@ -160,21 +160,6 @@
       }
     },
     {
-      "title": "Citrix confirms two NetScaler RCE zero-days exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-27T16:02:37.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/citrix-admins-warned-to-shut-down-netscalers-over-2-exploited-zero-days/",
-      "summary": "Citrix has confirmed that two critical NetScaler remote code execution vulnerabilities, tracked as CVE-2026-88771 and CVE-2026-88772, are being exploited in attacks and that it has released security updates to fix the flaws. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-88771"
-      }
-    },
-    {
       "title": "Warning: Two Unpatched Citrix NetScaler RCE Zero-Days Under Active Exploitation",
       "source": "The Hacker News",
       "region": "INT",
@@ -232,6 +217,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-94127"
+      }
+    },
+    {
+      "title": "CVE-2026-86950: Apple Multiple Products Out-of-Bounds Write Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-09-29T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-86950",
+      "summary": "Apple Multiple Products – Apple iOS, macOS, and iPadOS contain an out-of-bounds write vulnerability in CoreGraphics that may lead to arbitrary code execution.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-86950"
       }
     },
     {
@@ -325,27 +325,27 @@
       }
     },
     {
-      "title": "Apple patches CoreGraphics zero-day flaw exploited in attacks",
-      "source": "BleepingComputer",
+      "title": "MikroTik RouterOS",
+      "source": "CISA",
       "region": "INT",
-      "date": "2026-09-29T07:33:12.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/apple-patches-coregraphics-zero-day-flaw-exploited-in-attacks/",
-      "summary": "Apple released security updates to fix a zero-day vulnerability exploited in \"extremely sophisticated\" targeted attacks on iOS devices. [...]",
+      "date": "2026-09-29T12:00:00.000Z",
+      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-272-06",
+      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-272-06.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could allow an attacker to achieve remote code execution or cause a…",
       "flags": {
-        "activelyExploited": true,
-        "critical": false,
+        "activelyExploited": false,
+        "critical": true,
         "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
     },
     {
-      "title": "Chinese Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy CLEANGULP Malware",
-      "source": "The Hacker News",
+      "title": "Apple patches CoreGraphics zero-day flaw exploited in attacks",
+      "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-09-23T08:29:24.000Z",
-      "link": "https://thehackernews.com/2026/09/chinese-hackers-exploit-chrome-windows.html",
-      "summary": "A Chinese threat actor codenamed UTA0565 has been observed exploiting the recently disclosed Google Chrome-Microsoft Windows exploit chain as zero-days through fake websites. The attacks, detected on September 3 and 4, 2026, involved the chaining of two vulnerabilities in Chrome…",
+      "date": "2026-09-29T07:33:12.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/apple-patches-coregraphics-zero-day-flaw-exploited-in-attacks/",
+      "summary": "Apple released security updates to fix a zero-day vulnerability exploited in \"extremely sophisticated\" targeted attacks on iOS devices. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -370,17 +370,17 @@
       }
     },
     {
-      "title": "CERT-SE:s veckobrev v.39",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-25T08:45:00.000Z",
-      "link": "https://www.cert.se/2026/09/cert-se-veckobrev-v39.html",
-      "summary": "<p>För tionde året genomförs Beredskapsveckan i Sverige vecka 39. I år är det fokus på Sveriges totalförsvar, där samhällets motståndskraft mot cyberhot är en viktig del. Tänk på att ha en radio inställd på Sveriges Radio P4 och viktiga telefonnummer nedskrivna på papper.</p>",
+      "title": "Kiteworks patches critical flaw, brings customer systems online",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-29T09:04:06.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/kiteworks-lifts-shutdown-warning-after-patching-critical-flaw/",
+      "summary": "American tech company Kiteworks has lifted a precautionary advisory asking customers to shut down systems after patching a critical vulnerability. [...]",
       "flags": {
         "activelyExploited": false,
-        "critical": false,
+        "critical": true,
         "incident": false,
-        "swedenRelevant": true,
+        "swedenRelevant": false,
         "cve": null
       }
     }
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 7
+      "count": 8
     },
     {
       "name": "CISA",
