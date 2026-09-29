@@ -1,32 +1,28 @@
 {
-  "updated": "2026-09-28T22:38:06.524Z",
-  "next_update": "2026-09-28T23:07:00.000Z",
-  "level": "röd",
-  "level_label": "Röd – allvarlig hotnivå",
+  "updated": "2026-09-29T02:33:19.390Z",
+  "next_update": "2026-09-29T02:37:00.000Z",
+  "level": "gul",
+  "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige ännu, är det uppenbart att dessa sårbarheter utgör en akut och pågående hotbild. Det finns också en generell ökad aktivitet av aktivt utnyttjade sårbarheter globalt, vilket ökar risken för svenska aktörer. — Nedtrappning till gul inväntar bekräftelse (2 av 3 körningar).",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-88771 och CVE-2026-88772 i Citrix NetScaler, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa aktivt utnyttjade sårbarheter. Det finns också en allmän ökad aktivitet av kritiska sårbarheter som kan påverka svensk infrastruktur.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 6,
-    "actively_exploited": 20,
+    "actively_exploited": 18,
     "critical": 13,
-    "authority_alerts": 19,
-    "kev_recent": 11
+    "authority_alerts": 17,
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
     "delta": 1
   },
-  "level_since": "2026-09-28T01:57:31.310Z",
-  "de_escalation": {
-    "to": "gul",
-    "confirmations": 2,
-    "required": 3
-  },
-  "down_streak": 2,
+  "level_since": "2026-09-29T02:33:19.390Z",
+  "de_escalation": null,
+  "down_streak": 0,
   "events": [
     {
       "title": "Kritisk sårbarhet i Cisco Secure Email Gateway utnyttjas aktivt",
@@ -161,21 +157,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-5430"
-      }
-    },
-    {
-      "title": "CVE-2026-94127: F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-22T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-94127",
-      "summary": "F5 BIG-IP APM – F5 BIG-IP APM contains a heap-based buffer overflow vulnerability when access policy and an OAuth profile are configured on a virtual server. This vulnerability could allow an unauthenticated attacker to perform remote code execution.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-94127"
       }
     },
     {
@@ -344,27 +325,27 @@
       }
     },
     {
-      "title": "CVE-2026-93952: Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
-      "source": "CISA KEV",
+      "title": "Chinese Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy CLEANGULP Malware",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-09-22T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-93952",
-      "summary": "Arista VeloCloud Orchestrator – Arista VeloCloud Orchestrator (VCO) on-prem contains an improper input validation vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confid…",
+      "date": "2026-09-23T08:29:24.000Z",
+      "link": "https://thehackernews.com/2026/09/chinese-hackers-exploit-chrome-windows.html",
+      "summary": "A Chinese threat actor codenamed UTA0565 has been observed exploiting the recently disclosed Google Chrome-Microsoft Windows exploit chain as zero-days through fake websites. The attacks, detected on September 3 and 4, 2026, involved the chaining of two vulnerabilities in Chrome…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-93952"
+        "cve": null
       }
     },
     {
-      "title": "CVE-2026-93616: Check Point Multiple Products Path Traversal Vulnerability",
-      "source": "CISA KEV",
+      "title": "Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-09-22T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-93616",
-      "summary": "Check Point Multiple Products – Check Point Security Management Server, Multi-Domain Security Management Server, Log Server, Multi-Domain Log Server, and SmartEvent contain a path traversal vulnerability that allows an unauthenticated attacker to upload and execute arbitrary scr…",
+      "date": "2026-09-22T18:29:39.000Z",
+      "link": "https://thehackernews.com/2026/09/check-point-warns-of-management-server.html",
+      "summary": "Attackers exploited a previously unknown flaw in Check Point's Security Management Server in a handful of targeted attacks on July 23, the company said. The flaw, CVE-2026-93616, allows an attacker who can access the server's web service to run scripts on it without logging in.…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -374,18 +355,33 @@
       }
     },
     {
-      "title": "CVE-2026-85102: Check Point Multiple Products Improper Certificate Validation Vulnerability",
-      "source": "CISA KEV",
+      "title": "Vulnerability affecting F5 BIG-IP APM",
+      "source": "NCSC-UK",
       "region": "INT",
-      "date": "2026-09-22T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-85102",
-      "summary": "Check Point Multiple Products – Check Point Security Gateway and Check Point Spark Firewall using Site to Site VPN or Remote Access VPN contain an improper certificate validation vulnerability which could allow an unauthenticated remote attacker to execute arbitrary code on the…",
+      "date": "2026-03-30T12:00:00.000Z",
+      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
+      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
       "flags": {
-        "activelyExploited": true,
-        "critical": false,
+        "activelyExploited": false,
+        "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-85102"
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.39",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-09-25T08:45:00.000Z",
+      "link": "https://www.cert.se/2026/09/cert-se-veckobrev-v39.html",
+      "summary": "<p>För tionde året genomförs Beredskapsveckan i Sverige vecka 39. I år är det fokus på Sveriges totalförsvar, där samhällets motståndskraft mot cyberhot är en viktig del. Tänk på att ha en radio inställd på Sveriges Radio P4 och viktiga telefonnummer nedskrivna på papper.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
       }
     }
   ],
@@ -412,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 11
+      "count": 7
     },
     {
       "name": "CISA",
@@ -450,5 +446,5 @@
     "BleepingComputer"
   ],
   "model": "MiniMax-Text-01",
-  "notified_level": "röd"
+  "notified_level": "gul"
 }
