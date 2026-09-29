@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-29T02:33:19.390Z",
-  "next_update": "2026-09-29T02:37:00.000Z",
+  "updated": "2026-09-29T09:00:15.671Z",
+  "next_update": "2026-09-29T09:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-88771 och CVE-2026-88772 i Citrix NetScaler, utnyttjas aktivt och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa aktivt utnyttjade sårbarheter. Det finns också en allmän ökad aktivitet av kritiska sårbarheter som kan påverka svensk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
@@ -325,6 +325,21 @@
       }
     },
     {
+      "title": "Apple patches CoreGraphics zero-day flaw exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-29T07:33:12.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/apple-patches-coregraphics-zero-day-flaw-exploited-in-attacks/",
+      "summary": "Apple released security updates to fix a zero-day vulnerability exploited in \"extremely sophisticated\" targeted attacks on iOS devices. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Chinese Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy CLEANGULP Malware",
       "source": "The Hacker News",
       "region": "INT",
@@ -337,21 +352,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-22T18:29:39.000Z",
-      "link": "https://thehackernews.com/2026/09/check-point-warns-of-management-server.html",
-      "summary": "Attackers exploited a previously unknown flaw in Check Point's Security Management Server in a handful of targeted attacks on July 23, the company said. The flaw, CVE-2026-93616, allows an attacker who can access the server's web service to run scripts on it without logging in.…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-93616"
       }
     },
     {
