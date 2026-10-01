@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-01T07:45:07.185Z",
-  "next_update": "2026-10-01T08:07:00.000Z",
+  "updated": "2026-10-01T15:24:06.575Z",
+  "next_update": "2026-10-01T15:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med svensk koppling.",
@@ -10,9 +10,9 @@
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 20,
-    "critical": 9,
-    "authority_alerts": 15,
+    "actively_exploited": 19,
+    "critical": 10,
+    "authority_alerts": 16,
     "kev_recent": 7
   },
   "anomaly": {
@@ -370,18 +370,18 @@
       }
     },
     {
-      "title": "Hackers exploit Citrix NetScaler zero-day to deploy web shells",
-      "source": "BleepingComputer",
+      "title": "MikroTik RouterOS",
+      "source": "CISA",
       "region": "INT",
-      "date": "2026-09-29T18:37:12.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-citrix-netscaler-zero-day-to-deploy-web-shells/",
-      "summary": "Cybersecurity firms say attackers exploited the Citrix NetScaler CVE-2026-88772 zero-day to deploy custom web shells and tunneling malware, gain root access, steal credentials, and spread into internal networks. [...]",
+      "date": "2026-09-29T12:00:00.000Z",
+      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-272-06",
+      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-272-06.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could allow an attacker to achieve remote code execution or cause a…",
       "flags": {
-        "activelyExploited": true,
-        "critical": false,
+        "activelyExploited": false,
+        "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-88772"
+        "cve": null
       }
     }
   ],
