@@ -1,24 +1,24 @@
 {
-  "updated": "2026-09-30T22:13:57.750Z",
-  "next_update": "2026-09-30T22:37:00.000Z",
+  "updated": "2026-10-01T01:31:25.534Z",
+  "next_update": "2026-10-01T01:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
-  "score": 98,
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att dessa hot är relevanta för svenska aktörer. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
+  "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 20,
+    "actively_exploited": 19,
     "critical": 10,
-    "authority_alerts": 17,
-    "kev_recent": 9
+    "authority_alerts": 16,
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": 1
+    "delta": 0
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -142,21 +142,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-87902"
-      }
-    },
-    {
-      "title": "CVE-2026-5430: WSO2 Multiple Products Path Traversal Vulnerability ",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-24T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-5430",
-      "summary": "WSO2 Multiple Products – WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-5430"
       }
     },
     {
@@ -325,21 +310,6 @@
       }
     },
     {
-      "title": "CVE-2026-71362: Adobe Commerce and Magento Incorrect Authorization Vulnerability ",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-24T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-71362",
-      "summary": "Adobe Commerce and Magento  – Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-71362"
-      }
-    },
-    {
       "title": "DIVD says Zammad zero-days enabled AI-driven network breach",
       "source": "BleepingComputer",
       "region": "INT",
@@ -383,6 +353,36 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-76504"
       }
+    },
+    {
+      "title": "Hackers exploit Citrix NetScaler zero-day to deploy web shells",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-09-29T18:37:12.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-citrix-netscaler-zero-day-to-deploy-web-shells/",
+      "summary": "Cybersecurity firms say attackers exploited the Citrix NetScaler CVE-2026-88772 zero-day to deploy custom web shells and tunneling malware, gain root access, steal credentials, and spread into internal networks. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-88772"
+      }
+    },
+    {
+      "title": "MikroTik RouterOS",
+      "source": "CISA",
+      "region": "INT",
+      "date": "2026-09-29T12:00:00.000Z",
+      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-272-06",
+      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-272-06.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could allow an attacker to achieve remote code execution or cause a…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 7
     },
     {
       "name": "CISA",
