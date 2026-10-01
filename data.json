@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-01T15:24:06.575Z",
-  "next_update": "2026-10-01T15:37:00.000Z",
+  "updated": "2026-10-01T20:28:42.248Z",
+  "next_update": "2026-10-01T20:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
@@ -12,8 +12,8 @@
     "sweden_acute": 6,
     "actively_exploited": 19,
     "critical": 10,
-    "authority_alerts": 16,
-    "kev_recent": 7
+    "authority_alerts": 17,
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
@@ -145,16 +145,16 @@
       }
     },
     {
-      "title": "Bitget hacked via zero-day in third-party security products",
-      "source": "BleepingComputer",
+      "title": "ThreatsDay: AI-Powered Zero-Day Chain, 543K Live Secrets, Model Inspection RCE and 13 More Stories",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-09-30T11:11:46.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/bitget-hacked-via-zero-day-in-third-party-security-products/",
-      "summary": "Cryptocurrency exchange Bitget revealed today that attackers who stole $387.5 million last week breached its systems after exploiting a zero-day flaw in third-party security products. [...]",
+      "date": "2026-10-01T16:45:38.000Z",
+      "link": "https://thehackernews.com/2026/10/threatsday-ai-powered-zero-day-chain.html",
+      "summary": "This week, the useful words are boring ones: inspect, cache, compile, store, trust. Each sounds harmless. Each can become an attack path when a system does a little more than people expect. A model check can run code. A cache can mix up requests. A public secret can stay useful…",
       "flags": {
         "activelyExploited": true,
-        "critical": false,
-        "incident": true,
+        "critical": true,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
@@ -190,18 +190,18 @@
       }
     },
     {
-      "title": "Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild",
-      "source": "The Hacker News",
+      "title": "CVE-2026-104286: Fortinet FortiMail Path Traversal Vulnerability",
+      "source": "CISA KEV",
       "region": "INT",
-      "date": "2026-09-25T10:14:02.000Z",
-      "link": "https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html",
-      "summary": "The Canadian Centre for Cyber Security has warned that a now-patched Roundcube Webmail vulnerability is being actively exploited in the wild. The vulnerability in question is CVE-2026-48842 (CVSS score: 8.1), a pre-authentication SQL injection in the virtuser_query plugin of Rou…",
+      "date": "2026-10-01T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-104286",
+      "summary": "Fortinet FortiMail – Fortinet FortiMail contains a path traversal and an improper neutralization of NULL byte or NULL character vulnerability that may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests.",
       "flags": {
         "activelyExploited": true,
-        "critical": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-48842"
+        "cve": "CVE-2026-104286"
       }
     },
     {
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 7
+      "count": 8
     },
     {
       "name": "CISA",
