@@ -1,19 +1,19 @@
 {
-  "updated": "2026-10-02T13:07:15.720Z",
-  "next_update": "2026-10-02T13:37:00.000Z",
+  "updated": "2026-10-02T18:40:02.238Z",
+  "next_update": "2026-10-02T19:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa rapporter inkluderar specifika svenska kopplingar och utgör en tydlig risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det förhöjda antalet aktiva hot och myndighetsvarningar tillräckligt för att motivera en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, rapporteras aktivt utnyttjas. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av den aktiva exploateringen av dessa kritiska sårbarheter.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 6,
     "actively_exploited": 17,
-    "critical": 10,
-    "authority_alerts": 16,
-    "kev_recent": 5
+    "critical": 11,
+    "authority_alerts": 17,
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
@@ -115,6 +115,21 @@
       }
     },
     {
+      "title": "CVE-2026-102489: Zammad GmbH Zammad Session Fixation Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-02T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-102489",
+      "summary": "Zammad GmbH Zammad – Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-102489"
+      }
+    },
+    {
       "title": "CVE-2026-88772: Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -160,18 +175,18 @@
       }
     },
     {
-      "title": "SharePoint RCE and MikroTik RouterOS Flaws Actively Exploited in the Wild",
-      "source": "The Hacker News",
+      "title": "CVE-2026-102490: Zammad GmbH Zammad Improper Privilege Management Vulnerability",
+      "source": "CISA KEV",
       "region": "INT",
-      "date": "2026-09-26T08:49:53.000Z",
-      "link": "https://thehackernews.com/2026/09/sharepoint-rce-and-mikrotik-routeros.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two security flaws impacting Microsoft SharePoint and Mikrotik RouterOS to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabilities in question…",
+      "date": "2026-10-02T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-102490",
+      "summary": "Zammad GmbH Zammad – Zammad GmbH Zammad contains an improper privilege management vulnerability that can allow the local zammad user to escalate privileges to root. This vulnerability can be chained with CVE-2026-102489.",
       "flags": {
         "activelyExploited": true,
-        "critical": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
+        "cve": "CVE-2026-102490"
       }
     },
     {
@@ -240,13 +255,13 @@
       "region": "INT",
       "date": "2026-09-27T12:00:00.000Z",
       "link": "https://www.cisa.gov/news-events/alerts/2026/09/27/critical-zero-day-vulnerabilities-exploited-citrix-netscaler-adc-gateway",
-      "summary": "<p>CISA is amplifying Citrix’s disclosure of eight new vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway products: <a href=\"https://www.cve.org/CVERecord?id=CVE-2026-88771\">CVE-2026-88771</a>, <a href=\"https://www.cve.org/CVERecord?id=CVE-2026-88772\">CV…",
+      "summary": "<p><strong>Update October 2, 2026:</strong></p> <p><em>CISA has updated this Alert to provide a SIGMA detection rule resource to help identify potentially suspicious activity.</em></p> <p>CISA is amplifying Citrix’s disclosure of eight new vulnerabilities affecting Citrix NetSca…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-88771"
+        "cve": null
       }
     },
     {
@@ -310,21 +325,6 @@
       }
     },
     {
-      "title": "DIVD says Zammad zero-days enabled AI-driven network breach",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-30T19:49:15.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/",
-      "summary": "The Dutch Institute for Vulnerability Disclosure (DIVD) says that the breach of its network was possible by exploiting a chain of two zero-day vulnerabilities in the open-source Zammad ticketing system. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Cisco Warns of Attackers Exploiting Critical Authentication Bypass in SD-WAN Manager",
       "source": "The Hacker News",
       "region": "INT",
@@ -370,17 +370,17 @@
       }
     },
     {
-      "title": "Antar du vår utmaning? / Do you accept our challenge?",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-02T10:45:00.000Z",
-      "link": "https://www.cert.se/2026/10/antar-du-var-utmaning.html",
-      "summary": "<p>CERT-SE presenterar vår årliga utmaning (CTF) som sker under cybersäkerhetsmånaden [1, 2]. Utmaningen vänder sig till alla med it-säkerhetsintresse oavsett kunskapsnivå.</p>",
+      "title": "GitLab warns of critical RCE vulnerability in AI Gateway service",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-02T16:20:05.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/gitlab-warns-of-critical-rce-vulnerability-in-ai-gateway-service/",
+      "summary": "GitLab warned customers today to immediately patch a critical AI Gateway vulnerability that could let attackers run arbitrary commands on vulnerable instances. [...]",
       "flags": {
         "activelyExploited": false,
-        "critical": false,
+        "critical": true,
         "incident": false,
-        "swedenRelevant": true,
+        "swedenRelevant": false,
         "cve": null
       }
     }
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 5
+      "count": 7
     },
     {
       "name": "CISA",
