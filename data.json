@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-02T06:08:24.624Z",
-  "next_update": "2026-10-02T06:37:00.000Z",
+  "updated": "2026-10-02T13:07:15.720Z",
+  "next_update": "2026-10-02T13:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap. Internationella signaler stärker bilden av en ökad allmän risknivå.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa rapporter inkluderar specifika svenska kopplingar och utgör en tydlig risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det förhöjda antalet aktiva hot och myndighetsvarningar tillräckligt för att motivera en förhöjd beredskap.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 6,
     "actively_exploited": 17,
-    "critical": 11,
-    "authority_alerts": 15,
+    "critical": 10,
+    "authority_alerts": 16,
     "kev_recent": 5
   },
   "anomaly": {
@@ -55,6 +55,21 @@
       }
     },
     {
+      "title": "Kritisk sårbarhet i FortiMail",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-02T11:30:00.000Z",
+      "link": "https://www.cert.se/2026/10/kritisk-sarbarhet-i-fortimail.html",
+      "summary": "<p>Fortinet har publicerat information om en kritisk sårbarhet i FortiMail. Sårbarheten, CVE-2026-104286, har fått en CVSS-klassning på 9.8 och påverkar FortiMail managements gränssnitt. Ett framgångsrikt utnyttjande kan innebära att en oautentiserad angripare kan skriva godtyck…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-104286"
+      }
+    },
+    {
       "title": "Kritiska sårbarheter i Citrix NetScaler ADC och Citrix NetScaler Gateway",
       "source": "CERT-SE",
       "region": "SE",
@@ -82,21 +97,6 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-94127"
-      }
-    },
-    {
-      "title": "GitLab rättar kritiska sårbarheter",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-11T21:30:00.000Z",
-      "link": "https://www.cert.se/2026/09/gitlab-rattar-kritiska-sarbarheter.html",
-      "summary": "<p>GitLab har publicerat säkerhetsuppdateringar för flera sårbarheter i GitLab Community Edition (CE) och Enterprise Edition (EE). [1] Två av dessa sårbarheter, CVE-2026-85706 och CVE-2026-87719, klassas som kritiska.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-85706"
       }
     },
     {
@@ -265,6 +265,21 @@
       }
     },
     {
+      "title": "Critical FortiMail Zero-Day Flaw Exploited in Attacks Allows Unauthenticated Arbitrary File Writes",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-02T05:49:50.000Z",
+      "link": "https://thehackernews.com/2026/10/critical-fortimail-zero-day-flaw.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on Thursday, added a critical security flaw impacting Fortinet FortiMail to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation. The vulnerability, tracked as CVE-2026-10428…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-10428"
+      }
+    },
+    {
       "title": "Fortinet warns of critical FortiMail flaw exploited in zero-day attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -325,21 +340,6 @@
       }
     },
     {
-      "title": "Cisco warns of new SD-WAN zero-day exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-09-30T14:46:40.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-new-sd-wan-authentication-bypass-zero-day-exploited-in-attacks/",
-      "summary": "Cisco released security updates to address a critical zero-day in the Catalyst SD-WAN Manager (tracked as CVE-2026-76504) that attackers are actively exploiting to escalate to admin privileges. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-76504"
-      }
-    },
-    {
       "title": "MikroTik RouterOS",
       "source": "CISA",
       "region": "INT",
@@ -370,17 +370,17 @@
       }
     },
     {
-      "title": "Citrix NetScaler Post-Exploitation Payload Creates Superuser, Maps Web Shell to CSS-Like URLs",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-01T04:35:34.000Z",
-      "link": "https://thehackernews.com/2026/10/citrix-netscaler-post-exploitation.html",
-      "summary": "Threat actors have been observed exploiting a critical pre-authentication command injection vulnerability in Citrix NetScaler ADC and NetScaler Gateway to drop web shells and attempt theft of configuration data. LevelBlue's Threat Hunt Operations & Research (THOR) team, which an…",
+      "title": "Antar du vår utmaning? / Do you accept our challenge?",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-02T10:45:00.000Z",
+      "link": "https://www.cert.se/2026/10/antar-du-var-utmaning.html",
+      "summary": "<p>CERT-SE presenterar vår årliga utmaning (CTF) som sker under cybersäkerhetsmånaden [1, 2]. Utmaningen vänder sig till alla med it-säkerhetsintresse oavsett kunskapsnivå.</p>",
       "flags": {
         "activelyExploited": false,
-        "critical": true,
+        "critical": false,
         "incident": false,
-        "swedenRelevant": false,
+        "swedenRelevant": true,
         "cve": null
       }
     }
