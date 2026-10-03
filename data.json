@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-03T20:11:25.347Z",
-  "next_update": "2026-10-03T20:37:00.000Z",
+  "updated": "2026-10-03T23:18:36.354Z",
+  "next_update": "2026-10-03T23:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer och kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och FortiMail, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att dessa hot är relevanta för svenska aktörer. Det finns också en generell internationell aktivitet kring Citrix NetScaler, vilket kan påverka svenska företag med global verksamhet.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
