@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-03T13:19:27.235Z",
-  "next_update": "2026-10-03T13:37:00.000Z",
+  "updated": "2026-10-03T17:35:15.634Z",
+  "next_update": "2026-10-03T17:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa sårbarheter utgör en direkt risk för svenska organisationer och kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer och kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 6,
-    "actively_exploited": 17,
-    "critical": 11,
-    "authority_alerts": 17,
+    "actively_exploited": 16,
+    "critical": 10,
+    "authority_alerts": 18,
     "kev_recent": 7
   },
   "anomaly": {
@@ -151,21 +151,6 @@
       "date": "2026-10-01T16:45:38.000Z",
       "link": "https://thehackernews.com/2026/10/threatsday-ai-powered-zero-day-chain.html",
       "summary": "This week, the useful words are boring ones: inspect, cache, compile, store, trust. Each sounds harmless. Each can become an attack path when a system does a little more than people expect. A model check can run code. A cache can mix up requests. A public secret can stay useful…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Warning: Two Unpatched Citrix NetScaler RCE Zero-Days Under Active Exploitation",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-09-27T07:47:57.000Z",
-      "link": "https://thehackernews.com/2026/09/warning-two-unpatched-citrix-netscaler.html",
-      "summary": "Two critical vulnerabilities in Citrix NetScaler ADC and NetScaler Gateway that allow remote code execution have been exploited in the wild, Citrix confirmed on September 27. It released fixes for both, along with six other flaws. One of the two affects every deployment on an af…",
       "flags": {
         "activelyExploited": true,
         "critical": true,
@@ -381,6 +366,21 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Antar du vår utmaning? / Do you accept our challenge?",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-02T10:45:00.000Z",
+      "link": "https://www.cert.se/2026/10/antar-du-var-utmaning.html",
+      "summary": "<p>CERT-SE presenterar vår årliga utmaning (CTF) som sker under cybersäkerhetsmånaden [1, 2]. Utmaningen vänder sig till alla med it-säkerhetsintresse oavsett kunskapsnivå.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
         "cve": null
       }
     }
