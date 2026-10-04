@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-03T23:18:36.354Z",
-  "next_update": "2026-10-03T23:37:00.000Z",
+  "updated": "2026-10-04T02:50:52.106Z",
+  "next_update": "2026-10-04T03:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och FortiMail, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att dessa hot är relevanta för svenska aktörer. Det finns också en generell internationell aktivitet kring Citrix NetScaler, vilket kan påverka svenska företag med global verksamhet.",
-  "score": 97,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, rapporteras aktivt utnyttjas. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter ännu, är risken för attacker mot svenska organisationer förhöjd. Detta motiverar en gul nivå.",
+  "score": 96,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 8,
     "sweden_acute": 6,
-    "actively_exploited": 16,
-    "critical": 10,
-    "authority_alerts": 18,
-    "kev_recent": 7
+    "actively_exploited": 14,
+    "critical": 9,
+    "authority_alerts": 17,
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": 0
+    "delta": -1
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -130,21 +130,6 @@
       }
     },
     {
-      "title": "CVE-2026-88772: Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-27T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-88772",
-      "summary": "Citrix NetScaler – Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-88772"
-      }
-    },
-    {
       "title": "ThreatsDay: AI-Powered Zero-Day Chain, 543K Live Secrets, Model Inspection RCE and 13 More Stories",
       "source": "The Hacker News",
       "region": "INT",
@@ -247,21 +232,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "CVE-2026-88771: Citrix NetScaler Improper Input Validation Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-27T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-88771",
-      "summary": "Citrix NetScaler – Citrix NetScaler ADC and NetScaler Gateway contain an improper input validation vulnerability that could allow an unauthenticated attacker to execute arbitrary commands.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-88771"
       }
     },
     {
@@ -383,6 +353,36 @@
         "swedenRelevant": true,
         "cve": null
       }
+    },
+    {
+      "title": "Microsoft’s X account hacked in crypto pump-and-dump scheme",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-02T09:29:56.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/microsofts-x-account-hacked-in-crypto-token-pump-and-dump-scheme/",
+      "summary": "On Thursday, unknown attackers hijacked the official Microsoft account on X, which has over 13 million followers, in what appeared to be a pump-and-dump scheme promoting a crypto token. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.40",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-02T07:30:00.000Z",
+      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v40.html",
+      "summary": "<p>Oktober är cybersäkerhetsmånaden och vi vill passa att slå ett slag för de kunskapshöjande aktiviteter som erbjuds genom NCSC:s och polisens cybersäkerhetskampanj “Tänk Säkert”.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 7
+      "count": 5
     },
     {
       "name": "CISA",
