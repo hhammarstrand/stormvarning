@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-05T07:39:20.212Z",
-  "next_update": "2026-10-05T08:07:00.000Z",
+  "updated": "2026-10-05T17:05:27.955Z",
+  "next_update": "2026-10-05T17:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i vanligt förekommande system som Cisco, Fortinet och Citrix rapporteras aktivt utnyttjas, och CERT-SE har utfärdat varningar om dessa hot med tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, indikerar CERT-SE:s varningar och CISA KEV-katalogen att risken för attacker är förhöjd. Detta motiverar en gul nivå.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, rapporteras aktivt utnyttjas. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en konkret risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige ännu, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 16,
+    "actively_exploited": 17,
     "critical": 10,
-    "authority_alerts": 17,
+    "authority_alerts": 16,
     "kev_recent": 6
   },
   "anomaly": {
@@ -265,6 +265,36 @@
       }
     },
     {
+      "title": "⚡ Weekly Recap: NetScaler and FortiMail 0-Days, AI Coding Leaks, Spectre v2 and Ransomware Arrests",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-05T14:20:43.000Z",
+      "link": "https://thehackernews.com/2026/10/weekly-recap-netscaler-and-fortimail-0.html",
+      "summary": "A blank field. A public repo. One reply to an email. A box left exposed. None of this sounds dramatic, which is partly the problem. This week’s threats keep finding leverage in small things that were easy to overlook. There are actively exploited bugs in the mix, cleaner intrusi…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "New NetScaler Zero-Day Exploited in Targeted Attacks Can Knock SAML Deployments Offline",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-05T06:40:19.000Z",
+      "link": "https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html",
+      "summary": "Citrix has released security updates for a high-severity security flaw in NetScaler ADC and Citrix NetScaler Gateway that has been exploited as part of targeted zero-day attacks. The vulnerability, tracked as CVE-2026-88779, carries a CVSS score of 8.7 out of 10.0. \"CVE-2026-887…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-88779"
+      }
+    },
+    {
       "title": "Critical FortiMail Zero-Day Flaw Exploited in Attacks Allows Unauthenticated Arbitrary File Writes",
       "source": "The Hacker News",
       "region": "INT",
@@ -277,21 +307,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-10428"
-      }
-    },
-    {
-      "title": "Fortinet warns of critical FortiMail flaw exploited in zero-day attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-01T22:42:49.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/fortinet-warns-of-critical-fortimail-flaw-exploited-in-zero-day-attacks/",
-      "summary": "Fortinet is warning customers of a critical FortiMail vulnerability, tracked as CVE-2026-104286, that is being actively exploited in zero-day attacks to execute unauthorized code or commands on vulnerable devices. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-104286"
       }
     },
     {
@@ -355,32 +370,17 @@
       }
     },
     {
-      "title": "GitLab warns of critical RCE vulnerability in AI Gateway service",
+      "title": "New Dell System Update flaw lets hackers gain root privileges",
       "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-10-02T16:20:05.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/gitlab-warns-of-critical-rce-vulnerability-in-ai-gateway-service/",
-      "summary": "GitLab warned customers today to immediately patch a critical AI Gateway vulnerability that could let attackers run arbitrary commands on vulnerable instances. [...]",
+      "date": "2026-10-05T14:53:06.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/new-dell-system-update-flaw-lets-hackers-gain-root-privileges/",
+      "summary": "Dell warned customers to patch a critical vulnerability in the System Update (DSU) command-line interface (CLI) deployment tool as soon as possible. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Antar du vår utmaning? / Do you accept our challenge?",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-02T10:45:00.000Z",
-      "link": "https://www.cert.se/2026/10/antar-du-var-utmaning.html",
-      "summary": "<p>CERT-SE presenterar vår årliga utmaning (CTF) som sker under cybersäkerhetsmånaden [1, 2]. Utmaningen vänder sig till alla med it-säkerhetsintresse oavsett kunskapsnivå.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
