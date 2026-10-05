@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-05T17:05:27.955Z",
-  "next_update": "2026-10-05T17:07:00.000Z",
+  "updated": "2026-10-05T23:09:02.610Z",
+  "next_update": "2026-10-05T23:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, rapporteras aktivt utnyttjas. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en konkret risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige ännu, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter ännu, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
@@ -285,7 +285,7 @@
       "region": "INT",
       "date": "2026-10-05T06:40:19.000Z",
       "link": "https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html",
-      "summary": "Citrix has released security updates for a high-severity security flaw in NetScaler ADC and Citrix NetScaler Gateway that has been exploited as part of targeted zero-day attacks. The vulnerability, tracked as CVE-2026-88779, carries a CVSS score of 8.7 out of 10.0. \"CVE-2026-887…",
+      "summary": "Citrix has released security updates for a high-severity security flaw in NetScaler ADC and NetScaler Gateway that has been exploited as part of targeted zero-day attacks. The vulnerability, tracked as CVE-2026-88779, carries a CVSS score of 8.7 out of 10.0. \"CVE-2026-88779 is a…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -370,18 +370,18 @@
       }
     },
     {
-      "title": "New Dell System Update flaw lets hackers gain root privileges",
+      "title": "Rejetto HFS servers now actively scanned for critical RCE flaw",
       "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-10-05T14:53:06.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/new-dell-system-update-flaw-lets-hackers-gain-root-privileges/",
-      "summary": "Dell warned customers to patch a critical vulnerability in the System Update (DSU) command-line interface (CLI) deployment tool as soon as possible. [...]",
+      "date": "2026-10-05T20:20:05.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/rejetto-hfs-servers-now-actively-scanned-for-critical-rce-flaw/",
+      "summary": "Hackers are actively scanning for a Rejetto HFS weak signing key vulnerability, tracked as CVE-2026-61500, that allows session forgery, account takeover, and remote code execution (RCE). [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
+        "cve": "CVE-2026-61500"
       }
     }
   ],
