@@ -1,17 +1,17 @@
 {
-  "updated": "2026-10-06T10:44:57.672Z",
-  "next_update": "2026-10-06T11:07:00.000Z",
+  "updated": "2026-10-06T17:09:22.468Z",
+  "next_update": "2026-10-06T17:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Även om det inte finns bekräftade incidenter i Sverige, indikerar CERT-SE:s varningar och CISA KEV-katalogen en ökad risk för attacker mot svenska organisationer. Detta kräver förhöjd beredskap och uppmärksamhet.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och FortiMail, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 16,
-    "critical": 11,
+    "actively_exploited": 15,
+    "critical": 10,
     "authority_alerts": 15,
     "kev_recent": 5
   },
@@ -130,21 +130,6 @@
       }
     },
     {
-      "title": "Citrix patches NetScaler SAML zero-day exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-04T21:58:01.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/citrix-patches-netscaler-saml-zero-day-exploited-in-attacks/",
-      "summary": "Citrix has released emergency updates for a new NetScaler denial-of-service vulnerability tracked as CVE-2026-88779 that has been exploited in zero-day attacks, with researchers investigating whether it can also be exploited for remote code execution. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-88779"
-      }
-    },
-    {
       "title": "ThreatsDay: AI-Powered Zero-Day Chain, 543K Live Secrets, Model Inspection RCE and 13 More Stories",
       "source": "The Hacker News",
       "region": "INT",
@@ -250,6 +235,21 @@
       }
     },
     {
+      "title": "Hitachi Energy SOI",
+      "source": "CISA",
+      "region": "INT",
+      "date": "2026-10-06T12:00:00.000Z",
+      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-279-04",
+      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-279-04.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Hitachi Energy is aware of RCE (Remote Code Execution) vulnerability in Apache ActiveMQ component of SOI product…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "⚡ Weekly Recap: NetScaler and FortiMail 0-Days, AI Coding Leaks, Spectre v2 and Ransomware Arrests",
       "source": "The Hacker News",
       "region": "INT",
@@ -340,16 +340,16 @@
       }
     },
     {
-      "title": "Vulnerability affecting F5 BIG-IP APM",
-      "source": "NCSC-UK",
+      "title": "ASOS confirms data breach after “HACKED” in-app notifications",
+      "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-03-30T12:00:00.000Z",
-      "link": "https://www.ncsc.gov.uk/news/vulnerability-affecting-f5-big-ip-apm",
-      "summary": "The NCSC is encouraging UK organisations to mitigate an unauthenticated remote code execution vulnerability affecting F5 BIG-IP Access Policy Manager.",
+      "date": "2026-10-06T16:33:54.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/asos-confirms-data-breach-after-hacked-in-app-notifications/",
+      "summary": "UK fashion retailer ASOS confirmed a data breach Tuesday after hackers sent unauthorized push notifications through its mobile app while claiming to have stolen customer data from the company's Snowflake environment. [...]",
       "flags": {
         "activelyExploited": false,
-        "critical": true,
-        "incident": false,
+        "critical": false,
+        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
