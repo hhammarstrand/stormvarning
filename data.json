@@ -1,19 +1,19 @@
 {
-  "updated": "2026-10-05T23:09:02.610Z",
-  "next_update": "2026-10-05T23:37:00.000Z",
+  "updated": "2026-10-06T03:18:28.149Z",
+  "next_update": "2026-10-06T03:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter ännu, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 17,
-    "critical": 10,
-    "authority_alerts": 16,
-    "kev_recent": 6
+    "actively_exploited": 16,
+    "critical": 11,
+    "authority_alerts": 15,
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
@@ -220,21 +220,6 @@
       }
     },
     {
-      "title": "CVE-2026-86950: Apple Multiple Products Out-of-Bounds Write Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-29T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-86950",
-      "summary": "Apple Multiple Products – Apple iOS, macOS, and iPadOS contain an out-of-bounds write vulnerability in CoreGraphics that may lead to arbitrary code execution.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-86950"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-61500"
       }
+    },
+    {
+      "title": "New Dell System Update flaw lets hackers gain root privileges",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-05T14:53:06.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/new-dell-system-update-flaw-lets-hackers-gain-root-privileges/",
+      "summary": "Dell warned customers to patch a critical vulnerability in the System Update (DSU) command-line interface (CLI) deployment tool as soon as possible. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 6
+      "count": 5
     },
     {
       "name": "CISA",
