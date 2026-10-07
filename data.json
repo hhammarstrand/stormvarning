@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-07T07:41:40.489Z",
-  "next_update": "2026-10-07T08:07:00.000Z",
+  "updated": "2026-10-07T15:30:40.295Z",
+  "next_update": "2026-10-07T15:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och FortiMail, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, rapporteras aktivt utnyttjas. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en konkret risk för svenska organisationer. Även om det inte finns bekräftade incidenter ännu, är det uppenbart att svenska aktörer är i riskzonen.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 6,
     "actively_exploited": 15,
     "critical": 10,
-    "authority_alerts": 14,
+    "authority_alerts": 15,
     "kev_recent": 4
   },
   "anomaly": {
@@ -340,6 +340,36 @@
       }
     },
     {
+      "title": "Hackers exploit critical Atlassian flaw after public PoC release",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-07T12:49:01.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-atlassian-flaw-after-public-poc-release/",
+      "summary": "A critical vulnerability (CVE-2026-21589) affecting multiple Atlassian product families, including Jira, Confluence, and Bitbucket, is being exploited in attacks that do not require authentication. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-21589"
+      }
+    },
+    {
+      "title": "Tillsammans för ett mer motståndskraftigt Sverige",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-10-07T12:24:25.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/oktober/tillsammans-for-ett-mer-motstandskraftigt-sverige/",
+      "summary": "Hur kan samhället stå starkare inför kriser, cyberhot och ytterst krig? Det var den centrala frågan när representanter från offentlig sektor, näringsliv och civilsamhälle samlades för konferensen Ökad motståndskraft i samhällsviktig verksamhet.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
       "title": "Atlassian warns of critical file-access flaw in Jira, Confluence",
       "source": "BleepingComputer",
       "region": "INT",
@@ -352,36 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-21589"
-      }
-    },
-    {
-      "title": "ASOS confirms data breach after “HACKED” in-app notifications",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-06T16:33:54.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/asos-confirms-data-breach-after-hacked-in-app-notifications/",
-      "summary": "UK fashion retailer ASOS confirmed a data breach Tuesday after hackers sent unauthorized push notifications through its mobile app while claiming to have stolen customer data from the company's Snowflake environment. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Rejetto HFS servers now actively scanned for critical RCE flaw",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-05T20:20:05.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/rejetto-hfs-servers-now-actively-scanned-for-critical-rce-flaw/",
-      "summary": "Hackers are actively scanning for a Rejetto HFS weak signing key vulnerability, tracked as CVE-2026-61500, that allows session forgery, account takeover, and remote code execution (RCE). [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-61500"
       }
     }
   ],
@@ -396,7 +396,7 @@
       "name": "MCF",
       "region": "SE",
       "ok": true,
-      "count": 9
+      "count": 10
     },
     {
       "name": "Krisinformation",
