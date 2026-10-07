@@ -1,19 +1,19 @@
 {
-  "updated": "2026-10-06T21:52:20.483Z",
-  "next_update": "2026-10-06T22:07:00.000Z",
+  "updated": "2026-10-07T01:28:55.088Z",
+  "next_update": "2026-10-07T01:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och FortiMail, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och FortiMail, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att dessa sårbarheter utgör en pågående och allvarlig hotbild. Det finns också en generell ökning av aktivt utnyttjade sårbarheter globalt, vilket ökar risken för svenska aktörer.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 16,
-    "critical": 9,
-    "authority_alerts": 15,
-    "kev_recent": 5
+    "actively_exploited": 15,
+    "critical": 10,
+    "authority_alerts": 14,
+    "kev_recent": 4
   },
   "anomaly": {
     "active": false,
@@ -205,21 +205,6 @@
       }
     },
     {
-      "title": "CVE-2026-76504: Cisco Catalyst SD-WAN Manager Hex Encoding Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-09-30T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76504",
-      "summary": "Cisco Catalyst SD-WAN Manager – Cisco Catalyst SD-WAN Manager contains a hex encoding vulnerability that could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user due to improper handling of URI encoding in an HTTP request.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-76504"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Rejetto HFS servers now actively scanned for critical RCE flaw",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-05T20:20:05.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/rejetto-hfs-servers-now-actively-scanned-for-critical-rce-flaw/",
+      "summary": "Hackers are actively scanning for a Rejetto HFS weak signing key vulnerability, tracked as CVE-2026-61500, that allows session forgery, account takeover, and remote code execution (RCE). [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-61500"
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 5
+      "count": 4
     },
     {
       "name": "CISA",
