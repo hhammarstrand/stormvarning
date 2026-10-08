@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-08T14:54:11.758Z",
-  "next_update": "2026-10-08T15:07:00.000Z",
+  "updated": "2026-10-08T20:39:58.348Z",
+  "next_update": "2026-10-08T21:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och FortiMail, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
-  "score": 96,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Även om det inte finns bekräftade incidenter för närvarande, indikerar CERT-SE:s varningar och CISA KEV-katalogen en ökad risk för svenska organisationer. Detta kräver förhöjd beredskap och åtgärder för att skydda kritisk infrastruktur.",
+  "score": 97,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 12,
-    "critical": 12,
-    "authority_alerts": 14,
-    "kev_recent": 3
+    "actively_exploited": 16,
+    "critical": 9,
+    "authority_alerts": 18,
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": -1
+    "delta": 0
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -115,6 +115,21 @@
       }
     },
     {
+      "title": "CVE-2021-3199: ONLYOFFICE Docs Server Path Traversal Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-08T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3199",
+      "summary": "ONLYOFFICE Docs – ONLYOFFICE Docs contains a path traversal vulnerability that can occur when JWT is used, via a /.. sequence in an image upload parameter and could allow for remote code execution.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2021-3199"
+      }
+    },
+    {
       "title": "CVE-2026-102489: Zammad GmbH Zammad Session Fixation Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -145,18 +160,63 @@
       }
     },
     {
-      "title": "ThreatsDay: AI-Powered Zero-Day Chain, 543K Live Secrets, Model Inspection RCE and 13 More Stories",
-      "source": "The Hacker News",
+      "title": "CVE-2015-5477:  ISC BIND Data Processing Errors Vulnerability",
+      "source": "CISA KEV",
       "region": "INT",
-      "date": "2026-10-01T16:45:38.000Z",
-      "link": "https://thehackernews.com/2026/10/threatsday-ai-powered-zero-day-chain.html",
-      "summary": "This week, the useful words are boring ones: inspect, cache, compile, store, trust. Each sounds harmless. Each can become an attack path when a system does a little more than people expect. A model check can run code. A cache can mix up requests. A public secret can stay useful…",
+      "date": "2026-10-08T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2015-5477",
+      "summary": "ISC BIND – ISC BIND contains a data processing errors vulnerability that could allow remote attackers to cause a denial of service via TKEY queries.",
       "flags": {
         "activelyExploited": true,
-        "critical": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
+        "cve": "CVE-2015-5477"
+      }
+    },
+    {
+      "title": "CVE-2016-3081: Apache Struts Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-08T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2016-3081",
+      "summary": "Apache Struts – Apache Struts contains a command injection vulnerability that could allow remote attackers to execute arbitrary code via method:prefix when Dynamic Method Invocation is enabled.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2016-3081"
+      }
+    },
+    {
+      "title": "CVE-2023-22894: Strapi Cleartext Storage of Sensitive Information Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-08T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2023-22894",
+      "summary": "Strapi Strapi – Strapi contains a cleartext storage of sensitive information vulnerability that could allow attackers with access to the admin panel to discover sensitive user details via the query filter. The impacted product(s) could be end-of-life (EoL) and/or end-of-service…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2023-22894"
+      }
+    },
+    {
+      "title": "CVE-2015-3306: ProFTPD Improper Access Control Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-08T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2015-3306",
+      "summary": "ProFTPD ProFTPD – ProFTPD contains an improper access control vulnerability that could allow remote attackers to read and write to arbitrary files via the site cpfr and site cpto commands.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2015-3306"
       }
     },
     {
@@ -295,6 +355,21 @@
       }
     },
     {
+      "title": "Cisco warns of critical flaws allowing Nexus switch takeover",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-08T15:26:33.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-critical-flaws-allowing-nexus-switch-takeover/",
+      "summary": "Cisco released security advisories for five critical vulnerabilities in its NX-OS data center network operating system that could be exploited to run arbitrary code with root privileges on Nexus switches. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Tensorlake npm Package Compromised to Deliver Shai-Hulud Credential-Stealing Worm",
       "source": "The Hacker News",
       "region": "INT",
@@ -307,81 +382,6 @@
         "incident": true,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "SonicWall Patches CVSS 10.0 Pre-Authentication SSRF Flaw in SMA1000 Appliances",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-07T16:17:44.000Z",
-      "link": "https://thehackernews.com/2026/10/sonicwall-patches-cvss-100-pre.html",
-      "summary": "SonicWall has released hotfixes for four flaws in its SMA1000 appliances, the gateways that give remote workers access to a company's network and applications. The most serious could allow an attacker without a login to send requests through the appliance and reach internal func…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Unpatched Critical LMCache Flaw Lets Unauthenticated Attackers Run Code Remotely",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-07T15:34:53.000Z",
-      "link": "https://thehackernews.com/2026/10/unpatched-critical-lmcache-flaw-lets.html",
-      "summary": "A critical vulnerability in LMCache, open-source software that speeds up large language model (LLM) servers such as vLLM, lets an attacker run code on the cache server without logging in, and no fixed version is available. The flaw is in LMCache's multiprocess mode, where the ca…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Hackers exploit critical Atlassian flaw after public PoC release",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-07T12:49:01.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-atlassian-flaw-after-public-poc-release/",
-      "summary": "A critical vulnerability (CVE-2026-21589) affecting multiple Atlassian product families, including Jira, Confluence, and Bitbucket, is being exploited in attacks that do not require authentication. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-21589"
-      }
-    },
-    {
-      "title": "Tillsammans för ett mer motståndskraftigt Sverige",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-10-07T12:24:25.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/oktober/tillsammans-for-ett-mer-motstandskraftigt-sverige/",
-      "summary": "Hur kan samhället stå starkare inför kriser, cyberhot och ytterst krig? Det var den centrala frågan när representanter från offentlig sektor, näringsliv och civilsamhälle samlades för konferensen Ökad motståndskraft i samhällsviktig verksamhet.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Attackers Target Rejetto HFS Flaw That Enables Admin Session Forgery and RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-05T08:09:23.000Z",
-      "link": "https://thehackernews.com/2026/10/attackers-target-rejetto-hfs-flaw-that.html",
-      "summary": "A critical security flaw impacting Rejetto HTTP File Server (HFS) is witnessing active exploitation attempts, according to VulnCheck. The vulnerability in question is CVE-2026-61500 (CVSS score: 9.3), a case of session forgery stemming from the use of a weak pseudo-random number…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-61500"
       }
     }
   ],
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 3
+      "count": 8
     },
     {
       "name": "CISA",
