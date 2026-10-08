@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-07T20:45:40.083Z",
-  "next_update": "2026-10-07T21:07:00.000Z",
+  "updated": "2026-10-08T00:56:29.621Z",
+  "next_update": "2026-10-08T01:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
-  "score": 97,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer och kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
     "sweden_acute": 6,
-    "actively_exploited": 14,
-    "critical": 11,
-    "authority_alerts": 15,
-    "kev_recent": 4
+    "actively_exploited": 13,
+    "critical": 12,
+    "authority_alerts": 14,
+    "kev_recent": 3
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": 0
+    "delta": -1
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -187,21 +187,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-102490"
-      }
-    },
-    {
-      "title": "CVE-2026-104286: Fortinet FortiMail Path Traversal Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-01T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-104286",
-      "summary": "Fortinet FortiMail – Fortinet FortiMail contains a path traversal and an improper neutralization of NULL byte or NULL character vulnerability that may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-104286"
       }
     },
     {
@@ -383,6 +368,21 @@
         "swedenRelevant": true,
         "cve": null
       }
+    },
+    {
+      "title": "Atlassian warns of critical file-access flaw in Jira, Confluence",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-06T17:34:59.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/atlassian-warns-of-critical-file-access-flaw-in-jira-confluence/",
+      "summary": "Atlassian is warning customers of a critical vulnerability, tracked as CVE-2026-21589, that can be exploited for arbitrary file-access in multiple self-hosted Data Center products, including Confluence, Jira, and Bitbucket. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-21589"
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 4
+      "count": 3
     },
     {
       "name": "CISA",
