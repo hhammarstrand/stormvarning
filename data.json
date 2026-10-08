@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-08T07:16:50.684Z",
-  "next_update": "2026-10-08T07:37:00.000Z",
+  "updated": "2026-10-08T14:54:11.758Z",
+  "next_update": "2026-10-08T15:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, rapporteras aktivt utnyttjas. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter ännu, är risken för attacker mot svenska organisationer förhöjd.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och FortiMail, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 7,
     "sweden_acute": 6,
-    "actively_exploited": 14,
-    "critical": 11,
-    "authority_alerts": 13,
+    "actively_exploited": 12,
+    "critical": 12,
+    "authority_alerts": 14,
     "kev_recent": 3
   },
   "anomaly": {
@@ -136,21 +136,6 @@
       "date": "2026-10-08T06:32:16.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/samsung-galaxy-s26-hacked-three-more-times-at-pwn2own-ireland/",
       "summary": "​​​On the second day of Pwn2Own Ireland 2026, security researchers collected $232,500 in cash awards after exploiting 45 unique zero-day vulnerabilities. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Hackers exploit 32 zero-days on first day of Pwn2Own Ireland",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-06T19:21:53.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-32-zero-days-on-first-day-of-pwn2own-ireland/",
-      "summary": "On the first day of the Pwn2Own Ireland 2026 competition, security researchers hacked the Samsung Galaxy S26 twice and earned $388,500 after exploiting 32 zero-days. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -295,21 +280,6 @@
       }
     },
     {
-      "title": "Bitget Confirms Third-Party Zero-Day Behind $387.5 Million Cryptocurrency Theft",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-01T05:21:10.000Z",
-      "link": "https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html",
-      "summary": "Cryptocurrency exchange Bitget on Wednesday confirmed that attackers who stole $387.5 million last week exploited a zero-day flaw in third-party security products, citing ongoing investigation findings from SlowMist. \"Their investigation identified malicious activity involving t…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "MikroTik RouterOS",
       "source": "CISA",
       "region": "INT",
@@ -382,6 +352,36 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-21589"
+      }
+    },
+    {
+      "title": "Tillsammans för ett mer motståndskraftigt Sverige",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-10-07T12:24:25.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/oktober/tillsammans-for-ett-mer-motstandskraftigt-sverige/",
+      "summary": "Hur kan samhället stå starkare inför kriser, cyberhot och ytterst krig? Det var den centrala frågan när representanter från offentlig sektor, näringsliv och civilsamhälle samlades för konferensen Ökad motståndskraft i samhällsviktig verksamhet.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Attackers Target Rejetto HFS Flaw That Enables Admin Session Forgery and RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-05T08:09:23.000Z",
+      "link": "https://thehackernews.com/2026/10/attackers-target-rejetto-hfs-flaw-that.html",
+      "summary": "A critical security flaw impacting Rejetto HTTP File Server (HFS) is witnessing active exploitation attempts, according to VulnCheck. The vulnerability in question is CVE-2026-61500 (CVSS score: 9.3), a case of session forgery stemming from the use of a weak pseudo-random number…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-61500"
       }
     }
   ],
