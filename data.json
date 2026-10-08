@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-08T00:56:29.621Z",
-  "next_update": "2026-10-08T01:07:00.000Z",
+  "updated": "2026-10-08T07:16:50.684Z",
+  "next_update": "2026-10-08T07:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, utnyttjas aktivt och har rapporterats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer och kritisk infrastruktur. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket motiverar en förhöjd beredskap.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway, FortiMail och Citrix NetScaler, rapporteras aktivt utnyttjas. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter ännu, är risken för attacker mot svenska organisationer förhöjd.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 13,
-    "critical": 12,
-    "authority_alerts": 14,
+    "actively_exploited": 14,
+    "critical": 11,
+    "authority_alerts": 13,
     "kev_recent": 3
   },
   "anomaly": {
@@ -127,6 +127,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-102489"
+      }
+    },
+    {
+      "title": "Samsung Galaxy S26 hacked three more times at Pwn2Own Ireland",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-08T06:32:16.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/samsung-galaxy-s26-hacked-three-more-times-at-pwn2own-ireland/",
+      "summary": "​​​On the second day of Pwn2Own Ireland 2026, security researchers collected $232,500 in cash awards after exploiting 45 unique zero-day vulnerabilities. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -310,6 +325,21 @@
       }
     },
     {
+      "title": "Tensorlake npm Package Compromised to Deliver Shai-Hulud Credential-Stealing Worm",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-08T05:46:20.000Z",
+      "link": "https://thehackernews.com/2026/10/tensorlake-npm-package-compromised-to.html",
+      "summary": "The npm package known as \"tensorlake,\" a TypeScript software development kit (SDK) for Tensorlake applications, sandboxes, and cloud services, was compromised as part of a ChainDrop / Shai-Hulud supply chain attack. The malicious version 0.5.144 \"contains obfuscated malware that…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "SonicWall Patches CVSS 10.0 Pre-Authentication SSRF Flaw in SMA1000 Appliances",
       "source": "The Hacker News",
       "region": "INT",
@@ -346,36 +376,6 @@
       "date": "2026-10-07T12:49:01.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-critical-atlassian-flaw-after-public-poc-release/",
       "summary": "A critical vulnerability (CVE-2026-21589) affecting multiple Atlassian product families, including Jira, Confluence, and Bitbucket, is being exploited in attacks that do not require authentication. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-21589"
-      }
-    },
-    {
-      "title": "Tillsammans för ett mer motståndskraftigt Sverige",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-10-07T12:24:25.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/oktober/tillsammans-for-ett-mer-motstandskraftigt-sverige/",
-      "summary": "Hur kan samhället stå starkare inför kriser, cyberhot och ytterst krig? Det var den centrala frågan när representanter från offentlig sektor, näringsliv och civilsamhälle samlades för konferensen Ökad motståndskraft i samhällsviktig verksamhet.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Atlassian warns of critical file-access flaw in Jira, Confluence",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-06T17:34:59.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/atlassian-warns-of-critical-file-access-flaw-in-jira-confluence/",
-      "summary": "Atlassian is warning customers of a critical vulnerability, tracked as CVE-2026-21589, that can be exploited for arbitrary file-access in multiple self-hosted Data Center products, including Confluence, Jira, and Bitbucket. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
