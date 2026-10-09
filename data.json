@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-09T15:14:17.034Z",
-  "next_update": "2026-10-09T15:37:00.000Z",
+  "updated": "2026-10-09T20:18:45.580Z",
+  "next_update": "2026-10-09T20:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter i stor skala, är det tydliga signaler om aktivitet som kan påverka svensk kritisk infrastruktur. Det internationella bakgrundsbruset är högt, men den svenska kopplingen gör att hotnivån höjs till 'gul'.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa utnyttjade sårbarheter. Det finns också en allmän internationell aktivitet kring Citrix NetScaler, vilket ytterligare förstärker behovet av försiktighet.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
