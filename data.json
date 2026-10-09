@@ -1,19 +1,19 @@
 {
-  "updated": "2026-10-08T20:39:58.348Z",
-  "next_update": "2026-10-08T21:07:00.000Z",
+  "updated": "2026-10-09T01:10:29.481Z",
+  "next_update": "2026-10-09T01:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Även om det inte finns bekräftade incidenter för närvarande, indikerar CERT-SE:s varningar och CISA KEV-katalogen en ökad risk för svenska organisationer. Detta kräver förhöjd beredskap och åtgärder för att skydda kritisk infrastruktur.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter för storskaliga attacker mot svensk kritisk infrastruktur, är det uppenbart att det finns en aktiv och pågående hotbild med tydlig svensk koppling.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 16,
-    "critical": 9,
-    "authority_alerts": 18,
-    "kev_recent": 8
+    "actively_exploited": 14,
+    "critical": 10,
+    "authority_alerts": 16,
+    "kev_recent": 6
   },
   "anomaly": {
     "active": false,
@@ -130,21 +130,6 @@
       }
     },
     {
-      "title": "CVE-2026-102489: Zammad GmbH Zammad Session Fixation Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-02T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-102489",
-      "summary": "Zammad GmbH Zammad – Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-102489"
-      }
-    },
-    {
       "title": "Samsung Galaxy S26 hacked three more times at Pwn2Own Ireland",
       "source": "BleepingComputer",
       "region": "INT",
@@ -232,21 +217,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-88779"
-      }
-    },
-    {
-      "title": "CVE-2026-102490: Zammad GmbH Zammad Improper Privilege Management Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-02T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-102490",
-      "summary": "Zammad GmbH Zammad – Zammad GmbH Zammad contains an improper privilege management vulnerability that can allow the local zammad user to escalate privileges to root. This vulnerability can be chained with CVE-2026-102489.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-102490"
       }
     },
     {
@@ -383,6 +353,36 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "SonicWall Patches CVSS 10.0 Pre-Authentication SSRF Flaw in SMA1000 Appliances",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-07T16:17:44.000Z",
+      "link": "https://thehackernews.com/2026/10/sonicwall-patches-cvss-100-pre.html",
+      "summary": "SonicWall has released hotfixes for four flaws in its SMA1000 appliances, the gateways that give remote workers access to a company's network and applications. The most serious could allow an attacker without a login to send requests through the appliance and reach internal func…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Unpatched Critical LMCache Flaw Lets Unauthenticated Attackers Run Code Remotely",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-07T15:34:53.000Z",
+      "link": "https://thehackernews.com/2026/10/unpatched-critical-lmcache-flaw-lets.html",
+      "summary": "A critical vulnerability in LMCache, open-source software that speeds up large language model (LLM) servers such as vLLM, lets an attacker run code on the cache server without logging in, and no fixed version is available. The flaw is in LMCache's multiprocess mode, where the ca…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 8
+      "count": 6
     },
     {
       "name": "CISA",
