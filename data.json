@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-10T06:21:04.555Z",
-  "next_update": "2026-10-10T06:37:00.000Z",
+  "updated": "2026-10-10T13:00:36.954Z",
+  "next_update": "2026-10-10T13:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska, aktivt utnyttjade sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i vanliga system som Cisco Secure Email Gateway, FortiMail och Citrix NetScaler har identifierats och utnyttjas aktivt, med tydlig svensk koppling via CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Dessa utgör en direkt risk för svenska organisationer. Även om det inte finns bekräftade incidenter för närvarande, är det uppenbart att angripare aktivt utnyttjar dessa sårbarheter, vilket ökar risken för attacker mot svenska mål. Det finns dock inte tillräckligt med signaler för att klassificera läget som rött.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
@@ -355,21 +355,6 @@
       }
     },
     {
-      "title": "Cisco warns of critical flaws allowing Nexus switch takeover",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-08T15:26:33.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-critical-flaws-allowing-nexus-switch-takeover/",
-      "summary": "Cisco released security advisories for five critical vulnerabilities in its NX-OS data center network operating system that could be exploited to run arbitrary code with root privileges on Nexus switches. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Tensorlake npm Package Compromised to Deliver Shai-Hulud Credential-Stealing Worm",
       "source": "The Hacker News",
       "region": "INT",
@@ -380,6 +365,21 @@
         "activelyExploited": false,
         "critical": false,
         "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "SonicWall Patches CVSS 10.0 Pre-Authentication SSRF Flaw in SMA1000 Appliances",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-07T16:17:44.000Z",
+      "link": "https://thehackernews.com/2026/10/sonicwall-patches-cvss-100-pre.html",
+      "summary": "SonicWall has released hotfixes for four flaws in its SMA1000 appliances, the gateways that give remote workers access to a company's network and applications. The most serious could allow an attacker without a login to send requests through the appliance and reach internal func…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
