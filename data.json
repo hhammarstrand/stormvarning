@@ -1,16 +1,16 @@
 {
-  "updated": "2026-10-09T20:18:45.580Z",
-  "next_update": "2026-10-09T20:37:00.000Z",
+  "updated": "2026-10-10T00:17:58.477Z",
+  "next_update": "2026-10-10T00:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa utnyttjade sårbarheter. Det finns också en allmän internationell aktivitet kring Citrix NetScaler, vilket ytterligare förstärker behovet av försiktighet.",
-  "score": 97,
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Även om det inte finns bekräftade incidenter för närvarande, indikerar CERT-SE:s rapportering och CISA KEV-katalogen en tydlig risk för svenska organisationer. Detta, tillsammans med den höga aktiviteten av aktivt utnyttjade sårbarheter, motiverar en förhöjd beredskap.",
+  "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
     "sweden_acute": 6,
-    "actively_exploited": 13,
+    "actively_exploited": 12,
     "critical": 11,
     "authority_alerts": 17,
     "kev_recent": 6
@@ -18,7 +18,7 @@
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": 0
+    "delta": -1
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -225,13 +225,13 @@
       "region": "INT",
       "date": "2026-09-27T12:00:00.000Z",
       "link": "https://www.cisa.gov/news-events/alerts/2026/09/27/critical-zero-day-vulnerabilities-exploited-citrix-netscaler-adc-gateway",
-      "summary": "<p><strong>Update October 2, 2026:</strong></p> <p><em>CISA has updated this Alert to provide a SIGMA detection rule resource to help identify potentially suspicious activity.</em></p> <p>CISA is amplifying Citrix’s disclosure of eight new vulnerabilities affecting Citrix NetSca…",
+      "summary": "<div class=\"SCXW18458767 BCX8\"> <div class=\"OutlineElement Ltr SCXW18458767 BCX8\"> <p><strong>Update</strong> <strong>October 9, 2026</strong>:&nbsp;</p> </div> <div class=\"OutlineElement Ltr SCXW18458767 BCX8\"> <p><em>CISA has updated this Alert to: (1) include CVE-2026-107406;…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
+        "cve": "CVE-2026-107406"
       }
     },
     {
@@ -277,21 +277,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "New NetScaler Zero-Day Exploited in Targeted Attacks Can Knock SAML Deployments Offline",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-05T06:40:19.000Z",
-      "link": "https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html",
-      "summary": "Citrix has released security updates for a high-severity security flaw in NetScaler ADC and NetScaler Gateway that has been exploited as part of targeted zero-day attacks. The vulnerability, tracked as CVE-2026-88779, carries a CVSS score of 8.7 out of 10.0. \"CVE-2026-88779 is a…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-88779"
       }
     },
     {
@@ -380,6 +365,21 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Tensorlake npm Package Compromised to Deliver Shai-Hulud Credential-Stealing Worm",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-08T05:46:20.000Z",
+      "link": "https://thehackernews.com/2026/10/tensorlake-npm-package-compromised-to.html",
+      "summary": "The npm package known as \"tensorlake,\" a TypeScript software development kit (SDK) for Tensorlake applications, sandboxes, and cloud services, was compromised as part of a ChainDrop / Shai-Hulud supply chain attack. The malicious version 0.5.144 \"contains obfuscated malware that…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
