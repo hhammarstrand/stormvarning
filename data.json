@@ -1,19 +1,19 @@
 {
-  "updated": "2026-10-10T21:35:55.135Z",
-  "next_update": "2026-10-10T21:37:00.000Z",
+  "updated": "2026-10-11T00:28:49.585Z",
+  "next_update": "2026-10-11T00:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns också en generell varning från MCF om hybridhot som påverkar samhällsviktiga funktioner, vilket ytterligare stärker behovet av försiktighet.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns också en generell varning från MCF om hybridhot som påverkar samhällsviktiga funktioner, vilket ytterligare förstärker behovet av försiktighet.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
     "sweden_acute": 6,
-    "actively_exploited": 12,
-    "critical": 11,
-    "authority_alerts": 17,
-    "kev_recent": 6
+    "actively_exploited": 11,
+    "critical": 12,
+    "authority_alerts": 16,
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
@@ -187,21 +187,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2015-3306"
-      }
-    },
-    {
-      "title": "CVE-2026-88779: Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-04T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-88779",
-      "summary": "Citrix NetScaler – Citrix NetScaler ADC (formerly Citrix ADC) and Citrix NetScaler Gateway (formerly Citrix Gateway) contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for a denial of service.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-88779"
       }
     },
     {
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Unpatched Critical LMCache Flaw Lets Unauthenticated Attackers Run Code Remotely",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-07T15:34:53.000Z",
+      "link": "https://thehackernews.com/2026/10/unpatched-critical-lmcache-flaw-lets.html",
+      "summary": "A critical vulnerability in LMCache, open-source software that speeds up large language model (LLM) servers such as vLLM, lets an attacker run code on the cache server without logging in, and no fixed version is available. The flaw is in LMCache's multiprocess mode, where the ca…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 6
+      "count": 5
     },
     {
       "name": "CISA",
