@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-13T08:24:02.611Z",
-  "next_update": "2026-10-13T08:37:00.000Z",
+  "updated": "2026-10-13T16:24:13.010Z",
+  "next_update": "2026-10-13T16:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige, såsom Cisco Secure Email Gateway och Citrix NetScaler, utnyttjas aktivt och har bekräftats av CERT-SE. Även om det inte finns bekräftade incidenter för närvarande, indikerar CERT-SE:s rapportering en tydlig risk för svenska organisationer. Det finns också en generell internationell aktivitet kring dessa sårbarheter, vilket ökar sannolikheten för attacker mot svenska mål.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade, vilket påverkar svenska system och infrastruktur. CERT-SE har utfärdat varningar om dessa sårbarheter, inklusive CVE-2026-76460, CVE-2026-104286, CVE-2026-88771, CVE-2026-88772 och CVE-2026-94127, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är risken för pågående attacker mot svenska organisationer förhöjd.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
@@ -13,7 +13,7 @@
     "actively_exploited": 10,
     "critical": 13,
     "authority_alerts": 16,
-    "kev_recent": 5
+    "kev_recent": 6
   },
   "anomaly": {
     "active": false,
@@ -24,21 +24,6 @@
   "de_escalation": null,
   "down_streak": 0,
   "events": [
-    {
-      "title": "Kritisk sårbarhet i Cisco Secure Email Gateway utnyttjas aktivt",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-15T13:00:00.000Z",
-      "link": "https://www.cert.se/2026/09/kritisk-sarbarhet-i-cisco-secure-email-gateway-utnyttjas-aktivt.html",
-      "summary": "<p>Cisco har publicerat information om en kritisk SQL injection-sårbarhet i Cisco Secure Email Gateway som utnyttjas aktivt. Sårbarheten (CVE-2026-76461) har fått CVSS-klassificering 9.8 (CVSS v.3.1). [1] CISA har lagt till sårbarheten i KEV-katalogen (Known Exploited Vulnerabil…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-76461"
-      }
-    },
     {
       "title": "Cisco publicerar säkerhetsuppdateringar för flera sårbarheter",
       "source": "CERT-SE",
@@ -52,6 +37,21 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-76460"
+      }
+    },
+    {
+      "title": "GitLab rättar kritisk sårbarhet",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-13T09:50:00.000Z",
+      "link": "https://www.cert.se/2026/10/gitlab-rattar-kritisk-sarbarhet.html",
+      "summary": "<p>GitLab har publicerat säkerhetsuppdateringar för flera sårbarheter i GitLab Community Edition (CE) och Enterprise Edition (EE). [1]</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
       }
     },
     {
@@ -130,6 +130,21 @@
       }
     },
     {
+      "title": "CVE-2026-104935: Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-13T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-104935",
+      "summary": "Ivanti Connect Secure – Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-104935"
+      }
+    },
+    {
       "title": "CVE-2015-5477:  ISC BIND Data Processing Errors Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -205,18 +220,18 @@
       }
     },
     {
-      "title": "Critical Zero-Day Vulnerabilities Exploited in Citrix NetScaler ADC, Gateway",
-      "source": "CISA",
+      "title": "Ivanti warns of Connect Secure zero-day exploited in attacks",
+      "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-09-27T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/alerts/2026/09/27/critical-zero-day-vulnerabilities-exploited-citrix-netscaler-adc-gateway",
-      "summary": "<div class=\"SCXW18458767 BCX8\"> <div class=\"OutlineElement Ltr SCXW18458767 BCX8\"> <p><strong>Update</strong> <strong>October 9, 2026</strong>:&nbsp;</p> </div> <div class=\"OutlineElement Ltr SCXW18458767 BCX8\"> <p><em>CISA has updated this Alert to: (1) include CVE-2026-107406;…",
+      "date": "2026-10-13T15:45:50.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-connect-secure-zero-day-exploited-in-attacks/",
+      "summary": "Ivanti urged customers on Tuesday to immediately patch an actively exploited zero-day vulnerability in the Ivanti Connect Secure (ICS) remote access gateway. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-107406"
+        "cve": null
       }
     },
     {
@@ -256,6 +271,51 @@
       "date": "2026-09-29T12:00:00.000Z",
       "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-272-06",
       "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-272-06.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could allow an attacker to achieve remote code execution or cause a…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Docker Hub flaw let attackers impersonate users, tamper with images",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-13T15:20:20.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/docker-hub-flaw-let-attackers-impersonate-users-tamper-with-images/",
+      "summary": "Docker has disclosed a critical vulnerability (CVE-2026-105445) in Docker Hub that let attackers access another user's container repositories using a personal access token (PAT). [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-105445"
+      }
+    },
+    {
+      "title": "LG Smart TVs Vulnerable to Pre-Auth Root Takeover From Local Network",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-13T11:09:10.000Z",
+      "link": "https://thehackernews.com/2026/10/lg-smart-tvs-vulnerable-to-pre-auth.html",
+      "summary": "Three vulnerabilities in LG's webOS can be chained to give an attacker on the same local network root access to certain smart TVs without a PIN or any interaction from the owner. LG has issued a fix, according to an advisory published by SSD Secure Disclosure on October 12. The…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "GitLab Patches CVSS 10.0 Flaw That Could Let Unauthenticated Users Run Server Code",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-13T08:43:37.000Z",
+      "link": "https://thehackernews.com/2026/10/gitlab-patches-cvss-100-flaw-that-could.html",
+      "summary": "GitLab has released patches for a maximum-severity security flaw impacting its Community Edition (CE) and Enterprise Edition (EE) software that could result in arbitrary code execution. \"GitLab has remediated an issue that, under certain conditions, could have allowed an unauthe…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -323,66 +383,6 @@
         "swedenRelevant": true,
         "cve": null
       }
-    },
-    {
-      "title": "Citrix Patches Critical NetScaler Flaw That Could Enable RCE in SAML Deployments",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-09T08:11:33.000Z",
-      "link": "https://thehackernews.com/2026/10/citrix-patches-critical-netscaler-flaw.html",
-      "summary": "Citrix has released patches for yet another critical security flaw impacting NetScaler ADC and NetScaler Gateway that could result in remote code execution or denial-of-service (DoS) under certain conditions. \"CVE-2026-107406 is a memory overflow vulnerability that may lead to r…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-107406"
-      }
-    },
-    {
-      "title": "Tensorlake npm Package Compromised to Deliver Shai-Hulud Credential-Stealing Worm",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-08T05:46:20.000Z",
-      "link": "https://thehackernews.com/2026/10/tensorlake-npm-package-compromised-to.html",
-      "summary": "The npm package known as \"tensorlake,\" a TypeScript software development kit (SDK) for Tensorlake applications, sandboxes, and cloud services, was compromised as part of a ChainDrop / Shai-Hulud supply chain attack. The malicious version 0.5.144 \"contains obfuscated malware that…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "SonicWall Patches CVSS 10.0 Pre-Authentication SSRF Flaw in SMA1000 Appliances",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-07T16:17:44.000Z",
-      "link": "https://thehackernews.com/2026/10/sonicwall-patches-cvss-100-pre.html",
-      "summary": "SonicWall has released hotfixes for four flaws in its SMA1000 appliances, the gateways that give remote workers access to a company's network and applications. The most serious could allow an attacker without a login to send requests through the appliance and reach internal func…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Unpatched Critical LMCache Flaw Lets Unauthenticated Attackers Run Code Remotely",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-07T15:34:53.000Z",
-      "link": "https://thehackernews.com/2026/10/unpatched-critical-lmcache-flaw-lets.html",
-      "summary": "A critical vulnerability in LMCache, open-source software that speeds up large language model (LLM) servers such as vLLM, lets an attacker run code on the cache server without logging in, and no fixed version is available. The flaw is in LMCache's multiprocess mode, where the ca…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 5
+      "count": 6
     },
     {
       "name": "CISA",
