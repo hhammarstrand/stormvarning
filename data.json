@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-13T16:24:13.010Z",
-  "next_update": "2026-10-13T16:37:00.000Z",
+  "updated": "2026-10-13T21:30:55.972Z",
+  "next_update": "2026-10-13T21:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade, vilket påverkar svenska system och infrastruktur. CERT-SE har utfärdat varningar om dessa sårbarheter, inklusive CVE-2026-76460, CVE-2026-104286, CVE-2026-88771, CVE-2026-88772 och CVE-2026-94127, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i stor skala, är risken för pågående attacker mot svenska organisationer förhöjd.",
-  "score": 96,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige har identifierats, och CERT-SE har utfärdat varningar om aktivt utnyttjande. Exempelvis finns det en aktivt utnyttjad sårbarhet i Cisco ISE och kritisk sårbarhet i FortiMail, vilket kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot kritisk infrastruktur förhöjd på grund av dessa signaler.",
+  "score": 97,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
+    "sweden_relevant": 6,
     "sweden_acute": 6,
-    "actively_exploited": 10,
-    "critical": 13,
+    "actively_exploited": 13,
+    "critical": 11,
     "authority_alerts": 16,
-    "kev_recent": 6
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": -1
+    "delta": 0
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -145,6 +145,21 @@
       }
     },
     {
+      "title": "CVE-2026-96951: Microsoft Windows Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-13T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96951",
+      "summary": "Microsoft Windows – Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-96951"
+      }
+    },
+    {
       "title": "CVE-2015-5477:  ISC BIND Data Processing Errors Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -220,6 +235,36 @@
       }
     },
     {
+      "title": "Microsoft October 2026 Patch Tuesday fixes 1,411 flaws, 3 zero-days",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-13T19:56:09.000Z",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-october-2026-patch-tuesday-fixes-1-411-flaws-3-zero-days/",
+      "summary": "Today is Microsoft's October 2026 Patch Tuesday, with security updates addressing a record-breaking 1,411 flaws, including one actively exploited and two publicly disclosed zero-day vulnerabilities. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Attacker Chains Three Ivanti Connect Secure Zero-Days for Root Access, Only Two Patched So Far",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-13T17:33:11.000Z",
+      "link": "https://thehackernews.com/2026/10/attacker-chains-three-ivanti-connect.html",
+      "summary": "An attacker chained three zero-day flaws in Ivanti Connect Secure, a VPN appliance, to run commands as root without logging in, security firm Volexity said on October 13. Ivanti has released fixes for two of the flaws and told customers on affected versions to \"act immediately.\"…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Ivanti warns of Connect Secure zero-day exploited in attacks",
       "source": "BleepingComputer",
       "region": "INT",
@@ -280,6 +325,21 @@
       }
     },
     {
+      "title": "SAP Discloses Critical CVSS 10 Flaw in Cloud SDK for Python Allowing OAuth2 Credential Theft",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-13T17:28:50.000Z",
+      "link": "https://thehackernews.com/2026/10/sap-discloses-critical-cvss-10-flaw-in.html",
+      "summary": "A flaw in SAP's Cloud SDK for Python can send an application's OAuth2 client credentials to a server an attacker controls, SAP said in a security advisory on October 13. The flaw affects multi-tenant applications on SAP Business Technology Platform (BTP) that use the SDK, SAP's…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Docker Hub flaw let attackers impersonate users, tamper with images",
       "source": "BleepingComputer",
       "region": "INT",
@@ -323,66 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Critical SonicWall SMA 1000 Flaw Targeted in 135 Exploitation Attempts After Patch",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-12T10:36:56.000Z",
-      "link": "https://thehackernews.com/2026/10/critical-sonicwall-sma-1000-flaw.html",
-      "summary": "Threat actors have been observed exploiting a recently disclosed critical security flaw in SonicWall Secure Mobile Access (SMA) 1000 appliances within days of public disclosure. The vulnerability, tracked as CVE-2026-102255 (CVSS score: 10.0), is a case of pre-authenticated serv…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-102255"
-      }
-    },
-    {
-      "title": "Attackers Exploit CVSS 10.0 Bricksforge WordPress Flaw Enabling Unauthenticated RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-12T09:02:14.000Z",
-      "link": "https://thehackernews.com/2026/10/attackers-exploit-cvss-100-bricksforge.html",
-      "summary": "A maximum-severity security flaw impacting the Bricksforge plugin for WordPress has come under active exploitation in the wild, according to Patchstack. The critical vulnerability in question is CVE-2026-85097 (CVSS score: 10.0), which allows unauthenticated attackers to upload…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-85097"
-      }
-    },
-    {
-      "title": "Researchers Publish Working Exploit for Pre-Auth AnyDesk Linux Flaw That Gives Root Access",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-09T12:59:22.000Z",
-      "link": "https://thehackernews.com/2026/10/researchers-publish-working-exploit-for.html",
-      "summary": "Security researchers have published a full working exploit for a pre-authentication remote code execution flaw in AnyDesk Linux that gives attackers root access before anyone approves the connection. AnyDesk patched the flaw in version 8.0.3 in June, but its changelog described…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.41",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-09T10:25:00.000Z",
-      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v41.html",
-      "summary": "<p>Antar du vår utmaning? CERT-SE:s årliga CTF-utmaning är nu igång! Utmaningen pågår under cybersäkerhetsmånaden och vänder sig till alla med it-säkerhetsintresse oavsett kunskapsnivå. Hitta så många flaggor du kan och beskriv hur du hittade dem och mejla ditt svar till cert@ce…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 6
+      "count": 7
     },
     {
       "name": "CISA",
