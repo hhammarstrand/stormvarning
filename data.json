@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-14T10:33:55.069Z",
-  "next_update": "2026-10-14T10:37:00.000Z",
+  "updated": "2026-10-14T15:27:34.711Z",
+  "next_update": "2026-10-14T15:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, men ingen direkt bekräftad attack mot svensk infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, vilket innebär en förhöjd risk. Särskilt signaler från CERT-SE om kritiska sårbarheter i FortiMail, Citrix NetScaler och GitLab med svensk koppling är anmärkningsvärda. Även om det finns en generell internationell aktivitet, saknas bekräftade incidenter eller attacker mot svensk kritisk infrastruktur, vilket begränsar hotnivån till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom kritisk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, med specifika svenska myndighetsvarningar (CERT-SE) om sårbarheter i programvara som används i Sverige. Även om det inte finns bekräftade incidenter i Sverige, indikerar varningarna och det aktiva utnyttjandet en förhöjd risk för attacker mot svensk kritisk infrastruktur och samhällsviktig verksamhet.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 12,
-    "critical": 11,
+    "actively_exploited": 13,
+    "critical": 10,
     "authority_alerts": 16,
     "kev_recent": 7
   },
   "anomaly": {
     "active": false,
-    "baseline": 97,
-    "delta": -2
+    "baseline": 96,
+    "delta": -1
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -220,6 +220,36 @@
       }
     },
     {
+      "title": "CISA warns admins to immediately fix Ivanti flaw exploited as zero-day",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-14T12:58:07.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) urged security teams to immediately patch an Ivanti Connect Secure (ICS) flaw exploited in zero-day attacks since at least October 1st. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "CISA Urges Immediate Ivanti Connect Secure Updates as Honeypots Log 105 Exploit Attempts",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-14T12:30:42.000Z",
+      "link": "https://thehackernews.com/2026/10/cisa-urges-immediate-ivanti-connect.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday urged organizations to take steps to immediately update their Ivanti Connect Secure (ICS) appliances and deployments to the latest version following the disclosure of an actively exploited vulnerability.…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Microsoft October 2026 Patch Tuesday fixes 1,411 flaws, 3 zero-days",
       "source": "BleepingComputer",
       "region": "INT",
@@ -241,21 +271,6 @@
       "date": "2026-10-13T17:33:11.000Z",
       "link": "https://thehackernews.com/2026/10/attacker-chains-three-ivanti-connect.html",
       "summary": "An attacker chained three zero-day flaws in Ivanti Connect Secure, a VPN appliance, to run commands as root without logging in, security firm Volexity said on October 13. Ivanti has released fixes for two of the flaws and told customers on affected versions to \"act immediately.\"…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Ivanti warns of Connect Secure zero-day exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-13T15:45:50.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-connect-secure-zero-day-exploited-in-attacks/",
-      "summary": "Ivanti urged customers on Tuesday to immediately patch an actively exploited zero-day vulnerability in the Ivanti Connect Secure (ICS) remote access gateway. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -352,21 +367,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Docker Hub flaw let attackers impersonate users, tamper with images",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-13T15:20:20.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/docker-hub-flaw-let-attackers-impersonate-users-tamper-with-images/",
-      "summary": "Docker has disclosed a critical vulnerability (CVE-2026-105445) in Docker Hub that let attackers access another user's container repositories using a personal access token (PAT). [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-105445"
       }
     },
     {
