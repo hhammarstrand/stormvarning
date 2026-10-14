@@ -1,16 +1,16 @@
 {
-  "updated": "2026-10-14T05:22:43.318Z",
-  "next_update": "2026-10-14T05:37:00.000Z",
+  "updated": "2026-10-14T10:33:55.069Z",
+  "next_update": "2026-10-14T10:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade, vilket påverkar svensk infrastruktur direkt. CERT-SE har utfärdat varningar om dessa sårbarheter, inklusive CVE-2026-76460, CVE-2026-104286, CVE-2026-88771, CVE-2026-88772, CVE-2026-94127 och andra. Dessa utgör en direkt risk för svenska organisationer och kräver omedelbara åtgärder. Även om det inte finns bekräftade incidenter ännu, är risken för pågående attacker hög.",
-  "score": 97,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, men ingen direkt bekräftad attack mot svensk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, vilket innebär en förhöjd risk. Särskilt signaler från CERT-SE om kritiska sårbarheter i FortiMail, Citrix NetScaler och GitLab med svensk koppling är anmärkningsvärda. Även om det finns en generell internationell aktivitet, saknas bekräftade incidenter eller attacker mot svensk kritisk infrastruktur, vilket begränsar hotnivån till 'gul'.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
-    "sweden_acute": 6,
-    "actively_exploited": 13,
+    "sweden_acute": 5,
+    "actively_exploited": 12,
     "critical": 11,
     "authority_alerts": 16,
     "kev_recent": 7
@@ -18,27 +18,12 @@
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": 0
+    "delta": -2
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
-    {
-      "title": "Cisco publicerar säkerhetsuppdateringar för flera sårbarheter",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-17T13:20:00.000Z",
-      "link": "https://www.cert.se/2026/09/cisco-publicerar-sakerhetsuppdateringar.html",
-      "summary": "<p>Den 16 september publicerade Cisco säkerhetsuppdateringar för flera sårbarheter, där några av dessa utnyttjas aktivt enligt Cisco. [1, 2] Ett exempel är CVE-2026-76460, en sårbarhet i ett API för Cisco Identity Services Engine (ISE). Framgångsrikt utnyttjande innebär att en o…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-76460"
-      }
-    },
     {
       "title": "GitLab rättar kritisk sårbarhet",
       "source": "CERT-SE",
@@ -321,6 +306,21 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Patchtisdag oktober 2026",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-14T06:50:00.000Z",
+      "link": "https://www.cert.se/2026/10/patchtisdag-oktober-2026.html",
+      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för oktober.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
         "cve": null
       }
     },
