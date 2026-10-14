@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-13T21:30:55.972Z",
-  "next_update": "2026-10-13T21:37:00.000Z",
+  "updated": "2026-10-14T00:35:14.919Z",
+  "next_update": "2026-10-14T00:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i produkter som används i Sverige har identifierats, och CERT-SE har utfärdat varningar om aktivt utnyttjande. Exempelvis finns det en aktivt utnyttjad sårbarhet i Cisco ISE och kritisk sårbarhet i FortiMail, vilket kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot kritisk infrastruktur förhöjd på grund av dessa signaler.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade, vilket påverkar svensk infrastruktur. CERT-SE har utfärdat varningar om dessa sårbarheter, inklusive CVE-2026-76460, CVE-2026-104286, CVE-2026-88771, CVE-2026-88772, CVE-2026-94127 och andra. Dessa utgör en direkt risk för svenska organisationer och kräver omedelbara åtgärder. Även om det inte finns bekräftade incidenter i Sverige ännu, är risken för pågående attacker hög. Det internationella bakgrundsbruset är också högt, men den svenska kopplingen gör att hotnivån höjs till 'gul'.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
@@ -325,6 +325,21 @@
       }
     },
     {
+      "title": "Ghostscript flaw lets hackers hijack servers via PDF uploads",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-13T21:33:26.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/ghostscript-flaw-lets-hackers-hijack-servers-via-pdf-uploads/",
+      "summary": "A critical heap buffer overflow vulnerability (CVE-2026-39919) in the Ghostscript interpreter and rendering engine could allow remote code execution through specially crafted PDF files. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-39919"
+      }
+    },
+    {
       "title": "SAP Discloses Critical CVSS 10 Flaw in Cloud SDK for Python Allowing OAuth2 Credential Theft",
       "source": "The Hacker News",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-10-13T11:09:10.000Z",
       "link": "https://thehackernews.com/2026/10/lg-smart-tvs-vulnerable-to-pre-auth.html",
       "summary": "Three vulnerabilities in LG's webOS can be chained to give an attacker on the same local network root access to certain smart TVs without a PIN or any interaction from the owner. LG has issued a fix, according to an advisory published by SSD Secure Disclosure on October 12. The…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "GitLab Patches CVSS 10.0 Flaw That Could Let Unauthenticated Users Run Server Code",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-13T08:43:37.000Z",
-      "link": "https://thehackernews.com/2026/10/gitlab-patches-cvss-100-flaw-that-could.html",
-      "summary": "GitLab has released patches for a maximum-severity security flaw impacting its Community Edition (CE) and Enterprise Edition (EE) software that could result in arbitrary code execution. \"GitLab has remediated an issue that, under certain conditions, could have allowed an unauthe…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
