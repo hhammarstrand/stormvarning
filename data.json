@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-14T00:35:14.919Z",
-  "next_update": "2026-10-14T00:37:00.000Z",
+  "updated": "2026-10-14T05:22:43.318Z",
+  "next_update": "2026-10-14T05:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade, vilket påverkar svensk infrastruktur. CERT-SE har utfärdat varningar om dessa sårbarheter, inklusive CVE-2026-76460, CVE-2026-104286, CVE-2026-88771, CVE-2026-88772, CVE-2026-94127 och andra. Dessa utgör en direkt risk för svenska organisationer och kräver omedelbara åtgärder. Även om det inte finns bekräftade incidenter i Sverige ännu, är risken för pågående attacker hög. Det internationella bakgrundsbruset är också högt, men den svenska kopplingen gör att hotnivån höjs till 'gul'.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade, vilket påverkar svensk infrastruktur direkt. CERT-SE har utfärdat varningar om dessa sårbarheter, inklusive CVE-2026-76460, CVE-2026-104286, CVE-2026-88771, CVE-2026-88772, CVE-2026-94127 och andra. Dessa utgör en direkt risk för svenska organisationer och kräver omedelbara åtgärder. Även om det inte finns bekräftade incidenter ännu, är risken för pågående attacker hög.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
