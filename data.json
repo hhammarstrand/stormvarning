@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-14T19:39:53.839Z",
-  "next_update": "2026-10-14T20:07:00.000Z",
+  "updated": "2026-10-14T23:09:46.140Z",
+  "next_update": "2026-10-14T23:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 18 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande av sårbarheter som påverkar svensk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, vilket innebär en potentiell risk för svensk infrastruktur. CERT-SE har utfärdat varningar om kritiska sårbarheter i produkter som används i Sverige, såsom GitLab, FortiMail, Citrix NetScaler ADC och Gateway, samt F5 BIG-IP APM. Dessa produkter är vanliga i svenska organisationer, vilket ökar risken för påverkan. Även om det inte finns några direkta bekräftade incidenter i Sverige, är detta tillräckligt för att motivera en förhöjd beredskap.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 18,
+    "actively_exploited": 19,
     "critical": 6,
-    "authority_alerts": 18,
+    "authority_alerts": 17,
     "kev_recent": 11
   },
   "anomaly": {
@@ -112,6 +112,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2021-3199"
+      }
+    },
+    {
+      "title": "Palo Alto Networks warns of PAN-OS RCE flaw exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-14T22:56:47.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-pan-os-rce-flaw-exploited-in-attacks/",
+      "summary": "Palo Alto Networks has released security updates for a high-severity PAN-OS RCE zero-day, tracked as CVE-2026-0322, that has been exploited in attacks targeting firewalls. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-0322"
       }
     },
     {
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Hitachi Energy SOI",
-      "source": "CISA",
-      "region": "INT",
-      "date": "2026-10-06T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-279-04",
-      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-279-04.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Hitachi Energy is aware of RCE (Remote Code Execution) vulnerability in Apache ActiveMQ component of SOI product…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
