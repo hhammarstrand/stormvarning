@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-14T23:09:46.140Z",
-  "next_update": "2026-10-14T23:37:00.000Z",
+  "updated": "2026-10-15T01:47:36.750Z",
+  "next_update": "2026-10-15T02:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande av sårbarheter som påverkar svensk infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, vilket innebär en potentiell risk för svensk infrastruktur. CERT-SE har utfärdat varningar om kritiska sårbarheter i produkter som används i Sverige, såsom GitLab, FortiMail, Citrix NetScaler ADC och Gateway, samt F5 BIG-IP APM. Dessa produkter är vanliga i svenska organisationer, vilket ökar risken för påverkan. Även om det inte finns några direkta bekräftade incidenter i Sverige, är detta tillräckligt för att motivera en förhöjd beredskap.",
-  "score": 96,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk kritisk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, med specifika svenska myndighetsvarningar om deras påverkan på svensk infrastruktur. Exempelvis har CERT-SE varnat för kritiska sårbarheter i FortiMail, Citrix NetScaler ADC/Gateway och GitLab, vilket indikerar en potentiell risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är detta tillräckligt för att höja nivån till 'gul'.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 19,
-    "critical": 6,
-    "authority_alerts": 17,
-    "kev_recent": 11
+    "actively_exploited": 14,
+    "critical": 9,
+    "authority_alerts": 15,
+    "kev_recent": 6
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 0
+    "delta": -1
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -97,21 +97,6 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
-      }
-    },
-    {
-      "title": "CVE-2021-3199: ONLYOFFICE Docs Server Path Traversal Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-08T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3199",
-      "summary": "ONLYOFFICE Docs – ONLYOFFICE Docs contains a path traversal vulnerability that can occur when JWT is used, via a /.. sequence in an image upload parameter and could allow for remote code execution.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2021-3199"
       }
     },
     {
@@ -220,66 +205,6 @@
       }
     },
     {
-      "title": "CVE-2015-5477:  ISC BIND Data Processing Errors Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-08T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2015-5477",
-      "summary": "ISC BIND – ISC BIND contains a data processing errors vulnerability that could allow remote attackers to cause a denial of service via TKEY queries.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2015-5477"
-      }
-    },
-    {
-      "title": "CVE-2016-3081: Apache Struts Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-08T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2016-3081",
-      "summary": "Apache Struts – Apache Struts contains a command injection vulnerability that could allow remote attackers to execute arbitrary code via method:prefix when Dynamic Method Invocation is enabled.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2016-3081"
-      }
-    },
-    {
-      "title": "CVE-2023-22894: Strapi Cleartext Storage of Sensitive Information Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-08T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2023-22894",
-      "summary": "Strapi Strapi – Strapi contains a cleartext storage of sensitive information vulnerability that could allow attackers with access to the admin panel to discover sensitive user details via the query filter. The impacted product(s) could be end-of-life (EoL) and/or end-of-service…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2023-22894"
-      }
-    },
-    {
-      "title": "CVE-2015-3306: ProFTPD Improper Access Control Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-08T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2015-3306",
-      "summary": "ProFTPD ProFTPD – ProFTPD contains an improper access control vulnerability that could allow remote attackers to read and write to arbitrary files via the site cpfr and site cpto commands.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2015-3306"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
@@ -383,6 +308,81 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Hitachi Energy SOI",
+      "source": "CISA",
+      "region": "INT",
+      "date": "2026-10-06T12:00:00.000Z",
+      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-279-04",
+      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-279-04.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Hitachi Energy is aware of RCE (Remote Code Execution) vulnerability in Apache ActiveMQ component of SOI product…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "MikroTik RouterOS",
+      "source": "CISA",
+      "region": "INT",
+      "date": "2026-09-29T12:00:00.000Z",
+      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-272-06",
+      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-272-06.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could allow an attacker to achieve remote code execution or cause a…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Patchtisdag oktober 2026",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-14T06:50:00.000Z",
+      "link": "https://www.cert.se/2026/10/patchtisdag-oktober-2026.html",
+      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för oktober.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Ghostscript flaw lets hackers hijack servers via PDF uploads",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-13T21:33:26.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/ghostscript-flaw-lets-hackers-hijack-servers-via-pdf-uploads/",
+      "summary": "A critical heap buffer overflow vulnerability (CVE-2026-39919) in the Ghostscript interpreter and rendering engine could allow remote code execution through specially crafted PDF files. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-39919"
+      }
+    },
+    {
+      "title": "SAP Discloses Critical CVSS 10 Flaw in Cloud SDK for Python Allowing OAuth2 Credential Theft",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-13T17:28:50.000Z",
+      "link": "https://thehackernews.com/2026/10/sap-discloses-critical-cvss-10-flaw-in.html",
+      "summary": "A flaw in SAP's Cloud SDK for Python can send an application's OAuth2 client credentials to a server an attacker controls, SAP said in a security advisory on October 13. The flaw affects multi-tenant applications on SAP Business Technology Platform (BTP) that use the SDK, SAP's…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 11
+      "count": 6
     },
     {
       "name": "CISA",
