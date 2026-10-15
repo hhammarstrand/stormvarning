@@ -1,17 +1,17 @@
 {
-  "updated": "2026-10-15T07:21:00.109Z",
-  "next_update": "2026-10-15T07:37:00.000Z",
+  "updated": "2026-10-15T12:50:10.836Z",
+  "next_update": "2026-10-15T13:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 14 aktivt utnyttjade sårbarheter, 15 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, men ingen direkt bekräftad attack mot svensk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, vilket innebär en förhöjd risk för Sverige. Särskilt viktigt är CERT-SE:s varningar om kritiska sårbarheter i FortiMail, Citrix NetScaler och andra plattformar som används i svensk infrastruktur. Även om det finns en hög aktivitet av internationellt utnyttjande, saknas för närvarande bekräftade attacker mot svensk kritisk infrastruktur eller samhällsviktig verksamhet. Därför bedöms läget som förhöjt men inte allvarligt.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 14,
-    "critical": 9,
+    "actively_exploited": 13,
+    "critical": 10,
     "authority_alerts": 15,
     "kev_recent": 6
   },
@@ -265,21 +265,6 @@
       }
     },
     {
-      "title": "Microsoft October 2026 Patch Tuesday fixes 1,411 flaws, 3 zero-days",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-13T19:56:09.000Z",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-october-2026-patch-tuesday-fixes-1-411-flaws-3-zero-days/",
-      "summary": "Today is Microsoft's October 2026 Patch Tuesday, with security updates addressing a record-breaking 1,411 flaws, including one actively exploited and two publicly disclosed zero-day vulnerabilities. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Attacker Chains Three Ivanti Connect Secure Zero-Days for Root Access, Only Two Patched So Far",
       "source": "The Hacker News",
       "region": "INT",
@@ -340,10 +325,25 @@
       }
     },
     {
+      "title": "Drupal Patches Critical Core RCE Flaw with No-Login Path via Contributed Modules",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-15T12:07:20.000Z",
+      "link": "https://thehackernews.com/2026/10/drupal-patches-critical-core-rce-flaw.html",
+      "summary": "Drupal core has a critical flaw in its Field UI module that could let an attacker run code on the site's server, and fixes were shipped on October 14 in Drupal 11.4.10, 11.3.19, and 10.6.19. An attacker cannot reach the flaw through core alone, the Drupal Security Team said in i…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Palo Alto Networks Patches PAN-OS Authenticated RCE Flaw Amid Active Exploitation",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-10-15T06:17:58.000Z",
+      "date": "2026-10-15T11:46:49.000Z",
       "link": "https://thehackernews.com/2026/10/palo-alto-networks-patches-pan-os.html",
       "summary": "Palo Alto Networks on Wednesday issued security updates for a high-severity flaw in PAN-OS software that has come under active exploitation. The vulnerability, tracked as CVE-2026-0322 (CVSS score: 8.6), is a case of remote code execution in the management interface. \"A remote c…",
       "flags": {
@@ -352,6 +352,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-0322"
+      }
+    },
+    {
+      "title": "Langflow's Critical Authenticated RCE Flaw Targeted in 1,423 Honeypot Exploit Attempts",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-15T07:07:05.000Z",
+      "link": "https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html",
+      "summary": "Threat actors are exploiting a critical security flaw in Langflow, according to an alert from Previdian. Langflow is an open-source platform that allows developers to build artificial intelligence (AI) applications and agentic workflows. In February 2025, DataStax, the parent co…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": null
-      }
-    },
-    {
-      "title": "Ghostscript flaw lets hackers hijack servers via PDF uploads",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-13T21:33:26.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/ghostscript-flaw-lets-hackers-hijack-servers-via-pdf-uploads/",
-      "summary": "A critical heap buffer overflow vulnerability (CVE-2026-39919) in the Ghostscript interpreter and rendering engine could allow remote code execution through specially crafted PDF files. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-39919"
       }
     }
   ],
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
