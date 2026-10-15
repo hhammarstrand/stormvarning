@@ -1,17 +1,17 @@
 {
-  "updated": "2026-10-15T17:44:22.465Z",
-  "next_update": "2026-10-15T18:07:00.000Z",
+  "updated": "2026-10-15T21:18:08.878Z",
+  "next_update": "2026-10-15T21:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk kritisk infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, med specifika svenska myndighetsvarningar om deras påverkan på svensk kritisk infrastruktur. Exempelvis har CERT-SE varnat för kritiska sårbarheter i FortiMail, Citrix NetScaler ADC och Gateway, samt GitLab, vilket indikerar en potentiell risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är detta tillräckligt för att höja nivån till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande av sårbarheter i vanliga system.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, vilket innebär en förhöjd risk för svenska organisationer. CERT-SE har utfärdat varningar om kritiska sårbarheter i vanliga system som GitLab, FortiMail, Citrix NetScaler och F5 BIG-IP, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot sårbara system hög.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 14,
-    "critical": 10,
+    "actively_exploited": 13,
+    "critical": 11,
     "authority_alerts": 14,
     "kev_recent": 7
   },
@@ -250,21 +250,6 @@
       }
     },
     {
-      "title": "CISA warns admins to immediately fix Ivanti flaw exploited as zero-day",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-14T12:58:07.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) urged security teams to immediately patch an Ivanti Connect Secure (ICS) flaw exploited in zero-day attacks since at least October 1st. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "CISA Urges Immediate Ivanti Connect Secure Updates as Honeypots Log 105 Exploit Attempts",
       "source": "The Hacker News",
       "region": "INT",
@@ -325,6 +310,36 @@
       }
     },
     {
+      "title": "Hackers exploit Collabora RCE flaw to backdoor Nextcloud servers",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-15T20:25:04.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-collabora-rce-flaw-to-backdoor-nextcloud-servers/",
+      "summary": "Threat actors are exploiting a critical command execution flaw, now tracked as CVE-2026-110447, in the Collabora Online - Built-in CODE Server app (richdocumentscode) for Nextcloud. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-110447"
+      }
+    },
+    {
+      "title": "ThreatsDay: Adobe RCE, DNS Wallet Theft, NVIDIA Container Escape, Self-Healing Backdoor + 23 More",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-15T18:49:33.000Z",
+      "link": "https://thehackernews.com/2026/10/threatsday-adobe-rce-dns-wallet-theft.html",
+      "summary": "Someone built a tool to steal data, then decided it should scare the victim for fun. Yes, that’s an actual feature. And somehow, it fits right in with this week's security stories. The rest gets interesting in different ways. A small permission can lead to a big theft. A trusted…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "NGINX Fixes 5 Flaws, Including Possible RCE and a TLS Bug That May Skip Client-Cert Checks",
       "source": "The Hacker News",
       "region": "INT",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Palo Alto Networks Patches PAN-OS Authenticated RCE Flaw Amid Active Exploitation",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-15T11:46:49.000Z",
-      "link": "https://thehackernews.com/2026/10/palo-alto-networks-patches-pan-os.html",
-      "summary": "Palo Alto Networks on Wednesday issued security updates for a high-severity flaw in PAN-OS software that has come under active exploitation. The vulnerability, tracked as CVE-2026-0322 (CVSS score: 8.6), is a case of remote code execution in the management interface. \"A remote c…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-0322"
       }
     }
   ],
