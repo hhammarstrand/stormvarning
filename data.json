@@ -1,19 +1,19 @@
 {
-  "updated": "2026-10-15T12:50:10.836Z",
-  "next_update": "2026-10-15T13:07:00.000Z",
+  "updated": "2026-10-15T17:44:22.465Z",
+  "next_update": "2026-10-15T18:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, men ingen direkt bekräftad attack mot svensk infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, vilket innebär en förhöjd risk för Sverige. Särskilt viktigt är CERT-SE:s varningar om kritiska sårbarheter i FortiMail, Citrix NetScaler och andra plattformar som används i svensk infrastruktur. Även om det finns en hög aktivitet av internationellt utnyttjande, saknas för närvarande bekräftade attacker mot svensk kritisk infrastruktur eller samhällsviktig verksamhet. Därför bedöms läget som förhöjt men inte allvarligt.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk kritisk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, med specifika svenska myndighetsvarningar om deras påverkan på svensk kritisk infrastruktur. Exempelvis har CERT-SE varnat för kritiska sårbarheter i FortiMail, Citrix NetScaler ADC och Gateway, samt GitLab, vilket indikerar en potentiell risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är detta tillräckligt för att höja nivån till 'gul'.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 13,
+    "actively_exploited": 14,
     "critical": 10,
-    "authority_alerts": 15,
-    "kev_recent": 6
+    "authority_alerts": 14,
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
@@ -112,6 +112,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-0322"
+      }
+    },
+    {
+      "title": "CVE-2026-21589: Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-15T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-21589",
+      "summary": "Atlassian Multiple Products – Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or directories accessible to ext…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-21589"
       }
     },
     {
@@ -310,12 +325,12 @@
       }
     },
     {
-      "title": "MikroTik RouterOS",
-      "source": "CISA",
+      "title": "NGINX Fixes 5 Flaws, Including Possible RCE and a TLS Bug That May Skip Client-Cert Checks",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-09-29T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-272-06",
-      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-272-06.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Successful exploitation of this vulnerability could allow an attacker to achieve remote code execution or cause a…",
+      "date": "2026-10-15T12:58:05.000Z",
+      "link": "https://thehackernews.com/2026/10/nginx-fixes-5-flaws-including-possible.html",
+      "summary": "NGINX released versions 1.30.6 and 1.31.7 on October 14 to fix five vulnerabilities, one of them present in every release since May 2005. There are three memory bugs that F5, the company behind NGINX, says could crash a worker process or possibly let an attacker run code, and ea…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -325,7 +340,22 @@
       }
     },
     {
-      "title": "Drupal Patches Critical Core RCE Flaw with No-Login Path via Contributed Modules",
+      "title": "Next.js Ships Out-of-Band Patch for Two Critical RCE Flaws in Caching and SVG Processing",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-15T12:28:13.000Z",
+      "link": "https://thehackernews.com/2026/10/nextjs-ships-out-of-band-patch-for-two.html",
+      "summary": "Next.js released an out-of-band security update on October 14 that fixes two critical flaws allowing unauthenticated remote code execution, along with a high-severity denial-of-service flaw. One code-execution flaw is in React Server Components, and the other in librsvg, the ope…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Drupal Patches Critical Field UI Flaw With Unauthenticated RCE Path via Contributed Modules",
       "source": "The Hacker News",
       "region": "INT",
       "date": "2026-10-15T12:07:20.000Z",
@@ -353,36 +383,6 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-0322"
       }
-    },
-    {
-      "title": "Langflow's Critical Authenticated RCE Flaw Targeted in 1,423 Honeypot Exploit Attempts",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-15T07:07:05.000Z",
-      "link": "https://thehackernews.com/2026/10/langflows-critical-authenticated-rce.html",
-      "summary": "Threat actors are exploiting a critical security flaw in Langflow, according to an alert from Previdian. Langflow is an open-source platform that allows developers to build artificial intelligence (AI) applications and agentic workflows. In February 2025, DataStax, the parent co…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Patchtisdag oktober 2026",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-14T06:50:00.000Z",
-      "link": "https://www.cert.se/2026/10/patchtisdag-oktober-2026.html",
-      "summary": "<p>Flera leverantörer har släppt sina månatliga säkerhetsuppdateringar för oktober.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 6
+      "count": 7
     },
     {
       "name": "CISA",
