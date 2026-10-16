@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-15T23:48:55.894Z",
-  "next_update": "2026-10-16T00:07:00.000Z",
+  "updated": "2026-10-16T04:23:05.205Z",
+  "next_update": "2026-10-16T04:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 13 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande, särskilt inom svensk kritisk infrastruktur.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, vilket innebär en förhöjd risk för Sverige. Särskilt signaler från CERT-SE om kritiska sårbarheter i FortiMail, Citrix NetScaler ADC/Gateway och GitLab med tydlig svensk koppling väger tungt. Även internationella rapporter om aktivt utnyttjande av sårbarheter i Palo Alto Networks och Ivanti Connect Secure ökar risken för påverkan på svenska aktörer. Dock saknas bekräftade incidenter i Sverige för tillfället.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
