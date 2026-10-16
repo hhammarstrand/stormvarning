@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-16T18:19:21.236Z",
-  "next_update": "2026-10-16T18:37:00.000Z",
+  "updated": "2026-10-16T21:39:59.751Z",
+  "next_update": "2026-10-16T22:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764) och FortiMail (CVE-2026-104286), har identifierats och är aktivt utnyttjade. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av den aktiva exploateringen av dessa sårbarheter.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764) och FortiMail (CVE-2026-104286), har rapporterats som aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Detta motiverar en förhöjd beredskap och nivån sätts till 'gul'.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 16,
-    "critical": 6,
-    "authority_alerts": 17,
+    "actively_exploited": 15,
+    "critical": 7,
+    "authority_alerts": 18,
     "kev_recent": 9
   },
   "anomaly": {
@@ -250,6 +250,21 @@
       }
     },
     {
+      "title": "CISA Urges Patching Critical Vulnerability in BeyondTrust Remote Support",
+      "source": "CISA",
+      "region": "INT",
+      "date": "2026-10-16T12:00:00.000Z",
+      "link": "https://www.cisa.gov/news-events/alerts/2026/10/16/cisa-urges-patching-critical-vulnerability-beyondtrust-remote-support",
+      "summary": "<p>CISA is aware of critical authentication bypass vulnerability <a href=\"https://www.cve.org/CVERecord?id=CVE-2026-102764\" target=\"_blank\">CVE-2026-102764</a>, affecting BeyondTrust Remote Support (formerly Bomgar) versions 26.2.3 and earlier. Patches are available for supporte…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-102764"
+      }
+    },
+    {
       "title": "China-Linked Hackers Exploited BeyondTrust Zero-Day to Take Over Remote Support Servers",
       "source": "The Hacker News",
       "region": "INT",
@@ -301,21 +316,6 @@
       "date": "2026-10-13T17:33:11.000Z",
       "link": "https://thehackernews.com/2026/10/attacker-chains-three-ivanti-connect.html",
       "summary": "An attacker chained three zero-day flaws in Ivanti Connect Secure, a VPN appliance, to run commands as root without logging in, security firm Volexity said on October 13. Ivanti has released fixes for two of the flaws and told customers on affected versions to \"act immediately.\"…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "⚡ Weekly Recap: Helpdesk 0-Days, Rogue Certs, ShinyHunters Arrest, AI-Fooling Malware and More",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-12T15:16:26.000Z",
-      "link": "https://thehackernews.com/2026/10/weekly-recap-helpdesk-0-days-rogue.html",
-      "summary": "Some meetings last longer than it took attackers to jump on a newly disclosed security flaw this week. Within hours, they were already testing it. That's not much time to read the warning, let alone do something about it. But speed is only part of the problem. A secure connectio…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
