@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-16T09:15:37.297Z",
-  "next_update": "2026-10-16T09:37:00.000Z",
+  "updated": "2026-10-16T14:12:13.213Z",
+  "next_update": "2026-10-16T14:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 14 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade, inklusive BeyondTrust Remote Support (CVE-2026-102764) och Citrix NetScaler ADC/Gateway (CVE-2026-88771, CVE-2026-88772). CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av den aktiva exploateringen av dessa kritiska sårbarheter.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 14,
-    "critical": 10,
-    "authority_alerts": 14,
+    "actively_exploited": 15,
+    "critical": 8,
+    "authority_alerts": 15,
     "kev_recent": 7
   },
   "anomaly": {
@@ -24,6 +24,21 @@
   "de_escalation": null,
   "down_streak": 0,
   "events": [
+    {
+      "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-16T13:30:00.000Z",
+      "link": "https://www.cert.se/2026/10/beyondtrust-varnar-for-kritisk-nolldagssarbarhet.html",
+      "summary": "<p>BeyondTrust har publicerat information om en allvarlig nolldagssårbarhet i BeyondTrust Remote Support. Sårbarheten CVE-2026-102764 har fått en CVSS-klassning på 9.3, och kan utnyttjas för att skriva kod till systemet utan autentisering för att på så sätt få kontroll över enhe…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-102764"
+      }
+    },
     {
       "title": "GitLab rättar kritisk sårbarhet",
       "source": "CERT-SE",
@@ -67,21 +82,6 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-88771"
-      }
-    },
-    {
-      "title": "F5 informerar om kritisk sårbarhet i BIG-IP APM",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-23T09:20:00.000Z",
-      "link": "https://www.cert.se/2026/09/information-om-kritisk-sarbarhet-i-big-ip-apm.html",
-      "summary": "<p>F5 har publicerat information om en kritisk sårbarhet, CVE-2026-94127, i BIG-IP APM. Sårbarheten kan resultera i att en oautentiserad angripare kan fjärrexekvera godtycklig kod.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-94127"
       }
     },
     {
@@ -325,6 +325,21 @@
       }
     },
     {
+      "title": "CERT-SE:s veckobrev v.42",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-16T09:30:00.000Z",
+      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v42.html",
+      "summary": "<p>I veckans brev bjuder vi bland annat på rekommendationer om cyberfysiska system, insikter om hur cyberkriminella storskaliga nätfiskekampanjer fungerar och en inbjudan till rundabordssamtal med fokus på lärande för att stärka Sveriges cybersäkerhet.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
       "title": "Hackers exploit Collabora RCE flaw to backdoor Nextcloud servers",
       "source": "BleepingComputer",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-10-15T12:58:05.000Z",
       "link": "https://thehackernews.com/2026/10/nginx-fixes-5-flaws-including-possible.html",
       "summary": "NGINX released versions 1.30.6 and 1.31.7 on October 14 to fix five vulnerabilities, one of them present in every release since May 2005. There are three memory bugs that F5, the company behind NGINX, says could crash a worker process or possibly let an attacker run code, and ea…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Next.js Ships Out-of-Band Patch for Two Critical RCE Flaws in Caching and SVG Processing",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-15T12:28:13.000Z",
-      "link": "https://thehackernews.com/2026/10/nextjs-ships-out-of-band-patch-for-two.html",
-      "summary": "Next.js released an out-of-band security update on October 14 that fixes two critical flaws allowing unauthenticated remote code execution, along with a high-severity denial-of-service flaw. One code-execution flaw is in React Server Components, and the other in librsvg, the ope…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
