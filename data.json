@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-17T13:09:51.314Z",
-  "next_update": "2026-10-17T13:37:00.000Z",
+  "updated": "2026-10-17T16:37:59.887Z",
+  "next_update": "2026-10-17T17:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764), har identifierats som aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjad kritisk sårbarhet och myndighetsvarningar.",
+  "reasoning": "Det finns flera signaler som indikerar en förhöjd risk för Sverige. CERT-SE har utfärdat varningar om aktivt utnyttjade kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764), vilket har en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att dessa sårbarheter utnyttjas globalt, vilket ökar risken för svenska organisationer. Det finns också en historisk koppling till hybridhot mot kritiska samhällsfunktioner, vilket ytterligare motiverar en förhöjd beredskap.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -340,6 +340,21 @@
       }
     },
     {
+      "title": "Drupal patches critical RCE flaws, warns exploits may emerge soon",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-17T14:32:48.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaws-warns-exploits-may-emerge-soon/",
+      "summary": "Drupal has patched two critical vulnerabilities that could allow attackers to execute code remotely on websites running any supported version of the content management system. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "MALFEX npm Package 'imgdecode' Hides Shellcode Loader in Windows Native Addon",
       "source": "The Hacker News",
       "region": "INT",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": null
-      }
-    },
-    {
-      "title": "Hackers exploit Collabora RCE flaw to backdoor Nextcloud servers",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-15T20:25:04.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-exploit-collabora-rce-flaw-to-backdoor-nextcloud-servers/",
-      "summary": "Threat actors are exploiting a critical command execution flaw, now tracked as CVE-2026-110447, in the Collabora Online - Built-in CODE Server app (richdocumentscode) for Nextcloud. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-110447"
       }
     }
   ],
