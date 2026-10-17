@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-17T21:42:51.386Z",
-  "next_update": "2026-10-17T22:07:00.000Z",
+  "updated": "2026-10-17T23:59:18.178Z",
+  "next_update": "2026-10-18T00:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764) och FortiMail (CVE-2026-104286), rapporteras vara aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa utnyttjade sårbarheter. Detta motiverar en förhöjd beredskap och nivån sätts till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och CERT-SE-varningar.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764) och FortiMail (CVE-2026-104286), rapporteras aktivt utnyttjas och har en tydlig svensk koppling genom CERT-SE-varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa utnyttjade sårbarheter. Detta motiverar en förhöjd beredskap och nivån sätts till 'gul'.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
