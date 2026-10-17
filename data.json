@@ -1,17 +1,17 @@
 {
-  "updated": "2026-10-17T09:15:30.226Z",
-  "next_update": "2026-10-17T09:37:00.000Z",
+  "updated": "2026-10-17T13:09:51.314Z",
+  "next_update": "2026-10-17T13:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764) och FortiMail (CVE-2026-104286), är aktivt utnyttjade och CERT-SE har utfärdat varningar om dessa. Även om det finns en svensk koppling genom myndighetsvarningar och rapporter om aktivt utnyttjande, saknas för närvarande bekräftade incidenter hos flera svenska aktörer eller VMA/krisinformation som skulle motivera en högre nivå. Därför bedöms läget som förhöjt (gul).",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764), har identifierats som aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
     "actively_exploited": 15,
-    "critical": 7,
+    "critical": 6,
     "authority_alerts": 18,
     "kev_recent": 9
   },
@@ -340,6 +340,21 @@
       }
     },
     {
+      "title": "MALFEX npm Package 'imgdecode' Hides Shellcode Loader in Windows Native Addon",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-17T11:11:56.000Z",
+      "link": "https://thehackernews.com/2026/10/malfex-npm-package-imgdecode-hides.html",
+      "summary": "Cybersecurity researchers have discovered a malicious npm package that's part of a recently disclosed software supply chain attack campaign dubbed MALFEX. The package, named \"imgdecode,\" was uploaded to the package registry on September 30, 2026, by a user named \"malfexteste8.\"…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "CERT-SE:s veckobrev v.42",
       "source": "CERT-SE",
       "region": "SE",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-110447"
-      }
-    },
-    {
-      "title": "ThreatsDay: Adobe RCE, DNS Wallet Theft, NVIDIA Container Escape, Self-Healing Backdoor + 23 More",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-15T18:49:33.000Z",
-      "link": "https://thehackernews.com/2026/10/threatsday-adobe-rce-dns-wallet-theft.html",
-      "summary": "Someone built a tool to steal data, then decided it should scare the victim for fun. Yes, that’s an actual feature. And somehow, it fits right in with this week's security stories. The rest gets interesting in different ways. A small permission can lead to a big theft. A trusted…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     }
   ],
