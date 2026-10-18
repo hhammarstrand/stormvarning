@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-18T09:02:36.305Z",
-  "next_update": "2026-10-18T09:07:00.000Z",
+  "updated": "2026-10-18T13:12:45.634Z",
+  "next_update": "2026-10-18T13:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764) och FortiMail (CVE-2026-104286), har rapporterats som aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Detta motiverar en gul nivå.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
