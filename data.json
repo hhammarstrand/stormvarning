@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-19T11:13:00.759Z",
-  "next_update": "2026-10-19T11:37:00.000Z",
+  "updated": "2026-10-19T17:44:37.344Z",
+  "next_update": "2026-10-19T18:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764), har rapporterats som aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Detta indikerar ett förhöjt hotläge, men det saknas ännu flera oberoende signaler för en storskalig attack.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och CERT-SE har utfärdat varningar om aktivt utnyttjande, inklusive BeyondTrust Remote Support (CVE-2026-102764) och FortiMail (CVE-2026-104286), vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att flera av dessa sårbarheter utnyttjas aktivt globalt, vilket ökar risken för svenska aktörer. Detta, tillsammans med CERT-SE:s varningar, motiverar en förhöjd beredskap.",
   "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 5,
     "sweden_acute": 5,
     "actively_exploited": 15,
     "critical": 6,
-    "authority_alerts": 18,
+    "authority_alerts": 17,
     "kev_recent": 9
   },
   "anomaly": {
@@ -250,6 +250,21 @@
       }
     },
     {
+      "title": "⚡ Weekly Recap: 98 Zero-Days, Rogue AI Agents, $100M Crypto Theft, 700 Supermarkets Hit and More",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-19T14:14:07.000Z",
+      "link": "https://thehackernews.com/2026/10/weekly-recap-98-zero-days-rogue-ai.html",
+      "summary": "The worst problems don't always come with a warning. Sometimes they arrive through a service everyone trusts, a device someone bought, or a system nobody thought to check. By the time something looks wrong, the damage may already be done. This week had plenty of that. Trusted co…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "CISA Urges Patching Critical Vulnerability in BeyondTrust Remote Support",
       "source": "CISA",
       "region": "INT",
@@ -277,21 +292,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-102764"
-      }
-    },
-    {
-      "title": "BeyondTrust patches zero-day exploited in attacks since August",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-16T06:18:08.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/",
-      "summary": "BeyondTrust warned customers on Thursday to patch a critical flaw in its Remote Support (RS) that has been exploited in zero-day attacks since late August. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     },
     {
@@ -340,6 +340,21 @@
       }
     },
     {
+      "title": "GhostAction Attackers Plant Credential Stealer Disguised as Font in 94 GitHub Repositories",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-19T13:05:45.000Z",
+      "link": "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html",
+      "summary": "The threat actor behind the GhostAction supply chain attack has expanded beyond injecting malicious GitHub Actions workflows into compromised projects to phish open-source developers and deliver a stealer malware disguised within a fake font file. The latest evolution, detailed…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Drupal patches critical RCE flaws, warns exploits may emerge soon",
       "source": "BleepingComputer",
       "region": "INT",
@@ -366,21 +381,6 @@
         "critical": false,
         "incident": true,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.42",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-16T09:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v42.html",
-      "summary": "<p>I veckans brev bjuder vi bland annat på rekommendationer om cyberfysiska system, insikter om hur cyberkriminella storskaliga nätfiskekampanjer fungerar och en inbjudan till rundabordssamtal med fokus på lärande för att stärka Sveriges cybersäkerhet.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
