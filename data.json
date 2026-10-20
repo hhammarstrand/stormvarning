@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-19T22:17:22.119Z",
-  "next_update": "2026-10-19T22:37:00.000Z",
+  "updated": "2026-10-20T01:14:01.374Z",
+  "next_update": "2026-10-20T01:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
   "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, inklusive BeyondTrust Remote Support (CVE-2026-102764) och Fortinet-produkter. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av den aktiva exploateringen av dessa sårbarheter.",
-  "score": 95,
+  "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 14,
-    "critical": 6,
-    "authority_alerts": 18,
-    "kev_recent": 9
+    "actively_exploited": 12,
+    "critical": 8,
+    "authority_alerts": 16,
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": 0
+    "delta": -1
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -205,36 +205,6 @@
       }
     },
     {
-      "title": "CVE-2026-104935: Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-13T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-104935",
-      "summary": "Ivanti Connect Secure – Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-104935"
-      }
-    },
-    {
-      "title": "CVE-2026-96951: Microsoft Windows Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-13T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96951",
-      "summary": "Microsoft Windows – Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-96951"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
@@ -383,6 +353,36 @@
         "swedenRelevant": true,
         "cve": null
       }
+    },
+    {
+      "title": "ThreatsDay: Adobe RCE, DNS Wallet Theft, NVIDIA Container Escape, Self-Healing Backdoor + 23 More",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-15T18:49:33.000Z",
+      "link": "https://thehackernews.com/2026/10/threatsday-adobe-rce-dns-wallet-theft.html",
+      "summary": "Someone built a tool to steal data, then decided it should scare the victim for fun. Yes, that’s an actual feature. And somehow, it fits right in with this week's security stories. The rest gets interesting in different ways. A small permission can lead to a big theft. A trusted…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "NGINX Fixes 5 Flaws, Including Possible RCE and a TLS Bug That May Skip Client-Cert Checks",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-15T12:58:05.000Z",
+      "link": "https://thehackernews.com/2026/10/nginx-fixes-5-flaws-including-possible.html",
+      "summary": "NGINX released versions 1.30.6 and 1.31.7 on October 14 to fix five vulnerabilities, one of them present in every release since May 2005. There are three memory bugs that F5, the company behind NGINX, says could crash a worker process or possibly let an attacker run code, and ea…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 7
     },
     {
       "name": "CISA",
