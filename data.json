@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-20T06:33:01.349Z",
-  "next_update": "2026-10-20T06:37:00.000Z",
+  "updated": "2026-10-20T12:07:08.049Z",
+  "next_update": "2026-10-20T12:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764), är aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns också en generell internationell aktivitet som kan påverka Sverige indirekt.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, inklusive BeyondTrust Remote Support (CVE-2026-102764) och Fortinet-produkter. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av den aktiva exploateringen av dessa sårbarheter.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
@@ -310,21 +310,6 @@
       }
     },
     {
-      "title": "Drupal patches critical RCE flaws, warns exploits may emerge soon",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-17T14:32:48.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaws-warns-exploits-may-emerge-soon/",
-      "summary": "Drupal has patched two critical vulnerabilities that could allow attackers to execute code remotely on websites running any supported version of the content management system. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "MALFEX npm Package 'imgdecode' Hides Shellcode Loader in Windows Native Addon",
       "source": "The Hacker News",
       "region": "INT",
@@ -376,6 +361,21 @@
       "date": "2026-10-15T12:58:05.000Z",
       "link": "https://thehackernews.com/2026/10/nginx-fixes-5-flaws-including-possible.html",
       "summary": "NGINX released versions 1.30.6 and 1.31.7 on October 14 to fix five vulnerabilities, one of them present in every release since May 2005. There are three memory bugs that F5, the company behind NGINX, says could crash a worker process or possibly let an attacker run code, and ea…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Next.js Ships Out-of-Band Patch for Two Critical RCE Flaws in Caching and SVG Processing",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-15T12:28:13.000Z",
+      "link": "https://thehackernews.com/2026/10/nextjs-ships-out-of-band-patch-for-two.html",
+      "summary": "Next.js released an out-of-band security update on October 14 that fixes two critical flaws allowing unauthenticated remote code execution, along with a high-severity denial-of-service flaw. One code-execution flaw is in React Server Components, and the other in librsvg, the ope…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
