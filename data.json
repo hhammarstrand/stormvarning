@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-20T17:01:28.895Z",
-  "next_update": "2026-10-20T17:07:00.000Z",
+  "updated": "2026-10-20T20:32:00.663Z",
+  "next_update": "2026-10-20T20:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 11 aktivt utnyttjade sårbarheter, 16 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 94,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och en specifik varning från CERT-SE om aktivt utnyttjande.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och CERT-SE har utfärdat en varning om en nolldagssårbarhet i BeyondTrust Remote Support som är aktivt utnyttjad (CVE-2026-102764). Även om det inte finns bekräftade incidenter i Sverige, är detta tillräckligt för att höja nivån till 'gul' på grund av den direkta svenska kopplingen och risken för pågående attacker. Internationella signaler om aktivt utnyttjande av andra kritiska sårbarheter ökar också den övergripande risken.",
+  "score": 96,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
+    "sweden_relevant": 5,
     "sweden_acute": 5,
-    "actively_exploited": 11,
-    "critical": 9,
-    "authority_alerts": 16,
-    "kev_recent": 7
+    "actively_exploited": 17,
+    "critical": 6,
+    "authority_alerts": 21,
+    "kev_recent": 13
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": -1
+    "delta": 1
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -97,6 +97,96 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-106931: EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-106931",
+      "summary": "EG Secure Solutions SiteGuard Server Edition – EG Secure Solutions SiteGuard Server Edition contains an OS command injection vulnerability which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected product.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-106931"
+      }
+    },
+    {
+      "title": "CVE-2026-96656: Plex Media Server External Control of File Name or Path Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96656",
+      "summary": "Plex Media Server – Plex Media Server contains an external control of file name or path vulnerability which can allow an admin user to write arbitrary files that may be executed on load. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96655.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-96656"
+      }
+    },
+    {
+      "title": "CVE-2026-96655: Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96655",
+      "summary": "Plex Media Server – Plex Media Server contains a server-side request forgery (SSRF) vulnerability that could allow an authenticated user to request arbitrary internal or external addresses via the '/video/:/transcode/universal' path parameter. This vulnerability can be chained w…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-96655"
+      }
+    },
+    {
+      "title": "CVE-2026-96654: Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96654",
+      "summary": "Plex Media Server – Plex Media Server contains an improper neutralization of encoded URI schemes in a web page vulnerability that could allow an attacker to call other plugins' functions and supply their own parameters. This vulnerability can be chained with CVE-2026-96652, CVE-…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-96654"
+      }
+    },
+    {
+      "title": "CVE-2026-96652: Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96652",
+      "summary": "Plex Media Server – Plex Media Server contains a server-side request forgery (SSRF) vulnerability which could allow an attacker using any X-Plex-Token value to include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination.…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-96652"
+      }
+    },
+    {
+      "title": "CVE-2026-110936: Siemens Software Center Uncontrolled Search Path Element Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-110936",
+      "summary": "Siemens Software Center – Siemens Software Center contains an uncontrolled search path element vulnerability that could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with t…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-110936"
       }
     },
     {
@@ -293,96 +383,6 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-106173"
       }
-    },
-    {
-      "title": "GhostAction Attackers Plant Credential Stealer Disguised as Font in 94 GitHub Repositories",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-19T13:05:45.000Z",
-      "link": "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html",
-      "summary": "The threat actor behind the GhostAction supply chain attack has expanded beyond injecting malicious GitHub Actions workflows into compromised projects to phish open-source developers and deliver a stealer malware disguised within a fake font file. The latest evolution, detailed…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "MALFEX npm Package 'imgdecode' Hides Shellcode Loader in Windows Native Addon",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-17T11:11:56.000Z",
-      "link": "https://thehackernews.com/2026/10/malfex-npm-package-imgdecode-hides.html",
-      "summary": "Cybersecurity researchers have discovered a malicious npm package that's part of a recently disclosed software supply chain attack campaign dubbed MALFEX. The package, named \"imgdecode,\" was uploaded to the package registry on September 30, 2026, by a user named \"malfexteste8.\"…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.42",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-16T09:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v42.html",
-      "summary": "<p>I veckans brev bjuder vi bland annat på rekommendationer om cyberfysiska system, insikter om hur cyberkriminella storskaliga nätfiskekampanjer fungerar och en inbjudan till rundabordssamtal med fokus på lärande för att stärka Sveriges cybersäkerhet.</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "ThreatsDay: Adobe RCE, DNS Wallet Theft, NVIDIA Container Escape, Self-Healing Backdoor + 23 More",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-15T18:49:33.000Z",
-      "link": "https://thehackernews.com/2026/10/threatsday-adobe-rce-dns-wallet-theft.html",
-      "summary": "Someone built a tool to steal data, then decided it should scare the victim for fun. Yes, that’s an actual feature. And somehow, it fits right in with this week's security stories. The rest gets interesting in different ways. A small permission can lead to a big theft. A trusted…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "NGINX Fixes 5 Flaws, Including Possible RCE and a TLS Bug That May Skip Client-Cert Checks",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-15T12:58:05.000Z",
-      "link": "https://thehackernews.com/2026/10/nginx-fixes-5-flaws-including-possible.html",
-      "summary": "NGINX released versions 1.30.6 and 1.31.7 on October 14 to fix five vulnerabilities, one of them present in every release since May 2005. There are three memory bugs that F5, the company behind NGINX, says could crash a worker process or possibly let an attacker run code, and ea…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Next.js Ships Out-of-Band Patch for Two Critical RCE Flaws in Caching and SVG Processing",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-15T12:28:13.000Z",
-      "link": "https://thehackernews.com/2026/10/nextjs-ships-out-of-band-patch-for-two.html",
-      "summary": "Next.js released an out-of-band security update on October 14 that fixes two critical flaws allowing unauthenticated remote code execution, along with a high-severity denial-of-service flaw. One code-execution flaw is in React Server Components, and the other in librsvg, the ope…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 7
+      "count": 13
     },
     {
       "name": "CISA",
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
