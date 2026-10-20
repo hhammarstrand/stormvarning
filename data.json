@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-20T20:32:00.663Z",
-  "next_update": "2026-10-20T20:37:00.000Z",
+  "updated": "2026-10-20T23:22:18.475Z",
+  "next_update": "2026-10-20T23:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och en specifik varning från CERT-SE om aktivt utnyttjande.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och CERT-SE har utfärdat en varning om en nolldagssårbarhet i BeyondTrust Remote Support som är aktivt utnyttjad (CVE-2026-102764). Även om det inte finns bekräftade incidenter i Sverige, är detta tillräckligt för att höja nivån till 'gul' på grund av den direkta svenska kopplingen och risken för pågående attacker. Internationella signaler om aktivt utnyttjande av andra kritiska sårbarheter ökar också den övergripande risken.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och CERT-SE har utfärdat varningar om aktivt utnyttjande, vilket påverkar svenska organisationer direkt. Särskilt sårbarheter i BeyondTrust Remote Support, FortiMail och Citrix NetScaler har fått hög prioritet. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska mål förhöjd på grund av den utbredda aktiviteten.",
   "score": 96,
   "indicators": {
     "total_signals": 24,
@@ -370,18 +370,18 @@
       }
     },
     {
-      "title": "Critical FortiSIEM Flaw Gets Public Exploit PoC for Unauthenticated Remote Code Execution",
-      "source": "The Hacker News",
+      "title": "PHP warns admins of two critical flaws, emergency patches coming tomorrow",
+      "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-10-20T15:38:52.000Z",
-      "link": "https://thehackernews.com/2026/10/critical-fortisiem-flaw-gets-public.html",
-      "summary": "Cybersecurity researchers have released a proof-of-concept (PoC) exploit for a recently patched critical security flaw impacting Fortinet FortiSIEM that could result in arbitrary code execution. The vulnerability, tracked as CVE-2026-106173 (CVSS score: 9.4), is a critical path…",
+      "date": "2026-10-20T20:56:43.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/php-warns-admins-of-two-critical-flaws-emergency-patches-coming-tomorrow/",
+      "summary": "The PHP security team is warning administrators to prepare for emergency security updates tomorrow to address two critical vulnerabilities, as information about the flaws has reportedly leaked ahead of their scheduled disclosure. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-106173"
+        "cve": null
       }
     }
   ],
