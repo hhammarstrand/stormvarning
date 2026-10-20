@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-20T01:14:01.374Z",
-  "next_update": "2026-10-20T01:37:00.000Z",
+  "updated": "2026-10-20T06:33:01.349Z",
+  "next_update": "2026-10-20T06:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade globalt, inklusive BeyondTrust Remote Support (CVE-2026-102764) och Fortinet-produkter. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av den aktiva exploateringen av dessa sårbarheter.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och myndighetsvarningar.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764), är aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns också en generell internationell aktivitet som kan påverka Sverige indirekt.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
