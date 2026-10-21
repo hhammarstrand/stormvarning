@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-21T07:30:18.671Z",
-  "next_update": "2026-10-21T07:37:00.000Z",
+  "updated": "2026-10-21T13:11:32.581Z",
+  "next_update": "2026-10-21T13:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjad kritisk sårbarhet och myndighetsvarningar.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764), är aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
-  "score": 95,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764) och PHP (CVE-2026-109618/109619), rapporteras aktivt utnyttjas och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter.",
+  "score": 97,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
-    "sweden_acute": 5,
+    "sweden_relevant": 6,
+    "sweden_acute": 6,
     "actively_exploited": 13,
-    "critical": 8,
-    "authority_alerts": 17,
+    "critical": 10,
+    "authority_alerts": 18,
     "kev_recent": 9
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": 0
+    "delta": 2
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -37,6 +37,21 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-102764"
+      }
+    },
+    {
+      "title": "Kritiska sårbarheter i PHP",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-21T12:00:00.000Z",
+      "link": "https://www.cert.se/2026/10/kritiska-s%C3%A5rbarheter-i-php.html",
+      "summary": "<p>PHP kommer vid klockan 16:00 svensk tid att publicera säkerhetsuppdateringar för två kritiska sårbarheter, CVE-2026-109618 och CVE-2026-109619. Sårbarheterna har fått en CVSS-klassning på 9.2 och kan utnyttjas för oautentiserad exekvering av skadlig kod. [1]</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-109618"
       }
     },
     {
@@ -310,12 +325,27 @@
       }
     },
     {
+      "title": "PHP2Shell: What Actually Protects You Before the 14:00 UTC PHP RCE Patch, and What Doesn't",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-21T10:36:53.000Z",
+      "link": "https://thehackernews.com/2026/10/php2shell-what-actually-protects-you.html",
+      "summary": "You cannot fully block the two critical PHP flaws called PHP2Shell before today's fix, and the one setting being passed around as a workaround is not enough on its own, the security firm that suggested it now says. PHP will release the fix at 14:00 UTC on October 21 for two flaw…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "PHP2Shell: Two Unpatched Critical PHP RCE Flaws (CVSS 9.2) Trigger Emergency Security Alert",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-10-21T04:57:50.000Z",
+      "date": "2026-10-21T09:05:17.000Z",
       "link": "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html",
-      "summary": "PHP will ship an out-of-cycle security release at 14:00 UTC today, October 21, for two critical vulnerabilities that its security team has rated 9.2 on the CVSS v4.0 scale but has not described. Security researchers at watchTowr say the two flaws allow remote code execution. Onl…",
+      "summary": "This story is developing and was written before PHP's scheduled 14:00 UTC release on October 21. Once the release is out, the affected and fixed versions below are confirmed by the official advisory. PHP will ship an out-of-cycle security release at 14:00 UTC today, October 21,…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -352,36 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-106173"
-      }
-    },
-    {
-      "title": "GhostAction Attackers Plant Credential Stealer Disguised as Font in 94 GitHub Repositories",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-19T13:05:45.000Z",
-      "link": "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html",
-      "summary": "The threat actor behind the GhostAction supply chain attack has expanded beyond injecting malicious GitHub Actions workflows into compromised projects to phish open-source developers and deliver a stealer malware disguised within a fake font file. The latest evolution, detailed…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "MALFEX npm Package 'imgdecode' Hides Shellcode Loader in Windows Native Addon",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-17T11:11:56.000Z",
-      "link": "https://thehackernews.com/2026/10/malfex-npm-package-imgdecode-hides.html",
-      "summary": "Cybersecurity researchers have discovered a malicious npm package that's part of a recently disclosed software supply chain attack campaign dubbed MALFEX. The package, named \"imgdecode,\" was uploaded to the package registry on September 30, 2026, by a user named \"malfexteste8.\"…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
       }
     }
   ],
