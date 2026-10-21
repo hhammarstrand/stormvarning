@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-20T23:22:18.475Z",
-  "next_update": "2026-10-20T23:37:00.000Z",
+  "updated": "2026-10-21T01:58:34.445Z",
+  "next_update": "2026-10-21T02:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och aktivt utnyttjande.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och CERT-SE har utfärdat varningar om aktivt utnyttjande, vilket påverkar svenska organisationer direkt. Särskilt sårbarheter i BeyondTrust Remote Support, FortiMail och Citrix NetScaler har fått hög prioritet. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska mål förhöjd på grund av den utbredda aktiviteten.",
-  "score": 96,
+  "summary": "Förhöjt hotläge mot Sverige på grund av aktivt utnyttjade kritiska sårbarheter och varningar från CERT-SE.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764), har identifierats och är aktivt utnyttjade, vilket innebär en direkt risk för svenska organisationer. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska mål förhöjd på grund av dessa faktorer.",
+  "score": 95,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 17,
-    "critical": 6,
-    "authority_alerts": 21,
-    "kev_recent": 13
+    "actively_exploited": 13,
+    "critical": 7,
+    "authority_alerts": 18,
+    "kev_recent": 9
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": 1
+    "delta": 0
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -235,66 +235,6 @@
       }
     },
     {
-      "title": "CVE-2026-105134: Ahsay AhsayCBS Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-14T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-105134",
-      "summary": "Ahsay AhsayCBS – Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component’s /rps/api/json/UpdateReceivers.do endpoint. This vul…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-105134"
-      }
-    },
-    {
-      "title": "CVE-2026-76519: Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-14T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76519",
-      "summary": "Cisco Secure Email Gateway – Cisco Secure Email Gateway contains a relative path traversal vulnerability that could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-76519"
-      }
-    },
-    {
-      "title": "CVE-2026-105133: Ahsay AhsayCBS Improper Authentication Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-14T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-105133",
-      "summary": "Ahsay AhsayCBS – Ahsay AhsayCBS contains an improper authentication vulnerability that could allow a remote attacker to bypass authentication via manipulation of the random parameter in the API component’s checkSysPwd function. This vulnerability can be chained with CVE-2026-105…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-105133"
-      }
-    },
-    {
-      "title": "CVE-2026-0322: Palo Alto Networks PAN-OS Code Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-14T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-0322",
-      "summary": "Palo Alto Networks PAN-OS – Palo Alto Networks PAN-OS contains a code injection vulnerability that could allow an authenticated attacker with network access to execute arbitrary code with root privileges on the firewall.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-0322"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
@@ -383,6 +323,66 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Critical FortiSIEM Flaw Gets Public Exploit PoC for Unauthenticated Remote Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-20T15:38:52.000Z",
+      "link": "https://thehackernews.com/2026/10/critical-fortisiem-flaw-gets-public.html",
+      "summary": "Cybersecurity researchers have released a proof-of-concept (PoC) exploit for a recently patched critical security flaw impacting Fortinet FortiSIEM that could result in arbitrary code execution. The vulnerability, tracked as CVE-2026-106173 (CVSS score: 9.4), is a critical path…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-106173"
+      }
+    },
+    {
+      "title": "GhostAction Attackers Plant Credential Stealer Disguised as Font in 94 GitHub Repositories",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-19T13:05:45.000Z",
+      "link": "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html",
+      "summary": "The threat actor behind the GhostAction supply chain attack has expanded beyond injecting malicious GitHub Actions workflows into compromised projects to phish open-source developers and deliver a stealer malware disguised within a fake font file. The latest evolution, detailed…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "MALFEX npm Package 'imgdecode' Hides Shellcode Loader in Windows Native Addon",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-17T11:11:56.000Z",
+      "link": "https://thehackernews.com/2026/10/malfex-npm-package-imgdecode-hides.html",
+      "summary": "Cybersecurity researchers have discovered a malicious npm package that's part of a recently disclosed software supply chain attack campaign dubbed MALFEX. The package, named \"imgdecode,\" was uploaded to the package registry on September 30, 2026, by a user named \"malfexteste8.\"…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.42",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-16T09:30:00.000Z",
+      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v42.html",
+      "summary": "<p>I veckans brev bjuder vi bland annat på rekommendationer om cyberfysiska system, insikter om hur cyberkriminella storskaliga nätfiskekampanjer fungerar och en inbjudan till rundabordssamtal med fokus på lärande för att stärka Sveriges cybersäkerhet.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 13
+      "count": 9
     },
     {
       "name": "CISA",
