@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-21T13:11:32.581Z",
-  "next_update": "2026-10-21T13:37:00.000Z",
+  "updated": "2026-10-21T18:14:37.384Z",
+  "next_update": "2026-10-21T18:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764) och PHP (CVE-2026-109618/109619), rapporteras aktivt utnyttjas och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764) och PHP (CVE-2026-109618/109619), har identifierats som aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 6,
     "actively_exploited": 13,
-    "critical": 10,
-    "authority_alerts": 18,
+    "critical": 9,
+    "authority_alerts": 19,
     "kev_recent": 9
   },
   "anomaly": {
@@ -45,7 +45,7 @@
       "region": "SE",
       "date": "2026-10-21T12:00:00.000Z",
       "link": "https://www.cert.se/2026/10/kritiska-s%C3%A5rbarheter-i-php.html",
-      "summary": "<p>PHP kommer vid klockan 16:00 svensk tid att publicera säkerhetsuppdateringar för två kritiska sårbarheter, CVE-2026-109618 och CVE-2026-109619. Sårbarheterna har fått en CVSS-klassning på 9.2 och kan utnyttjas för oautentiserad exekvering av skadlig kod. [1]</p>",
+      "summary": "<p>PHP.net har publicerat säkerhetsuppdateringar för de två sårbarheterna CVE-2026-109618 och CVE-2026-109619, och rekommenderar att uppdatera till versionerna PHP 8.5.12, 8.4.27, 8.3.36 eller 8.2.35. [1] Sårbarheterna har fått en CVSS-klassning på 9.2 och kan utnyttjas för oaut…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -265,6 +265,21 @@
       }
     },
     {
+      "title": "Critical Vulnerabilities in PHP Require Immediate Patching",
+      "source": "CISA",
+      "region": "INT",
+      "date": "2026-10-21T12:00:00.000Z",
+      "link": "https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching",
+      "summary": "<p>CISA strongly urges organizations to immediately patch the recently disclosed critical vulnerabilities in PHP, <a href=\"https://www.cve.org/CVERecord?id=CVE-2026-109618\" target=\"_blank\">CVE-2026-109618</a> and <a href=\"https://www.cve.org/CVERecord?id=CVE-2026-109619\" target=…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-109618"
+      }
+    },
+    {
       "title": "⚡ Weekly Recap: 98 Zero-Days, Rogue AI Agents, $100M Crypto Theft, 700 Supermarkets Hit and More",
       "source": "The Hacker News",
       "region": "INT",
@@ -325,63 +340,48 @@
       }
     },
     {
-      "title": "PHP2Shell: What Actually Protects You Before the 14:00 UTC PHP RCE Patch, and What Doesn't",
+      "title": "LiteLLM Compromised in Supply Chain Attack Delivering Credential Stealer and Backdoor",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-10-21T10:36:53.000Z",
-      "link": "https://thehackernews.com/2026/10/php2shell-what-actually-protects-you.html",
-      "summary": "You cannot fully block the two critical PHP flaws called PHP2Shell before today's fix, and the one setting being passed around as a workaround is not enough on its own, the security firm that suggested it now says. PHP will release the fix at 14:00 UTC on October 21 for two flaw…",
+      "date": "2026-10-21T18:01:57.000Z",
+      "link": "https://thehackernews.com/2026/10/litellm-compromised-in-supply-chain.html",
+      "summary": "The popular LiteLLM Python package has been compromised as part of a software supply chain attack that delivered a credential stealer and a backdoor, according to reports from SafeDep, Socket, StepSecurity, and Upwind. The compromise affects LiteLLM 1.107.0, distributed through…",
       "flags": {
         "activelyExploited": false,
-        "critical": true,
-        "incident": false,
+        "critical": false,
+        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
     },
     {
-      "title": "PHP2Shell: Two Unpatched Critical PHP RCE Flaws (CVSS 9.2) Trigger Emergency Security Alert",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-21T09:05:17.000Z",
-      "link": "https://thehackernews.com/2026/10/php2shell-two-unpatched-critical-php.html",
-      "summary": "This story is developing and was written before PHP's scheduled 14:00 UTC release on October 21. Once the release is out, the affected and fixed versions below are confirmed by the official advisory. PHP will ship an out-of-cycle security release at 14:00 UTC today, October 21,…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "PHP warns admins of two critical flaws, emergency patches coming tomorrow",
+      "title": "PHP ships emergency patches for critical PHP2Shell flaws",
       "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-10-20T20:56:43.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/php-warns-admins-of-two-critical-flaws-emergency-patches-coming-tomorrow/",
-      "summary": "The PHP security team is warning administrators to prepare for emergency security updates tomorrow to address two critical vulnerabilities, as information about the flaws has reportedly leaked ahead of their scheduled disclosure. [...]",
+      "date": "2026-10-21T14:07:05.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/php-ships-emergency-patches-for-critical-php2shell-flaws/",
+      "summary": "The PHP security team released emergency security patches for two critical remote code execution (RCE) vulnerabilities (CVE-2026-109618 and CVE-2026-109619) tracked collectively as PHP2Shell. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-109618"
+      }
+    },
+    {
+      "title": "PHP Issues Emergency Patches for Two Critical PHP2Shell RCE Flaws as Exploit Attempts Emerge",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-21T14:00:00.000Z",
+      "link": "https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html",
+      "summary": "PHP has released emergency updates that fix two critical flaws in the language itself, letting an attacker without an account run code on a web server. The fixes are in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35, and the PHP team says only updating fully protects a server. The flaws,…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
         "cve": null
-      }
-    },
-    {
-      "title": "Critical FortiSIEM Flaw Gets Public Exploit PoC for Unauthenticated Remote Code Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-20T15:38:52.000Z",
-      "link": "https://thehackernews.com/2026/10/critical-fortisiem-flaw-gets-public.html",
-      "summary": "Cybersecurity researchers have released a proof-of-concept (PoC) exploit for a recently patched critical security flaw impacting Fortinet FortiSIEM that could result in arbitrary code execution. The vulnerability, tracked as CVE-2026-106173 (CVSS score: 9.4), is a critical path…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-106173"
       }
     }
   ],
