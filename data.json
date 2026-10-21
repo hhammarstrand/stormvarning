@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-21T18:14:37.384Z",
-  "next_update": "2026-10-21T18:37:00.000Z",
+  "updated": "2026-10-21T21:57:56.713Z",
+  "next_update": "2026-10-21T22:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support (CVE-2026-102764) och PHP (CVE-2026-109618/109619), har identifierats som aktivt utnyttjade och har en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns dock inte tillräckligt med signaler för att klassificera läget som 'röd'.",
-  "score": 97,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och CERT-SE har utfärdat varningar för aktivt utnyttjande av sårbarheter i programvara som används i Sverige, såsom BeyondTrust Remote Support och PHP. Även om det inte finns bekräftade incidenter, indikerar CERT-SE:s varningar och CISA KEV-listan att dessa sårbarheter utnyttjas aktivt, vilket ökar risken för attacker mot svenska organisationer. Detta, tillsammans med tidigare erfarenheter av hybridhot mot civila samhällsfunktioner, motiverar en förhöjd beredskap.",
+  "score": 98,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
-    "sweden_acute": 6,
+    "sweden_relevant": 7,
+    "sweden_acute": 7,
     "actively_exploited": 13,
     "critical": 9,
-    "authority_alerts": 19,
+    "authority_alerts": 20,
     "kev_recent": 9
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": 2
+    "delta": 3
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -110,6 +110,21 @@
         "activelyExploited": false,
         "critical": false,
         "incident": true,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Säkerhetsbrister kan leda till cyberangrepp på webbplatser",
+      "source": "Krisinformation",
+      "region": "SE",
+      "date": "",
+      "link": "https://www.krisinformation.se/aktuellt/nyheter/sakerhetsbrister-kan-oppna-for-angrepp-pa-webbplatser/",
+      "summary": "Två kritiska sårbarheter har upptäckts i PHP, ett programmeringsspråk som används i många webbplatser och webbaserade tjänster. Nationellt cybersäkerhetscenter uppmanar verksamheter att vidta skyndsamma åtgärder.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
         "swedenRelevant": true,
         "cve": null
       }
@@ -340,12 +355,12 @@
       }
     },
     {
-      "title": "LiteLLM Compromised in Supply Chain Attack Delivering Credential Stealer and Backdoor",
-      "source": "The Hacker News",
+      "title": "Japan's Onamae Desktop Cloud hacked, up to 27,000 servers affected",
+      "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-10-21T18:01:57.000Z",
-      "link": "https://thehackernews.com/2026/10/litellm-compromised-in-supply-chain.html",
-      "summary": "The popular LiteLLM Python package has been compromised as part of a software supply chain attack that delivered a credential stealer and a backdoor, according to reports from SafeDep, Socket, StepSecurity, and Upwind. The compromise affects LiteLLM 1.107.0, distributed through…",
+      "date": "2026-10-21T21:43:27.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/japans-onamae-desktop-cloud-hacked-up-to-27-000-servers-affected/",
+      "summary": "Hackers compromised the infrastructure of Onamae Desktop Cloud, a popular provider of VPS services in Japan, and installed malware on up to 26,739 customers' servers. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": false,
@@ -355,27 +370,12 @@
       }
     },
     {
-      "title": "PHP ships emergency patches for critical PHP2Shell flaws",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-21T14:07:05.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/php-ships-emergency-patches-for-critical-php2shell-flaws/",
-      "summary": "The PHP security team released emergency security patches for two critical remote code execution (RCE) vulnerabilities (CVE-2026-109618 and CVE-2026-109619) tracked collectively as PHP2Shell. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-109618"
-      }
-    },
-    {
-      "title": "PHP Issues Emergency Patches for Two Critical PHP2Shell RCE Flaws as Exploit Attempts Emerge",
+      "title": "Critical GitLab Flaw (CVSS 10.0) Could Allow Unauthenticated RCE Across 12 Years of Releases",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-10-21T14:00:00.000Z",
-      "link": "https://thehackernews.com/2026/10/php-issues-emergency-patches-for-two.html",
-      "summary": "PHP has released emergency updates that fix two critical flaws in the language itself, letting an attacker without an account run code on a web server. The fixes are in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35, and the PHP team says only updating fully protects a server. The flaws,…",
+      "date": "2026-10-21T18:57:34.000Z",
+      "link": "https://thehackernews.com/2026/10/critical-gitlab-flaw-cvss-100-could.html",
+      "summary": "GitLab released fixes on October 21 for a flaw that lets an attacker run code on a self-managed server without logging in, and it affects every version of the software going back to 7.0, released in 2014. The fix matters even for administrators who patched nine days earlier: the…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -402,7 +402,7 @@
       "name": "Krisinformation",
       "region": "SE",
       "ok": true,
-      "count": 0
+      "count": 1
     },
     {
       "name": "CISA KEV",
