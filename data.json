@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-21T21:57:56.713Z",
-  "next_update": "2026-10-21T22:07:00.000Z",
+  "updated": "2026-10-22T00:38:52.647Z",
+  "next_update": "2026-10-22T01:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och CERT-SE har utfärdat varningar för aktivt utnyttjande av sårbarheter i programvara som används i Sverige, såsom BeyondTrust Remote Support och PHP. Även om det inte finns bekräftade incidenter, indikerar CERT-SE:s varningar och CISA KEV-listan att dessa sårbarheter utnyttjas aktivt, vilket ökar risken för attacker mot svenska organisationer. Detta, tillsammans med tidigare erfarenheter av hybridhot mot civila samhällsfunktioner, motiverar en förhöjd beredskap.",
-  "score": 98,
+  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade, inklusive BeyondTrust Remote Support (CVE-2026-102764) och PHP (CVE-2026-109618 och CVE-2026-109619). CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker hög. Detta motiverar en förhöjd beredskap.",
+  "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
     "sweden_acute": 7,
-    "actively_exploited": 13,
+    "actively_exploited": 12,
     "critical": 9,
-    "authority_alerts": 20,
-    "kev_recent": 9
+    "authority_alerts": 19,
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": 3
+    "delta": 2
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -250,21 +250,6 @@
       }
     },
     {
-      "title": "CVE-2026-21589: Atlassian Multiple Products Files or Directories Accessible to External Parties Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-15T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-21589",
-      "summary": "Atlassian Multiple Products – Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or directories accessible to ext…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-21589"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "LiteLLM Compromised in Supply Chain Attack Delivering Credential Stealer and Backdoor",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-21T18:01:57.000Z",
+      "link": "https://thehackernews.com/2026/10/litellm-compromised-in-supply-chain.html",
+      "summary": "The popular LiteLLM Python package has been compromised as part of a software supply chain attack that delivered a credential stealer and a backdoor, according to reports from SafeDep, Socket, StepSecurity, and Upwind. The compromise affects LiteLLM 1.107.0, distributed through…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 9
+      "count": 8
     },
     {
       "name": "CISA",
