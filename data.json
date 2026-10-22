@@ -1,104 +1,29 @@
 {
-  "updated": "2026-10-22T17:05:10.028Z",
-  "next_update": "2026-10-22T17:07:00.000Z",
+  "updated": "2026-10-22T20:32:44.293Z",
+  "next_update": "2026-10-22T20:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support och GitLab, har identifierats och är aktivt utnyttjade, vilket innebär en direkt risk för svenska organisationer. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter ännu, är risken för storskaliga attacker förhöjd på grund av dessa faktorer.",
-  "score": 97,
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och internationella angreppsmönster.",
+  "reasoning": "Två signaler med tydlig svensk koppling indikerar förhöjt hotläge. MCF varnar för hybridhot mot civila samhällsfunktioner, och Krisinformation uppmanar till skyndsamma åtgärder mot kritiska sårbarheter i PHP, vilket påverkar många svenska webbplatser. Även om det inte finns bekräftade incidenter i Sverige, är det internationella aktivitetsnivån hög med flera aktivt utnyttjade sårbarheter, vilket ökar risken för svenska mål.",
+  "score": 85,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
-    "sweden_acute": 7,
-    "actively_exploited": 11,
-    "critical": 10,
-    "authority_alerts": 19,
+    "sweden_relevant": 2,
+    "sweden_acute": 2,
+    "actively_exploited": 13,
+    "critical": 7,
+    "authority_alerts": 13,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": 2
+    "delta": -10
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
-    {
-      "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-16T13:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/beyondtrust-varnar-for-kritisk-nolldagssarbarhet.html",
-      "summary": "<p>BeyondTrust har publicerat information om en allvarlig nolldagssårbarhet i BeyondTrust Remote Support. Sårbarheten CVE-2026-102764 har fått en CVSS-klassning på 9.3, och kan utnyttjas för att skriva kod till systemet utan autentisering för att på så sätt få kontroll över enhe…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-102764"
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i GitLab CE och EE",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-22T13:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/Kritisk-s%C3%A5rbarhet-i-GitLab-CE-och-EE.html",
-      "summary": "<p>Gitlab har publicerat säkerhetsuppdateringar för en ny sårbarhet, CVE-2026-110264. Sårbarheten har fått en CVSS-klassning på 10.0 och kan utnyttjas av en oautentiserad användare för att köra godtycklig kod. [1][2] GitLab har rättat sårbarheterna i följande versioner av GitLab…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-110264"
-      }
-    },
-    {
-      "title": "Kritiska sårbarheter i PHP",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-21T12:00:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritiska-s%C3%A5rbarheter-i-php.html",
-      "summary": "<p>PHP.net har publicerat säkerhetsuppdateringar för de två sårbarheterna CVE-2026-109618 och CVE-2026-109619, och rekommenderar att uppdatera till versionerna PHP 8.5.12, 8.4.27, 8.3.36 eller 8.2.35. [1] Sårbarheterna har fått en CVSS-klassning på 9.2 och kan utnyttjas för oaut…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-109618"
-      }
-    },
-    {
-      "title": "GitLab rättar kritisk sårbarhet",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-13T09:50:00.000Z",
-      "link": "https://www.cert.se/2026/10/gitlab-rattar-kritisk-sarbarhet.html",
-      "summary": "<p>GitLab har publicerat säkerhetsuppdateringar för flera sårbarheter i GitLab Community Edition (CE) och Enterprise Edition (EE). [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i FortiMail",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-02T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritisk-sarbarhet-i-fortimail.html",
-      "summary": "<p>Fortinet har publicerat information om en kritisk sårbarhet i FortiMail. Sårbarheten, CVE-2026-104286, har fått en CVSS-klassning på 9.8 och påverkar FortiMail managements gränssnitt. Ett framgångsrikt utnyttjande kan innebära att en oautentiserad angripare kan skriva godtyck…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-104286"
-      }
-    },
     {
       "title": "Lärdomar från Polen: frontlinjen för hybridhot",
       "source": "MCF",
@@ -126,6 +51,36 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Two CVSS 9.0 Linux KSMBD RCE Flaws Disclosed on Public Mailing Lists Before Kernel Fixes",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-22T17:01:53.000Z",
+      "link": "https://thehackernews.com/2026/10/two-cvss-90-linux-ksmbd-rce-flaws.html",
+      "summary": "Linux servers running KSMBD, the kernel's built-in SMB server, are exposed to two publicly reported remote code execution flaws rated 9.0 by Trend Micro's Zero Day Initiative, with no fix yet in the mainline kernel. One of them, ZDI-CAN-33774, can be triggered before any network…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "ThreatsDay: AI Secrets Leak, PingCAP Source Theft, Signal Hang-Up Flaw, Laravel Auth Bypass + 21 More",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-22T17:45:44.000Z",
+      "link": "https://thehackernews.com/2026/10/threatsday-ai-secrets-leak-pingcap.html",
+      "summary": "This week has already been rough for cybersecurity. Critical PHP and GitLab RCE flaws, serious Linux security bugs, compromised eMudhra certificates, a Node.js RCE flaw, a hacked LiteLLM release, and hundreds of hijacked Tor relays. That's a lot to deal with in just a few days.…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": true,
+        "swedenRelevant": false,
         "cve": null
       }
     },
@@ -265,6 +220,36 @@
       }
     },
     {
+      "title": "Arista Warns of Critical VeloCloud SQL Injection Zero-Day Exploited in Attacks",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-22T19:05:17.000Z",
+      "link": "https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html",
+      "summary": "Attackers are exploiting a zero-day SQL injection flaw in Arista's VeloCloud Orchestrator (VCO), the central management system for VeloCloud SD-WAN networks, the company said in an advisory on October 22. The flaw lets anyone who can log in to the orchestrator, even with a read-…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Arista patches new VeloCloud Orchestrator zero-day exploited in attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-22T17:18:22.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/arista-patches-new-velocloud-orchestrator-zero-day-exploited-in-attacks/",
+      "summary": "Arista Networks released security updates to patch an actively exploited zero-day vulnerability affecting VeloCloud Orchestrator (VCO) On-Prem deployments. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Critical Vulnerabilities in PHP Require Immediate Patching",
       "source": "CISA",
       "region": "INT",
@@ -310,16 +295,16 @@
       }
     },
     {
-      "title": "Hitachi Energy SOI",
-      "source": "CISA",
+      "title": "LiteLLM release pipeline hacked to distribute info-stealer malware",
+      "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-10-06T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-279-04",
-      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-279-04.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Hitachi Energy is aware of RCE (Remote Code Execution) vulnerability in Apache ActiveMQ component of SOI product…",
+      "date": "2026-10-22T19:12:51.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/litellm-release-pipeline-hacked-to-distribute-info-stealer-malware/",
+      "summary": "Hackers compromised the LiteLLM project's PyPI package and published malicious Docker images with a payload that steals credentials, secrets, and environment variables. [...]",
       "flags": {
         "activelyExploited": false,
-        "critical": true,
-        "incident": false,
+        "critical": false,
+        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
@@ -383,14 +368,29 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "LiteLLM Compromised in Supply Chain Attack Delivering Credential Stealer and Backdoor",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-21T18:01:57.000Z",
+      "link": "https://thehackernews.com/2026/10/litellm-compromised-in-supply-chain.html",
+      "summary": "The popular LiteLLM Python package has been compromised as part of a software supply chain attack that delivered a credential stealer and a backdoor, according to reports from SafeDep, Socket, StepSecurity, and Upwind. The compromise affects LiteLLM 1.107.0, distributed through…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
     {
       "name": "CERT-SE",
       "region": "SE",
-      "ok": true,
-      "count": 10
+      "ok": false,
+      "count": 0
     },
     {
       "name": "MCF",
