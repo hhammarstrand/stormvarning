@@ -1,17 +1,17 @@
 {
-  "updated": "2026-10-22T06:04:24.652Z",
-  "next_update": "2026-10-22T06:07:00.000Z",
+  "updated": "2026-10-22T11:44:27.734Z",
+  "next_update": "2026-10-22T12:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och CERT-SE har utfärdat varningar för aktivt utnyttjande av sårbarheter i programvara som används i Sverige, såsom BeyondTrust Remote Support och PHP. Dessa sårbarheter har höga CVSS-klassningar och det finns bekräftade rapporter om att de utnyttjas aktivt. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av denna aktivitet.",
+  "reasoning": "Flera kritiska sårbarheter i programvara som används i Sverige har identifierats och CERT-SE har utfärdat varningar om aktivt utnyttjande. Särskilt sårbarheter i BeyondTrust Remote Support och PHP har en hög CVSS-klassning och är aktivt utnyttjade, vilket ökar risken för attacker mot svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige ännu, är detta tillräckligt för att höja nivån till 'gul'.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
     "sweden_acute": 7,
-    "actively_exploited": 12,
-    "critical": 9,
+    "actively_exploited": 11,
+    "critical": 10,
     "authority_alerts": 19,
     "kev_recent": 8
   },
@@ -310,27 +310,27 @@
       }
     },
     {
-      "title": "China-Linked Hackers Exploited BeyondTrust Zero-Day to Take Over Remote Support Servers",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-16T06:55:55.000Z",
-      "link": "https://thehackernews.com/2026/10/china-linked-hackers-exploited.html",
-      "summary": "The China-nexus cyber espionage group tracked as Armory Castle (previously UNC5221 or Warp Panda) exploited a newly disclosed security flaw in BeyondTrust Remote Support (formerly Bomgar) as a zero-day in late August 2026. The vulnerability, tracked as CVE-2026-102764 (CVSS scor…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-102764"
-      }
-    },
-    {
       "title": "Hitachi Energy SOI",
       "source": "CISA",
       "region": "INT",
       "date": "2026-10-06T12:00:00.000Z",
       "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-279-04",
       "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-279-04.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>Hitachi Energy is aware of RCE (Remote Code Execution) vulnerability in Apache ActiveMQ component of SOI product…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Node.js Brotli Decoder Bug Could Allow Remote Code Execution in All Supported Versions",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-22T07:47:22.000Z",
+      "link": "https://thehackernews.com/2026/10/nodejs-brotli-decoder-bug-could-allow.html",
+      "summary": "Node.js released security updates on October 21 for its three supported release lines, 22.x, 24.x and 26.x, fixing 10 flaws. The most serious is a bug in the Brotli decompression code that Node.js bundles, which the project says can allow remote code execution, meaning an attack…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
