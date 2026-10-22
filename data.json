@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-22T11:44:27.734Z",
-  "next_update": "2026-10-22T12:07:00.000Z",
+  "updated": "2026-10-22T17:05:10.028Z",
+  "next_update": "2026-10-22T17:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i programvara som används i Sverige har identifierats och CERT-SE har utfärdat varningar om aktivt utnyttjande. Särskilt sårbarheter i BeyondTrust Remote Support och PHP har en hög CVSS-klassning och är aktivt utnyttjade, vilket ökar risken för attacker mot svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige ännu, är detta tillräckligt för att höja nivån till 'gul'.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support och GitLab, har identifierats och är aktivt utnyttjade, vilket innebär en direkt risk för svenska organisationer. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter ännu, är risken för storskaliga attacker förhöjd på grund av dessa faktorer.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
@@ -37,6 +37,21 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-102764"
+      }
+    },
+    {
+      "title": "Kritisk sårbarhet i GitLab CE och EE",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-22T13:30:00.000Z",
+      "link": "https://www.cert.se/2026/10/Kritisk-s%C3%A5rbarhet-i-GitLab-CE-och-EE.html",
+      "summary": "<p>Gitlab har publicerat säkerhetsuppdateringar för en ny sårbarhet, CVE-2026-110264. Sårbarheten har fått en CVSS-klassning på 10.0 och kan utnyttjas av en oautentiserad användare för att köra godtycklig kod. [1][2] GitLab har rättat sårbarheterna i följande versioner av GitLab…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-110264"
       }
     },
     {
@@ -82,21 +97,6 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-104286"
-      }
-    },
-    {
-      "title": "Kritiska sårbarheter i Citrix NetScaler ADC och Citrix NetScaler Gateway",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-09-27T16:09:00.000Z",
-      "link": "https://www.cert.se/2026/09/information-om-kritiska-sarbarheter-i-citrixnetscaler.html",
-      "summary": "<p>Citrix har publicerat information om allvarliga och kritiska sårbarheter i Citrix NetScaler ADC (tidigare Citrix ADC) and Citrix NetScaler Gateway (tidigare Citrix Gateway). Två av sårbarheterna, CVE-2026-88771 och CVE-2026-88772, har fått en CVSS-klassning på 9.5 där ett ett…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-88771"
       }
     },
     {
