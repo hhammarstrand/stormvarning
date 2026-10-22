@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-22T00:38:52.647Z",
-  "next_update": "2026-10-22T01:07:00.000Z",
+  "updated": "2026-10-22T06:04:24.652Z",
+  "next_update": "2026-10-22T06:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter har identifierats och är aktivt utnyttjade, inklusive BeyondTrust Remote Support (CVE-2026-102764) och PHP (CVE-2026-109618 och CVE-2026-109619). CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker hög. Detta motiverar en förhöjd beredskap.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter har identifierats och CERT-SE har utfärdat varningar för aktivt utnyttjande av sårbarheter i programvara som används i Sverige, såsom BeyondTrust Remote Support och PHP. Dessa sårbarheter har höga CVSS-klassningar och det finns bekräftade rapporter om att de utnyttjas aktivt. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av denna aktivitet.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
@@ -340,6 +340,21 @@
       }
     },
     {
+      "title": "China-Linked Hackers Use ARTEX AI Agents in ConnectWise Supply Chain Attack",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-22T04:21:26.000Z",
+      "link": "https://thehackernews.com/2026/10/china-linked-hackers-use-artex-ai.html",
+      "summary": "Microsoft on Wednesday disclosed that a China state-aligned actor dubbed Storm-0940 was behind the recent supply chain compromise of the ConnectWise Cloud Backup application. During the incident, Storm-0940 used ARTEX, a Go-based agentic AI penetration testing framework that was…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Japan's Onamae Desktop Cloud hacked, up to 27,000 servers affected",
       "source": "BleepingComputer",
       "region": "INT",
@@ -365,21 +380,6 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "LiteLLM Compromised in Supply Chain Attack Delivering Credential Stealer and Backdoor",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-21T18:01:57.000Z",
-      "link": "https://thehackernews.com/2026/10/litellm-compromised-in-supply-chain.html",
-      "summary": "The popular LiteLLM Python package has been compromised as part of a software supply chain attack that delivered a credential stealer and a backdoor, according to reports from SafeDep, Socket, StepSecurity, and Upwind. The compromise affects LiteLLM 1.107.0, distributed through…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
