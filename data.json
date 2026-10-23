@@ -1,19 +1,19 @@
 {
-  "updated": "2026-10-23T12:50:54.174Z",
-  "next_update": "2026-10-23T13:07:00.000Z",
+  "updated": "2026-10-23T17:51:07.664Z",
+  "next_update": "2026-10-23T18:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 11 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 12 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
     "sweden_acute": 8,
-    "actively_exploited": 11,
-    "critical": 13,
-    "authority_alerts": 17,
-    "kev_recent": 6
+    "actively_exploited": 12,
+    "critical": 12,
+    "authority_alerts": 18,
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
@@ -45,7 +45,7 @@
       "region": "SE",
       "date": "2026-10-23T12:30:00.000Z",
       "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v43.html",
-      "summary": "<p>I veckans brev kan du läsa om de två kritiska sårbarheterna i programmeringsspråket PHP, som används av en mängd webbplatser över hela världen. Du hittar även en rapport från bland annat CISA om utpressningsaktören Safepay.</p>",
+      "summary": "<p>I veckans brev kan du läsa om de två kritiska sårbarheterna i programmeringsspråket PHP, som används av en mängd webbplatser över hela världen. CERT-SE gick ut med ett blixtmeddelande om detta på onsdagen. Du hittar även en rapport från bland annat CISA om utpressningsaktören…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -172,6 +172,21 @@
         "incident": true,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-114625: Arista VeloCloud Orchestrator SQL Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-23T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-114625",
+      "summary": "Arista VeloCloud Orchestrator – Arista VeloCloud Orchestrator on-prem contains a SQL injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrit…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-114625"
       }
     },
     {
@@ -340,12 +355,12 @@
       }
     },
     {
-      "title": "HPE patches eight max severity RCE and auth bypass AOS flaws",
+      "title": "PHP shares mitigation for new RCE vulnerability with no patch",
       "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-10-23T12:48:00.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hpe-patches-eight-max-severity-rce-and-auth-bypass-aos-flaws/",
-      "summary": "Hewlett Packard Enterprise (HPE) released security updates to patch 72 vulnerabilities in the Aruba Operating System (ArubaOS), including eight maximum-severity authentication bypass and code execution issues. [...]",
+      "date": "2026-10-23T15:38:05.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/php-shares-mitigation-for-new-and-unpatched-rce-vulnerability/",
+      "summary": "The PHP security team has shared mitigation measures for a new remote code execution vulnerability that affects systems with non-default configurations and has no patch. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -355,27 +370,12 @@
       }
     },
     {
-      "title": "URGENT - PHP Warns of Another Unpatched RCE Two Days After Emergency PHP2Shell Patches",
-      "source": "The Hacker News",
+      "title": "HPE patches eight max severity RCE and auth bypass AOS flaws",
+      "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-10-23T11:25:43.000Z",
-      "link": "https://thehackernews.com/2026/10/urgent-php-warns-of-another-unpatched.html",
-      "summary": "PHP has warned of another way an attacker could run code on a web server, two days after it shipped emergency fixes for the critical PHP2Shell flaws. The new issue, assigned CVE-2026-115560, affects only web applications configured in an unusual way, and PHP considers it an unli…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-115560"
-      }
-    },
-    {
-      "title": "Researchers Demonstrate Node2Shell RCE Exploit on Node.js Build Using Crafted Brotli Data",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-23T08:40:43.000Z",
-      "link": "https://thehackernews.com/2026/10/researchers-demonstrate-node2shell-rce.html",
-      "summary": "Malicious Brotli data can make an application on an official build of Node.js run attacker-supplied code, security researchers at Imperva have demonstrated. Their \"Node2Shell\" proof of concept ran code on the official Node.js 24.22.0 image for Linux arm64, with no debugger or cu…",
+      "date": "2026-10-23T12:48:00.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hpe-patches-eight-max-severity-rce-and-auth-bypass-aos-flaws/",
+      "summary": "Hewlett Packard Enterprise (HPE) released security updates to patch 72 vulnerabilities in the Aruba Operating System (ArubaOS), including eight maximum-severity authentication bypass and code execution issues. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 6
+      "count": 7
     },
     {
       "name": "CISA",
