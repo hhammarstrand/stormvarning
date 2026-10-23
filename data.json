@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-22T23:34:21.476Z",
-  "next_update": "2026-10-22T23:37:00.000Z",
+  "updated": "2026-10-23T01:56:10.745Z",
+  "next_update": "2026-10-23T02:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 7 svensk-akuta signaler, 14 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 98,
+  "summary": "Förhöjt hotläge mot Sverige pga flera kritiska sårbarheter med svensk koppling och aktivt utnyttjande.",
+  "reasoning": "Flera kritiska sårbarheter (t.ex. i BeyondTrust, GitLab, PHP och FortiMail) har identifierats med tydlig svensk koppling och är aktivt utnyttjade. Dessa utgör en direkt risk för svenska organisationer och myndigheter. Även om det inte finns bekräftade incidenter i Sverige, är det hög sannolikhet för pågående attacker mot svenska mål. Det internationella bakgrundsbruset är också högt, men det är de svenska signalerna som driver bedömningen upp till 'gul'.",
+  "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
     "sweden_acute": 7,
-    "actively_exploited": 14,
-    "critical": 9,
-    "authority_alerts": 18,
-    "kev_recent": 8
+    "actively_exploited": 12,
+    "critical": 10,
+    "authority_alerts": 16,
+    "kev_recent": 6
   },
   "anomaly": {
     "active": false,
     "baseline": 95,
-    "delta": 3
+    "delta": 2
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -250,36 +250,6 @@
       }
     },
     {
-      "title": "CVE-2026-102764: BeyondTrust Remote Support Authentication Bypass by Spoofing Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-16T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-102764",
-      "summary": "BeyondTrust Remote Support – BeyondTrust Remote Support contains an authentication bypass by spoofing vulnerability that could allow a remote attacker to perform file operations on the appliance.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-102764"
-      }
-    },
-    {
-      "title": "CVE-2025-61624: Fortinet Multiple Products Path Traversal Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-16T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-61624",
-      "summary": "Fortinet Multiple Products – FortiOS, FortiPAM, FortiProxy, and FortiSwitchManager contain a path traversal vulnerability that may allow an authenticated attacker with admin profile and at least read-write permissions to write or delete arbitrary files via specific CLI commands.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2025-61624"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
@@ -383,6 +353,36 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Node.js Brotli Decoder Bug Could Allow Remote Code Execution in All Supported Versions",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-22T07:47:22.000Z",
+      "link": "https://thehackernews.com/2026/10/nodejs-brotli-decoder-bug-could-allow.html",
+      "summary": "Node.js released security updates on October 21 for its three supported release lines, 22.x, 24.x and 26.x, fixing 10 flaws. The most serious is a bug in the Brotli decompression code that Node.js bundles, which the project says can allow remote code execution, meaning an attack…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "China-Linked Hackers Use ARTEX AI Agents in ConnectWise Supply Chain Attack",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-22T04:21:26.000Z",
+      "link": "https://thehackernews.com/2026/10/china-linked-hackers-use-artex-ai.html",
+      "summary": "Microsoft on Wednesday disclosed that a China state-aligned actor dubbed Storm-0940 was behind the recent supply chain compromise of the ConnectWise Cloud Backup application. During the incident, Storm-0940 used ARTEX, a Go-based agentic AI penetration testing framework that was…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 8
+      "count": 6
     },
     {
       "name": "CISA",
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
