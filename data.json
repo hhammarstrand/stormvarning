@@ -1,17 +1,17 @@
 {
-  "updated": "2026-10-24T04:28:15.874Z",
-  "next_update": "2026-10-24T04:37:00.000Z",
+  "updated": "2026-10-24T09:05:09.112Z",
+  "next_update": "2026-10-24T09:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 13 aktivt utnyttjade sårbarheter, 19 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 14 aktivt utnyttjade sårbarheter, 19 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
     "sweden_acute": 8,
-    "actively_exploited": 13,
-    "critical": 12,
+    "actively_exploited": 14,
+    "critical": 11,
     "authority_alerts": 19,
     "kev_recent": 8
   },
@@ -310,6 +310,21 @@
       }
     },
     {
+      "title": "CISA Flags Two Actively Exploited Critical Flaws in Collabora Online and Arista VeloCloud",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-24T06:25:57.000Z",
+      "link": "https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two vulnerabilities impacting Collabora Online Built-in CODE Server and Arista VeloCloud Orchestrator (VCO) to its Known Exploited Vulnerabilities (KEV), citing reports of active exploitation in the…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Arista Warns of Critical VeloCloud SQL Injection Zero-Day Exploited in Attacks",
       "source": "The Hacker News",
       "region": "INT",
@@ -367,21 +382,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-102764"
-      }
-    },
-    {
-      "title": "Abandoned Popcorn Time app exposed millions of devices to RCE attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-23T20:55:05.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/abandoned-popcorn-time-app-exposed-millions-of-device-to-rce-attacks/",
-      "summary": "Researchers remotely disabled a vulnerable updater in the abandoned Time4Popcorn app, a fork of the Popcorn Time BitTorrent client, closing a security flaw that could have allowed attackers to execute malicious code with elevated privileges on millions of computers. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
       }
     }
   ],
