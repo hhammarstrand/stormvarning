@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-24T19:27:11.029Z",
-  "next_update": "2026-10-24T19:37:00.000Z",
+  "updated": "2026-10-24T21:51:00.678Z",
+  "next_update": "2026-10-24T22:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
@@ -18,7 +18,7 @@
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 3
+    "delta": 2
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
