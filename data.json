@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-26T15:07:36.777Z",
-  "next_update": "2026-10-26T15:37:00.000Z",
-  "level": "gul",
-  "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support och GitLab, har identifierats och CERT-SE har utfärdat varningar om deras aktiva utnyttjande. Dessa har en tydlig svensk koppling och kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är risken för storskaliga attacker förhöjd på grund av dessa sårbarheter och varningar från svenska myndigheter.",
+  "updated": "2026-10-26T20:43:50.702Z",
+  "next_update": "2026-10-26T21:07:00.000Z",
+  "level": "röd",
+  "level_label": "Röd – allvarlig hotnivå",
+  "summary": "Flera kritiska sårbarheter utnyttjas aktivt, med tydlig svensk koppling och upprepade varningar från CERT-SE och andra myndigheter.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support, PHP och GitLab, har identifierats med hög CVSS-klassning och aktivt utnyttjande. CERT-SE har utfärdat flera varningar och rekommenderar snabba åtgärder, vilket indikerar en hög risk för svenska organisationer. Den höga frekvensen av kritiska sårbarheter och aktivt utnyttjande, tillsammans med myndighetsvarningar, tyder på en allvarlig och pågående hotbild mot Sverige.",
   "score": 99,
   "indicators": {
     "total_signals": 24,
@@ -20,7 +20,7 @@
     "baseline": 96,
     "delta": 3
   },
-  "level_since": "2026-09-29T02:33:19.390Z",
+  "level_since": "2026-10-26T20:43:50.702Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
@@ -446,5 +446,5 @@
     "BleepingComputer"
   ],
   "model": "MiniMax-Text-01",
-  "notified_level": "gul"
+  "notified_level": "röd"
 }
