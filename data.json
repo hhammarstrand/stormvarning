@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-25T23:11:16.927Z",
-  "next_update": "2026-10-25T23:37:00.000Z",
+  "updated": "2026-10-26T01:39:06.989Z",
+  "next_update": "2026-10-26T02:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 14 aktivt utnyttjade sårbarheter, 19 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och myndighetsvarningar om aktivt utnyttjande.",
+  "reasoning": "Flera kritiska sårbarheter i programvaror som används i Sverige, såsom BeyondTrust Remote Support, PHP och GitLab, har identifierats och CERT-SE har utfärdat varningar om aktivt utnyttjande. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker hög på grund av dessa sårbarheter. Det finns också en internationell trend av aktivt utnyttjande som kan påverka svenska organisationer. Därför är hotnivån förhöjd till gul.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
