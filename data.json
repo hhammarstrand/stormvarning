@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-26T07:43:26.679Z",
-  "next_update": "2026-10-26T08:07:00.000Z",
+  "updated": "2026-10-26T15:07:36.777Z",
+  "next_update": "2026-10-26T15:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i programvaror som används i Sverige, såsom BeyondTrust Remote Support, PHP och GitLab, har identifierats och CERT-SE har utfärdat varningar om deras aktiva utnyttjande. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns också en internationell trend av aktivt utnyttjande som kan påverka Sverige indirekt.",
-  "score": 98,
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support och GitLab, har identifierats och CERT-SE har utfärdat varningar om deras aktiva utnyttjande. Dessa har en tydlig svensk koppling och kan påverka svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är risken för storskaliga attacker förhöjd på grund av dessa sårbarheter och varningar från svenska myndigheter.",
+  "score": 99,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
     "sweden_acute": 8,
     "actively_exploited": 14,
-    "critical": 11,
+    "critical": 12,
     "authority_alerts": 19,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 2
+    "delta": 3
   },
   "level_since": "2026-09-29T02:33:19.390Z",
   "de_escalation": null,
@@ -70,7 +70,7 @@
       }
     },
     {
-      "title": "Kritiska sårbarheter i PHP",
+      "title": "BM26-003 Kritiska sårbarheter i PHP",
       "source": "CERT-SE",
       "region": "SE",
       "date": "2026-10-21T12:00:00.000Z",
@@ -157,6 +157,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-110447"
+      }
+    },
+    {
+      "title": "PHP2Shell security flaws now sucessfully exploited in the wild",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-26T09:19:57.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
+      "summary": "Two critical RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619), collectively tracked as PHP2Shell, have been successfully exploited in the wild. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-109618"
       }
     },
     {
@@ -331,21 +346,6 @@
       "date": "2026-10-22T19:05:17.000Z",
       "link": "https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html",
       "summary": "Attackers are exploiting a zero-day SQL injection flaw in Arista's VeloCloud Orchestrator (VCO), the central management system for VeloCloud SD-WAN networks, the company said in an advisory on October 22. The flaw lets anyone who can log in to the orchestrator, even with a read-…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Arista patches new VeloCloud Orchestrator zero-day exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-22T17:18:22.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/arista-patches-new-velocloud-orchestrator-zero-day-exploited-in-attacks/",
-      "summary": "Arista Networks released security updates to patch an actively exploited zero-day vulnerability affecting VeloCloud Orchestrator (VCO) On-Prem deployments. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
