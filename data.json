@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-26T01:39:06.989Z",
-  "next_update": "2026-10-26T02:07:00.000Z",
+  "updated": "2026-10-26T07:43:26.679Z",
+  "next_update": "2026-10-26T08:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och myndighetsvarningar om aktivt utnyttjande.",
-  "reasoning": "Flera kritiska sårbarheter i programvaror som används i Sverige, såsom BeyondTrust Remote Support, PHP och GitLab, har identifierats och CERT-SE har utfärdat varningar om aktivt utnyttjande. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker hög på grund av dessa sårbarheter. Det finns också en internationell trend av aktivt utnyttjande som kan påverka svenska organisationer. Därför är hotnivån förhöjd till gul.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i programvaror som används i Sverige, såsom BeyondTrust Remote Support, PHP och GitLab, har identifierats och CERT-SE har utfärdat varningar om deras aktiva utnyttjande. Även om det inte finns bekräftade incidenter i Sverige, är risken för attacker mot svenska organisationer förhöjd på grund av dessa sårbarheter. Det finns också en internationell trend av aktivt utnyttjande som kan påverka Sverige indirekt.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
