@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-26T20:43:50.702Z",
-  "next_update": "2026-10-26T21:07:00.000Z",
+  "updated": "2026-10-27T00:22:30.697Z",
+  "next_update": "2026-10-27T00:37:00.000Z",
   "level": "röd",
   "level_label": "Röd – allvarlig hotnivå",
-  "summary": "Flera kritiska sårbarheter utnyttjas aktivt, med tydlig svensk koppling och upprepade varningar från CERT-SE och andra myndigheter.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support, PHP och GitLab, har identifierats med hög CVSS-klassning och aktivt utnyttjande. CERT-SE har utfärdat flera varningar och rekommenderar snabba åtgärder, vilket indikerar en hög risk för svenska organisationer. Den höga frekvensen av kritiska sårbarheter och aktivt utnyttjande, tillsammans med myndighetsvarningar, tyder på en allvarlig och pågående hotbild mot Sverige.",
-  "score": 99,
+  "summary": "Flera kritiska sårbarheter och aktivt utnyttjande av PHP och andra system utgör en allvarlig risk för svensk kritisk infrastruktur och samhällsviktig verksamhet.",
+  "reasoning": "Det finns flera starka signaler som indikerar en hög risk för Sverige. CERT-SE har rapporterat om kritiska sårbarheter i PHP och GitLab, vilket är särskilt oroande med tanke på att dessa används i många svenska system. Dessutom har CISA KEV listat flera aktivt utnyttjade sårbarheter, inklusive de i PHP, vilket tyder på en ökad risk för storskaliga attacker. Med flera myndighetsvarningar och bekräftade incidenter internationellt, är det nödvändigt att vidta omedelbara åtgärder för att skydda svensk kritisk infrastruktur.",
+  "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
     "sweden_acute": 8,
-    "actively_exploited": 14,
-    "critical": 12,
-    "authority_alerts": 19,
-    "kev_recent": 8
+    "actively_exploited": 10,
+    "critical": 17,
+    "authority_alerts": 14,
+    "kev_recent": 4
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 3
+    "delta": 2
   },
   "level_since": "2026-10-26T20:43:50.702Z",
   "de_escalation": null,
@@ -145,6 +145,36 @@
       }
     },
     {
+      "title": "CVE-2026-109618: PHP Memory Corruption Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-26T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-109618",
+      "summary": "PHP Group PHP – PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-109618"
+      }
+    },
+    {
+      "title": "CVE-2026-109619: PHP Stale Internal Request-State Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-26T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-109619",
+      "summary": "PHP Group PHP – PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-109619"
+      }
+    },
+    {
       "title": "CVE-2026-110447: Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -220,96 +250,6 @@
       }
     },
     {
-      "title": "CVE-2026-106931: EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-20T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-106931",
-      "summary": "EG Secure Solutions SiteGuard Server Edition – EG Secure Solutions SiteGuard Server Edition contains an OS command injection vulnerability which may allow an attacker to execute arbitrary OS commands with root or SYSTEM privileges on the system running the affected product.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-106931"
-      }
-    },
-    {
-      "title": "CVE-2026-96656: Plex Media Server External Control of File Name or Path Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-20T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96656",
-      "summary": "Plex Media Server – Plex Media Server contains an external control of file name or path vulnerability which can allow an admin user to write arbitrary files that may be executed on load. This vulnerability can be chained with CVE-2026-96652, CVE-2026-96654, and CVE-2026-96655.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-96656"
-      }
-    },
-    {
-      "title": "CVE-2026-96655: Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-20T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96655",
-      "summary": "Plex Media Server – Plex Media Server contains a server-side request forgery (SSRF) vulnerability that could allow an authenticated user to request arbitrary internal or external addresses via the '/video/:/transcode/universal' path parameter. This vulnerability can be chained w…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-96655"
-      }
-    },
-    {
-      "title": "CVE-2026-96654: Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-20T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96654",
-      "summary": "Plex Media Server – Plex Media Server contains an improper neutralization of encoded URI schemes in a web page vulnerability that could allow an attacker to call other plugins' functions and supply their own parameters. This vulnerability can be chained with CVE-2026-96652, CVE-…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-96654"
-      }
-    },
-    {
-      "title": "CVE-2026-96652: Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-20T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-96652",
-      "summary": "Plex Media Server – Plex Media Server contains a server-side request forgery (SSRF) vulnerability which could allow an attacker using any X-Plex-Token value to include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination.…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-96652"
-      }
-    },
-    {
-      "title": "CVE-2026-110936: Siemens Software Center Uncontrolled Search Path Element Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-20T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-110936",
-      "summary": "Siemens Software Center – Siemens Software Center contains an uncontrolled search path element vulnerability that could allow an authenticated local attacker to place a specially crafted DLL in a directory that the application searches, leading to arbitrary code execution with t…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-110936"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
@@ -360,7 +300,22 @@
       "region": "INT",
       "date": "2026-10-21T12:00:00.000Z",
       "link": "https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching",
-      "summary": "<p><strong>Update October 23, 2026</strong>:</p> <p><em>CISA has updated this Alert to: (1) provide a SIGMA detection rule to help identify potentially suspicious activity; (2) incorporate partner resources; and (3) reinforce existing mitigation guidance.</em></p> <h2><strong>Pu…",
+      "summary": "<p><strong>Update October 26, 2026:</strong>&nbsp;</p> <p><em>CISA has updated this Alert to reflect the addition of CVE-2026-109618 and CVE-2026-109619 to its Known Exploited Vulnerabilities (KEV) Catalog on Oct. 26, 2026.&nbsp;</em>&nbsp;</p> <p><strong>Update October 23, 2026…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-109618"
+      }
+    },
+    {
+      "title": "Microsoft releases emergency .NET patches for critical Brotli flaw",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-26T15:38:24.000Z",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw/",
+      "summary": "Microsoft released emergency .NET security updates to patch a critical vulnerability known as Broccoli2Shell, also tracked as Node2Shell and HTTP2Shell. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -370,18 +325,63 @@
       }
     },
     {
-      "title": "CISA Urges Patching Critical Vulnerability in BeyondTrust Remote Support",
-      "source": "CISA",
+      "title": "⚡ Weekly Recap: This2Shell, That2Shell, Everything's an RCE? Rogue AI, Supply Chain Chaos and More",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-10-16T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/alerts/2026/10/16/cisa-urges-patching-critical-vulnerability-beyondtrust-remote-support",
-      "summary": "<p>CISA is aware of critical authentication bypass vulnerability <a href=\"https://www.cve.org/CVERecord?id=CVE-2026-102764\" target=\"_blank\">CVE-2026-102764</a>, affecting BeyondTrust Remote Support (formerly Bomgar) versions 26.2.3 and earlier. Patches are available for supporte…",
+      "date": "2026-10-26T14:06:13.000Z",
+      "link": "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html",
+      "summary": "This2Shell, That2Shell, Everything2Shell. That's pretty much how the last week went. Critical bugs that let attackers run code remotely are showing up everywhere. Hackers are scanning for targets, some flaws are already being used in attacks, and security teams have more urgent…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-102764"
+        "cve": null
+      }
+    },
+    {
+      "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-25T17:44:09.000Z",
+      "link": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
+      "summary": "A single hacked device on a Tailscale network can be used to gain root access to other servers it can reach, according to a security researcher who published the findings this week. The attack requires two things: Tailscale SSH set up to allow port forwarding, and an attacker wh…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Brotli Decoder Flaw Behind Node.js RCE Also Affects Bun, Python and Other Widely Used Software",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-24T11:09:29.000Z",
+      "link": "https://thehackernews.com/2026/10/brotli-decoder-flaw-behind-nodejs-rce.html",
+      "summary": "A memory-corruption flaw in Google's Brotli decoder sits in many programs that unpack Brotli-compressed data, among them Bun, Microsoft's .NET, the Python Brotli and brotlicffi packages, and Envoy proxies set up to decompress Brotli. Tracked as CVE-2026-111497, the flaw allows c…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-111497"
+      }
+    },
+    {
+      "title": "Abandoned Popcorn Time app exposed millions of devices to RCE attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-23T20:55:05.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/abandoned-popcorn-time-app-exposed-millions-of-device-to-rce-attacks/",
+      "summary": "Researchers remotely disabled a vulnerable updater in the abandoned Time4Popcorn app, a fork of the Popcorn Time BitTorrent client, closing a security flaw that could have allowed attackers to execute malicious code with elevated privileges on millions of computers. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     }
   ],
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 8
+      "count": 4
     },
     {
       "name": "CISA",
