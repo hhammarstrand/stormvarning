@@ -1,17 +1,17 @@
 {
-  "updated": "2026-10-27T10:56:03.578Z",
-  "next_update": "2026-10-27T11:07:00.000Z",
+  "updated": "2026-10-27T16:30:25.054Z",
+  "next_update": "2026-10-27T16:37:00.000Z",
   "level": "röd",
   "level_label": "Röd – allvarlig hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive i PHP och GitLab, har identifierats och CERT-SE har utfärdat varningar om deras aktiva utnyttjande. Dessa sårbarheter påverkar programvara som är vanligt förekommande i svenska organisationer, vilket ökar risken för attacker. Även om det inte finns bekräftade incidenter i Sverige ännu, indikerar CERT-SE:s varningar och CISA:s aktivitet att hotet är akut och specifikt relevant för svenska intressen. — Nedtrappning till gul inväntar bekräftelse (2 av 3 körningar).",
+  "summary": "Flera kritiska sårbarheter utnyttjas aktivt, med tydlig svensk koppling och varningar från CERT-SE och andra myndigheter.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-102764, CVE-2026-110264 och CVE-2026-109618/619, har identifierats och utnyttjas aktivt. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Dessutom har CISA KEV katalogiserat flera av dessa sårbarheter som aktivt utnyttjade, vilket ökar risken för storskaliga attacker. Med flera oberoende signaler om pågående utnyttjande och svensk inblandning är hotnivån bedömd som allvarlig.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
     "sweden_acute": 8,
-    "actively_exploited": 12,
-    "critical": 16,
+    "actively_exploited": 11,
+    "critical": 15,
     "authority_alerts": 14,
     "kev_recent": 4
   },
@@ -21,12 +21,8 @@
     "delta": 2
   },
   "level_since": "2026-10-26T20:43:50.702Z",
-  "de_escalation": {
-    "to": "gul",
-    "confirmations": 2,
-    "required": 3
-  },
-  "down_streak": 2,
+  "de_escalation": null,
+  "down_streak": 0,
   "events": [
     {
       "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
@@ -191,21 +187,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-110447"
-      }
-    },
-    {
-      "title": "PHP2Shell security flaws now sucessfully exploited in the wild",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-26T09:19:57.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/php2shell-security-flaws-now-sucessfully-exploited-in-the-wild/",
-      "summary": "Two critical RCE vulnerabilities (CVE-2026-109618 and CVE-2026-109619), collectively tracked as PHP2Shell, have been successfully exploited in the wild. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-109618"
       }
     },
     {
@@ -384,6 +365,21 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-25T17:44:09.000Z",
+      "link": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
+      "summary": "A single hacked device on a Tailscale network can be used to gain root access to other servers it can reach, according to a security researcher who published the findings this week. The attack requires two things: Tailscale SSH set up to allow port forwarding, and an attacker wh…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
