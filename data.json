@@ -1,119 +1,33 @@
 {
-  "updated": "2026-10-27T00:22:30.697Z",
-  "next_update": "2026-10-27T00:37:00.000Z",
+  "updated": "2026-10-27T05:32:53.830Z",
+  "next_update": "2026-10-27T05:37:00.000Z",
   "level": "röd",
   "level_label": "Röd – allvarlig hotnivå",
-  "summary": "Flera kritiska sårbarheter och aktivt utnyttjande av PHP och andra system utgör en allvarlig risk för svensk kritisk infrastruktur och samhällsviktig verksamhet.",
-  "reasoning": "Det finns flera starka signaler som indikerar en hög risk för Sverige. CERT-SE har rapporterat om kritiska sårbarheter i PHP och GitLab, vilket är särskilt oroande med tanke på att dessa används i många svenska system. Dessutom har CISA KEV listat flera aktivt utnyttjade sårbarheter, inklusive de i PHP, vilket tyder på en ökad risk för storskaliga attacker. Med flera myndighetsvarningar och bekräftade incidenter internationellt, är det nödvändigt att vidta omedelbara åtgärder för att skydda svensk kritisk infrastruktur.",
-  "score": 98,
+  "summary": "Förhöjt hotläge mot Sverige p.g.a. identifierade kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Det finns två högviktiga signaler med svensk koppling: en om hybridhot mot civila samhällsfunktioner och en om kritiska sårbarheter i PHP som kan påverka många svenska webbplatser. Dessa signaler, tillsammans med flera aktivt utnyttjade kritiska sårbarheter globalt, indikerar en förhöjd risk för cyberattacker mot Sverige. Även om det inte finns bekräftade incidenter i Sverige ännu, är det viktigt att vara förberedd på möjliga attacker. — Nedtrappning till gul inväntar bekräftelse (1 av 3 körningar).",
+  "score": 87,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 8,
-    "sweden_acute": 8,
-    "actively_exploited": 10,
+    "sweden_relevant": 2,
+    "sweden_acute": 2,
+    "actively_exploited": 9,
     "critical": 17,
-    "authority_alerts": 14,
+    "authority_alerts": 8,
     "kev_recent": 4
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 2
+    "delta": -9
   },
   "level_since": "2026-10-26T20:43:50.702Z",
-  "de_escalation": null,
-  "down_streak": 0,
+  "de_escalation": {
+    "to": "gul",
+    "confirmations": 1,
+    "required": 3
+  },
+  "down_streak": 1,
   "events": [
-    {
-      "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-16T13:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/beyondtrust-varnar-for-kritisk-nolldagssarbarhet.html",
-      "summary": "<p>BeyondTrust har publicerat information om en allvarlig nolldagssårbarhet i BeyondTrust Remote Support. Sårbarheten CVE-2026-102764 har fått en CVSS-klassning på 9.3, och kan utnyttjas för att skriva kod till systemet utan autentisering för att på så sätt få kontroll över enhe…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-102764"
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.43",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-23T12:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v43.html",
-      "summary": "<p>I veckans brev kan du läsa om de två kritiska sårbarheterna i programmeringsspråket PHP, som används av en mängd webbplatser över hela världen. CERT-SE gick ut med ett blixtmeddelande om detta på onsdagen. Du hittar även en rapport från bland annat CISA om utpressningsaktören…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i GitLab CE och EE",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-22T13:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/Kritisk-s%C3%A5rbarhet-i-GitLab-CE-och-EE.html",
-      "summary": "<p>Gitlab har publicerat säkerhetsuppdateringar för en ny sårbarhet, CVE-2026-110264. Sårbarheten har fått en CVSS-klassning på 10.0 och kan utnyttjas av en oautentiserad användare för att köra godtycklig kod. [1][2] GitLab har rättat sårbarheterna i följande versioner av GitLab…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-110264"
-      }
-    },
-    {
-      "title": "BM26-003 Kritiska sårbarheter i PHP",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-21T12:00:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritiska-s%C3%A5rbarheter-i-php.html",
-      "summary": "<p>PHP.net har publicerat säkerhetsuppdateringar för de två sårbarheterna CVE-2026-109618 och CVE-2026-109619, och rekommenderar att uppdatera till versionerna PHP 8.5.12, 8.4.27, 8.3.36 eller 8.2.35. [1] Sårbarheterna har fått en CVSS-klassning på 9.2 och kan utnyttjas för oaut…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-109618"
-      }
-    },
-    {
-      "title": "GitLab rättar kritisk sårbarhet",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-13T09:50:00.000Z",
-      "link": "https://www.cert.se/2026/10/gitlab-rattar-kritisk-sarbarhet.html",
-      "summary": "<p>GitLab har publicerat säkerhetsuppdateringar för flera sårbarheter i GitLab Community Edition (CE) och Enterprise Edition (EE). [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i FortiMail",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-02T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritisk-sarbarhet-i-fortimail.html",
-      "summary": "<p>Fortinet har publicerat information om en kritisk sårbarhet i FortiMail. Sårbarheten, CVE-2026-104286, har fått en CVSS-klassning på 9.8 och påverkar FortiMail managements gränssnitt. Ett framgångsrikt utnyttjande kan innebära att en oautentiserad angripare kan skriva godtyck…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-104286"
-      }
-    },
     {
       "title": "Lärdomar från Polen: frontlinjen för hybridhot",
       "source": "MCF",
@@ -383,14 +297,104 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Ruby Fixes Three Regex Engine Bugs Responsible for Four Critical GitLab RCE Flaws",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-23T17:54:08.000Z",
+      "link": "https://thehackernews.com/2026/10/ruby-fixes-three-regex-engine-bugs.html",
+      "summary": "Ruby has released versions 4.0.9, 3.4.12, and 3.3.13 to fix three bugs in Onigmo, the regular expression engine built into the language. The bugs lie behind four critical security flaws that GitLab patched over the past month. GitLab found that a specially crafted pattern could…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "PHP Warns of Another Unpatched RCE Risk Two Days After Emergency PHP2Shell Patches",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-23T11:25:43.000Z",
+      "link": "https://thehackernews.com/2026/10/urgent-php-warns-of-another-unpatched.html",
+      "summary": "PHP has warned of another way an attacker could run code on a web server, two days after it shipped emergency fixes for the critical PHP2Shell flaws. The new issue, assigned CVE-2026-115560, affects only web applications configured in an unusual way, and PHP considers it an unli…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-115560"
+      }
+    },
+    {
+      "title": "Researchers Demonstrate Node2Shell RCE Exploit on Node.js Build Using Crafted Brotli Data",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-23T08:40:43.000Z",
+      "link": "https://thehackernews.com/2026/10/researchers-demonstrate-node2shell-rce.html",
+      "summary": "Malicious Brotli data can make an application on an official build of Node.js run attacker-supplied code, security researchers at Imperva have demonstrated. Their \"Node2Shell\" proof of concept ran code on the official Node.js 24.22.0 image for Linux arm64, with no debugger or cu…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Node.js Brotli Decoder Bug Could Allow Remote Code Execution in All Supported Versions",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-22T07:47:22.000Z",
+      "link": "https://thehackernews.com/2026/10/nodejs-brotli-decoder-bug-could-allow.html",
+      "summary": "Node.js released security updates on October 21 for its three supported release lines, 22.x, 24.x and 26.x, fixing 10 flaws. The most serious is a bug in the Brotli decompression code that Node.js bundles, which the project says can allow remote code execution, meaning an attack…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "China-Linked Hackers Use ARTEX AI Agents in ConnectWise Supply Chain Attack",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-22T04:21:26.000Z",
+      "link": "https://thehackernews.com/2026/10/china-linked-hackers-use-artex-ai.html",
+      "summary": "Microsoft on Wednesday disclosed that a China state-aligned actor dubbed Storm-0940 was behind the recent supply chain compromise of the ConnectWise Cloud Backup application. During the incident, Storm-0940 used ARTEX, a Go-based agentic AI penetration testing framework that was…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Critical GitLab Flaw (CVSS 10.0) Could Allow Unauthenticated RCE Across 12 Years of Releases",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-21T18:57:34.000Z",
+      "link": "https://thehackernews.com/2026/10/critical-gitlab-flaw-cvss-100-could.html",
+      "summary": "GitLab released fixes on October 21 for a flaw that lets an attacker run code on a self-managed server without logging in, and it affects every version of the software going back to 7.0, released in 2014. The fix matters even for administrators who patched nine days earlier: the…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
     {
       "name": "CERT-SE",
       "region": "SE",
-      "ok": true,
-      "count": 10
+      "ok": false,
+      "count": 0
     },
     {
       "name": "MCF",
