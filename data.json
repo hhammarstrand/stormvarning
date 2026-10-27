@@ -1,28 +1,32 @@
 {
-  "updated": "2026-10-27T16:30:25.054Z",
-  "next_update": "2026-10-27T16:37:00.000Z",
+  "updated": "2026-10-27T20:56:25.420Z",
+  "next_update": "2026-10-27T21:07:00.000Z",
   "level": "röd",
   "level_label": "Röd – allvarlig hotnivå",
-  "summary": "Flera kritiska sårbarheter utnyttjas aktivt, med tydlig svensk koppling och varningar från CERT-SE och andra myndigheter.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-102764, CVE-2026-110264 och CVE-2026-109618/619, har identifierats och utnyttjas aktivt. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en tydlig svensk koppling. Dessutom har CISA KEV katalogiserat flera av dessa sårbarheter som aktivt utnyttjade, vilket ökar risken för storskaliga attacker. Med flera oberoende signaler om pågående utnyttjande och svensk inblandning är hotnivån bedömd som allvarlig.",
-  "score": 98,
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i PHP och GitLab har identifierats och CERT-SE har utfärdat varningar om deras aktiva utnyttjande, vilket direkt påverkar Sverige. Dessa sårbarheter har höga CVSS-klassningar och kan leda till obehörig kodkörning, vilket utgör en betydande risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att dessa hot är relevanta och potentiellt skadliga för svensk infrastruktur. — Nedtrappning till gul inväntar bekräftelse (1 av 3 körningar).",
+  "score": 99,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
     "sweden_acute": 8,
-    "actively_exploited": 11,
-    "critical": 15,
-    "authority_alerts": 14,
-    "kev_recent": 4
+    "actively_exploited": 13,
+    "critical": 14,
+    "authority_alerts": 16,
+    "kev_recent": 6
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 2
+    "delta": 3
   },
   "level_since": "2026-10-26T20:43:50.702Z",
-  "de_escalation": null,
-  "down_streak": 0,
+  "de_escalation": {
+    "to": "gul",
+    "confirmations": 1,
+    "required": 3
+  },
+  "down_streak": 1,
   "events": [
     {
       "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
@@ -220,6 +224,36 @@
       }
     },
     {
+      "title": "CVE-2026-48356: Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-27T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-48356",
+      "summary": "Adobe Commerce and Magento – Adobe Commerce and Magento contain an unrestricted upload of file with dangerous type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's acc…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-48356"
+      }
+    },
+    {
+      "title": "CVE-2026-111497: Google Brotli Unchecked Return Value Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-10-27T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-111497",
+      "summary": "Google Brotli – Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a cra…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-111497"
+      }
+    },
+    {
       "title": "CVE-2026-114625: Arista VeloCloud Orchestrator SQL Injection Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -353,36 +387,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "⚡ Weekly Recap: This2Shell, That2Shell, Everything's an RCE? Rogue AI, Supply Chain Chaos and More",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-26T14:06:13.000Z",
-      "link": "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html",
-      "summary": "This2Shell, That2Shell, Everything2Shell. That's pretty much how the last week went. Critical bugs that let attackers run code remotely are showing up everywhere. Hackers are scanning for targets, some flaws are already being used in attacks, and security teams have more urgent…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-25T17:44:09.000Z",
-      "link": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
-      "summary": "A single hacked device on a Tailscale network can be used to gain root access to other servers it can reach, according to a security researcher who published the findings this week. The attack requires two things: Tailscale SSH set up to allow port forwarding, and an attacker wh…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +412,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 4
+      "count": 6
     },
     {
       "name": "CISA",
