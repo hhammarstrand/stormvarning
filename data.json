@@ -1,17 +1,17 @@
 {
-  "updated": "2026-10-28T13:29:30.646Z",
-  "next_update": "2026-10-28T13:37:00.000Z",
+  "updated": "2026-10-28T19:04:33.968Z",
+  "next_update": "2026-10-28T19:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 13 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 12 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 99,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 9,
     "sweden_acute": 9,
-    "actively_exploited": 13,
-    "critical": 12,
+    "actively_exploited": 12,
+    "critical": 13,
     "authority_alerts": 17,
     "kev_recent": 6
   },
@@ -265,6 +265,36 @@
       }
     },
     {
+      "title": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-28T18:08:33.000Z",
+      "link": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html",
+      "summary": "The China-nexus cyber espionage group known as Volt Typhoon has been attributed to a now-disrupted covert access network dubbed Silent Train that has been put to use for zero-day exploitation and strategic access. \"First identified in late 2023, Silent Train uses rotating chains…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Volt Typhoon hides zero-day attacks using 'Silent Train' framework",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-28T16:00:00.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/volt-typhoon-hides-zero-day-attacks-using-silent-train-framework/",
+      "summary": "Chinese state-sponsored hacking group Volt Typhoon has been using a framework that relies on rotating chains of connected devices compromised on demand, including for zero-day attacks targeting high-value systems. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws",
       "source": "The Hacker News",
       "region": "INT",
@@ -280,57 +310,12 @@
       }
     },
     {
-      "title": "Apple backports CoreGraphics zero-day patches to older iPhones",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-27T10:36:12.000Z",
-      "link": "https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/",
-      "summary": "​Apple has backported security patches released last month to older iPhones and iPads, addressing a zero-day bug exploited in \"extremely sophisticated\" targeted attacks on iOS devices. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CISA confirms PHP2Shell vulnerabilities now exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-27T08:20:54.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-confirms-php2shell-vulnerabilities-now-exploited-in-attacks/",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added the PHP2Shell vulnerabilities to its catalog of actively exploited security flaws and ordered federal agencies to patch their systems by Thursday. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "CISA Flags Two Actively Exploited Critical Flaws in Collabora Online and Arista VeloCloud",
       "source": "The Hacker News",
       "region": "INT",
       "date": "2026-10-24T06:25:57.000Z",
       "link": "https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html",
       "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two vulnerabilities impacting Collabora Online Built-in CODE Server and Arista VeloCloud Orchestrator (VCO) to its Known Exploited Vulnerabilities (KEV), citing reports of active exploitation in the…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Arista Warns of Critical VeloCloud SQL Injection Zero-Day Exploited in Attacks",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-22T19:05:17.000Z",
-      "link": "https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html",
-      "summary": "Attackers are exploiting a zero-day SQL injection flaw in Arista's VeloCloud Orchestrator (VCO), the central management system for VeloCloud SD-WAN networks, the company said in an advisory on October 22. The flaw lets anyone who can log in to the orchestrator, even with a read-…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -355,6 +340,36 @@
       }
     },
     {
+      "title": "Even after PHP2Shell, blast radius matters more than a CVSS score",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-28T13:50:59.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/even-after-php2shell-blast-radius-matters-more-than-a-cvss-score/",
+      "summary": "PHP2Shell shows how quickly attackers can exploit critical vulnerabilities, often before organizations have time to patch. Token Security explains why limiting the access of service accounts, API keys, and AI agents is just as important as fixing vulnerabilities to reduce the da…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-28T12:48:03.000Z",
+      "link": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
+      "summary": "Threat actors are beginning to probe for a newly patched critical vulnerability in Oracle E-Business Suite (EBS), according to threat intelligence firm Defused Cyber. The vulnerability in question is CVE-2026-101767 (CVSS score: 9.8) , a case of improper authentication in the Or…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-101767"
+      }
+    },
+    {
       "title": "Tailscale Patches SSH Flaws That Could Let Hacked Devices Gain Root Access on Other Servers",
       "source": "The Hacker News",
       "region": "INT",
@@ -365,21 +380,6 @@
         "activelyExploited": false,
         "critical": false,
         "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CISA Confirms Active Exploitation of Two PHP2Shell Flaws Enabling Remote Code Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-27T04:37:59.000Z",
-      "link": "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday confirmed active exploitation of the recently patched PHP2Shell flaws by adding them to its Known Exploited Vulnerabilities (KEV) catalog. The PHP vulnerabilities, both rated 9.2 on the CVSS scoring syste…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
