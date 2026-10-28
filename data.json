@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-27T20:56:25.420Z",
-  "next_update": "2026-10-27T21:07:00.000Z",
+  "updated": "2026-10-28T00:27:40.520Z",
+  "next_update": "2026-10-28T00:37:00.000Z",
   "level": "röd",
   "level_label": "Röd – allvarlig hotnivå",
   "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i PHP och GitLab har identifierats och CERT-SE har utfärdat varningar om deras aktiva utnyttjande, vilket direkt påverkar Sverige. Dessa sårbarheter har höga CVSS-klassningar och kan leda till obehörig kodkörning, vilket utgör en betydande risk för svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige, är det uppenbart att dessa hot är relevanta och potentiellt skadliga för svensk infrastruktur. — Nedtrappning till gul inväntar bekräftelse (1 av 3 körningar).",
+  "reasoning": "Flera kritiska sårbarheter i programvara som används i Sverige, såsom PHP och GitLab, har identifierats och CERT-SE har utfärdat varningar om dessa. Det finns också bekräftade rapporter om aktivt utnyttjande av dessa sårbarheter globalt, vilket ökar risken för svenska organisationer. Även om det inte finns någon direkt bekräftad incident i Sverige, är det uppenbart att hotbilden är förhöjd på grund av dessa faktorer. — Nedtrappning till gul inväntar bekräftelse (2 av 3 körningar).",
   "score": 99,
   "indicators": {
     "total_signals": 24,
@@ -23,10 +23,10 @@
   "level_since": "2026-10-26T20:43:50.702Z",
   "de_escalation": {
     "to": "gul",
-    "confirmations": 1,
+    "confirmations": 2,
     "required": 3
   },
-  "down_streak": 1,
+  "down_streak": 2,
   "events": [
     {
       "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
@@ -374,12 +374,12 @@
       }
     },
     {
-      "title": "Microsoft releases emergency .NET patches for critical Brotli flaw",
-      "source": "BleepingComputer",
+      "title": "⚡ Weekly Recap: This2Shell, That2Shell, Everything's an RCE? Rogue AI, Supply Chain Chaos and More",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-10-26T15:38:24.000Z",
-      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-net-patches-for-critical-brotli-flaw/",
-      "summary": "Microsoft released emergency .NET security updates to patch a critical vulnerability known as Broccoli2Shell, also tracked as Node2Shell and HTTP2Shell. [...]",
+      "date": "2026-10-26T14:06:13.000Z",
+      "link": "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html",
+      "summary": "This2Shell, That2Shell, Everything2Shell. That's pretty much how the last week went. Critical bugs that let attackers run code remotely are showing up everywhere. Hackers are scanning for targets, some flaws are already being used in attacks, and security teams have more urgent…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
