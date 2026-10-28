@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-28T00:27:40.520Z",
-  "next_update": "2026-10-28T00:37:00.000Z",
-  "level": "röd",
-  "level_label": "Röd – allvarlig hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter i programvara som används i Sverige, såsom PHP och GitLab, har identifierats och CERT-SE har utfärdat varningar om dessa. Det finns också bekräftade rapporter om aktivt utnyttjande av dessa sårbarheter globalt, vilket ökar risken för svenska organisationer. Även om det inte finns någon direkt bekräftad incident i Sverige, är det uppenbart att hotbilden är förhöjd på grund av dessa faktorer. — Nedtrappning till gul inväntar bekräftelse (2 av 3 körningar).",
+  "updated": "2026-10-28T06:14:27.294Z",
+  "next_update": "2026-10-28T06:37:00.000Z",
+  "level": "gul",
+  "level_label": "Gul – förhöjd hotnivå",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med tydlig svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter i programvaror som används i Sverige, såsom PHP och GitLab, har identifierats och CERT-SE har utfärdat varningar om dessa. Dessa sårbarheter är aktivt utnyttjade och har en hög CVSS-klassning, vilket ökar risken för attacker mot svenska organisationer. Även om det inte finns bekräftade incidenter i Sverige ännu, är det tydliga tecken på en förhöjd risknivå som kräver försiktighet och snabba åtgärder.",
   "score": 99,
   "indicators": {
     "total_signals": 24,
@@ -20,13 +20,9 @@
     "baseline": 96,
     "delta": 3
   },
-  "level_since": "2026-10-26T20:43:50.702Z",
-  "de_escalation": {
-    "to": "gul",
-    "confirmations": 2,
-    "required": 3
-  },
-  "down_streak": 2,
+  "level_since": "2026-10-28T06:14:27.294Z",
+  "de_escalation": null,
+  "down_streak": 0,
   "events": [
     {
       "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
@@ -450,5 +446,5 @@
     "BleepingComputer"
   ],
   "model": "MiniMax-Text-01",
-  "notified_level": "röd"
+  "notified_level": "gul"
 }
