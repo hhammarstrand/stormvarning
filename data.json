@@ -1,134 +1,29 @@
 {
-  "updated": "2026-10-29T09:50:35.565Z",
-  "next_update": "2026-10-29T10:07:00.000Z",
+  "updated": "2026-10-29T16:52:41.159Z",
+  "next_update": "2026-10-29T17:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 19 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 99,
+  "summary": "Förhöjt hotläge mot Sverige på grund av identifierade kritiska sårbarheter och internationella attacker med potentiell svensk påverkan.",
+  "reasoning": "Det finns två signaler med tydlig svensk koppling: en myndighetsvarning om kritiska sårbarheter i PHP och en artikel om hybridhot mot samhällsfunktioner, vilket indikerar en förhöjd risk. Även om de flesta signalerna är internationella, så är det aktivt utnyttjade sårbarheter som CVE-2026-109618 och CVE-2026-109619 i PHP som är särskilt relevanta för Sverige. Dessa faktorer tillsammans med flera myndighetsvarningar motiverar en gul nivå.",
+  "score": 88,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 9,
-    "sweden_acute": 9,
+    "sweden_relevant": 2,
+    "sweden_acute": 2,
     "actively_exploited": 15,
-    "critical": 11,
-    "authority_alerts": 19,
+    "critical": 9,
+    "authority_alerts": 11,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": 2
+    "delta": -9
   },
   "level_since": "2026-10-28T06:14:27.294Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
-    {
-      "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-16T13:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/beyondtrust-varnar-for-kritisk-nolldagssarbarhet.html",
-      "summary": "<p>BeyondTrust har publicerat information om en allvarlig nolldagssårbarhet i BeyondTrust Remote Support. Sårbarheten CVE-2026-102764 har fått en CVSS-klassning på 9.3, och kan utnyttjas för att skriva kod till systemet utan autentisering för att på så sätt få kontroll över enhe…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-102764"
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i Google Brotli",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-28T11:45:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritisk-sarbarhet-i-google-brotli.html",
-      "summary": "<p>En kritisk sårbarhet i Google Brotli har publicerats. Sårbarheten CVE-2026-111497 har fått en CVSS-klassning på 9.2, och möjliggör för en oautentiserad angripare på distans att orsaka överbelastning av system eller potentiellt exekvera godtycklig kod. [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-111497"
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.43",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-23T12:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v43.html",
-      "summary": "<p>I veckans brev kan du läsa om de två kritiska sårbarheterna i programmeringsspråket PHP, som används av en mängd webbplatser över hela världen. CERT-SE gick ut med ett blixtmeddelande om detta på onsdagen. Du hittar även en rapport från bland annat CISA om utpressningsaktören…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i GitLab CE och EE",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-22T13:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/Kritisk-s%C3%A5rbarhet-i-GitLab-CE-och-EE.html",
-      "summary": "<p>Gitlab har publicerat säkerhetsuppdateringar för en ny sårbarhet, CVE-2026-110264. Sårbarheten har fått en CVSS-klassning på 10.0 och kan utnyttjas av en oautentiserad användare för att köra godtycklig kod. [1][2] GitLab har rättat sårbarheterna i följande versioner av GitLab…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-110264"
-      }
-    },
-    {
-      "title": "BM26-003 Kritiska sårbarheter i PHP",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-21T12:00:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritiska-s%C3%A5rbarheter-i-php.html",
-      "summary": "<p>PHP.net har publicerat säkerhetsuppdateringar för de två sårbarheterna CVE-2026-109618 och CVE-2026-109619, och rekommenderar att uppdatera till versionerna PHP 8.5.12, 8.4.27, 8.3.36 eller 8.2.35. [1] Sårbarheterna har fått en CVSS-klassning på 9.2 och kan utnyttjas för oaut…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-109618"
-      }
-    },
-    {
-      "title": "GitLab rättar kritisk sårbarhet",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-13T09:50:00.000Z",
-      "link": "https://www.cert.se/2026/10/gitlab-rattar-kritisk-sarbarhet.html",
-      "summary": "<p>GitLab har publicerat säkerhetsuppdateringar för flera sårbarheter i GitLab Community Edition (CE) och Enterprise Edition (EE). [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i FortiMail",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-02T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritisk-sarbarhet-i-fortimail.html",
-      "summary": "<p>Fortinet har publicerat information om en kritisk sårbarhet i FortiMail. Sårbarheten, CVE-2026-104286, har fått en CVSS-klassning på 9.8 och påverkar FortiMail managements gränssnitt. Ett framgångsrikt utnyttjande kan innebära att en oautentiserad angripare kan skriva godtyck…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-104286"
-      }
-    },
     {
       "title": "Lärdomar från Polen: frontlinjen för hybridhot",
       "source": "MCF",
@@ -295,6 +190,36 @@
       }
     },
     {
+      "title": "New Cisco firewall zero-day exploited to crash SSL VPN devices",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-29T11:10:13.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices/",
+      "summary": "Cisco released security updates to patch a denial-of-service zero-day in Adaptive Security Appliance (ASA) and Threat Defense (FTD) software that attackers are exploiting to remotely crash vulnerable firewall devices. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-29T10:44:46.000Z",
+      "link": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html",
+      "summary": "Cisco has released patches to address a high-severity security flaw in Secure Firewall Adaptive Security Appliance (ASA) Software and Secure Firewall Threat Defense (FTD) Software that it said has been exploited in the wild. The vulnerability, tracked as CVE-2026-76418, is rated…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-76418"
+      }
+    },
+    {
       "title": "China-Linked Hackers Exploited VMware ESX Zero-Day to Reduce Audit Trail Visibility",
       "source": "The Hacker News",
       "region": "INT",
@@ -355,33 +280,108 @@
       }
     },
     {
-      "title": "CISA Flags Two Actively Exploited Critical Flaws in Collabora Online and Arista VeloCloud",
+      "title": "Attacker Tried to Exploit Alpine Linux’s GitLab via CVSS 10.0 Flaw Its Ruby Left Open",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-10-24T06:25:57.000Z",
-      "link": "https://thehackernews.com/2026/10/cisa-flags-two-actively-exploited.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added two vulnerabilities impacting Collabora Online Built-in CODE Server and Arista VeloCloud Orchestrator (VCO) to its Known Exploited Vulnerabilities (KEV), citing reports of active exploitation in the…",
+      "date": "2026-10-29T09:05:39.000Z",
+      "link": "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+      "summary": "An attacker tried to exploit a critical GitLab vulnerability on the Alpine Linux project's own GitLab server a week after GitLab released a fix, Alpine Linux said on 28 October. The flaw, CVE-2026-97229 (CVSS score: 10.0), can let an attacker run code on a GitLab server through…",
       "flags": {
-        "activelyExploited": true,
-        "critical": false,
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-97229"
+      }
+    },
+    {
+      "title": "Even after PHP2Shell, blast radius matters more than a CVSS score",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-28T13:50:59.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/even-after-php2shell-blast-radius-matters-more-than-a-cvss-score/",
+      "summary": "PHP2Shell shows how quickly attackers can exploit critical vulnerabilities, often before organizations have time to patch. Token Security explains why limiting the access of service accounts, API keys, and AI agents is just as important as fixing vulnerabilities to reduce the da…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
         "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
     },
     {
-      "title": "Critical Vulnerabilities in PHP Require Immediate Patching",
-      "source": "CISA",
+      "title": "Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-10-21T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching",
-      "summary": "<p><strong>Update October 26, 2026:</strong>&nbsp;</p> <p><em>CISA has updated this Alert to reflect the addition of CVE-2026-109618 and CVE-2026-109619 to its Known Exploited Vulnerabilities (KEV) Catalog on Oct. 26, 2026.&nbsp;</em>&nbsp;</p> <p><strong>Update October 23, 2026…",
+      "date": "2026-10-28T12:48:03.000Z",
+      "link": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
+      "summary": "Threat actors are beginning to probe for a newly patched critical vulnerability in Oracle E-Business Suite (EBS), according to threat intelligence firm Defused Cyber. The vulnerability in question is CVE-2026-101767 (CVSS score: 9.8) , a case of improper authentication in the Or…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-109618"
+        "cve": "CVE-2026-101767"
+      }
+    },
+    {
+      "title": "Tailscale Patches SSH Flaws That Could Let Hacked Devices Gain Root Access on Other Servers",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-28T06:20:37.000Z",
+      "link": "https://thehackernews.com/2026/10/tailscale-patches-ssh-flaws-that-could.html",
+      "summary": "Tailscale has released version 1.104.4 to fix flaws in its built-in SSH server that could let an attacker reach services and files on other servers that only the root user should be able to touch. The flaws are in how Tailscale SSH forwards network connections, a job the Tailsca…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "CISA Confirms Active Exploitation of Two PHP2Shell Flaws Enabling Remote Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-27T04:37:59.000Z",
+      "link": "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday confirmed active exploitation of the recently patched PHP2Shell flaws by adding them to its Known Exploited Vulnerabilities (KEV) catalog. The PHP vulnerabilities, both rated 9.2 on the CVSS scoring syste…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "⚡ Weekly Recap: This2Shell, That2Shell, Everything's an RCE? Rogue AI, Supply Chain Chaos and More",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-26T14:06:13.000Z",
+      "link": "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html",
+      "summary": "This2Shell, That2Shell, Everything2Shell. That's pretty much how the last week went. Critical bugs that let attackers run code remotely are showing up everywhere. Hackers are scanning for targets, some flaws are already being used in attacks, and security teams have more urgent…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Unpatched Tailscale SSH Flaws Could Let a Hacked Device Reach Root on Other Servers",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-25T17:44:09.000Z",
+      "link": "https://thehackernews.com/2026/10/unpatched-tailscale-ssh-flaws-could-let.html",
+      "summary": "A single hacked device on a Tailscale network can be used to gain root access to other servers it can reach, according to a security researcher who published the findings this week. The attack requires two things: Tailscale SSH set up to allow port forwarding, and an attacker wh…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
       }
     }
   ],
@@ -389,8 +389,8 @@
     {
       "name": "CERT-SE",
       "region": "SE",
-      "ok": true,
-      "count": 10
+      "ok": false,
+      "count": 0
     },
     {
       "name": "MCF",
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
