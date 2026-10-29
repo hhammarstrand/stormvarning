@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-29T02:48:33.763Z",
-  "next_update": "2026-10-29T03:07:00.000Z",
+  "updated": "2026-10-29T09:50:35.565Z",
+  "next_update": "2026-10-29T10:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 14 aktivt utnyttjade sårbarheter, 19 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 19 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 99,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 9,
     "sweden_acute": 9,
-    "actively_exploited": 14,
-    "critical": 12,
+    "actively_exploited": 15,
+    "critical": 11,
     "authority_alerts": 19,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": 3
+    "delta": 2
   },
   "level_since": "2026-10-28T06:14:27.294Z",
   "de_escalation": null,
@@ -295,6 +295,21 @@
       }
     },
     {
+      "title": "China-Linked Hackers Exploited VMware ESX Zero-Day to Reduce Audit Trail Visibility",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-29T06:22:33.000Z",
+      "link": "https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a security flaw impacting Broadcom VMware ESX to its Known Exploited Vulnerabilities (KEV) catalog, after CrowdStrike revealed that it had been weaponized by a China-nexus threat actor known as W…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns",
       "source": "The Hacker News",
       "region": "INT",
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-109618"
       }
-    },
-    {
-      "title": "Even after PHP2Shell, blast radius matters more than a CVSS score",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-10-28T13:50:59.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/even-after-php2shell-blast-radius-matters-more-than-a-cvss-score/",
-      "summary": "PHP2Shell shows how quickly attackers can exploit critical vulnerabilities, often before organizations have time to patch. Token Security explains why limiting the access of service accounts, API keys, and AI agents is just as important as fixing vulnerabilities to reduce the da…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -396,7 +396,7 @@
       "name": "MCF",
       "region": "SE",
       "ok": true,
-      "count": 10
+      "count": 9
     },
     {
       "name": "Krisinformation",
