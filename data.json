@@ -1,19 +1,19 @@
 {
-  "updated": "2026-10-29T21:45:25.135Z",
-  "next_update": "2026-10-29T22:07:00.000Z",
+  "updated": "2026-10-30T01:54:47.353Z",
+  "next_update": "2026-10-30T02:07:00.000Z",
   "level": "röd",
   "level_label": "Röd – allvarlig hotnivå",
-  "summary": "Flera kritiska sårbarheter utnyttjas aktivt, med tydlig svensk koppling och potentiell påverkan på kritisk infrastruktur.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive CVE-2026-102764 i BeyondTrust Remote Support och CVE-2026-111497 i Google Brotli, har identifierats med aktivt utnyttjande och tydlig svensk koppling. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en hög risk för svenska organisationer. Dessutom har CISA KEV listat flera av dessa sårbarheter som aktivt utnyttjade, vilket förstärker hotbilden. Kombinationen av flera oberoende signaler om pågående utnyttjande och den svenska kopplingen motiverar en hög hotnivå.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support och Google Brotli, har identifierats med en tydlig svensk koppling och är aktivt utnyttjade. CERT-SE har utfärdat varningar om dessa sårbarheter, vilket indikerar en förhöjd risk för svenska organisationer. Även om det inte finns bekräftade incidenter ännu, är detta tillräckligt för att höja nivån till 'gul'. — Nedtrappning till gul inväntar bekräftelse (1 av 3 körningar).",
   "score": 99,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 9,
     "sweden_acute": 9,
-    "actively_exploited": 16,
-    "critical": 10,
-    "authority_alerts": 20,
-    "kev_recent": 10
+    "actively_exploited": 15,
+    "critical": 9,
+    "authority_alerts": 18,
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
@@ -21,8 +21,12 @@
     "delta": 2
   },
   "level_since": "2026-10-29T21:45:25.135Z",
-  "de_escalation": null,
-  "down_streak": 0,
+  "de_escalation": {
+    "to": "gul",
+    "confirmations": 1,
+    "required": 3
+  },
+  "down_streak": 1,
   "events": [
     {
       "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
@@ -190,21 +194,6 @@
       }
     },
     {
-      "title": "CVE-2026-110447: Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-23T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-110447",
-      "summary": "Collabora Collabora Online – Built-in CODE Server – Collabora Collabora Online – Built-in CODE Server when used within the NextCloud platform contains an OS command injection vulnerability that allows for remote code execution when the CODE server isn't running.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-110447"
-      }
-    },
-    {
       "title": "CVE-2026-97229: GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -295,21 +284,6 @@
       }
     },
     {
-      "title": "CVE-2026-114625: Arista VeloCloud Orchestrator SQL Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-23T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-114625",
-      "summary": "Arista VeloCloud Orchestrator – Arista VeloCloud Orchestrator on-prem contains a SQL injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrit…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-114625"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
@@ -383,6 +357,36 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-28T06:04:58.000Z",
+      "link": "https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html",
+      "summary": "The critical Oracle PeopleSoft bug that ShinyHunters has exploited since May is not one flaw but three chained together, the researchers who reported it said this week. Oracle patched all three under a single identifier, CVE-2026-35273, in June. Its root is a server-side request…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-35273"
+      }
+    },
+    {
+      "title": "Japan Airlines suffers third-party data breach exposing passenger info",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-29T22:08:04.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/japan-airlines-suffers-third-party-data-breach-exposing-passenger-info/",
+      "summary": "Japan Airlines (JAL) has announced that a data breach at Amadeus's Passenger Service System exposed the data of about 92,000 customers. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +412,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 10
+      "count": 8
     },
     {
       "name": "CISA",
