@@ -1,32 +1,28 @@
 {
-  "updated": "2026-10-30T08:32:03.237Z",
-  "next_update": "2026-10-30T08:37:00.000Z",
+  "updated": "2026-10-30T15:17:59.637Z",
+  "next_update": "2026-10-30T15:37:00.000Z",
   "level": "röd",
   "level_label": "Röd – allvarlig hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information. — Nedtrappning till gul inväntar bekräftelse (2 av 3 körningar).",
-  "score": 99,
+  "summary": "Flera kritiska och aktivt utnyttjade sårbarheter med svensk koppling tyder på en hög risk för storskaliga cyberattacker mot Sverige.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support och Google Brotli, har identifierats med en tydlig svensk koppling och är aktivt utnyttjade. CERT-SE har utfärdat flera varningar om dessa sårbarheter, vilket indikerar en akut risk för svenska organisationer. Dessutom har CISA KEV listat flera av dessa sårbarheter som aktivt utnyttjade, vilket ytterligare förstärker hotbilden. Med flera oberoende signaler om pågående attacker och en hög koncentration av kritiska sårbarheter är det nödvändigt att klassificera läget som 'röd'.",
+  "score": 98,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 9,
-    "sweden_acute": 9,
+    "sweden_relevant": 8,
+    "sweden_acute": 7,
     "actively_exploited": 16,
-    "critical": 10,
-    "authority_alerts": 18,
+    "critical": 8,
+    "authority_alerts": 17,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": 2
+    "delta": 1
   },
   "level_since": "2026-10-29T21:45:25.135Z",
-  "de_escalation": {
-    "to": "gul",
-    "confirmations": 2,
-    "required": 3
-  },
-  "down_streak": 2,
+  "de_escalation": null,
+  "down_streak": 0,
   "events": [
     {
       "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
@@ -119,21 +115,6 @@
       }
     },
     {
-      "title": "Kritisk sårbarhet i FortiMail",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-02T11:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritisk-sarbarhet-i-fortimail.html",
-      "summary": "<p>Fortinet har publicerat information om en kritisk sårbarhet i FortiMail. Sårbarheten, CVE-2026-104286, har fått en CVSS-klassning på 9.8 och påverkar FortiMail managements gränssnitt. Ett framgångsrikt utnyttjande kan innebära att en oautentiserad angripare kan skriva godtyck…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-104286"
-      }
-    },
-    {
       "title": "Lärdomar från Polen: frontlinjen för hybridhot",
       "source": "MCF",
       "region": "SE",
@@ -144,21 +125,6 @@
         "activelyExploited": false,
         "critical": false,
         "incident": true,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Säkerhetsbrister kan leda till cyberangrepp på webbplatser",
-      "source": "Krisinformation",
-      "region": "SE",
-      "date": "",
-      "link": "https://www.krisinformation.se/aktuellt/nyheter/sakerhetsbrister-kan-oppna-for-angrepp-pa-webbplatser/",
-      "summary": "Två kritiska sårbarheter har upptäckts i PHP, ett programmeringsspråk som används i många webbplatser och webbaserade tjänster. Nationellt cybersäkerhetscenter uppmanar verksamheter att vidta skyndsamma åtgärder.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
         "swedenRelevant": true,
         "cve": null
       }
@@ -314,12 +280,12 @@
       }
     },
     {
-      "title": "New Cisco firewall zero-day exploited to crash SSL VPN devices",
+      "title": "CISA says max severity GitLab flaw now exploited in the wild",
       "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-10-29T11:10:13.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisco-warns-of-firewall-zero-day-exploited-to-crash-ssl-vpn-devices/",
-      "summary": "Cisco released security updates to patch a denial-of-service zero-day in Adaptive Security Appliance (ASA) and Threat Defense (FTD) software that attackers are exploiting to remotely crash vulnerable firewall devices. [...]",
+      "date": "2026-10-30T13:00:32.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/",
+      "summary": "Attackers have started exploiting a maximum-severity GitLab vulnerability patched earlier this month, according to the US Cybersecurity and Infrastructure Security Agency (CISA). [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -387,6 +353,36 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-35273"
       }
+    },
+    {
+      "title": "NCSC – CERT-SE veckobrev v.44",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-30T10:15:00.000Z",
+      "link": "https://www.cert.se/2026/10/ncsc-cert-se-veckobrev-v44.html",
+      "summary": "<p>I veckans brev kan du läsa om att den norska nationella säkerhetsmyndigheten (NSM) höjer den nationella cyberrisknivån till hög. Du hittar även information om att sårbarheterna i PHP har lagts till i CISA:s KEV-katalog.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Japan Airlines suffers third-party data breach exposing passenger info",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-10-29T22:08:04.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/japan-airlines-suffers-third-party-data-breach-exposing-passenger-info/",
+      "summary": "Japan Airlines (JAL) has announced that a data breach at Amadeus's Passenger Service System exposed the data of about 92,000 customers. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -406,7 +402,7 @@
       "name": "Krisinformation",
       "region": "SE",
       "ok": true,
-      "count": 1
+      "count": 0
     },
     {
       "name": "CISA KEV",
@@ -449,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "röd"
 }
