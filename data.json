@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-30T23:43:52.166Z",
-  "next_update": "2026-10-31T00:07:00.000Z",
-  "level": "röd",
-  "level_label": "Röd – allvarlig hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 7 svensk-akuta signaler, 18 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information. — Nedtrappning till gul inväntar bekräftelse (2 av 3 körningar).",
+  "updated": "2026-10-31T05:28:20.950Z",
+  "next_update": "2026-10-31T05:37:00.000Z",
+  "level": "gul",
+  "level_label": "Gul – förhöjd hotnivå",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support och Google Brotli, har identifierats med aktivt utnyttjande och tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker hög på grund av de många aktivt utnyttjade sårbarheterna. Detta kräver förhöjd beredskap och åtgärder för att skydda svensk kritisk infrastruktur.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
@@ -20,13 +20,9 @@
     "baseline": 97,
     "delta": 1
   },
-  "level_since": "2026-10-29T21:45:25.135Z",
-  "de_escalation": {
-    "to": "gul",
-    "confirmations": 2,
-    "required": 3
-  },
-  "down_streak": 2,
+  "level_since": "2026-10-31T05:28:20.950Z",
+  "de_escalation": null,
+  "down_streak": 0,
   "events": [
     {
       "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
@@ -449,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
-  "notified_level": "röd"
+  "model": "MiniMax-Text-01",
+  "notified_level": "gul"
 }
