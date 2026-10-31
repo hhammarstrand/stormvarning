@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-31T05:28:20.950Z",
-  "next_update": "2026-10-31T05:37:00.000Z",
+  "updated": "2026-10-31T11:11:07.418Z",
+  "next_update": "2026-10-31T11:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter och aktivt utnyttjande med svensk koppling.",
-  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support och Google Brotli, har identifierats med aktivt utnyttjande och tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker hög på grund av de många aktivt utnyttjade sårbarheterna. Detta kräver förhöjd beredskap och åtgärder för att skydda svensk kritisk infrastruktur.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter med aktivt utnyttjande och svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support och Google Brotli, har identifierats med aktivt utnyttjande och en tydlig svensk koppling genom CERT-SE:s varningar. Även om det inte finns bekräftade incidenter i Sverige, är risken för pågående attacker hög på grund av de rapporterade sårbarheterna. Detta indikerar ett förhöjt hotläge.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
