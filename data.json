@@ -1,19 +1,19 @@
 {
-  "updated": "2026-11-01T22:22:53.217Z",
-  "next_update": "2026-11-01T22:37:00.000Z",
+  "updated": "2026-11-02T01:46:29.706Z",
+  "next_update": "2026-11-02T02:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
-  "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 7 svensk-akuta signaler, 18 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "summary": "Förhöjt hotläge mot Sverige på grund av flera kritiska sårbarheter med aktivt utnyttjande och svensk koppling.",
+  "reasoning": "Flera kritiska sårbarheter, inklusive BeyondTrust Remote Support och Google Brotli, har identifierats med aktivt utnyttjande och tydlig svensk koppling genom CERT-SE. Dessa utgör en akut risk för svenska organisationer och kräver förhöjd beredskap. Även om det inte finns bekräftade incidenter i Sverige, är risken för storskaliga attacker förhöjd på grund av de aktiva hoten.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
     "sweden_acute": 7,
-    "actively_exploited": 18,
+    "actively_exploited": 16,
     "critical": 8,
-    "authority_alerts": 18,
-    "kev_recent": 10
+    "authority_alerts": 16,
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
@@ -127,36 +127,6 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
-      }
-    },
-    {
-      "title": "CVE-2026-109618: PHP Memory Corruption Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-26T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-109618",
-      "summary": "PHP Group PHP – PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-109618"
-      }
-    },
-    {
-      "title": "CVE-2026-109619: PHP Stale Internal Request-State Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-26T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-109619",
-      "summary": "PHP Group PHP – PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-109619"
       }
     },
     {
@@ -383,6 +353,36 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-35273"
       }
+    },
+    {
+      "title": "Alpine Linux rebuilds GitLab after attempted RCE attack",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-11-01T15:11:21.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/alpine-linux-rebuilds-gitlab-after-attempted-rce-attack/",
+      "summary": "Hackers attempted to exploit a critical GitLab vulnerability in Alpine Linux's development infrastructure on October 20-21, prompting the open-source project to rebuild its GitLab server and reset all passwords over concerns of a possible compromise. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "CVSS 10.0 LXD, MicroCloud Flaw Lets Attackers Impersonate Trusted Clients Without a Private Key",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-01T08:51:31.000Z",
+      "link": "https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html",
+      "summary": "A critical flaw in Canonical's LXD and MicroCloud let an attacker log in as a trusted client without holding that client's private key. To do it, the attacker had to reach their HTTPS API over the network and have the trusted client's public certificate. Once in, the attacker wo…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 10
+      "count": 8
     },
     {
       "name": "CISA",
@@ -445,6 +445,6 @@
     "The Hacker News",
     "BleepingComputer"
   ],
-  "model": "heuristik (utan AI)",
+  "model": "MiniMax-Text-01",
   "notified_level": "gul"
 }
