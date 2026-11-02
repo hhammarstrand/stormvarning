@@ -1,119 +1,29 @@
 {
-  "updated": "2026-11-02T09:22:18.274Z",
-  "next_update": "2026-11-02T09:37:00.000Z",
+  "updated": "2026-11-02T19:44:58.473Z",
+  "next_update": "2026-11-02T20:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 7 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 16 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 98,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 1 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 81,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
-    "sweden_acute": 7,
-    "actively_exploited": 16,
-    "critical": 8,
-    "authority_alerts": 16,
+    "sweden_relevant": 4,
+    "sweden_acute": 1,
+    "actively_exploited": 15,
+    "critical": 7,
+    "authority_alerts": 13,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": 1
+    "delta": -16
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
-    {
-      "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-16T13:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/beyondtrust-varnar-for-kritisk-nolldagssarbarhet.html",
-      "summary": "<p>BeyondTrust har publicerat information om en allvarlig nolldagssårbarhet i BeyondTrust Remote Support. Sårbarheten CVE-2026-102764 har fått en CVSS-klassning på 9.3, och kan utnyttjas för att skriva kod till systemet utan autentisering för att på så sätt få kontroll över enhe…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-102764"
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i Google Brotli",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-28T11:45:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritisk-sarbarhet-i-google-brotli.html",
-      "summary": "<p>En kritisk sårbarhet i Google Brotli har publicerats. Sårbarheten CVE-2026-111497 har fått en CVSS-klassning på 9.2, och möjliggör för en oautentiserad angripare på distans att orsaka överbelastning av system eller potentiellt exekvera godtycklig kod. [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-111497"
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.43",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-23T12:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v43.html",
-      "summary": "<p>I veckans brev kan du läsa om de två kritiska sårbarheterna i programmeringsspråket PHP, som används av en mängd webbplatser över hela världen. CERT-SE gick ut med ett blixtmeddelande om detta på onsdagen. Du hittar även en rapport från bland annat CISA om utpressningsaktören…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i GitLab CE och EE",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-22T13:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/Kritisk-s%C3%A5rbarhet-i-GitLab-CE-och-EE.html",
-      "summary": "<p>Gitlab har publicerat säkerhetsuppdateringar för en ny sårbarhet, CVE-2026-110264. Sårbarheten har fått en CVSS-klassning på 10.0 och kan utnyttjas av en oautentiserad användare för att köra godtycklig kod. [1][2] GitLab har rättat sårbarheterna i följande versioner av GitLab…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-110264"
-      }
-    },
-    {
-      "title": "BM26-003 Kritiska sårbarheter i PHP",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-21T12:00:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritiska-s%C3%A5rbarheter-i-php.html",
-      "summary": "<p>PHP.net har publicerat säkerhetsuppdateringar för de två sårbarheterna CVE-2026-109618 och CVE-2026-109619, och rekommenderar att uppdatera till versionerna PHP 8.5.12, 8.4.27, 8.3.36 eller 8.2.35. [1] Sårbarheterna har fått en CVSS-klassning på 9.2 och kan utnyttjas för oaut…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-109618"
-      }
-    },
-    {
-      "title": "GitLab rättar kritisk sårbarhet",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-13T09:50:00.000Z",
-      "link": "https://www.cert.se/2026/10/gitlab-rattar-kritisk-sarbarhet.html",
-      "summary": "<p>GitLab har publicerat säkerhetsuppdateringar för flera sårbarheter i GitLab Community Edition (CE) och Enterprise Edition (EE). [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
     {
       "title": "Lärdomar från Polen: frontlinjen för hybridhot",
       "source": "MCF",
@@ -126,6 +36,21 @@
         "critical": false,
         "incident": true,
         "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Over 1,000 GitLab servers vulnerable to ongoing RCE attacks",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-11-02T12:47:00.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/over-1-000-gitlab-servers-vulnerable-to-code-execution-attacks/",
+      "summary": "Over 1,000 Internet-exposed GitLab servers are still unpatched against a maximum-severity flaw actively exploited in remote code execution attacks. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
         "cve": null
       }
     },
@@ -280,12 +205,12 @@
       }
     },
     {
-      "title": "CISA says max severity GitLab flaw now exploited in the wild",
+      "title": "Ivanti patches two more Connect Secure zero-days chained in attacks",
       "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-10-30T13:00:32.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-now-exploiting-max-severity-gitlab-flaw-in-attacks/",
-      "summary": "Attackers have started exploiting a maximum-severity GitLab vulnerability patched earlier this month, according to the US Cybersecurity and Infrastructure Security Agency (CISA). [...]",
+      "date": "2026-11-02T09:33:26.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
+      "summary": "Ivanti released security updates to patch two more Connect Secure (ICS) remote access gateway flaws that have been chained in zero-day attacks since at least October 1. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -340,21 +265,6 @@
       }
     },
     {
-      "title": "ShinyHunters-Exploited Oracle PeopleSoft Zero-Day Turns Out to Be Three Chained Flaws",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-28T06:04:58.000Z",
-      "link": "https://thehackernews.com/2026/10/shinyhunters-exploited-oracle.html",
-      "summary": "The critical Oracle PeopleSoft bug that ShinyHunters has exploited since May is not one flaw but three chained together, the researchers who reported it said this week. Oracle patched all three under a single identifier, CVE-2026-35273, in June. Its root is a server-side request…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-35273"
-      }
-    },
-    {
       "title": "Alpine Linux rebuilds GitLab after attempted RCE attack",
       "source": "BleepingComputer",
       "region": "INT",
@@ -383,14 +293,104 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "WordPress RCE Flaw Draws Nearly 63,000 Attack Attempts in Just 24 Hours",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-30T14:08:14.000Z",
+      "link": "https://thehackernews.com/2026/10/wordpress-rce-flaw-draws-nearly-63000.html",
+      "summary": "Threat actors have been observed attempting to exploit a high-severity security flaw in WordPress Core shortly after patches were released. The vulnerability, which does not have a CVE identifier, relates to a case of remote code execution impacting WordPress Core versions 4.7 t…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Attacker Tried to Exploit Alpine Linux’s GitLab via CVSS 10.0 Flaw Its Ruby Left Open",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-29T09:05:39.000Z",
+      "link": "https://thehackernews.com/2026/10/attacker-tried-to-exploit-alpine-linuxs.html",
+      "summary": "An attacker tried to exploit a critical GitLab vulnerability on the Alpine Linux project's own GitLab server a week after GitLab released a fix, Alpine Linux said on 28 October. The flaw, CVE-2026-97229 (CVSS score: 10.0), can let an attacker run code on a GitLab server through…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-97229"
+      }
+    },
+    {
+      "title": "Hackers Target Critical Oracle E-Business Suite RCE Flaw Days After Security Patch",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-10-28T12:48:03.000Z",
+      "link": "https://thehackernews.com/2026/10/hackers-target-critical-oracle-e.html",
+      "summary": "Threat actors are beginning to probe for a newly patched critical vulnerability in Oracle E-Business Suite (EBS), according to threat intelligence firm Defused Cyber. The vulnerability in question is CVE-2026-101767 (CVSS score: 9.8) , a case of improper authentication in the Or…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-101767"
+      }
+    },
+    {
+      "title": "Tillsammans för ett mer motståndskraftigt Sverige",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-10-07T12:24:25.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/oktober/tillsammans-for-ett-mer-motstandskraftigt-sverige/",
+      "summary": "Hur kan samhället stå starkare inför kriser, cyberhot och ytterst krig? Det var den centrala frågan när representanter från offentlig sektor, näringsliv och civilsamhälle samlades för konferensen Ökad motståndskraft i samhällsviktig verksamhet.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-26T08:34:35.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
+      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Klimatriskerna för Sverige ökar",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-25T09:30:10.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
+      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
     {
       "name": "CERT-SE",
       "region": "SE",
-      "ok": true,
-      "count": 10
+      "ok": false,
+      "count": 0
     },
     {
       "name": "MCF",
