@@ -1,24 +1,24 @@
 {
-  "updated": "2026-11-03T10:00:13.382Z",
-  "next_update": "2026-11-03T10:07:00.000Z",
+  "updated": "2026-11-03T17:46:23.292Z",
+  "next_update": "2026-11-03T18:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 14 aktivt utnyttjade sårbarheter, 15 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 98,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 11 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 99,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 8,
-    "sweden_acute": 8,
-    "actively_exploited": 14,
-    "critical": 10,
-    "authority_alerts": 15,
+    "sweden_relevant": 10,
+    "sweden_acute": 9,
+    "actively_exploited": 11,
+    "critical": 11,
+    "authority_alerts": 17,
     "kev_recent": 6
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 2
+    "delta": 3
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
@@ -136,6 +136,21 @@
       "date": "2026-09-03T06:00:00.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/september/lardomar-fran-polen-frontlinjen-for-hybridhot/",
       "summary": "Erfarenheter från Polen visar hur civila samhällsfunktioner hamnar i frontlinjen för hybridhot. Angrepp mot energi, transporter, sjukvård och digital infrastruktur har kombinerats med otillbörlig informationspåverkan.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Cyberangrepp mot frys-och kylsystem",
+      "source": "Krisinformation",
+      "region": "SE",
+      "date": "",
+      "link": "https://www.krisinformation.se/aktuellt/nyheter/cyberangrepp-frys-och-kylsystem/",
+      "summary": "Under måndagen drabbades frys- och kylsystem inom dagligvaruhandeln av ett cyberangrepp. Nationellt cybersäkerhetscenter följer händelsen och är i kontakt med drabbade verksamheter.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
@@ -280,21 +295,6 @@
       }
     },
     {
-      "title": "Ivanti patches two more Connect Secure zero-days chained in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-02T09:33:26.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/",
-      "summary": "Ivanti released security updates to patch two more Connect Secure (ICS) remote access gateway flaws that have been chained in zero-day attacks since at least October 1. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls",
       "source": "The Hacker News",
       "region": "INT",
@@ -310,42 +310,27 @@
       }
     },
     {
-      "title": "China-Linked Hackers Exploited VMware ESX Zero-Day to Reduce Audit Trail Visibility",
+      "title": "Barracuda Flaws Could Be Chained to Bypass Authorization and Gain Root Access",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-10-29T06:22:33.000Z",
-      "link": "https://thehackernews.com/2026/10/china-linked-hackers-exploited-vmware.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added a security flaw impacting Broadcom VMware ESX to its Known Exploited Vulnerabilities (KEV) catalog, after CrowdStrike revealed that it had been weaponized by a China-nexus threat actor known as W…",
+      "date": "2026-11-03T15:59:19.000Z",
+      "link": "https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html",
+      "summary": "Barracuda has disclosed details of two vulnerabilities affecting its products that, if chained together, could allow an attacker to bypass authorization controls and gain root access to a susceptible device. The vulnerabilities, a pre-authentication authorization bypass vulnerab…",
       "flags": {
-        "activelyExploited": true,
-        "critical": false,
+        "activelyExploited": false,
+        "critical": true,
         "incident": false,
         "swedenRelevant": false,
         "cve": null
       }
     },
     {
-      "title": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns",
+      "title": "Red Hat Patches 9.8-Rated Linux TCP RCE Flaw While Ubuntu Releases Fixes for Testing",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-10-28T18:08:33.000Z",
-      "link": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html",
-      "summary": "The China-nexus cyber espionage group known as Volt Typhoon has been attributed to a now-disrupted covert access network dubbed Silent Train that has been put to use for zero-day exploitation and strategic access. \"First identified in late 2023, Silent Train uses rotating chains…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Alpine Linux rebuilds GitLab after attempted RCE attack",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-01T15:11:21.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/alpine-linux-rebuilds-gitlab-after-attempted-rce-attack/",
-      "summary": "Hackers attempted to exploit a critical GitLab vulnerability in Alpine Linux's development infrastructure on October 20-21, prompting the open-source project to rebuild its GitLab server and reset all passwords over concerns of a possible compromise. [...]",
+      "date": "2026-11-03T11:23:53.000Z",
+      "link": "https://thehackernews.com/2026/11/red-hat-patches-98-rated-linux-tcp-rce.html",
+      "summary": "Fixed kernels for a use-after-free vulnerability in the Linux kernel's IPv4 TCP code are now available for Red Hat Enterprise Linux 8, 9, and 10, while Ubuntu's fixes for its three newest long-term-support releases remain in its opt-in testing channel with no date for a regular…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -383,6 +368,21 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "NCSC – CERT-SE veckobrev v.44",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-30T10:15:00.000Z",
+      "link": "https://www.cert.se/2026/10/ncsc-cert-se-veckobrev-v44.html",
+      "summary": "<p>I veckans brev kan du läsa om att den norska nationella säkerhetsmyndigheten (NSM) höjer den nationella cyberrisknivån till hög. Du hittar även information om att sårbarheterna i PHP har lagts till i CISA:s KEV-katalog.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -402,7 +402,7 @@
       "name": "Krisinformation",
       "region": "SE",
       "ok": true,
-      "count": 0
+      "count": 1
     },
     {
       "name": "CISA KEV",
