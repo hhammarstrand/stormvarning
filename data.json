@@ -1,24 +1,24 @@
 {
-  "updated": "2026-11-02T19:44:58.473Z",
-  "next_update": "2026-11-02T20:07:00.000Z",
+  "updated": "2026-11-03T02:13:34.610Z",
+  "next_update": "2026-11-03T02:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 1 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 81,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 1 svensk-akuta signaler, 13 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 78,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 6,
     "sweden_acute": 1,
-    "actively_exploited": 15,
+    "actively_exploited": 13,
     "critical": 7,
     "authority_alerts": 13,
-    "kev_recent": 8
+    "kev_recent": 6
   },
   "anomaly": {
     "active": false,
     "baseline": 97,
-    "delta": -16
+    "delta": -19
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
@@ -157,36 +157,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-46300"
-      }
-    },
-    {
-      "title": "CVE-2026-48356: Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-27T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-48356",
-      "summary": "Adobe Commerce and Magento – Adobe Commerce and Magento contain an unrestricted upload of file with dangerous type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's acc…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-48356"
-      }
-    },
-    {
-      "title": "CVE-2026-111497: Google Brotli Unchecked Return Value Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-27T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-111497",
-      "summary": "Google Brotli – Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a cra…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-111497"
       }
     },
     {
@@ -383,6 +353,36 @@
         "swedenRelevant": true,
         "cve": null
       }
+    },
+    {
+      "title": "Cyberverksamheten samlas hos FRA – övergång till Nationellt cybersäkerhetscenter den 1 juli 2026",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-12T10:00:20.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
+      "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "RSA‑föreskrifterna upphävs – förändringar för kommuner och regioner",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-05T10:24:12.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/rsaforeskrifterna-upphavs--forandringar-for-kommuner-och-regioner/",
+      "summary": "Myndigheten för civilt försvar har beslutat att upphäva de föreskrifter som i dag styr kommuners och regioners redovisning av risk- och sårbarhetsanalyser (RSA).",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 8
+      "count": 6
     },
     {
       "name": "CISA",
