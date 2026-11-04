@@ -1,17 +1,17 @@
 {
-  "updated": "2026-11-04T03:12:18.357Z",
-  "next_update": "2026-11-04T03:37:00.000Z",
+  "updated": "2026-11-04T11:31:12.210Z",
+  "next_update": "2026-11-04T11:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 9 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 8 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 12,
     "sweden_acute": 9,
-    "actively_exploited": 9,
-    "critical": 10,
+    "actively_exploited": 8,
+    "critical": 11,
     "authority_alerts": 18,
     "kev_recent": 5
   },
@@ -265,18 +265,18 @@
       }
     },
     {
-      "title": "Cisco Patches Actively Exploited ASA and FTD VPN Flaw That Can Crash Firewalls",
+      "title": "Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-10-29T10:44:46.000Z",
-      "link": "https://thehackernews.com/2026/10/cisco-patches-actively-exploited-asa.html",
-      "summary": "Cisco has released patches to address a high-severity security flaw in Secure Firewall Adaptive Security Appliance (ASA) Software and Secure Firewall Threat Defense (FTD) Software that it said has been exploited in the wild. The vulnerability, tracked as CVE-2026-76418, is rated…",
+      "date": "2026-11-04T07:46:15.000Z",
+      "link": "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html",
+      "summary": "A critical Android flaw could allow an attacker to run code on a phone without any user action remotely, Google said in its November security bulletin. The flaw, CVE-2026-58868, affects Android 14 through 17. Phones get the fix with security patch level 2026-11-01 or later, whic…",
       "flags": {
-        "activelyExploited": true,
-        "critical": false,
+        "activelyExploited": false,
+        "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-76418"
+        "cve": "CVE-2026-58868"
       }
     },
     {
