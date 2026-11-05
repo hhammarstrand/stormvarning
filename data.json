@@ -1,18 +1,18 @@
 {
-  "updated": "2026-11-05T15:46:51.060Z",
-  "next_update": "2026-11-05T16:07:00.000Z",
+  "updated": "2026-11-05T21:56:50.063Z",
+  "next_update": "2026-11-05T22:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 9 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 8 aktivt utnyttjade sårbarheter, 15 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 9,
+    "sweden_relevant": 10,
     "sweden_acute": 9,
-    "actively_exploited": 9,
-    "critical": 11,
-    "authority_alerts": 14,
+    "actively_exploited": 8,
+    "critical": 10,
+    "authority_alerts": 15,
     "kev_recent": 4
   },
   "anomaly": {
@@ -156,21 +156,6 @@
         "critical": false,
         "incident": true,
         "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "CISA flags WordPress RCE flaw as actively exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-04T12:11:05.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/",
-      "summary": "The US Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that attackers have started exploiting a recently patched high-severity WordPress vulnerability in the wild. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
         "cve": null
       }
     },
@@ -381,6 +366,21 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "NCSC – CERT-SE veckobrev v.44",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-30T10:15:00.000Z",
+      "link": "https://www.cert.se/2026/10/ncsc-cert-se-veckobrev-v44.html",
+      "summary": "<p>I veckans brev kan du läsa om att den norska nationella säkerhetsmyndigheten (NSM) höjer den nationella cyberrisknivån till hög. Du hittar även information om att sårbarheterna i PHP har lagts till i CISA:s KEV-katalog.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
         "cve": null
       }
     }
