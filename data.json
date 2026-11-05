@@ -1,24 +1,24 @@
 {
-  "updated": "2026-11-05T00:19:40.978Z",
-  "next_update": "2026-11-05T00:37:00.000Z",
+  "updated": "2026-11-05T07:20:19.215Z",
+  "next_update": "2026-11-05T07:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 9 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 99,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 8 aktivt utnyttjade sårbarheter, 15 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 98,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 9,
+    "sweden_relevant": 10,
     "sweden_acute": 9,
-    "actively_exploited": 9,
-    "critical": 12,
-    "authority_alerts": 14,
+    "actively_exploited": 8,
+    "critical": 11,
+    "authority_alerts": 15,
     "kev_recent": 4
   },
   "anomaly": {
     "active": false,
     "baseline": 96,
-    "delta": 3
+    "delta": 2
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
@@ -175,21 +175,6 @@
       }
     },
     {
-      "title": "CISA Adds Actively Exploited GitLab RCE and Cisco Firewall DoS Flaws to KEV",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-10-30T07:27:05.000Z",
-      "link": "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Thursday added two security flaws impacting Cisco and GitLab software to its Known Exploited Vulnerabilities (KEV), citing evidence of active exploitation. The vulnerabilities are listed below - CVE-2026-97229 (…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-97229"
-      }
-    },
-    {
       "title": "CVE-2024-27834: Apple Multiple Products Improper Authentication Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -300,7 +285,7 @@
       "region": "INT",
       "date": "2026-11-04T14:27:52.000Z",
       "link": "https://thehackernews.com/2026/11/apt29-linked-hackers-hijack-web.html",
-      "summary": "The Russia-linked threat actor known as APT29 is said to be behind a large-scale watering hole campaign targeting iOS and Android users through compromised websites, fake domains, and a supply chain attack involving a Ukrainian web analytics service called Plerdy SEO Tracker. \"T…",
+      "summary": "The Russia-linked threat actor known as APT29 is presumed to be behind a large-scale watering hole campaign targeting iOS and Android users through compromised websites, fake domains, and a supply chain attack involving a Ukrainian web analytics service called Plerdy SEO Tracker…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
@@ -381,6 +366,21 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "NCSC – CERT-SE veckobrev v.44",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-30T10:15:00.000Z",
+      "link": "https://www.cert.se/2026/10/ncsc-cert-se-veckobrev-v44.html",
+      "summary": "<p>I veckans brev kan du läsa om att den norska nationella säkerhetsmyndigheten (NSM) höjer den nationella cyberrisknivån till hög. Du hittar även information om att sårbarheterna i PHP har lagts till i CISA:s KEV-katalog.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
         "cve": null
       }
     }
