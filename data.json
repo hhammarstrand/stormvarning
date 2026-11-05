@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-04T18:51:07.382Z",
-  "next_update": "2026-11-04T19:07:00.000Z",
+  "updated": "2026-11-05T00:19:40.978Z",
+  "next_update": "2026-11-05T00:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 9 aktivt utnyttjade sårbarheter, 15 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 9 svensk-akuta signaler, 9 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 99,
   "indicators": {
     "total_signals": 24,
@@ -12,8 +12,8 @@
     "sweden_acute": 9,
     "actively_exploited": 9,
     "critical": 12,
-    "authority_alerts": 15,
-    "kev_recent": 5
+    "authority_alerts": 14,
+    "kev_recent": 4
   },
   "anomaly": {
     "active": false,
@@ -190,6 +190,21 @@
       }
     },
     {
+      "title": "CVE-2024-27834: Apple Multiple Products Improper Authentication Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-04T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2024-27834",
+      "summary": "Apple Multiple Products – Apple iOS, iPadOS, macOS, Safari, tvOS and watchOS 10.5 contain an improper authentication vulnerability which could allow an attacker with arbitrary read and write capability to bypass pointer authentication.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2024-27834"
+      }
+    },
+    {
       "title": "CVE-2026-119977: WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -235,42 +250,27 @@
       }
     },
     {
-      "title": "CVE-2026-97229: GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-29T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-97229",
-      "summary": "GitLab Community Edition and Enterprise Edition – GitLab Community Edition and Enterprise Edition contain a integer overflow or wraparound vulnerability that could allow an unauthenticated user to execute arbitrary code on the GitLab server via a specially crafted regular expres…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-97229"
-      }
-    },
-    {
-      "title": "CVE-2026-76418: Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-10-29T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76418",
-      "summary": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software – Cisco Secure Firewall ASA Software and Cisco Secure FTD Software contains an unchecked return value to NULL pointer dereference vulnerability that could allow an unauthenticated, remote attacker to cause the devi…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-76418"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
       "date": "2026-09-28T12:00:00.000Z",
       "link": "https://www.ncsc.gov.uk/news/exploitation-of-vulnerabilities-affecting-citrix-netscaler-adc-and-citrix-netscaler-gateway",
       "summary": "The NCSC is urging UK organisations to promptly mitigate vulnerabilities affecting Citrix NetScaler ADC and Gateway, two of which are being actively exploited.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Zyxel fixes zero-day exploited to hack nearly 1,000 network switches",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-11-04T20:58:19.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/",
+      "summary": "Zyxel has patched a zero-day vulnerability in its GS1900 series network switches that hackers exploited to compromise nearly 1,000 devices worldwide and steal configuration files and credentials. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 5
+      "count": 4
     },
     {
       "name": "CISA",
