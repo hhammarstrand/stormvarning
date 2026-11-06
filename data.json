@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-06T02:20:27.363Z",
-  "next_update": "2026-11-06T02:37:00.000Z",
+  "updated": "2026-11-06T09:48:59.866Z",
+  "next_update": "2026-11-06T10:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
@@ -11,7 +11,7 @@
     "sweden_relevant": 12,
     "sweden_acute": 9,
     "actively_exploited": 6,
-    "critical": 10,
+    "critical": 9,
     "authority_alerts": 15,
     "kev_recent": 2
   },
@@ -40,7 +40,22 @@
       }
     },
     {
-      "title": "Cyberangrepp mot uppkopplade frys- och kylsystem",
+      "title": "EU varnar för cyberincidenter i kyl- och fryssystem",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-11-06T08:00:00.000Z",
+      "link": "https://www.cert.se/2026/11/eu-varnar-for-cyberincidenter-i-kyl-och-fryssystem.html",
+      "summary": "<p>Sedan den 11 oktober 2026 har flera kyl- och fryssystem i flera EU-länder drabbats av cybersäkerhetsincidenter. Efter en ny våg av incidenter den 1-2 november uppmanar EU:s cybersäkerhetsaktörer organisationer att omedelbart vidta åtgärder för att minska riskerna i berörda sy…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Cyberangrepp mot uppkopplade kyl- och fryssystem",
       "source": "CERT-SE",
       "region": "SE",
       "date": "2026-11-02T16:40:00.000Z",
@@ -112,21 +127,6 @@
         "incident": false,
         "swedenRelevant": true,
         "cve": "CVE-2026-109618"
-      }
-    },
-    {
-      "title": "GitLab rättar kritisk sårbarhet",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-13T09:50:00.000Z",
-      "link": "https://www.cert.se/2026/10/gitlab-rattar-kritisk-sarbarhet.html",
-      "summary": "<p>GitLab har publicerat säkerhetsuppdateringar för flera sårbarheter i GitLab Community Edition (CE) och Enterprise Edition (EE). [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
       }
     },
     {
