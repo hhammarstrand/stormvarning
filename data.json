@@ -1,29 +1,134 @@
 {
-  "updated": "2026-11-10T11:42:47.324Z",
-  "next_update": "2026-11-10T12:07:00.000Z",
+  "updated": "2026-11-10T19:39:26.261Z",
+  "next_update": "2026-11-10T20:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 1 svensk-akuta signaler, 13 aktivt utnyttjade sårbarheter, 11 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 76,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 21 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 98,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
-    "sweden_acute": 1,
-    "actively_exploited": 13,
+    "sweden_relevant": 8,
+    "sweden_acute": 8,
+    "actively_exploited": 16,
     "critical": 5,
-    "authority_alerts": 11,
-    "kev_recent": 6
+    "authority_alerts": 21,
+    "kev_recent": 12
   },
   "anomaly": {
     "active": false,
     "baseline": 93,
-    "delta": -17
+    "delta": 5
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
+    {
+      "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-16T13:30:00.000Z",
+      "link": "https://www.cert.se/2026/10/beyondtrust-varnar-for-kritisk-nolldagssarbarhet.html",
+      "summary": "<p>BeyondTrust har publicerat information om en allvarlig nolldagssårbarhet i BeyondTrust Remote Support. Sårbarheten CVE-2026-102764 har fått en CVSS-klassning på 9.3, och kan utnyttjas för att skriva kod till systemet utan autentisering för att på så sätt få kontroll över enhe…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-102764"
+      }
+    },
+    {
+      "title": "EU varnar för cyberincidenter i kyl- och fryssystem",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-11-06T08:00:00.000Z",
+      "link": "https://www.cert.se/2026/11/eu-varnar-for-cyberincidenter-i-kyl-och-fryssystem.html",
+      "summary": "<p>Sedan den 11 oktober 2026 har flera kyl- och fryssystem i flera EU-länder drabbats av cybersäkerhetsincidenter. Efter en ny våg av incidenter den 1-2 november uppmanar EU:s cybersäkerhetsaktörer organisationer att omedelbart vidta åtgärder för att minska riskerna i berörda sy…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Cyberangrepp mot uppkopplade kyl- och fryssystem",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-11-02T16:40:00.000Z",
+      "link": "https://www.cert.se/2026/11/cyberangrepp-mot-uppkopplade-frys-och-kylsystem.html",
+      "summary": "<p>NCSC:s incidenthanteringsfunktion CERT-SE har löpande kontakt med berörda aktörer med anledning av de incidenter som drabbat uppkopplade frys- och kylsystem inom dagligvaruhandeln. Organisationer som misstänker att de drabbats, eller har drabbats av it-incidenter kan alltid k…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Kritisk sårbarhet i Google Brotli",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-28T11:45:00.000Z",
+      "link": "https://www.cert.se/2026/10/kritisk-sarbarhet-i-google-brotli.html",
+      "summary": "<p>En kritisk sårbarhet i Google Brotli har publicerats. Sårbarheten CVE-2026-111497 har fått en CVSS-klassning på 9.2, och möjliggör för en oautentiserad angripare på distans att orsaka överbelastning av system eller potentiellt exekvera godtycklig kod. [1]</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-111497"
+      }
+    },
+    {
+      "title": "CERT-SE:s veckobrev v.43",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-23T12:30:00.000Z",
+      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v43.html",
+      "summary": "<p>I veckans brev kan du läsa om de två kritiska sårbarheterna i programmeringsspråket PHP, som används av en mängd webbplatser över hela världen. CERT-SE gick ut med ett blixtmeddelande om detta på onsdagen. Du hittar även en rapport från bland annat CISA om utpressningsaktören…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Kritisk sårbarhet i GitLab CE och EE",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-22T13:30:00.000Z",
+      "link": "https://www.cert.se/2026/10/Kritisk-s%C3%A5rbarhet-i-GitLab-CE-och-EE.html",
+      "summary": "<p>Gitlab har publicerat säkerhetsuppdateringar för en ny sårbarhet, CVE-2026-110264. Sårbarheten har fått en CVSS-klassning på 10.0 och kan utnyttjas av en oautentiserad användare för att köra godtycklig kod. [1][2] GitLab har rättat sårbarheterna i följande versioner av GitLab…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-110264"
+      }
+    },
+    {
+      "title": "BM26-003 Kritiska sårbarheter i PHP",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-10-21T12:00:00.000Z",
+      "link": "https://www.cert.se/2026/10/kritiska-s%C3%A5rbarheter-i-php.html",
+      "summary": "<p>PHP.net har publicerat säkerhetsuppdateringar för de två sårbarheterna CVE-2026-109618 och CVE-2026-109619, och rekommenderar att uppdatera till versionerna PHP 8.5.12, 8.4.27, 8.3.36 eller 8.2.35. [1] Sårbarheterna har fått en CVSS-klassning på 9.2 och kan utnyttjas för oaut…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-109618"
+      }
+    },
     {
       "title": "Lärdomar från Polen: frontlinjen för hybridhot",
       "source": "MCF",
@@ -52,6 +157,96 @@
         "incident": true,
         "swedenRelevant": false,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-124194: Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-10T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-124194",
+      "summary": "Microsoft Office – Microsoft Office Outlook contains a missing user interaction for potentially unsafe action vulnerability that allows an unauthorized attacker to perform spoofing over a network.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-124194"
+      }
+    },
+    {
+      "title": "CVE-2026-111793: Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-10T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-111793",
+      "summary": "Openwave Messaging Limited Webtop Media Transcoder – Openwave Messaging Limited Webtop Media Transcoder contains an incorrect resource transfer between spheres vulnerability that may allow an authenticated user to process and convert unintended document types if bypassing the We…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-111793"
+      }
+    },
+    {
+      "title": "CVE-2026-20320: Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-10T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-20320",
+      "summary": "Cisco BroadWorks – Cisco BroadWorks contains an improper restriction of XML external entity reference vulnerability that could allow an unauthenticated, remote attacker to read sensitive configuration information on an affected system.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-20320"
+      }
+    },
+    {
+      "title": "CVE-2026-111560: Barracuda Networks Multiple Products OS Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-10T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-111560",
+      "summary": "Barracuda Networks Multiple Products – Barracuda Networks Email Security Gateway (ESG), Load Balancer, Application Delivery Controller (ADC), Message Archiver (BMA), WAF Control Center (WCC), Web Application Firewall (WAF), and Web Security Gateway (WSG) contain an OS command in…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-111560"
+      }
+    },
+    {
+      "title": "CVE-2026-116606: Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-10T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-116606",
+      "summary": "Barracuda Networks Barracuda Email Security Gateway (ESG) – Barracuda Networks Email Security Gateway (ESG) contains an authentication bypass using an alternate path or channel that could allow an unauthenticated remote attacker to invoke a configuration-import function and rest…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-116606"
+      }
+    },
+    {
+      "title": "CVE-2026-125350: Google Chromium Use-After-Free Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-10T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-125350",
+      "summary": "Google Chromium – Google Chromium contains a use-after-free vulnerability in the XML component that could allow a remote attacker to execute arbitrary code inside the sandbox via a specially crafted webpage. This vulnerability could affect multiple web browsers that utilize Chro…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-125350"
       }
     },
     {
@@ -160,12 +355,12 @@
       }
     },
     {
-      "title": "Google patches eighth Chrome zero-day exploited in attacks this year",
+      "title": "Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day",
       "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-11-10T08:51:25.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year/",
-      "summary": "Google has released emergency security updates to patch a new Chrome vulnerability exploited in zero-day attacks, the eighth such flaw since the start of the year. [...]",
+      "date": "2026-11-10T19:07:36.000Z",
+      "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/",
+      "summary": "Today is Microsoft's November 2026 Patch Tuesday, with security updates addressing a record-breaking 1,235 flaws, including one actively exploited Microsoft Outlook zero-day vulnerability. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -175,212 +370,17 @@
       }
     },
     {
-      "title": "Google Issues Chrome Security Update for Eighth Actively Exploited Zero-Day of 2026",
+      "title": "Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-11-10T06:52:54.000Z",
-      "link": "https://thehackernews.com/2026/11/google-issues-chrome-security-update.html",
-      "summary": "Google on Monday released updates to patch nine security vulnerabilities, including one that has come under active exploitation in the wild. The high-severity vulnerability, assigned the CVE identifier CVE-2026-125350 (CVSS score: N/A), has been described as a use-after-free bug…",
+      "date": "2026-11-10T18:12:21.000Z",
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html",
+      "summary": "French software company Vates VMS has warned of a critical security vulnerability in Xen Orchestra that it said is being actively exploited in the wild. The authentication bypass flaw, which does not yet have a CVE identifier, is tracked as VSA-2026-062. \"REST cookie parsing tur…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-125350"
-      }
-    },
-    {
-      "title": "N-able Takes N-central Cloud Offline After Researcher Discloses 33 Zero-Days with PoC Exploits",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-10T06:44:36.000Z",
-      "link": "https://thehackernews.com/2026/11/n-able-takes-hosted-n-central-offline.html",
-      "summary": "N-able said it has taken N-central Hosted Environments offline and is urging on-premises customers to shut down their servers until further notice following the public disclosure of over 30 vulnerabilities collectively tracked as Able2Shell. \"As a precautionary measure, we are t…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "N-able takes cloud platform offline after 30+ \"zero-days\" published",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-09T21:26:25.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/",
-      "summary": "N-able has taken its hosted N-central environments offline and urged on-premises customers to shut down their servers after a security researcher publicly disclosed more than 30 alleged zero-day vulnerabilities, including exploits that could let attackers take over vulnerable sy…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Installing the Fix for an Exploited WordPress Flaw Can Expose Some Sites One Last Time",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-06T16:08:38.000Z",
-      "link": "https://thehackernews.com/2026/11/installing-fix-for-exploited-wordpress.html",
-      "summary": "Some WordPress sites can still be attacked while they install the fix for an actively exploited flaw, according to Umut Bayram, the Picus Security researcher who found it. The update that installs the fix still unpacks its files using the site's old, unpatched code, so an attack…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-05T07:06:33.000Z",
-      "link": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html",
-      "summary": "Zyxel GS1900 network switches that received the vendor's earlier fix for an actively exploited flaw are still open to the exploit attackers used, researchers at Binarly found. The exploit lets anyone who can reach a switch's web management interface run commands on it without lo…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "SAP Patches Four CVSS 10.0 Flaws, Including Two Enabling Remote Code Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-10T10:02:40.000Z",
-      "link": "https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html",
-      "summary": "Four flaws that attackers could exploit without logging in were fixed today as part of SAP's monthly Security Patch Day—the vendor rates all four 10.0, the maximum CVSS score. Three are in the SAP NetWeaver application server, the software SAP systems run on, and one is in the W…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "SEGA newsletter data breach exposes 2.2 million email addresses",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-09T22:09:33.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/sega-newsletter-data-breach-exposes-22-million-email-addresses/",
-      "summary": "Japanese gaming giant SEGA has disclosed that a data breach at its third-party newsletter provider, ARARA, exposed the email addresses of 2.2 million newsletter subscribers. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Microsoft Paint RCE Fix Now Available, but Windows Update Won't Deliver It",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-06T12:06:43.000Z",
-      "link": "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html",
-      "summary": "A fix for CVE-2026-83844, a remote code execution flaw in Windows Paint, is now in the Microsoft Store. Paint gets this fix only through a Store update, not through Windows updates. The fixed build, 11.2609.401.0, was the newest Paint build in all ten countries The Hacker News c…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-83844"
-      }
-    },
-    {
-      "title": "ThreatsDay: Apache OFBiz RCE, DreamHost Breach, DeFi Site Hijacks + 17 More Stories",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-05T14:41:10.000Z",
-      "link": "https://thehackernews.com/2026/11/threatsday-apache-ofbiz-rce-dreamhost.html",
-      "summary": "How much damage can someone do without breaking much? Quite a lot, it seems. A stolen login can open doors across several systems. A trusted setting can be used to lock people out. Even a simple file copy can reach places it shouldn't. And while new tools are helping find securi…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "APT29-Linked Hackers Hijack Web Analytics Script to Deliver iOS and Android Exploits",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-04T14:27:52.000Z",
-      "link": "https://thehackernews.com/2026/11/apt29-linked-hackers-hijack-web.html",
-      "summary": "The Russia-linked threat actor known as APT29 is presumed to be behind a large-scale watering hole campaign targeting iOS and Android users through compromised websites, fake domains, and a supply chain attack involving a Ukrainian web analytics service called Plerdy SEO Tracker…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Google Issues Patches for Critical Android Flaw That Could Allow RCE Without User Interaction",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-04T07:46:15.000Z",
-      "link": "https://thehackernews.com/2026/11/google-patches-critical-android-flaw.html",
-      "summary": "A critical Android flaw could allow an attacker to run code on a phone without any user action remotely, Google said in its November security bulletin. The flaw, CVE-2026-58868, affects Android 14 through 17. Phones get the fix with security patch level 2026-11-01 or later, whic…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-58868"
-      }
-    },
-    {
-      "title": "Tillsammans för ett mer motståndskraftigt Sverige",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-10-07T12:24:25.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/oktober/tillsammans-for-ett-mer-motstandskraftigt-sverige/",
-      "summary": "Hur kan samhället stå starkare inför kriser, cyberhot och ytterst krig? Det var den centrala frågan när representanter från offentlig sektor, näringsliv och civilsamhälle samlades för konferensen Ökad motståndskraft i samhällsviktig verksamhet.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-26T08:34:35.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
-      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Klimatriskerna för Sverige ökar",
-      "source": "MCF",
-      "region": "SE",
-      "date": "2026-06-25T09:30:10.000Z",
-      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
-      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
@@ -389,8 +389,8 @@
     {
       "name": "CERT-SE",
       "region": "SE",
-      "ok": false,
-      "count": 0
+      "ok": true,
+      "count": 10
     },
     {
       "name": "MCF",
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 6
+      "count": 12
     },
     {
       "name": "CISA",
