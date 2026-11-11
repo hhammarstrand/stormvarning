@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-11T00:36:41.431Z",
-  "next_update": "2026-11-11T00:37:00.000Z",
+  "updated": "2026-11-11T07:08:57.418Z",
+  "next_update": "2026-11-11T07:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
@@ -340,6 +340,21 @@
       }
     },
     {
+      "title": "Cisco BroadWorks and Openwave Flaws Actively Exploited Despite Available Patches",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-11T06:04:02.000Z",
+      "link": "https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) Tuesday added two security flaws impacting Cisco BroadWorks and Openwave Messaging Webtop Media Transcoder to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. Details of th…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day",
       "source": "BleepingComputer",
       "region": "INT",
@@ -361,21 +376,6 @@
       "date": "2026-11-10T18:12:21.000Z",
       "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html",
       "summary": "French software company Vates VMS has warned of a critical security vulnerability in Xen Orchestra that it said is being actively exploited in the wild. The authentication bypass flaw, which does not yet have a CVE identifier, is tracked as VSA-2026-062. \"REST cookie parsing tur…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-10T16:17:16.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/",
-      "summary": "A critical authentication bypass vulnerability in Xen Orchestra is being actively exploited in attacks that could grant administrator privileges and allow takeover of XCP-ng virtualization hosts. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
