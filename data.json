@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-12T19:50:50.003Z",
-  "next_update": "2026-11-12T20:07:00.000Z",
+  "updated": "2026-11-13T01:01:08.296Z",
+  "next_update": "2026-11-13T01:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 21 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 20 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
@@ -12,8 +12,8 @@
     "sweden_acute": 8,
     "actively_exploited": 15,
     "critical": 6,
-    "authority_alerts": 21,
-    "kev_recent": 11
+    "authority_alerts": 20,
+    "kev_recent": 10
   },
   "anomaly": {
     "active": false,
@@ -310,27 +310,27 @@
       }
     },
     {
-      "title": "CVE-2026-19868: SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-06T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-19868",
-      "summary": "SonicWall SonicOS SSLVPN – SonicWall SonicOS SSLVPN contains a use of single-factor authentication vulnerability that may allow a user with valid credentials for an alternate authentication method to bypass SAML authentication controls. Successful exploitation may also bypass SA…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-19868"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
       "date": "2026-09-28T12:00:00.000Z",
       "link": "https://www.ncsc.gov.uk/news/exploitation-of-vulnerabilities-affecting-citrix-netscaler-adc-and-citrix-netscaler-gateway",
       "summary": "The NCSC is urging UK organisations to promptly mitigate vulnerabilities affecting Citrix NetScaler ADC and Gateway, two of which are being actively exploited.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-11-12T19:51:16.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+      "summary": "Hackers are actively exploiting a newly disclosed N-able N-central zero-day vulnerability dubbed \"4EverAble2Shell\" to compromise servers and deploy cryptocurrency miners, with researchers reporting at least 21 affected systems, including 19 running the company's latest security…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 11
+      "count": 10
     },
     {
       "name": "CISA",
