@@ -1,19 +1,19 @@
 {
-  "updated": "2026-11-13T16:13:30.778Z",
-  "next_update": "2026-11-13T16:37:00.000Z",
+  "updated": "2026-11-13T22:08:19.452Z",
+  "next_update": "2026-11-13T22:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 19 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 20 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
     "sweden_acute": 8,
-    "actively_exploited": 15,
-    "critical": 5,
-    "authority_alerts": 19,
-    "kev_recent": 10
+    "actively_exploited": 16,
+    "critical": 4,
+    "authority_alerts": 20,
+    "kev_recent": 12
   },
   "anomaly": {
     "active": false,
@@ -142,6 +142,36 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-114713: UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-13T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-114713",
+      "summary": "UnrealIRCd UnrealIRCd – UnrealIRCd UnrealIRCd contains an improper neutralization of delimiters vulnerability that allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-114713"
+      }
+    },
+    {
+      "title": "CVE-2026-123039: Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-13T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123039",
+      "summary": "Check Point Multiple Products – Check Point Firewall, Multi-Domain Security Management Server, Scalable Platforms, Security Gateway, and Security Management Server contain an incorrect permissions assignment for critical resources vulnerability when the Gaia OS DynamicCLI daemon…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-123039"
       }
     },
     {
@@ -353,36 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "New Windows SignDrop zero-day gives hackers SYSTEM privileges",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-12T16:04:00.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/new-windows-signdrop-zero-day-gives-hackers-system-privileges/",
-      "summary": "Security researcher Abdelhamid Naceri (also known as Nightmare Eclipse) has released a new Windows zero-day exploit that can let attackers gain SYSTEM privileges. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Siemens Desigo, Gridscale",
-      "source": "CISA",
-      "region": "INT",
-      "date": "2026-11-12T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-02",
-      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-316-02.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>On October 21, 2026, the Node.js project released security updates addressing a critical vulnerability in the Bro…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 10
+      "count": 12
     },
     {
       "name": "CISA",
