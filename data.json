@@ -1,18 +1,18 @@
 {
-  "updated": "2026-11-13T07:51:14.122Z",
-  "next_update": "2026-11-13T08:07:00.000Z",
+  "updated": "2026-11-13T16:13:30.778Z",
+  "next_update": "2026-11-13T16:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 20 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 19 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
     "sweden_acute": 8,
     "actively_exploited": 15,
-    "critical": 6,
-    "authority_alerts": 20,
+    "critical": 5,
+    "authority_alerts": 19,
     "kev_recent": 10
   },
   "anomaly": {
@@ -24,21 +24,6 @@
   "de_escalation": null,
   "down_streak": 0,
   "events": [
-    {
-      "title": "BeyondTrust varnar för kritisk nolldagssårbarhet",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-16T13:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/beyondtrust-varnar-for-kritisk-nolldagssarbarhet.html",
-      "summary": "<p>BeyondTrust har publicerat information om en allvarlig nolldagssårbarhet i BeyondTrust Remote Support. Sårbarheten CVE-2026-102764 har fått en CVSS-klassning på 9.3, och kan utnyttjas för att skriva kod till systemet utan autentisering för att på så sätt få kontroll över enhe…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-102764"
-      }
-    },
     {
       "title": "EU varnar för cyberincidenter i kyl- och fryssystem",
       "source": "CERT-SE",
@@ -145,17 +130,17 @@
       }
     },
     {
-      "title": "⚡ Weekly Recap: SSHole Exploited, APT Root RCE, Robot Takeovers, 15K Hacked Sites, and More",
+      "title": "SilentAir Hijacks Asian Telecom Networks to Intercept SMS 2FA Codes and Spy on Taiwanese Users",
       "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-11-09T13:28:25.000Z",
-      "link": "https://thehackernews.com/2026/11/weekly-recap-sshole-exploited-apt-root.html",
-      "summary": "A system doesn't always need a complicated bug to let someone in. Sometimes, a blank password is enough. That's one of the bigger stories this week. And it gets worse when the tools meant to keep systems updated or running safely become part of the attack. Elsewhere, attackers a…",
+      "date": "2026-11-13T11:10:40.000Z",
+      "link": "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html",
+      "summary": "A newly identified spying group used hacked equipment inside Asian mobile operators to intercept the calls and texts of selected people, mostly in Taiwan. Enea, a telecom and cybersecurity software company based in Stockholm, found the group's attack sources in at least six Asia…",
       "flags": {
         "activelyExploited": false,
-        "critical": true,
+        "critical": false,
         "incident": true,
-        "swedenRelevant": false,
+        "swedenRelevant": true,
         "cve": null
       }
     },
@@ -316,6 +301,21 @@
       "date": "2026-09-28T12:00:00.000Z",
       "link": "https://www.ncsc.gov.uk/news/exploitation-of-vulnerabilities-affecting-citrix-netscaler-adc-and-citrix-netscaler-gateway",
       "summary": "The NCSC is urging UK organisations to promptly mitigate vulnerabilities affecting Citrix NetScaler ADC and Gateway, two of which are being actively exploited.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Check Point warns of zero-day flaw exploited for root access",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-11-13T10:44:22.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/",
+      "summary": "Check Point Software has released emergency hotfixes to address a high-severity flaw that hackers have been exploiting to gain root privileges and establish persistence on vulnerable devices since late October. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
