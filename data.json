@@ -1,24 +1,24 @@
 {
-  "updated": "2026-11-15T20:59:31.270Z",
-  "next_update": "2026-11-15T21:07:00.000Z",
+  "updated": "2026-11-16T00:57:14.921Z",
+  "next_update": "2026-11-16T01:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 15 aktivt utnyttjade sårbarheter, 21 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 13 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 98,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 8,
     "sweden_acute": 8,
-    "actively_exploited": 15,
-    "critical": 5,
-    "authority_alerts": 21,
-    "kev_recent": 12
+    "actively_exploited": 13,
+    "critical": 6,
+    "authority_alerts": 17,
+    "kev_recent": 8
   },
   "anomaly": {
     "active": false,
-    "baseline": 93,
-    "delta": 5
+    "baseline": 94,
+    "delta": 4
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
@@ -265,66 +265,6 @@
       }
     },
     {
-      "title": "CVE-2026-102895: GPUStack Improper Authentication Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-09T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-102895",
-      "summary": "GPUStack GPUStack – GPUStack contains an improper authentication vulnerability which could allow unauthenticated administrative access, including user and model changes, persistent administrator API-key creation, disclosure of worker and cloud-provider secrets, and code executio…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-102895"
-      }
-    },
-    {
-      "title": "CVE-2026-123158: OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-09T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123158",
-      "summary": "OpenBSD OpenSSH – OpenBSD OpenSSH on Linux contains an unexpected status code or return value vulnerability that could allow for authentication bypass.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-123158"
-      }
-    },
-    {
-      "title": "CVE-2026-116779: SignalWire FreeSwitch Code Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-09T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-116779",
-      "summary": "SignalWire FreeSwitch – SignalWire FreeSwitch contains a code injection vulnerability that permits configuration and credential disclosure, arbitrary call control, and command execution.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-116779"
-      }
-    },
-    {
-      "title": "CVE-2026-123218: IBM Aspera Faspex Incorrect Authorization Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-09T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123218",
-      "summary": "IBM Aspera Faspex – IBM Aspera Faspex contains an incorrect authorization vulnerability that could allow an authenticated user to craft a specific message to bypass authorization, causing privilege escalations.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-123218"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
@@ -383,6 +323,66 @@
         "swedenRelevant": false,
         "cve": null
       }
+    },
+    {
+      "title": "Cisco BroadWorks and Openwave Flaws Actively Exploited Despite Available Patches",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-11T06:04:02.000Z",
+      "link": "https://thehackernews.com/2026/11/cisco-broadworks-and-openwave-flaws.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) Tuesday added two security flaws impacting Cisco BroadWorks and Openwave Messaging Webtop Media Transcoder to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. Details of th…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-10T18:12:21.000Z",
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html",
+      "summary": "French software company Vates VMS has warned of a critical security vulnerability in Xen Orchestra that it said is being actively exploited in the wild. The authentication bypass flaw, which does not yet have a CVE identifier, is tracked as VSA-2026-062. \"REST cookie parsing tur…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "PostgreSQL Patches 52 Flaws, Including 22-Year-Old Bug Enabling Authenticated RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-13T16:53:08.000Z",
+      "link": "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html",
+      "summary": "A type confusion flaw in PostgreSQL lets a database user who can create objects run code on the server. Updates released yesterday fix it, along with 51 other security flaws. Full protection from this flaw also requires rebuilding any C-language extensions installed on the serve…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Check Point gateways hacked via PHP2Shell to deploy VMware ESXi wiper",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-11-13T16:21:43.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/",
+      "summary": "Vulnerable Check Point Security Gateway instances have been targeted in PHP2Shell attacks that deployed data-wiping malware on VMware ESXi hosts. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": true,
+        "swedenRelevant": false,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 12
+      "count": 8
     },
     {
       "name": "CISA",
