@@ -1,119 +1,29 @@
 {
-  "updated": "2026-11-16T07:54:18.120Z",
-  "next_update": "2026-11-16T08:07:00.000Z",
+  "updated": "2026-11-16T18:23:54.845Z",
+  "next_update": "2026-11-16T18:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 8 svensk-akuta signaler, 13 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 98,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 2 svensk-akuta signaler, 13 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 85,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 8,
-    "sweden_acute": 8,
+    "sweden_relevant": 4,
+    "sweden_acute": 2,
     "actively_exploited": 13,
-    "critical": 6,
-    "authority_alerts": 17,
+    "critical": 7,
+    "authority_alerts": 13,
     "kev_recent": 8
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 4
+    "delta": -8
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
-    {
-      "title": "EU varnar för cyberincidenter i kyl- och fryssystem",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-11-06T08:00:00.000Z",
-      "link": "https://www.cert.se/2026/11/eu-varnar-for-cyberincidenter-i-kyl-och-fryssystem.html",
-      "summary": "<p>Sedan den 11 oktober 2026 har flera kyl- och fryssystem i flera EU-länder drabbats av cybersäkerhetsincidenter. Efter en ny våg av incidenter den 1-2 november uppmanar EU:s cybersäkerhetsaktörer organisationer att omedelbart vidta åtgärder för att minska riskerna i berörda sy…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Cyberangrepp mot uppkopplade kyl- och fryssystem",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-11-02T16:40:00.000Z",
-      "link": "https://www.cert.se/2026/11/cyberangrepp-mot-uppkopplade-frys-och-kylsystem.html",
-      "summary": "<p>NCSC:s incidenthanteringsfunktion CERT-SE har löpande kontakt med berörda aktörer med anledning av de incidenter som drabbat uppkopplade frys- och kylsystem inom dagligvaruhandeln. Organisationer som misstänker att de drabbats, eller har drabbats av it-incidenter kan alltid k…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i Google Brotli",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-28T11:45:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritisk-sarbarhet-i-google-brotli.html",
-      "summary": "<p>En kritisk sårbarhet i Google Brotli har publicerats. Sårbarheten CVE-2026-111497 har fått en CVSS-klassning på 9.2, och möjliggör för en oautentiserad angripare på distans att orsaka överbelastning av system eller potentiellt exekvera godtycklig kod. [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-111497"
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.43",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-23T12:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v43.html",
-      "summary": "<p>I veckans brev kan du läsa om de två kritiska sårbarheterna i programmeringsspråket PHP, som används av en mängd webbplatser över hela världen. CERT-SE gick ut med ett blixtmeddelande om detta på onsdagen. Du hittar även en rapport från bland annat CISA om utpressningsaktören…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i GitLab CE och EE",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-22T13:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/Kritisk-s%C3%A5rbarhet-i-GitLab-CE-och-EE.html",
-      "summary": "<p>Gitlab har publicerat säkerhetsuppdateringar för en ny sårbarhet, CVE-2026-110264. Sårbarheten har fått en CVSS-klassning på 10.0 och kan utnyttjas av en oautentiserad användare för att köra godtycklig kod. [1][2] GitLab har rättat sårbarheterna i följande versioner av GitLab…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-110264"
-      }
-    },
-    {
-      "title": "BM26-003 Kritiska sårbarheter i PHP",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-21T12:00:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritiska-s%C3%A5rbarheter-i-php.html",
-      "summary": "<p>PHP.net har publicerat säkerhetsuppdateringar för de två sårbarheterna CVE-2026-109618 och CVE-2026-109619, och rekommenderar att uppdatera till versionerna PHP 8.5.12, 8.4.27, 8.3.36 eller 8.2.35. [1] Sårbarheterna har fått en CVSS-klassning på 9.2 och kan utnyttjas för oaut…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-109618"
-      }
-    },
     {
       "title": "Lärdomar från Polen: frontlinjen för hybridhot",
       "source": "MCF",
@@ -280,12 +190,12 @@
       }
     },
     {
-      "title": "Check Point warns of zero-day flaw exploited for root access",
-      "source": "BleepingComputer",
+      "title": "⚡ Weekly Recap: N-able 0-Days, Windows 0-Days, Chrome 0-Days, Fridge 0-Days, and More Bad Days",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-11-13T10:44:22.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/",
-      "summary": "Check Point Software has released emergency hotfixes to address a high-severity flaw that hackers have been exploiting to gain root privileges and establish persistence on vulnerable devices since late October. [...]",
+      "date": "2026-11-16T13:27:20.000Z",
+      "link": "https://thehackernews.com/2026/11/weekly-recap-n-able-0-days-windows-0.html",
+      "summary": "A default password opened doors it never should have. A trusted update delivered malware. Even a security feature became a way to break in. Different stories, same problem: the things meant to protect us aren't always doing their job. Meanwhile, AI is making bug hunting faster,…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -370,17 +280,107 @@
       }
     },
     {
-      "title": "Check Point gateways hacked via PHP2Shell to deploy VMware ESXi wiper",
-      "source": "BleepingComputer",
+      "title": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-11-13T16:21:43.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/",
-      "summary": "Vulnerable Check Point Security Gateway instances have been targeted in PHP2Shell attacks that deployed data-wiping malware on VMware ESXi hosts. [...]",
+      "date": "2026-11-12T15:38:49.000Z",
+      "link": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+      "summary": "Citrix has released patches for multiple critical security flaws impacting NetScaler ADC, Citrix NetScaler Gateway, and NetScaler Console that could lead to denial-of-service (DoS) or an authentication bypass. The critical vulnerabilities that impact NetScaler ADC and NetScaler…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "New N-central Exploits Work Against Patched Servers, Enable Root RCE and Windows SYSTEM Access",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-12T11:51:43.000Z",
+      "link": "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html",
+      "summary": "N-able on Thursday said it's investigating a new public disclosure containing claims of additional vulnerabilities in on-premise versions of N-central running version 2026.4.1 HF2. \"Based on our initial review, the server issue described depends on a non-default configuration in…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-12T11:33:15.000Z",
+      "link": "https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html",
+      "summary": "PTC has released patches for a new critical vulnerability impacting Windchill and FlexPLM software that, if successfully exploited, could result in remote code execution. The security flaw, tracked as CVE-2026-126325, carries a CVSS v4 score of 9.2 out of a maximum of 10.0. It h…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-126325"
+      }
+    },
+    {
+      "title": "Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-12T09:25:00.000Z",
+      "link": "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html",
+      "summary": "A critical flaw in MongoDB Server allows an unauthenticated attacker to send two requests that trigger a crash on the database server. The crash occurs only if that server is later chosen to take over as the main server while it still lacks some recent changes. MongoDB, the comp…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-118383"
+      }
+    },
+    {
+      "title": "SGLang RCE Exploit Breaches NEAR AI, Steals Data From 18 Agents and About 100 Users",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-10T19:19:39.000Z",
+      "link": "https://thehackernews.com/2026/11/sglang-rce-exploit-breaches-near-ai.html",
+      "summary": "An attacker exploited a remote code execution flaw in SGLang, an open-source inference engine, and ran code on one of NEAR AI's inference servers last Sunday. The attacker could also have seen requests being processed on that server that day, including requests sent in confident…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Tillsammans för ett mer motståndskraftigt Sverige",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-10-07T12:24:25.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/oktober/tillsammans-for-ett-mer-motstandskraftigt-sverige/",
+      "summary": "Hur kan samhället stå starkare inför kriser, cyberhot och ytterst krig? Det var den centrala frågan när representanter från offentlig sektor, näringsliv och civilsamhälle samlades för konferensen Ökad motståndskraft i samhällsviktig verksamhet.",
       "flags": {
         "activelyExploited": false,
         "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Krav på säkerhetsåtgärder som stärker cybersäkerheten",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-26T08:34:35.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/krav-pa-sakerhetsatgarder-som-starker-cybersakerheten/",
+      "summary": "Cybersäkerhetslagen som trädde i kraft i januari 2026 ställer krav på företag och myndigheter inom samhällsviktig verksamhet att hålla en hög nivå av cybersäkerhet.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
         "cve": null
       }
     }
@@ -389,8 +389,8 @@
     {
       "name": "CERT-SE",
       "region": "SE",
-      "ok": true,
-      "count": 10
+      "ok": false,
+      "count": 0
     },
     {
       "name": "MCF",
