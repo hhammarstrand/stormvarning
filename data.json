@@ -1,23 +1,23 @@
 {
-  "updated": "2026-11-17T02:03:17.471Z",
-  "next_update": "2026-11-17T02:07:00.000Z",
+  "updated": "2026-11-17T10:37:36.579Z",
+  "next_update": "2026-11-17T11:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 2 svensk-akuta signaler, 7 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 76,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 2 svensk-akuta signaler, 6 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 75,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 10,
     "sweden_acute": 2,
-    "actively_exploited": 7,
+    "actively_exploited": 6,
     "critical": 7,
     "authority_alerts": 13,
     "kev_recent": 2
   },
   "anomaly": {
     "active": false,
-    "baseline": 94,
+    "baseline": 93,
     "delta": -18
   },
   "level_since": "2026-10-31T05:28:20.950Z",
@@ -160,16 +160,16 @@
       }
     },
     {
-      "title": "Hackers Exploit Critical Xen Orchestra Auth Bypass Flaw to Gain Admin Access",
-      "source": "The Hacker News",
+      "title": "Optimizely hack infected CNN, Fox News, BBC, Salesforce sites with malware",
+      "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-11-10T18:12:21.000Z",
-      "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html",
-      "summary": "French software company Vates VMS has warned of a critical security vulnerability in Xen Orchestra that it said is being actively exploited in the wild. The authentication bypass flaw, which does not yet have a CVE identifier, is tracked as VSA-2026-062. \"REST cookie parsing tur…",
+      "date": "2026-11-17T02:12:17.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/optimizely-supply-chain-attack-delivers-malware-to-cnn-fox-news-bbc-salesforce-sites/",
+      "summary": "A suspected supply chain attack targeting Optimizely has led to malicious JavaScript being loaded on numerous popular websites, including Zoom, CNN, Fox News, BBC, Salesforce, and GitLab, exposing visitors to scripts designed to steal cryptocurrency and payment information and e…",
       "flags": {
-        "activelyExploited": true,
+        "activelyExploited": false,
         "critical": false,
-        "incident": false,
+        "incident": true,
         "swedenRelevant": false,
         "cve": null
       }
