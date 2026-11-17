@@ -1,24 +1,24 @@
 {
-  "updated": "2026-11-16T18:23:54.845Z",
-  "next_update": "2026-11-16T18:37:00.000Z",
+  "updated": "2026-11-17T02:03:17.471Z",
+  "next_update": "2026-11-17T02:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 2 svensk-akuta signaler, 13 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 85,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 2 svensk-akuta signaler, 7 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 76,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
+    "sweden_relevant": 10,
     "sweden_acute": 2,
-    "actively_exploited": 13,
+    "actively_exploited": 7,
     "critical": 7,
     "authority_alerts": 13,
-    "kev_recent": 8
+    "kev_recent": 2
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": -8
+    "delta": -18
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
@@ -82,96 +82,6 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-123039"
-      }
-    },
-    {
-      "title": "CVE-2026-124194: Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-10T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-124194",
-      "summary": "Microsoft Office – Microsoft Office Outlook contains a missing user interaction for potentially unsafe action vulnerability that allows an unauthorized attacker to perform spoofing over a network.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-124194"
-      }
-    },
-    {
-      "title": "CVE-2026-111793: Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-10T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-111793",
-      "summary": "Openwave Messaging Limited Webtop Media Transcoder – Openwave Messaging Limited Webtop Media Transcoder contains an incorrect resource transfer between spheres vulnerability that may allow an authenticated user to process and convert unintended document types if bypassing the We…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-111793"
-      }
-    },
-    {
-      "title": "CVE-2026-20320: Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-10T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-20320",
-      "summary": "Cisco BroadWorks – Cisco BroadWorks contains an improper restriction of XML external entity reference vulnerability that could allow an unauthenticated, remote attacker to read sensitive configuration information on an affected system.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-20320"
-      }
-    },
-    {
-      "title": "CVE-2026-111560: Barracuda Networks Multiple Products OS Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-10T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-111560",
-      "summary": "Barracuda Networks Multiple Products – Barracuda Networks Email Security Gateway (ESG), Load Balancer, Application Delivery Controller (ADC), Message Archiver (BMA), WAF Control Center (WCC), Web Application Firewall (WAF), and Web Security Gateway (WSG) contain an OS command in…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-111560"
-      }
-    },
-    {
-      "title": "CVE-2026-116606: Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-10T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-116606",
-      "summary": "Barracuda Networks Barracuda Email Security Gateway (ESG) – Barracuda Networks Email Security Gateway (ESG) contains an authentication bypass using an alternate path or channel that could allow an unauthenticated remote attacker to invoke a configuration-import function and rest…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-116606"
-      }
-    },
-    {
-      "title": "CVE-2026-125350: Google Chromium Use-After-Free Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-10T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-125350",
-      "summary": "Google Chromium – Google Chromium contains a use-after-free vulnerability in the XML component that could allow a remote attacker to execute arbitrary code inside the sandbox via a specially crafted webpage. This vulnerability could affect multiple web browsers that utilize Chro…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-125350"
       }
     },
     {
@@ -383,6 +293,96 @@
         "swedenRelevant": true,
         "cve": null
       }
+    },
+    {
+      "title": "Klimatriskerna för Sverige ökar",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-25T09:30:10.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/klimatriskerna-for-sverige-okar/",
+      "summary": "Den 25 juni lanserades Sveriges första nationella klimat- och sårbarhetsanalys (NKSA) i Almedalen. Den ger en samlad bild och bedömning av klimatförändringens påverkan på Sverige.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Cyberverksamheten samlas hos FRA – övergång till Nationellt cybersäkerhetscenter den 1 juli 2026",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-12T10:00:20.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/cyberverksamheten-samlas-hos-fra--overgang-till-nationellt-cybersakerhetscenter-den-1-juli-2026/",
+      "summary": "Nu samlas cyberverksamheten hos FRA för att stärka Sveriges motståndskraft mot cyberangrepp.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "RSA‑föreskrifterna upphävs – förändringar för kommuner och regioner",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-06-05T10:24:12.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/juni/rsaforeskrifterna-upphavs--forandringar-for-kommuner-och-regioner/",
+      "summary": "Myndigheten för civilt försvar har beslutat att upphäva de föreskrifter som i dag styr kommuners och regioners redovisning av risk- och sårbarhetsanalyser (RSA).",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Ny lag om skyddsrum träder i kraft – nya krav på kommuner och fastighetsägare",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-05-25T09:18:18.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/maj/ny-lag-om-skyddsrum-trader-i-kraft--nya-krav-pa-kommuner-och-fastighetsagare2/",
+      "summary": "Den 1 juni 2026 träder en ny lag om skyddsrum och skyddade utrymmen i kraft. Lagen ska stärka skyddet av civilbefolkningen vid krig och väpnat angrepp och innebär förändringar för främst kommuner och fastighetsägare samt att ett system för skyddade utrymmen införs.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Remissperioder för föreskrifter enligt ny cybersäkerhetslag",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-03-30T13:53:30.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/mars/remissperioder-for-foreskrifter-enligt-ny-cybersakerhetslag/",
+      "summary": "Arbetet med föreskrifter enligt ny cybersäkerhetslag går vidare. Två föreskrifter kommer att remitteras under våren.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
+    {
+      "title": "Många cyberangrepp kan kopplas till geopolitiska händelser",
+      "source": "MCF",
+      "region": "SE",
+      "date": "2026-03-26T07:15:10.000Z",
+      "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/mars/manga-cyberangrepp-kan-kopplas-till-geopolitiska-handelser/",
+      "summary": "Myndigheten för civilt försvars årsrapport om cyberincidenter visar på en låg andel cyberangrepp i incidentrapporter under 2025.",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 8
+      "count": 2
     },
     {
       "name": "CISA",
