@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-17T19:46:49.653Z",
-  "next_update": "2026-11-17T20:07:00.000Z",
+  "updated": "2026-11-18T02:22:02.252Z",
+  "next_update": "2026-11-18T02:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
@@ -265,6 +265,36 @@
       }
     },
     {
+      "title": "Critical Java4Shell flaw allows RCE attacks on major Java applications",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-11-17T23:04:21.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/",
+      "summary": "A critical vulnerability dubbed Java4Shell in OpenJDK, the open-source implementation of Java, can allow unauthenticated attackers to remotely execute code on popular enterprise applications, including Jenkins, Atlassian Jira, Confluence, and Keycloak. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Researchers Claim Two RCE Exploits That Bypass Telegram’s New Android Defenses",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-17T19:34:20.000Z",
+      "link": "https://thehackernews.com/2026/11/researchers-claim-two-rce-exploits-that.html",
+      "summary": "A malicious widget can bypass the security filter that Telegram added to its Android app last week and run code outside it, according to NebuSec, a security company. Widgets are small interactive blocks that bots send inside chat messages, and their JavaScript runs on the user's…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Oracle to Patch 11 Java Flaws Today as Critical OpenJDK RCE (CVE-2026-114938) Report Emerges",
       "source": "The Hacker News",
       "region": "INT",
@@ -351,36 +381,6 @@
         "critical": false,
         "incident": false,
         "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-12T15:38:49.000Z",
-      "link": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
-      "summary": "Citrix has released patches for multiple critical security flaws impacting NetScaler ADC, Citrix NetScaler Gateway, and NetScaler Console that could lead to denial-of-service (DoS) or an authentication bypass. The critical vulnerabilities that impact NetScaler ADC and NetScaler…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "New N-central Exploits Work Against Patched Servers, Enable Root RCE and Windows SYSTEM Access",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-12T11:51:43.000Z",
-      "link": "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html",
-      "summary": "N-able on Thursday said it's investigating a new public disclosure containing claims of additional vulnerabilities in on-premise versions of N-central running version 2026.4.1 HF2. \"Based on our initial review, the server issue described depends on a non-default configuration in…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
         "cve": null
       }
     }
