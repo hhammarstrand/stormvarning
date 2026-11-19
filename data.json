@@ -1,23 +1,23 @@
 {
-  "updated": "2026-11-18T19:22:10.861Z",
-  "next_update": "2026-11-18T19:37:00.000Z",
+  "updated": "2026-11-19T01:27:26.350Z",
+  "next_update": "2026-11-19T01:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 7 svensk-akuta signaler, 6 aktivt utnyttjade sårbarheter, 13 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 7 svensk-akuta signaler, 10 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 97,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
     "sweden_acute": 7,
-    "actively_exploited": 6,
-    "critical": 13,
-    "authority_alerts": 13,
-    "kev_recent": 3
+    "actively_exploited": 10,
+    "critical": 10,
+    "authority_alerts": 17,
+    "kev_recent": 7
   },
   "anomaly": {
     "active": false,
-    "baseline": 93,
+    "baseline": 92,
     "delta": 5
   },
   "level_since": "2026-10-31T05:28:20.950Z",
@@ -127,6 +127,66 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2024-10441: Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-18T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2024-10441",
+      "summary": "Synology DiskStation Manager (DSM) – Synology DSM contains an improper encoding or escaping of output vulnerability in the system plugin daemon in Synology BeeStation OS (BSM) that could allow a remote attacker to execute arbitrary code via unspecified vectors.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2024-10441"
+      }
+    },
+    {
+      "title": "CVE-2026-40217: BerriAI LiteLLM Unprotected Alternate Channel Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-18T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-40217",
+      "summary": "BerriAI LiteLLM – BerriAI LiteLLM contains an unprotected alternate channel vulnerability that could allow remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-40217"
+      }
+    },
+    {
+      "title": "CVE-2026-90817: Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-18T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-90817",
+      "summary": "Vanderbilt University Research Electronic Data Capture (REDCap) – Vanderbilt University Research Electronic Data Capture (REDCap) contains a code injection vulnerability which could allow an unauthenticated attacker to execute arbitrary code on the server. An attacker could expl…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-90817"
+      }
+    },
+    {
+      "title": "CVE-2026-90436: Apache Axis Unsafe Reflection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-18T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-90436",
+      "summary": "Apache Axis – Apache Axis contains an unsafe reflection vulnerability that could allow an unauthenticated remote attacker to execute arbitrary code via a crafted SOAP fault message that causes Axis to load and instantiate an attacker-specified class when a suitable class is avai…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-90436"
       }
     },
     {
@@ -265,6 +325,36 @@
       }
     },
     {
+      "title": "F5 Warns 6 Critical BIG-IP Flaws Can Crash Traffic in Specific Setups, May Allow RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-18T18:15:39.000Z",
+      "link": "https://thehackernews.com/2026/11/f5-warns-6-critical-big-ip-flaws-can.html",
+      "summary": "Six critical vulnerabilities in F5 BIG-IP allow an attacker to crash the Traffic Management Microkernel (TMM) without logging in, disrupting traffic until the TMM restarts. Each flaw needs a specific setup on a virtual server: an iRule that uses a particular command, or an APM p…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-18T17:10:45.000Z",
+      "link": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html",
+      "summary": "A critical security flaw in Apache Roller, an open-source, Java-based blogging platform, has come under active exploitation in the wild, according to the Apache Software Foundation (ASF) The vulnerability, tracked as CVE-2026-129448 (CVSS score: 9.8), is a case of unauthenticate…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-129448"
+      }
+    },
+    {
       "title": "Java4Shell Flaw (CVE-2026-114938) Enables Pre-Auth RCE in Jira, Jenkins, Keycloak and More",
       "source": "The Hacker News",
       "region": "INT",
@@ -293,96 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Hackers Exploiting Critical Puppet RCE Flaw Affecting Enterprise Management Servers",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-18T08:24:31.000Z",
-      "link": "https://thehackernews.com/2026/11/hackers-exploiting-critical-puppet-rce.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a critical security flaw impacting Perforce Puppet, an enterprise infrastructure-as-code (IaC) and configuration management platform, to its Known Exploited Vulnerabilities (KEV) catalog, citing re…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "CISA Urges Immediate Patching of Java4Shell Flaw That Could Allow Remote Code Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-18T08:24:23.000Z",
-      "link": "https://thehackernews.com/2026/11/cisa-urges-immediate-patching-of.html",
-      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has urged organizations to immediately patch a newly disclosed critical security flaw impacting Oracle Java. The flaw, tracked as CVE-2026-114938 (CVSS score: 8.1), refers to a case of out-of-bounds write that can…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-114938"
-      }
-    },
-    {
-      "title": "Critical Java4Shell flaw allows RCE attacks on major Java applications",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-17T23:04:21.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/",
-      "summary": "A critical vulnerability dubbed Java4Shell in OpenJDK, the open-source implementation of Java, can allow unauthenticated attackers to remotely execute code on popular enterprise applications, including Jenkins, Atlassian Jira, Confluence, and Keycloak. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Researchers Claim Two RCE Exploits That Bypass Telegram’s New Android Defenses",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-17T19:34:20.000Z",
-      "link": "https://thehackernews.com/2026/11/researchers-claim-two-rce-exploits-that.html",
-      "summary": "A malicious widget can bypass the security filter that Telegram added to its Android app last week and run code outside it, according to NebuSec, a security company. Widgets are small interactive blocks that bots send inside chat messages, and their JavaScript runs on the user's…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Oracle to Patch 11 Java Flaws Today as Critical OpenJDK RCE (CVE-2026-114938) Report Emerges",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-17T15:17:36.000Z",
-      "link": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html",
-      "summary": "Oracle is preparing to release security patches for 11 vulnerabilities in Java SE on Tuesday, November 17, 2026, all of which may be exploited remotely without authentication, as separate reports warn of a potentially critical remote code execution (RCE) flaw affecting OpenJDK.…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-114938"
-      }
-    },
-    {
-      "title": "Hackers Found a Way Around GitHub SHA Pinning. This Webinar Explains How to Close the Gap",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-17T12:25:06.000Z",
-      "link": "https://thehackernews.com/2026/11/hackers-found-way-around-github-sha.html",
-      "summary": "Pinning GitHub Actions to an exact version of their code, known as SHA pinning, has become the go-to defense against software supply chain attacks. Attackers have already found a way around it. In March 2026, the hackers who hijacked Trivy, a widely used open-source security sca…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 3
+      "count": 7
     },
     {
       "name": "CISA",
