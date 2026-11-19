@@ -1,44 +1,29 @@
 {
-  "updated": "2026-11-19T01:27:26.350Z",
-  "next_update": "2026-11-19T01:37:00.000Z",
+  "updated": "2026-11-19T09:27:25.561Z",
+  "next_update": "2026-11-19T09:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 7 svensk-akuta signaler, 10 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 97,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 6 svensk-akuta signaler, 10 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 96,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 7,
-    "sweden_acute": 7,
+    "sweden_acute": 6,
     "actively_exploited": 10,
-    "critical": 10,
+    "critical": 9,
     "authority_alerts": 17,
     "kev_recent": 7
   },
   "anomaly": {
     "active": false,
     "baseline": 92,
-    "delta": 5
+    "delta": 4
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
-    {
-      "title": "Kritisk sårbarhet i Oracle Java",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-11-18T13:20:00.000Z",
-      "link": "https://www.cert.se/2026/11/kritisk-sarbarhet-i-oracle-java.html",
-      "summary": "<p>Oracle har publicerat säkerhetsuppdateringar gällande en kritisk sårbarhet i programmeringsspråket och utvecklingsplattformen Oracle Java. [1][2]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
     {
       "title": "EU varnar för cyberincidenter i kyl- och fryssystem",
       "source": "CERT-SE",
@@ -325,6 +310,36 @@
       }
     },
     {
+      "title": "Ruby Releases Fixes for 7 Regex and String Flaws, Warns 5 Have Proof-of-Concept RCE",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-19T08:42:11.000Z",
+      "link": "https://thehackernews.com/2026/11/ruby-releases-fixes-for-7-regex-and.html",
+      "summary": "Ruby contains seven memory-safety flaws in its regular expression engine and its string case-conversion code. For five of them, its maintainers say, proof-of-concept exploits, or PoCs, have shown that crafted input can run code on the machine. \"We are aware of PoCs that prove so…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Researcher Demonstrates Database RCE Exploits Affecting PostgreSQL, MySQL and Oracle",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-19T08:14:00.000Z",
+      "link": "https://thehackernews.com/2026/11/researcher-demonstrates-database-rce.html",
+      "summary": "Low-privilege database accounts that cannot read a single application table can still be used to run code on the database server itself, a researcher has shown, by reaching memory-corruption bugs in the engine code behind ordinary SQL. The exploits, published yesterday, are the…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "F5 Warns 6 Critical BIG-IP Flaws Can Crash Traffic in Specific Setups, May Allow RCE",
       "source": "The Hacker News",
       "region": "INT",
@@ -355,32 +370,17 @@
       }
     },
     {
-      "title": "Java4Shell Flaw (CVE-2026-114938) Enables Pre-Auth RCE in Jira, Jenkins, Keycloak and More",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-18T11:55:49.000Z",
-      "link": "https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html",
-      "summary": "A Java flaw called Java4Shell can let attackers without an account run their own code on Jira, Jenkins, Keycloak, and three other widely used applications, says Calif, the security research firm that disclosed it this week. The flaw is present in Java 17.0.6 and later, and the v…",
+      "title": "Allvarlig sårbarhet i Oracle Java",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-11-18T13:20:00.000Z",
+      "link": "https://www.cert.se/2026/11/allvarlig-sarbarhet-i-oracle-java.html",
+      "summary": "<p>Oracle har publicerat säkerhetsuppdateringar gällande en allvarlig sårbarhet i programmeringsspråket och utvecklingsplattformen Oracle Java. [1][2]</p>",
       "flags": {
         "activelyExploited": false,
-        "critical": true,
+        "critical": false,
         "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-114938"
-      }
-    },
-    {
-      "title": "Apache warns of Roller RCE vulnerability exploited in attacks",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-18T10:35:05.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/apache-warns-of-roller-rce-vulnerability-exploited-in-attacks/",
-      "summary": "Apache has released security updates to address a critical Roller flaw that threat actors are exploiting to gain code execution on vulnerable servers. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
+        "swedenRelevant": true,
         "cve": null
       }
     }
