@@ -1,29 +1,44 @@
 {
-  "updated": "2026-11-19T09:27:25.561Z",
-  "next_update": "2026-11-19T09:37:00.000Z",
+  "updated": "2026-11-19T18:37:46.461Z",
+  "next_update": "2026-11-19T19:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 6 svensk-akuta signaler, 10 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 96,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 9 aktivt utnyttjade sårbarheter, 16 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 94,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 7,
-    "sweden_acute": 6,
-    "actively_exploited": 10,
-    "critical": 9,
-    "authority_alerts": 17,
+    "sweden_relevant": 6,
+    "sweden_acute": 5,
+    "actively_exploited": 9,
+    "critical": 10,
+    "authority_alerts": 16,
     "kev_recent": 7
   },
   "anomaly": {
     "active": false,
     "baseline": 92,
-    "delta": 4
+    "delta": 2
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
   "down_streak": 0,
   "events": [
+    {
+      "title": "Kritisk sårbarhet i Apache Axis",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-11-19T12:00:00.000Z",
+      "link": "https://www.cert.se/2026/11/kritisk-sarbarhet-i-apache.html",
+      "summary": "<p>Apache har publicerat säkerhetsuppdateringar gällande en kritisk sårbarhet i det öppna källkodsramverket Apache Axis. [1]</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": null
+      }
+    },
     {
       "title": "EU varnar för cyberincidenter i kyl- och fryssystem",
       "source": "CERT-SE",
@@ -50,36 +65,6 @@
         "activelyExploited": false,
         "critical": false,
         "incident": true,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "Kritisk sårbarhet i Google Brotli",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-28T11:45:00.000Z",
-      "link": "https://www.cert.se/2026/10/kritisk-sarbarhet-i-google-brotli.html",
-      "summary": "<p>En kritisk sårbarhet i Google Brotli har publicerats. Sårbarheten CVE-2026-111497 har fått en CVSS-klassning på 9.2, och möjliggör för en oautentiserad angripare på distans att orsaka överbelastning av system eller potentiellt exekvera godtycklig kod. [1]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": true,
-        "cve": "CVE-2026-111497"
-      }
-    },
-    {
-      "title": "CERT-SE:s veckobrev v.43",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-10-23T12:30:00.000Z",
-      "link": "https://www.cert.se/2026/10/cert-se-veckobrev-v43.html",
-      "summary": "<p>I veckans brev kan du läsa om de två kritiska sårbarheterna i programmeringsspråket PHP, som används av en mängd webbplatser över hela världen. CERT-SE gick ut med ett blixtmeddelande om detta på onsdagen. Du hittar även en rapport från bland annat CISA om utpressningsaktören…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
         "swedenRelevant": true,
         "cve": null
       }
@@ -280,21 +265,6 @@
       }
     },
     {
-      "title": "New SignDrop Zero-Day Exploit Turns Windows CLFS Security Feature Into SYSTEM Access",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-12T17:50:27.000Z",
-      "link": "https://thehackernews.com/2026/11/new-signdrop-zero-day-exploit-turns.html",
-      "summary": "Public exploit code released earlier this week claims that a local Windows user can gain SYSTEM privileges through the Common Log File System driver. The proof of concept, called SignDrop, targets a log-authentication feature added to the driver last year. It abuses how clfs.sys…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Siemens Desigo, Gridscale",
       "source": "CISA",
       "region": "INT",
@@ -310,6 +280,96 @@
       }
     },
     {
+      "title": "PHP security updates fix 18 flaws, including critical RCE bugs",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-11-19T16:28:23.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/php-security-updates-fix-18-flaws-including-critical-rce-bugs/",
+      "summary": "The PHP development team released security updates addressing 18 vulnerabilities, including critical flaws that could allow unauthenticated attackers to remotely execute code on vulnerable servers. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-19T15:18:07.000Z",
+      "link": "https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html",
+      "summary": "The PHP Foundation has released security updates to address multiple critical security flaws that could be exploited to achieve remote code execution on affected deployments, including CVE-2026-115560. The release of the patch follows an advance notice in which the project maint…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-115560"
+      }
+    },
+    {
+      "title": "Critical VMware vCenter Flaw (CVSS 9.8) Lets Network Attackers Bypass Authentication",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-19T15:11:06.000Z",
+      "link": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html",
+      "summary": "A critical flaw in VMware vCenter lets an attacker with network access bypass authentication and gain unauthorized access to the system, Broadcom, which owns VMware, said in an advisory published today. Fixed versions are out for all supported branches, and the company lists no…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Drupal Patches Critical Installer Flaw That Could Give Unauthenticated Attackers Control of Sites",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-19T14:33:06.000Z",
+      "link": "https://thehackernews.com/2026/11/drupal-patches-critical-installer-flaw.html",
+      "summary": "Under specific conditions, a critical vulnerability in Drupal core can allow an attacker without login credentials to use the built-in installer to attempt to reinstall a site. That can lead to a site takeover or remote code execution, and the project rates the vulnerable config…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Drupal patches critical RCE flaw, warns exploits may surface quickly",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-11-19T13:08:08.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaw-warns-exploits-may-surface-quickly/",
+      "summary": "The Drupal Security Team has patched a critical remote code execution vulnerability that can let attackers take over vulnerable sites. [...]",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Allvarliga sårbarheter i NGNIX",
+      "source": "CERT-SE",
+      "region": "SE",
+      "date": "2026-11-19T11:20:00.000Z",
+      "link": "https://www.cert.se/2026/11/allvarliga-sarbarheter-i-nginx.html",
+      "summary": "<p>F5 har publicerat information om allvarliga sårbarheter i NGINX [1, 2]. Sårbarheterna CVE-2026-123007, CVE-2026-123634, CVE-2026-123633, CVE-2026-121810 och CVE-2026-113425 har fått en CVSS-klassning på 8.1.</p>",
+      "flags": {
+        "activelyExploited": false,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": true,
+        "cve": "CVE-2026-123007"
+      }
+    },
+    {
       "title": "Ruby Releases Fixes for 7 Regex and String Flaws, Warns 5 Have Proof-of-Concept RCE",
       "source": "The Hacker News",
       "region": "INT",
@@ -321,66 +381,6 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Researcher Demonstrates Database RCE Exploits Affecting PostgreSQL, MySQL and Oracle",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-19T08:14:00.000Z",
-      "link": "https://thehackernews.com/2026/11/researcher-demonstrates-database-rce.html",
-      "summary": "Low-privilege database accounts that cannot read a single application table can still be used to run code on the database server itself, a researcher has shown, by reaching memory-corruption bugs in the engine code behind ordinary SQL. The exploits, published yesterday, are the…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "F5 Warns 6 Critical BIG-IP Flaws Can Crash Traffic in Specific Setups, May Allow RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-18T18:15:39.000Z",
-      "link": "https://thehackernews.com/2026/11/f5-warns-6-critical-big-ip-flaws-can.html",
-      "summary": "Six critical vulnerabilities in F5 BIG-IP allow an attacker to crash the Traffic Management Microkernel (TMM) without logging in, disrupting traffic until the TMM restarts. Each flaw needs a specific setup on a virtual server: an iRule that uses a particular command, or an APM p…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-18T17:10:45.000Z",
-      "link": "https://thehackernews.com/2026/11/critical-apache-roller-rce-flaw-under.html",
-      "summary": "A critical security flaw in Apache Roller, an open-source, Java-based blogging platform, has come under active exploitation in the wild, according to the Apache Software Foundation (ASF) The vulnerability, tracked as CVE-2026-129448 (CVSS score: 9.8), is a case of unauthenticate…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-129448"
-      }
-    },
-    {
-      "title": "Allvarlig sårbarhet i Oracle Java",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-11-18T13:20:00.000Z",
-      "link": "https://www.cert.se/2026/11/allvarlig-sarbarhet-i-oracle-java.html",
-      "summary": "<p>Oracle har publicerat säkerhetsuppdateringar gällande en allvarlig sårbarhet i programmeringsspråket och utvecklingsplattformen Oracle Java. [1][2]</p>",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
