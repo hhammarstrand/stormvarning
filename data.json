@@ -1,19 +1,19 @@
 {
-  "updated": "2026-11-19T18:37:46.461Z",
-  "next_update": "2026-11-19T19:07:00.000Z",
+  "updated": "2026-11-20T01:13:08.072Z",
+  "next_update": "2026-11-20T01:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 9 aktivt utnyttjade sårbarheter, 16 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 8 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 6,
     "sweden_acute": 5,
-    "actively_exploited": 9,
-    "critical": 10,
-    "authority_alerts": 16,
-    "kev_recent": 7
+    "actively_exploited": 8,
+    "critical": 11,
+    "authority_alerts": 14,
+    "kev_recent": 5
   },
   "anomaly": {
     "active": false,
@@ -175,42 +175,27 @@
       }
     },
     {
-      "title": "CVE-2026-114713: UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-13T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-114713",
-      "summary": "UnrealIRCd UnrealIRCd – UnrealIRCd UnrealIRCd contains an improper neutralization of delimiters vulnerability that allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-114713"
-      }
-    },
-    {
-      "title": "CVE-2026-123039: Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-13T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123039",
-      "summary": "Check Point Multiple Products – Check Point Firewall, Multi-Domain Security Management Server, Scalable Platforms, Security Gateway, and Security Management Server contain an incorrect permissions assignment for critical resources vulnerability when the Gaia OS DynamicCLI daemon…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-123039"
-      }
-    },
-    {
       "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
       "source": "NCSC-UK",
       "region": "INT",
       "date": "2026-09-28T12:00:00.000Z",
       "link": "https://www.ncsc.gov.uk/news/exploitation-of-vulnerabilities-affecting-citrix-netscaler-adc-and-citrix-netscaler-gateway",
       "summary": "The NCSC is urging UK organisations to promptly mitigate vulnerabilities affecting Citrix NetScaler ADC and Gateway, two of which are being actively exploited.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "VMware patches vCenter zero-day exploited in attacks since September",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-11-20T00:26:25.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/",
+      "summary": "Broadcom has released security updates to fix a critical VMware vCenter Server authentication bypass vulnerability that Chinese-linked hackers have exploited in zero-day attacks since September 2026. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -271,6 +256,21 @@
       "date": "2026-11-12T12:00:00.000Z",
       "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-02",
       "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-316-02.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>On October 21, 2026, the Node.js project released security updates addressing a critical vulnerability in the Bro…",
+      "flags": {
+        "activelyExploited": false,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "ASUS warns of critical hard-coded key flaw in Control Center Express",
+      "source": "BleepingComputer",
+      "region": "INT",
+      "date": "2026-11-19T21:15:59.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/asus-warns-of-critical-hard-coded-key-flaw-in-control-center-express/",
+      "summary": "ASUS released Control Center Express v1.7.29 to fix three critical vulnerabilities that could let remote attackers gain administrative control of the management console and the devices it manages. [...]",
       "flags": {
         "activelyExploited": false,
         "critical": true,
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 7
+      "count": 5
     },
     {
       "name": "CISA",
