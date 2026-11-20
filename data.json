@@ -1,24 +1,24 @@
 {
-  "updated": "2026-11-20T01:13:08.072Z",
-  "next_update": "2026-11-20T01:37:00.000Z",
+  "updated": "2026-11-20T09:07:47.859Z",
+  "next_update": "2026-11-20T09:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 5 svensk-akuta signaler, 8 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 94,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 11 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 92,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 6,
-    "sweden_acute": 5,
-    "actively_exploited": 8,
-    "critical": 11,
+    "sweden_relevant": 5,
+    "sweden_acute": 4,
+    "actively_exploited": 11,
+    "critical": 9,
     "authority_alerts": 14,
     "kev_recent": 5
   },
   "anomaly": {
     "active": false,
     "baseline": 92,
-    "delta": 2
+    "delta": 0
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
@@ -76,21 +76,6 @@
       "date": "2026-09-03T06:00:00.000Z",
       "link": "https://www.mcf.se/sv/aktuellt/nyheter/2026/september/lardomar-fran-polen-frontlinjen-for-hybridhot/",
       "summary": "Erfarenheter från Polen visar hur civila samhällsfunktioner hamnar i frontlinjen för hybridhot. Angrepp mot energi, transporter, sjukvård och digital infrastruktur har kombinerats med otillbörlig informationspåverkan.",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "SilentAir Hijacks Asian Telecom Networks to Intercept SMS 2FA Codes and Spy on Taiwanese Users",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-13T11:10:40.000Z",
-      "link": "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html",
-      "summary": "A newly identified spying group used hacked equipment inside Asian mobile operators to intercept the calls and texts of selected people, mostly in Taiwan. Enea, a telecom and cybersecurity software company based in Stockholm, found the group's attack sources in at least six Asia…",
       "flags": {
         "activelyExploited": false,
         "critical": false,
@@ -190,12 +175,57 @@
       }
     },
     {
+      "title": "China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-20T06:33:31.000Z",
+      "link": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html",
+      "summary": "The suspected China-nexus cyber espionage group known as Armory Castle (formerly UNC5221) has been attributed to the zero-day exploitation of a critical security flaw in VMware vCenter Server in early September 2026. The vulnerability, tracked as CVE-2026-123890 (CVSS score: 9.8…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-123890"
+      }
+    },
+    {
+      "title": "New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-20T05:30:01.000Z",
+      "link": "https://thehackernews.com/2026/11/new-unpatched-windows-0-day-fastunlock.html",
+      "summary": "A newly disclosed unpatched zero-day technique called FastUnlock lets someone with physical access to a locked Windows computer start programs without signing in. Whoever uses it gets only a limited account, not administrator control of the machine. The method was posted yesterd…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "VMware patches vCenter zero-day exploited in attacks since September",
       "source": "BleepingComputer",
       "region": "INT",
       "date": "2026-11-20T00:26:25.000Z",
       "link": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/",
       "summary": "Broadcom has released security updates to fix a critical VMware vCenter Server authentication bypass vulnerability that Chinese-linked hackers have exploited in zero-day attacks since September 2026. [...]",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
+      "title": "Critical VMware vCenter Zero-Day Flaw Lets Network Attackers Bypass Authentication",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-19T15:11:06.000Z",
+      "link": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html",
+      "summary": "A critical flaw in VMware vCenter lets an attacker with network access bypass authentication and gain unauthorized access to the system, Broadcom, which owns VMware, said in an advisory published today. Fixed versions are out for all supported branches, and the company lists no…",
       "flags": {
         "activelyExploited": true,
         "critical": false,
@@ -310,21 +340,6 @@
       }
     },
     {
-      "title": "Critical VMware vCenter Flaw (CVSS 9.8) Lets Network Attackers Bypass Authentication",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-19T15:11:06.000Z",
-      "link": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html",
-      "summary": "A critical flaw in VMware vCenter lets an attacker with network access bypass authentication and gain unauthorized access to the system, Broadcom, which owns VMware, said in an advisory published today. Fixed versions are out for all supported branches, and the company lists no…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
       "title": "Drupal Patches Critical Installer Flaw That Could Give Unauthenticated Attackers Control of Sites",
       "source": "The Hacker News",
       "region": "INT",
@@ -368,21 +383,6 @@
         "swedenRelevant": true,
         "cve": "CVE-2026-123007"
       }
-    },
-    {
-      "title": "Ruby Releases Fixes for 7 Regex and String Flaws, Warns 5 Have Proof-of-Concept RCE",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-19T08:42:11.000Z",
-      "link": "https://thehackernews.com/2026/11/ruby-releases-fixes-for-7-regex-and.html",
-      "summary": "Ruby contains seven memory-safety flaws in its regular expression engine and its string case-conversion code. For five of them, its maintainers say, proof-of-concept exploits, or PoCs, have shown that crafted input can run code on the machine. \"We are aware of PoCs that prove so…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -396,7 +396,7 @@
       "name": "MCF",
       "region": "SE",
       "ok": true,
-      "count": 9
+      "count": 8
     },
     {
       "name": "Krisinformation",
