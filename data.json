@@ -1,23 +1,23 @@
 {
-  "updated": "2026-11-20T17:58:52.741Z",
-  "next_update": "2026-11-20T18:07:00.000Z",
+  "updated": "2026-11-20T23:56:53.095Z",
+  "next_update": "2026-11-21T00:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 12 aktivt utnyttjade sårbarheter, 14 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 92,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 93,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 5,
     "sweden_acute": 4,
-    "actively_exploited": 12,
-    "critical": 8,
-    "authority_alerts": 14,
-    "kev_recent": 5
+    "actively_exploited": 16,
+    "critical": 4,
+    "authority_alerts": 18,
+    "kev_recent": 9
   },
   "anomaly": {
     "active": false,
-    "baseline": 92,
+    "baseline": 93,
     "delta": 0
   },
   "level_since": "2026-10-31T05:28:20.950Z",
@@ -82,6 +82,66 @@
         "incident": true,
         "swedenRelevant": true,
         "cve": null
+      }
+    },
+    {
+      "title": "CVE-2026-129448: Apache Roller Deserialization of Untrusted Data Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-129448",
+      "summary": "Apache Roller – Apache Roller contains a deserialization of untrusted data vulnerability that allows an unauthenticated remote attacker to execute arbitrary code via the XML-RPC endpoint, which accepts and deserializes vendor extension types before authentication. This CVE cover…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-129448"
+      }
+    },
+    {
+      "title": "CVE-2026-123890: VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123890",
+      "summary": "Broadcom VMware vCenter – Broadcom VMware vCenter contains an authentication bypass using an alternate path or channel vulnerability in the VMware Directory Service that allows an unauthenticated attacker with network access to vCenter to bypass authentication and gain unauthori…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-123890"
+      }
+    },
+    {
+      "title": "CVE-2025-42884: SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2025-42884",
+      "summary": "SAP NetWeaver – SAP NetWeaver Enterprise Portal contains an improper neutralization of special elements in data query logic vulnerability that allows an unauthenticated attacker to disclose or modify server information via injected JNDI environment properties or a URL used durin…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2025-42884"
+      }
+    },
+    {
+      "title": "CVE-2026-76466: Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-20T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-76466",
+      "summary": "Cisco Expressway Series – Cisco Expressway Series contains a use of hard-coded credentials vulnerability that allows an unauthenticated, remote attacker with persistent cookies and network access to execute commands as root on a clustered device via the database service.",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-76466"
       }
     },
     {
@@ -323,66 +383,6 @@
         "swedenRelevant": true,
         "cve": null
       }
-    },
-    {
-      "title": "F5 releases emergency patches for critical BIG-IP RCE flaws",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-20T10:57:43.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/f5-releases-emergency-patches-for-critical-big-ip-rce-flaws/",
-      "summary": "US cybersecurity company F5 warned customers to patch five critical BIG-IP vulnerabilities that attackers can exploit to trigger denial-of-service (DoS) or gain remote code execution. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "ASUS warns of critical hard-coded key flaw in Control Center Express",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-19T21:15:59.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/asus-warns-of-critical-hard-coded-key-flaw-in-control-center-express/",
-      "summary": "ASUS released Control Center Express v1.7.29 to fix three critical vulnerabilities that could let remote attackers gain administrative control of the management console and the devices it manages. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "PHP security updates fix 18 flaws, including critical RCE bugs",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-19T16:28:23.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/php-security-updates-fix-18-flaws-including-critical-rce-bugs/",
-      "summary": "The PHP development team released security updates addressing 18 vulnerabilities, including critical flaws that could allow unauthenticated attackers to remotely execute code on vulnerable servers. [...]",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-19T15:18:07.000Z",
-      "link": "https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html",
-      "summary": "The PHP Foundation has released security updates to address multiple critical security flaws that could be exploited to achieve remote code execution on affected deployments, including CVE-2026-115560. The release of the patch follows an advance notice in which the project maint…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-115560"
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 5
+      "count": 9
     },
     {
       "name": "CISA",
