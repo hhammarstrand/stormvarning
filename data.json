@@ -1,18 +1,18 @@
 {
-  "updated": "2026-11-21T06:57:02.110Z",
-  "next_update": "2026-11-21T07:07:00.000Z",
+  "updated": "2026-11-21T15:16:32.735Z",
+  "next_update": "2026-11-21T15:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 16 aktivt utnyttjade sårbarheter, 18 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 17 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 93,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 5,
+    "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 16,
+    "actively_exploited": 17,
     "critical": 4,
-    "authority_alerts": 18,
+    "authority_alerts": 17,
     "kev_recent": 9
   },
   "anomaly": {
@@ -235,6 +235,21 @@
       }
     },
     {
+      "title": "Attackers' AI Agents Found a Zero-Day in Medical-Imaging Software and Gained Root Access",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-21T11:03:17.000Z",
+      "link": "https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html",
+      "summary": "Suspected China-linked hackers used autonomous AI agents to find a previously unknown flaw in MONAI Label, an open-source medical imaging server, and gain root access to a university server, Amazon Threat Intelligence said this week. The flaw allows an attacker with no account t…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
+      }
+    },
+    {
       "title": "Hackers use autonomous AI tool Cairn to find zero-day, take over server",
       "source": "BleepingComputer",
       "region": "INT",
@@ -366,21 +381,6 @@
         "critical": true,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "NCSC – CERT-SE veckobrev v.47",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-11-20T13:30:00.000Z",
-      "link": "https://www.cert.se/2026/11/ncsc-cert-se-veckobrev-v47.html",
-      "summary": "<p>På måndag är det dags för konferensen Svensk cyber 2026 där årets tema är ”Förmåga att agera i en föränderlig tid”. Den 23 november samlas ledare, experter och forskare från myndigheter, näringsliv och akademi för en gemensam kraftsamling kring cybersäkerhet, motståndskraft o…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": true,
         "cve": null
       }
     }
