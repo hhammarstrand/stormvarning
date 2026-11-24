@@ -1,24 +1,24 @@
 {
-  "updated": "2026-11-24T00:18:47.390Z",
-  "next_update": "2026-11-24T00:37:00.000Z",
+  "updated": "2026-11-24T10:22:49.277Z",
+  "next_update": "2026-11-24T10:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 18 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 19 aktivt utnyttjade sårbarheter, 16 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
     "sweden_relevant": 4,
     "sweden_acute": 4,
-    "actively_exploited": 18,
+    "actively_exploited": 19,
     "critical": 6,
-    "authority_alerts": 17,
+    "authority_alerts": 16,
     "kev_recent": 10
   },
   "anomaly": {
     "active": false,
-    "baseline": 93,
-    "delta": 1
+    "baseline": 94,
+    "delta": 0
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
@@ -97,6 +97,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-133968"
+      }
+    },
+    {
+      "title": "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-24T06:02:45.000Z",
+      "link": "https://thehackernews.com/2026/11/hackers-exploit-n-able-mailassure-flaw.html",
+      "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added two flaws impacting N-able MailAssure and MONAI Label to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The critical vulnerabilities are listed below - CV…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -361,21 +376,6 @@
       "date": "2026-11-17T12:00:00.000Z",
       "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-04",
       "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-321-04.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>On October 21, 2026, the Node.js project released security updates addressing a critical vulnerability in the Bro…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Siemens Industrial Automation Software Products",
-      "source": "CISA",
-      "region": "INT",
-      "date": "2026-11-17T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-03",
-      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-321-03.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>On October 21, 2026, the Node.js project released security updates addressing a critical vulnerability in the Bro…",
       "flags": {
         "activelyExploited": false,
         "critical": true,
