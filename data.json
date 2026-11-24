@@ -1,24 +1,24 @@
 {
-  "updated": "2026-11-24T10:22:49.277Z",
-  "next_update": "2026-11-24T10:37:00.000Z",
+  "updated": "2026-11-24T20:51:14.007Z",
+  "next_update": "2026-11-24T21:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 4 svensk-akuta signaler, 19 aktivt utnyttjade sårbarheter, 16 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 94,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 21 aktivt utnyttjade sårbarheter, 17 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 93,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 4,
-    "sweden_acute": 4,
-    "actively_exploited": 19,
+    "sweden_relevant": 3,
+    "sweden_acute": 3,
+    "actively_exploited": 21,
     "critical": 6,
-    "authority_alerts": 16,
-    "kev_recent": 10
+    "authority_alerts": 17,
+    "kev_recent": 13
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 0
+    "delta": -1
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
@@ -55,21 +55,6 @@
       }
     },
     {
-      "title": "Cyberangrepp mot uppkopplade kyl- och fryssystem",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-11-02T16:40:00.000Z",
-      "link": "https://www.cert.se/2026/11/cyberangrepp-mot-uppkopplade-frys-och-kylsystem.html",
-      "summary": "<p>NCSC:s incidenthanteringsfunktion CERT-SE har löpande kontakt med berörda aktörer med anledning av de incidenter som drabbat uppkopplade frys- och kylsystem inom dagligvaruhandeln. Organisationer som misstänker att de drabbats, eller har drabbats av it-incidenter kan alltid k…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
       "title": "Lärdomar från Polen: frontlinjen för hybridhot",
       "source": "MCF",
       "region": "SE",
@@ -85,6 +70,21 @@
       }
     },
     {
+      "title": "CVE-2026-132165: Drupal Core Remote Code Execution Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-24T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-132165",
+      "summary": "Drupal Core – Drupal Core contains a not failing securely vulnerability that could allow an unauthenticated attacker to take over an existing site or execute arbitrary code via the Drupal installer. Under specific conditions, the attacker can use install.php to attempt to reinst…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-132165"
+      }
+    },
+    {
       "title": "CVE-2026-133968: Project MONAI MONAI Label Path Traversal Vulnerability",
       "source": "CISA KEV",
       "region": "INT",
@@ -97,6 +97,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-133968"
+      }
+    },
+    {
+      "title": "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-24T13:28:26.000Z",
+      "link": "https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html",
+      "summary": "Broadcom has shipped patches to address 23 vulnerabilities impacting VMware ESX, vCenter, Workstation, Fusion, and Avi Load Balancer, including one critical bug that could be abused to bypass authentication. The critical vulnerability, tracked as CVE-2026-123903, is rated 9.8 ou…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-123903"
       }
     },
     {
@@ -130,18 +145,33 @@
       }
     },
     {
-      "title": "CISA flags critical Cisco RCE flaw as actively exploited in attacks",
-      "source": "BleepingComputer",
+      "title": "CVE-2026-132224: Optimizely Web Experimentation External Control of Critical State Data Vulnerability",
+      "source": "CISA KEV",
       "region": "INT",
-      "date": "2026-11-23T07:44:19.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited/",
-      "summary": "The US Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that attackers are now exploiting a recently patched critical Cisco Expressway vulnerability in the wild. [...]",
+      "date": "2026-11-24T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-132224",
+      "summary": "Optimizely Web Experimentation – Optimizely Web Experimentation contains an external control of critical state data vulnerability in its account signup flow that could allow an attacker to impersonate existing customer users and modify Project JavaScript. Successful exploitation…",
       "flags": {
         "activelyExploited": true,
-        "critical": true,
+        "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": null
+        "cve": "CVE-2026-132224"
+      }
+    },
+    {
+      "title": "CVE-2026-131914: Idunno AntiCsrf Deserialization of Untrusted Data Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-24T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-131914",
+      "summary": "Idunno AntiCsrf – Idunno AntiCsrf contains a deserialization of untrusted data vulnerability that allows an unauthenticated remote attacker to execute arbitrary code via object injection. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are a…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-131914"
       }
     },
     {
@@ -353,36 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Critical VMware vCenter Zero-Day Flaw Lets Network Attackers Bypass Authentication",
-      "source": "The Hacker News",
-      "region": "INT",
-      "date": "2026-11-19T15:11:06.000Z",
-      "link": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html",
-      "summary": "A critical flaw in VMware vCenter lets an attacker with network access bypass authentication and gain unauthorized access to the system, Broadcom, which owns VMware, said in an advisory published today. Fixed versions are out for all supported branches, and the company lists no…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
-    },
-    {
-      "title": "Siemens Industrial Software Products",
-      "source": "CISA",
-      "region": "INT",
-      "date": "2026-11-17T12:00:00.000Z",
-      "link": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-04",
-      "summary": "<p><a href=\"https://github.com/cisagov/CSAF/blob/develop/csaf_files/OT/white/2026/icsa-26-321-04.json\"><strong>View CSAF</strong></a></p> <h2>Summary</h2> <p><strong>On October 21, 2026, the Node.js project released security updates addressing a critical vulnerability in the Bro…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": true,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 10
+      "count": 13
     },
     {
       "name": "CISA",
