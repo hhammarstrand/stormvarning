@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-27T00:31:30.204Z",
-  "next_update": "2026-11-27T00:37:00.000Z",
+  "updated": "2026-11-27T09:01:18.366Z",
+  "next_update": "2026-11-27T09:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
@@ -11,7 +11,7 @@
     "sweden_relevant": 3,
     "sweden_acute": 3,
     "actively_exploited": 21,
-    "critical": 7,
+    "critical": 8,
     "authority_alerts": 19,
     "kev_recent": 15
   },
@@ -97,6 +97,21 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-133968"
+      }
+    },
+    {
+      "title": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access",
+      "source": "The Hacker News",
+      "region": "INT",
+      "date": "2026-11-27T05:48:20.000Z",
+      "link": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html",
+      "summary": "Details have emerged about a new zero-day vulnerability in Cacti, an open-source network monitoring tool, that could be exploited to achieve remote code execution. The proof-of-concept (PoC) exploit, which has yet to be assigned a CVE identifier, has been tracked as 4HTTP2SHELL…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": true,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": null
       }
     },
     {
@@ -368,21 +383,6 @@
         "swedenRelevant": false,
         "cve": null
       }
-    },
-    {
-      "title": "Remus malware steals Gmail messages via fake Google Sheets extension",
-      "source": "BleepingComputer",
-      "region": "INT",
-      "date": "2026-11-26T15:23:28.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
-      "summary": "The Remus infostealer is stealing Gmail messages through a stealthy malicious Chrome extension, a capability the malware operators marketed as a zero-day exploit in Google's email service. [...]",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -396,7 +396,7 @@
       "name": "MCF",
       "region": "SE",
       "ok": true,
-      "count": 9
+      "count": 8
     },
     {
       "name": "Krisinformation",
