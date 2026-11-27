@@ -1,10 +1,10 @@
 {
-  "updated": "2026-11-26T15:44:09.396Z",
-  "next_update": "2026-11-26T16:07:00.000Z",
+  "updated": "2026-11-27T00:31:30.204Z",
+  "next_update": "2026-11-27T00:37:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 21 aktivt utnyttjade sårbarheter, 20 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 21 aktivt utnyttjade sårbarheter, 19 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
   "score": 94,
   "indicators": {
     "total_signals": 24,
@@ -12,8 +12,8 @@
     "sweden_acute": 3,
     "actively_exploited": 21,
     "critical": 7,
-    "authority_alerts": 20,
-    "kev_recent": 17
+    "authority_alerts": 19,
+    "kev_recent": 15
   },
   "anomaly": {
     "active": false,
@@ -355,33 +355,33 @@
       }
     },
     {
-      "title": "CVE-2026-129448: Apache Roller Deserialization of Untrusted Data Vulnerability",
-      "source": "CISA KEV",
+      "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
+      "source": "NCSC-UK",
       "region": "INT",
-      "date": "2026-11-20T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-129448",
-      "summary": "Apache Roller – Apache Roller contains a deserialization of untrusted data vulnerability that allows an unauthenticated remote attacker to execute arbitrary code via the XML-RPC endpoint, which accepts and deserializes vendor extension types before authentication. This CVE cover…",
+      "date": "2026-09-28T12:00:00.000Z",
+      "link": "https://www.ncsc.gov.uk/news/exploitation-of-vulnerabilities-affecting-citrix-netscaler-adc-and-citrix-netscaler-gateway",
+      "summary": "The NCSC is urging UK organisations to promptly mitigate vulnerabilities affecting Citrix NetScaler ADC and Gateway, two of which are being actively exploited.",
       "flags": {
         "activelyExploited": true,
         "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-129448"
+        "cve": null
       }
     },
     {
-      "title": "CVE-2026-123890: VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "source": "CISA KEV",
+      "title": "Remus malware steals Gmail messages via fake Google Sheets extension",
+      "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-11-20T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-123890",
-      "summary": "Broadcom VMware vCenter – Broadcom VMware vCenter contains an authentication bypass using an alternate path or channel vulnerability in the VMware Directory Service that allows an unauthenticated attacker with network access to vCenter to bypass authentication and gain unauthori…",
+      "date": "2026-11-26T15:23:28.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
+      "summary": "The Remus infostealer is stealing Gmail messages through a stealthy malicious Chrome extension, a capability the malware operators marketed as a zero-day exploit in Google's email service. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": false,
         "incident": false,
         "swedenRelevant": false,
-        "cve": "CVE-2026-123890"
+        "cve": null
       }
     }
   ],
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 19
+      "count": 15
     },
     {
       "name": "CISA",
