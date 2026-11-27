@@ -1,24 +1,24 @@
 {
-  "updated": "2026-11-27T09:01:18.366Z",
-  "next_update": "2026-11-27T09:07:00.000Z",
+  "updated": "2026-11-27T18:53:00.294Z",
+  "next_update": "2026-11-27T19:07:00.000Z",
   "level": "gul",
   "level_label": "Gul – förhöjd hotnivå",
   "summary": "Förhöjda indikatorer: akuta signaler med svensk koppling. Automatisk heuristik (ingen AI-bedömning).",
-  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 3 svensk-akuta signaler, 21 aktivt utnyttjade sårbarheter, 19 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
-  "score": 94,
+  "reasoning": "Bedömningen är gjord med en deterministisk heuristik eftersom AI-analysen inte var tillgänglig. Underlag: 2 svensk-akuta signaler, 22 aktivt utnyttjade sårbarheter, 19 myndighetsvarningar. Följ CERT-SE och MCF för bekräftad information.",
+  "score": 93,
   "indicators": {
     "total_signals": 24,
-    "sweden_relevant": 3,
-    "sweden_acute": 3,
-    "actively_exploited": 21,
+    "sweden_relevant": 2,
+    "sweden_acute": 2,
+    "actively_exploited": 22,
     "critical": 8,
     "authority_alerts": 19,
-    "kev_recent": 15
+    "kev_recent": 17
   },
   "anomaly": {
     "active": false,
     "baseline": 94,
-    "delta": 0
+    "delta": -1
   },
   "level_since": "2026-10-31T05:28:20.950Z",
   "de_escalation": null,
@@ -35,21 +35,6 @@
         "activelyExploited": false,
         "critical": true,
         "incident": false,
-        "swedenRelevant": true,
-        "cve": null
-      }
-    },
-    {
-      "title": "EU varnar för cyberincidenter i kyl- och fryssystem",
-      "source": "CERT-SE",
-      "region": "SE",
-      "date": "2026-11-06T08:00:00.000Z",
-      "link": "https://www.cert.se/2026/11/eu-varnar-for-cyberincidenter-i-kyl-och-fryssystem.html",
-      "summary": "<p>Sedan den 11 oktober 2026 har flera kyl- och fryssystem i flera EU-länder drabbats av cybersäkerhetsincidenter. Efter en ny våg av incidenter den 1-2 november uppmanar EU:s cybersäkerhetsaktörer organisationer att omedelbart vidta åtgärder för att minska riskerna i berörda sy…",
-      "flags": {
-        "activelyExploited": false,
-        "critical": false,
-        "incident": true,
         "swedenRelevant": true,
         "cve": null
       }
@@ -100,12 +85,12 @@
       }
     },
     {
-      "title": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access",
-      "source": "The Hacker News",
+      "title": "Unpatched Cacti zero-day with public PoC gives remote code execution",
+      "source": "BleepingComputer",
       "region": "INT",
-      "date": "2026-11-27T05:48:20.000Z",
-      "link": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html",
-      "summary": "Details have emerged about a new zero-day vulnerability in Cacti, an open-source network monitoring tool, that could be exploited to achieve remote code execution. The proof-of-concept (PoC) exploit, which has yet to be assigned a CVE identifier, has been tracked as 4HTTP2SHELL…",
+      "date": "2026-11-27T17:06:13.000Z",
+      "link": "https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/",
+      "summary": "A zero-day vulnerability in the Cacti network monitoring platform has been publicly disclosed, along with a proof-of-concept exploit that lets unauthenticated attackers execute commands on vulnerable servers. [...]",
       "flags": {
         "activelyExploited": true,
         "critical": true,
@@ -115,12 +100,12 @@
       }
     },
     {
-      "title": "Hackers now exploit critical Drupal RCE flaw to hijack sites",
-      "source": "BleepingComputer",
+      "title": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access",
+      "source": "The Hacker News",
       "region": "INT",
-      "date": "2026-11-25T10:10:20.000Z",
-      "link": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/",
-      "summary": "The Drupal security team has confirmed that a critical vulnerability that lets attackers hijack unpatched sites has been actively exploited since at least Thursday. [...]",
+      "date": "2026-11-27T05:48:20.000Z",
+      "link": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html",
+      "summary": "Details have emerged about a new zero-day vulnerability in Cacti, an open-source network monitoring tool, that could be exploited to achieve remote code execution. The proof-of-concept (PoC) exploit, which has yet to be assigned a CVE identifier, has been tracked as 4HTTP2SHELL…",
       "flags": {
         "activelyExploited": true,
         "critical": true,
@@ -172,6 +157,51 @@
         "incident": false,
         "swedenRelevant": false,
         "cve": "CVE-2026-131914"
+      }
+    },
+    {
+      "title": "CVE-2026-120705: OSGeo GeoServer XML Injection Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-27T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-120705",
+      "summary": "OSGeo GeoServer – OsGeo GeoServer contains an XML injection vulnerability that allows an unauthenticated remote attacker to cause the server to read local text files accessible to the GeoServer process or fetch attacker-specified HTTP or HTTPS URLs via a crafted ID parameter in…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-120705"
+      }
+    },
+    {
+      "title": "CVE-2026-129243: OSGeo GeoServer Incorrect Authorization Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-27T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-129243",
+      "summary": "OSGeo GeoServer – GeoServer contains an incorrect authorization vulnerability that allows an unauthenticated remote attacker to bypass service-level role checks and invoke operations protected solely by those checks via a request with a prefixed service parameter. This vulnerabi…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-129243"
+      }
+    },
+    {
+      "title": "CVE-2026-136716: Drupal Core Improper Check for Unusual or Exceptional Conditions Vulnerability",
+      "source": "CISA KEV",
+      "region": "INT",
+      "date": "2026-11-27T00:00:00.000Z",
+      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-136716",
+      "summary": "Drupal Core – Drupal Core contains an improper check for unusual or exceptional conditions vulnerability that allows an unauthenticated remote attacker to take over a site via the exposed Drupal installer when the site is in one of the affected unusual or incomplete installation…",
+      "flags": {
+        "activelyExploited": true,
+        "critical": false,
+        "incident": false,
+        "swedenRelevant": false,
+        "cve": "CVE-2026-136716"
       }
     },
     {
@@ -353,36 +383,6 @@
         "swedenRelevant": false,
         "cve": "CVE-2026-131914"
       }
-    },
-    {
-      "title": "CVE-2026-134624: N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
-      "source": "CISA KEV",
-      "region": "INT",
-      "date": "2026-11-23T00:00:00.000Z",
-      "link": "https://nvd.nist.gov/vuln/detail/CVE-2026-134624",
-      "summary": "N-able MailAssure – N-able MailAssure (SpamExperts) contains a server-side request forgery vulnerability in the LDAP synchronization connection check that allows an authenticated API user to connect to arbitrary internal hosts and ports, determine which are reachable, and send c…",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": "CVE-2026-134624"
-      }
-    },
-    {
-      "title": "Exploitation of vulnerabilities affecting Citrix NetScaler ADC and Citrix NetScaler Gateway",
-      "source": "NCSC-UK",
-      "region": "INT",
-      "date": "2026-09-28T12:00:00.000Z",
-      "link": "https://www.ncsc.gov.uk/news/exploitation-of-vulnerabilities-affecting-citrix-netscaler-adc-and-citrix-netscaler-gateway",
-      "summary": "The NCSC is urging UK organisations to promptly mitigate vulnerabilities affecting Citrix NetScaler ADC and Gateway, two of which are being actively exploited.",
-      "flags": {
-        "activelyExploited": true,
-        "critical": false,
-        "incident": false,
-        "swedenRelevant": false,
-        "cve": null
-      }
     }
   ],
   "sources_health": [
@@ -408,7 +408,7 @@
       "name": "CISA KEV",
       "region": "INT",
       "ok": true,
-      "count": 15
+      "count": 18
     },
     {
       "name": "CISA",
